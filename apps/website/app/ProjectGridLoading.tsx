@@ -16,7 +16,7 @@ export default function ProjectGridLoading() {
     return 1;
   }
 
-  const items = new Array(9).fill(0);
+  const items = new Array(7).fill(0);
 
   return (
     <div className="grid grid-cols-6 gap-8">
