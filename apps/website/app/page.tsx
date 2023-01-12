@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
 import { Suspense } from "react";
 import ProjectGridLoading from "./ProjectGridLoading";
+import PostGrid from "./PostGrid";
 
 export const revalidate = 120;
 
@@ -177,21 +178,10 @@ export default async function HomePage() {
               </svg>
             </Link>
           </div>
-          {/* {posts?.map((post) => (
-            <div
-              className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2"
-              key={post.id}
-            >
-              <ArticleCard
-                title={post.title}
-                date={new Date(post.date)}
-                imageId={post.image}
-                projectTitle={post.project?.title}
-                compact
-                link="`/stiftung/aktuelles/${post.slug}`"
-              />
-            </div>
-          ))} */}
+          <Suspense>
+            {/* @ts-ignore-error */}
+            <PostGrid promise={posts} />
+          </Suspense>
         </div>
       </section>
     </>

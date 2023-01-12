@@ -30,7 +30,10 @@ const ArticleCard: React.FC<{
   });
 
   return (
-    <Link href={link ?? ""} className="group relative block h-full w-full overflow-hidden rounded-md">
+    <Link
+      href={link ?? ""}
+      className="group relative block h-full w-full overflow-hidden rounded-md"
+    >
       {imageId && (
         <div
           className={clsx(
@@ -47,7 +50,11 @@ const ArticleCard: React.FC<{
             quality={32}
             alt=""
             className={clsx(
-              "h-full", "w-full", "object-cover", "transition", "duration-500",
+              "h-full",
+              "w-full",
+              "object-cover",
+              "transition",
+              "duration-500",
               { "group-hover:scale-110": !compact }
             )}
           />
