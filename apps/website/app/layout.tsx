@@ -6,6 +6,8 @@ import Header from "../components/Header";
 import HeaderNavItem from "../components/Header/HaderNavItem";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
+import HeaderSubNavItem from "../components/Header/HeaderSubNavItem";
+import HeaderNav from "../components/Header/HeaderNav";
 
 const font = Space_Grotesk({
   variable: "--font-header",
@@ -23,12 +25,27 @@ export default function RootLayout({
     <html className={`${font.variable} font-sans`} lang="de">
       <body>
         <Header
-          items={[
-            <HeaderNavItem index={1}>Die Stiftung</HeaderNavItem>,
-            <HeaderNavItem index={2}>Projekte & Initiativen</HeaderNavItem>,
-            <HeaderNavItem index={3}>Unterstützen & engagieren</HeaderNavItem>,
-            <HeaderNavItem index={4} href="/kontakt">Kontakt</HeaderNavItem>,
-          ]}
+          nav={
+            <HeaderNav items={[
+              <HeaderNavItem index={1} label="Die Stiftung">
+                <HeaderSubNavItem label="Wer wir sind" href="/" />
+                <HeaderSubNavItem label="Unsere Gremien" href="/" />
+                <HeaderSubNavItem label="Aktuelles & Veranstaltungen" href="/" />
+                <HeaderSubNavItem label="Presse" href="/" />
+                <HeaderSubNavItem label="Veröffentlichungen" href="/" />
+              </HeaderNavItem>,
+              <HeaderNavItem index={3} label="Projekte & Initiativen">
+              <HeaderSubNavItem label="Unsere Projekte" href="/" />
+            </HeaderNavItem>,
+              <HeaderNavItem index={3} label="Unterstützen & engagieren">
+                <HeaderSubNavItem label="Ehrenamt" href="/" />
+                <HeaderSubNavItem label="Spenden" href="/" />
+                <HeaderSubNavItem label="Unsere Förderer & Partner" href="/" />
+                <HeaderSubNavItem label="Partner werden" href="/" />
+              </HeaderNavItem>,
+              <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
+            ]} />
+          }
         />
         <main>
           {children}

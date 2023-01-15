@@ -1,26 +1,20 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Logo from "../Logo";
-import HeaderNavItem from "./HaderNavItem";
+import HeaderNavBackground from "./HeaderNavBackground";
 
 interface HeaderProps {
-    items: React.ReactNode[];
+    nav?: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps> = ({ items }) => {
+const Header: React.FC<HeaderProps> = ({ nav }) => {
     return (
         <header className="absolute z-40 w-full">
             <div className="z-50 flex w-full flex-row items-center justify-between gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
                 <Link href="/" className="group -ml-2 block p-2 outline-none">
                     <Logo />
                 </Link>
-                <nav className="absolute top-0 bottom-0 left-0 right-0 flex h-screen min-h-screen flex-col overflow-y-auto bg-slate-900 transition-transform duration-500 md:right-1/4 lg:relative lg:h-auto lg:min-h-0 lg:translate-x-0 lg:flex-row lg:overflow-y-visible lg:bg-transparent lg:transition-none">
-                    <div className="mb-8 block px-4 py-8 lg:hidden"></div>
-                    {items}
-                    <div className="mb-8 flex flex-col items-start px-4 pt-8 pb-20 lg:hidden">
-                        <slot name="actions" />
-                    </div>
-                </nav>
+                {nav}
                 <div className="flex flex-row items-center gap-4 py-3">
                     <div className="hidden flex-row md:flex">
                         <button
@@ -34,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ items }) => {
                     <div className="block lg:hidden"></div>
                 </div>
             </div>
+            <HeaderNavBackground />
         </header>
     );
 };
