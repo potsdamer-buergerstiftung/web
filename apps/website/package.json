@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@directus/sdk": "^10.2.0",
+    "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.3",
     "clsx": "^1.2.1",

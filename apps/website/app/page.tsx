@@ -5,6 +5,7 @@ import ProjectGrid from "./ProjectGrid";
 import { Suspense } from "react";
 import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
+import EventGrid from "./EventGrid";
 
 export const revalidate = 120;
 
@@ -26,9 +27,21 @@ async function getPosts() {
   return res.data;
 }
 
+async function getEvents() {
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res = await directus.items<any, any>("events").readByQuery({
+    fields: ["name", "start", "id", "image", "external_ticket_url", "registration_needed"],
+    limit: 3,
+    sort: ["start"],
+    filter: { start: { _gte: new Date().toISOString() } },
+  });
+  return res.data;
+}
+
 export default async function HomePage() {
   const posts = getPosts();
   const projects = getProjects();
+  const events = getEvents();
 
   const priorities = [
     {
@@ -142,6 +155,26 @@ export default async function HomePage() {
               </div>
             </div>
           ))}
+          <div className="relative col-span-6 md:col-span-3 lg:col-span-6 bg-slate-100">
+            <div className="absolute z-[-1] h-full w-full">
+              <div className="absolute bottom-0 top-0 left-0 right-0" />
+            </div>
+            <div
+              className="container mx-auto grid grid-cols-6 gap-8 px-4 flex h-full flex-col justify-end px-4 py-16 md:px-8 md:py-8 lg:px-4 lg:py-16">
+              <div className="col-span-6">
+                <h4 className="text-sm font-semibold uppercase text-gray-600">
+                  Nimm teil
+                </h4>
+                <h1 className="font-header mt-2 text-4xl font-bold">
+                  Kommende Veranstaltungen
+                </h1>
+              </div>
+              <Suspense>
+                {/* @ts-ignore-error */}
+                <EventGrid promise={events} />
+              </Suspense>
+            </div>
+          </div>
         </div>
       </section>
       <section className="py-16 md:py-24">

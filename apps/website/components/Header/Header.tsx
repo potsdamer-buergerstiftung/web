@@ -1,13 +1,14 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Logo from "../Logo";
+import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
 
 interface HeaderProps {
     nav?: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps> = ({ nav }) => {
+export default function Header({ nav }: HeaderProps) {
     return (
         <header className="absolute z-40 w-full">
             <div className="z-50 flex w-full flex-row items-center justify-between gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
@@ -25,12 +26,12 @@ const Header: React.FC<HeaderProps> = ({ nav }) => {
                             Jetzt spenden
                         </button>
                     </div>
-                    <div className="block lg:hidden"></div>
+                    <div className="block lg:hidden">
+                        <HeaderMobileMenuButton isDark={false} />
+                    </div>
                 </div>
             </div>
             <HeaderNavBackground />
         </header>
     );
 };
-
-export default Header;

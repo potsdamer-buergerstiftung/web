@@ -82,7 +82,7 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
                 </span>
             </AnchorElement>
             {children && (
-                <ul className={clsx("relative mb-4 w-auto flex flex-col whitespace-nowrap px-9 lg:absolute lg:mb-0 lg:px-3 lg:py-20", headerExpanded && itemSubMenuOpen ? 'flex' : 'hidden')}>
+                <ul className={clsx("relative mb-4 w-auto flex flex-col whitespace-nowrap px-9 lg:absolute lg:mb-0 lg:px-3 lg:py-20", expanded && itemSubMenuOpen ? 'flex' : 'hidden')}>
                     {children}
                 </ul>
             )}

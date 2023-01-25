@@ -28,7 +28,7 @@ export default function RootLayout({
           nav={
             <HeaderNav items={[
               <HeaderNavItem index={1} label="Die Stiftung">
-                <HeaderSubNavItem label="Wer wir sind" href="/" />
+                <HeaderSubNavItem label="Wer wir sind" href="/stiftung" />
                 <HeaderSubNavItem label="Unsere Gremien" href="/" />
                 <HeaderSubNavItem label="Aktuelles & Veranstaltungen" href="/" />
                 <HeaderSubNavItem label="Presse" href="/" />
