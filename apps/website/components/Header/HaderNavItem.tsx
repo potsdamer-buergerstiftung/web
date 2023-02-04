@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import Link from "next/link";
 import { Children, useState } from "react";
-import { headerBackgroundHeight, headerExpanded } from "./state";
+import { headerBackgroundHeight, headerExpanded, mobileMenuOpen } from "./state";
 
 interface HeaderNavItemProps {
     isActive?: boolean;
@@ -29,6 +29,7 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
     const [itemSubMenuOpen, setItemSubMenuOpen] = useState(false);
     const [backgroundHeight, setBackgroundHeight] = useAtom(headerBackgroundHeight);
     const [expanded, setExpanded] = useAtom(headerExpanded);
+    const [isMobileMenuOpen, setMobileMenuOpen] = useAtom(mobileMenuOpen);
 
     const subNavItemCount = children ? Children.count(children) : 0;
 
@@ -63,8 +64,17 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
         }
     }
 
+    function onClick() {
+        if (href) {
+            setMobileMenuOpen(false);
+            setExpanded(false);
+        } else {
+            toggleItemSubMenuOpen();
+        }
+    }
+
     return (
-        <div className="group relative flex flex-col justify-start" onMouseOver={onHover} onMouseLeave={onLeave}>
+        <div className="group relative flex flex-col justify-start" onMouseOver={onHover} onMouseLeave={onLeave} onClick={onClick}>
             <AnchorElement>
                 <span
                     className={clsx(

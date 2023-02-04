@@ -6,6 +6,7 @@ interface PageTitleProps {
   actions?: React.ReactNode;
   breadcrumb?: React.ReactNode;
   isCompact?: boolean;
+  isLoading?: boolean;
 }
 
 export default function PageTitle({

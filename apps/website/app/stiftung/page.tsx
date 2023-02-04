@@ -4,6 +4,7 @@ import PageBreadcrumb from "../../components/PageBreadcrumb";
 import PageBreadcrumbItem from "../../components/PageBreadcrumbItem";
 import PageTitle from "../../components/PageTitle";
 import Disclosure from "./Disclosure";
+import ParallaxImage from "./ParallaxImage";
 
 export default function AboutPage() {
     const priorities = [
@@ -64,8 +65,7 @@ export default function AboutPage() {
                 </div>
             </section>
             <section>
-                <Image src="b6431451-1fdc-45ac-ab79-c42c3a0b7627" quality="70" width="1600"
-                    height="1300" className="w-full h-[25rem] object-cover" alt="Stand auf der Freundschaftsinsel"/>
+                <ParallaxImage />
             </section>
             <section className="py-16 md:py-20">
                 <div className="container mx-auto px-4">

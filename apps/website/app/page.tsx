@@ -160,7 +160,7 @@ export default async function HomePage() {
               <div className="absolute bottom-0 top-0 left-0 right-0" />
             </div>
             <div
-              className="container mx-auto grid grid-cols-6 gap-8 px-4 flex h-full flex-col justify-end px-4 py-16 md:px-8 md:py-8 lg:px-4 lg:py-16">
+              className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-8 lg:px-4 lg:py-16">
               <div className="col-span-6">
                 <h4 className="text-sm font-semibold uppercase text-gray-600">
                   Nimm teil
