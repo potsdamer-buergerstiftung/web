@@ -1,10 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import PageBreadcrumb from "../../components/PageBreadcrumb";
 import PageBreadcrumbItem from "../../components/PageBreadcrumbItem";
 import PageTitle from "../../components/PageTitle";
 import Disclosure from "./Disclosure";
-import ParallaxImage from "./ParallaxImage";
+import ParallaxImage from "../../components/ParallaxImage";
 
 export default function AboutPage() {
     const priorities = [
@@ -32,7 +31,7 @@ export default function AboutPage() {
     ];
 
     return (
-        <React.Fragment>
+        <>
             <PageTitle
                 title="Die Stiftung"
                 description={
@@ -122,6 +121,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section> */}
-        </React.Fragment >
+        </>
     );
 }
