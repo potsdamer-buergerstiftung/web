@@ -3,46 +3,47 @@
 import Image from "next/image";
 import { RefObject, useEffect, useRef, useState } from "react";
 
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+        width,
+        height
+    };
+}
+
+function useElementBounding(target: RefObject<HTMLElement>) {
+    const [top, setTop] = useState(0);
+
+    useEffect(() => {
+        function handleUpdate() {
+            let top = target.current?.getBoundingClientRect().top ?? 0;
+            setTop(top);
+        }
+
+        window.addEventListener('resize', handleUpdate);
+        window.addEventListener('scroll', handleUpdate);
+        return () => window.removeEventListener('resize', handleUpdate);
+    }, [target]);
+
+    return top;
+}
+
+function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState({ height: 0, width: 0 });
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowDimensions;
+}
+
 export default function ParallaxImage() {
-    function getWindowDimensions() {
-        const { innerWidth: width, innerHeight: height } = window;
-        return {
-            width,
-            height
-        };
-    }
-
-    function useElementBounding(target: RefObject<HTMLElement>) {
-        const [top, setTop] = useState(0);
-
-        useEffect(() => {
-            function handleUpdate() {
-                let top = target.current?.getBoundingClientRect().top ?? 0;
-                setTop(top);
-            }
-
-            window.addEventListener('resize', handleUpdate);
-            window.addEventListener('scroll', handleUpdate);
-            return () => window.removeEventListener('resize', handleUpdate);
-        }, [target]);
-
-        return top;
-    }
-
-    function useWindowDimensions() {
-        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-        useEffect(() => {
-            function handleResize() {
-                setWindowDimensions(getWindowDimensions());
-            }
-
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }, []);
-
-        return windowDimensions;
-    }
 
     const image = useRef<HTMLImageElement | null>(null);
     const top = useElementBounding(image);
