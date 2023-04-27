@@ -33,7 +33,7 @@ export default function SocialMediaLinks(props: SocialMediaLinksProps) {
             {size === "large" && (
                 <>
                     <p className="text-sm font-bold text-emerald-500">
-                        Folg' uns
+                        Folg&apos; uns
                     </p>
                     <span className="text-sm font-bold text-slate-900">-</span>
                 </>
