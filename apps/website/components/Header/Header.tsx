@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import Link from "next/link";
 import Logo from "../Logo";
+import HeaderDonationButton from "./HeaderDonationButton";
 import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
 
@@ -18,13 +18,7 @@ export default function Header({ nav }: HeaderProps) {
                 {nav}
                 <div className="flex flex-row items-center gap-4 py-3">
                     <div className="hidden flex-row md:flex">
-                        <button
-                            className={clsx(
-                                "bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
-                            )}
-                        >
-                            Jetzt spenden
-                        </button>
+                        <HeaderDonationButton />
                     </div>
                     <div className="block lg:hidden">
                         <HeaderMobileMenuButton isDark={false} />

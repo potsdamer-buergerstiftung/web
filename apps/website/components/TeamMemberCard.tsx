@@ -18,8 +18,10 @@ export default function TeamMemberCard({ title, name, description, image }: Team
                     <Image
                         src={image}
                         className="h-full w-full object-cover"
-                        width="800"
-                        height="900"
+                        fill
+                        sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            33vw"
                         quality="30"
                         alt={`Bild von ${name}`}
                     />
@@ -35,7 +37,7 @@ export default function TeamMemberCard({ title, name, description, image }: Team
                     <h1 className="mb-1 text-sm font-semibold uppercase text-slate-200">
                         {title}
                     </h1>
-                    <h2 className="font-header text-2xl font-bold text-white">{ name }</h2>
+                    <h2 className="font-header text-2xl font-bold text-white">{name}</h2>
                 </div>
             </div>
         </div>

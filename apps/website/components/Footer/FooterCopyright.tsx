@@ -4,7 +4,7 @@ const FooterCopyright: React.FC = () => {
   const year = new Date().getFullYear();
   return (
     <div className="container mx-auto grid grid-cols-1 justify-between gap-4 px-4 py-6 md:grid-cols-2">
-      <p>© {year} Potsdamer Bürgerstiftung - By Nöl & Johann</p>
+      <p>© {year} Potsdamer Bürgerstiftung & Mitwirkende</p>
       <ul className="flex flex-row justify-start space-x-4 md:justify-end">
         <li>
           <Link
