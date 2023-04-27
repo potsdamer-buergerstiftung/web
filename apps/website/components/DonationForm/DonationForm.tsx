@@ -33,12 +33,12 @@ export default function DonationForm() {
         setDonationProgress("PAYMENT");
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://js.mollie.com/v1/mollie.js";
         script.async = true;
         document.body.appendChild(script);
-    }, [])
+    }, []) */
 
     return (
         <div className="bg-emerald-50 rounded-lg p-8 lg:p-16">
