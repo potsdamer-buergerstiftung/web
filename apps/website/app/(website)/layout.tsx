@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@components/Footer/Footer";
 import Header from "@components/Header";
 import HeaderNavItem from "@components/Header/HaderNavItem";
@@ -9,7 +7,6 @@ import SocialMediaLinks from "@components/SocialMediaLinks";
 import ScrollProgressIndicator from "@components/ScrollProgressIndicator";
 import HeaderQuickDonateDrawer from "@components/Header/HeaderQuickDonateDrawer";
 import DonationForm from "@components/DonationForm/DonationForm";
-import { AnimatePresence } from "framer-motion";
 
 export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -37,10 +34,10 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                     ]} />
                 }
             />
-            <HeaderQuickDonateDrawer donationForm={<DonationForm />}/>
-            <AnimatePresence>
+            <HeaderQuickDonateDrawer donationForm={<DonationForm />} />
+            <main>
                 {children}
-            </AnimatePresence>
+            </main>
             <Footer />
             <div className="hidden lg:inline-flex fixed left-[4vh] top-[50%] z-40 origin-top-left items-center align-middle"
                 style={{ transform: "rotate(-90deg) translate(-50%, 0)" }}>
