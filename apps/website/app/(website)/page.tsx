@@ -127,8 +127,8 @@ export default async function HomePage() {
           </div>
           <div>
             <p>
-              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine
-              <b>positive Entwicklung Potsdams einzubringen</b>. Wir vernetzen
+              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine <b>positive{" "} 
+              Entwicklung Potsdams einzubringen</b>. Wir vernetzen
               Gleichgesinnte, versammeln engagierte Menschen, bieten
               Unterstützung als Plattform für Ehrenamt und möchten es den
               Menschen in Potsdam leichter machen, das{" "}
