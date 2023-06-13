@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@components/Image";
 
 const ProjectCard: React.FC<{
   title: string;
@@ -12,18 +12,17 @@ const ProjectCard: React.FC<{
 
   const imageProps =
     imageSize == "small"
-      ? { width: 400, height: 300 }
-      : { width: 600, height: 300 };
+      ? { width: 400, height: 400 }
+      : { width: 900, height: 400 };
   return (
     <Link
       href={`/projekte/${projectId}`}
       className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
     >
       <Image
-        src={`${imageId}`}
+        src={imageId}
         height={imageProps.height}
         width={imageProps.width}
-        quality={30}
         className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
         alt={`Bild von ${title}`}
       />

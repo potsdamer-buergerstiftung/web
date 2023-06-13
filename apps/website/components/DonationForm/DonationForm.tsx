@@ -53,13 +53,13 @@ export default function DonationForm() {
                 wenn wir langfristig planen und fördern können. Mit Deiner regelmäßigen und verlässlichen Unterstützung
                 können wir diese wichtigen Voraussetzungen schaffen.
             </p>
-            <div className="flex flex-row mt-16 gap-10">
-                <ul className="flex flex-col items-end shrink-0">
+            <div className="flex flex-col md:flex-row mt-16 gap-10">
+                <ul className="hidden md:flex flex-col items-end shrink-0">
                     <ProgressButton isActive={donationProgress === "PROJECT_SELECTION"} onClick={onProjectSelectionClicked}>Verwendungszweck wählen</ProgressButton>
 
                     <ProgressButton isActive={donationProgress === "AMOUNT_SELECTION"} onClick={onAmountSelectionClicked}>Betrag wählen</ProgressButton>
 
-                    <ProgressButton isActive={donationProgress === "PAYMENT"} onClick={onPaymentClicked}>Zahlung abwickeln</ProgressButton>
+                    <ProgressButton isActive={donationProgress === "PAYMENT"} onClick={onPaymentClicked}>Zahlung bestätigen</ProgressButton>
                 </ul>
                 <div className="w-full">
                     {donationProgress === "PROJECT_SELECTION" && <DonationFormProjectSelection />}

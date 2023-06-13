@@ -20,7 +20,7 @@ export default async function EventGrid({ promise }: EventGridProps) {
                 <div className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2">
                     <Link href={event.registration_needed && event.external_ticket_url ? event.external_ticket_url : `/events/${event.id}`}
                         className="group relative block h-60 w-full cursor-pointer overflow-hidden rounded-lg">
-                        <Image src={event.image} height={600} width={600}
+                        <Image src={`/${event.image}`} height={600} width={600}
                             className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                             alt={`Bild von ${event.name}`} />
                         <div

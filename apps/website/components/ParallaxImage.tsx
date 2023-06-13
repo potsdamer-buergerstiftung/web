@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@components/Image";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 function getWindowDimensions() {

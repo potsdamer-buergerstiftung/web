@@ -27,7 +27,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                         <HeaderNavItem index={3} label="Unterstützen & engagieren">
                             <HeaderSubNavItem label="Ehrenamt" href="/" />
                             <HeaderSubNavItem label="Spenden" href="/" />
-                            <HeaderSubNavItem label="Unsere Förderer & Partner" href="/" />
+                            <HeaderSubNavItem label="Unsere Förderer & Partner" href="/stiftung/foerderer-und-partner" />
                             <HeaderSubNavItem label="Partner werden" href="/" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />

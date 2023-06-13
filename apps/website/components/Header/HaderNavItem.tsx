@@ -78,7 +78,7 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
             <AnchorElement>
                 <span
                     className={clsx(
-                        "text-xs font-bold leading-4 transition group-hover:text-emerald-500 group-focus:text-emerald-500"
+                        "text-xs font-bold leading-4 transition group-hover:text-emerald-500 group-focus:text-emerald-500 text-slate-500"
                     )}
                 >
                     {addZero(index.toString())}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@components/Image";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 </div>
             </section>
             <section>
-                <ParallaxImage />
+                <Image src="b6431451-1fdc-45ac-ab79-c42c3a0b7627" alt="" width="1200" height="900" className="w-full h-[20rem] object-cover" />
             </section>
             <section className="py-16 md:py-20">
                 <div className="container mx-auto px-4">

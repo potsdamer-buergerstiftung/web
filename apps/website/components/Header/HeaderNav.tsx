@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { useAtom } from "jotai";
+import HeaderDonationButton from "./HeaderDonationButton";
 import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import { mobileMenuOpen } from "./state";
 
@@ -19,7 +20,7 @@ export default function HeaderNav({ items }: HeaderNavProps) {
             </div>
             {items}
             <div className="mb-8 flex flex-col items-start px-4 pt-8 pb-20 lg:hidden">
-                <slot name="actions" />
+                <HeaderDonationButton />
             </div>
         </nav>
     );

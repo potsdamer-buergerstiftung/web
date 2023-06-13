@@ -1,14 +1,20 @@
 import createMollieClient from '@mollie/api-client';
 import { NextResponse } from 'next/server';
 
-const mollieClient = createMollieClient({ apiKey: 'test_xfUphz3AmGdN2r8hpmg4yK5cBkQAwU' });
+const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY });
 
 export async function POST(request: Request) {
-    const { amount, description, redirectUrl, method } = await request.json();
+    const { amount, description, redirectUrl, method, duration } = await request.json();
 
     const formattedValue = amount.toFixed(2).replace(',', '.').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 
-    console.log(formattedValue);
+    let checkedDuration;
+
+    if (duration === "ONE_TIME") {
+        checkedDuration = "oneoff";
+    } else {
+        checkedDuration = "recurring";
+    }
 
     const payment = await mollieClient.payments.create({
         amount: {
@@ -18,6 +24,7 @@ export async function POST(request: Request) {
         description: `Spende für ${description}`,
         redirectUrl,
         method,
+        sequenceType: checkedDuration,
     });
 
     return NextResponse.json(payment);

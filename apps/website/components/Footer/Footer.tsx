@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FooterBanner from "./FooterBanner";
 import FooterBrand from "./FooterBrand";
 import FooterCopyright from "./FooterCopyright";
@@ -44,7 +45,27 @@ const Footer: React.FC = () => {
               <h4 className="font-header text-xl font-bold md:text-lg">
                 Für Newsletter anmelden
               </h4>
-              <form>
+              <Link
+                href="https://aktion.potsdamer-buergerstiftung.org/newsletter/"
+                className="text-md font-header mt-4 inline-flex items-center rounded-md bg-slate-800 text-white py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
+              >
+                Jetzt anmelden
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-1 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
+              {/* <form>
                 <input
                   type="email"
                   className="mt-6 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -67,7 +88,7 @@ const Footer: React.FC = () => {
                     für den Versand des Newsletters weiterverarbeitet werden.
                   </label>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
         </section>

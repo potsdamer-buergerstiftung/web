@@ -2,19 +2,19 @@
 
 import clsx from "clsx";
 import { useAtom } from "jotai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { donationProgressAtom, planDuration, selectedAmountAtom } from "./state";
 
 const defaultAmounts = [10, 50, 100];
 const planDurations = [
     {
-        key: "MONTHLY",
-        text: "Monatlich"
-    },
-    {
         key: "ONE_TIME",
         text: "Einmalig"
-    }
+    }/* ,
+    {
+        key: "MONTHLY",
+        text: "Monatlich"
+    } */
 ]
 
 export default function DonationFormAmountSelection() {
@@ -23,18 +23,24 @@ export default function DonationFormAmountSelection() {
     const [customAmountActive, setCustomAmountActive] = useState(false);
     const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
 
+    useEffect(() => {
+        if (!defaultAmounts.includes(selectedAmount)) {
+            setCustomAmountActive(true);
+        }
+    }, []);
+
     return (
         <div className="grid grid-cols-3 gap-10">
-            <div className="col-span-1">
+            <div className="hidden col-span-1 md:block">
                 <div className="bg-white rounded-lg p-8">
                     <img src="/img/choose.svg" />
                 </div>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-3 md:col-span-2">
                 <h1 className="font-header font-bold text-3xl">
                     Betrag wählen
                 </h1>
-                <p className="mt-2"><b>Jeder Euro zählt.</b> Ab einer Spende von 50€ stellen wir Dir gerne eine Spendenbescheinigung aus.</p>
+                <p className="mt-4"><b>Jeder Euro zählt.</b> Ab einer Spende von 50€ stellen wir Dir gerne eine Spendenbescheinigung aus.</p>
                 <ul className="flex flex-row gap-6 mt-8">
                     {planDurations.map((planDuration, index) => (
                         <li key={index} className={clsx("relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-500", planDuration.key === activePlanDuration ? 'after:opacity-100' : 'after:opacity-0')}>
@@ -57,7 +63,13 @@ export default function DonationFormAmountSelection() {
                     <div className="mt-4">
                         <label className="text-sm font-medium">Eigener Betrag</label>
                         <input type="number"
-                            onChange={(e) => setSelectedAmount(parseInt(e.target.value))}
+                            onChange={(e) => {
+                                if (parseInt(e.target.value) > 0) {
+                                    setSelectedAmount(parseInt(e.target.value));
+                                } else {
+                                    setSelectedAmount(0);
+                                }
+                            }}
                             className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                             placeholder="Dein eigener betrag" />
                     </div>

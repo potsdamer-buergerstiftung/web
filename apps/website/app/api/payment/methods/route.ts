@@ -1,12 +1,15 @@
-import createMollieClient, { Locale } from '@mollie/api-client';
+import createMollieClient, { Locale, SequenceType } from '@mollie/api-client';
 import { NextResponse } from 'next/server';
 
-const mollieClient = createMollieClient({ apiKey: 'test_xfUphz3AmGdN2r8hpmg4yK5cBkQAwU' });
+const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY });
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
+
+    const { duration } = await request.json();
 
     const methods = await mollieClient.methods.list({
         locale: Locale.de_DE,
+        sequenceType: duration === "ONE_TIME" ? SequenceType.oneoff : SequenceType.recurring,
     });
 
     return NextResponse.json(methods);

@@ -13,7 +13,7 @@ export default function HeaderQuickDonateDrawer(props: HeaderQuickDonateDrawerPr
     const [isQuickDonateDrawerOpen, setIsQuickDonateDrawerOpen] = useAtom(quickDonateDrawerOpen);
 
     return (
-        <div className={clsx("overflow-y-auto fixed top-0 right-0 bottom-0 bg-slate-50 z-[1001] shadow-lg w-2/3 transition duration-700",
+        <div className={clsx("overflow-y-auto fixed top-0 right-0 bottom-0 bg-slate-50 z-[1001] shadow-lg w-full lg:w-3/4 xl:w-2/3 transition duration-700",
             isQuickDonateDrawerOpen ? 'translate-x-0' : 'translate-x-full'
         )}>
             <div className="fixed w-full p-6 -mb-12">
