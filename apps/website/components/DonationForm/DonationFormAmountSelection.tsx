@@ -71,7 +71,7 @@ export default function DonationFormAmountSelection() {
                                 }
                             }}
                             className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                            placeholder="Dein eigener betrag" />
+                            placeholder="Dein eigener Betrag" />
                     </div>
                 )}
                 <button
