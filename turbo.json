@@ -8,6 +8,11 @@
     "lint": {
       "outputs": []
     },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["MOLLIE_API_KEY"]
+    },
     "dev": {
       "cache": false
     }
