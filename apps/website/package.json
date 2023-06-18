@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@mollie/api-client": "^3.7.0",
+    "@types/react-responsive-masonry": "^2.1.0",
     "api": "*",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
@@ -25,6 +26,8 @@
     "nookies": "^2.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-responsive-masonry": "^2.1.7",
+    "react-sticky-box": "^2.0.4",
     "ui": "*"
   },
   "devDependencies": {

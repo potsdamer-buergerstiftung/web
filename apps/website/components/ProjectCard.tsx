@@ -16,7 +16,7 @@ const ProjectCard: React.FC<{
       : { width: 900, height: 400 };
   return (
     <Link
-      href={`/projekte/${projectId}`}
+      href={`/aktuelles/projekte/${projectId}`}
       className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
     >
       <Image

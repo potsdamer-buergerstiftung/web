@@ -29,11 +29,20 @@ const ArticleCard: React.FC<{
     month: "long",
   });
 
+  const wrapperClass =
+    "group relative block h-full w-full overflow-hidden rounded-md";
+
+  const Wrapper = ({ children }) =>
+    link ? (
+      <Link href={link} className={wrapperClass}>
+        {children}
+      </Link>
+    ) : (
+      <div className={wrapperClass}>{children}</div>
+    );
+
   return (
-    <Link
-      href={link ?? ""}
-      className="group relative block h-full w-full overflow-hidden rounded-md"
-    >
+    <Wrapper>
       {imageId && (
         <div
           className={clsx(
@@ -120,7 +129,7 @@ const ArticleCard: React.FC<{
           </ul>
         )}
       </div>
-    </Link>
+    </Wrapper>
   );
 };
 
