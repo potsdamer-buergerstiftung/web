@@ -12,8 +12,8 @@ export default function Image(data: CustomImageProps) {
     const enableLoader = data.loader ?? true;
 
     const loader = ({ width, src, quality }: ImageLoaderProps) => {
-        return `https://portal.potsdamer-buergerstiftung.org/assets/${src}?width=${width}&height=${height}&q=${quality || 40
-            }&format=auto&fit=cover`;
+        return `https://portal.potsdamer-buergerstiftung.org/assets/${src}?width=${width}&q=${quality || 40
+            }&format=auto&fit=cover` + (height ? `&height=${height}` : "");
     };
 
     return <NextImage {...data} loader={enableLoader? loader : undefined} />;
