@@ -15,20 +15,20 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                 nav={
                     <HeaderNav items={[
                         <HeaderNavItem index={1} label="Die Stiftung">
-                            <HeaderSubNavItem label="Wer wir sind" href="/stiftung" />
+                            <HeaderSubNavItem label="Wir über uns" href="/stiftung" />
                             <HeaderSubNavItem label="Unsere Gremien" href="/stiftung/gremien" />
-                            <HeaderSubNavItem label="Aktuelles & Veranstaltungen" href="/" />
-                            <HeaderSubNavItem label="Presse" href="/" />
-                            <HeaderSubNavItem label="Veröffentlichungen" href="/" />
+                            <HeaderSubNavItem label="Presseberichte" href="/stiftung/presse" />
+                            <HeaderSubNavItem label="Veröffentlichungen" href="/stiftung/veroeffentlichungen" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Projekte & Initiativen">
-                            <HeaderSubNavItem label="Unsere Projekte" href="/" />
+                        <HeaderNavItem index={2} label="Aktuelles & Projekte">
+                            <HeaderSubNavItem label="Projekte" href="/aktuelles/projekte" />
+                            <HeaderSubNavItem label="News & Blog" href="/aktuelles/blog" />
+                            <HeaderSubNavItem label="Veranstaltungen" href="/aktuelles/veranstaltungen" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Unterstützen & engagieren">
-                            <HeaderSubNavItem label="Ehrenamt" href="/" />
-                            <HeaderSubNavItem label="Spenden" href="/" />
-                            <HeaderSubNavItem label="Unsere Förderer & Partner" href="/stiftung/foerderer-und-partner" />
-                            <HeaderSubNavItem label="Partner werden" href="/" />
+                        <HeaderNavItem index={3} label="Mitstiften & engagieren">
+                            <HeaderSubNavItem label="Ehrenamt" href="/mitstiften/ehrenamt" />
+                            <HeaderSubNavItem label="Spenden" href="/mitstiften/spenden" />
+                            <HeaderSubNavItem label="Förderer & Partner" href="/mitstiften/foerderer-und-partner" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
                     ]} />
