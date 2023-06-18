@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "@components/Image";
+import Image from "next/image";
 
 const ProjectCard: React.FC<{
   title: string;
@@ -20,7 +20,7 @@ const ProjectCard: React.FC<{
       className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
     >
       <Image
-        src={imageId}
+        src={`https://portal.potsdamer-buergerstiftung.org/assets/${imageId}`}
         height={imageProps.height}
         width={imageProps.width}
         className="h-full w-full object-cover transition duration-500 group-hover:scale-110"

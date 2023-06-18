@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "@components/Image";
+import Image from "next/image";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 function getWindowDimensions() {
@@ -38,6 +38,8 @@ function useWindowDimensions() {
             setWindowDimensions(getWindowDimensions());
         }
 
+        setWindowDimensions(getWindowDimensions());
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -55,10 +57,10 @@ export default function ParallaxImage() {
         console.log(top);
     }, [top]);
 
-    /* return (
-        <Image src="b6431451-1fdc-45ac-ab79-c42c3a0b7627" quality="70" width="1600" ref={image}
+    return (
+        <Image src="https://portal.potsdamer-buergerstiftung.org/assets/b6431451-1fdc-45ac-ab79-c42c3a0b7627" quality="70" width="1600" ref={image}
             height="1300" className="w-full h-[25rem] object-cover" alt="Stand auf der Freundschaftsinsel" style={{ objectPosition: `50% ${(top / height * 40) + 20}%` }} />
-    ); */
+    );
 
     return (<></>)
 }

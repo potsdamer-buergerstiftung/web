@@ -1,4 +1,4 @@
-import Image from "@components/Image";
+import Image from "next/image";
 
 interface TeamMemberCardProps {
     title: string;
@@ -16,13 +16,11 @@ export default function TeamMemberCard({ title, name, description, image }: Team
                 />
                 {image && (
                     <Image
-                        src={image}
+                        src={`https://portal.potsdamer-buergerstiftung.org/assets/${image}`}
                         className="h-full w-full object-cover"
-                        fill
-                        sizes="(max-width: 768px) 100vw,
-                            (max-width: 1200px) 50vw,
-                            33vw"
                         quality="30"
+                        height={800}
+                        width={400}
                         alt={`Bild von ${name}`}
                     />
                 )}

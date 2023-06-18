@@ -1,6 +1,6 @@
 import { Directus } from "@directus/sdk";
 import Link from "next/link";
-import Image from "@components/Image";
+import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
 import { Suspense } from "react";
 import ProjectGridLoading from "./ProjectGridLoading";
@@ -47,21 +47,21 @@ export default async function HomePage() {
     {
       subTitle: "Nachhaltigkeit",
       title: "Nachhaltig engagieren und handeln",
-      assetId: "/0e823ed4-1409-4827-b9c3-14a442a1db52",
+      assetId: "0e823ed4-1409-4827-b9c3-14a442a1db52",
       description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
       color: "text-emerald-200",
     },
     {
       subTitle: "Kultur",
       title: "Kultur und Teilhabe fördern",
-      assetId: "/72baf604-4397-4f22-9ac7-195df8b1a591",
+      assetId: "72baf604-4397-4f22-9ac7-195df8b1a591",
       description: `Freier Zugang zu Kultur und Unterhaltung ist wichtiger denn je. Wir ermöglichen Kunstschaffenen sich in Potsdam zu präsentieren und allen Menschen, Teil des Publikums zu sein.`,
       color: "text-red-200",
     },
     {
       subTitle: "Begegnung & Toleranz",
       title: "Menschen zusammenbringen",
-      assetId: "/db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
+      assetId: "db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
       description: `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
       color: "text-blue-200",
     },
@@ -83,10 +83,10 @@ export default async function HomePage() {
           Lass uns gemeinsam unsere schöne Stadt noch l(i)ebenswerter machen.
         </p>
         <Link
-          href="/stiftung/aktuelles"
+          href="/mitstiften/ehrenamt"
           className="text-md font-header mt-8 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
         >
-          Aktiv werden
+          Jetzt engagieren
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ml-1 h-4 w-4"
@@ -150,7 +150,7 @@ export default async function HomePage() {
               <div className="absolute z-[-1] h-full w-full">
                 <div className="absolute bottom-0 top-0 left-0 right-0 bg-slate-900 opacity-60" />
                 <Image
-                  src={priority.assetId}
+                  src={`https://portal.potsdamer-buergerstiftung.org/assets/${priority.assetId}`}
                   className="h-full w-full object-cover"
                   width={500}
                   height={500}

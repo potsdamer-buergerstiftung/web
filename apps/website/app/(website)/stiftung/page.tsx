@@ -1,4 +1,4 @@
-import Image from "@components/Image";
+import Image from "next/image";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 </div>
             </section>
             <section>
-                <Image src="b6431451-1fdc-45ac-ab79-c42c3a0b7627" alt="" width="1200" height="900" className="w-full h-[20rem] object-cover" />
+                <ParallaxImage />
             </section>
             <section className="py-16 md:py-20">
                 <div className="container mx-auto px-4">
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 </div>
                 <div className="grid grid-cols-6">
                     <div className="col-span-6 md:col-span-2 xl:col-span-3">
-                        <Image src="7d0a648b-c484-4e4e-9d69-f0230f7278bd" quality="50" width="1800"
+                        <Image src="https://portal.potsdamer-buergerstiftung.org/assets/7d0a648b-c484-4e4e-9d69-f0230f7278bd" quality="50" width="1800"
                             height="800" className="w-full h-[20rem] object-cover mt-10 md:mt-24" alt="Freiwillige auf der Inselbühne" />
                     </div>
                     <div className="bg-slate-50 px-4 py-16 md:px-16 lg:pr-24 col-span-6 md:col-span-4 xl:col-span-3">

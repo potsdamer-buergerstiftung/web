@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "@components/Image";
+import Image from "next/image";
 import clsx from "clsx";
 
 const ArticleCard: React.FC<{
@@ -44,7 +44,7 @@ const ArticleCard: React.FC<{
           )}
         >
           <Image
-            src={imageId}
+            src={`https://portal.potsdamer-buergerstiftung.org/assets/${imageId}`}
             height={400}
             width={400}
             quality={32}
