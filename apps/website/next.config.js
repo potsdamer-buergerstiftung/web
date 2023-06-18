@@ -13,6 +13,14 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'portal.potsdamer-buergerstiftung.org',
+      },
+    ],
+  },
   transpilePackages: ["ui"],
 };
 
