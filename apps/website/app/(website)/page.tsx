@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
+import { Metadata } from "next";
 
 export const revalidate = 120;
 
@@ -36,6 +37,10 @@ async function getEvents() {
     filter: { start: { _gte: new Date().toISOString() } },
   });
   return res.data;
+}
+
+export const metadata: Metadata = {
+  title: "Potsdamer Bürgerstiftung - Brücken bauen. Menschen verbinden.",
 }
 
 export default async function HomePage() {

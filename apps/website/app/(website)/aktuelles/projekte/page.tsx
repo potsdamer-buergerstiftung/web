@@ -4,7 +4,12 @@ import PageTitle from "@components/PageTitle";
 import { Directus } from "@directus/sdk";
 import ProjectGrid from "app/(website)/ProjectGrid";
 import ProjectGridLoading from "app/(website)/ProjectGridLoading";
+import { Metadata } from "next";
 import { Suspense } from "react";
+
+export const metadata: Metadata = {
+    title: "Projekte - Potsdamer Bürgerstiftung",
+  }
 
 async function getProjects() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");

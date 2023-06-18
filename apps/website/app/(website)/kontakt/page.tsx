@@ -2,6 +2,11 @@ import React from "react";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kontakt - Potdsdamer Bürgerstiftung",
+}
 
 export default function ContactPage() {
   return (

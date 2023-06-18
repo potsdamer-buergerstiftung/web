@@ -2,6 +2,7 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import TeamMemberCard from "@components/TeamMemberCard";
+import { Metadata } from "next";
 
 const boardMembers = [
     {
@@ -101,6 +102,10 @@ const boardOfCurators = [
         image: "53d7b6fe-66c0-4b3e-bd15-46a231b354ed",
     },
 ];
+
+export const metadata: Metadata = {
+    title: "Unsere Gremien - Potsdamer Bürgerstiftung",
+}
 
 export default function TeamPage() {
     return (

@@ -2,6 +2,7 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { Directus } from "@directus/sdk";
+import { Metadata } from "next";
 import { Suspense } from "react";
 import PublicationsGrid from "./PublicationsGrid";
 
@@ -11,6 +12,10 @@ async function getPublicationCategories() {
         fields: ["*", "publications.*.title", "publications.*.description", "publications.file.*"],
     });
     return res.data;
+}
+
+export const metadata: Metadata = {
+    title: "Veröffentlichungen - Potsdamer Bürgerstiftung",
 }
 
 export default function PublicationsPage() {

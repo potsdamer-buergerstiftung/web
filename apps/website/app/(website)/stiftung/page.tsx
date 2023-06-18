@@ -4,6 +4,11 @@ import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import Disclosure from "./Disclosure";
 import ParallaxImage from "@components/ParallaxImage";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Wir über uns - Potsdamer Bürgerstiftung",
+}
 
 export default function AboutPage() {
     const priorities = [

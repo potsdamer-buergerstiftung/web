@@ -5,6 +5,7 @@ import { Directus } from "@directus/sdk";
 import { Suspense } from "react";
 import MediaReportsGrid from "./MediaReportsGrid";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import { Metadata } from "next";
 
 async function getMediaReports() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
@@ -13,6 +14,10 @@ async function getMediaReports() {
         sort: ["-date"],
     });
     return res.data;
+}
+
+export const metadata: Metadata = {
+    title: "Presseberichte - Potsdamer Bürgerstiftung",
 }
 
 export default function MediaReportsPage() {

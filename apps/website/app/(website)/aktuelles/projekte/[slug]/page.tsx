@@ -1,4 +1,5 @@
 import { Directus } from "@directus/sdk";
+import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
 import ProjectContent from "./ProjectContent";
 
@@ -17,6 +18,25 @@ async function getProject(slug: string) {
 
     return res.data![0];
 }
+
+type Props = {
+    params: { slug: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent?: ResolvingMetadata
+  ): Promise<Metadata> {
+    const id = params.slug;
+   
+    const project = await getProject(id)
+   
+    return {
+      title: `${project.title} - Potsdamer Bürgerstiftung`,
+    }
+  }
+
 export default function ProjectPage({
     params,
 }: {
