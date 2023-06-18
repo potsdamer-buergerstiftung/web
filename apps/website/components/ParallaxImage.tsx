@@ -53,10 +53,6 @@ export default function ParallaxImage() {
     const top = useElementBounding(image);
     const { height } = useWindowDimensions();
 
-    useEffect(() => {
-        console.log(top);
-    }, [top]);
-
     return (
         <Image src="https://portal.potsdamer-buergerstiftung.org/assets/b6431451-1fdc-45ac-ab79-c42c3a0b7627" quality="70" width="1600" ref={image}
             height="1300" className="w-full h-[25rem] object-cover" alt="Stand auf der Freundschaftsinsel" style={{ objectPosition: `50% ${(top / height * 40) + 20}%` }} />
