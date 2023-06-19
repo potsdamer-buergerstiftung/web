@@ -14,7 +14,7 @@ export default async function Article({ promise }: ArticleProps) {
         <div>
             <PageTitle title={post.title} breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Stiftung" />, <PageBreadcrumbItem label="Aktuelles" />, <PageBreadcrumbItem label={post.title} />]} />} />
             <div className="container px-4 mx-auto max-w-3xl">
-                <Block loading data={post.content} />
+                <Block data={post.content} />
             </div>
         </div>
     )

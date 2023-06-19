@@ -3,9 +3,10 @@ import ArticleCard from "@components/ArticleCard";
 
 interface PostsGridProps {
   promise: Promise<any>;
+  compact?: boolean;
 }
 
-export default async function PostGrid({ promise }: PostsGridProps) {
+export default async function PostGrid({ promise, compact = true }: PostsGridProps) {
   const posts = await promise;
   return (
     <React.Fragment>
@@ -19,7 +20,7 @@ export default async function PostGrid({ promise }: PostsGridProps) {
             date={new Date(post.date)}
             imageId={post.image}
             projectTitle={post.project?.title}
-            compact
+            compact={compact}
             link={`/stiftung/aktuelles/${post.slug}`}
           />
         </div>
