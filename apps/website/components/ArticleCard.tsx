@@ -90,13 +90,13 @@ const ArticleCard: React.FC<{
           compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200"
         )}
       >
-        <ul className="flex">
-          <li className={clsx({ "group-hover:text-white": compact })}>
+        <ul className="flex flex-wrap">
+          <li className={clsx({ "group-hover:text-white": compact, "after:content-['•'] after:px-1.5 after:text-emerald-500": projectTitle })}>
             {formattedDate}
           </li>
           <li
             className={clsx(
-              "text-md text-slate-500 before:px-1.5 before:text-emerald-500 before:content-['•']",
+              "text-md text-slate-500",
               { "group-hover:text-white": compact }
             )}
           >

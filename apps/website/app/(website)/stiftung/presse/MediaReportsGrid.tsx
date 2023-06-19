@@ -20,7 +20,7 @@ export default async function MediaReportsGrid({ promise }: PostsGridProps) {
                             title={post.title}
                             date={new Date(post.date)}
                             imageId={post.image}
-                            projectTitle={post.project?.title}
+                            projectTitle={post.publisher}
                             link={post.url}
                         />
                     </div>
