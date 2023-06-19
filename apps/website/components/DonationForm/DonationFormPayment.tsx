@@ -39,14 +39,14 @@ export default function DonationFormPayment() {
     const onContinueClicked = async () => {
         setDonationSubmitted(true);
         try {
-            console.log(projects)
+            const description = selectedProject !== 0 ? projects.find((project) => project.id === selectedProject).title : "Allgemeine Arbeit";
             const payment = await fetch("/api/payment/create", {
                 method: "POST",
                 body: JSON.stringify({
                     amount: selectedAmount,
                     method: selectedPaymentProviderId,
                     redirectUrl: "https://www.potsdamer-buergerstiftung.org/danke",
-                    description: projects.find((project) => project.id === selectedProject).title,
+                    description,
                     duration,
                 }),
             });
