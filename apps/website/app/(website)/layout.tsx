@@ -21,18 +21,20 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                     <HeaderNav items={[
                         <HeaderNavItem index={1} label="Die Stiftung">
                             <HeaderSubNavItem label="Wir über uns" href="/stiftung" />
-                            <HeaderSubNavItem label="Unsere Gremien" href="/stiftung/gremien" />
-                            <HeaderSubNavItem label="Presseberichte" href="/stiftung/presse" />
+                            <HeaderSubNavItem label="Gremien" href="/stiftung/gremien" />
+                            {/* <HeaderSubNavItem label="Transparenz" href="/stiftung/transparenz" /> */}
                             <HeaderSubNavItem label="Veröffentlichungen" href="/stiftung/veroeffentlichungen" />
+                            <HeaderSubNavItem label="Presseberichte" href="/stiftung/presse" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={2} label="Aktuelles & Projekte">
                             <HeaderSubNavItem label="Projekte" href="/aktuelles/projekte" />
                             <HeaderSubNavItem label="News & Blog" href="/aktuelles/blog" />
                             <HeaderSubNavItem label="Veranstaltungen" href="/aktuelles/veranstaltungen" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Mitstiften & engagieren">
+                        <HeaderNavItem index={3} label="Mitstiften & mitmachen">
                             <HeaderSubNavItem label="Ehrenamt" href="/mitstiften/ehrenamt" />
                             <HeaderSubNavItem label="Spenden" href="/mitstiften/spenden" />
+                            <HeaderSubNavItem label="Stiften" href="/mitstiften/stiften" />
                             <HeaderSubNavItem label="Förderer & Partner" href="/mitstiften/foerderer-und-partner" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
