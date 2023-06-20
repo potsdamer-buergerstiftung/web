@@ -18,8 +18,8 @@ export default function ContributePage() {
                     <div className="col-span-8 md:col-span-4 lg:col-span-3">
                         <p>
                             Komme zu uns <b>an Bord der Bürgerstiftung</b>. Setze Dich
-                            <b>mit Deiner Spende</b> gemeinsam mit uns für
-                            <b>soziale Themen und Initiativen</b> in unserer Stadt ein!
+                            <b> mit Deiner Spende</b> gemeinsam mit uns für
+                            <b> soziale Themen und Initiativen</b> in unserer Stadt ein!
                         </p>
                         <p className="mt-3">
                             Spende mit einem <b>von Dir bestimmten Spendenzweck</b> oder
@@ -46,10 +46,10 @@ export default function ContributePage() {
                             Kreditkarte / PayPal / Klarna
                         </h4>
                         <div className="mt-4 flex flex-col gap-y-4 gap-x-2 md:flex-row">
-                            <a href="https://donorbox.org/potsdamer-buergerstiftung"
+                            <Link href="/mitstiften/spenden/privat"
                                 className="text-md font-header inline-flex items-center justify-center rounded-md bg-emerald-500 py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75">
                                 Jetzt spenden
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@ export default function ContributePage() {
                         <p>
                             Wir legen bei unseren Projekten großen Wert darauf, dass sie
                             nachhaltig wirken. Das ist jedoch nur möglich, wenn wir
-                            <b>langfristig planen und fördern</b> können. Mit Deiner
-                            <b>regelmäßigen und verlässlichen Unterstützung</b> können wir diese
+                            <b> langfristig planen und fördern</b> können. Mit Deiner
+                            <b> regelmäßigen und verlässlichen Unterstützung</b> können wir diese
                             wichtigen Voraussetzungen schaffen.
                         </p>
                         <Link href="/mitstiften/freundeskreis"
@@ -94,10 +94,10 @@ export default function ContributePage() {
                         </h4>
                         <div className="mt-4 flex flex-col gap-y-4 gap-x-2 md:flex-row">
                             <div className="flex flex-col gap-y-4 gap-x-2 md:flex-row">
-                                <a href="https://donorbox.org/freundeskreis-burgerstiftung"
+                                <Link href="/mitstiften/spenden/privat"
                                     className="text-md font-header inline-flex items-center justify-center rounded-md bg-emerald-500 py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75">
                                     Jetzt spenden
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
