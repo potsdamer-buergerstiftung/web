@@ -45,7 +45,7 @@ export default function DonationFormPayment() {
                 body: JSON.stringify({
                     amount: selectedAmount,
                     method: selectedPaymentProviderId,
-                    redirectUrl: "https://www.potsdamer-buergerstiftung.org/danke",
+                    redirectUrl: "https://www.potsdamer-buergerstiftung.org/mitstiften/spenden/danke",
                     description,
                     duration,
                 }),
