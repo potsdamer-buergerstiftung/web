@@ -2,7 +2,7 @@
 
 import { Directus } from "@directus/sdk";
 import { useEffect, useState } from "react";
-import Image from "@components/Image";
+import Image from "next/image";
 import { useAtom } from "jotai";
 import { donationProgressAtom, projectsAtom, selectedProjectId } from "./state";
 import clsx from "clsx";
@@ -55,7 +55,7 @@ export default function DonationFormProjectSelection() {
                     {projectsError && <p>Error: {projectsError}</p>}
                     {projects && projects.map((project: any) => (
                         <button key={project.title} className="group relative block h-28 w-full cursor-pointer overflow-hidden rounded-lg" onClick={() => setProjectId(project.id)}>
-                            <Image src={project.image} height={100} width={100} quality={30}
+                            <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`} height={100} width={100} quality={30}
                                 className="h-full w-full object-cover" alt={`Bild von ${project.title}`} />
                             <div className={clsx("pointer-events-none absolute top-0 bottom-0 left-0 right-0 transition", project.id === projectId ? 'opacity-100 bg-emerald-200' : 'opacity-40 bg-black')} />
                             <div className="flex-column absolute top-0 bottom-0 left-0 right-0 flex items-end p-4 justify-start">

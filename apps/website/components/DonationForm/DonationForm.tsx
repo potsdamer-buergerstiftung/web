@@ -1,9 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Transition } from "@headlessui/react";
 import { useAtom } from "jotai";
-import { useEffect } from "react";
 import DonationFormAmountSelection from "./DonationFormAmountSelection";
 import DonationFormPayment from "./DonationFormPayment";
 import DonationFormProjectSelection from "./DonationFormProjectSelection";
