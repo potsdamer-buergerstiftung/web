@@ -17,6 +17,14 @@ coverage
 out/
 build
 
+# nuxt.js
+.nuxt/
+.output/
+dist/
+
+# nitro.js
+.nitro/
+
 # misc
 .DS_Store
 *.pem
