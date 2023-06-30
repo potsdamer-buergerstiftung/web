@@ -4,6 +4,7 @@ import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import ProjectContentWrapper from "./ProjectContentWrapper";
 import Image from "next/image";
+import ProjectGrid from "app/(website)/ProjectGrid";
 
 interface ProjectContentProps {
     promise: Promise<any>;

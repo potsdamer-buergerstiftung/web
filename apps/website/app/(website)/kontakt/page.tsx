@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="container mx-auto grid grid-cols-4 gap-8 px-4 pb-20 pt-8">
           <div className="col-span-4 lg:col-span-1">
             <h1 className="font-header text-3xl font-bold">Unsere Standorte</h1>
-            <p className="mt-3">Komm einfach vorbei</p>
+            <p className="mt-3">Komm gerne vorbei, aber ruf vorher bitte an</p>
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-1">
             <h2 className="font-header text-xl font-bold">MAZ-Pyramide</h2>
@@ -49,16 +49,16 @@ export default function ContactPage() {
             <p className="mt-4">Burgstraße</p>
             <p>14467 Potsdam</p>
             <p className="mt-1 font-bold">+49 331 23180309</p>
-            <p className="mt-4">Besuchszeiten: Freitag - Samstag</p>
-            <p>18 Uhr - 20 Uhr</p>
-          </div>
+            {/* <p className="mt-4">Besuchszeiten: Freitag - Samstag</p>
+            <p>18 Uhr - 20 Uhr</p> */}
+          </div>{/* 
           <div className="col-span-4 md:col-span-2 lg:col-span-1">
             <h2 className="font-header text-xl font-bold">Staudenhof</h2>
             <p className="mt-4">Am Alten Markt 10</p>
             <p>14467 Potsdam</p>
             <p className="mt-4">Öffnungszeiten: Freitag - Samstag</p>
             <p>18 Uhr - 23 Uhr</p>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="bg-slate-100">

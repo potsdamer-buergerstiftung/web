@@ -7,10 +7,10 @@ export default function ContributePage() {
     return (
         <>
             <PageTitle title="Spenden" description="Erfahre, wie Du uns mit Geld oder mit Deiner Zeit unterstützen kannst." breadcrumb={<PageBreadcrumb items={
-                [<PageBreadcrumbItem label="Mitstiften" />, <PageBreadcrumbItem label="Spenden" />]
+                [<PageBreadcrumbItem label="Mitstiften & mitmachen" href="/mitstiften" />, <PageBreadcrumbItem label="Spenden" />]
             } />} />
             <section className="bg-white">
-                <div className="container mx-auto grid grid-cols-8 gap-x-8 gap-y-12 px-4 pt-8 pb-16">
+                <div className="container mx-auto grid grid-cols-8 gap-x-8 gap-y-12 px-4 pb-16">
                     <div className="col-span-8 lg:col-span-2">
                         <h1 className="font-header text-3xl font-bold">Privatspende</h1>
                         <p className="mt-3">Mit Deiner Spende die Zukunft Deiner Stadt formen</p>

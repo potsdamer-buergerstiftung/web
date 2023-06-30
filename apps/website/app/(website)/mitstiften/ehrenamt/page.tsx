@@ -11,7 +11,7 @@ export default function HonoraryPage() {
                 breadcrumb={
                     <PageBreadcrumb
                         items={[
-                            <PageBreadcrumbItem label="Mitstiften & mitmachen" />,
+                            <PageBreadcrumbItem label="Mitstiften & mitmachen" href="/mitstiften" />,
                             <PageBreadcrumbItem label="Ehrenamt" />,
                         ]}
                     />

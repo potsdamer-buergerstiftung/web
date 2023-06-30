@@ -6,6 +6,7 @@ import ProjectGrid from "app/(website)/ProjectGrid";
 import ProjectGridLoading from "app/(website)/ProjectGridLoading";
 import { Metadata } from "next";
 import { Suspense } from "react";
+import ProjectFilterTabs from "./ProjectFilterTabs";
 
 export const metadata: Metadata = {
     title: "Projekte - Potsdamer Bürgerstiftung",
@@ -21,7 +22,9 @@ export default function ProjectsPage() {
     const projects = getProjects();
     return (
         <>
-            <PageTitle title="Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />, <PageBreadcrumbItem label="Projekte" />]} />} />
+            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />]} />} actions={
+                <ProjectFilterTabs activeSlug={""} />
+            }/>
             <div className="container mx-auto px-4 pb-20">
                 <Suspense fallback={<ProjectGridLoading />}>
                     {/* @ts-ignore-error */}
