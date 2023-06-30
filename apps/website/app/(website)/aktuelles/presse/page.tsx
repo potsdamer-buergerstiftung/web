@@ -25,7 +25,7 @@ export default function MediaReportsPage() {
     return (
         <>
             <PageTitle title="Presseberichte" description="Was andere über uns berichten" breadcrumb={<PageBreadcrumb items={
-                [<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Presseberichte" />]
+                [<PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />, <PageBreadcrumbItem label="Presseberichte" />]
             } />} />
             <div className="container px-4 mx-auto mb-10">
                 {/* @ts-ignore-error */}

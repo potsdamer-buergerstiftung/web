@@ -13,7 +13,7 @@ const FooterBanner: React.FC = () => {
           </div>
           <div>
             <Link
-              href="/mitstiften/ehrenamt"
+              href="/mitmachen"
               className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
             >
               Jetzt engagieren

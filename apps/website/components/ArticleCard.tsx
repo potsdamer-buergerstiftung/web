@@ -57,7 +57,7 @@ const ArticleCard: React.FC<{
             height={400}
             width={400}
             quality={32}
-            alt=""
+            alt="Bild vom Event"
             className={clsx(
               "h-full",
               "w-full",

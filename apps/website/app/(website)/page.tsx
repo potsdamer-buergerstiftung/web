@@ -13,7 +13,7 @@ export const revalidate = 120;
 async function getProjects() {
   const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
   const res = await directus.items<any, any>("projects").readByQuery({
-    limit: 7,
+    limit: 5,
   });
   return res.data;
 }
@@ -75,6 +75,9 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
+        <p className="bg-amber-200 py-2 px-4 rounded-md text-sm mb-5 w-auto inline-block">
+          Diese Seite befindet sich aktuell noch im Aufbau. Es fehlen noch einige Inhalte und Funktionen. Wir bitten um Verständnis.
+        </p>
         <h1 className="font-header text-5xl font-bold text-slate-800 md:text-6xl lg:text-7xl">
           Brücken bauen,
           <br />
@@ -88,7 +91,7 @@ export default async function HomePage() {
           Lass uns gemeinsam unsere schöne Stadt noch l(i)ebenswerter machen.
         </p>
         <Link
-          href="/mitstiften/ehrenamt"
+          href="/mitmachen"
           className="text-md font-header mt-8 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
         >
           Jetzt engagieren
