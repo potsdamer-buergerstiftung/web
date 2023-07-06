@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 import DonationFormAmountSelection from "./DonationFormAmountSelection";
 import DonationFormPayment from "./DonationFormPayment";
 import DonationFormProjectSelection from "./DonationFormProjectSelection";
@@ -16,7 +17,13 @@ function ProgressButton({ isActive, onClick, children, disabled = false }: { isA
     )
 }
 
-export default function DonationForm() {
+interface DonationFormProps {
+    disableProjectSelection?: boolean;
+}
+
+export default function DonationForm(props: DonationFormProps) {
+    const { disableProjectSelection = false } = props;
+
     const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
 
     const onProjectSelectionClicked = () => {
@@ -30,6 +37,13 @@ export default function DonationForm() {
     const onPaymentClicked = () => {
         setDonationProgress("PAYMENT");
     }
+
+    useEffect(() => {
+        if (!disableProjectSelection) return;
+        if (donationProgress === "PROJECT_SELECTION") {
+            setDonationProgress("AMOUNT_SELECTION");
+        }
+    }, [donationProgress]);
 
     /* useEffect(() => {
         const script = document.createElement("script");
@@ -53,7 +67,7 @@ export default function DonationForm() {
             </p>
             <div className="flex flex-col md:flex-row mt-16 gap-10">
                 <ul className="hidden md:flex flex-col items-end shrink-0">
-                    <ProgressButton isActive={donationProgress === "PROJECT_SELECTION"} onClick={onProjectSelectionClicked}>Verwendungszweck wählen</ProgressButton>
+                    {!disableProjectSelection && <ProgressButton isActive={donationProgress === "PROJECT_SELECTION"} onClick={onProjectSelectionClicked}>Verwendungszweck wählen</ProgressButton>}
 
                     <ProgressButton isActive={donationProgress === "AMOUNT_SELECTION"} onClick={onAmountSelectionClicked}>Betrag wählen</ProgressButton>
 
