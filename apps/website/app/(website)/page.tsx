@@ -52,7 +52,7 @@ export default async function HomePage() {
     {
       subTitle: "Nachhaltigkeit",
       title: "Nachhaltig engagieren und handeln",
-      assetId: "0e823ed4-1409-4827-b9c3-14a442a1db52",
+      assetId: "2f152755-94d6-472e-9102-be17106c63c0",
       description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
       color: "text-emerald-200",
     },
@@ -69,6 +69,13 @@ export default async function HomePage() {
       assetId: "db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
       description: `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
       color: "text-blue-200",
+    },
+    {
+      subTitle: "Bildung & Jugend",
+      title: "Zukünftige Generationen stärken",
+      assetId: "16033de6-d1a2-4280-bef7-3851aad0ed6d",
+      description: `Alle Kinder in Potsdam sollten die gleichen Chancen haben. Kinder und Jugendliche sind die Potsdamer Bürgerschaft von morgen: Damit sie stark, glücklich und erfolgreich in die Zukunft sehen und gehen können, möchten wir sie beteiligen und fördern.`,
+      color: "text-yellow-200",
     },
   ];
 
@@ -135,8 +142,8 @@ export default async function HomePage() {
           </div>
           <div>
             <p>
-              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine <b>positive{" "} 
-              Entwicklung Potsdams einzubringen</b>. Wir vernetzen
+              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine <b>positive{" "}
+                Entwicklung Potsdams einzubringen</b>. Wir vernetzen
               Gleichgesinnte, versammeln engagierte Menschen, bieten
               Unterstützung als Plattform für Ehrenamt und möchten es den
               Menschen in Potsdam leichter machen, das{" "}
@@ -149,45 +156,47 @@ export default async function HomePage() {
         </div>
       </section>
       <section>
-        <div className="grid grid-cols-6 overflow-hidden">
-          {priorities.map((priority, index) => (
-            <div
-              className="relative col-span-6 md:col-span-3 lg:col-span-2"
-              key={index}
-            >
-              <div className="absolute z-[-1] h-full w-full">
-                <div className="absolute bottom-0 top-0 left-0 right-0 bg-slate-900 opacity-60" />
-                <Image
-                  src={`https://portal.potsdamer-buergerstiftung.org/assets/${priority.assetId}`}
-                  className="h-full w-full object-cover"
-                  width={500}
-                  height={500}
-                  alt="Bild"
-                />
-              </div>
-              <div className="container mx-auto flex h-full flex-col justify-between px-4 py-16 md:p-8 lg:max-w-none xl:p-10">
-                <div className="mb-20 md:mb-36">
-                  <h1
-                    className={`mb-1 text-sm font-semibold uppercase ${priority.color}`}
-                  >
-                    {priority.subTitle}
-                  </h1>
-                  <h2 className="font-header text-3xl font-bold text-white">
-                    {priority.title}
-                  </h2>
+        <div className="grid grid-cols-12 overflow-hidden">
+          <div className="col-span-12 grid grid-cols-12">
+            {priorities.map((priority, index) => (
+              <div
+                className="relative col-span-12 md:col-span-6 xl:col-span-3 md:width-52"
+                key={index}
+              >
+                <div className="absolute z-[-1] h-full w-full">
+                  <div className="absolute bottom-0 top-0 left-0 right-0 bg-slate-800 opacity-60" />
+                  <Image
+                    src={`https://portal.potsdamer-buergerstiftung.org/assets/${priority.assetId}`}
+                    className="h-full w-full object-cover"
+                    width={500}
+                    height={500}
+                    alt="Bild"
+                  />
                 </div>
-                <div>
-                  <p className="text-white">{priority.description}</p>
+                <div className="container mx-auto flex h-full flex-col justify-between px-4 py-16 md:p-8 lg:max-w-none xl:p-10">
+                  <div className="mb-20 md:mb-36">
+                    <h1
+                      className={`mb-1 text-sm font-semibold uppercase ${priority.color}`}
+                    >
+                      {priority.subTitle}
+                    </h1>
+                    <h2 className={`font-header text-3xl font-bold text-slate-100`}>
+                      {priority.title}
+                    </h2>
+                  </div>
+                  <div>
+                    <p className="text-md leading-6 text-slate-100">{priority.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-          <div className="relative col-span-6 md:col-span-3 lg:col-span-6 bg-slate-100">
+            ))}
+          </div>
+          <div className="relative col-span-12 md:col-span-12 lg:col-span-12 bg-slate-100">
             <div className="absolute z-[-1] h-full w-full">
               <div className="absolute bottom-0 top-0 left-0 right-0" />
             </div>
             <div
-              className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-8 lg:px-4 lg:py-16">
+              className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-16 lg:px-4">
               <div className="col-span-6">
                 <h4 className="text-sm font-semibold uppercase text-gray-600">
                   Nimm teil
