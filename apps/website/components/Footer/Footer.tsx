@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
                 Allgemeine Fragen
               </h4>
               <p className="mt-6">E-Mail</p>
-              <p className="font-bold">info@potsdamer-buergerstiftung.org</p>
+              <a className="font-bold" href="mailto:info@potsdamer-buergerstiftung.org">info@potsdamer-buergerstiftung.org</a>
               <h4 className="font-header mt-6 text-xl font-bold md:text-lg">
                 Ehrenamt
               </h4>
               <p className="mt-6">E-Mail</p>
-              <p className="font-bold">
+              <a className="font-bold" href="mailto:ehrenamt@potsdamer-buergerstiftung.org">
                 ehrenamt@potsdamer-buergerstiftung.org
-              </p>
+              </a>
             </div>
             <div className="order-4 md:order-2 lg:order-4">
               <h4 className="font-header text-xl font-bold md:text-lg">
