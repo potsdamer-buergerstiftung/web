@@ -30,8 +30,8 @@ export default function ContributePage() {
                             Mehr erfahren
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </Link>
                     </div>
@@ -75,8 +75,8 @@ export default function ContributePage() {
                             Mehr erfahren
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </Link>
                     </div>
@@ -125,7 +125,7 @@ export default function ContributePage() {
                             Mehr erfahren
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </Link>
@@ -142,7 +142,7 @@ export default function ContributePage() {
                             className="text-md font-header mt-6 inline-flex items-center rounded-md bg-slate-900 py-1.5 px-4 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75">
                             Sprechen Sie uns an
                             <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2">
+                                stroke="currentColor" strokeWidth="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
                             </svg>
