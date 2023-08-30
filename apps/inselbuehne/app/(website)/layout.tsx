@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <HeaderBanner />
             <Header />
             <main>
                 {children}

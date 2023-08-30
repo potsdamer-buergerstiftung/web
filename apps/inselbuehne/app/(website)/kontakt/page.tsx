@@ -1,3 +1,7 @@
+export const metadata: Metadata = {
+    title: "Kontakt - Inselbühne Potsdam",
+}
+
 export default function ContactPage() {
     return (
         <div>

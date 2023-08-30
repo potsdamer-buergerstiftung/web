@@ -1,12 +1,16 @@
 import EventCard from "@components/EventCard";
 import PageTitle from "@components/PageTitle";
 
+export const metadata: Metadata = {
+    title: "Programm - Inselbühne Potsdam",
+}
+
 export default function ProgramPage() {
     const events = [
         {
-            title: "Open-Air-Kino",
+            title: "Open-Air-Kino (In Planung)",
             date: new Date("2023-09-21T19:30:00"),
-            summary: "Ein Film, der noch bekannt gegeben wird, wird auf der Inselbühne gezeigt.",
+            summary: "Für diesen Abend versuchen wir, die Inselbühne wie früher als Kino zu nutzen. Wir planen, an diesem Abend einen Film zu zeigen, den wir noch bekannt geben werden.",
             image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
         },
         {
@@ -80,7 +84,7 @@ export default function ProgramPage() {
                     className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center"
                 >
                     {events.map((event) => (
-                        <EventCard title={event.title} start={event.date} summary={event.summary} image={event.image}/>
+                        <EventCard title={event.title} start={event.date} summary={event.summary} image={event.image} />
                     ))}
                 </div>
             </section>
