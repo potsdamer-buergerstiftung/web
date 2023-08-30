@@ -17,12 +17,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="col-span-6 md:col-span-2 lg:col-span-1">
             <h4 className="text-sm font-bold uppercase tracking-widest text-white">
-              Folg' uns
+              Folg&apos; uns
             </h4>
             <ul className="mt-4 flex flex-col space-y-4">
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://instagram.com/inselbuehne"
                   className="text-gray-300 transition hover:text-green-300"
                 >Instagram</a>
@@ -30,6 +31,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://facebook.com/inselbuehne"
                   className="text-gray-300 transition hover:text-green-300"
                 >Facebook</a>
@@ -37,6 +39,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://github.com/potsdamer-buergerstiftung"
                   className="text-gray-300 transition hover:text-green-300"
                 >GitHub</a>
@@ -52,6 +55,7 @@ const Footer: React.FC = () => {
                 <a
                   href="https://www.potsdamer-buergerstiftung.org"
                   target="_blank"
+                  rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
                 >Bürgerstiftung</a>
               </li>
@@ -73,6 +77,7 @@ const Footer: React.FC = () => {
                 <a
                   href="https://www.potsdam.de"
                   target="_blank"
+                  rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
                 >Stadt Potsdam</a>
               </li>
@@ -80,6 +85,7 @@ const Footer: React.FC = () => {
                 <a
                   href="https://www.brandenburg.de"
                   target="_blank"
+                  rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
                 >Land Brandenburg</a>
               </li>

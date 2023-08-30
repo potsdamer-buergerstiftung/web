@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "@components/Image";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "50 Jahre Inselbühne: Das Festival - Inselbühne Potsdam",

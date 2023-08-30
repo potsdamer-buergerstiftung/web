@@ -23,6 +23,7 @@ const FooterBanner: React.FC = () => {
         <div className="lg:shrink-0">
           <a
             href="https://www.potsdamer-buergerstiftung.org"
+            rel="noreferrer"
             target="_blank"
             className="text-md mt-4 block w-full rounded-tl-lg rounded-br-lg bg-green-300 px-4 py-2.5 text-center font-medium text-teal-900 shadow-md transition hover:bg-green-200 lg:inline-flex lg:w-auto"
           >

@@ -5,8 +5,9 @@ export default function HeaderBanner() {
                 Ein Projekt der <a
                     className="font-bold"
                     href="https://www.potsdamer-buergerstiftung.org"
+                    rel="noreferrer"
                     target="_blank"
-                >Potsdamer Bürgerstiftung</a> und <a className="font-bold" href="https://eventbikezero.de" target="_blank"
+                >Potsdamer Bürgerstiftung</a> und <a className="font-bold" href="https://eventbikezero.de" target="_blank" rel="noreferrer"
                 >Eventbike Zero</a>.
             </p>
         </div>

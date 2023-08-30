@@ -1,5 +1,6 @@
 import EventCard from "@components/EventCard";
 import PageTitle from "@components/PageTitle";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Programm - Inselbühne Potsdam",
