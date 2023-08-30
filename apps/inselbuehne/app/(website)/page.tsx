@@ -115,7 +115,7 @@ export default function HomePage() {
           <h4 className="text-sm font-bold uppercase tracking-widest text-green-500">
             Der Festival-Pass
           </h4>
-          <h1 className="mt-3 font-serif text-4xl">Hol' dir dein Ticket</h1>
+          <h1 className="mt-3 font-serif text-4xl">Hol&apos; dir dein Ticket</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">
             Für unser Festival gibt es einen Festival-Pass, mit dem du uns dabei
             unterstützt, den Betrieb der Inselbühne für die Zukunft zu sichern.
