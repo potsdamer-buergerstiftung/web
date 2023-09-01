@@ -68,6 +68,7 @@ export default function ProgramPage() {
             title: "Engerling",
             date: new Date("2023-09-23T19:30:00"),
             image: "9446f463-7bb9-47cf-86e8-827994c29788",
+            summary: "45 + 3 Jahre Engerling - Die Jubiläumstour 2023",
         },
         {
             title: "Kinderyoga mit Martina Laube",
