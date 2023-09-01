@@ -4,6 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Programm - Inselbühne Potsdam",
+    description: "Das Programm für das 50 Jahre Inselbühne Festival"
 }
 
 export default function ProgramPage() {

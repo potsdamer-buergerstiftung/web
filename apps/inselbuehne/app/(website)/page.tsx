@@ -4,6 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "50 Jahre Inselbühne: Das Festival - Inselbühne Potsdam",
+  description: "Wir möchten mit euch gemeinsam 50 Jahre Inselbühne feiern. Über 4 Tage hinweg gibt es ein buntes Programm mit Kino, Musik, Theater, Tanz und vielem mehr."
 }
 
 export default function HomePage() {

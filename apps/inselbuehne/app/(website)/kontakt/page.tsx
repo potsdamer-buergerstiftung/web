@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Kontakt - Inselbühne Potsdam",
+    description: "Kontaktiere das Team der Inselbühne Potsdam"
 }
 
 export default function ContactPage() {
