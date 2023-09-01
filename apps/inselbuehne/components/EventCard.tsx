@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "@components/Image";
+import NextImage from "next/image";
 
 interface EventCardProps {
     eventId?: string;
@@ -10,6 +11,7 @@ interface EventCardProps {
     registration_needed?: boolean;
     external_ticket_url?: string;
     canceled?: boolean;
+    localImage?: boolean;
 }
 
 export default function EventCard({
@@ -17,6 +19,7 @@ export default function EventCard({
     summary,
     start,
     image,
+    localImage
 }: EventCardProps) {
     return (
         <Link
@@ -24,13 +27,15 @@ export default function EventCard({
             className="bg-white grid min-h-max w-full cursor-pointer grid-cols-5 overflow-hidden rounded-tl-2xl rounded-br-2xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl lg:h-56"
         >
             <div className="relative col-span-5 h-64 w-full lg:col-span-2 lg:h-full">
-                <Image
+                {localImage ? (
+                    <NextImage src={`/img/${image}`} alt={`Bild von ${title}`} width={400} height={400} className="absolute h-full w-full object-cover" />
+                ) : (<Image
                     src={image}
                     alt="test"
                     width={400}
                     height={400}
                     className="absolute h-full w-full object-cover"
-                />
+                />)}
                 <div
                     className="absolute left-6 top-1/2 -translate-y-1/2 rounded-tl-lg rounded-br-lg bg-white p-4 shadow-md md:left-8 lg:left-auto lg:right-6"
 
@@ -59,9 +64,9 @@ export default function EventCard({
                         {title}
                     </h1>
                     {summary && (
-                    <p className="text-md line-clamp-6 lg:line-clamp-2 mt-4 leading-relaxed">
-                        {summary}
-                    </p>
+                        <p className="text-md line-clamp-6 lg:line-clamp-2 mt-4 leading-relaxed">
+                            {summary}
+                        </p>
                     )}
                 </div>
             </div>

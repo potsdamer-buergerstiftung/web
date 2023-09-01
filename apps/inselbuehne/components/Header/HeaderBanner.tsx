@@ -7,8 +7,7 @@ export default function HeaderBanner() {
                     href="https://www.potsdamer-buergerstiftung.org"
                     rel="noreferrer"
                     target="_blank"
-                >Potsdamer Bürgerstiftung</a> und <a className="font-bold" href="https://eventbikezero.de" target="_blank" rel="noreferrer"
-                >Eventbike Zero</a>.
+                >Potsdamer Bürgerstiftung</a>
             </p>
         </div>
     )
