@@ -19,12 +19,12 @@ export default function HeaderMobileNav() {
                 <HeaderNavItem label="Festival-Pass" href="/https://www.eventbrite.de/e/50-jahre-inselbuhne-tickets-705908199427" />
                 <HeaderNavItem
                     label="Blog"
-                    href="/blog"
+                    href="https://www.potsdamer-buergerstiftung.org/aktuelles/blog"
                 />
                 <HeaderNavItem label="Über uns" href="https://www.potsdamer-buergerstiftung.org" />
                 <HeaderNavItem
                     label="Spenden"
-                    href="https://www.potsdamer-buergerstiftung.org"
+                    href="https://www.potsdamer-buergerstiftung.org/mitstiften/privatpersonen/spenden"
                 />
                 <HeaderNavItem label="Kontakt" href="/kontakt" />
             </div>
