@@ -83,7 +83,7 @@ export default function ProgramPage() {
         {
             title: "Irie Member",
             date: new Date("2023-09-24T17:00:00"),
-            image: "irie.jpg",
+            image: "irie.JPG",
             localImage: true,
             summary: "'Irie' ist ein Ausdruck aus dem Jamaikanischen Patois und bedeutet „angenehm“ oder „glückselig“. Für uns symbolisiert es die Harmonie und Freude, die Reggae und Dub in die Herzen der Menschen bringt. Als „Members“ dieser Bewegung teilen wir diesen Spirit mit jedem von Euch."
         },
