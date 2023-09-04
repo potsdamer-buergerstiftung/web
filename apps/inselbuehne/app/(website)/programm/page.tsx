@@ -17,28 +17,28 @@ export default function ProgramPage() {
             localImage: true,
         },
         {
-            title: "Inselkino: 'Die Taube auf dem Dach' (1973 Defa) & 'Wer die Erde liebt' (1973 DDR)",
+            title: "Inselkino: “Die Taube auf dem Dach” (DEFA-Film, 1973)",
             date: new Date("2023-09-21T19:30:00"),
-            summary: "Dokumentarfilm zu den Weltjugendspielen 1973 in Berlin und Potsdam",
             image: "78755_68de7288deeb1cc50fd9085690c21ea1_1280re0.webp",
             localImage: true,
         },
         {
-            title: "Zum Mitsingen -  „Frauenchor der Volkssolidarität und Cantamos“",
+            title: "Ausklang mit Ausschnitten aus “Wer die Erde liebt”",
+            date: new Date("2023-09-21T21:00:00"),
+            image: "wdel.jpg",
+            summary: "(Doku DDR, 1973 zu den Weltfestspielen der Jugend und Studenten)",
+            localImage: true,
+        },
+        {
+            title: "Inselsingen: Sing mit dem Frauenchor der Volkssolidarität und Cantamus",
             date: new Date("2023-09-22T15:00:00"),
             image: "frauenchor-vs.jpg",
             localImage: true,
         },
         {
-            title: "Fette Katze",
-            date: new Date("2023-09-22T17:30:00"),
-            image: "image.jpg",
-            localImage: true,
-            summary: "Das Ensemble existiert seit 2005 mit teils wechselnder Besetzung. Aktuell spielen 15 Musikbegeisterte aus Potsdam und Umgebung unter der Leitung von Jazz-Bassist Holger Scheidt."
-        },
-        {
-            title: "Fanfaroni ",
+            title: "Fanfaroni",
             date: new Date("2023-09-22T19:00:00"),
+            summary: "Von Balkan bis Latin",
             image: "Fanfaroni_3.jpg",
             localImage: true,
         },
@@ -46,16 +46,18 @@ export default function ProgramPage() {
             title: "Silent-Disko mit Sofa Queen und Karatie Cat",
             date: new Date("2023-09-22T20:30:00"),
             image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
+            summary: "Funk & Elektro"
         },
         {
             title: "Kinderyoga mit Martina Laube",
             date: new Date("2023-09-23T09:30:00"),
-            summary: "Empfohlen für Kinder zwischen 6 und 10",
+            summary: "Empfohlen für Kinder zwischen 3 und 5 Jahren",
             image: "59af0f0d-cb9e-4b08-aada-d3af40ee5781",
         },
         {
-            title: "„Faultier, ein langsames Zirkusstück“ für Kinder mit dem Luftartistik-Duo Zinnia und Flo",
+            title: "Faultier, ein langsames Zirkusstück“",
             date: new Date("2023-09-23T11:00:00"),
+            summary: "Für Kinder (Luftartistik-Duo Zinnia und Flo)",
             image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
         },
         {
@@ -73,13 +75,21 @@ export default function ProgramPage() {
         {
             title: "Kinderyoga mit Martina Laube",
             date: new Date("2023-09-24T09:30:00"),
-            summary: "Empfohlen für Kinder zwischen 6 und 10",
+            summary: "Empfohlen für Kinder zwischen 6 und 10 Jahren",
             image: "59af0f0d-cb9e-4b08-aada-d3af40ee5781",
         },
         {
-            title: "Upcycling-Instrumentenbau für Kinder mit der Kammerakademie Potsdam",
+            title: "Upcycling-Instrumentenbau für Kinder",
             date: new Date("2023-09-24T11:00:00"),
+            summary: "Mit der Kammerakademie Potsdam",
             image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
+        },
+        {
+            title: "Fette Katze",
+            date: new Date("2023-09-24T15:00:00"),
+            image: "image.jpg",
+            localImage: true,
+            summary: "Eine Bigband der besonderen Art"
         },
         {
             title: "Irie Member",
