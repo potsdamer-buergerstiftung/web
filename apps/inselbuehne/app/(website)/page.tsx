@@ -28,7 +28,7 @@ export default function HomePage() {
               wichtiger Kulturort genutzt. Daran möchten wir mit diesem
               Geburtstags-Jubiläum erinnern und anknüpfen.
             </p>
-              <p className="mt-2 font-bold">
+              <p className="mt-2 font-bold text-lg">
                 Kommt und feiert mit uns, damit die Inselbühne lebt und für
                 Potsdam und erhalten bleibt!
               </p>
