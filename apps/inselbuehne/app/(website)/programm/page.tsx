@@ -26,7 +26,7 @@ export default function ProgramPage() {
             title: "Ausklang mit Ausschnitten aus “Wer die Erde liebt”",
             date: new Date("2023-09-21T21:00:00"),
             image: "wdel.jpg",
-            summary: "(Doku DDR, 1973 zu den Weltfestspielen der Jugend und Studenten)",
+            summary: "Dokumentarfilm DDR, 1973 zu den Weltfestspielen der Jugend und Studenten",
             localImage: true,
         },
         {
