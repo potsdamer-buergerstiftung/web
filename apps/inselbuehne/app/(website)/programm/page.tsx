@@ -1,6 +1,7 @@
 import EventCard from "@components/EventCard";
 import PageTitle from "@components/PageTitle";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Programm - Inselbühne Potsdam",
@@ -32,8 +33,9 @@ export default function ProgramPage() {
         {
             title: "Inselsingen: Sing mit dem Frauenchor der Volkssolidarität und Cantamus",
             date: new Date("2023-09-22T15:00:00"),
-            image: "frauenchor-vs.jpg",
+            image: "0515ec27-f35c-4eca-b427-3a667189ac90.JPG",
             localImage: true,
+            summary: "Singen macht Spaß, singen tut gut. Das ist das Motto des Frauenchors unter dem Dach der Volkssolidarität Potsdam mit der engagierten Chorleiterin Gabriele Tschache. Unzählige Lieder sind in den Jahren erklungen. Wir pflegen ein großes Repertoire Volksmusik verschiedener Epochen bis hin zu klassischem Liedgut. Der Chor blickt zurück über 30 Jahre gemeinsames Singen, gemeinsame Erlebnisse, viele Konzerte und Chorauftritte. Das sind u.a. Frühlings-, Herbst- und Weihnachtskonzerte in der Sternkirche, im Oberlin, Auftritte in Senioreneinrichtungen, die jahrelange Mitgestaltung der Potsdamer Seniorenwoche. Nicht unerwähnt soll auch der Auftritt auf der diesjährigen Landesgartenschau in Beelitz bleiben. Besondere Freude und Begeisterung wecken gemeinsame Darbietungen mit anderen Chören, wie dem Spatzenchor der Singakademie."
         },
         {
             title: "Fanfaroni",
@@ -45,20 +47,22 @@ export default function ProgramPage() {
         {
             title: "Silent-Disko mit Sofa Queen und Karatie Cat",
             date: new Date("2023-09-22T20:30:00"),
-            image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
-            summary: "Funk & Elektro"
+            image: "kk.jpg",
+            summary: "Karatie Cat ist eine DJane aus Potsdam. Melodischer Sound und freche Rhythmen gehören zu ihrem Repertoire der elektronischen Tanzmusik im Technogenre. Dieser lädt zum Singen, Tanzen aber auch zum Entspannen ein. Einfach zum genießen.",
+            localImage: true,
         },
         {
             title: "Kinderyoga mit Martina Laube",
             date: new Date("2023-09-23T09:30:00"),
-            summary: "Empfohlen für Kinder zwischen 3 und 5 Jahren",
+            summary: "Empfohlen für Kinder zwischen 3 und 5 Jahren - Kinderyoga ist so schön bunt und so herrlich lebendig! Ein kunterbuntes Potpourri...das ist Rainbow Kids Yoga - eine magische Geschichte & Reise von Anfang bis Ende. Beim Kinderyoga geht es eben NICHT um die perfekte Yogapose - es ist das Ganzheitliche. Kinderyoga ist wirklich ganz anders als Yoga für uns Erwachsene. Es ist eine andere eigene Welt, die unglaublich die Phantasie der Kinder beflügelt.",
             image: "59af0f0d-cb9e-4b08-aada-d3af40ee5781",
         },
         {
             title: "Faultier, ein langsames Zirkusstück“",
             date: new Date("2023-09-23T11:00:00"),
             summary: "Für Kinder (Luftartistik-Duo Zinnia und Flo)",
-            image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
+            image: "Faultier_hiphop.jpg",
+            localImage: true,
         },
         {
             title: "Sweet Confusion",
@@ -75,19 +79,19 @@ export default function ProgramPage() {
         {
             title: "Kinderyoga mit Martina Laube",
             date: new Date("2023-09-24T09:30:00"),
-            summary: "Empfohlen für Kinder zwischen 6 und 10 Jahren",
             image: "59af0f0d-cb9e-4b08-aada-d3af40ee5781",
+            summary: "Empfohlen für Kinder zwischen 6 und 10 Jahren - Kinderyoga ist so schön bunt und so herrlich lebendig! Ein kunterbuntes Potpourri...das ist Rainbow Kids Yoga - eine magische Geschichte & Reise von Anfang bis Ende. Beim Kinderyoga geht es eben NICHT um die perfekte Yogapose - es ist das Ganzheitliche. Kinderyoga ist wirklich ganz anders als Yoga für uns Erwachsene. Es ist eine andere eigene Welt, die unglaublich die Phantasie der Kinder beflügelt."
         },
         {
             title: "Upcycling-Instrumentenbau für Kinder",
             date: new Date("2023-09-24T11:00:00"),
-            summary: "Mit der Kammerakademie Potsdam",
             image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
+            summary: "Seit ihrer Gründung im Jahr 2000 zeichnet sich die Kammerakademie Potsdam (KAP) durch elektrisierende Musikerlebnisse, vielfältige Programme und den unbedingten Willen für allerhöchste künstlerische Qualität aus. Mit großer Leidenschaft und unbändiger Neugier bewegt sich das Orchester der Landeshauptstadt und Hausorchester des Nikolaisaals durch vier Jahrhunderte Musikgeschichte und erspielte sich einen Ruf weit über die Stadt- und Landesgrenzen hinaus. Verschiedene Konzertreihen für alle Altersgruppen in Potsdam und Brandenburg, Gastspiele in den großen Konzertsälen Deutschlands und Europas, preisgekrönte CD-Aufnahmen und die 2018 gegründete erste Orchesterakademie Brandenburgs zeugen vom Erfolg und Innovationsgeist des Klangkörpers in freier Trägerschaft. Seit der Saison 2010/11 ist Antonello Manacorda Chefdirigent und Künstlerischer Leiter der KAP. In der Saison 2022/23 begrüßt die KAP viele international gefeierte Solist*innen und Dirigent*innen darunter Václav Luks (Artist in Residence), Sabine Meyer, Julia Fischer, Jan Lisiecki, Piotr Anderszewski, Antoine Tamestit, Pierre-Laurent Aimard, Bernard Labadie, Michael Sanderling, Trevor Pinnock und Holly Hyun Choe."
         },
         {
             title: "Fette Katze",
             date: new Date("2023-09-24T15:00:00"),
-            image: "image.jpg",
+            image: "fk.jpg",
             localImage: true,
             summary: "Eine Bigband der besonderen Art"
         },
@@ -107,6 +111,8 @@ export default function ProgramPage() {
     return (
         <>
             <PageTitle title="Programm" heading="50 Jahre Inselbühne" />
+
+                <Image src="/img/LHPgefördert_Logo_blau.jpg" height={400} width={200} alt="Landeshauptstadt Potsdam" className="mx-auto px-4 py-8" />
             <section className="bg-gray-50">
                 <div
                     className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center"

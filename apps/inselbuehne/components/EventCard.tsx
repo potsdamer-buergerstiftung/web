@@ -1,6 +1,10 @@
-import Link from "next/link";
+"use client";
+
 import Image from "@components/Image";
+import clsx from "clsx";
 import NextImage from "next/image";
+import { useState } from "react";
+
 
 interface EventCardProps {
     eventId?: string;
@@ -21,10 +25,12 @@ export default function EventCard({
     image,
     localImage
 }: EventCardProps) {
+    const [expanded, setExpanded] = useState(false);
+
     return (
-        <Link
-            href="/"
-            className="bg-white grid min-h-max w-full cursor-pointer grid-cols-5 overflow-hidden rounded-tl-2xl rounded-br-2xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl lg:h-56"
+        <div
+            onClick={() => setExpanded(!expanded)}
+            className={clsx(["cursor-pointer bg-white grid min-h-max w-full grid-cols-5 overflow-hidden rounded-tl-2xl rounded-br-2xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl", expanded ? "h-full" : "lg:h-64"])}
         >
             <div className="relative col-span-5 h-64 w-full lg:col-span-2 lg:h-full">
                 {localImage ? (
@@ -64,12 +70,12 @@ export default function EventCard({
                         {title}
                     </h1>
                     {summary && (
-                        <p className="text-md line-clamp-6 lg:line-clamp-2 mt-4 leading-relaxed">
+                        <p className={clsx("text-md mt-4 leading-relaxed", !expanded && "line-clamp-4 lg:line-clamp-2")}>
                             {summary}
                         </p>
                     )}
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
