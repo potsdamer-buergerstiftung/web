@@ -118,7 +118,7 @@ export default function ProgramPage() {
                     className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center"
                 >
                     {events.map((event) => (
-                        <EventCard title={event.title} start={event.date} summary={event.summary} image={event.image} localImage={event.localImage} />
+                        <EventCard title={event.title} start={new Date(event.date.setHours(event.date.getHours() - 2))} summary={event.summary} image={event.image} localImage={event.localImage} />
                     ))}
                 </div>
             </section>
