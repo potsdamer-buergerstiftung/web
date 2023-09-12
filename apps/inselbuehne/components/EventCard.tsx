@@ -47,11 +47,11 @@ export default function EventCard({
 
                 >
                     <p>
-                        {new Date(start).toLocaleDateString("de", { month: "short" })}
+                        {new Date(start).toLocaleDateString("de", { month: "short", timeZone: "Europe/Berlin" })}
                     </p>
                     <h1 className="font-serif text-4xl">{new Date(start).getUTCDate()}</h1>
                     <p>
-                        {new Date(start).toLocaleDateString("de", { weekday: "short" })}
+                        {new Date(start).toLocaleDateString("de", { weekday: "short", timeZone: "Europe/Berlin" })}
                     </p>
                 </div>
             </div>
@@ -62,7 +62,7 @@ export default function EventCard({
                     <p
                         className="mb-2 text-md font-bold uppercase tracking-widest text-green-500"
                     >
-                        {new Date(start).toLocaleTimeString("de", { hour: "2-digit", minute: "2-digit" })}
+                        {new Date(start).toLocaleTimeString("de", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Berlin" })}
                     </p>
                     <h1
                         className="line-clamp-4 lg:line-clamp-2 font-serif text-2xl leading-tight md:text-3xl"
