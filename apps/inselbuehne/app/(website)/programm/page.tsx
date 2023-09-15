@@ -74,7 +74,7 @@ export default function ProgramPage() {
         {
             title: "Faultier, ein langsames Zirkusstück“",
             date: new Date("2023-09-23T11:00:00"),
-            summary: "Für Kinder (Luftartistik-Duo Zinnia und Flo)",
+            summary: "Wir sind Meister der Meditation, des Energiesparens und der Luftakrobatik. Es ist nicht leicht, im Regenwald zu überleben, aber wenn es jemand schafft, dann sind es diese Faultiere. Macht euch bereit für die langsamste Zirkusshow, die ihr je gesehen habt. Neben Unterhaltung erhält das Publikum wertvolle Bildungsinhalte zu Biodiversität und Umweltschutz. Zeitgenössischer Zirkus mit Luftartistik, Text und Musik 30 Minuten Für Erwachsene und Kinder ab 4",
             image: "Faultier_hiphop.jpg",
             localImage: true,
         },
@@ -107,7 +107,7 @@ export default function ProgramPage() {
             date: new Date("2023-09-24T15:00:00"),
             image: "fk.jpg",
             localImage: true,
-            summary: "Eine Bigband der besonderen Art"
+            summary: "„Fette Katze“ heisst die Jazzband der Musikschule Klangkunst in Potsdam. Das Ensemble existiert seit 2005 mit teils wechselnder Besetzung. Aktuell spielen 15 Musikbegeisterte aus Potsdam und Umgebung unter der Leitung von Jazz-Bassist Holger Scheidt. Swing, lateinamerikanische Rhythmen, Rock ́n ́Roll, Rhythm and Blues stehen im Mittelpunkt der wöchentlichen Proben im Treffpunkt Freizeit. Freude und Spaß am gemeinsamen Musizieren stehen dabei im Vordergrund. Das motivierende musikalische Miteinander ist Credo der Band. Jedes Bandmitglied trägt auf ihre/seine Weise zur Musik und zur musikalischen Entwicklung der Gruppe bei."
         },
         {
             title: "Irie Member",
