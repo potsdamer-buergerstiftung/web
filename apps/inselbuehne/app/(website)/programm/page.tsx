@@ -47,7 +47,7 @@ export default function ProgramPage() {
         {
             title: "Fanfaroni",
             date: new Date("2023-09-22T19:00:00"),
-            summary: "Von Balkan bis Latin",
+            summary: "Pikante Musikhappen der ganzen Welt von Balkan bis Latin in die Pfanne gehauen - mal voll drauf - mal genial daneben. Das Ergebnis ist scharf wie Peperoni! Bei der 15-köpfigen Berliner Fanfare werden große Töne gespuckt, denn 'Fanfaron' bedeutet Großmaul und der Name ist Programm: Die bunte Truppe mit Blechbläsern, Drums, Holzbläsern und Akkordeon bringt jeden Topf zum Überkochen - wo auch immer Hunger nach tanzbarer Brassmukke herrscht.",
             image: "Fanfaroni_3.jpg",
             localImage: true,
         },
