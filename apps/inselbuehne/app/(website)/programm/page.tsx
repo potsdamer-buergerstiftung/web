@@ -31,11 +31,18 @@ export default function ProgramPage() {
             localImage: true,
         },
         {
-            title: "Inselsingen: Sing mit dem Frauenchor der Volkssolidarität und Cantamus",
+            title: "Inselsingen: Sing mit dem Frauenchor der Volkssolidarität und dem Freizeitchor Cantamus",
             date: new Date("2023-09-22T15:00:00"),
             image: "0515ec27-f35c-4eca-b427-3a667189ac90.JPG",
             localImage: true,
             summary: "Singen macht Spaß, singen tut gut. Das ist das Motto des Frauenchors unter dem Dach der Volkssolidarität Potsdam mit der engagierten Chorleiterin Gabriele Tschache. Unzählige Lieder sind in den Jahren erklungen. Wir pflegen ein großes Repertoire Volksmusik verschiedener Epochen bis hin zu klassischem Liedgut. Der Chor blickt zurück über 30 Jahre gemeinsames Singen, gemeinsame Erlebnisse, viele Konzerte und Chorauftritte. Das sind u.a. Frühlings-, Herbst- und Weihnachtskonzerte in der Sternkirche, im Oberlin, Auftritte in Senioreneinrichtungen, die jahrelange Mitgestaltung der Potsdamer Seniorenwoche. Nicht unerwähnt soll auch der Auftritt auf der diesjährigen Landesgartenschau in Beelitz bleiben. Besondere Freude und Begeisterung wecken gemeinsame Darbietungen mit anderen Chören, wie dem Spatzenchor der Singakademie."
+        },
+        {
+            title: "Inselsingen: Sing mit dem Frauenchor der Volkssolidarität und dem Freizeitchor Cantamus",
+            date: new Date("2023-09-22T15:00:00"),
+            image: "fccm.jpg",
+            localImage: true,
+            summary: "Der Freizeitchor Cantamus Potsdam wurde 2009 von dem Musikpädagogen Karl-Heinz Drews (1928-2019) gegründet, der dem Chor bis 2013 vorstand. Seit 2014 steht der Chor unter der Leitung von Andreas Flämig. Die Chormitglieder mit einem Durchschnittsalter von ca. 75 Jahren treffen sich während der Schulzeit jeden Dienstag von 09.45 bis 11.45 Uhr zur Probe im „Treffpunkt Freizeit Potsdam“. "
         },
         {
             title: "Fanfaroni",
