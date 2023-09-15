@@ -59,6 +59,13 @@ export default function ProgramPage() {
             localImage: true,
         },
         {
+            title: "Silent-Disko mit Sofa Queen und Karatie Cat",
+            date: new Date("2023-09-22T20:30:00"),
+            image: "sofaquee.jpg",
+            summary: "Sofa Queen gilt spätestens seit ihrer legendären 'Funkstelle'-Reihe im Spartacus als Grande Dame der Potsdamer Funk-Szene. Funk präsentiert sie dabei nicht nur als ein Genre, sondern als eine ganz besondere musikalische Qualität. Der Name ihrer über sieben Jahre etablierten Reihe 'Can You Dig It?' ist Programm: Überall sucht sie nach jener speziellen Groovigkeit und findet sie neben dem Funk in vielen verwandten Stilrichtungen - von Soul, Disco, Jazz und R&B bis Hip Hop, Trip Hop, Beats und Breaks.",
+            localImage: true,
+        },
+        {
             title: "Kinderyoga mit Martina Laube",
             date: new Date("2023-09-23T09:30:00"),
             summary: "Empfohlen für Kinder zwischen 3 und 5 Jahren - Kinderyoga ist so schön bunt und so herrlich lebendig! Ein kunterbuntes Potpourri...das ist Rainbow Kids Yoga - eine magische Geschichte & Reise von Anfang bis Ende. Beim Kinderyoga geht es eben NICHT um die perfekte Yogapose - es ist das Ganzheitliche. Kinderyoga ist wirklich ganz anders als Yoga für uns Erwachsene. Es ist eine andere eigene Welt, die unglaublich die Phantasie der Kinder beflügelt.",
