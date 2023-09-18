@@ -99,7 +99,8 @@ export default function ProgramPage() {
         {
             title: "Upcycling-Instrumentenbau für Kinder",
             date: new Date("2023-09-24T11:00:00"),
-            image: "9fbafc25-4d32-4964-9f05-a4ac15234fa1",
+            image: "KAP.jpeg",
+            localImage: true,
             summary: "Aus „Müll“ Instrumente machen? Das geht! Gemeinsames Basteln und Musizieren auf selbstgemachten Instrumenten Folgenden Müll könnt ihr vorab sammeln und bei uns in Instrumente verwandeln (einen kleinen Vorrat haben wir vor Ort): Kronkorken (abgespült), Filmdosen o.ä. kleine Dosen (verschließbar), PVC-Flaschen, CDs oder CD-Roms, Leere Klorollen, Ü-Eier (nur die Kapseln…), Knöpfe, Resonanzkörper wie alte Tassen, Blumentöpfe (ohne Loch!) o. ä. Empfohlen für Familien mit Kinder ab 4 Jahren"
         },
         {
