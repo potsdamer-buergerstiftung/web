@@ -68,8 +68,8 @@ export default function ProgramPage() {
         {
             title: "Yoga-Spiele für Kinder & Familien mit Silke Bode",
             date: new Date("2023-09-23T09:30:00"),
-            summary: "Auf spielerische Weise die bunte Welt des Yogas entdecken - Kinderyoga ist viel verspielter, lustiger und kreativer als Yoga für Erwachsene. Mit Spielen, Spaß und Bewegung erlernen die Kinder einfache Yoga-Posen und kindgerechte Entspannungstechniken. Die Stunde endet mit einer Phantasiereise. Der Unterricht dauert 45 Minuten und findet bei gutem Wetter auf der Wiese statt. Da vor Ort keine Yogamatten vorhanden sind, gerne ein Handtuch oder Matte mitbringen. Die Stunde am Samstag richtet sich primär an kleinere Kinder (3-5 Jahre), die Stunde am Sonntag an primär an etwas größere Kinder (6-10 Jahre), aber in beiden Stunden sind auch ältere oder jüngere Kinder willkommen, sowie Eltern, die Lust haben, mitzumachen.",
-            image: "Kindayoga.jpg",
+            summary: "Für Kinder (3-5 Jahre) - Auf spielerische Weise die bunte Welt des Yogas entdecken - Kinderyoga ist viel verspielter, lustiger und kreativer als Yoga für Erwachsene. Mit Spielen, Spaß und Bewegung erlernen die Kinder einfache Yoga-Posen und kindgerechte Entspannungstechniken. Die Stunde endet mit einer Phantasiereise. Der Unterricht dauert 45 Minuten und findet bei gutem Wetter auf der Wiese statt. Da vor Ort keine Yogamatten vorhanden sind, gerne ein Handtuch oder Matte mitbringen. Die Stunde am Samstag richtet sich primär an kleinere Kinder (3-5 Jahre), die Stunde am Sonntag an primär an etwas größere Kinder (6-10 Jahre), aber in beiden Stunden sind auch ältere oder jüngere Kinder willkommen, sowie Eltern, die Lust haben, mitzumachen.",
+            image: "Kinderyoga.jpg",
             localImage: true,
         },
         {
@@ -94,8 +94,9 @@ export default function ProgramPage() {
         {
             title: "Yoga-Spiele für Kinder & Familien mit Silke Bode",
             date: new Date("2023-09-24T09:30:00"),
-            image: "59af0f0d-cb9e-4b08-aada-d3af40ee5781",
-            summary: "Auf spielerische Weise die bunte Welt des Yogas entdecken - Kinderyoga ist viel verspielter, lustiger und kreativer als Yoga für Erwachsene. Mit Spielen, Spaß und Bewegung erlernen die Kinder einfache Yoga-Posen und kindgerechte Entspannungstechniken. Die Stunde endet mit einer Phantasiereise. Der Unterricht dauert 45 Minuten und findet bei gutem Wetter auf der Wiese statt. Da vor Ort keine Yogamatten vorhanden sind, gerne ein Handtuch oder Matte mitbringen. Die Stunde am Samstag richtet sich primär an kleinere Kinder (3-5 Jahre), die Stunde am Sonntag an primär an etwas größere Kinder (6-10 Jahre), aber in beiden Stunden sind auch ältere oder jüngere Kinder willkommen, sowie Eltern, die Lust haben, mitzumachen."
+            image: "Kinderyoga.jpg",
+            summary: "Für Kinder (6-10 Jahre) - Auf spielerische Weise die bunte Welt des Yogas entdecken - Kinderyoga ist viel verspielter, lustiger und kreativer als Yoga für Erwachsene. Mit Spielen, Spaß und Bewegung erlernen die Kinder einfache Yoga-Posen und kindgerechte Entspannungstechniken. Die Stunde endet mit einer Phantasiereise. Der Unterricht dauert 45 Minuten und findet bei gutem Wetter auf der Wiese statt. Da vor Ort keine Yogamatten vorhanden sind, gerne ein Handtuch oder Matte mitbringen. Die Stunde am Samstag richtet sich primär an kleinere Kinder (3-5 Jahre), die Stunde am Sonntag an primär an etwas größere Kinder (6-10 Jahre), aber in beiden Stunden sind auch ältere oder jüngere Kinder willkommen, sowie Eltern, die Lust haben, mitzumachen.",
+            localImage: true,
         },
         {
             title: "Upcycling-Instrumentenbau für Kinder",
