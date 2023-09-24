@@ -9,8 +9,10 @@ export async function POST(request: Request) {
 
     const methods = await mollieClient.methods.list({
         locale: Locale.de_DE,
-        sequenceType: duration === "ONE_TIME" ? SequenceType.oneoff : SequenceType.recurring,
+        sequenceType: duration === "ONE_TIME" ? SequenceType.oneoff : SequenceType.first,
     });
+
+    console.log(methods)
 
     return NextResponse.json(methods);
 }

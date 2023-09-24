@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
+import { customerIdAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
 
 export default function DonationFormPayment() {
     const router = useRouter();
@@ -19,6 +19,7 @@ export default function DonationFormPayment() {
     const [selectedProject] = useAtom(selectedProjectId);
     const [donationSubmitted, setDonationSubmitted] = useState(false);
     const [duration] = useAtom(planDuration);
+    const [customerId, _] = useAtom(customerIdAtom);
 
     const requestPaymentMethods = async () => {
         try {
@@ -39,6 +40,8 @@ export default function DonationFormPayment() {
     const onContinueClicked = async () => {
         setDonationSubmitted(true);
         try {
+            let id = customerId !== "" || customerId !== null ? customerId : null;
+            console.log(id)
             const description = selectedProject !== 0 ? projects.find((project) => project.id === selectedProject).title : "Allgemeine Arbeit";
             const payment = await fetch("/api/payment/create", {
                 method: "POST",
@@ -48,6 +51,7 @@ export default function DonationFormPayment() {
                     redirectUrl: "https://www.potsdamer-buergerstiftung.org/mitstiften/spenden/danke",
                     description,
                     duration,
+                    customerId: id,
                 }),
             });
 

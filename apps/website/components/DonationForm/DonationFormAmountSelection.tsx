@@ -10,11 +10,11 @@ const planDurations = [
     {
         key: "ONE_TIME",
         text: "Einmalig"
-    }/* ,
+    },
     {
         key: "MONTHLY",
         text: "Monatlich"
-    } */
+    }
 ]
 
 export default function DonationFormAmountSelection() {
@@ -75,7 +75,13 @@ export default function DonationFormAmountSelection() {
                     </div>
                 )}
                 <button
-                    onClick={() => setDonationProgress("PAYMENT")}
+                    onClick={() => {
+                        if (activePlanDuration === "MONTHLY") {
+                            setDonationProgress("DETAILS_FORM");
+                        } else {
+                            setDonationProgress("PAYMENT")
+                        }
+                    }}
                     disabled={!(selectedAmount > 1)} className={clsx("text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16", !(selectedAmount > 1) && "opacity-50 cursor-not-allowed")}>Weiter</button>
             </div>
         </div>

@@ -4,9 +4,10 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 import DonationFormAmountSelection from "./DonationFormAmountSelection";
+import DonationFormDetailsForm from "./DonationFormDetailsForm";
 import DonationFormPayment from "./DonationFormPayment";
 import DonationFormProjectSelection from "./DonationFormProjectSelection";
-import { donationProgressAtom } from "./state";
+import { donationProgressAtom, planDuration } from "./state";
 
 function ProgressButton({ isActive, onClick, children, disabled = false }: { isActive: boolean, onClick: () => void, children: React.ReactNode, disabled?: boolean }) {
     return (
@@ -25,6 +26,7 @@ export default function DonationForm(props: DonationFormProps) {
     const { disableProjectSelection = false } = props;
 
     const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
+    const [activePlanDuration, setActivePlanDuration] = useAtom(planDuration);
 
     const onProjectSelectionClicked = () => {
         setDonationProgress("PROJECT_SELECTION");
@@ -71,11 +73,14 @@ export default function DonationForm(props: DonationFormProps) {
 
                     <ProgressButton isActive={donationProgress === "AMOUNT_SELECTION"} onClick={onAmountSelectionClicked}>Betrag wählen</ProgressButton>
 
+                    {activePlanDuration == "MONTHLY" && <ProgressButton isActive={donationProgress === "DETAILS_FORM"} onClick={() => setDonationProgress("DETAILS_FORM")}>Persönliche angaben</ProgressButton>}
+
                     <ProgressButton isActive={donationProgress === "PAYMENT"} onClick={onPaymentClicked}>Zahlung bestätigen</ProgressButton>
                 </ul>
                 <div className="w-full">
                     {donationProgress === "PROJECT_SELECTION" && <DonationFormProjectSelection />}
                     {donationProgress === "AMOUNT_SELECTION" && <DonationFormAmountSelection />}
+                    {donationProgress === "DETAILS_FORM" && <DonationFormDetailsForm />}
                     {donationProgress === "PAYMENT" && <DonationFormPayment />}
                 </div>
             </div>
