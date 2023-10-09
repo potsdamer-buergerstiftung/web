@@ -82,9 +82,6 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
-        <p className="bg-amber-200 py-2 px-4 rounded-md text-sm mb-5 w-auto inline-block">
-          Diese Seite befindet sich aktuell noch im Aufbau. Es fehlen noch einige Inhalte und Funktionen. Wir bitten um Verständnis.
-        </p>
         <h1 className="font-header text-5xl font-bold text-slate-800 md:text-6xl lg:text-7xl">
           Brücken bauen,
           <br />
