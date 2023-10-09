@@ -2,6 +2,7 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NetworkPage() {
     return (
@@ -24,7 +25,7 @@ export default function NetworkPage() {
                     </div>
                     <div className="col-span-5 lg:col-span-3">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div>
+                            <Link href="https://www.potsdam.de/de/kategorie/potsdam-bekennt-farbe-0">
                                 <h4 className="font-bold text-lg text-center">
                                     Bündnis "Potsdam! bekennt Farbe"
                                 </h4>
@@ -35,8 +36,8 @@ export default function NetworkPage() {
                                     alt="Logo vom Bündnis"
                                     className="mx-auto mt-2"
                                 />
-                            </div>
-                            <div>
+                            </Link>
+                            <Link href="https://www.stiftungen.org/startseite.html">
                                 <h4 className="font-bold text-lg text-center">
                                     Bundesverband Deutscher Stiftungen
                                 </h4>
@@ -47,8 +48,8 @@ export default function NetworkPage() {
                                     alt="Logo vom Bündnis"
                                     className="mx-auto mt-2"
                                 />
-                            </div>
-                            <div>
+                            </Link>
+                            <Link href="https://radelnohnealter.de/">
                                 <h4 className="font-bold text-lg text-center">
                                     Radeln ohne Alter Berlin
                                 </h4>
@@ -59,8 +60,8 @@ export default function NetworkPage() {
                                     alt="Logo vom Bündnis"
                                     className="mx-auto mt-2"
                                 />
-                            </div>
-                            <div>
+                            </Link>
+                            <Link href="https://gnwp.de/">
                                 <h4 className="font-bold text-lg text-center">
                                     Geschäftsnetzwerk Potsdam
                                 </h4>
@@ -71,7 +72,7 @@ export default function NetworkPage() {
                                     alt="Logo vom Bündnis"
                                     className="mx-auto mt-2"
                                 />
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
