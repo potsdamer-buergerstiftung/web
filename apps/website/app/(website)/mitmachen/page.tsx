@@ -59,8 +59,9 @@ export default function HonoraryPage() {
           <div className="col-span-5 lg:col-span-3">
             <p className="text-white">
               Der größte Teil der Arbeit in der Bürgerstiftung wird ehrenamtlich
-              geleistet, sowohl im Vorstand als auch in den Projekten. Das schätzen wir sehr und möchten unsere Freiwilligen
-              bei ihrem Engagement bestmöglich unterstützen. Wir organisieren regelmäßig{" "}
+              geleistet, sowohl im Vorstand als auch in den Projekten. Das
+              schätzen wir sehr und möchten unsere Freiwilligen bei ihrem
+              Engagement bestmöglich unterstützen. Wir organisieren regelmäßig{" "}
               <b>Mitmach-Treffs</b> um andere Ehrenamtliche kennenzulernen und
               sich auszutauschen. Wir bieten Schulungen und Weiterbildungen an
               und versichern unsere Ehrenamtlichen.
@@ -68,29 +69,48 @@ export default function HonoraryPage() {
           </div>
         </div>
       </section>
-      <section className="py-6">
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
-          <div className="col-span-5 lg:col-span-2">
-            <h1 className="font-header text-3xl font-bold">
-              Finde dein Ehrenamt
-            </h1>
-            <p className="mt-4">
-              Unsere Projekte und Initiativen freuen sich auf deine
-              Unterstützung
-            </p>
-          </div>
-          <div className="col-span-5 lg:col-span-3">
+      <section className="pt-6 pb-16">
+        <div className="container mx-auto grid grid-cols-3 gap-8 px-4 py-16">
+          <div className="col-span-3 lg:col-span-1">
+            <h1 className="font-header text-3xl font-bold mb-4">Ich will...</h1>
             <p>
-              Als Bürgerstiftung sind wir auch bestrebt, die{" "}
-              <b>Anerkennung und Wertschätzung </b>für Ehrenamtliche in unserer
-              Gemeinschaft <b>zu fördern</b>. Wir organisieren regelmäßig
-              Veranstaltungen, wir nennen sie <b>Mitmach-Treffs</b>, um die
-              Leistungen der Freiwilligen zu würdigen, ihr Engagement öffentlich
-              sichtbar zu machen und über Angebote, sich zu engagieren, zu
-              informieren. Dies dient als <b>Motivation für andere</b>, sich
-              ebenfalls <b>einzubringen und aktiv zu werden</b>.
+              aktiv sein, neue Leute kennenlernen, Potsdam mitgestalten, raus
+              aus meiner Bubble, Verantwortung übernehmen, etwas sinnvolles tun,
+              Fahrrad fahren, Menschen eine Freude machen, tolle Projekte
+              begleiten, meine Ideen einbringen
             </p>
+            <h1 className="font-header text-3xl font-bold mt-4">
+              ...euch kennenlernen!
+            </h1>
           </div>
+          <div className="col-span-3 lg:col-span-1">
+            <h1 className="font-header text-3xl font-bold mb-4">Ich bin...</h1>
+            <p>
+              lieber hinter den Kulissen, eher Rampensau, kommunikativ,
+              schüchtern, extrovertiert, introvertiert, voller Tatendrang, eher
+              Couch-Potato, impulsiv, überlegt, strukturiert, chaotisch,
+              Kopfmensch, Bauchmensch, handwerklich mehr oder weniger begabt,
+            </p>
+            <h1 className="font-header text-3xl font-bold mt-4">
+              ...eine Bereicherung!
+            </h1>
+          </div>
+          <div className="col-span-3 lg:col-span-1">
+            <h1 className="font-header text-3xl font-bold mb-4">Ich kann...</h1>
+            <p>
+              gut mit Zahlen umgehen, gärtnern, programmieren,
+              texten, reden, verkaufen, organisieren, ordnen, handwerken, gut
+              allein oder im Team arbeiten, Untersützung gewinnen
+            </p>
+            <h1 className="font-header text-3xl font-bold mt-4">
+              ...mitmachen!
+            </h1>
+          </div>
+        </div>
+        <div className="text-center px-4 max-w-4xl mx-auto font-bold text-lg">
+          Egal wer du bist, egal was du kannst: Wir freuen uns darauf, dich
+          kennenzulernen. Bei uns gibt es immer viel zu tun und wir finden
+          sicher einen Platz für dich im Team.
         </div>
       </section>
     </>
