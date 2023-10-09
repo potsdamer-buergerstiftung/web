@@ -4,6 +4,34 @@ import PageTitle from "@components/PageTitle";
 import TeamMemberCard from "@components/TeamMemberCard";
 import { Metadata } from "next";
 
+const officeTeam = [
+    {
+        title: "Geschäftsstelle",
+        name: "Antonia von Schierstaedt",
+        image: "a7432c2c-9f7c-40a3-b55f-fa2bb80c268b",
+    },
+    {
+        title: "Projektkoordination",
+        name: "Kristin Gebur",
+        image: "f73f2050-2fb8-4f25-8267-8c94a4409ffd",
+    },
+    {
+        title: "IT-Administration",
+        name: "Noël Sigmunczyk",
+        image: "0a4b6efa-b481-494e-a8e7-0de88784837b",
+    },
+    {
+        title: "Öffentlichkeitsarbeit",
+        name: "Elisa Neubert",
+        image: "3d99d1b7-5cd0-4d57-8887-ea647d462455",
+    },
+    {
+        title: "Kommunikationsdesign",
+        name: "Birka Pannicke",
+        image: "118e4754-5cee-495c-ac43-caec99be44b2",
+    }
+];
+
 const boardMembers = [
     {
         title: "Vorsitzende",
@@ -125,6 +153,31 @@ export default function TeamPage() {
                         <h4 className="text-sm font-semibold uppercase text-gray-600">
                             Unser Team
                         </h4>
+                        <h1 className="font-header mt-2 text-4xl font-bold">Das Office-Team</h1>
+                    </div>
+                    <div>
+                        <p>
+                            Das Office-Team der Bürgerstiftung Potsdam ist die zentrale
+                            Anlaufstelle für alle Fragen rund um die Stiftung.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section className="pb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
+                    {officeTeam.map((member) => (
+                        <div>
+                            <TeamMemberCard {...member} />
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <section className="pb-16">
+                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
+                    <div>
+                        <h4 className="text-sm font-semibold uppercase text-gray-600">
+                            Unser Team
+                        </h4>
                         <h1 className="font-header mt-2 text-4xl font-bold">Der Vorstand</h1>
                     </div>
                     <div>
@@ -164,7 +217,7 @@ export default function TeamPage() {
             <section>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
                     {boardOfTrustees.map((member) => (
-                        <div v-for="member in boardOfTrustees">
+                        <div>
                             <TeamMemberCard {...member} />
                         </div>
                     ))}
