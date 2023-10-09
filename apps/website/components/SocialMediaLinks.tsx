@@ -10,17 +10,17 @@ const links = [
     {
         text: "Facebook",
         short: "Fb",
-        url: "https://www.facebook.com/PotsdamerBuergerstiftung/",
+        url: "https://www.facebook.com/potsdambuergerstiftung",
     },
     {
         text: "Instagram",
         short: "Ig",
-        url: "https://www.instagram.com/potsdamerbuergerstiftung/",
+        url: "https://www.instagram.com/potsdamerbuergerstiftung",
     },
     {
         text: "YouTube",
         short: "Yt",
-        url: "https://youtube.com",
+        url: "https://www.youtube.com/@potsdamerburgerstiftung39",
     },
 ];
 
@@ -41,7 +41,7 @@ export default function SocialMediaLinks(props: SocialMediaLinksProps) {
             <ul className={clsx("flex gap-4", directionClass)}>
                 {links.map((link) => (
                     <li key={link.text}>
-                        <Link href={link.url} className="text-sm font-bold transition text-slate-900 hover:text-emerald-500">
+                        <Link href={link.url} className="text-sm font-bold transition text-slate-900 hover:text-emerald-500" target="_blank">
                             {size === "small" ? link.short + "." : link.text}
                         </Link>
                     </li>
