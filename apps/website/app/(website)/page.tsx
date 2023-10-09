@@ -31,7 +31,14 @@ async function getPosts() {
 async function getEvents() {
   const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
   const res = await directus.items<any, any>("events").readByQuery({
-    fields: ["name", "start", "id", "image", "external_ticket_url", "registration_needed"],
+    fields: [
+      "name",
+      "start",
+      "id",
+      "image",
+      "external_ticket_url",
+      "registration_needed",
+    ],
     limit: 3,
     sort: ["start"],
     filter: { start: { _gte: new Date().toISOString() } },
@@ -41,7 +48,7 @@ async function getEvents() {
 
 export const metadata: Metadata = {
   title: "Potsdamer Bürgerstiftung - Brücken bauen. Menschen verbinden.",
-}
+};
 
 export default async function HomePage() {
   const posts = getPosts();
@@ -139,8 +146,8 @@ export default async function HomePage() {
           </div>
           <div>
             <p>
-              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine <b>positive{" "}
-                Entwicklung Potsdams einzubringen</b>. Wir vernetzen
+              Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine{" "}
+              <b>positive Entwicklung Potsdams einzubringen</b>. Wir vernetzen
               Gleichgesinnte, versammeln engagierte Menschen, bieten
               Unterstützung als Plattform für Ehrenamt und möchten es den
               Menschen in Potsdam leichter machen, das{" "}
@@ -177,12 +184,16 @@ export default async function HomePage() {
                     >
                       {priority.subTitle}
                     </h1>
-                    <h2 className={`font-header text-3xl font-bold text-slate-100`}>
+                    <h2
+                      className={`font-header text-3xl font-bold text-slate-100`}
+                    >
                       {priority.title}
                     </h2>
                   </div>
                   <div>
-                    <p className="text-md leading-6 text-slate-100">{priority.description}</p>
+                    <p className="text-md leading-6 text-slate-100">
+                      {priority.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -192,8 +203,7 @@ export default async function HomePage() {
             <div className="absolute z-[-1] h-full w-full">
               <div className="absolute bottom-0 top-0 left-0 right-0" />
             </div>
-            <div
-              className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-16 lg:px-4">
+            <div className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-16 lg:px-4">
               <div className="col-span-6">
                 <h4 className="text-sm font-semibold uppercase text-gray-600">
                   Nimm teil
