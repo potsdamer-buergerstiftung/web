@@ -27,7 +27,7 @@ export default function NetworkPage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Link href="https://www.potsdam.de/de/kategorie/potsdam-bekennt-farbe-0">
                                 <h4 className="font-bold text-lg text-center">
-                                    Bündnis "Potsdam! bekennt Farbe"
+                                    Bündnis &quot;Potsdam! bekennt Farbe&quot;
                                 </h4>
                                 <Image
                                     src="/img/netzwerk/Buendnis.png"
