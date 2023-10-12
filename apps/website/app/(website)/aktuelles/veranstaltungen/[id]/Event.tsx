@@ -12,6 +12,8 @@ export default async function Event({ promise }: EventProps) {
 
   let html = { __html: event.description };
 
+  let start = new Date(event.start).setHours(new Date(event.start).getHours() - 2);
+
   return (
     <div>
       <PageTitle
@@ -34,7 +36,7 @@ export default async function Event({ promise }: EventProps) {
         description={
             <div>
                 <p>{event.summary}</p>
-                <h5 className="font-bold text-lg mt-2">{new Date(event.start.setHours(event.start.getHours() - 2)).toLocaleDateString("de", { weekday: "long", timeZone: "Europe/Berlin", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
+                <h5 className="font-bold text-lg mt-2">{new Date(start).toLocaleDateString("de", { weekday: "long", timeZone: "Europe/Berlin", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
             </div>
         }
         isCompact
