@@ -18,7 +18,7 @@ export default async function EventGrid({ promise }: EventGridProps) {
         <React.Fragment>
             {events?.map((event: any) => (
                 <div className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2">
-                    <Link href={event.registration_needed && event.external_ticket_url ? event.external_ticket_url : `/events/${event.id}`}
+                    <Link href={event.registration_needed && event.external_ticket_url ? event.external_ticket_url : `/aktuelles/veranstaltungen/${event.id}`}
                         className="group relative block h-60 w-full cursor-pointer overflow-hidden rounded-lg">
                         <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${event.image}`} height={600} width={600}
                             className="h-full w-full object-cover transition duration-500 group-hover:scale-110"

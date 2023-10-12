@@ -30,7 +30,7 @@ export default function EventsPage() {
             <PageTitle title="Veranstaltungen" description="Wann und wo du dich engagieren kannst" breadcrumb={<PageBreadcrumb items={
                 [<PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />, <PageBreadcrumbItem label="Veranstaltungen" />]
             } />} />
-            <section className="container px-4 mx-auto grid grid-cols-6 pb-16">
+            <section className="container px-4 mx-auto grid grid-cols-6 pb-16 gap-8">
                 <Suspense>
                     {/* @ts-ignore-error */}
                     <EventGrid promise={events} />
