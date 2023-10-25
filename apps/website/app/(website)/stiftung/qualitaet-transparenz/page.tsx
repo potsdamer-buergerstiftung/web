@@ -63,7 +63,7 @@ export default function QualityAndTransparencyPage() {
                 </Link>
               </li>
               <li>
-                Erster Preis beim Wettbewerb "Gemeinsam für Potsdam" der
+                Erster Preis beim Wettbewerb &quot;Gemeinsam für Potsdam&quot; der
                 Stadtwerke Potsdam und ProPotsdam GmbH 2019 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/potspresso"
@@ -74,10 +74,10 @@ export default function QualityAndTransparencyPage() {
               </li>
               <li>
                 Integrationspreis der Landeshauptstadt Potsdam 2020 für das
-                Projekt "Angekommen in Potsdam"
+                Projekt &quot;Angekommen in Potsdam&quot;
               </li>
               <li>
-                Erster Platz beim Wettbewerb "Gemeinsam für Potsdam" der
+                Erster Platz beim Wettbewerb &quot;Gemeinsam für Potsdam&quot; der
                 ProPotsdam GmbH 2021 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/inselbuehne"
