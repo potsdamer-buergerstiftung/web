@@ -22,7 +22,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                         <HeaderNavItem index={1} label="Die Stiftung">
                             <HeaderSubNavItem label="Wer wir sind" href="/stiftung" />
                             <HeaderSubNavItem label="Gremien & Team" href="/stiftung/gremien" />
-                             {/* <HeaderSubNavItem label="Qualität & Transparenz" href="/stiftung/qualitaet-transparenz" /> */}
+                            <HeaderSubNavItem label="Qualität & Transparenz" href="/stiftung/qualitaet-transparenz" />
                             <HeaderSubNavItem label="Unser Netzwerk" href="/stiftung/netzwerk" />
                             <HeaderSubNavItem label="Veröffentlichungen" href="/stiftung/veroeffentlichungen" />
                         </HeaderNavItem>,
@@ -37,9 +37,9 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                             <HeaderSubNavItem label="Jobs" href="/mitmachen/jobs" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={3} label="Mitstiften">
-                        <HeaderSubNavItem label="Privatpersonen" href="/mitstiften/privatpersonen" />
-                        <HeaderSubNavItem label="Unternehmen" href="/mitstiften/unternehmen" />
-                    </HeaderNavItem>,
+                            <HeaderSubNavItem label="Privatpersonen" href="/mitstiften/privatpersonen" />
+                            <HeaderSubNavItem label="Unternehmen" href="/mitstiften/unternehmen" />
+                        </HeaderNavItem>,
                         <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
                     ]} />
                 }
