@@ -150,8 +150,8 @@ export default function QualityAndTransparencyPage() {
               Personalstruktur
             </h4>
             <p>
-              In der Bürgerstiftung Potsdam arbeiten in der Geschäftsstelle 1,5
-              Mitarbeiter*innen in Vollzeit und Teilzeit. In den Projekten
+              In der Bürgerstiftung Potsdam arbeiten in der Geschäftsstelle 1,075
+              Mitarbeiter:innen. In den Projekten
               engagieren sich aktuell etwa 40 Ehrenamtliche.
             </p>
             <h4 className="font-header text-2xl font-bold mb-5 mt-10">
