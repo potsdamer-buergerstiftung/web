@@ -15,23 +15,30 @@ export default function AboutPage() {
     {
       subTitle: "Nachhaltigkeit",
       title: "Nachhaltig engagieren und handeln",
-      assetId: "0e823ed4-1409-4827-b9c3-14a442a1db52",
+      assetId: "2f152755-94d6-472e-9102-be17106c63c0",
       description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
-      color: "text-emerald-200",
+      color: "text-emerald-800",
     },
     {
       subTitle: "Kultur",
       title: "Kultur und Teilhabe fördern",
       assetId: "72baf604-4397-4f22-9ac7-195df8b1a591",
       description: `Freier Zugang zu Kultur und Unterhaltung ist wichtiger denn je. Wir ermöglichen Kunstschaffenen sich in Potsdam zu präsentieren und allen Menschen, Teil des Publikums zu sein.`,
-      color: "text-red-200",
+      color: "text-red-800",
     },
     {
       subTitle: "Begegnung & Toleranz",
       title: "Menschen zusammenbringen",
       assetId: "db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
       description: `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
-      color: "text-blue-200",
+      color: "text-blue-800",
+    },
+    {
+      subTitle: "Bildung & Jugend",
+      title: "Zukünftige Generationen stärken",
+      assetId: "16033de6-d1a2-4280-bef7-3851aad0ed6d",
+      description: `Alle Kinder in Potsdam sollten die gleichen Chancen haben. Kinder und Jugendliche sind die Potsdamer Bürgerschaft von morgen: Damit sie stark, glücklich und erfolgreich in die Zukunft sehen und gehen können.`,
+      color: "text-yellow-800",
     },
   ];
 
@@ -68,11 +75,11 @@ export default function AboutPage() {
       </section>
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {priorities.map((priority) => (
               <div className="container mx-auto flex h-full flex-col">
                 <div>
-                  <h1 className="text-sm font-semibold uppercase text-gray-600 mb-2">
+                  <h1 className={`text-sm font-semibold uppercase text-gray-600 mb-2 ${priority.color}`}>
                     {priority.subTitle}
                   </h1>
                   <h2 className="font-header text-2xl font-bold mb-4">
