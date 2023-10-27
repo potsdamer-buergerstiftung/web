@@ -12,8 +12,8 @@ const FooterBanner: React.FC = () => {
             <h1 className="font-header text-5xl font-bold">Mach mit!</h1>
           </div>
           <div>
-            <Link
-              href="/mitmachen"
+            <a
+              href="mailto:ehrenamt@potsdamer-buergerstiftung.org"
               className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
             >
               Jetzt engagieren
@@ -31,7 +31,7 @@ const FooterBanner: React.FC = () => {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
         <hr className="mt-8 h-1 w-full border-slate-800" />
