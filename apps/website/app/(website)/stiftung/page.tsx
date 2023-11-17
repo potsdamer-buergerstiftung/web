@@ -17,28 +17,28 @@ export default function AboutPage() {
       title: "Nachhaltig engagieren und handeln",
       assetId: "2f152755-94d6-472e-9102-be17106c63c0",
       description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
-      color: "text-emerald-800",
+      color: "text-emerald-600",
     },
     {
       subTitle: "Kultur",
       title: "Kultur und Teilhabe fördern",
       assetId: "72baf604-4397-4f22-9ac7-195df8b1a591",
       description: `Freier Zugang zu Kultur und Unterhaltung ist wichtiger denn je. Wir ermöglichen Kunstschaffenen sich in Potsdam zu präsentieren und allen Menschen, Teil des Publikums zu sein.`,
-      color: "text-red-800",
+      color: "text-red-600",
     },
     {
       subTitle: "Begegnung & Toleranz",
       title: "Menschen zusammenbringen",
       assetId: "db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
       description: `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
-      color: "text-blue-800",
+      color: "text-blue-600",
     },
     {
       subTitle: "Bildung & Jugend",
       title: "Zukünftige Generationen stärken",
       assetId: "16033de6-d1a2-4280-bef7-3851aad0ed6d",
       description: `Alle Kinder in Potsdam sollten die gleichen Chancen haben. Kinder und Jugendliche sind die Potsdamer Bürgerschaft von morgen: Damit sie stark, glücklich und erfolgreich in die Zukunft sehen und gehen können.`,
-      color: "text-yellow-800",
+      color: "text-yellow-600",
     },
   ];
 
