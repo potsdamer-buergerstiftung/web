@@ -36,10 +36,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                             <HeaderSubNavItem label="Ehrenamt" href="/mitmachen" />
                             <HeaderSubNavItem label="Jobs" href="/mitmachen/jobs" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Mitstiften">
-                            <HeaderSubNavItem label="Privatpersonen" href="/mitstiften/privatpersonen" />
-                            <HeaderSubNavItem label="Unternehmen" href="/mitstiften/unternehmen" />
-                        </HeaderNavItem>,
+                        <HeaderNavItem index={3} label="Mitstiften" href="/mitstiften" />,
                         <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
                     ]} />
                 }

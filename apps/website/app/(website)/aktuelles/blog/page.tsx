@@ -2,9 +2,7 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { Directus } from "@directus/sdk";
-import { Suspense } from "react";
 import PostGrid from "./PostGrid";
-import PostGridWrapper from "./PostGridWrapper";
 
 async function getPosts() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
