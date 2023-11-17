@@ -23,7 +23,7 @@ export default function QualityAndTransparencyPage() {
           <div className="col-span-5 lg:col-span-2 flex lg:items-start justify-between flex-col lg:flex-row gap-4 items-center">
             <h1 className="font-header text-3xl font-bold">Qualität</h1>
             <Image
-              src="/img/GS_22-24.png"
+              src="/img/GS_2024-26.png"
               width={200}
               height={200}
               alt="Gütesiegel"
