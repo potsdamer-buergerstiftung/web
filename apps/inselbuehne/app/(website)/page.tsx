@@ -34,11 +34,11 @@ export default function HomePage() {
           </div>
           <div className="col-span-6 md:col-span-3">
             <Image
-              src={`9fbafc25-4d32-4964-9f05-a4ac15234fa1`}
+              src={`6bf21b3a-0dff-4651-8c65-8b29f835c9cf`}
               width={400}
-              height={400}
+              height={500}
               alt="test"
-              className="w-full"
+              className="w-full h-full object-right-top"
             />
           </div>
         </div>
