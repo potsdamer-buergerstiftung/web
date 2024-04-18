@@ -12,8 +12,7 @@ export default function HeaderNav() {
             <div
                 className="hidden h-full w-full flex-row items-center justify-end gap-x-3 lg:flex xl:gap-x-5"
             >
-                <HeaderNavItem label="Programm" href="/programm" />
-                <HeaderNavItem label="Festival-Pass" href="https://www.eventbrite.de/e/50-jahre-inselbuhne-tickets-705908199427" />
+                <HeaderNavItem label="Veranstaltungen" href="/veranstaltungen" />
                 <HeaderNavItem label="Blog" href="https://www.potsdamer-buergerstiftung.org/aktuelles/blog" />
             </div>
             <HeaderNavBrand />

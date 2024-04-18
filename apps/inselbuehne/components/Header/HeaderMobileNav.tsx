@@ -15,8 +15,7 @@ export default function HeaderMobileNav() {
             })}
         >
             <div className="container mx-auto flex flex-col px-2 pt-44">
-                <HeaderNavItem label="Programm" href="/programm" />
-                <HeaderNavItem label="Festival-Pass" href="https://www.eventbrite.de/e/50-jahre-inselbuhne-tickets-705908199427" />
+                <HeaderNavItem label="Veranstaltungen" href="/veranstaltungen" />
                 <HeaderNavItem
                     label="Blog"
                     href="https://www.potsdamer-buergerstiftung.org/aktuelles/blog"

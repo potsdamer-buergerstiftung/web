@@ -3,8 +3,8 @@ import Image from "@components/Image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "50 Jahre Inselbühne: Das Festival - Inselbühne Potsdam",
-  description: "Wir möchten mit euch gemeinsam 50 Jahre Inselbühne feiern. Über 4 Tage hinweg gibt es ein buntes Programm mit Kino, Musik, Theater, Tanz und vielem mehr."
+  title: "Auf in die vierte Saison! - Inselbühne Potsdam",
+  description: "Am 24. Mai 2024 eröffnen wir die Saison mit Engerling und Sweet Confusion und haben bis Mitte September ein schönes vielfältiges Programm am Start."
 }
 
 export default function HomePage() {
@@ -14,29 +14,22 @@ export default function HomePage() {
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-48 pb-12 md:pb-24">
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
-              <span className="text-amber-500">
-                50 Jahre Inselbühne:
-                <br />
+              <span className="text-green-500">
+                Auf geht's!
               </span>{" "}
-              Das Festival
+              Die vierte Saison Inselbühne
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
-              Wir möchten mit euch gemeinsam 50 Jahre Inselbühne feiern. Über 4
-              Tage hinweg gibt es ein buntes Programm mit Kino, Musik, Theater,
-              Tanz und vielem mehr. Die Inselbühne wurde 1974 anlässlich der
-              Welt-Jugend-Spiele in Potsdam gestiftet und zu DDR-Zeiten als
-              wichtiger Kulturort genutzt. Daran möchten wir mit diesem
-              Geburtstags-Jubiläum erinnern und anknüpfen.
+              Am 24. Mai 2024 eröffnen wir die Saison mit Engerling und Sweet Confusion und haben bis Mitte September ein schönes vielfältiges Programm am Start. Es ist bunt wie immer mit Konzerten, Kino und Karaoke. Eine grüne Oase im Herzen der Stadt für Lesungen, Bands, Chöre, Sport unter freiem Himmel, Zumba, Kinderyoga und Theater für jung und alt.
             </p>
-              <p className="mt-2 font-bold text-lg">
-                Kommt und feiert mit uns, damit die Inselbühne lebt und für
-                Potsdam und erhalten bleibt!
-              </p>
+            <p className="mt-2 font-bold text-lg">
+              Es kommt auch immer noch etwas dazu, also schaut gerne öfter mal ins Programm.
+            </p>
             <Link
-              href="/programm"
+              href="/veranstaltungen"
               className="mt-6 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-5 py-3 text-lg font-medium text-white shadow-md transition hover:bg-green-400"
             >
-              Zum Programm
+              Zu den Veranstaltungen
             </Link>
           </div>
           <div className="col-span-6 md:col-span-3">
@@ -94,20 +87,9 @@ export default function HomePage() {
             />
           </div>
           <div className="order-1 col-span-2 lg:order-2 lg:col-span-1">
-            <h1 className="font-serif text-4xl">Inselbühne in 2023</h1>
+            <h1 className="font-serif text-4xl">Inselbühne 2024</h1>
             <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              Da die Verhandlungen mit der Stadt Potsdam über die Zukunft der
-              Inselbühne dieses Jahr erst (zum Teil) sehr spät abgeschlossen
-              wurden, haben wir uns entschieden, den Veranstaltungsbetrieb wie
-              ihr ihn kennt für dieses Jahr auszusetzen. Ob und wie es 2024
-              weitergeht, steht noch nicht fest. Wir halten euch aber auf dem
-              Laufenden. Wir möchten euch trotzdem in diesem Jahr die
-              Möglichkeit geben, die Bühne zu nutzen, sodass ihr ohne großen
-              Aufwand und in Eigenregie eure Veranstaltungen organisieren könnt.
-              Kontaktiert uns dafür einfach über unsere{" "}
-              <Link href="/kontakt" className="underline">
-                E-Mail-Adresse.
-              </Link>
+              Wir haben von der Stadt erstmals einen mehrjährigen Vertrag bekommen, nämlich für fünf Jahre. Damit kommen wir endlich raus aus dem kurzatmigen Jahreszyklus inklusive Bangen, ob wir wieder den Zuschlag bekommen. Das eröffnet uns erstmals Perspektiven, ein langfristiges Konzept mit wiedererkennbaren Linien und tragfähige Strukturen für den Spielbetrieb zu entwickeln. Daneben nehmen wir die Sanierung der maroden Bühne in den Blick, die wir Schritt für Schritt gemeinsam wieder auf Vordermann bringen möchten.
             </p>
           </div>
         </div>
@@ -115,22 +97,26 @@ export default function HomePage() {
       <section className="bg-gray-50">
         <div className="mx-auto max-w-3xl px-4 pt-24 pb-24 text-center md:pt-32 md:pb-32">
           <h4 className="text-sm font-bold uppercase tracking-widest text-green-500">
-            Der Festival-Pass
+            Die Inselbühne
           </h4>
-          <h1 className="mt-3 font-serif text-4xl">Hol&apos; dir dein Ticket</h1>
+          <h1 className="mt-3 font-serif text-4xl">Wir suchen dich</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">
-            Für unser Festival gibt es einen Festival-Pass, mit dem du uns dabei
-            unterstützt, den Betrieb der Inselbühne für die Zukunft zu sichern.
-            Du erhältst Zugang zu allen Veranstaltungen und bekommst ein kleines
-            Andenken von uns, das diese Zeit auch nach dem Festival in
-            Erinnerung hält.
+          Sowohl für den Kulturbetrieb, als auch für die Sanierung brauchen wir Menschen, die Zeit, Know-how, Material und Geld spenden.
           </p>
+          <div className="flex flex-row justify-center gap-x-4">
           <Link
-            href="https://www.eventbrite.de/e/50-jahre-inselbuhne-tickets-705908199427"
+            href="https://www.potsdamer-buergerstiftung.org/mitmachen"
             className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
           >
-            Festival-Pass erwerben
+            Mitmachen
           </Link>
+          <Link
+            href="https://www.potsdamer-buergerstiftung.org/mitstiften/privatpersonen/spenden"
+            className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
+          >
+            Mitstiften
+          </Link>
+          </div>
         </div>
       </section>
     </>
