@@ -15,7 +15,7 @@ export default function HomePage() {
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
               <span className="text-green-500">
-                Auf geht's!
+                Auf geht&apos;s!
               </span>{" "}
               Die vierte Saison Inselbühne
             </h1>

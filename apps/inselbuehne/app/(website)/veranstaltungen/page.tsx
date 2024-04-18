@@ -43,6 +43,7 @@ export default function ProgramPage() {
                     className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center"
                 >
                     <Suspense>
+                        {/* @ts-ignore-error */}
                         <EventList promise={events} />
                     </Suspense>
                 </div>
