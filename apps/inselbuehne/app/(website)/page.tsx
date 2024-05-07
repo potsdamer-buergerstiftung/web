@@ -20,7 +20,7 @@ export default function HomePage() {
               Die vierte Saison Inselbühne
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
-              Am 24. Mai 2024 eröffnen wir die Saison mit Engerling und Sweet Confusion und haben bis Mitte September ein schönes vielfältiges Programm am Start. Es ist bunt wie immer mit Konzerten, Kino und Karaoke. Eine grüne Oase im Herzen der Stadt für Lesungen, Bands, Chöre, Sport unter freiem Himmel, Zumba, Kinderyoga und Theater für jung und alt.
+              Am 19. Mai 2024 eröffnen wir die Saison mit dem Landespolizeiorchester Brandenburg zugunsten der Inselbühne. Anschließend haben wir bis Mitte September ein schönes vielfältiges Programm am Start. Es ist bunt wie immer mit Konzerten, Kino und Karaoke. Eine grüne Oase im Herzen der Stadt für Lesungen, Bands, Chöre, Sport unter freiem Himmel, Zumba, Kinderyoga und Theater für jung und alt.
             </p>
             <p className="mt-2 font-bold text-lg">
               Es kommt auch immer noch etwas dazu, also schaut gerne öfter mal ins Programm.
