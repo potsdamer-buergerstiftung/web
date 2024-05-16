@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { WixMediaImage } from "./WixMediaImage";
 
 const ProjectCard: React.FC<{
   title: string;
@@ -19,13 +20,7 @@ const ProjectCard: React.FC<{
       href={`/aktuelles/projekte/${projectId}`}
       className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
     >
-      <Image
-        src={`https://portal.potsdamer-buergerstiftung.org/assets/${imageId}`}
-        height={imageProps.height}
-        width={imageProps.width}
-        className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-        alt={`Bild von ${title}`}
-      />
+      <WixMediaImage media={imageId} objectFit="cover"/>
       <div className="pointer-events-none absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
       <div className="flex-column absolute top-0 bottom-0 left-0 right-0 flex items-end p-8">
         <div className="relative w-full">

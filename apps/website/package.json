@@ -13,7 +13,12 @@
     "@heroicons/react": "^2.0.13",
     "@mollie/api-client": "^3.7.0",
     "@types/react-responsive-masonry": "^2.1.0",
+    "@wix/data": "^1.0.101",
+    "@wix/events": "^1.0.199",
+    "@wix/media": "^1.0.75",
+    "@wix/sdk": "^1.9.2",
     "api": "*",
+    "classnames": "^2.5.1",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "framer-motion": "^8.4.2",
@@ -28,7 +33,28 @@
     "react-dom": "^18.2.0",
     "react-responsive-masonry": "^2.1.7",
     "react-sticky-box": "^2.0.4",
-    "ui": "*"
+    "ricos-viewer": "9",
+    "ui": "*",
+    "wix-rich-content-plugin-audio": "9",
+    "wix-rich-content-plugin-button": "9",
+    "wix-rich-content-plugin-code-block": "9",
+    "wix-rich-content-plugin-collapsible-list": "9",
+    "wix-rich-content-plugin-divider": "9",
+    "wix-rich-content-plugin-file-upload": "9",
+    "wix-rich-content-plugin-giphy": "9",
+    "wix-rich-content-plugin-hashtag": "9",
+    "wix-rich-content-plugin-headings": "9",
+    "wix-rich-content-plugin-html": "9",
+    "wix-rich-content-plugin-image": "9",
+    "wix-rich-content-plugin-link": "9",
+    "wix-rich-content-plugin-link-preview": "9",
+    "wix-rich-content-plugin-mentions": "9",
+    "wix-rich-content-plugin-social-polls": "9",
+    "wix-rich-content-plugin-spoiler": "9",
+    "wix-rich-content-plugin-table": "9",
+    "wix-rich-content-plugin-text-color": "9",
+    "wix-rich-content-plugin-vertical-embed": "9",
+    "wix-rich-content-plugin-video": "9"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -43,8 +69,9 @@
     "eslint": "7.32.0",
     "eslint-config-custom": "*",
     "postcss": "^8.4.19",
+    "sass": "^1.77.1",
     "tailwindcss": "^3.2.4",
     "tsconfig": "*",
-    "typescript": "^4.5.3"
+    "typescript": "^5.4.5"
   }
 }

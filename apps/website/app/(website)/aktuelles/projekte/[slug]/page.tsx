@@ -10,6 +10,7 @@ import PostGrid from "../../blog/PostGrid";
 import ProjectFilterTabs from "../ProjectFilterTabs";
 import { isFilter } from "../util";
 import ProjectContent from "./ProjectContent";
+import { wixClient } from "app/(website)/wix";
 
 const slugStatusMap = {
     "wiederkehrend": "Wiederkehrende Projekte",
@@ -34,7 +35,7 @@ function mapSlugToStatus(slug: string) {
 }
 
 async function getProject(slug: string) {
-    const isFilterS = isFilter(slug);
+    /* const isFilterS = isFilter(slug);
 
     let filter: any;
 
@@ -63,10 +64,14 @@ async function getProject(slug: string) {
         return res.data;
     }
 
-    return res.data![0];
+    return res.data![0]; */
+
+    console.log(slug)
+
+    return (await wixClient.items.getDataItem(slug, { dataCollectionId: "Projekte" })).data
 }
 
-async function getPosts(projectId: string) {
+/* async function getPosts(projectId: string) {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
     const res = await directus.items<any, any>("posts").readByQuery({
         fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
@@ -79,7 +84,7 @@ async function getPosts(projectId: string) {
         sort: ["-date"],
     });
     return res.data;
-}
+} */
 
 type Props = {
     params: { slug: string }
@@ -113,39 +118,16 @@ export default function ProjectPage({
     params: { slug: string };
 }) {
     const project = getProject(params.slug);
-    const posts = getPosts(params.slug);
+    //const posts = getPosts(params.slug);
 
     const { slug } = params;
-
-    const isFilterS = isFilter(slug);
-
-    if (isFilterS) {
-        const title = slugStatusMap[slug];
-        return (
-            <>
-                <PageTitle title={title} actions={
-                    <ProjectFilterTabs activeSlug={slug} />
-                } breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />, <PageBreadcrumbItem label={title} />]} />} />
-                <div className="container mx-auto px-4 mb-10">
-                    <Suspense fallback={<ProjectGridLoading />}>
-                        {/* @ts-ignore-error */}
-                        <ProjectGrid promise={project} />
-                    </Suspense>
-                </div>
-            </>
-        )
-    }
 
     return (
         <>
             <Suspense>
                 {/* @ts-ignore-error */}
                 <ProjectContent promise={project} />
-                <div className="container mx-auto px-4 mb-10 mt-10">
-                    <h1 className="text-3xl font-bold mb-10 font-header">Aktuelles zum Projekt</h1>
-                    {/* @ts-ignore-error */}
-                    <PostGrid promise={posts} />
-                </div>
+                
             </Suspense>
         </>
     )

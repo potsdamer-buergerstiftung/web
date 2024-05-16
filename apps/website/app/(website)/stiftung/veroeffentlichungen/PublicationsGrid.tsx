@@ -13,14 +13,14 @@ export default async function PublicationsGrid(props: PublicationsGridProps) {
                     <h1 className="font-header mt-2 text-4xl font-bold">
                         {category.title}
                     </h1>
-                    <div className="mt-4 max-w-2xl" dangerouslySetInnerHTML={{ __html: category.description }} />
+                    <div className="mt-4 max-w-2xl" dangerouslySetInnerHTML={{ __html: category.beschreibung }} />
                 </div>
                 <div
                     className="col-span-2">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                        {category.publications.map((publication: any) => (
-                            <ArticleCard title={publication.title} date={new Date(publication.date_created)} projectTitle={publication.file.type.split('/')[1].toUpperCase()}
-                                link={`https://portal.potsdamer-buergerstiftung.org/assets/${publication.file.id}`} />
+                        {category.downloads.map((publication: any) => (
+                            <ArticleCard title={publication.title} date={new Date(publication._createdDate.$date)} projectTitle={publication.link.id.split('.')[1].toUpperCase()}
+                                link={publication.link.url} />
                         ))}
                     </div>
                 </div>

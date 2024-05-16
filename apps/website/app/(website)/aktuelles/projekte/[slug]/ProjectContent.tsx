@@ -5,16 +5,22 @@ import PageTitle from "@components/PageTitle";
 import ProjectContentWrapper from "./ProjectContentWrapper";
 import Image from "next/image";
 import ProjectGrid from "app/(website)/ProjectGrid";
+import { WixMediaImage } from "@components/WixMediaImage";
+import RichContentViewer from "@components/RichContentViewer";
+import { toDraft } from "ricos-content/libs/toDraft";
 
 interface ProjectContentProps {
     promise: Promise<any>;
 }
+  
 
 export default async function ProjectContent(props: ProjectContentProps) {
     const project = await props.promise;
 
-    const content = <Block data={project.content} />;
-    const image = <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`} alt={project.title} width={800} height={400}/>;
+    console.log(JSON.stringify(project))
+    const con = toDraft(project.inhalt)
+    const content = <RichContentViewer content={con} />
+    const image = <WixMediaImage media={project.projektbild} alt={project.title} width={800} height={400}/>;
 
     return (
         <>

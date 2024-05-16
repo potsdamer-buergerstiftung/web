@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { WixMediaImage } from "./WixMediaImage";
 
 interface TeamMemberCardProps {
     title: string;
@@ -15,10 +16,9 @@ export default function TeamMemberCard({ title, name, description, image }: Team
                     className="absolute bottom-0 top-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-transparent"
                 />
                 {image && (
-                    <Image
-                        src={`https://portal.potsdamer-buergerstiftung.org/assets/${image}`}
+                    <WixMediaImage
+                        media={image}
                         className="h-full w-full object-cover"
-                        quality="30"
                         height={800}
                         width={400}
                         alt={`Bild von ${name}`}

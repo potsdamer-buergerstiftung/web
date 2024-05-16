@@ -5,13 +5,34 @@ import { Directus } from "@directus/sdk";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import PublicationsGrid from "./PublicationsGrid";
+import { wixClient } from "app/(website)/wix";
+import { media } from "@wix/sdk";
+
+export const dynamic = 'force-dynamic';
 
 async function getPublicationCategories() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("publication_categories").readByQuery({
-        fields: ["*", "publications.*.title", "publications.*.description", "publications.file.*"],
-    });
-    return res.data;
+    const categories = (await wixClient.items.queryDataItems({
+        dataCollectionId: "Download-Kategorien",
+    }).find()).items.map((i) => i.data)
+
+    const downloads = (await wixClient.items.queryDataItems({
+        dataCollectionId: "Downloads",
+    }).find()).items.map((i) => {
+        const d = i.data;
+        return {
+            link: media.getDocumentUrl(d.document),
+            ...d
+        } as any
+    })
+
+    const mapped = categories.map((c) => {
+        return {
+            downloads: downloads.filter((d) => d.kategorie == c._id),
+            ...c
+        }
+    })
+
+    return mapped
 }
 
 export const metadata: Metadata = {

@@ -36,9 +36,9 @@ export default async function ProjectGrid({
         >
           <ProjectCard
             title={project.title}
-            subTitle={project.sub_title}
-            projectId={project.id}
-            imageId={project.image}
+            subTitle={project.kurzbeschreibung}
+            projectId={project._id}
+            imageId={project.projektbild}
             imageSize={indexToSpan(i) * 2 == 2 ? "small" : "large"}
           />
         </div>

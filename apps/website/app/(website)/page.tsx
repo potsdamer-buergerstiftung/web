@@ -7,15 +7,22 @@ import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
 import { Metadata } from "next";
+import { wixClient } from "./wix";
 
 export const revalidate = 120;
 
-async function getProjects() {
+/* async function getProjects() {
   const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
   const res = await directus.items<any, any>("projects").readByQuery({
     limit: 5,
   });
   return res.data;
+} */
+
+async function getProjects() {
+  return (await wixClient.items.queryDataItems({
+    dataCollectionId: "Projekte",
+  }).limit(9).find()).items.map((i) => i.data)
 }
 
 async function getPosts() {
@@ -29,21 +36,7 @@ async function getPosts() {
 }
 
 async function getEvents() {
-  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-  const res = await directus.items<any, any>("events").readByQuery({
-    fields: [
-      "name",
-      "start",
-      "id",
-      "image",
-      "external_ticket_url",
-      "registration_needed",
-    ],
-    limit: 3,
-    sort: ["start"],
-    filter: { start: { _gte: new Date().toISOString() } },
-  });
-  return res.data;
+  return (await wixClient.wixEventsV2.queryEvents().find()).items
 }
 
 export const metadata: Metadata = {

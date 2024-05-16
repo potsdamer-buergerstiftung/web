@@ -2,6 +2,7 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import TeamMemberCard from "@components/TeamMemberCard";
+import { wixClient } from "app/(website)/wix";
 import { Metadata } from "next";
 
 const officeTeam = [
@@ -131,11 +132,32 @@ const boardOfCurators = [
     },
 ];
 
+async function getTeam() {
+    const categories = (await wixClient.items.queryDataItems({
+        dataCollectionId: "Gremien",
+    }).find()).items.map((i) => i.data)
+
+    const members = (await wixClient.items.queryDataItems({
+        dataCollectionId: "Team",
+    }).find()).items.map((i) => i.data)
+
+    const mapped = categories.map((c) => {
+        return {
+            members: members.filter((d) => d.gremium == c._id),
+            ...c
+        } as any
+    })
+
+    return mapped
+}
+
 export const metadata: Metadata = {
     title: "Unsere Gremien - Potsdamer Bürgerstiftung",
 }
 
-export default function TeamPage() {
+export default async function TeamPage() {
+    const categories = await getTeam();
+    console.log(JSON.stringify(categories))
     return (
         <>
             <PageTitle title="Unsere Gremien" description={
@@ -147,108 +169,34 @@ export default function TeamPage() {
                     Finanzamt Potsdam geprüft.
                 </p>
             } breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Gremien" />]} />} />
-            <section className="pb-16 pt-8">
-                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-                    <div>
-                        <h4 className="text-sm font-semibold uppercase text-gray-600">
-                            Unser Team
-                        </h4>
-                        <h1 className="font-header mt-2 text-4xl font-bold">Das Office-Team</h1>
-                    </div>
-                    <div>
-                        <p>
-                            Das Office-Team der Bürgerstiftung Potsdam ist die zentrale
-                            Anlaufstelle für alle Fragen rund um die Stiftung.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section className="pb-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
-                    {officeTeam.map((member) => (
-                        <div>
-                            <TeamMemberCard {...member} />
+            {categories.map((category) => (
+                <>
+                    <section className="pb-16 pt-8">
+                        <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
+                            <div>
+                                <h4 className="text-sm font-semibold uppercase text-gray-600">
+                                    Unser Team
+                                </h4>
+                                <h1 className="font-header mt-2 text-4xl font-bold">{category.title}</h1>
+                            </div>
+                            <div>
+                                <p>
+                                    {category.beschreibung}
+                                </p>
+                            </div>
                         </div>
-                    ))}
-                </div>
-            </section>
-            <section className="pb-16">
-                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-                    <div>
-                        <h4 className="text-sm font-semibold uppercase text-gray-600">
-                            Unser Team
-                        </h4>
-                        <h1 className="font-header mt-2 text-4xl font-bold">Der Vorstand</h1>
-                    </div>
-                    <div>
-                        <p>
-                            Der ehrenamtlich tätige Vorstand führt die Stiftung nach Maßgabe der
-                            Satzung in eigener Verantwortung. Er hat dabei den Stiftungszweck so
-                            wirksam und nachhaltig wie möglich zu erfüllen.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className="grid grid-cols-4 overflow-hidden">
-                    {boardMembers.map((member) => (
-                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
-                            <TeamMemberCard {...member} />
+                    </section>
+                    <section className="pb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
+                            {category.members.map((member) => (
+                                <div>
+                                    <TeamMemberCard title={member.bereichPosition} image={member.image} description={member.beschreibung} name={member.title} />
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </section>
-            <section className="py-16">
-                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-                    <div>
-                        <h4 className="text-sm font-semibold uppercase text-gray-600">
-                            Unser Team
-                        </h4>
-                        <h1 className="font-header mt-2 text-4xl font-bold">Der Stiftungsrat</h1>
-                    </div>
-                    <div>
-                        <p>
-                            Der Stiftungsrat kontrolliert den Vorstand. Die Stiftungssatzung ist
-                            dabei Maßstab der Dinge.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
-                    {boardOfTrustees.map((member) => (
-                        <div>
-                            <TeamMemberCard {...member} />
-                        </div>
-                    ))}
-                </div>
-            </section>
-            <section className="py-16">
-                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-                    <div>
-                        <h4 className="text-sm font-semibold uppercase text-gray-600">
-                            Unser Team
-                        </h4>
-                        <h1 className="font-header mt-2 text-4xl font-bold">Das Kuratorium</h1>
-                    </div>
-                    <div>
-                        <p>
-                            Das Kuratorium berät den Vorstand zu Schwerpunkten der
-                            Stiftungsarbeit, zum Jahresprogramm und zur Zusammenarbeit mit
-                            anderen Institutionen in Potsdam.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className="grid grid-cols-4 overflow-hidden">
-                    {boardOfCurators.map((member) => (
-                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
-                            <TeamMemberCard {...member} />
-                        </div>
-                    ))}
-                </div>
-            </section>
+                    </section>
+                </>
+            ))}
         </>
     )
 }
