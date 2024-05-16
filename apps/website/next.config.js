@@ -3,7 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['portal.potsdamer-buergerstiftung.org', 'wixapis.com'],
+    },
   },
   async rewrites() {
     return [

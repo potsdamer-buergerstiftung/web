@@ -22,7 +22,7 @@ export const revalidate = 120;
 async function getProjects() {
   return (await wixClient.items.queryDataItems({
     dataCollectionId: "Projekte",
-  }).limit(9).find()).items.map((i) => i.data)
+  }).limit(7).find()).items.map((i) => i.data)
 }
 
 async function getPosts() {
