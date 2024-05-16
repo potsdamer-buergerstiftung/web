@@ -11,7 +11,7 @@
     "web#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["MOLLIE_API_KEY"]
+      "env": ["MOLLIE_API_KEY", "WIX_API_KEY"]
     },
     "dev": {
       "cache": false
