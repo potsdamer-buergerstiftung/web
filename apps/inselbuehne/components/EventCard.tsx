@@ -4,6 +4,7 @@ import Image from "@components/Image";
 import clsx from "clsx";
 import NextImage from "next/image";
 import { useState } from "react";
+import { WixMediaImage } from "./WixMediaImage";
 
 
 interface EventCardProps {
@@ -16,6 +17,7 @@ interface EventCardProps {
     external_ticket_url?: string;
     canceled?: boolean;
     localImage?: boolean;
+    href: string;
 }
 
 export default function EventCard({
@@ -23,20 +25,21 @@ export default function EventCard({
     summary,
     start,
     image,
-    localImage
+    localImage,
+    href
 }: EventCardProps) {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div
-            onClick={() => setExpanded(!expanded)}
+        <a
+            href={href}
             className={clsx(["cursor-pointer bg-white grid min-h-max w-full grid-cols-5 overflow-hidden rounded-tl-2xl rounded-br-2xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl", expanded ? "h-full" : "lg:h-64"])}
         >
             <div className="relative col-span-5 h-64 w-full lg:col-span-2 lg:h-full">
                 {localImage ? (
                     <NextImage src={`/img/${image}`} alt={`Bild von ${title}`} width={400} height={400} className="absolute h-full w-full object-cover" />
-                ) : (<Image
-                    src={image}
+                ) : (<WixMediaImage
+                    media={image}
                     alt="test"
                     width={400}
                     height={400}
@@ -76,6 +79,6 @@ export default function EventCard({
                     )}
                 </div>
             </div>
-        </div>
+        </a>
     )
 }

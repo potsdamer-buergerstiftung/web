@@ -20,6 +20,8 @@ const nextConfig = {
         hostname: 'portal.potsdamer-buergerstiftung.org',
       },
     ],
+    domains: ['static.wixstatic.com'],
+    formats: ['image/webp'],
   },
   transpilePackages: ["ui"],
 };

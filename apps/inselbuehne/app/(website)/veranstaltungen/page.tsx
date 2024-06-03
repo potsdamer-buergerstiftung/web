@@ -5,6 +5,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 import EventList from "./EventList";
 import { Suspense } from "react";
+import { wixClient } from "../wix";
+import { wixEventsV2 } from "@wix/events";
+
+export const revalidate = 0;
 
 export const metadata: Metadata = {
     title: "Veranstaltungen - Inselbühne Potsdam",
@@ -12,21 +16,11 @@ export const metadata: Metadata = {
 }
 
 async function getEvents() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("events").readByQuery({
-        fields: [
-            "name",
-            "start",
-            "id",
-            "image",
-            "external_ticket_url",
-            "registration_needed",
-            "summary"
-        ],
-        sort: ["-start"],
-        filter: { project: { _eq: "inselbuehne" }, start: { _gte: new Date().toISOString() } }
-    });
-    return res.data;
+    return (await wixClient.wixEventsV2.queryEvents({
+        fields: [wixEventsV2.RequestedFields.CATEGORIES, wixEventsV2.RequestedFields.DETAILS]
+    }).ge("dateAndTimeSettings.startDate", new Date().toISOString()).find()).items.filter((event) => {
+        return (event as any).categories?.categories?.some((c) => c.name === "Inselbühne") ?? false;
+    })
 }
 
 export default function ProgramPage() {
