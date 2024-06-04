@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import { wixClient } from "../wix";
 import { wixEventsV2 } from "@wix/events";
 
-export const revalidate = 0;
+export const revalidate = 120;
 
 export const metadata: Metadata = {
     title: "Veranstaltungen - Inselbühne Potsdam",

@@ -12,6 +12,8 @@ import { isFilter } from "../util";
 import ProjectContent from "./ProjectContent";
 import { wixClient } from "app/(website)/wix";
 
+export const revalidate = 120;
+
 const slugStatusMap = {
     "wiederkehrend": "Wiederkehrende Projekte",
     "abgeschlossen": "Abgeschlossene Projekte",
