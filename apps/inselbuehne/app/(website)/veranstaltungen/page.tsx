@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 async function getEvents() {
     return (await wixClient.wixEventsV2.queryEvents({
         fields: [wixEventsV2.RequestedFields.CATEGORIES, wixEventsV2.RequestedFields.DETAILS]
-    }).ge("dateAndTimeSettings.startDate", new Date().toISOString()).find()).items.filter((event) => {
+    }).ge("dateAndTimeSettings.startDate", new Date().toISOString()).ascending("dateAndTimeSettings.startDate").find()).items.filter((event) => {
         return (event as any).categories?.categories?.some((c) => c.name === "Inselbühne") ?? false;
     })
 }

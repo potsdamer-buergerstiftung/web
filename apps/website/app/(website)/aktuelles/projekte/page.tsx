@@ -9,6 +9,8 @@ import { Suspense } from "react";
 import ProjectFilterTabs from "./ProjectFilterTabs";
 import { wixClient } from "app/(website)/wix";
 
+export const revalidate = 120;
+
 export const metadata: Metadata = {
     title: "Projekte - Potsdamer Bürgerstiftung",
 }

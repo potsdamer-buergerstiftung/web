@@ -36,7 +36,7 @@ async function getPosts() {
 }
 
 async function getEvents() {
-  return (await wixClient.wixEventsV2.queryEvents().find()).items
+  return (await wixClient.wixEventsV2.queryEvents().ge("dateAndTimeSettings.startDate", new Date().toISOString()).ascending("dateAndTimeSettings.startDate").limit(3).find()).items;
 }
 
 export const metadata: Metadata = {
