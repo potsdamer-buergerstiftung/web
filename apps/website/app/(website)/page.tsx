@@ -227,7 +227,7 @@ export default async function HomePage() {
               großzügigen Beiträge und Deiner Unterstützung möglich wurden.
             </p>
             <Link
-              href="/stiftung/aktuelles"
+              href="/aktuelles/blog"
               className="text-md font-header mt-12 mb-4 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
             >
               Alle Beiträge
