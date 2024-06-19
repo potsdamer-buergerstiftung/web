@@ -8,6 +8,8 @@ async function getEvent(id: string) {
     return (await wixClient.wixEventsV2.getEventBySlug(id, { fields: [wixEvents.RequestedFields.DETAILS, wixEvents.RequestedFields.TEXTS] })).event
 }
 
+export const revalidate = 120;
+
 export default function PostPage({
     params,
 }: {
