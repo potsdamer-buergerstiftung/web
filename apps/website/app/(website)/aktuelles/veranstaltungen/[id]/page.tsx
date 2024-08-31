@@ -5,7 +5,11 @@ import { wixClient } from "app/(website)/wix";
 import { wixEventsV2 as wixEvents } from '@wix/events';
 
 async function getEvent(id: string) {
-    return (await wixClient.wixEventsV2.getEventBySlug(id, { fields: [wixEvents.RequestedFields.DETAILS, wixEvents.RequestedFields.TEXTS] })).event
+    const event =  (await wixClient.wixEventsV2.getEventBySlug(id, { fields: [wixEvents.RequestedFields.DETAILS, wixEvents.RequestedFields.TEXTS] })).event
+
+    console.log(event)
+
+    return event;
 }
 
 export const revalidate = 120;
