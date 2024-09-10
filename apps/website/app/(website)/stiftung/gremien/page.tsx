@@ -152,7 +152,7 @@ async function getTeam() {
 }
 
 export const metadata: Metadata = {
-    title: "Unsere Gremien - Potsdamer Bürgerstiftung",
+    title: "Unsere Gremien / Team - Potsdamer Bürgerstiftung",
 }
 
 export const revalidate = 90;
@@ -162,7 +162,7 @@ export default async function TeamPage() {
     console.log(JSON.stringify(categories))
     return (
         <>
-            <PageTitle title="Unsere Gremien" description={
+            <PageTitle title="Gremien / Team" description={
                 <p className="max-w-3xl">
                     Die Bürgerstiftung Potsdam wird durch den Vorstand vertreten.
                     Insgesamt untersteht die Bürgerstiftung Potsdam der Stiftungsaufsicht
