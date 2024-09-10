@@ -155,6 +155,8 @@ export const metadata: Metadata = {
     title: "Unsere Gremien - Potsdamer Bürgerstiftung",
 }
 
+export const revalidate = 90;
+
 export default async function TeamPage() {
     const categories = await getTeam();
     console.log(JSON.stringify(categories))
