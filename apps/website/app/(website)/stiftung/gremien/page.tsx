@@ -135,11 +135,11 @@ const boardOfCurators = [
 async function getTeam() {
     const categories = (await wixClient.items.queryDataItems({
         dataCollectionId: "Gremien",
-    }).find()).items.map((i) => i.data)
+    }).ascending("_manualSort_511e0c09-9471-4ff4-bd55-0beb3135c2da").find()).items.map((i) => i.data)
 
     const members = (await wixClient.items.queryDataItems({
         dataCollectionId: "Team",
-    }).find()).items.map((i) => i.data)
+    }).ascending("_manualSort_74f73ecd-5fc3-419a-b893-8f87eda0a854").find()).items.map((i) => i.data)
 
     const mapped = categories.map((c) => {
         return {
@@ -159,7 +159,6 @@ export const revalidate = 90;
 
 export default async function TeamPage() {
     const categories = await getTeam();
-    console.log(JSON.stringify(categories))
     return (
         <>
             <PageTitle title="Gremien / Team" description={
