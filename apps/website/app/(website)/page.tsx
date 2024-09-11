@@ -8,6 +8,7 @@ import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
 import { Metadata } from "next";
 import { wixClient } from "./wix";
+import InstaFeed from "@components/InstaFeed";
 
 export const revalidate = 120;
 
@@ -217,7 +218,7 @@ export default async function HomePage() {
         <div className="container mx-auto grid grid-cols-6 gap-8 px-4">
           <div className="col-span-6 lg:col-span-4">
             <h4 className="text-sm font-semibold uppercase text-gray-600">
-              Von unserem Blog
+              Von unserem Instagram
             </h4>
             <h1 className="font-header mt-2 text-4xl font-bold">
               Aktuelles & Neues von uns
@@ -247,10 +248,7 @@ export default async function HomePage() {
               </svg>
             </Link>
           </div>
-          <Suspense>
-            {/* @ts-ignore-error */}
-            <PostGrid promise={posts} />
-          </Suspense>
+          <InstaFeed />
         </div>
       </section>
     </>

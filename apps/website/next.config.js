@@ -21,6 +21,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'portal.potsdamer-buergerstiftung.org',
       },
+      {
+        protocol: "https",
+        hostname: "*.cdninstagram.com",
+        port: "",
+      },
     ],
     domains: ['static.wixstatic.com'],
     formats: ['image/webp'],
