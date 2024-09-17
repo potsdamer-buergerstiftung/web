@@ -37,7 +37,8 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
                             <HeaderSubNavItem label="Jobs" href="/mitmachen/jobs" />
                         </HeaderNavItem>,
                         <HeaderNavItem index={3} label="Mitstiften" href="/mitstiften" />,
-                        <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />
+                        <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />,
+                        <HeaderNavItem index={5} label="Shop" href="https://shop.potsdamer-buergerstiftung.org" />,
                     ]} />
                 }
             />
