@@ -11,6 +11,11 @@ async function getProjects() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
     const res = await directus.items<any, any>("projects").readByQuery({
         fields: ["id", "title", "image"],
+        filter: {
+            allow_donations: {
+                _eq: true
+            }
+        }
     });
     return res.data;
 }
