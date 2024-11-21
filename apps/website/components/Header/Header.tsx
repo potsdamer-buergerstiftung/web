@@ -24,6 +24,7 @@ async function Banner() {
         className="px-10 group cursor-pointer flex justify-center py-2 md:py-3 transition bg-emerald-100 hover:bg-emerald-200"
         href={res.link}
         target="_blank"
+        rel="noreferrer"
       >
         <div className="font-medium text-center md:inline-flex lg:justify-center items-center">
           <b className="mr-2 text-sm md:text-md">{res.title}</b>
