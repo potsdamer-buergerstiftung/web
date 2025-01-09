@@ -2,6 +2,7 @@ import Link from "next/link";
 import FooterBanner from "./FooterBanner";
 import FooterBrand from "./FooterBrand";
 import FooterCopyright from "./FooterCopyright";
+import FooterDonateButton from "./FooterDonateButton";
 
 const Footer: React.FC = () => {
   return (
@@ -32,39 +33,34 @@ const Footer: React.FC = () => {
                 Allgemeine Fragen
               </h4>
               <p className="mt-6">E-Mail</p>
-              <a className="font-bold" href="mailto:info@potsdamer-buergerstiftung.org">info@potsdamer-buergerstiftung.org</a>
+              <a
+                className="font-bold"
+                href="mailto:info@potsdamer-buergerstiftung.org"
+              >
+                info@potsdamer-buergerstiftung.org
+              </a>
               <h4 className="font-header mt-6 text-xl font-bold md:text-lg">
                 Ehrenamt
               </h4>
               <p className="mt-6">E-Mail</p>
-              <a className="font-bold" href="mailto:ehrenamt@potsdamer-buergerstiftung.org">
+              <a
+                className="font-bold"
+                href="mailto:ehrenamt@potsdamer-buergerstiftung.org"
+              >
                 ehrenamt@potsdamer-buergerstiftung.org
               </a>
             </div>
             <div className="order-4 md:order-2 lg:order-4">
               <h4 className="font-header text-xl font-bold md:text-lg">
-                Für Newsletter anmelden
+                Spenden
               </h4>
-              <Link
-                href="https://aktion.potsdamer-buergerstiftung.org/newsletter/"
-                className="text-md font-header mt-4 inline-flex items-center rounded-md bg-slate-800 text-white py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
-              >
-                Jetzt anmelden
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-1 h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Link>
+              <p className="mt-6 font-bold">Bankverbindung</p>
+              <p className="">Deutsche Bank Potsdam</p>
+              <p className="">IBAN: DE93 1207 0000 0010 6633 00</p>
+              <p className="">BIC: DEUTDEBB160</p>
+
+              <p className="mt-6 font-bold">Andere Zahlungsmöglichkeiten</p>
+              <FooterDonateButton />
               {/* <form>
                 <input
                   type="email"
