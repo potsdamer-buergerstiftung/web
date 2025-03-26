@@ -3,8 +3,8 @@ import Image from "@components/Image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Auf in die vierte Saison! - Inselbühne Potsdam",
-  description: "Am 24. Mai 2024 eröffnen wir die Saison mit Engerling und Sweet Confusion und haben bis Mitte September ein schönes vielfältiges Programm am Start."
+  title: "Die 5. Saison steht vor der Tür! - Inselbühne Potsdam",
+  description: "Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald."
 }
 
 export default function HomePage() {
