@@ -7,7 +7,7 @@
     "dev": "nitropack dev"
   },
   "devDependencies": {
-    "nitropack": "0.4.4"
+    "nitropack": "2.11.8"
   },
   "dependencies": {
     "@directus/sdk": "^9.12.1"

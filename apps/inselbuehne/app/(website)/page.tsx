@@ -14,23 +14,22 @@ export default function HomePage() {
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-48 pb-12 md:pb-24">
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
-              <span className="text-green-500">
-                Auf geht&apos;s!
+              Die <span className="text-green-500">
+                5. Saison
               </span>{" "}
-              Die vierte Saison Inselbühne
+              steht vor der Tür!
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
-              Am 19. Mai 2024 eröffnen wir die Saison mit dem Landespolizeiorchester Brandenburg zugunsten der Inselbühne. Anschließend haben wir bis Mitte September ein schönes vielfältiges Programm am Start. Es ist bunt wie immer mit Konzerten, Kino und Karaoke. Eine grüne Oase im Herzen der Stadt für Lesungen, Bands, Chöre, Sport unter freiem Himmel, Zumba, Kinderyoga und Theater für jung und alt.
+              Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.
             </p>
             <p className="mt-2 font-bold text-lg">
-              Es kommt auch immer noch etwas dazu, also schaut gerne öfter mal ins Programm.
+              Leider ist die Website derzeit technisch beeinträchtigt - wir arbeiten daran!
             </p>
-            <Link
-              href="/veranstaltungen"
-              className="mt-6 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-5 py-3 text-lg font-medium text-white shadow-md transition hover:bg-green-400"
+            <button
+              className="mt-6 inline-flex rounded-tl-lg rounded-br-lg bg-gray-400 px-5 py-3 text-lg font-medium text-white shadow-md cursor-not-allowed opacity-50"
             >
               Zu den Veranstaltungen
-            </Link>
+            </button>
           </div>
           <div className="col-span-6 md:col-span-3">
             <Image
@@ -101,21 +100,21 @@ export default function HomePage() {
           </h4>
           <h1 className="mt-3 font-serif text-4xl">Wir suchen dich</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">
-          Sowohl für den Kulturbetrieb, als auch für die Sanierung brauchen wir Menschen, die Zeit, Know-how, Material und Geld spenden.
+            Sowohl für den Kulturbetrieb, als auch für die Sanierung brauchen wir Menschen, die Zeit, Know-how, Material und Geld spenden.
           </p>
           <div className="flex flex-row justify-center gap-x-4">
-          <Link
-            href="https://www.potsdamer-buergerstiftung.org/mitmachen"
-            className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
-          >
-            Mitmachen
-          </Link>
-          <Link
-            href="https://www.potsdamer-buergerstiftung.org/mitstiften/privatpersonen/spenden"
-            className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
-          >
-            Mitstiften
-          </Link>
+            <Link
+              href="https://www.potsdamer-buergerstiftung.org/mitmachen"
+              className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
+            >
+              Mitmachen
+            </Link>
+            <Link
+              href="https://www.potsdamer-buergerstiftung.org/mitstiften/privatpersonen/spenden"
+              className="text-md mt-4 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
+            >
+              Mitstiften
+            </Link>
           </div>
         </div>
       </section>
