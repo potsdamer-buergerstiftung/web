@@ -20,7 +20,7 @@ export default function HomePage() {
               steht vor der Tür!
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
-              Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.
+              Am 8. Juni um 11 Uhr geht&apos;s los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.
             </p>
             <p className="mt-2 font-bold text-lg">
               Leider ist die Website derzeit technisch beeinträchtigt - wir arbeiten daran!
