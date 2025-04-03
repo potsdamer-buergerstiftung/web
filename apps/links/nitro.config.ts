@@ -1,3 +1,5 @@
-import { defineNitroConfig } from "nitropack";
+import { defineNitroConfig } from "nitropack/config";
 
-export default defineNitroConfig({});
+export default defineNitroConfig({
+    compatibilityDate: "2025-03-01",
+});
