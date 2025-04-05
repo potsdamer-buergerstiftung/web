@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import { Space_Grotesk } from "next/font/google";
+import VisualEditing from "./VisualEditing";
 
 const font = Space_Grotesk({
   variable: "--font-header",
@@ -14,9 +15,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  
   return (
     <html className={`${font.variable} font-sans`} lang="de">
       <body className="antialiased">
+        <VisualEditing />
         {children}
       </body>
     </html>

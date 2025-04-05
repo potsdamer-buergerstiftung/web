@@ -3,6 +3,7 @@ import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { Directus } from "@directus/sdk";
 import PostGrid from "./PostGrid";
+import VisualEditingPage from "app/VisualEditingPage";
 
 async function getPosts() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
@@ -17,6 +18,7 @@ export default function NewsPage() {
     const posts = getPosts();
     return (
         <>
+            <VisualEditingPage />
             <PageTitle
                 title="News & Blog"
                 description="Was bei uns und unseren Projekten passiert"

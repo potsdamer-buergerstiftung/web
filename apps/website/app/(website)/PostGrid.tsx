@@ -22,6 +22,7 @@ export default async function PostGrid({ promise, compact = true }: PostsGridPro
             projectTitle={post.project?.title}
             compact={compact}
             link={`/aktuelles/blog/${post.slug}`}
+            id={post.id}
           />
         </div>
       ))}

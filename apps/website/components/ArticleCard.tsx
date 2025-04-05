@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import { setAttr } from "@directus/visual-editing";
 
 const ArticleCard: React.FC<{
   title: string;
@@ -11,6 +12,7 @@ const ArticleCard: React.FC<{
   tags?: string[];
   compact?: boolean;
   link?: string;
+  id?: string;
 }> = (props) => {
   const {
     compact = false,
@@ -21,6 +23,7 @@ const ArticleCard: React.FC<{
     author,
     tags,
     link,
+    id,
   } = props;
 
   const formattedDate = date.toLocaleDateString("de", {
@@ -34,11 +37,13 @@ const ArticleCard: React.FC<{
 
   const Wrapper = ({ children }) =>
     link ? (
-      <Link href={link} className={wrapperClass}>
+      <Link href={link} className={wrapperClass}
+        data-directus={setAttr({ collection: "posts", item: id })}>
         {children}
       </Link>
     ) : (
-      <div className={wrapperClass}>{children}</div>
+      <div className={wrapperClass}
+        data-directus={setAttr({ collection: "posts", item: id })}>{children}</div>
     );
 
   return (

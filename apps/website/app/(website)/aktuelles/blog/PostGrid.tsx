@@ -21,6 +21,7 @@ export default async function PostGrid({ promise }: PostsGridProps) {
                             imageId={post.image}
                             projectTitle={post.project?.title}
                             link={`/aktuelles/blog/${post.slug}`}
+                            id={post.id}
                         />
                     </div>
                 ))}
