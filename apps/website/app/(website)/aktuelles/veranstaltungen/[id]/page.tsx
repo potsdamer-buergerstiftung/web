@@ -1,18 +1,20 @@
 import { Directus } from "@directus/sdk";
 import { Suspense } from "react";
 import Event from "./Event";
-import { wixClient } from "app/(website)/wix";
-import { wixEventsV2 as wixEvents } from '@wix/events';
 
 async function getEvent(id: string) {
-    const event =  (await wixClient.wixEventsV2.getEventBySlug(id, { fields: [wixEvents.RequestedFields.DETAILS, wixEvents.RequestedFields.TEXTS] })).event
+    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+    const res = await directus.items<any, any>("events").readByQuery({
+        fields: ["name", "description", "summary", "start", "end", "location", "image"],
+        filter: {
+            id: {
+                _eq: id,
+            },
+        }
+    });
 
-    console.log(event)
-
-    return event;
+    return res.data![0];
 }
-
-export const revalidate = 120;
 
 export default function PostPage({
     params,

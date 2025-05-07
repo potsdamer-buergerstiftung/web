@@ -2,7 +2,6 @@ import Image from "next/image";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { WixMediaImage } from "@components/WixMediaImage";
 
 interface EventProps {
   promise: Promise<any>;
@@ -11,14 +10,14 @@ interface EventProps {
 export default async function Event({ promise }: EventProps) {
   const event = await promise;
 
-  let html = { __html: event.detailedDescription };
+  let html = { __html: event.description };
 
-  let start = new Date(event.dateAndTimeSettings.startDate).setHours(new Date(event.dateAndTimeSettings.startDate).getHours() - 2);
+  let start = new Date(event.start).setHours(new Date(event.start).getHours() - 2);
 
   return (
     <div>
       <PageTitle
-        title={event.title}
+        title={event.name}
         breadcrumb={
           <PageBreadcrumb
             items={[
@@ -30,48 +29,28 @@ export default async function Event({ promise }: EventProps) {
                 label="Veranstaltungen"
                 href="/aktuelles/veranstaltungen"
               />,
-              <PageBreadcrumbItem label={event.title} />,
+              <PageBreadcrumbItem label={event.name} />,
             ]}
           />
         }
         description={
-          <div>
-            <p>{event.shortDescription}</p>
-            <h5 className="font-bold text-lg mt-2">{new Date(event.dateAndTimeSettings.startDate).toLocaleDateString("de", { weekday: "long", timeZone: "Europe/Berlin", day: "2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
-            {event.location && (
-              <div className="flex items-center space-x-2 mt-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                </svg>
-                <p>{event.location.name}</p>
-              </div>
-            )}
-          </div>
+            <div>
+                <p>{event.summary}</p>
+                <h5 className="font-bold text-lg mt-2">{new Date(start).toLocaleDateString("de", { weekday: "long", timeZone: "Europe/Berlin", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
+            </div>
         }
         isCompact
       />
       <div className="container px-4 mx-auto max-w-4xl pb-16">
-        <WixMediaImage
-          media={event.mainImage}
-          alt={event.title}
+        <Image
+          src={`https://portal.potsdamer-buergerstiftung.org/assets/${event.image}`}
+          alt={event.name}
           width={800}
           height={500}
           className="mb-8"
         />
         <div className="prose lg:prose-lg" dangerouslySetInnerHTML={html}></div>
       </div>
-      {event.location && (
-        <div className="container px-4 mx-auto max-w-4xl pb-16">
-          <a className="flex items-center space-x-2 mt-2 text-emerald-500 font-semibold" href={`https://www.google.com/maps/search/?api=1&query=${event.location.address.formatted}`}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-            </svg>
-            <p>{event.location.name} - {event.location.address.formatted}</p>
-          </a>
-        </div>
-      )}
     </div>
   );
 }

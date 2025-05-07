@@ -37,7 +37,21 @@ async function getPosts() {
 }
 
 async function getEvents() {
-  return (await wixClient.wixEventsV2.queryEvents().ge("dateAndTimeSettings.startDate", new Date().toISOString()).ascending("dateAndTimeSettings.startDate").limit(3).find()).items;
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res = await directus.items<any, any>("events").readByQuery({
+    fields: [
+      "name",
+      "start",
+      "id",
+      "image",
+      "external_ticket_url",
+      "registration_needed",
+    ],
+    limit: 3,
+    sort: ["start"],
+    filter: { start: { _gte: new Date().toISOString() } },
+  });
+  return res.data;
 }
 
 export const metadata: Metadata = {
