@@ -25,11 +25,12 @@ export default function HomePage() {
             <p className="mt-2 font-bold text-lg">
               Leider ist die Website derzeit technisch beeinträchtigt - wir arbeiten daran!
             </p>
-            <button
-              className="mt-6 inline-flex rounded-tl-lg rounded-br-lg bg-gray-400 px-5 py-3 text-lg font-medium text-white shadow-md cursor-not-allowed opacity-50"
+            <Link
+              href="/veranstaltungen"
+              className="mt-6 inline-flex rounded-tl-lg rounded-br-lg bg-green-500 px-5 py-3 text-lg font-medium text-white shadow-md hover:bg-green-400"
             >
               Zu den Veranstaltungen
-            </button>
+            </Link>
           </div>
           <div className="col-span-6 md:col-span-3">
             <Image

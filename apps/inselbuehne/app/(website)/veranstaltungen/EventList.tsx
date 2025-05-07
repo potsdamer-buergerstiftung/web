@@ -18,7 +18,7 @@ export default async function EventList({ promise }: EventListProps) {
         <React.Fragment>
             {events?.map((event: any) => (
                 //<h1>{event.start} {event.name}</h1>
-                <EventCard title={event.title} start={new Date(event.dateAndTimeSettings.startDate)} summary={event.shortDescription} image={event.mainImage} localImage={false} href={`https://potsdamer-buergerstiftung.org/aktuelles/veranstaltungen/${event.slug}`} />
+                <EventCard title={event.name} start={new Date(new Date(event.start).setHours(new Date(event.start).getHours() - 2))} summary={event.summary} image={event.image} localImage={false} eventId={event.id} />
             ))}
         </React.Fragment>
     );
