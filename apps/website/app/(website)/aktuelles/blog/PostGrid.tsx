@@ -20,7 +20,7 @@ export default async function PostGrid({ promise }: PostsGridProps) {
                             date={new Date(post.date)}
                             imageId={post.image}
                             projectTitle={post.project?.title}
-                            link={`/aktuelles/blog/${post.slug}`}
+                            link={`/aktuelles/blog/${encodeURIComponent(post.slug)}`}
                             id={post.id}
                         />
                     </div>

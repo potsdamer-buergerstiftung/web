@@ -8,7 +8,7 @@ async function getPost(slug: string) {
         fields: ["title", "content", "user_created.first_name"],
         filter: {
             slug: {
-                _eq: slug,
+                _eq: decodeURIComponent(slug),
             },
         }
     });
