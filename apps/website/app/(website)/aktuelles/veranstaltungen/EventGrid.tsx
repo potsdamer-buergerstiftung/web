@@ -16,6 +16,11 @@ export default async function EventGrid({ promise }: EventGridProps) {
     const events = await promise;
     return (
         <React.Fragment>
+            {events.length === 0 && (
+                <div className="col-span-6 text-gray-500">
+                    Keine Veranstaltungen gefunden
+                </div>
+            )}
             {events?.map((event: any) => (
                 <div className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2">
                     <Link href={event.registration_needed && event.external_ticket_url ? event.external_ticket_url : `/aktuelles/veranstaltungen/${event.id}`}
