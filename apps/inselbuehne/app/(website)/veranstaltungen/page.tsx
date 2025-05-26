@@ -8,7 +8,7 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
     title: "Veranstaltungen - Inselbühne Potsdam",
-    description: "Die Veranstaltungen für die vierte Saison Inselbühne"
+    description: "Die Veranstaltungen für die fünfte Saison Inselbühne"
 }
 
 export const revalidate = 60;
