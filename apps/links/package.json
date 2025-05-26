@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nitropack build",
-    "dev": "nitropack dev"
+    "dev": "nitropack dev --port 3002"
   },
   "devDependencies": {
     "nitropack": "2.11.8"

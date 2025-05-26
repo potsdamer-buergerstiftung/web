@@ -5,6 +5,8 @@ import { Directus } from "@directus/sdk";
 import { Suspense } from "react";
 import EventGrid from "./EventGrid";
 
+export const revalidate = 60;
+
 async function getEvents() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
     const res = await directus.items<any, any>("events").readByQuery({

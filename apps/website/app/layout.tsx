@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 import { Space_Grotesk } from "next/font/google";
-import VisualEditing from "./VisualEditing";
+//import VisualEditing from "./VisualEditing";
 
 const font = Space_Grotesk({
   variable: "--font-header",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html className={`${font.variable} font-sans`} lang="de">
       <body className="antialiased">
-        <VisualEditing />
+        {/* <VisualEditing /> */}
         {children}
       </body>
     </html>
