@@ -36,7 +36,7 @@ export default function ProgramPage() {
 
     return (
         <>
-            <PageTitle title="Veranstaltungen" heading="4. Saison Inselbühne" />
+            <PageTitle title="Veranstaltungen" heading="5. Saison Inselbühne" />
 
             <Image src="/img/LHPgefördert_Logo_blau.jpg" height={400} width={200} alt="Landeshauptstadt Potsdam" className="mx-auto px-4 py-8" />
             <section className="bg-gray-50">
