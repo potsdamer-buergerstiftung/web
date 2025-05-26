@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     description: "Die Veranstaltungen für die vierte Saison Inselbühne"
 }
 
+export const revalidate = 60;
+
 async function getEvents() {
     const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
     const res = await directus.items<any, any>("events").readByQuery({
