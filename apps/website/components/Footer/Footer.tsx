@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
               <h4 className="font-header text-xl font-bold md:text-lg">
                 Komm uns besuchen
               </h4>
-              <p className="mt-6 font-bold">MAZ-Pyramide</p>
-              <p className="">Friedrich-Engels-Straße 24</p>
-              <p className="">14473, Potsdam</p>
+              <p className="mt-6 font-bold">Rechenzentrum Potsdam</p>
+              <p className="">Dortustraße 46</p>
+              <p className="">14467, Potsdam</p>
               <p className="mt-4 font-bold">Inselbühne</p>
               <p className="">Burgstraße</p>
               <p className="">14467 Potsdam</p>

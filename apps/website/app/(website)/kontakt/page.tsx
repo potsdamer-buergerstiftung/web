@@ -37,11 +37,11 @@ export default function ContactPage() {
             <p className="mt-3">Komm gerne vorbei, aber ruf vorher bitte an</p>
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-1">
-            <h2 className="font-header text-xl font-bold">MAZ-Pyramide</h2>
-            <p className="mt-4">Friedrich-Engels-Straße 24</p>
-            <p>14473 Potsdam</p>
+            <h2 className="font-header text-xl font-bold">Dortustraße</h2>
+            <p className="mt-4">Dortustraße 46</p>
+            <p>14467 Potsdam</p>
             <p className="mt-1 font-bold">+49 331 23180300</p>
-            <p className="mt-4">Arbeitszeiten: Montag - Freitag</p>
+            <p className="mt-4">Arbeitszeiten: idR. Montag - Freitag</p>
             <p>9 Uhr - 15 Uhr</p>
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-1">
