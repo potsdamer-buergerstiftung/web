@@ -37,7 +37,7 @@ export default function ContactPage() {
             <p className="mt-3">Komm gerne vorbei, aber ruf vorher bitte an</p>
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-1">
-            <h2 className="font-header text-xl font-bold">Dortustraße</h2>
+            <h2 className="font-header text-xl font-bold">Rechenzentrum Potsdam</h2>
             <p className="mt-4">Dortustraße 46</p>
             <p>14467 Potsdam</p>
             <p className="mt-1 font-bold">+49 331 23180300</p>
