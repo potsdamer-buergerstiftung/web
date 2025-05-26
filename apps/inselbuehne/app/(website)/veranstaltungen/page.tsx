@@ -25,7 +25,7 @@ async function getEvents() {
             "registration_needed",
             "summary"
         ],
-        sort: ["-start"],
+        sort: ["start"],
         filter: { project: { _eq: "inselbuehne" }, start: { _gte: new Date().toISOString() } }
     });
     return res.data;
