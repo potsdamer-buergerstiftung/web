@@ -14,16 +14,16 @@ export default function HomePage() {
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-48 pb-12 md:pb-24">
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
-              Die <span className="text-green-500">
-                5. Saison
-              </span>{" "}
-              steht vor der Tür!
+              Dein Sommer - <br />
+              <span className="text-green-500">
+                Deine Bühne!
+              </span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
-              Am 8. Juni um 11 Uhr geht&apos;s los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.
+              Konzerte, Kino, Theater, Disco, Karaoke und mehr.
             </p>
             <p className="mt-2 font-bold text-lg">
-              Leider ist die Website derzeit technisch beeinträchtigt - wir arbeiten daran!
+              Feier' den 5. Sommer auf der Freundschaftsinsel bei mehr als 60 Open-Air-Events.
             </p>
             <Link
               href="/veranstaltungen"
