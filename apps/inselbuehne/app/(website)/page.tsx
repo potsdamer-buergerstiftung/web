@@ -23,7 +23,7 @@ export default function HomePage() {
               Konzerte, Kino, Theater, Disco, Karaoke und mehr.
             </p>
             <p className="mt-2 font-bold text-lg">
-              Feier' den 5. Sommer auf der Freundschaftsinsel bei mehr als 60 Open-Air-Events.
+              Feier&apos; den 5. Sommer auf der Freundschaftsinsel bei mehr als 60 Open-Air-Events.
             </p>
             <Link
               href="/veranstaltungen"
