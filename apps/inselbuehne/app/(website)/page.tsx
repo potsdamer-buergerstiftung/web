@@ -14,9 +14,9 @@ export default function HomePage() {
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-48 pb-12 md:pb-24">
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
-              Dein Sommer - <br />
+              Pavlinas Sommer - <br />
               <span className="text-green-500">
-                Deine Bühne!
+                Pavlina Bühne!
               </span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
