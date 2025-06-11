@@ -133,13 +133,9 @@ const boardOfCurators = [
 ];
 
 async function getTeam() {
-    const categories = (await wixClient.items.queryDataItems({
-        dataCollectionId: "Gremien",
-    }).ascending("_manualSort_511e0c09-9471-4ff4-bd55-0beb3135c2da").find()).items.map((i) => i.data)
+    const categories = (await wixClient.items.query("Gremien").ascending("_manualSort_511e0c09-9471-4ff4-bd55-0beb3135c2da").find()).items;
 
-    const members = (await wixClient.items.queryDataItems({
-        dataCollectionId: "Team",
-    }).ascending("_manualSort_74f73ecd-5fc3-419a-b893-8f87eda0a854").find()).items.map((i) => i.data)
+    const members = (await wixClient.items.query("Team").ascending("_manualSort_74f73ecd-5fc3-419a-b893-8f87eda0a854").find()).items;
 
     const mapped = categories.map((c) => {
         return {
