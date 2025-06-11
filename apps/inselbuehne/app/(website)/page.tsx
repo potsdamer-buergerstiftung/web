@@ -87,9 +87,11 @@ export default function HomePage() {
             />
           </div>
           <div className="order-1 col-span-2 lg:order-2 lg:col-span-1">
-            <h1 className="font-serif text-4xl">Inselbühne 2024</h1>
+            <h1 className="font-serif text-4xl">Herzlich Willkommen zur f&uuml;nften Saison auf der Inselb&uuml;hne!</h1>
             <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              Wir haben von der Stadt erstmals einen mehrjährigen Vertrag bekommen, nämlich für fünf Jahre. Damit kommen wir endlich raus aus dem kurzatmigen Jahreszyklus inklusive Bangen, ob wir wieder den Zuschlag bekommen. Das eröffnet uns erstmals Perspektiven, ein langfristiges Konzept mit wiedererkennbaren Linien und tragfähige Strukturen für den Spielbetrieb zu entwickeln. Daneben nehmen wir die Sanierung der maroden Bühne in den Blick, die wir Schritt für Schritt gemeinsam wieder auf Vordermann bringen möchten.
+              Spannende Veranstaltungen erwarten Dich auf unserer offenen, nicht-kommerziellen B&uuml;hne: ein Liedermacher- und ein Jazz-Festival, Gastspiele der Theater Company Potsdam, beliebte Mitmach-Formate wie Inselsingen oder Karaoke und erstmals gibt&apos;s After-Work-Clubbing bei der &bdquo;Guten Mische&ldquo;. Und das (fast) alles bei freiem Eintritt - gegen eine angemessene Spende, damit es mit der Inselb&uuml;hne auch weitergehen kann.
+              <br />
+              Und wenn Du Lust hast, Dich aktiv bei uns einzubringen, bis Du im Ehrenamts-Team stets hoch willkommen!
             </p>
           </div>
         </div>
