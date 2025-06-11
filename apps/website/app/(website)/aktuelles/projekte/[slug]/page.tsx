@@ -70,7 +70,7 @@ async function getProject(slug: string) {
 
     console.log(slug)
 
-    return (await wixClient.items.getDataItem(slug, { dataCollectionId: "Projekte" })).data
+    return (await wixClient.items.get("Projekte", slug));
 }
 
 /* async function getPosts(projectId: string) {

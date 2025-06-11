@@ -21,9 +21,9 @@ export const revalidate = 120;
 } */
 
 async function getProjects() {
-  return (await wixClient.items.queryDataItems({
-    dataCollectionId: "Projekte",
-  }).limit(7).find()).items.map((i) => i.data)
+  const projects = await wixClient.items.query("Projekte").limit(7).find();
+  
+  return projects.items;
 }
 
 async function getPosts() {

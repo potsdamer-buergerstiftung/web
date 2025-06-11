@@ -16,9 +16,7 @@ export const metadata: Metadata = {
 }
 
 async function getProjects() {
-    return (await wixClient.items.queryDataItems({
-        dataCollectionId: "Projekte",
-    }).find()).items.map((i) => i.data)
+    return (await wixClient.items.query("Projekte").find()).items;
 }
 
 export default function ProjectsPage() {
