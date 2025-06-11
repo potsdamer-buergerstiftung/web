@@ -19,7 +19,7 @@ export default async function PublicationsGrid(props: PublicationsGridProps) {
                     className="col-span-2">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                         {category.downloads.map((publication: any) => (
-                            <ArticleCard title={publication.title} date={new Date(publication._createdDate.$date)} projectTitle={publication.link.id.split('.')[1].toUpperCase()}
+                            <ArticleCard title={publication.title} date={new Date(publication._createdDate)} projectTitle={publication.link.id.split('.')[1].toUpperCase()}
                                 link={publication.link.url} />
                         ))}
                     </div>

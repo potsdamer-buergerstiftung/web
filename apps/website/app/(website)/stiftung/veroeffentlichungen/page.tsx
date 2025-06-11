@@ -11,14 +11,10 @@ import { media } from "@wix/sdk";
 export const dynamic = 'force-dynamic';
 
 async function getPublicationCategories() {
-    const categories = (await wixClient.items.queryDataItems({
-        dataCollectionId: "Download-Kategorien",
-    }).find()).items.map((i) => i.data)
+    const categories = (await wixClient.items.query("Download-Kategorien").find()).items;
 
-    const downloads = (await wixClient.items.queryDataItems({
-        dataCollectionId: "Downloads",
-    }).find()).items.map((i) => {
-        const d = i.data;
+    const downloads = (await wixClient.items.query("Downloads").find()).items.map((i) => {
+        const d = i;
         return {
             link: media.getDocumentUrl(d.document),
             ...d
