@@ -16,11 +16,12 @@ async function getPost(slug: string) {
     return res.data![0];
 }
 
-export default function PostPage({
-    params,
-}: {
-    params: { slug: string };
-}) {
+export default async function PostPage(
+    props: {
+        params: Promise<{ slug: string }>;
+    }
+) {
+    const params = await props.params;
     const posts = getPost(params.slug);
 
     return (

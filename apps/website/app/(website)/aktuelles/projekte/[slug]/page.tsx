@@ -89,14 +89,12 @@ async function getProject(slug: string) {
 } */
 
 type Props = {
-    params: { slug: string }
-    searchParams: { [key: string]: string | string[] | undefined }
+    params: Promise<{ slug: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export async function generateMetadata(
-    { params, searchParams }: Props,
-    parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(props: Props, parent?: ResolvingMetadata): Promise<Metadata> {
+    const params = await props.params;
     const id = params.slug;
     const isFilterS = isFilter(id);
 
@@ -114,15 +112,13 @@ export async function generateMetadata(
     }
 }
 
-export default function ProjectPage({
-    params,
-}: {
-    params: { slug: string };
-}) {
+export default async function ProjectPage(
+    props: {
+        params: Promise<{ slug: string }>;
+    }
+) {
+    const params = await props.params;
     const project = getProject(params.slug);
-    //const posts = getPosts(params.slug);
-
-    const { slug } = params;
 
     return (
         <>

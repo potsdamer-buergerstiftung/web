@@ -16,11 +16,12 @@ async function getEvent(id: string) {
     return res.data![0];
 }
 
-export default function PostPage({
-    params,
-}: {
-    params: { id: string };
-}) {
+export default async function PostPage(
+    props: {
+        params: Promise<{ id: string }>;
+    }
+) {
+    const params = await props.params;
     const event = getEvent(params.id);
 
     return (

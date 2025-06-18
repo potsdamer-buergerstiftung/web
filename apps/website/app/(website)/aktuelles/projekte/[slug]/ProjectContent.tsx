@@ -7,7 +7,6 @@ import Image from "next/image";
 import ProjectGrid from "app/(website)/ProjectGrid";
 import { WixMediaImage } from "@components/WixMediaImage";
 import RichContentViewer from "@components/RichContentViewer";
-import { toDraft } from "ricos-content/libs/toDraft";
 
 interface ProjectContentProps {
     promise: Promise<any>;
@@ -17,9 +16,7 @@ interface ProjectContentProps {
 export default async function ProjectContent(props: ProjectContentProps) {
     const project = await props.promise;
 
-    console.log(JSON.stringify(project))
-    const con = toDraft(project.inhalt)
-    const content = <RichContentViewer content={con} />
+    const content = <RichContentViewer content={project.inhalt} />
     const image = <WixMediaImage media={project.projektbild} alt={project.title} width={800} height={400}/>;
 
     return (
