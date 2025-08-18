@@ -1,73 +1,127 @@
-# Turborepo starter
+## Project Overview
 
-This is an official Yarn v1 starter turborepo.
+This monorepo contains multiple applications and packages:
 
-## What's inside?
+- **Website** - Main public website with donation functionality
+- **Inselbühne** - Event management and ticketing platform
+- **Links** - URL shortener service
+- **UI Package** - Shared React components
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+## Technical Stack
 
-### Apps and Packages
+### Core Technologies
+- **Framework**: Next.js 13-15 (App Router)
+- **Language**: TypeScript
+- **Package Manager**: pnpm
+- **Monorepo**: Turborepo
+- **Styling**: Tailwind CSS
+- **State Management**: Jotai
+- **Animations**: Framer Motion
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+### Key Dependencies
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Frontend
+- **React**: 18-19 (latest)
+- **Next.js**: 13.4.6 - 15.3.3
+- **Tailwind CSS**: 3.2.4 with plugins:
+  - `@tailwindcss/typography`
+  - `@tailwindcss/aspect-ratio`
+  - `@tailwindcss/forms`
+  - `@tailwindcss/line-clamp`
+- **UI Components**: Headless UI, Heroicons
+- **Responsive Layout**: react-responsive-masonry
 
-### Utilities
+#### Backend & APIs
+- **Wix SDK**: Content management and data
+- **Directus SDK**: Headless CMS integration
+- **Mollie API**: Payment processing
+- **Frappe SDK**: ERP integration
+- **GraphQL**: Data fetching
 
-This turborepo has some additional tools already setup for you:
+#### Development Tools
+- **ESLint**: Code linting with custom config
+- **Prettier**: Code formatting
+- **TypeScript**: Static type checking
+- **PostCSS**: CSS processing
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+## Project Structure
 
 ```
-cd my-turborepo
-npx turbo login
+buergerstiftung/
+├── apps/
+│   ├── website/          # Main public website (port 3000)
+│   ├── inselbuehne/      # Event platform (port 3001)
+│   └── links/            # URL shortener (port 3002)
+├── packages/
+│   ├── ui/               # Shared React components
+│   ├── eslint-config-custom/  # Shared ESLint config
+│   └── tsconfig/         # Shared TypeScript config
+└── turbo.json           # Turborepo configuration
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Getting Started
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+### Prerequisites
+- Node.js >= 14.0.0
+- pnpm 10.12.0
 
+### Installation
+```bash
+# Install dependencies
+pnpm install
+
+# Start development servers
+pnpm dev
 ```
-npx turbo link
+
+### Development Commands
+```bash
+# Start all applications in development mode
+pnpm dev
+
+# Build all applications
+pnpm build
+
+# Lint all packages
+pnpm lint
+
+# Format code
+pnpm format
 ```
 
-## Useful Links
+### Environment Variables
 
-Learn more about the power of Turborepo:
+The following environment variables are required:
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- `MOLLIE_API_KEY` - Payment processing
+- `WIX_API_KEY` - Content management
+- `NEXT_PUBLIC_INSTAGRAM_TOKEN` - Social media integration
+
+## Applications
+
+### Website (Port 3000)
+Main public website featuring:
+- Donation system with Mollie integration
+- Project showcase
+- News and blog
+- Event listings
+- Contact forms
+- Visual editing with Directus
+
+### Inselbühne (Port 3001)
+Event management platform with:
+- Event creation and management
+- Ticket sales
+- QR code scanning
+- Event listings
+- Wix integration for content
+
+### Links (Port 3002)
+URL shortener service built with Nitro (Nuxt's server engine):
+- Short URL generation
+- Redirect handling
+- Analytics tracking
+
+## License
+
+Private project - All rights reserved
