@@ -19,6 +19,7 @@
     "@wix/media": "^1.0.75",
     "@wix/ricos": "^10.134.2",
     "@wix/sdk": "^1.9.2",
+    "add": "^2.0.6",
     "api": "*",
     "classnames": "^2.5.1",
     "clsx": "^1.2.1",
@@ -31,10 +32,12 @@
     "jotai": "^1.13.0",
     "next": "^15.3.3",
     "nookies": "^2.5.2",
+    "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-responsive-masonry": "^2.1.7",
     "react-sticky-box": "^2.0.4",
+    "sepa-payment-code": "^1.0.3",
     "ui": "*"
   },
   "devDependencies": {

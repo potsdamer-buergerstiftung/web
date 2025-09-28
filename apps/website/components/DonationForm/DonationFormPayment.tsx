@@ -4,11 +4,17 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { customerIdAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
+import { customerIdAtom, donationProgressAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
 
 export default function DonationFormPayment() {
     const router = useRouter();
-    const [paymentMethods, setPaymentMethods] = useState([]);
+    const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
+    const [paymentMethods, setPaymentMethods] = useState([
+        {
+            id: 10000,
+            description: "Überweisung",
+        }
+    ]);
     const [paymentMethodsLoading, setPaymentMethodsLoading] = useState(true);
     const [paymentMethodsError, setPaymentMethodsError] = useState(null);
     const [selectedPaymentProviderId, setSelectedPaymentProviderId] = useAtom(
@@ -30,7 +36,7 @@ export default function DonationFormPayment() {
                 }),
             });
             const data = await response.json();
-            setPaymentMethods(data);
+            setPaymentMethods([...data, ...paymentMethods]);
             setPaymentMethodsLoading(false);
         } catch (error) {
             setPaymentMethodsError(error);
@@ -38,6 +44,11 @@ export default function DonationFormPayment() {
     };
 
     const onContinueClicked = async () => {
+        if (selectedPaymentProviderId === 10000) {
+            setDonationProgress("BANK_DETAILS");
+            return;
+        }
+
         setDonationSubmitted(true);
         try {
             let id = customerId !== "" || customerId !== null ? customerId : null;

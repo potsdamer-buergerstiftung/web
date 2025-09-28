@@ -11,7 +11,8 @@ export type Progress =
 | "PROJECT_SELECTION"
 | "AMOUNT_SELECTION"
 | "DETAILS_FORM"
-| "PAYMENT";
+| "PAYMENT"
+| "BANK_DETAILS";
 
 export type PlanDuration = "ONE_TIME" | "MONTHLY";
 

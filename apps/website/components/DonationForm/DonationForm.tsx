@@ -8,6 +8,7 @@ import DonationFormDetailsForm from "./DonationFormDetailsForm";
 import DonationFormPayment from "./DonationFormPayment";
 import DonationFormProjectSelection from "./DonationFormProjectSelection";
 import { donationProgressAtom, planDuration } from "./state";
+import DonationFormBankDetails from "./DonationFormBankDetails";
 
 function ProgressButton({ isActive, onClick, children, disabled = false }: { isActive: boolean, onClick: () => void, children: React.ReactNode, disabled?: boolean }) {
     return (
@@ -82,6 +83,7 @@ export default function DonationForm(props: DonationFormProps) {
                     {donationProgress === "AMOUNT_SELECTION" && <DonationFormAmountSelection />}
                     {donationProgress === "DETAILS_FORM" && <DonationFormDetailsForm />}
                     {donationProgress === "PAYMENT" && <DonationFormPayment />}
+                    {donationProgress === "BANK_DETAILS" && <DonationFormBankDetails />}
                 </div>
             </div>
         </div>
