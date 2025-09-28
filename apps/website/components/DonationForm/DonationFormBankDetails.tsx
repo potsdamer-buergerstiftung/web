@@ -31,8 +31,8 @@ export default function DonationFormBankDetails() {
                 </p>
                 <div className="mt-4">
                     <p>IBAN: DE93 1207 0000 0010 6633 00</p>
-                    <p>BIC: DEUTDEDB123</p>
-                    <p>Bank: Deutsche Bank</p>
+                    <p>BIC: DEUTDEBB160</p>
+                    <p>Bank: Deutsche Bank Potsdam</p>
                     <p>Betrag: {selectedAmount} €</p>
                     <p>
                         Verwendungszweck: Spende für {selectedProject}
