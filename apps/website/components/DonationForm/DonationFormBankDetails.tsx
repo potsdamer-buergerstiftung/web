@@ -10,7 +10,7 @@ export default function DonationFormBankDetails() {
 
     const [selectedProject] = useAtom(selectedProjectId);
     const [selectedAmount] = useAtom(selectedAmountAtom);   
-    const [formProgress, setFormProgress] = useAtom(donationProgressAtom);
+    const [_formProgress, setFormProgress] = useAtom(donationProgressAtom);
 
     const qrCode = new PaymentCode("Buergerstiftung Potsdam", "DE93120700000010663300", selectedAmount, `Spende für ${selectedProject}`);
 
