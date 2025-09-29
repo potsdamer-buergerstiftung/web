@@ -1,15 +1,15 @@
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { Directus } from "@directus/sdk";
+import { createDirectus, readItems, rest } from "@directus/sdk";
 import { Suspense } from "react";
 import EventGrid from "./EventGrid";
 
 export const revalidate = 60;
 
 async function getEvents() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("events").readByQuery({
+    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
+    const res = await directus.request(readItems("events", {
         fields: [
             "name",
             "start",
@@ -20,18 +20,18 @@ async function getEvents() {
         ],
         sort: ["start"],
         filter: { start: { _gte: new Date().toISOString() } },
-    });
-    return res.data;
+    }));
+    return res;
 }
 
 async function getPastEvents() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("events").readByQuery({
+    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
+    const res = await directus.request(readItems("events", {
         fields: ["name", "start", "id", "image", "external_ticket_url", "registration_needed"],
         sort: ["start"],
         filter: { start: { _lt: new Date().toISOString() } },
-    });
-    return res.data;
+    }));
+    return res;
 }
 
 export default function EventsPage() {
