@@ -22,6 +22,8 @@ export const revalidate = 120;
 
 async function getProjects() {
   const projects = await wixClient.items.query("Projekte").limit(7).find();
+
+  console.log(projects.items);
   
   return projects.items;
 }

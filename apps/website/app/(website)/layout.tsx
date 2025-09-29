@@ -19,26 +19,26 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
             <Header
                 nav={
                     <HeaderNav items={[
-                        <HeaderNavItem index={1} label="Die Stiftung">
+                        <HeaderNavItem index={1} label="Die Stiftung" key="die-stiftung">
                             <HeaderSubNavItem label="Wer wir sind" href="/stiftung" />
                             <HeaderSubNavItem label="Gremien & Team" href="/stiftung/gremien" />
                             <HeaderSubNavItem label="Qualität & Transparenz" href="/stiftung/qualitaet-transparenz" />
                             <HeaderSubNavItem label="Unser Netzwerk" href="/stiftung/netzwerk" />
                             <HeaderSubNavItem label="Veröffentlichungen" href="/stiftung/veroeffentlichungen" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={2} label="Aktuelles & Projekte">
+                        <HeaderNavItem index={2} label="Aktuelles & Projekte" key="aktuelles-projekte">
                             <HeaderSubNavItem label="Projekte" href="/aktuelles/projekte" />
                             <HeaderSubNavItem label="News & Blog" href="/aktuelles/blog" />
                             <HeaderSubNavItem label="Veranstaltungen" href="/aktuelles/veranstaltungen" />
                             <HeaderSubNavItem label="Presseberichte" href="/aktuelles/presse" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Mitmachen">
+                        <HeaderNavItem index={3} label="Mitmachen" key="mitmachen">
                             <HeaderSubNavItem label="Ehrenamt" href="/mitmachen" />
                             <HeaderSubNavItem label="Jobs" href="/mitmachen/jobs" />
                         </HeaderNavItem>,
-                        <HeaderNavItem index={3} label="Mitstiften" href="/mitstiften" />,
-                        <HeaderNavItem index={4} label="Kontakt" href="/kontakt" />,
-                        <HeaderNavItem index={5} label="Shop" href="https://shop.potsdamer-buergerstiftung.org" />,
+                        <HeaderNavItem index={3} label="Mitstiften" href="/mitstiften" key="mitstiften" />,
+                        <HeaderNavItem index={4} label="Kontakt" href="/kontakt" key="kontakt" />,
+                        <HeaderNavItem index={5} label="Shop" href="https://shop.potsdamer-buergerstiftung.org" key="shop" />,
                     ]} />
                 }
             />

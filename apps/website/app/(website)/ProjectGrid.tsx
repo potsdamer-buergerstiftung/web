@@ -26,13 +26,13 @@ export default async function ProjectGrid({
     <div className="grid grid-cols-6 gap-8">
       {projects?.map((project: any, i: number) => (
         <div
+          key={project._id}
           className={clsx(
             "col-span-6",
             "lg:col-span-3",
             indexToSpan(i) * 2 == 2 && "xl:col-span-2",
             indexToSpan(i) * 2 == 4 && "xl:col-span-4"
           )}
-          key={project.id}
         >
           <ProjectCard
             title={project.title}
