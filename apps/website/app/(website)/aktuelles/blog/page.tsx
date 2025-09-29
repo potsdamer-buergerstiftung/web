@@ -1,16 +1,14 @@
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { createDirectus } from "@directus/sdk";
-import { rest } from "@directus/sdk";
 import { readItems } from "@directus/sdk";
 import PostGrid from "./PostGrid";
+import directus from "app/(website)/directus";
 //import VisualEditingPage from "app/VisualEditingPage";
 
 export const revalidate = 60;
 
 async function getPosts() {
-    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("posts", {
         fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
         sort: ["-date"],

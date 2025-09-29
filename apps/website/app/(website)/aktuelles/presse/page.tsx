@@ -1,14 +1,14 @@
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
 import MediaReportsGrid from "./MediaReportsGrid";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { Metadata } from "next";
+import directus from "app/(website)/directus";
 
 async function getMediaReports() {
-    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("media_reports", {
         fields: ["id", "title", "publisher", "date", "url", "project.title"],
         sort: ["-date"],

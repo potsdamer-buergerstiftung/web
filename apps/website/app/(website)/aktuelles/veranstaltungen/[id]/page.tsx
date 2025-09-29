@@ -1,9 +1,9 @@
 import { createDirectus, readItems, rest } from "@directus/sdk";
 import { Suspense } from "react";
 import Event from "./Event";
+import directus from "app/(website)/directus";
 
 async function getEvent(id: string) {
-    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("events", {
         fields: ["name", "description", "summary", "start", "end", "location", "image"],
         filter: {

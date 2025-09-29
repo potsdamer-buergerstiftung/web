@@ -9,6 +9,7 @@ import EventGrid from "./EventGrid";
 import { Metadata } from "next";
 import { wixClient } from "./wix";
 import InstaFeed from "@components/InstaFeed";
+import directus from "./directus";
 
 export const revalidate = 120;
 
@@ -29,17 +30,15 @@ async function getProjects() {
 }
 
 async function getPosts() {
-  const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
   const res = await directus.request(readItems("posts", {
     fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
     limit: 4,
     sort: ["-date"],
   }));
-  return res.data;
+  return res;
 }
 
 async function getEvents() {
-  const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
   const res = await directus.request(readItems("events", {
     fields: [
       "name",

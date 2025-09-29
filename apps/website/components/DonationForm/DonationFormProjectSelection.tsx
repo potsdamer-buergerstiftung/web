@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useAtom } from "jotai";
 import { donationProgressAtom, projectsAtom, selectedProjectId } from "./state";
 import clsx from "clsx";
+import directus from "app/(website)/directus";
 
 async function getProjects() {
-        const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("projects", {
         fields: ["id", "title", "image"],
         filter: {

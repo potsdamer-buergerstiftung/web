@@ -1,9 +1,9 @@
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
 import Article from "./Article";
+import directus from "app/(website)/directus";
 
 async function getPost(slug: string) {
-    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("posts", {
         fields: ["title", "content", "user_created.first_name"],
         filter: {
