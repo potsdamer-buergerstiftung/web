@@ -35,6 +35,8 @@ export default function InstaFeed() {
     const [error, setError] = useState<string | null>(null);
 
     const fetchFeed = async (after: string | null = null) => {
+        return;
+        
         try {
             let url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`;
             if (after) {
