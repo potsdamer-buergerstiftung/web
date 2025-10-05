@@ -5,7 +5,7 @@ import PageTitle from "@components/PageTitle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kontakt - Potdsdamer Bürgerstiftung",
+  title: "Kontakt - Potsdamer Bürgerstiftung",
 }
 
 export default function ContactPage() {
