@@ -131,9 +131,8 @@ export default function ContactPage() {
                       für die Bearbeitung meines Anliegens weiterverarbeitet
                       werden.</label>
                   </div>
-                </div>
-                <div className="col-span-3">
-                  <button type="button" className="focus:ring-3 rounded-sm border border-slate-300 bg-slate-100 accent-emerald-500 focus:ring-emerald-300">Absenden</button>
+                  <button className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16"
+                    type="button">Absenden</button>
                 </div>
               </div>
             </form>
