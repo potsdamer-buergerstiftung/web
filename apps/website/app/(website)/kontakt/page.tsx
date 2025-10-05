@@ -132,6 +132,9 @@ export default function ContactPage() {
                       werden.</label>
                   </div>
                 </div>
+                <div className="col-span-3">
+                  <button type="button" className="focus:ring-3 rounded-sm border border-slate-300 bg-slate-100 accent-emerald-500 focus:ring-emerald-300">Absenden</button>
+                </div>
               </div>
             </form>
           </div>
