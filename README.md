@@ -96,6 +96,7 @@ The following environment variables are required:
 - `MOLLIE_API_KEY` - Payment processing
 - `WIX_API_KEY` - Content management
 - `NEXT_PUBLIC_INSTAGRAM_TOKEN` - Social media integration
+- `DIRECTUS_TOKEN`- Directus SDK API-Token: See [this site](https://learndirectus.com/how-to-create-an-api-key/) on how to generate one and **do not forget to hit the save button in the upper right corner!**
 
 ## Applications
 
