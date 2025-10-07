@@ -2,16 +2,12 @@ import Blocks from "@components/Block/Block";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { createDirectus } from "@directus/sdk";
-import { rest } from "@directus/sdk";
 import { readSingleton } from "@directus/sdk";
 import directus from "../directus";
 
 async function getPrivacy() {
-    const res: any = await directus.request(readSingleton("privacy_policy"));
-    const blocks = res.content;
-    console.log(blocks);
-    return res;
+    const res = await directus.request(readSingleton("privacy_policy"));
+    return res.content;
 }
 
 export default async function ImprintPage() {
