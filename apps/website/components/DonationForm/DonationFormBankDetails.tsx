@@ -35,7 +35,7 @@ export default function DonationFormBankDetails() {
                     <p>Bank: Deutsche Bank Potsdam</p>
                     <p>Betrag: {selectedAmount} €</p>
                     <p>
-                        Verwendungszweck: Spende für {selectedProject}
+                        Verwendungszweck: Spende für {selectedProject !== 0 ? selectedProject : "Allgemeine Arbeit"}
                     </p>
                 </div>
                 <p className="mt-4 mb-4">
