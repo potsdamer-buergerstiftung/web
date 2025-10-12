@@ -1,8 +1,8 @@
-import { media as wixMedia } from '@wix/sdk';
-import Image, { ImageProps } from 'next/image';
+import { media as wixMedia } from "@wix/sdk";
+import Image, { ImageProps } from "next/image";
 
 function getImageUrlForMedia(media: string, width: number, height: number) {
-  if (media.startsWith('wix:image')) {
+  if (media.startsWith("wix:image")) {
     return wixMedia.getScaledToFillImageUrl(media, width, height, {});
   } else {
     return media;
@@ -13,9 +13,9 @@ export function WixMediaImage({
   media,
   height = 320,
   width = 640,
-  alt = 'no info available for image',
+  alt = "no info available for image",
   className,
-  sizes = '10vw',
+  sizes = "10vw",
   objectFit,
   disableZoom = false,
 }: {
@@ -26,9 +26,9 @@ export function WixMediaImage({
   sizes?: string;
   className?: string;
   disableZoom?: boolean;
-  objectFit?: 'cover' | 'contain';
+  objectFit?: "cover" | "contain";
 }) {
-  const imageUrl = getImageUrlForMedia(media || '', width, height)
+  const imageUrl = getImageUrlForMedia(media || "", width, height);
 
   const styleProps: Partial<ImageProps> = {
     ...(objectFit
@@ -44,7 +44,7 @@ export function WixMediaImage({
           src={imageUrl}
           alt={alt}
           className={`object-cover w-full ${
-            !disableZoom ? 'group-hover:scale-110' : ''
+            !disableZoom ? "group-hover:scale-110" : ""
           } transition duration-300 ease-in-out ${className}`}
         />
       </div>

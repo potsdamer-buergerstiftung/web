@@ -23,9 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${serif.variable} ${sans.variable}`} lang="de">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

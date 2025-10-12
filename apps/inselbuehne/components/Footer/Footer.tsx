@@ -11,7 +11,9 @@ const Footer: React.FC = () => {
         <hr className="mb-12 h-[1px] w-full border-gray-400 lg:mb-24" />
         <div className="grid grid-cols-6 gap-10 text-center md:gap-16 md:text-left">
           <div className="col-span-6 lg:col-span-3">
-            <h1 className="font-serif text-3xl text-white">Inselbühne Potsdam</h1>
+            <h1 className="font-serif text-3xl text-white">
+              Inselbühne Potsdam
+            </h1>
             <p className="mt-2 text-gray-300">Burgstraße, 14471 Potsdam</p>
             {/* <PbsLogo className="mt-6 w-40 text-white" /> */}
           </div>
@@ -26,7 +28,9 @@ const Footer: React.FC = () => {
                   rel="noreferrer"
                   href="https://instagram.com/inselbuehne"
                   className="text-gray-300 transition hover:text-green-300"
-                >Instagram</a>
+                >
+                  Instagram
+                </a>
               </li>
               <li>
                 <a
@@ -34,7 +38,9 @@ const Footer: React.FC = () => {
                   rel="noreferrer"
                   href="https://facebook.com/inselbuehne"
                   className="text-gray-300 transition hover:text-green-300"
-                >Facebook</a>
+                >
+                  Facebook
+                </a>
               </li>
               <li>
                 <a
@@ -42,7 +48,9 @@ const Footer: React.FC = () => {
                   rel="noreferrer"
                   href="https://github.com/potsdamer-buergerstiftung"
                   className="text-gray-300 transition hover:text-green-300"
-                >GitHub</a>
+                >
+                  GitHub
+                </a>
               </li>
             </ul>
           </div>
@@ -57,13 +65,16 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
-                >Bürgerstiftung</a>
+                >
+                  Bürgerstiftung
+                </a>
               </li>
               <li>
                 <Link
                   href="/presse"
                   className="text-gray-300 transition hover:text-green-300"
-                >Presse
+                >
+                  Presse
                 </Link>
               </li>
             </ul>
@@ -79,7 +90,9 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
-                >Stadt Potsdam</a>
+                >
+                  Stadt Potsdam
+                </a>
               </li>
               <li>
                 <a
@@ -87,7 +100,9 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-gray-300 transition hover:text-green-300"
-                >Land Brandenburg</a>
+                >
+                  Land Brandenburg
+                </a>
               </li>
             </ul>
           </div>

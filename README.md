@@ -10,6 +10,7 @@ This monorepo contains multiple applications and packages:
 ## Technical Stack
 
 ### Core Technologies
+
 - **Framework**: Next.js 13-15 (App Router)
 - **Language**: TypeScript
 - **Package Manager**: pnpm
@@ -21,6 +22,7 @@ This monorepo contains multiple applications and packages:
 ### Key Dependencies
 
 #### Frontend
+
 - **React**: 18-19 (latest)
 - **Next.js**: 13.4.6 - 15.3.3
 - **Tailwind CSS**: 3.2.4 with plugins:
@@ -32,6 +34,7 @@ This monorepo contains multiple applications and packages:
 - **Responsive Layout**: react-responsive-masonry
 
 #### Backend & APIs
+
 - **Wix SDK**: Content management and data
 - **Directus SDK**: Headless CMS integration
 - **Mollie API**: Payment processing
@@ -39,6 +42,7 @@ This monorepo contains multiple applications and packages:
 - **GraphQL**: Data fetching
 
 #### Development Tools
+
 - **ESLint**: Code linting with custom config
 - **Prettier**: Code formatting
 - **TypeScript**: Static type checking
@@ -62,10 +66,12 @@ buergerstiftung/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js >= 14.0.0
 - pnpm 10.12.0
 
 ### Installation
+
 ```bash
 # Install dependencies
 pnpm install
@@ -75,6 +81,7 @@ pnpm dev
 ```
 
 ### Development Commands
+
 ```bash
 # Start all applications in development mode
 pnpm dev
@@ -101,7 +108,9 @@ The following environment variables are required:
 ## Applications
 
 ### Website (Port 3000)
+
 Main public website featuring:
+
 - Donation system with Mollie integration
 - Project showcase
 - News and blog
@@ -110,7 +119,9 @@ Main public website featuring:
 - Visual editing with Directus
 
 ### Inselbühne (Port 3001)
+
 Event management platform with:
+
 - Event creation and management
 - Ticket sales
 - QR code scanning
@@ -118,7 +129,9 @@ Event management platform with:
 - Wix integration for content
 
 ### Links (Port 3002)
+
 URL shortener service built with Nitro (Nuxt's server engine):
+
 - Short URL generation
 - Redirect handling
 - Analytics tracking
