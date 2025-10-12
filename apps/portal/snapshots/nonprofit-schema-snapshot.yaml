@@ -4326,3 +4326,1571 @@ data:
       has_auto_increment: false
       foreign_key_table: 
       foreign_key_column: 
+  - collection: npo_volunteers
+    field: id
+    type: uuid
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: id
+      group: 
+      hidden: true
+      interface: input
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 1
+      special:
+      - uuid
+      translations: 
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: id
+      table: npo_volunteers
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: status
+    type: string
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: labels
+      display_options:
+        choices:
+        - background: "#10B981"
+          text: "$t:active"
+          value: active
+        - background: "#F59E0B"
+          text: "$t:inactive"
+          value: inactive
+        - background: "#D3DAE4"
+          text: "$t:draft"
+          value: draft
+        - background: var(--warning)
+          text: "$t:archived"
+          value: archived
+        showAsDot: true
+      field: status
+      group: 
+      hidden: false
+      interface: select-dropdown
+      note: 
+      options:
+        choices:
+        - text: "$t:active"
+          value: active
+        - text: "$t:inactive"
+          value: inactive
+        - text: "$t:draft"
+          value: draft
+        - text: "$t:archived"
+          value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: 
+      translations: 
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: status
+      table: npo_volunteers
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: user_created
+    type: uuid
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: user
+      display_options: 
+      field: user_created
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 3
+      special:
+      - user-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_created
+      table: npo_volunteers
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: npo_volunteers
+    field: date_created
+    type: timestamp
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 4
+      special:
+      - date-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_created
+      table: npo_volunteers
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: user_updated
+    type: uuid
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: user
+      display_options: 
+      field: user_updated
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 5
+      special:
+      - user-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_updated
+      table: npo_volunteers
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: npo_volunteers
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 6
+      special:
+      - date-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_updated
+      table: npo_volunteers
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: first_name
+    type: string
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: first_name
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 7
+      special: 
+      translations:
+      - language: de-DE
+        translation: Vorname
+      - language: en-US
+        translation: First Name
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: first_name
+      table: npo_volunteers
+      data_type: character varying
+      default_value: 
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: last_name
+    type: string
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: last_name
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 8
+      special: 
+      translations:
+      - language: de-DE
+        translation: Nachname
+      - language: en-US
+        translation: Last Name
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: last_name
+      table: npo_volunteers
+      data_type: character varying
+      default_value: 
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: email
+    type: string
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: email
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        iconLeft: email
+      readonly: false
+      required: true
+      sort: 9
+      special: 
+      translations:
+      - language: de-DE
+        translation: E-Mail
+      - language: en-US
+        translation: Email
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: email
+      table: npo_volunteers
+      data_type: character varying
+      default_value: 
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: phone
+    type: string
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: phone
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        iconLeft: phone
+      readonly: false
+      required: false
+      sort: 10
+      special: 
+      translations:
+      - language: de-DE
+        translation: Telefon
+      - language: en-US
+        translation: Phone
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: phone
+      table: npo_volunteers
+      data_type: character varying
+      default_value: 
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: skills
+    type: json
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: labels
+      display_options: 
+      field: skills
+      group: 
+      hidden: false
+      interface: tags
+      note: 
+      options:
+        alphabetize: true
+      readonly: false
+      required: false
+      sort: 11
+      special:
+      - cast-json
+      translations:
+      - language: de-DE
+        translation: Fähigkeiten
+      - language: en-US
+        translation: Skills
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: skills
+      table: npo_volunteers
+      data_type: json
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: availability
+    type: text
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: availability
+      group: 
+      hidden: false
+      interface: input-multiline
+      note: 
+      options: 
+      readonly: false
+      required: false
+      sort: 12
+      special: 
+      translations:
+      - language: de-DE
+        translation: Verfügbarkeit
+      - language: en-US
+        translation: Availability
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: availability
+      table: npo_volunteers
+      data_type: text
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: total_hours
+    type: integer
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: total_hours
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        min: 0
+      readonly: true
+      required: false
+      sort: 13
+      special: 
+      translations:
+      - language: de-DE
+        translation: Gesamtstunden
+      - language: en-US
+        translation: Total Hours
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: total_hours
+      table: npo_volunteers
+      data_type: integer
+      default_value: 0
+      max_length: 
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: background_check_date
+    type: date
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: datetime
+      display_options: 
+      field: background_check_date
+      group: 
+      hidden: false
+      interface: datetime
+      note: 
+      options: 
+      readonly: false
+      required: false
+      sort: 14
+      special: 
+      translations:
+      - language: de-DE
+        translation: Datum der Hintergrundprüfung
+      - language: en-US
+        translation: Background Check Date
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: background_check_date
+      table: npo_volunteers
+      data_type: date
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: npo_volunteers
+    field: emergency_contact
+    type: text
+    meta:
+      collection: npo_volunteers
+      conditions: 
+      display: 
+      display_options: 
+      field: emergency_contact
+      group: 
+      hidden: false
+      interface: input-multiline
+      note: 
+      options: 
+      readonly: false
+      required: false
+      sort: 15
+      special: 
+      translations:
+      - language: de-DE
+        translation: Notfallkontakt
+      - language: en-US
+        translation: Emergency Contact
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: emergency_contact
+      table: npo_volunteers
+      data_type: text
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: id
+    type: uuid
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: 
+      display_options: 
+      field: id
+      group: 
+      hidden: true
+      interface: input
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 1
+      special:
+      - uuid
+      translations: 
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: id
+      table: volunteer_hours
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: user_created
+    type: uuid
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: user
+      display_options: 
+      field: user_created
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 2
+      special:
+      - user-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_created
+      table: volunteer_hours
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: volunteer_hours
+    field: date_created
+    type: timestamp
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 3
+      special:
+      - date-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_created
+      table: volunteer_hours
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: user_updated
+    type: uuid
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: user
+      display_options: 
+      field: user_updated
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 4
+      special:
+      - user-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_updated
+      table: volunteer_hours
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: volunteer_hours
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 5
+      special:
+      - date-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_updated
+      table: volunteer_hours
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: volunteer
+    type: uuid
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: related-values
+      display_options:
+        template: "{{first_name}} {{last_name}}"
+      field: volunteer
+      group: 
+      hidden: false
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{first_name}} {{last_name}}"
+      readonly: false
+      required: true
+      sort: 6
+      special:
+      - m2o
+      translations:
+      - language: de-DE
+        translation: Freiwilliger
+      - language: en-US
+        translation: Volunteer
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: volunteer
+      table: volunteer_hours
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: npo_volunteers
+      foreign_key_column: id
+  - collection: volunteer_hours
+    field: hours
+    type: float
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: 
+      display_options: 
+      field: hours
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        min: 0
+        max: 24
+      readonly: false
+      required: true
+      sort: 7
+      special: 
+      translations:
+      - language: de-DE
+        translation: Stunden
+      - language: en-US
+        translation: Hours
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: hours
+      table: volunteer_hours
+      data_type: real
+      default_value: 
+      max_length: 
+      numeric_precision: 24
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: date
+    type: date
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: datetime
+      display_options: 
+      field: date
+      group: 
+      hidden: false
+      interface: datetime
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 8
+      special: 
+      translations:
+      - language: de-DE
+        translation: Datum
+      - language: en-US
+        translation: Date
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date
+      table: volunteer_hours
+      data_type: date
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: activity_description
+    type: text
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: 
+      display_options: 
+      field: activity_description
+      group: 
+      hidden: false
+      interface: input-multiline
+      note: 
+      options: 
+      readonly: false
+      required: false
+      sort: 9
+      special: 
+      translations:
+      - language: de-DE
+        translation: Tätigkeitsbeschreibung
+      - language: en-US
+        translation: Activity Description
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: activity_description
+      table: volunteer_hours
+      data_type: text
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_hours
+    field: project
+    type: integer
+    meta:
+      collection: volunteer_hours
+      conditions: 
+      display: related-values
+      display_options:
+        template: "{{title}}"
+      field: project
+      group: 
+      hidden: false
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{title}}"
+      readonly: false
+      required: false
+      sort: 10
+      special:
+      - m2o
+      translations:
+      - language: de-DE
+        translation: Projekt
+      - language: en-US
+        translation: Project
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: project
+      table: volunteer_hours
+      data_type: integer
+      default_value: 
+      max_length: 
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: npo_projects
+      foreign_key_column: id
+  - collection: volunteer_shifts
+    field: id
+    type: uuid
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: 
+      display_options: 
+      field: id
+      group: 
+      hidden: true
+      interface: input
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 1
+      special:
+      - uuid
+      translations: 
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: id
+      table: volunteer_shifts
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: status
+    type: string
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: labels
+      display_options:
+        choices:
+        - background: "#10B981"
+          text: "$t:open"
+          value: open
+        - background: "#3B82F6"
+          text: "$t:filled"
+          value: filled
+        - background: "#EF4444"
+          text: "$t:canceled"
+          value: canceled
+        - background: var(--warning)
+          text: "$t:archived"
+          value: archived
+        showAsDot: true
+      field: status
+      group: 
+      hidden: false
+      interface: select-dropdown
+      note: 
+      options:
+        choices:
+        - text: "$t:open"
+          value: open
+        - text: "$t:filled"
+          value: filled
+        - text: "$t:canceled"
+          value: canceled
+        - text: "$t:archived"
+          value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: 
+      translations: 
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: status
+      table: volunteer_shifts
+      data_type: character varying
+      default_value: open
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: user_created
+    type: uuid
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: user
+      display_options: 
+      field: user_created
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 3
+      special:
+      - user-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_created
+      table: volunteer_shifts
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: volunteer_shifts
+    field: date_created
+    type: timestamp
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 4
+      special:
+      - date-created
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_created
+      table: volunteer_shifts
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: user_updated
+    type: uuid
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: user
+      display_options: 
+      field: user_updated
+      group: 
+      hidden: true
+      interface: select-dropdown-m2o
+      note: 
+      options:
+        template: "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+      readonly: true
+      required: false
+      sort: 5
+      special:
+      - user-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: user_updated
+      table: volunteer_shifts
+      data_type: uuid
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: volunteer_shifts
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: 
+      hidden: true
+      interface: datetime
+      note: 
+      options: 
+      readonly: true
+      required: false
+      sort: 6
+      special:
+      - date-updated
+      translations: 
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: date_updated
+      table: volunteer_shifts
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: title
+    type: string
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: 
+      display_options: 
+      field: title
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 7
+      special: 
+      translations:
+      - language: de-DE
+        translation: Titel
+      - language: en-US
+        translation: Title
+      validation: 
+      validation_message: 
+      width: full
+    schema:
+      name: title
+      table: volunteer_shifts
+      data_type: character varying
+      default_value: 
+      max_length: 255
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: start_time
+    type: timestamp
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: datetime
+      display_options: 
+      field: start_time
+      group: 
+      hidden: false
+      interface: datetime
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 8
+      special: 
+      translations:
+      - language: de-DE
+        translation: Startzeit
+      - language: en-US
+        translation: Start Time
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: start_time
+      table: volunteer_shifts
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: end_time
+    type: timestamp
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: datetime
+      display_options: 
+      field: end_time
+      group: 
+      hidden: false
+      interface: datetime
+      note: 
+      options: 
+      readonly: false
+      required: true
+      sort: 9
+      special: 
+      translations:
+      - language: de-DE
+        translation: Endzeit
+      - language: en-US
+        translation: End Time
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: end_time
+      table: volunteer_shifts
+      data_type: timestamp with time zone
+      default_value: 
+      max_length: 
+      numeric_precision: 
+      numeric_scale: 
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: slots_available
+    type: integer
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: 
+      display_options: 
+      field: slots_available
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        min: 1
+      readonly: false
+      required: true
+      sort: 10
+      special: 
+      translations:
+      - language: de-DE
+        translation: Verfügbare Plätze
+      - language: en-US
+        translation: Slots Available
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: slots_available
+      table: volunteer_shifts
+      data_type: integer
+      default_value: 1
+      max_length: 
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
+  - collection: volunteer_shifts
+    field: slots_filled
+    type: integer
+    meta:
+      collection: volunteer_shifts
+      conditions: 
+      display: 
+      display_options: 
+      field: slots_filled
+      group: 
+      hidden: false
+      interface: input
+      note: 
+      options:
+        min: 0
+      readonly: true
+      required: false
+      sort: 11
+      special: 
+      translations:
+      - language: de-DE
+        translation: Besetzte Plätze
+      - language: en-US
+        translation: Slots Filled
+      validation: 
+      validation_message: 
+      width: half
+    schema:
+      name: slots_filled
+      table: volunteer_shifts
+      data_type: integer
+      default_value: 0
+      max_length: 
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: 
+      has_auto_increment: false
+      foreign_key_table: 
+      foreign_key_column: 
