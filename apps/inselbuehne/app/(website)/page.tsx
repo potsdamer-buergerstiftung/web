@@ -16,9 +16,7 @@ export default function HomePage() {
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl">
               Deine Insel - <br />
-              <span className="text-green-500">
-                deine Bühne!
-              </span>
+              <span className="text-green-500">deine Bühne!</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed">
               Im Sommer sind wir wieder da! Ab Mai 2026 geht&apos;s mit einem
@@ -36,8 +34,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {
-        /* <section className="bg-gray-50">
+      {/* <section className="bg-gray-50">
                 <div className="container mx-auto px-4 pt-12 pb-8 md:pt-16">
                     <div
                         className="flex flex-col justify-between gap-4 md:flex-row md:items-center"
@@ -68,8 +65,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-            </section> */
-      }
+            </section> */}
       <section className="bg-gray-50">
         <div className="container mx-auto grid grid-cols-2 items-center gap-16 px-4 pt-16">
           <div className="order-2 col-span-2 lg:order-1 lg:col-span-1">
@@ -87,15 +83,20 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-gray-600">
               Danke für einen Mega-Sommer! Die fünfte Saison auf unserer
-              offenen, nicht-kommerziellen Bühne war ein Riesenerfolg &ndash; mit
-              einem Liedermacher- und Jazz-Festival, Improtheater und
+              offenen, nicht-kommerziellen Bühne war ein Riesenerfolg &ndash;
+              mit einem Liedermacher- und Jazz-Festival, Improtheater und
               Kindertheater, Open-Air-Kino, beliebten Mitmach-Formaten wie dem
               Inselsingen und vielem mehr. Wir danken allen Künstler:innen und
               unserem wunderbaren Publikum. Die Inselbühne lebt auch durch dich:
               deinen Applaus, deine Spenden, dein ehrenamtliches Engagement.
-              Wenn du Lust hast, dich aktiv einzubringen, melde dich unter {''}
-              <a href="mailto:hallo@inselbuehne-potsdam.de" className="underline text-green-700 hover:text-green-900">hallo@inselbuehne-potsdam.de</a>. Die Saison 2026 ist schon in
-              Vorbereitung.
+              Wenn du Lust hast, dich aktiv einzubringen, melde dich unter {""}
+              <a
+                href="mailto:hallo@inselbuehne-potsdam.de"
+                className="underline text-green-700 hover:text-green-900"
+              >
+                hallo@inselbuehne-potsdam.de
+              </a>
+              . Die Saison 2026 ist schon in Vorbereitung.
             </p>
           </div>
         </div>

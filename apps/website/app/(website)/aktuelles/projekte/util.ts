@@ -1,1 +1,5 @@
-export const isFilter = (slug) => "wiederkehrend" === slug || "abgeschlossen" === slug || "in-planung" === slug || "laufend" === slug;
+export const isFilter = (slug) =>
+  "wiederkehrend" === slug ||
+  "abgeschlossen" === slug ||
+  "in-planung" === slug ||
+  "laufend" === slug;

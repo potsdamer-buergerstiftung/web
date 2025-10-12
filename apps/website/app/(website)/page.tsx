@@ -25,33 +25,37 @@ async function getProjects() {
   const projects = await wixClient.items.query("Projekte").limit(7).find();
 
   console.log(projects.items);
-  
+
   return projects.items;
 }
 
 async function getPosts() {
-  const res = await directus.request(readItems("posts", {
-    fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
-    limit: 4,
-    sort: ["-date"],
-  }));
+  const res = await directus.request(
+    readItems("posts", {
+      fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
+      limit: 4,
+      sort: ["-date"],
+    })
+  );
   return res;
 }
 
 async function getEvents() {
-  const res = await directus.request(readItems("events", {
-    fields: [
-      "name",
-      "start",
-      "id",
-      "image",
-      "external_ticket_url",
-      "registration_needed",
-    ],
-    limit: 3,
-    sort: ["start"],
-    filter: { start: { _gte: new Date().toISOString() } },
-  }));
+  const res = await directus.request(
+    readItems("events", {
+      fields: [
+        "name",
+        "start",
+        "id",
+        "image",
+        "external_ticket_url",
+        "registration_needed",
+      ],
+      limit: 3,
+      sort: ["start"],
+      filter: { start: { _gte: new Date().toISOString() } },
+    })
+  );
   return res;
 }
 

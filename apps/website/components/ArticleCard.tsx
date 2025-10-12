@@ -37,13 +37,20 @@ const ArticleCard: React.FC<{
 
   const Wrapper = ({ children }) =>
     link ? (
-      <Link href={link} className={wrapperClass}
-        data-directus={setAttr({ collection: "posts", item: id })}>
+      <Link
+        href={link}
+        className={wrapperClass}
+        data-directus={setAttr({ collection: "posts", item: id })}
+      >
         {children}
       </Link>
     ) : (
-      <div className={wrapperClass}
-        data-directus={setAttr({ collection: "posts", item: id })}>{children}</div>
+      <div
+        className={wrapperClass}
+        data-directus={setAttr({ collection: "posts", item: id })}
+      >
+        {children}
+      </div>
     );
 
   return (
@@ -96,14 +103,19 @@ const ArticleCard: React.FC<{
         )}
       >
         <ul className="flex flex-wrap">
-          <li className={clsx({ "group-hover:text-white": compact, "after:content-['•'] after:px-1.5 after:text-emerald-500": projectTitle })}>
+          <li
+            className={clsx({
+              "group-hover:text-white": compact,
+              "after:content-['•'] after:px-1.5 after:text-emerald-500":
+                projectTitle,
+            })}
+          >
             {formattedDate}
           </li>
           <li
-            className={clsx(
-              "text-md text-slate-500",
-              { "group-hover:text-white": compact }
-            )}
+            className={clsx("text-md text-slate-500", {
+              "group-hover:text-white": compact,
+            })}
           >
             {projectTitle}
           </li>

@@ -20,7 +20,12 @@ const ProjectCard: React.FC<{
       href={`/aktuelles/projekte/${projectId}`}
       className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
     >
-      <WixMediaImage media={imageId} objectFit="cover" width={imageProps.width} height={imageProps.height}/>
+      <WixMediaImage
+        media={imageId}
+        objectFit="cover"
+        width={imageProps.width}
+        height={imageProps.height}
+      />
       <div className="pointer-events-none absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
       <div className="flex-column absolute top-0 bottom-0 left-0 right-0 flex items-end p-8">
         <div className="relative w-full">

@@ -15,29 +15,29 @@ import { wixClient } from "app/(website)/wix";
 export const revalidate = 120;
 
 const slugStatusMap = {
-    "wiederkehrend": "Wiederkehrende Projekte",
-    "abgeschlossen": "Abgeschlossene Projekte",
-    "in-planung": "Projekte in Planung",
-    "laufend": "Laufende Projekte",
-}
+  wiederkehrend: "Wiederkehrende Projekte",
+  abgeschlossen: "Abgeschlossene Projekte",
+  "in-planung": "Projekte in Planung",
+  laufend: "Laufende Projekte",
+};
 
 function mapSlugToStatus(slug: string) {
-    switch (slug) {
-        case "wiederkehrend":
-            return "recurring";
-        case "abgeschlossen":
-            return "finalized";
-        case "in-planung":
-            return "planning";
-        case "laufend":
-            return "inprogress";
-        default:
-            return "published";
-    }
+  switch (slug) {
+    case "wiederkehrend":
+      return "recurring";
+    case "abgeschlossen":
+      return "finalized";
+    case "in-planung":
+      return "planning";
+    case "laufend":
+      return "inprogress";
+    default:
+      return "published";
+  }
 }
 
 async function getProject(slug: string) {
-    /* const isFilterS = isFilter(slug);
+  /* const isFilterS = isFilter(slug);
 
     let filter: any;
 
@@ -68,9 +68,9 @@ async function getProject(slug: string) {
 
     return res.data![0]; */
 
-    console.log(slug)
+  console.log(slug);
 
-    return (await wixClient.items.get("Projekte", slug));
+  return await wixClient.items.get("Projekte", slug);
 }
 
 /* async function getPosts(projectId: string) {
@@ -89,44 +89,44 @@ async function getProject(slug: string) {
 } */
 
 type Props = {
-    params: Promise<{ slug: string }>
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-export async function generateMetadata(props: Props, parent?: ResolvingMetadata): Promise<Metadata> {
-    const params = await props.params;
-    const id = params.slug;
-    const isFilterS = isFilter(id);
+export async function generateMetadata(
+  props: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  const params = await props.params;
+  const id = params.slug;
+  const isFilterS = isFilter(id);
 
-    if (isFilterS) {
-        const title = slugStatusMap[id];
-        return {
-            title: `${title} - Potsdamer Bürgerstiftung`,
-        }
-    }
-
-    const project = await getProject(id);
-
+  if (isFilterS) {
+    const title = slugStatusMap[id];
     return {
-        title: `${project.title} - Potsdamer Bürgerstiftung`,
-    }
+      title: `${title} - Potsdamer Bürgerstiftung`,
+    };
+  }
+
+  const project = await getProject(id);
+
+  return {
+    title: `${project.title} - Potsdamer Bürgerstiftung`,
+  };
 }
 
-export default async function ProjectPage(
-    props: {
-        params: Promise<{ slug: string }>;
-    }
-) {
-    const params = await props.params;
-    const project = getProject(params.slug);
+export default async function ProjectPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
+  const project = getProject(params.slug);
 
-    return (
-        <>
-            <Suspense>
-                {/* @ts-ignore-error */}
-                <ProjectContent promise={project} />
-                
-            </Suspense>
-        </>
-    )
+  return (
+    <>
+      <Suspense>
+        {/* @ts-ignore-error */}
+        <ProjectContent promise={project} />
+      </Suspense>
+    </>
+  );
 }

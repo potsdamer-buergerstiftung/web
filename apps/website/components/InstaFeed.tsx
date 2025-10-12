@@ -7,88 +7,94 @@ import ArticleCard from "./ArticleCard";
 import InstagramCard from "./InstagramCard";
 
 type InstagramPost = {
-    id: string;
-    caption: string;
-    media_url: string;
-    media_type: string;
-    timestamp: string;
-    permalink: string;
+  id: string;
+  caption: string;
+  media_url: string;
+  media_type: string;
+  timestamp: string;
+  permalink: string;
 };
 
 type InstagramPaging = {
-    cursors: {
-        before: string;
-        after: string;
-    };
+  cursors: {
+    before: string;
+    after: string;
+  };
 };
 
 type InstagramFeed = {
-    data: InstagramPost[];
-    paging?: InstagramPaging;
+  data: InstagramPost[];
+  paging?: InstagramPaging;
 };
 
 export default function InstaFeed() {
-    const [instagramFeed, setInstagramFeed] = useState<InstagramFeed | null>(
-        null
-    );
-    const [after, setAfter] = useState<string | null>(null);
-    const [error, setError] = useState<string | null>(null);
+  const [instagramFeed, setInstagramFeed] = useState<InstagramFeed | null>(
+    null
+  );
+  const [after, setAfter] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-    const fetchFeed = async (after: string | null = null) => {
-        return;
-        
-        try {
-            let url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`;
-            if (after) {
-                url += `&after=${after}`;
-            }
-            const data = await fetch(url);
+  const fetchFeed = async (after: string | null = null) => {
+    return;
 
-            if (!data.ok) {
-                console.log(await data.text());
-                throw new Error("Failed to fetch Instagram feed");
-            }
+    try {
+      let url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`;
+      if (after) {
+        url += `&after=${after}`;
+      }
+      const data = await fetch(url);
 
-            const feed = await data.json();
-            // Limit to 4 posts
-            feed.data = feed.data.slice(0, 4);
-            console.log(feed);
+      if (!data.ok) {
+        console.log(await data.text());
+        throw new Error("Failed to fetch Instagram feed");
+      }
 
-            setInstagramFeed(feed);
+      const feed = await data.json();
+      // Limit to 4 posts
+      feed.data = feed.data.slice(0, 4);
+      console.log(feed);
 
-            setAfter(feed.paging?.cursors.after);
-        } catch (err: any) {
-            console.error("Error fetching Instagram feed:", err.message);
-            setError(err.message);
-        }
-    };
+      setInstagramFeed(feed);
 
-    const loadMore = () => {
-        fetchFeed(after);
-    };
-
-    // Fetch the initial feed
-    useEffect(() => {
-        fetchFeed();
-    }, []);
-
-    function truncate(str: string, n: number) {
-        return str.length > n ? str.substr(0, n - 1) + "..." : str;
+      setAfter(feed.paging?.cursors.after);
+    } catch (err: any) {
+      console.error("Error fetching Instagram feed:", err.message);
+      setError(err.message);
     }
+  };
 
-    return (
-        <>
-            {error && <p className="text-red-500">{error}</p>}
+  const loadMore = () => {
+    fetchFeed(after);
+  };
 
-            {instagramFeed && instagramFeed.data.map((post: InstagramPost) => (
-                <div
-                    className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2"
-                    key={post.id}
-                >
-                    <InstagramCard key={post.id} title={truncate(post.caption, 50)} imageUrl={post.media_url} date={new Date(post.timestamp)} link={post.permalink} />
-                </div>
+  // Fetch the initial feed
+  useEffect(() => {
+    fetchFeed();
+  }, []);
 
-            ))}
-        </>
-    );
+  function truncate(str: string, n: number) {
+    return str.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
+
+  return (
+    <>
+      {error && <p className="text-red-500">{error}</p>}
+
+      {instagramFeed &&
+        instagramFeed.data.map((post: InstagramPost) => (
+          <div
+            className="col-span-6 min-h-max lg:col-span-3 xl:col-span-2"
+            key={post.id}
+          >
+            <InstagramCard
+              key={post.id}
+              title={truncate(post.caption, 50)}
+              imageUrl={post.media_url}
+              date={new Date(post.timestamp)}
+              link={post.permalink}
+            />
+          </div>
+        ))}
+    </>
+  );
 }

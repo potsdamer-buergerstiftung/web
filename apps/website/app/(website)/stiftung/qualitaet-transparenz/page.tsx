@@ -63,8 +63,8 @@ export default function QualityAndTransparencyPage() {
                 </Link>
               </li>
               <li>
-                Erster Preis beim Wettbewerb &quot;Gemeinsam für Potsdam&quot; der
-                Stadtwerke Potsdam und ProPotsdam GmbH 2019 für das Projekt{" "}
+                Erster Preis beim Wettbewerb &quot;Gemeinsam für Potsdam&quot;
+                der Stadtwerke Potsdam und ProPotsdam GmbH 2019 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/potspresso"
                   className="font-bold text-emerald-500"
@@ -77,8 +77,8 @@ export default function QualityAndTransparencyPage() {
                 Projekt &quot;Angekommen in Potsdam&quot;
               </li>
               <li>
-                Erster Platz beim Wettbewerb &quot;Gemeinsam für Potsdam&quot; der
-                ProPotsdam GmbH 2021 für das Projekt{" "}
+                Erster Platz beim Wettbewerb &quot;Gemeinsam für Potsdam&quot;
+                der ProPotsdam GmbH 2021 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/inselbuehne"
                   className="font-bold text-emerald-500"
@@ -150,9 +150,9 @@ export default function QualityAndTransparencyPage() {
               Personalstruktur
             </h4>
             <p>
-              In der Bürgerstiftung Potsdam arbeiten in der Geschäftsstelle 1,075
-              Mitarbeiter:innen. In den Projekten
-              engagieren sich aktuell etwa 40 Ehrenamtliche.
+              In der Bürgerstiftung Potsdam arbeiten in der Geschäftsstelle
+              1,075 Mitarbeiter:innen. In den Projekten engagieren sich aktuell
+              etwa 40 Ehrenamtliche.
             </p>
             <h4 className="font-header text-2xl font-bold mb-5 mt-10">
               Angaben zur Mittelherkunft
@@ -188,9 +188,7 @@ export default function QualityAndTransparencyPage() {
               Namen von juristischen Personen, deren jährliche Zuwendung mehr
               als 10% der gesamten Jahreseinnahmen ausmachen
             </h4>
-            <p>
-                Die Landeshauptstadt Potsdam ist unser größter Förderer.
-            </p>
+            <p>Die Landeshauptstadt Potsdam ist unser größter Förderer.</p>
           </div>
         </div>
       </section>

@@ -9,32 +9,44 @@ import { WixMediaImage } from "@components/WixMediaImage";
 import RichContentViewer from "@components/RichContentViewer";
 
 interface ProjectContentProps {
-    promise: Promise<any>;
+  promise: Promise<any>;
 }
-  
 
 export default async function ProjectContent(props: ProjectContentProps) {
-    const project = await props.promise;
+  const project = await props.promise;
 
-    const content = <RichContentViewer content={project.inhalt} />
-    const image = <WixMediaImage media={project.projektbild} alt={project.title} width={800} height={400}/>;
+  const content = <RichContentViewer content={project.inhalt} />;
+  const image = (
+    <WixMediaImage
+      media={project.projektbild}
+      alt={project.title}
+      width={800}
+      height={400}
+    />
+  );
 
-    return (
-        <>
-            <PageTitle
-                title={project.title}
-                description={project.sub_title}
-                breadcrumb={
-                    <PageBreadcrumb
-                        items={[
-                            <PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles" />,
-                            <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />,
-                            <PageBreadcrumbItem label={project.title} />,
-                        ]}
-                    />
-                }
-            />
-            <ProjectContentWrapper content={content} image={image}/>
-        </>
-    );
+  return (
+    <>
+      <PageTitle
+        title={project.title}
+        description={project.sub_title}
+        breadcrumb={
+          <PageBreadcrumb
+            items={[
+              <PageBreadcrumbItem
+                label="Aktuelles & Projekte"
+                href="/aktuelles"
+              />,
+              <PageBreadcrumbItem
+                label="Projekte"
+                href="/aktuelles/projekte"
+              />,
+              <PageBreadcrumbItem label={project.title} />,
+            ]}
+          />
+        }
+      />
+      <ProjectContentWrapper content={content} image={image} />
+    </>
+  );
 }

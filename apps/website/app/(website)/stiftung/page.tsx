@@ -79,7 +79,9 @@ export default function AboutPage() {
             {priorities.map((priority) => (
               <div className="container mx-auto flex h-full flex-col">
                 <div>
-                  <h1 className={`text-sm font-semibold uppercase text-gray-600 mb-2 ${priority.color}`}>
+                  <h1
+                    className={`text-sm font-semibold uppercase text-gray-600 mb-2 ${priority.color}`}
+                  >
                     {priority.subTitle}
                   </h1>
                   <h2 className="font-header text-2xl font-bold mb-4">

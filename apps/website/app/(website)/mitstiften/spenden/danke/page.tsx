@@ -18,7 +18,13 @@ export default function ThankYouPage() {
           Menschen wie dir, dass wir diese positive Veränderung in unserer Stadt
           bewirken können.
         </p>
-        <Image src="/img/thanks.svg" height="200" width="400" alt="Dankeschön Bild" className="h-80 place-self-center" />
+        <Image
+          src="/img/thanks.svg"
+          height="200"
+          width="400"
+          alt="Dankeschön Bild"
+          className="h-80 place-self-center"
+        />
       </div>
     </>
   );

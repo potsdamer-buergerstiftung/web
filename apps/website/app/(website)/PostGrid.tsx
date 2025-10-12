@@ -6,7 +6,10 @@ interface PostsGridProps {
   compact?: boolean;
 }
 
-export default async function PostGrid({ promise, compact = true }: PostsGridProps) {
+export default async function PostGrid({
+  promise,
+  compact = true,
+}: PostsGridProps) {
   const posts = await promise;
   return (
     <React.Fragment>
