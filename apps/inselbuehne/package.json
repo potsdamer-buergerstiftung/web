@@ -19,7 +19,7 @@
     "@wix/sdk": "^1.9.2",
     "api": "*",
     "clsx": "^1.2.1",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "framer-motion": "^8.4.2",
     "frappe-js-sdk": "^1.2.3",
     "graphql": "^16.6.0",
