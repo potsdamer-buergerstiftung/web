@@ -1,6 +1,6 @@
-import React from 'react';
-import HTMLReactParser from 'html-react-parser';
-import { RenderFn } from './render';
+import React from "react";
+import HTMLReactParser from "html-react-parser";
+import { RenderFn } from "./render";
 
 export interface ImageBlockData {
   file?: {
@@ -23,11 +23,11 @@ export interface ImageBlockConfig {
 
 const Image: RenderFn<ImageBlockData, ImageBlockConfig> = ({
   data,
-  className = '',
+  className = "",
   actionsClassNames = {
-    stretched: 'image-block--stretched',
-    withBorder: 'image-block--with-border',
-    withBackground: 'image-block--with-background',
+    stretched: "image-block--stretched",
+    withBorder: "image-block--with-border",
+    withBackground: "image-block--with-background",
   },
 }) => {
   const classNames: string[] = [];
@@ -45,14 +45,18 @@ const Image: RenderFn<ImageBlockData, ImageBlockConfig> = ({
   } = {};
 
   if (classNames.length > 0) {
-    figureprops.className = classNames.join(' ');
+    figureprops.className = classNames.join(" ");
   }
 
   return (
     <figure {...figureprops}>
-      {data?.file?.url && <img src={data.file.url} alt={data.caption || data.file.name} />}
+      {data?.file?.url && (
+        <img src={data.file.url} alt={data.caption || data.file.name} />
+      )}
       {data?.url && <img src={data.url} alt={data.caption} />}
-      {data?.caption && <figcaption>{HTMLReactParser(data.caption)}</figcaption>}
+      {data?.caption && (
+        <figcaption>{HTMLReactParser(data.caption)}</figcaption>
+      )}
     </figure>
   );
 };

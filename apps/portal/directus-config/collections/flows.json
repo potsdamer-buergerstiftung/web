@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Spendenbescheinigung",
+    "icon": "attach_money",
+    "color": null,
+    "description": "Erstellt automatisch eine Spendenbescheinigung nach einer Spende",
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "action",
+      "scope": [
+        "items.create"
+      ],
+      "collections": [
+        "donations"
+      ]
+    },
+    "operation": "079ecba5-0d59-4895-8df2-29870619154b",
+    "_syncId": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd"
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "collection": "articles",
+  "field": "content",
+  "type": "text",
+  "meta": {
+    "collection": "articles",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "content",
+    "group": null,
+    "hidden": false,
+    "interface": "input-rich-text-html",
+    "note": "The main content of the article",
+    "options": {
+      "toolbar": [
+        "bold",
+        "italic",
+        "underline",
+        "strikethrough",
+        "code",
+        "heading1",
+        "heading2",
+        "heading3",
+        "heading4",
+        "heading5",
+        "heading6",
+        "blockquote",
+        "bulletList",
+        "orderedList",
+        "codeBlock",
+        "horizontalRule",
+        "link",
+        "image"
+      ]
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 4,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Content"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Inhalt"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "content",
+    "table": "articles",
+    "data_type": "text",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

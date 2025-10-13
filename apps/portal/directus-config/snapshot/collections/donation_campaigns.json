@@ -1,0 +1,41 @@
+{
+  "collection": "donation_campaigns",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "donation_campaigns",
+    "color": null,
+    "display_template": "{{name}}",
+    "group": "fundraising",
+    "hidden": false,
+    "icon": "campaign",
+    "item_duplication_fields": null,
+    "note": "Fundraising campaigns",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 2,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Donation Campaigns",
+        "singular": "Donation Campaign",
+        "translation": "Donation Campaigns"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Spendenkampagnen",
+        "singular": "Spendenkampagne",
+        "translation": "Spendenkampagnen"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "donation_campaigns"
+  }
+}

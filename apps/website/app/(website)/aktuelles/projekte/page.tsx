@@ -23,7 +23,7 @@ export default function ProjectsPage() {
     const projects = getProjects();
     return (
         <>
-            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />]} />} />
+            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={<PageBreadcrumbItem label="Aktuelles & Projekte" />} />} />
             <div className="container mx-auto px-4 pb-20">
                 <Suspense fallback={<ProjectGridLoading />}>
                     {/* @ts-ignore-error */}

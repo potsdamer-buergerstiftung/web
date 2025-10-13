@@ -1,0 +1,36 @@
+{
+  "collection": "contacts",
+  "field": "donations",
+  "type": "alias",
+  "meta": {
+    "collection": "contacts",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "donations",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 12,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Donations"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Spenden"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

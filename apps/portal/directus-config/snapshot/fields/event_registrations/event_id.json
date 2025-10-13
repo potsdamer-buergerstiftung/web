@@ -1,0 +1,54 @@
+{
+  "collection": "event_registrations",
+  "field": "event_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "event_registrations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "event_id",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": null,
+    "options": {
+      "template": "{{title}}"
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Event"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Veranstaltung"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "event_id",
+    "table": "event_registrations",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "events",
+    "foreign_key_column": "id"
+  }
+}

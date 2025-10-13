@@ -1,0 +1,25 @@
+{
+  "collection": "projects",
+  "field": "project_manager_id",
+  "related_collection": "contacts",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "projects",
+    "many_field": "project_manager_id",
+    "one_allowed_collections": null,
+    "one_collection": "contacts",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  },
+  "schema": {
+    "table": "projects",
+    "column": "project_manager_id",
+    "foreign_key_table": "contacts",
+    "foreign_key_column": "id",
+    "constraint_name": "projects_project_manager_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

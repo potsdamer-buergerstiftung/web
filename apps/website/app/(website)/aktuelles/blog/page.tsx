@@ -10,7 +10,15 @@ export const revalidate = 60;
 
 async function getPosts() {
     const res = await directus.request(readItems("posts", {
-        fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
+        fields: [
+            "title",
+            "date",
+            "id",
+            "image",
+            "tags",
+            "project.title",
+            "slug",
+        ],
         sort: ["-date"],
     }));
 
@@ -26,12 +34,22 @@ export default function NewsPage() {
                 title="News & Blog"
                 description="Was bei uns und unseren Projekten passiert"
                 breadcrumb={
-                    <PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />, <PageBreadcrumbItem label="News & Blog" />]} />
+                    <PageBreadcrumb
+                        items={
+                            <>
+                                <PageBreadcrumbItem
+                                    label="Aktuelles & Projekte"
+                                    href="/aktuelles/projekte"
+                                />
+                                <PageBreadcrumbItem label="News & Blog" />
+                            </>
+                        }
+                    />
                 }
             />
             <div className="container mx-auto px-4 mb-10">
                 {/* @ts-ignore-error */}
-                <PostGrid promise={posts}/>
+                <PostGrid promise={posts} />
             </div>
         </>
     );

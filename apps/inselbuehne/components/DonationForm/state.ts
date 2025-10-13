@@ -1,9 +1,6 @@
 import { atom } from "jotai";
 
-export type Progress =
-| "PROJECT_SELECTION"
-| "AMOUNT_SELECTION"
-| "PAYMENT";
+export type Progress = "PROJECT_SELECTION" | "AMOUNT_SELECTION" | "PAYMENT";
 
 export type PlanDuration = "ONE_TIME" | "MONTHLY";
 

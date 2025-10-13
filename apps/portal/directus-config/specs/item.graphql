@@ -1,0 +1,4304 @@
+type Query {
+  ai_prompts(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [ai_prompts!]!
+  ai_prompts_by_id(id: ID!, version: String): ai_prompts
+  ai_prompts_aggregated(groupBy: [String], filter: ai_prompts_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [ai_prompts_aggregated!]!
+  ai_prompts_by_version(version: String!, id: ID!): version_ai_prompts
+  directus_sync_id_map(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_sync_id_map!]!
+  directus_sync_id_map_by_id(id: ID!, version: String): directus_sync_id_map
+  directus_sync_id_map_aggregated(groupBy: [String], filter: directus_sync_id_map_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_sync_id_map_aggregated!]!
+  directus_sync_id_map_by_version(version: String!, id: ID!): version_directus_sync_id_map
+  block_richtext(filter: block_richtext_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [block_richtext!]!
+  block_richtext_by_id(id: ID!, version: String): block_richtext
+  block_richtext_aggregated(groupBy: [String], filter: block_richtext_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [block_richtext_aggregated!]!
+  block_richtext_by_version(version: String!, id: ID!): version_block_richtext
+  categories(filter: categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [categories!]!
+  categories_by_id(id: ID!, version: String): categories
+  categories_aggregated(groupBy: [String], filter: categories_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [categories_aggregated!]!
+  categories_by_version(version: String!, id: ID!): version_categories
+  tags(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [tags!]!
+  tags_by_id(id: ID!, version: String): tags
+  tags_aggregated(groupBy: [String], filter: tags_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tags_aggregated!]!
+  tags_by_version(version: String!, id: ID!): version_tags
+  articles(filter: articles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [articles!]!
+  articles_by_id(id: ID!, version: String): articles
+  articles_aggregated(groupBy: [String], filter: articles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [articles_aggregated!]!
+  articles_by_version(version: String!, id: ID!): version_articles
+  pages(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages!]!
+  pages_by_id(id: ID!, version: String): pages
+  pages_aggregated(groupBy: [String], filter: pages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [pages_aggregated!]!
+  pages_by_version(version: String!, id: ID!): version_pages
+  form_field_text(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [form_field_text!]!
+  form_field_text_by_id(id: ID!, version: String): form_field_text
+  form_field_text_aggregated(groupBy: [String], filter: form_field_text_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [form_field_text_aggregated!]!
+  form_field_text_by_version(version: String!, id: ID!): version_form_field_text
+  pages_blocks(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages_blocks!]!
+  pages_blocks_by_id(id: ID!, version: String): pages_blocks
+  pages_blocks_aggregated(groupBy: [String], filter: pages_blocks_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [pages_blocks_aggregated!]!
+  pages_blocks_by_version(version: String!, id: ID!): version_pages_blocks
+  forms_fields(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms_fields!]!
+  forms_fields_by_id(id: ID!, version: String): forms_fields
+  forms_fields_aggregated(groupBy: [String], filter: forms_fields_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [forms_fields_aggregated!]!
+  forms_fields_by_version(version: String!, id: ID!): version_forms_fields
+  forms(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms!]!
+  forms_by_id(id: ID!, version: String): forms
+  forms_aggregated(groupBy: [String], filter: forms_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [forms_aggregated!]!
+  forms_by_version(version: String!, id: ID!): version_forms
+  block_form(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [block_form!]!
+  block_form_by_id(id: ID!, version: String): block_form
+  block_form_aggregated(groupBy: [String], filter: block_form_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [block_form_aggregated!]!
+  block_form_by_version(version: String!, id: ID!): version_block_form
+  contacts(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [contacts!]!
+  contacts_by_id(id: ID!, version: String): contacts
+  contacts_aggregated(groupBy: [String], filter: contacts_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contacts_aggregated!]!
+  contacts_by_version(version: String!, id: ID!): version_contacts
+  donation_campaigns(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donation_campaigns!]!
+  donation_campaigns_by_id(id: ID!, version: String): donation_campaigns
+  donation_campaigns_aggregated(groupBy: [String], filter: donation_campaigns_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donation_campaigns_aggregated!]!
+  donation_campaigns_by_version(version: String!, id: ID!): version_donation_campaigns
+  event_registrations(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [event_registrations!]!
+  event_registrations_by_id(id: ID!, version: String): event_registrations
+  event_registrations_aggregated(groupBy: [String], filter: event_registrations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [event_registrations_aggregated!]!
+  event_registrations_by_version(version: String!, id: ID!): version_event_registrations
+  events(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [events!]!
+  events_by_id(id: ID!, version: String): events
+  events_aggregated(groupBy: [String], filter: events_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [events_aggregated!]!
+  events_by_version(version: String!, id: ID!): version_events
+  recurring_donations(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [recurring_donations!]!
+  recurring_donations_by_id(id: ID!, version: String): recurring_donations
+  recurring_donations_aggregated(groupBy: [String], filter: recurring_donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [recurring_donations_aggregated!]!
+  recurring_donations_by_version(version: String!, id: ID!): version_recurring_donations
+  volunteer_activities(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [volunteer_activities!]!
+  volunteer_activities_by_id(id: ID!, version: String): volunteer_activities
+  volunteer_activities_aggregated(groupBy: [String], filter: volunteer_activities_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [volunteer_activities_aggregated!]!
+  volunteer_activities_by_version(version: String!, id: ID!): version_volunteer_activities
+  volunteers(filter: volunteers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [volunteers!]!
+  volunteers_by_id(id: ID!, version: String): volunteers
+  volunteers_aggregated(groupBy: [String], filter: volunteers_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [volunteers_aggregated!]!
+  volunteers_by_version(version: String!, id: ID!): version_volunteers
+  contacts_tags(filter: contacts_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [contacts_tags!]!
+  contacts_tags_by_id(id: ID!, version: String): contacts_tags
+  contacts_tags_aggregated(groupBy: [String], filter: contacts_tags_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contacts_tags_aggregated!]!
+  contacts_tags_by_version(version: String!, id: ID!): version_contacts_tags
+  articles_tags(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [articles_tags!]!
+  articles_tags_by_id(id: ID!, version: String): articles_tags
+  articles_tags_aggregated(groupBy: [String], filter: articles_tags_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [articles_tags_aggregated!]!
+  articles_tags_by_version(version: String!, id: ID!): version_articles_tags
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations!]!
+  donations_by_id(id: ID!, version: String): donations
+  donations_aggregated(groupBy: [String], filter: donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donations_aggregated!]!
+  donations_by_version(version: String!, id: ID!): version_donations
+  projects(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects!]!
+  projects_by_id(id: ID!, version: String): projects
+  projects_aggregated(groupBy: [String], filter: projects_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [projects_aggregated!]!
+  projects_by_version(version: String!, id: ID!): version_projects
+}
+
+type Mutation {
+  create_ai_prompts_items(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_ai_prompts_input!]): [ai_prompts!]!
+  create_ai_prompts_item(data: create_ai_prompts_input!): ai_prompts
+  create_directus_sync_id_map_items(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_sync_id_map_input!]): [directus_sync_id_map!]!
+  create_directus_sync_id_map_item(data: create_directus_sync_id_map_input!): directus_sync_id_map
+  create_block_richtext_items(filter: block_richtext_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_block_richtext_input!]): [block_richtext!]!
+  create_block_richtext_item(data: create_block_richtext_input!): block_richtext
+  create_categories_items(filter: categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_categories_input!]): [categories!]!
+  create_categories_item(data: create_categories_input!): categories
+  create_tags_items(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_tags_input!]): [tags!]!
+  create_tags_item(data: create_tags_input!): tags
+  create_articles_items(filter: articles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_articles_input!]): [articles!]!
+  create_articles_item(data: create_articles_input!): articles
+  create_pages_items(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_pages_input!]): [pages!]!
+  create_pages_item(data: create_pages_input!): pages
+  create_form_field_text_items(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_form_field_text_input!]): [form_field_text!]!
+  create_form_field_text_item(data: create_form_field_text_input!): form_field_text
+  create_pages_blocks_items(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_pages_blocks_input!]): [pages_blocks!]!
+  create_pages_blocks_item(data: create_pages_blocks_input!): pages_blocks
+  create_forms_fields_items(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_forms_fields_input!]): [forms_fields!]!
+  create_forms_fields_item(data: create_forms_fields_input!): forms_fields
+  create_forms_items(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_forms_input!]): [forms!]!
+  create_forms_item(data: create_forms_input!): forms
+  create_block_form_items(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_block_form_input!]): [block_form!]!
+  create_block_form_item(data: create_block_form_input!): block_form
+  create_contacts_items(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_contacts_input!]): [contacts!]!
+  create_contacts_item(data: create_contacts_input!): contacts
+  create_donation_campaigns_items(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donation_campaigns_input!]): [donation_campaigns!]!
+  create_donation_campaigns_item(data: create_donation_campaigns_input!): donation_campaigns
+  create_event_registrations_items(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_event_registrations_input!]): [event_registrations!]!
+  create_event_registrations_item(data: create_event_registrations_input!): event_registrations
+  create_events_items(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_events_input!]): [events!]!
+  create_events_item(data: create_events_input!): events
+  create_recurring_donations_items(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_recurring_donations_input!]): [recurring_donations!]!
+  create_recurring_donations_item(data: create_recurring_donations_input!): recurring_donations
+  create_volunteer_activities_items(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_volunteer_activities_input!]): [volunteer_activities!]!
+  create_volunteer_activities_item(data: create_volunteer_activities_input!): volunteer_activities
+  create_volunteers_items(filter: volunteers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_volunteers_input!]): [volunteers!]!
+  create_volunteers_item(data: create_volunteers_input!): volunteers
+  create_contacts_tags_items(filter: contacts_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_contacts_tags_input!]): [contacts_tags!]!
+  create_contacts_tags_item(data: create_contacts_tags_input!): contacts_tags
+  create_articles_tags_items(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_articles_tags_input!]): [articles_tags!]!
+  create_articles_tags_item(data: create_articles_tags_input!): articles_tags
+  create_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donations_input!]): [donations!]!
+  create_donations_item(data: create_donations_input!): donations
+  create_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_projects_input!]): [projects!]!
+  create_projects_item(data: create_projects_input!): projects
+  update_ai_prompts_items(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_ai_prompts_input!): [ai_prompts!]!
+  update_ai_prompts_batch(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_ai_prompts_input!]): [ai_prompts!]!
+  update_ai_prompts_item(id: ID!, data: update_ai_prompts_input!): ai_prompts
+  update_directus_sync_id_map_items(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_sync_id_map_input!): [directus_sync_id_map!]!
+  update_directus_sync_id_map_batch(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_sync_id_map_input!]): [directus_sync_id_map!]!
+  update_directus_sync_id_map_item(id: ID!, data: update_directus_sync_id_map_input!): directus_sync_id_map
+  update_block_richtext_items(filter: block_richtext_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_block_richtext_input!): [block_richtext!]!
+  update_block_richtext_batch(filter: block_richtext_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_block_richtext_input!]): [block_richtext!]!
+  update_block_richtext_item(id: ID!, data: update_block_richtext_input!): block_richtext
+  update_categories_items(filter: categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_categories_input!): [categories!]!
+  update_categories_batch(filter: categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_categories_input!]): [categories!]!
+  update_categories_item(id: ID!, data: update_categories_input!): categories
+  update_tags_items(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_tags_input!): [tags!]!
+  update_tags_batch(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_tags_input!]): [tags!]!
+  update_tags_item(id: ID!, data: update_tags_input!): tags
+  update_articles_items(filter: articles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_articles_input!): [articles!]!
+  update_articles_batch(filter: articles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_articles_input!]): [articles!]!
+  update_articles_item(id: ID!, data: update_articles_input!): articles
+  update_pages_items(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_pages_input!): [pages!]!
+  update_pages_batch(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_pages_input!]): [pages!]!
+  update_pages_item(id: ID!, data: update_pages_input!): pages
+  update_form_field_text_items(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_form_field_text_input!): [form_field_text!]!
+  update_form_field_text_batch(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_form_field_text_input!]): [form_field_text!]!
+  update_form_field_text_item(id: ID!, data: update_form_field_text_input!): form_field_text
+  update_pages_blocks_items(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_pages_blocks_input!): [pages_blocks!]!
+  update_pages_blocks_batch(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_pages_blocks_input!]): [pages_blocks!]!
+  update_pages_blocks_item(id: ID!, data: update_pages_blocks_input!): pages_blocks
+  update_forms_fields_items(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_forms_fields_input!): [forms_fields!]!
+  update_forms_fields_batch(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_forms_fields_input!]): [forms_fields!]!
+  update_forms_fields_item(id: ID!, data: update_forms_fields_input!): forms_fields
+  update_forms_items(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_forms_input!): [forms!]!
+  update_forms_batch(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_forms_input!]): [forms!]!
+  update_forms_item(id: ID!, data: update_forms_input!): forms
+  update_block_form_items(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_block_form_input!): [block_form!]!
+  update_block_form_batch(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_block_form_input!]): [block_form!]!
+  update_block_form_item(id: ID!, data: update_block_form_input!): block_form
+  update_contacts_items(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_contacts_input!): [contacts!]!
+  update_contacts_batch(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_contacts_input!]): [contacts!]!
+  update_contacts_item(id: ID!, data: update_contacts_input!): contacts
+  update_donation_campaigns_items(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donation_campaigns_input!): [donation_campaigns!]!
+  update_donation_campaigns_batch(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donation_campaigns_input!]): [donation_campaigns!]!
+  update_donation_campaigns_item(id: ID!, data: update_donation_campaigns_input!): donation_campaigns
+  update_event_registrations_items(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_event_registrations_input!): [event_registrations!]!
+  update_event_registrations_batch(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_event_registrations_input!]): [event_registrations!]!
+  update_event_registrations_item(id: ID!, data: update_event_registrations_input!): event_registrations
+  update_events_items(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_events_input!): [events!]!
+  update_events_batch(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_events_input!]): [events!]!
+  update_events_item(id: ID!, data: update_events_input!): events
+  update_recurring_donations_items(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_recurring_donations_input!): [recurring_donations!]!
+  update_recurring_donations_batch(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_recurring_donations_input!]): [recurring_donations!]!
+  update_recurring_donations_item(id: ID!, data: update_recurring_donations_input!): recurring_donations
+  update_volunteer_activities_items(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_volunteer_activities_input!): [volunteer_activities!]!
+  update_volunteer_activities_batch(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_volunteer_activities_input!]): [volunteer_activities!]!
+  update_volunteer_activities_item(id: ID!, data: update_volunteer_activities_input!): volunteer_activities
+  update_volunteers_items(filter: volunteers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_volunteers_input!): [volunteers!]!
+  update_volunteers_batch(filter: volunteers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_volunteers_input!]): [volunteers!]!
+  update_volunteers_item(id: ID!, data: update_volunteers_input!): volunteers
+  update_contacts_tags_items(filter: contacts_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_contacts_tags_input!): [contacts_tags!]!
+  update_contacts_tags_batch(filter: contacts_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_contacts_tags_input!]): [contacts_tags!]!
+  update_contacts_tags_item(id: ID!, data: update_contacts_tags_input!): contacts_tags
+  update_articles_tags_items(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_articles_tags_input!): [articles_tags!]!
+  update_articles_tags_batch(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_articles_tags_input!]): [articles_tags!]!
+  update_articles_tags_item(id: ID!, data: update_articles_tags_input!): articles_tags
+  update_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donations_input!): [donations!]!
+  update_donations_batch(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donations_input!]): [donations!]!
+  update_donations_item(id: ID!, data: update_donations_input!): donations
+  update_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_projects_input!): [projects!]!
+  update_projects_batch(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_projects_input!]): [projects!]!
+  update_projects_item(id: ID!, data: update_projects_input!): projects
+  delete_ai_prompts_items(ids: [ID]!): delete_many
+  delete_ai_prompts_item(id: ID!): delete_one
+  delete_directus_sync_id_map_items(ids: [ID]!): delete_many
+  delete_directus_sync_id_map_item(id: ID!): delete_one
+  delete_block_richtext_items(ids: [ID]!): delete_many
+  delete_block_richtext_item(id: ID!): delete_one
+  delete_categories_items(ids: [ID]!): delete_many
+  delete_categories_item(id: ID!): delete_one
+  delete_tags_items(ids: [ID]!): delete_many
+  delete_tags_item(id: ID!): delete_one
+  delete_articles_items(ids: [ID]!): delete_many
+  delete_articles_item(id: ID!): delete_one
+  delete_pages_items(ids: [ID]!): delete_many
+  delete_pages_item(id: ID!): delete_one
+  delete_form_field_text_items(ids: [ID]!): delete_many
+  delete_form_field_text_item(id: ID!): delete_one
+  delete_pages_blocks_items(ids: [ID]!): delete_many
+  delete_pages_blocks_item(id: ID!): delete_one
+  delete_forms_fields_items(ids: [ID]!): delete_many
+  delete_forms_fields_item(id: ID!): delete_one
+  delete_forms_items(ids: [ID]!): delete_many
+  delete_forms_item(id: ID!): delete_one
+  delete_block_form_items(ids: [ID]!): delete_many
+  delete_block_form_item(id: ID!): delete_one
+  delete_contacts_items(ids: [ID]!): delete_many
+  delete_contacts_item(id: ID!): delete_one
+  delete_donation_campaigns_items(ids: [ID]!): delete_many
+  delete_donation_campaigns_item(id: ID!): delete_one
+  delete_event_registrations_items(ids: [ID]!): delete_many
+  delete_event_registrations_item(id: ID!): delete_one
+  delete_events_items(ids: [ID]!): delete_many
+  delete_events_item(id: ID!): delete_one
+  delete_recurring_donations_items(ids: [ID]!): delete_many
+  delete_recurring_donations_item(id: ID!): delete_one
+  delete_volunteer_activities_items(ids: [ID]!): delete_many
+  delete_volunteer_activities_item(id: ID!): delete_one
+  delete_volunteers_items(ids: [ID]!): delete_many
+  delete_volunteers_item(id: ID!): delete_one
+  delete_contacts_tags_items(ids: [ID]!): delete_many
+  delete_contacts_tags_item(id: ID!): delete_one
+  delete_articles_tags_items(ids: [ID]!): delete_many
+  delete_articles_tags_item(id: ID!): delete_one
+  delete_donations_items(ids: [ID]!): delete_many
+  delete_donations_item(id: ID!): delete_one
+  delete_projects_items(ids: [ID]!): delete_many
+  delete_projects_item(id: ID!): delete_one
+}
+
+type Subscription {
+  directus_roles_mutated(event: EventEnum): directus_roles_mutated
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  directus_folders_mutated(event: EventEnum): directus_folders_mutated
+  directus_revisions_mutated(event: EventEnum): directus_revisions_mutated
+  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
+  directus_activity_mutated(event: EventEnum): directus_activity_mutated
+  directus_presets_mutated(event: EventEnum): directus_presets_mutated
+  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
+  directus_panels_mutated(event: EventEnum): directus_panels_mutated
+  directus_shares_mutated(event: EventEnum): directus_shares_mutated
+  directus_flows_mutated(event: EventEnum): directus_flows_mutated
+  directus_operations_mutated(event: EventEnum): directus_operations_mutated
+  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
+  directus_translations_mutated(event: EventEnum): directus_translations_mutated
+  directus_comments_mutated(event: EventEnum): directus_comments_mutated
+  directus_versions_mutated(event: EventEnum): directus_versions_mutated
+  directus_webhooks_mutated(event: EventEnum): directus_webhooks_mutated
+  directus_users_mutated(event: EventEnum): directus_users_mutated
+  ai_prompts_mutated(event: EventEnum): ai_prompts_mutated
+  directus_policies_mutated(event: EventEnum): directus_policies_mutated
+  directus_access_mutated(event: EventEnum): directus_access_mutated
+  directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
+  directus_settings_mutated(event: EventEnum): directus_settings_mutated
+  block_richtext_mutated(event: EventEnum): block_richtext_mutated
+  categories_mutated(event: EventEnum): categories_mutated
+  tags_mutated(event: EventEnum): tags_mutated
+  articles_mutated(event: EventEnum): articles_mutated
+  pages_mutated(event: EventEnum): pages_mutated
+  form_field_text_mutated(event: EventEnum): form_field_text_mutated
+  pages_blocks_mutated(event: EventEnum): pages_blocks_mutated
+  forms_fields_mutated(event: EventEnum): forms_fields_mutated
+  forms_mutated(event: EventEnum): forms_mutated
+  block_form_mutated(event: EventEnum): block_form_mutated
+  contacts_mutated(event: EventEnum): contacts_mutated
+  donation_campaigns_mutated(event: EventEnum): donation_campaigns_mutated
+  event_registrations_mutated(event: EventEnum): event_registrations_mutated
+  events_mutated(event: EventEnum): events_mutated
+  recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
+  volunteer_activities_mutated(event: EventEnum): volunteer_activities_mutated
+  volunteers_mutated(event: EventEnum): volunteers_mutated
+  contacts_tags_mutated(event: EventEnum): contacts_tags_mutated
+  articles_tags_mutated(event: EventEnum): articles_tags_mutated
+  donations_mutated(event: EventEnum): donations_mutated
+  projects_mutated(event: EventEnum): projects_mutated
+}
+
+"""The `Boolean` scalar type represents `true` or `false`."""
+scalar Boolean
+
+"""ISO8601 Date values"""
+scalar Date
+
+"""
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Float
+
+"""BigInt value"""
+scalar GraphQLBigInt
+
+"""A Float or a String"""
+scalar GraphQLStringOrFloat
+
+"""Hashed string values"""
+scalar Hash
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+"""
+scalar ID
+
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+"""
+scalar Int
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+"""
+scalar String
+
+enum EventEnum {
+  create
+  update
+  delete
+}
+
+union forms_fields_item_union = form_field_text
+
+union pages_blocks_item_union = block_richtext | block_form
+
+type ai_prompts {
+  id: ID!
+  sort: Int
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  name: String
+  status: String
+  description: String
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: String
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: JSON
+  messages_func: count_functions
+}
+
+type ai_prompts_aggregated {
+  group: JSON
+  countAll: Int
+  count: ai_prompts_aggregated_count
+  countDistinct: ai_prompts_aggregated_count
+  avg: ai_prompts_aggregated_fields
+  sum: ai_prompts_aggregated_fields
+  avgDistinct: ai_prompts_aggregated_fields
+  sumDistinct: ai_prompts_aggregated_fields
+  min: ai_prompts_aggregated_fields
+  max: ai_prompts_aggregated_fields
+}
+
+type ai_prompts_aggregated_count {
+  id: Int
+  sort: Int
+  date_created: Int
+  user_created: Int
+  date_updated: Int
+  user_updated: Int
+  name: Int
+  status: Int
+  description: Int
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: Int
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: Int
+}
+
+type ai_prompts_aggregated_fields {
+  sort: Float
+}
+
+type ai_prompts_mutated {
+  key: ID!
+  event: EventEnum
+  data: ai_prompts
+}
+
+type articles {
+  category(filter: categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): categories
+
+  """The main content of the article"""
+  content: String!
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+
+  """Short description or summary of the article"""
+  excerpt: String
+  featured_image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  id: ID!
+
+  """When the article was published"""
+  published_at: Date
+  published_at_func: datetime_functions
+
+  """URL-friendly version of the title"""
+  slug: String!
+
+  """Publication status of the article"""
+  status: String
+
+  """The main title of the article"""
+  title: String!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  tags(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [articles_tags]
+  tags_func: count_functions
+}
+
+type articles_aggregated {
+  group: JSON
+  countAll: Int
+  count: articles_aggregated_count
+  countDistinct: articles_aggregated_count
+  avg: articles_aggregated_fields
+  sum: articles_aggregated_fields
+  avgDistinct: articles_aggregated_fields
+  sumDistinct: articles_aggregated_fields
+  min: articles_aggregated_fields
+  max: articles_aggregated_fields
+}
+
+type articles_aggregated_count {
+  """Category of the article"""
+  category: Int
+
+  """The main content of the article"""
+  content: Int
+  date_created: Int
+  date_updated: Int
+
+  """Short description or summary of the article"""
+  excerpt: Int
+
+  """Main image displayed with the article"""
+  featured_image: Int
+  id: Int
+
+  """When the article was published"""
+  published_at: Int
+
+  """URL-friendly version of the title"""
+  slug: Int
+
+  """Publication status of the article"""
+  status: Int
+
+  """The main title of the article"""
+  title: Int
+  user_created: Int
+  user_updated: Int
+  tags: Int
+}
+
+type articles_aggregated_fields {
+  id: Float
+}
+
+type articles_mutated {
+  key: ID!
+  event: EventEnum
+  data: articles
+}
+
+type articles_tags {
+  id: ID!
+  articles_id(filter: articles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): articles
+  tags_id(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): tags
+}
+
+type articles_tags_aggregated {
+  group: JSON
+  countAll: Int
+  count: articles_tags_aggregated_count
+  countDistinct: articles_tags_aggregated_count
+  avg: articles_tags_aggregated_fields
+  sum: articles_tags_aggregated_fields
+  avgDistinct: articles_tags_aggregated_fields
+  sumDistinct: articles_tags_aggregated_fields
+  min: articles_tags_aggregated_fields
+  max: articles_tags_aggregated_fields
+}
+
+type articles_tags_aggregated_count {
+  id: Int
+  articles_id: Int
+  tags_id: Int
+}
+
+type articles_tags_aggregated_fields {
+  id: Float
+  articles_id: Float
+}
+
+type articles_tags_mutated {
+  key: ID!
+  event: EventEnum
+  data: articles_tags
+}
+
+type block_form {
+  id: ID!
+  form(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+}
+
+type block_form_aggregated {
+  group: JSON
+  countAll: Int
+  count: block_form_aggregated_count
+  countDistinct: block_form_aggregated_count
+}
+
+type block_form_aggregated_count {
+  id: Int
+  form: Int
+}
+
+type block_form_mutated {
+  key: ID!
+  event: EventEnum
+  data: block_form
+}
+
+type block_richtext {
+  id: ID!
+  content: String
+}
+
+type block_richtext_aggregated {
+  group: JSON
+  countAll: Int
+  count: block_richtext_aggregated_count
+  countDistinct: block_richtext_aggregated_count
+}
+
+type block_richtext_aggregated_count {
+  id: Int
+  content: Int
+}
+
+type block_richtext_mutated {
+  key: ID!
+  event: EventEnum
+  data: block_richtext
+}
+
+type categories {
+  """Color for category display"""
+  color: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+
+  """Category description"""
+  description: String
+  id: ID!
+
+  """Category name"""
+  name: String!
+
+  """URL-friendly version of the name"""
+  slug: String!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+}
+
+type categories_aggregated {
+  group: JSON
+  countAll: Int
+  count: categories_aggregated_count
+  countDistinct: categories_aggregated_count
+}
+
+type categories_aggregated_count {
+  """Color for category display"""
+  color: Int
+  date_created: Int
+  date_updated: Int
+
+  """Category description"""
+  description: Int
+  id: Int
+
+  """Category name"""
+  name: Int
+
+  """URL-friendly version of the name"""
+  slug: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type categories_mutated {
+  key: ID!
+  event: EventEnum
+  data: categories
+}
+
+type contacts {
+  address: String
+  contact_type: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  email: String
+  first_name: String!
+  id: ID!
+  last_name: String!
+  notes: String
+  organization: String
+  phone: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations]
+  donations_func: count_functions
+  tags(filter: contacts_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [contacts_tags]
+  tags_func: count_functions
+}
+
+type contacts_aggregated {
+  group: JSON
+  countAll: Int
+  count: contacts_aggregated_count
+  countDistinct: contacts_aggregated_count
+}
+
+type contacts_aggregated_count {
+  address: Int
+  contact_type: Int
+  date_created: Int
+  date_updated: Int
+  email: Int
+  first_name: Int
+  id: Int
+  last_name: Int
+  notes: Int
+  organization: Int
+  phone: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+  donations: Int
+  tags: Int
+}
+
+type contacts_mutated {
+  key: ID!
+  event: EventEnum
+  data: contacts
+}
+
+type contacts_tags {
+  id: ID!
+  contacts_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  tags_id(filter: tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): tags
+}
+
+type contacts_tags_aggregated {
+  group: JSON
+  countAll: Int
+  count: contacts_tags_aggregated_count
+  countDistinct: contacts_tags_aggregated_count
+  avg: contacts_tags_aggregated_fields
+  sum: contacts_tags_aggregated_fields
+  avgDistinct: contacts_tags_aggregated_fields
+  sumDistinct: contacts_tags_aggregated_fields
+  min: contacts_tags_aggregated_fields
+  max: contacts_tags_aggregated_fields
+}
+
+type contacts_tags_aggregated_count {
+  id: Int
+  contacts_id: Int
+  tags_id: Int
+}
+
+type contacts_tags_aggregated_fields {
+  id: Float
+}
+
+type contacts_tags_mutated {
+  key: ID!
+  event: EventEnum
+  data: contacts_tags
+}
+
+type count_functions {
+  count: Int
+}
+
+type date_functions {
+  year: Int
+  month: Int
+  week: Int
+  day: Int
+  weekday: Int
+}
+
+type datetime_functions {
+  year: Int
+  month: Int
+  week: Int
+  day: Int
+  weekday: Int
+  hour: Int
+  minute: Int
+  second: Int
+}
+
+type delete_many {
+  ids: [ID]!
+}
+
+type delete_one {
+  id: ID!
+}
+
+type directus_access {
+  id: ID!
+  role(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+  user(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  policy(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_policies
+  sort: Int
+}
+
+type directus_access_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_access
+}
+
+type directus_activity {
+  id: ID!
+  action: String!
+  user(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  timestamp: Date
+  timestamp_func: datetime_functions
+  ip: String
+  user_agent: String
+  collection: String!
+  item: String!
+  origin: String
+  revisions(filter: directus_revisions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_revisions]
+  revisions_func: count_functions
+}
+
+type directus_activity_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_activity
+}
+
+type directus_comments {
+  id: ID!
+  collection: String!
+  item: String!
+  comment: String!
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+}
+
+type directus_comments_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_comments
+}
+
+type directus_dashboards {
+  id: ID!
+  name: String!
+  icon: String
+  note: String
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  color: String
+  panels(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_panels]
+  panels_func: count_functions
+}
+
+type directus_dashboards_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_dashboards
+}
+
+type directus_files {
+  id: ID!
+  storage: String!
+  filename_disk: String
+  filename_download: String!
+  title: String
+  type: String
+  folder(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_folders
+  uploaded_by(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  created_on: Date
+  created_on_func: datetime_functions
+  modified_by(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  modified_on: Date
+  modified_on_func: datetime_functions
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  tags_func: count_functions
+  metadata: JSON
+  metadata_func: count_functions
+  focal_point_x: Int
+  focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  tus_data_func: count_functions
+  uploaded_on: Date
+  uploaded_on_func: datetime_functions
+}
+
+type directus_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_files
+}
+
+type directus_flows {
+  id: ID!
+  name: String!
+  icon: String
+  color: String
+  description: String
+  status: String
+  trigger: String
+  accountability: String
+  options: JSON
+  options_func: count_functions
+  operation(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_operations
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  operations(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_operations]
+  operations_func: count_functions
+}
+
+type directus_flows_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_flows
+}
+
+type directus_folders {
+  id: ID!
+  name: String!
+  parent(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_folders
+}
+
+type directus_folders_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_folders
+}
+
+type directus_notifications {
+  id: ID!
+  timestamp: Date
+  timestamp_func: datetime_functions
+  status: String
+  recipient(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  sender(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  subject: String!
+  message: String
+  collection: String
+  item: String
+}
+
+type directus_notifications_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_notifications
+}
+
+type directus_operations {
+  id: ID!
+  name: String
+  key: String!
+  type: String!
+  position_x: Int!
+  position_y: Int!
+  options: JSON
+  options_func: count_functions
+  resolve(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_operations
+  reject(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_operations
+  flow(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_flows
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+}
+
+type directus_operations_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_operations
+}
+
+type directus_panels {
+  id: ID!
+  dashboard(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_dashboards
+  name: String
+  icon: String
+  color: String
+  show_header: Boolean!
+  note: String
+  type: String!
+  position_x: Int!
+  position_y: Int!
+  width: Int!
+  height: Int!
+  options: JSON
+  options_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+}
+
+type directus_panels_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_panels
+}
+
+type directus_permissions {
+  id: ID
+  collection: String!
+  action: String!
+  permissions: JSON
+  permissions_func: count_functions
+  validation: JSON
+  validation_func: count_functions
+  presets: JSON
+  presets_func: count_functions
+  fields: [String]
+  policy(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_policies
+}
+
+type directus_permissions_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_permissions
+}
+
+type directus_policies {
+  id: ID!
+  name: String!
+  icon: String
+  description: String
+  ip_access: [String]
+
+  """$t:field_options.directus_policies.enforce_tfa"""
+  enforce_tfa: Boolean!
+  admin_access: Boolean!
+  app_access: Boolean!
+  permissions(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_permissions]
+  permissions_func: count_functions
+  users(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access]
+  users_func: count_functions
+  roles(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access]
+  roles_func: count_functions
+}
+
+type directus_policies_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_policies
+}
+
+type directus_presets {
+  id: ID!
+  bookmark: String
+  user(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  role(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+  collection: String
+  search: String
+  layout: String
+  layout_query: JSON
+  layout_query_func: count_functions
+  layout_options: JSON
+  layout_options_func: count_functions
+  refresh_interval: Int
+  filter: JSON
+  filter_func: count_functions
+  icon: String
+  color: String
+}
+
+type directus_presets_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_presets
+}
+
+type directus_revisions {
+  id: ID!
+  activity(filter: directus_activity_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_activity
+  collection: String!
+  item: String!
+  data: JSON
+  data_func: count_functions
+  delta: JSON
+  delta_func: count_functions
+  parent(filter: directus_revisions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_revisions
+  version(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_versions
+}
+
+type directus_revisions_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_revisions
+}
+
+type directus_roles {
+  id: ID!
+  name: String!
+  icon: String
+  description: String
+  parent(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+  children(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_roles]
+  children_func: count_functions
+  policies(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access]
+  policies_func: count_functions
+  users(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_users]
+  users_func: count_functions
+}
+
+type directus_roles_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_roles
+}
+
+type directus_settings {
+  id: ID!
+  project_name: String
+  project_url: String
+
+  """$t:field_options.directus_settings.project_color_note"""
+  project_color: String
+  project_logo(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  public_foreground(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  public_background(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  public_note: String
+  auth_login_attempts: Int
+  auth_password_policy: String
+  storage_asset_transform: String
+  storage_asset_presets: JSON
+  storage_asset_presets_func: count_functions
+  custom_css: String
+  storage_default_folder(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_folders
+  basemaps: JSON
+  basemaps_func: count_functions
+  mapbox_key: String
+  module_bar: JSON
+  module_bar_func: count_functions
+  project_descriptor: String
+  default_language: String
+  custom_aspect_ratios: JSON
+  custom_aspect_ratios_func: count_functions
+  public_favicon(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  default_appearance: String
+  default_theme_light: String
+  theme_light_overrides: JSON
+  theme_light_overrides_func: count_functions
+  default_theme_dark: String
+  theme_dark_overrides: JSON
+  theme_dark_overrides_func: count_functions
+  report_error_url: String
+  report_bug_url: String
+  report_feature_url: String
+
+  """$t:fields.directus_settings.public_registration_note"""
+  public_registration: Boolean!
+
+  """$t:fields.directus_settings.public_registration_verify_email_note"""
+  public_registration_verify_email: Boolean
+  public_registration_role(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+
+  """$t:fields.directus_settings.public_registration_email_filter_note"""
+  public_registration_email_filter: JSON
+  public_registration_email_filter_func: count_functions
+  visual_editor_urls: JSON
+  visual_editor_urls_func: count_functions
+  accepted_terms: Boolean
+  project_id: ID
+
+  """$t:fields.directus_settings.mcp_enabled_note"""
+  mcp_enabled: Boolean!
+
+  """$t:fields.directus_settings.mcp_allow_deletes_note"""
+  mcp_allow_deletes: Boolean!
+
+  """$t:fields.directus_settings.mcp_prompts_collection_note"""
+  mcp_prompts_collection: String
+
+  """$t:fields.directus_settings.mcp_system_prompt_enabled_note"""
+  mcp_system_prompt_enabled: Boolean
+
+  """$t:fields.directus_settings.mcp_system_prompt_note"""
+  mcp_system_prompt: String
+}
+
+type directus_settings_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_settings
+}
+
+type directus_shares {
+  id: ID!
+  name: String
+  collection: String!
+  item: String!
+  role(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+
+  """$t:shared_leave_blank_for_passwordless_access"""
+  password: Hash
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+
+  """$t:shared_leave_blank_for_unlimited"""
+  date_start: Date
+  date_start_func: datetime_functions
+
+  """$t:shared_leave_blank_for_unlimited"""
+  date_end: Date
+  date_end_func: datetime_functions
+  times_used: Int
+
+  """$t:shared_leave_blank_for_unlimited"""
+  max_uses: Int
+}
+
+type directus_shares_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_shares
+}
+
+type directus_sync_id_map {
+  id: ID!
+  table: String!
+  sync_id: String!
+  local_id: String!
+  created_at: Date
+  created_at_func: datetime_functions
+}
+
+type directus_sync_id_map_aggregated {
+  group: JSON
+  countAll: Int
+  count: directus_sync_id_map_aggregated_count
+  countDistinct: directus_sync_id_map_aggregated_count
+  avg: directus_sync_id_map_aggregated_fields
+  sum: directus_sync_id_map_aggregated_fields
+  avgDistinct: directus_sync_id_map_aggregated_fields
+  sumDistinct: directus_sync_id_map_aggregated_fields
+  min: directus_sync_id_map_aggregated_fields
+  max: directus_sync_id_map_aggregated_fields
+}
+
+type directus_sync_id_map_aggregated_count {
+  id: Int
+  table: Int
+  sync_id: Int
+  local_id: Int
+  created_at: Int
+}
+
+type directus_sync_id_map_aggregated_fields {
+  id: Float
+}
+
+type directus_sync_id_map_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_sync_id_map
+}
+
+type directus_translations {
+  id: ID!
+  language: String!
+  key: String!
+  value: String!
+}
+
+type directus_translations_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_translations
+}
+
+type directus_users {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  password: Hash
+  location: String
+  title: String
+  description: String
+  tags: JSON
+  tags_func: count_functions
+  avatar(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  language: String
+  tfa_secret: Hash
+  status: String
+  role(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_roles
+  token: Hash
+  last_access: Date
+  last_access_func: datetime_functions
+  last_page: String
+  provider: String
+  external_identifier: String
+  auth_data: JSON
+  auth_data_func: count_functions
+  email_notifications: Boolean
+  appearance: String
+  theme_dark: String
+  theme_light: String
+  theme_light_overrides: JSON
+  theme_light_overrides_func: count_functions
+  theme_dark_overrides: JSON
+  theme_dark_overrides_func: count_functions
+  text_direction: String
+  policies(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access]
+  policies_func: count_functions
+}
+
+type directus_users_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_users
+}
+
+type directus_versions {
+  id: ID!
+  key: String!
+  name: String
+  collection: String!
+  item: String!
+  hash: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  delta: JSON
+  delta_func: count_functions
+}
+
+type directus_versions_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_versions
+}
+
+type directus_webhooks {
+  id: ID!
+  name: String!
+  method: String
+  url: String!
+  status: String
+  data: Boolean
+  actions: [String]!
+  collections: [String]!
+  headers: JSON
+  headers_func: count_functions
+  was_active_before_deprecation: Boolean!
+  migrated_flow(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_flows
+}
+
+type directus_webhooks_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_webhooks
+}
+
+type donation_campaigns {
+  current_amount: Float!
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  end_date: Date
+  end_date_func: date_functions
+  goal_amount: Float
+  id: ID!
+  image: ID
+  name: String!
+  start_date: Date
+  start_date_func: date_functions
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations]
+  donations_func: count_functions
+}
+
+type donation_campaigns_aggregated {
+  group: JSON
+  countAll: Int
+  count: donation_campaigns_aggregated_count
+  countDistinct: donation_campaigns_aggregated_count
+  avg: donation_campaigns_aggregated_fields
+  sum: donation_campaigns_aggregated_fields
+  avgDistinct: donation_campaigns_aggregated_fields
+  sumDistinct: donation_campaigns_aggregated_fields
+  min: donation_campaigns_aggregated_fields
+  max: donation_campaigns_aggregated_fields
+}
+
+type donation_campaigns_aggregated_count {
+  current_amount: Int
+  date_created: Int
+  date_updated: Int
+  description: Int
+  end_date: Int
+  goal_amount: Int
+  id: Int
+  image: Int
+  name: Int
+  start_date: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+  donations: Int
+}
+
+type donation_campaigns_aggregated_fields {
+  current_amount: Float
+  goal_amount: Float
+}
+
+type donation_campaigns_mutated {
+  key: ID!
+  event: EventEnum
+  data: donation_campaigns
+}
+
+type donations {
+  amount: Float!
+  campaign_id(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donation_campaigns
+  contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  currency: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  donation_date: Date!
+  donation_date_func: date_functions
+  donation_type: String
+  id: ID!
+  notes: String
+  payment_method: String
+  project_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  receipt_number: String
+  receipt_sent: Boolean!
+  status: String
+  tax_deductible: Boolean
+  user_created: ID
+  user_updated: ID
+}
+
+type donations_aggregated {
+  group: JSON
+  countAll: Int
+  count: donations_aggregated_count
+  countDistinct: donations_aggregated_count
+  avg: donations_aggregated_fields
+  sum: donations_aggregated_fields
+  avgDistinct: donations_aggregated_fields
+  sumDistinct: donations_aggregated_fields
+  min: donations_aggregated_fields
+  max: donations_aggregated_fields
+}
+
+type donations_aggregated_count {
+  amount: Int
+
+  """Associated fundraising campaign"""
+  campaign_id: Int
+
+  """Donor contact"""
+  contact_id: Int
+  currency: Int
+  date_created: Int
+  date_updated: Int
+  donation_date: Int
+  donation_type: Int
+  id: Int
+  notes: Int
+  payment_method: Int
+
+  """Associated project or program"""
+  project_id: Int
+  receipt_number: Int
+  receipt_sent: Int
+  status: Int
+  tax_deductible: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type donations_aggregated_fields {
+  amount: Float
+}
+
+type donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: donations
+}
+
+type event_registrations {
+  contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  event_id(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): events
+  id: ID!
+  notes: String
+  registration_date: Date
+  registration_date_func: datetime_functions
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+type event_registrations_aggregated {
+  group: JSON
+  countAll: Int
+  count: event_registrations_aggregated_count
+  countDistinct: event_registrations_aggregated_count
+}
+
+type event_registrations_aggregated_count {
+  contact_id: Int
+  date_created: Int
+  date_updated: Int
+  event_id: Int
+  id: Int
+  notes: Int
+  registration_date: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type event_registrations_mutated {
+  key: ID!
+  event: EventEnum
+  data: event_registrations
+}
+
+type events {
+  capacity: Int
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  end_date: Date
+  end_date_func: datetime_functions
+  event_type: String
+  id: ID!
+  image: ID
+  location: String
+  organizer_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  start_date: Date!
+  start_date_func: datetime_functions
+  status: String
+  title: String!
+  user_created: ID
+  user_updated: ID
+  registrations(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [event_registrations]
+  registrations_func: count_functions
+}
+
+type events_aggregated {
+  group: JSON
+  countAll: Int
+  count: events_aggregated_count
+  countDistinct: events_aggregated_count
+  avg: events_aggregated_fields
+  sum: events_aggregated_fields
+  avgDistinct: events_aggregated_fields
+  sumDistinct: events_aggregated_fields
+  min: events_aggregated_fields
+  max: events_aggregated_fields
+}
+
+type events_aggregated_count {
+  capacity: Int
+  date_created: Int
+  date_updated: Int
+  description: Int
+  end_date: Int
+  event_type: Int
+  id: Int
+  image: Int
+  location: Int
+  organizer_id: Int
+  start_date: Int
+  status: Int
+  title: Int
+  user_created: Int
+  user_updated: Int
+  registrations: Int
+}
+
+type events_aggregated_fields {
+  capacity: Float
+}
+
+type events_mutated {
+  key: ID!
+  event: EventEnum
+  data: events
+}
+
+type form_field_text {
+  id: ID!
+  label: String!
+}
+
+type form_field_text_aggregated {
+  group: JSON
+  countAll: Int
+  count: form_field_text_aggregated_count
+  countDistinct: form_field_text_aggregated_count
+}
+
+type form_field_text_aggregated_count {
+  id: Int
+  label: Int
+}
+
+type form_field_text_mutated {
+  key: ID!
+  event: EventEnum
+  data: form_field_text
+}
+
+type forms {
+  id: ID!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  title: String
+  fields(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms_fields]
+  fields_func: count_functions
+}
+
+type forms_aggregated {
+  group: JSON
+  countAll: Int
+  count: forms_aggregated_count
+  countDistinct: forms_aggregated_count
+}
+
+type forms_aggregated_count {
+  id: Int
+  status: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  title: Int
+  fields: Int
+}
+
+type forms_fields {
+  id: ID!
+  forms_id(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+  item: forms_fields_item_union
+  collection: String
+  sort: Int
+}
+
+type forms_fields_aggregated {
+  group: JSON
+  countAll: Int
+  count: forms_fields_aggregated_count
+  countDistinct: forms_fields_aggregated_count
+  avg: forms_fields_aggregated_fields
+  sum: forms_fields_aggregated_fields
+  avgDistinct: forms_fields_aggregated_fields
+  sumDistinct: forms_fields_aggregated_fields
+  min: forms_fields_aggregated_fields
+  max: forms_fields_aggregated_fields
+}
+
+type forms_fields_aggregated_count {
+  id: Int
+  forms_id: Int
+  item: Int
+  collection: Int
+  sort: Int
+}
+
+type forms_fields_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+type forms_fields_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms_fields
+}
+
+type forms_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms
+}
+
+type pages {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  parent(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
+  title: String
+  blocks(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages_blocks]
+  blocks_func: count_functions
+}
+
+type pages_aggregated {
+  group: JSON
+  countAll: Int
+  count: pages_aggregated_count
+  countDistinct: pages_aggregated_count
+  avg: pages_aggregated_fields
+  sum: pages_aggregated_fields
+  avgDistinct: pages_aggregated_fields
+  sumDistinct: pages_aggregated_fields
+  min: pages_aggregated_fields
+  max: pages_aggregated_fields
+}
+
+type pages_aggregated_count {
+  id: Int
+  status: Int
+  sort: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  parent: Int
+  title: Int
+  blocks: Int
+}
+
+type pages_aggregated_fields {
+  sort: Float
+}
+
+type pages_blocks {
+  id: ID!
+  pages_id(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
+  item: pages_blocks_item_union
+  collection: String
+  sort: Int
+}
+
+type pages_blocks_aggregated {
+  group: JSON
+  countAll: Int
+  count: pages_blocks_aggregated_count
+  countDistinct: pages_blocks_aggregated_count
+  avg: pages_blocks_aggregated_fields
+  sum: pages_blocks_aggregated_fields
+  avgDistinct: pages_blocks_aggregated_fields
+  sumDistinct: pages_blocks_aggregated_fields
+  min: pages_blocks_aggregated_fields
+  max: pages_blocks_aggregated_fields
+}
+
+type pages_blocks_aggregated_count {
+  id: Int
+  pages_id: Int
+  item: Int
+  collection: Int
+  sort: Int
+}
+
+type pages_blocks_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+type pages_blocks_mutated {
+  key: ID!
+  event: EventEnum
+  data: pages_blocks
+}
+
+type pages_mutated {
+  key: ID!
+  event: EventEnum
+  data: pages
+}
+
+type projects {
+  budget: Float
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  end_date: Date
+  end_date_func: date_functions
+  id: ID!
+  impact_metrics: String
+  name: String!
+  project_manager_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  spent_amount: Float!
+  start_date: Date
+  start_date_func: date_functions
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations]
+  donations_func: count_functions
+  volunteer_activities(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [volunteer_activities]
+  volunteer_activities_func: count_functions
+}
+
+type projects_aggregated {
+  group: JSON
+  countAll: Int
+  count: projects_aggregated_count
+  countDistinct: projects_aggregated_count
+  avg: projects_aggregated_fields
+  sum: projects_aggregated_fields
+  avgDistinct: projects_aggregated_fields
+  sumDistinct: projects_aggregated_fields
+  min: projects_aggregated_fields
+  max: projects_aggregated_fields
+}
+
+type projects_aggregated_count {
+  budget: Int
+  date_created: Int
+  date_updated: Int
+  description: Int
+  end_date: Int
+  id: Int
+  impact_metrics: Int
+  name: Int
+  project_manager_id: Int
+  spent_amount: Int
+  start_date: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+  donations: Int
+  volunteer_activities: Int
+}
+
+type projects_aggregated_fields {
+  budget: Float
+  spent_amount: Float
+}
+
+type projects_mutated {
+  key: ID!
+  event: EventEnum
+  data: projects
+}
+
+type recurring_donations {
+  amount: Float!
+  contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  currency: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  end_date: Date
+  end_date_func: date_functions
+  frequency: String!
+  id: ID!
+  next_payment_date: Date
+  next_payment_date_func: date_functions
+  payment_method: String
+  start_date: Date!
+  start_date_func: date_functions
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+type recurring_donations_aggregated {
+  group: JSON
+  countAll: Int
+  count: recurring_donations_aggregated_count
+  countDistinct: recurring_donations_aggregated_count
+  avg: recurring_donations_aggregated_fields
+  sum: recurring_donations_aggregated_fields
+  avgDistinct: recurring_donations_aggregated_fields
+  sumDistinct: recurring_donations_aggregated_fields
+  min: recurring_donations_aggregated_fields
+  max: recurring_donations_aggregated_fields
+}
+
+type recurring_donations_aggregated_count {
+  amount: Int
+  contact_id: Int
+  currency: Int
+  date_created: Int
+  date_updated: Int
+  end_date: Int
+  frequency: Int
+  id: Int
+  next_payment_date: Int
+  payment_method: Int
+  start_date: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type recurring_donations_aggregated_fields {
+  amount: Float
+}
+
+type recurring_donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: recurring_donations
+}
+
+type tags {
+  """Color for tag display"""
+  color: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+
+  """Tag name"""
+  name: String!
+
+  """URL-friendly version of the name"""
+  slug: String!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+}
+
+type tags_aggregated {
+  group: JSON
+  countAll: Int
+  count: tags_aggregated_count
+  countDistinct: tags_aggregated_count
+}
+
+type tags_aggregated_count {
+  """Color for tag display"""
+  color: Int
+  date_created: Int
+  date_updated: Int
+  id: Int
+
+  """Tag name"""
+  name: Int
+
+  """URL-friendly version of the name"""
+  slug: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type tags_mutated {
+  key: ID!
+  event: EventEnum
+  data: tags
+}
+
+""""""
+type version_ai_prompts {
+  id: ID
+  sort: Int
+  date_created: Date
+  user_created: JSON
+  date_updated: Date
+  user_updated: JSON
+  name: String
+  status: String
+  description: String
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: String
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: JSON
+}
+
+""""""
+type version_articles {
+  category: JSON
+
+  """The main content of the article"""
+  content: String
+  date_created: Date
+  date_updated: Date
+
+  """Short description or summary of the article"""
+  excerpt: String
+  featured_image: JSON
+  id: ID
+
+  """When the article was published"""
+  published_at: Date
+
+  """URL-friendly version of the title"""
+  slug: String
+
+  """Publication status of the article"""
+  status: String
+
+  """The main title of the article"""
+  title: String
+  user_created: JSON
+  user_updated: JSON
+  tags: JSON
+}
+
+""""""
+type version_articles_tags {
+  id: ID
+  articles_id: JSON
+  tags_id: JSON
+}
+
+""""""
+type version_block_form {
+  id: ID
+  form: JSON
+}
+
+""""""
+type version_block_richtext {
+  id: ID
+  content: String
+}
+
+""""""
+type version_categories {
+  """Color for category display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+
+  """Category description"""
+  description: String
+  id: ID
+
+  """Category name"""
+  name: String
+
+  """URL-friendly version of the name"""
+  slug: String
+  user_created: JSON
+  user_updated: JSON
+}
+
+""""""
+type version_contacts {
+  address: String
+  contact_type: String
+  date_created: Date
+  date_updated: Date
+  email: String
+  first_name: String
+  id: ID
+  last_name: String
+  notes: String
+  organization: String
+  phone: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: JSON
+  tags: JSON
+}
+
+""""""
+type version_contacts_tags {
+  id: ID
+  contacts_id: JSON
+  tags_id: JSON
+}
+
+""""""
+type version_directus_sync_id_map {
+  id: ID
+  table: String
+  sync_id: String
+  local_id: String
+  created_at: Date
+}
+
+""""""
+type version_donation_campaigns {
+  current_amount: Float
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  goal_amount: Float
+  id: ID
+  image: ID
+  name: String
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: JSON
+}
+
+""""""
+type version_donations {
+  amount: Float
+  campaign_id: JSON
+  contact_id: JSON
+  currency: String
+  date_created: Date
+  date_updated: Date
+  donation_date: Date
+  donation_type: String
+  id: ID
+  notes: String
+  payment_method: String
+  project_id: JSON
+  receipt_number: String
+  receipt_sent: Boolean
+  status: String
+  tax_deductible: Boolean
+  user_created: ID
+  user_updated: ID
+}
+
+""""""
+type version_event_registrations {
+  contact_id: JSON
+  date_created: Date
+  date_updated: Date
+  event_id: JSON
+  id: ID
+  notes: String
+  registration_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+""""""
+type version_events {
+  capacity: Int
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  event_type: String
+  id: ID
+  image: ID
+  location: String
+  organizer_id: JSON
+  start_date: Date
+  status: String
+  title: String
+  user_created: ID
+  user_updated: ID
+  registrations: JSON
+}
+
+""""""
+type version_form_field_text {
+  id: ID
+  label: String
+}
+
+""""""
+type version_forms {
+  id: ID
+  status: String
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  title: String
+  fields: JSON
+}
+
+""""""
+type version_forms_fields {
+  id: ID
+  forms_id: JSON
+  item: String
+  collection: String
+  sort: Int
+}
+
+""""""
+type version_pages {
+  id: ID
+  status: String
+  sort: Int
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  parent: JSON
+  title: String
+  blocks: JSON
+}
+
+""""""
+type version_pages_blocks {
+  id: ID
+  pages_id: JSON
+  item: String
+  collection: String
+  sort: Int
+}
+
+""""""
+type version_projects {
+  budget: Float
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  id: ID
+  impact_metrics: String
+  name: String
+  project_manager_id: JSON
+  spent_amount: Float
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: JSON
+  volunteer_activities: JSON
+}
+
+""""""
+type version_recurring_donations {
+  amount: Float
+  contact_id: JSON
+  currency: String
+  date_created: Date
+  date_updated: Date
+  end_date: Date
+  frequency: String
+  id: ID
+  next_payment_date: Date
+  payment_method: String
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+""""""
+type version_tags {
+  """Color for tag display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+  id: ID
+
+  """Tag name"""
+  name: String
+
+  """URL-friendly version of the name"""
+  slug: String
+  user_created: JSON
+  user_updated: JSON
+}
+
+""""""
+type version_volunteer_activities {
+  activity_date: Date
+  activity_type: String
+  date_created: Date
+  date_updated: Date
+  hours: Float
+  id: ID
+  notes: String
+  project_id: JSON
+  supervisor_id: JSON
+  user_created: ID
+  user_updated: ID
+  volunteer_id: JSON
+}
+
+""""""
+type version_volunteers {
+  availability: String
+  background_check_date: Date
+  contact_id: JSON
+  date_created: Date
+  date_updated: Date
+  emergency_contact: String
+  id: ID
+  skills: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  activities: JSON
+}
+
+type volunteer_activities {
+  activity_date: Date!
+  activity_date_func: date_functions
+  activity_type: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  hours: Float!
+  id: ID!
+  notes: String
+  project_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  supervisor_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  user_created: ID
+  user_updated: ID
+  volunteer_id(filter: volunteers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): volunteers
+}
+
+type volunteer_activities_aggregated {
+  group: JSON
+  countAll: Int
+  count: volunteer_activities_aggregated_count
+  countDistinct: volunteer_activities_aggregated_count
+  avg: volunteer_activities_aggregated_fields
+  sum: volunteer_activities_aggregated_fields
+  avgDistinct: volunteer_activities_aggregated_fields
+  sumDistinct: volunteer_activities_aggregated_fields
+  min: volunteer_activities_aggregated_fields
+  max: volunteer_activities_aggregated_fields
+}
+
+type volunteer_activities_aggregated_count {
+  activity_date: Int
+  activity_type: Int
+  date_created: Int
+  date_updated: Int
+  hours: Int
+  id: Int
+  notes: Int
+  project_id: Int
+  supervisor_id: Int
+  user_created: Int
+  user_updated: Int
+  volunteer_id: Int
+}
+
+type volunteer_activities_aggregated_fields {
+  hours: Float
+}
+
+type volunteer_activities_mutated {
+  key: ID!
+  event: EventEnum
+  data: volunteer_activities
+}
+
+type volunteers {
+  availability: String
+  background_check_date: Date
+  background_check_date_func: date_functions
+  contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  emergency_contact: String
+  id: ID!
+  skills: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  activities(filter: volunteer_activities_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [volunteer_activities]
+  activities_func: count_functions
+}
+
+type volunteers_aggregated {
+  group: JSON
+  countAll: Int
+  count: volunteers_aggregated_count
+  countDistinct: volunteers_aggregated_count
+}
+
+type volunteers_aggregated_count {
+  availability: Int
+  background_check_date: Int
+  contact_id: Int
+  date_created: Int
+  date_updated: Int
+  emergency_contact: Int
+  id: Int
+  skills: Int
+  status: Int
+  user_created: Int
+  user_updated: Int
+  activities: Int
+}
+
+type volunteers_mutated {
+  key: ID!
+  event: EventEnum
+  data: volunteers
+}
+
+input ai_prompts_filter {
+  id: id_filter_operators
+  sort: number_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  name: string_filter_operators
+  status: string_filter_operators
+  description: string_filter_operators
+  system_prompt: string_filter_operators
+  messages: string_filter_operators
+  messages_func: count_function_filter_operators
+  _and: [ai_prompts_filter]
+  _or: [ai_prompts_filter]
+}
+
+input articles_filter {
+  category: categories_filter
+  content: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  excerpt: string_filter_operators
+  featured_image: directus_files_filter
+  id: number_filter_operators
+  published_at: date_filter_operators
+  published_at_func: datetime_function_filter_operators
+  slug: string_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  tags: articles_tags_quantifier_filter
+  tags_func: count_function_filter_operators
+  _and: [articles_filter]
+  _or: [articles_filter]
+}
+
+input articles_tags_filter {
+  id: number_filter_operators
+  articles_id: articles_filter
+  tags_id: tags_filter
+  _and: [articles_tags_filter]
+  _or: [articles_tags_filter]
+}
+
+""""""
+input articles_tags_quantifier_filter {
+  id: number_filter_operators
+  articles_id: articles_filter
+  tags_id: tags_filter
+  _and: [articles_tags_filter]
+  _or: [articles_tags_filter]
+  _some: articles_tags_filter
+  _none: articles_tags_filter
+}
+
+input big_int_filter_operators {
+  _eq: GraphQLBigInt
+  _neq: GraphQLBigInt
+  _in: [GraphQLBigInt]
+  _nin: [GraphQLBigInt]
+  _gt: GraphQLBigInt
+  _gte: GraphQLBigInt
+  _lt: GraphQLBigInt
+  _lte: GraphQLBigInt
+  _null: Boolean
+  _nnull: Boolean
+  _between: [GraphQLBigInt]
+  _nbetween: [GraphQLBigInt]
+}
+
+input block_form_filter {
+  id: id_filter_operators
+  form: forms_filter
+  _and: [block_form_filter]
+  _or: [block_form_filter]
+}
+
+input block_richtext_filter {
+  id: id_filter_operators
+  content: string_filter_operators
+  _and: [block_richtext_filter]
+  _or: [block_richtext_filter]
+}
+
+input boolean_filter_operators {
+  _eq: Boolean
+  _neq: Boolean
+  _null: Boolean
+  _nnull: Boolean
+}
+
+input categories_filter {
+  color: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  id: id_filter_operators
+  name: string_filter_operators
+  slug: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  _and: [categories_filter]
+  _or: [categories_filter]
+}
+
+input contacts_filter {
+  address: string_filter_operators
+  contact_type: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  email: string_filter_operators
+  first_name: string_filter_operators
+  id: id_filter_operators
+  last_name: string_filter_operators
+  notes: string_filter_operators
+  organization: string_filter_operators
+  phone: string_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  tags: contacts_tags_quantifier_filter
+  tags_func: count_function_filter_operators
+  _and: [contacts_filter]
+  _or: [contacts_filter]
+}
+
+input contacts_tags_filter {
+  id: number_filter_operators
+  contacts_id: contacts_filter
+  tags_id: tags_filter
+  _and: [contacts_tags_filter]
+  _or: [contacts_tags_filter]
+}
+
+""""""
+input contacts_tags_quantifier_filter {
+  id: number_filter_operators
+  contacts_id: contacts_filter
+  tags_id: tags_filter
+  _and: [contacts_tags_filter]
+  _or: [contacts_tags_filter]
+  _some: contacts_tags_filter
+  _none: contacts_tags_filter
+}
+
+input count_function_filter_operators {
+  count: number_filter_operators
+}
+
+input create_ai_prompts_input {
+  id: ID
+  sort: Int
+  date_created: Date
+  user_created: create_directus_users_input
+  date_updated: Date
+  user_updated: create_directus_users_input
+  name: String
+  status: String
+  description: String
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: String
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: JSON
+}
+
+input create_articles_input {
+  category: create_categories_input
+
+  """The main content of the article"""
+  content: String!
+  date_created: Date
+  date_updated: Date
+
+  """Short description or summary of the article"""
+  excerpt: String
+  featured_image: create_directus_files_input
+  id: ID
+
+  """When the article was published"""
+  published_at: Date
+
+  """URL-friendly version of the title"""
+  slug: String!
+
+  """Publication status of the article"""
+  status: String
+
+  """The main title of the article"""
+  title: String!
+  user_created: create_directus_users_input
+  user_updated: create_directus_users_input
+  tags: [create_articles_tags_input]
+}
+
+input create_articles_tags_input {
+  id: ID
+  articles_id: create_articles_input
+  tags_id: create_tags_input
+}
+
+input create_block_form_input {
+  id: ID
+  form: create_forms_input
+}
+
+input create_block_richtext_input {
+  id: ID
+  content: String
+}
+
+input create_categories_input {
+  """Color for category display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+
+  """Category description"""
+  description: String
+  id: ID!
+
+  """Category name"""
+  name: String!
+
+  """URL-friendly version of the name"""
+  slug: String!
+  user_created: create_directus_users_input
+  user_updated: create_directus_users_input
+}
+
+input create_contacts_input {
+  address: String
+  contact_type: String
+  date_created: Date
+  date_updated: Date
+  email: String
+  first_name: String!
+  id: ID
+  last_name: String!
+  notes: String
+  organization: String
+  phone: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [create_donations_input]
+  tags: [create_contacts_tags_input]
+}
+
+input create_contacts_tags_input {
+  id: ID
+  contacts_id: create_contacts_input
+  tags_id: create_tags_input
+}
+
+input create_directus_access_input {
+  id: ID
+  role: create_directus_roles_input
+  user: create_directus_users_input
+  policy: create_directus_policies_input
+  sort: Int
+}
+
+input create_directus_files_input {
+  id: ID
+  storage: String!
+  filename_disk: String
+  filename_download: String!
+  title: String
+  type: String
+  folder: create_directus_folders_input
+  uploaded_by: create_directus_users_input
+  created_on: Date
+  modified_by: create_directus_users_input
+  modified_on: Date
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  metadata: JSON
+  focal_point_x: Int
+  focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  uploaded_on: Date
+}
+
+input create_directus_folders_input {
+  id: ID
+  name: String!
+  parent: create_directus_folders_input
+}
+
+input create_directus_permissions_input {
+  id: ID
+  collection: String!
+  action: String!
+  permissions: JSON
+  validation: JSON
+  presets: JSON
+  fields: [String]
+  policy: create_directus_policies_input
+}
+
+input create_directus_policies_input {
+  id: ID
+  name: String!
+  icon: String
+  description: String
+  ip_access: [String]
+
+  """$t:field_options.directus_policies.enforce_tfa"""
+  enforce_tfa: Boolean!
+  admin_access: Boolean!
+  app_access: Boolean!
+  permissions: [create_directus_permissions_input]
+  users: [create_directus_access_input]
+  roles: [create_directus_access_input]
+}
+
+input create_directus_roles_input {
+  id: ID
+  name: String!
+  icon: String
+  description: String
+  parent: create_directus_roles_input
+  children: [create_directus_roles_input]
+  policies: [create_directus_access_input]
+  users: [create_directus_users_input]
+}
+
+input create_directus_sync_id_map_input {
+  id: ID
+  table: String!
+  sync_id: String!
+  local_id: String!
+  created_at: Date
+}
+
+input create_directus_users_input {
+  id: ID
+  first_name: String
+  last_name: String
+  email: String
+  password: Hash
+  location: String
+  title: String
+  description: String
+  tags: JSON
+  avatar: create_directus_files_input
+  language: String
+  tfa_secret: Hash
+  status: String
+  role: create_directus_roles_input
+  token: Hash
+  last_access: Date
+  last_page: String
+  provider: String
+  external_identifier: String
+  auth_data: JSON
+  email_notifications: Boolean
+  appearance: String
+  theme_dark: String
+  theme_light: String
+  theme_light_overrides: JSON
+  theme_dark_overrides: JSON
+  text_direction: String
+  policies: [create_directus_access_input]
+}
+
+input create_donation_campaigns_input {
+  current_amount: Float!
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  goal_amount: Float
+  id: ID
+  image: ID
+  name: String!
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [create_donations_input]
+}
+
+input create_donations_input {
+  amount: Float!
+  campaign_id: create_donation_campaigns_input
+  contact_id: create_contacts_input
+  currency: String
+  date_created: Date
+  date_updated: Date
+  donation_date: Date!
+  donation_type: String
+  id: ID
+  notes: String
+  payment_method: String
+  project_id: create_projects_input
+  receipt_number: String
+  receipt_sent: Boolean!
+  status: String
+  tax_deductible: Boolean
+  user_created: ID
+  user_updated: ID
+}
+
+input create_event_registrations_input {
+  contact_id: create_contacts_input
+  date_created: Date
+  date_updated: Date
+  event_id: create_events_input
+  id: ID
+  notes: String
+  registration_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+input create_events_input {
+  capacity: Int
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  event_type: String
+  id: ID
+  image: ID
+  location: String
+  organizer_id: create_contacts_input
+  start_date: Date!
+  status: String
+  title: String!
+  user_created: ID
+  user_updated: ID
+  registrations: [create_event_registrations_input]
+}
+
+input create_form_field_text_input {
+  id: ID
+  label: String!
+}
+
+input create_forms_fields_input {
+  id: ID
+  forms_id: create_forms_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input create_forms_input {
+  id: ID
+  status: String
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  title: String
+  fields: [create_forms_fields_input]
+}
+
+input create_pages_blocks_input {
+  id: ID
+  pages_id: create_pages_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input create_pages_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  parent: create_pages_input
+  title: String
+  blocks: [create_pages_blocks_input]
+}
+
+input create_projects_input {
+  budget: Float
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  id: ID
+  impact_metrics: String
+  name: String!
+  project_manager_id: create_contacts_input
+  spent_amount: Float!
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [create_donations_input]
+  volunteer_activities: [create_volunteer_activities_input]
+}
+
+input create_recurring_donations_input {
+  amount: Float!
+  contact_id: create_contacts_input
+  currency: String
+  date_created: Date
+  date_updated: Date
+  end_date: Date
+  frequency: String!
+  id: ID
+  next_payment_date: Date
+  payment_method: String
+  start_date: Date!
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+input create_tags_input {
+  """Color for tag display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+  id: ID!
+
+  """Tag name"""
+  name: String!
+
+  """URL-friendly version of the name"""
+  slug: String!
+  user_created: create_directus_users_input
+  user_updated: create_directus_users_input
+}
+
+input create_volunteer_activities_input {
+  activity_date: Date!
+  activity_type: String
+  date_created: Date
+  date_updated: Date
+  hours: Float!
+  id: ID
+  notes: String
+  project_id: create_projects_input
+  supervisor_id: create_contacts_input
+  user_created: ID
+  user_updated: ID
+  volunteer_id: create_volunteers_input
+}
+
+input create_volunteers_input {
+  availability: String
+  background_check_date: Date
+  contact_id: create_contacts_input
+  date_created: Date
+  date_updated: Date
+  emergency_contact: String
+  id: ID
+  skills: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  activities: [create_volunteer_activities_input]
+}
+
+input date_filter_operators {
+  _eq: String
+  _neq: String
+  _gt: String
+  _gte: String
+  _lt: String
+  _lte: String
+  _null: Boolean
+  _nnull: Boolean
+  _in: [String]
+  _nin: [String]
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
+}
+
+input date_function_filter_operators {
+  year: number_filter_operators
+  month: number_filter_operators
+  week: number_filter_operators
+  day: number_filter_operators
+  weekday: number_filter_operators
+}
+
+input datetime_function_filter_operators {
+  year: number_filter_operators
+  month: number_filter_operators
+  week: number_filter_operators
+  day: number_filter_operators
+  weekday: number_filter_operators
+  hour: number_filter_operators
+  minute: number_filter_operators
+  second: number_filter_operators
+}
+
+input directus_access_filter {
+  id: id_filter_operators
+  role: directus_roles_filter
+  user: directus_users_filter
+  policy: directus_policies_filter
+  sort: number_filter_operators
+  _and: [directus_access_filter]
+  _or: [directus_access_filter]
+}
+
+""""""
+input directus_access_quantifier_filter {
+  id: id_filter_operators
+  role: directus_roles_filter
+  user: directus_users_filter
+  policy: directus_policies_filter
+  sort: number_filter_operators
+  _and: [directus_access_filter]
+  _or: [directus_access_filter]
+  _some: directus_access_filter
+  _none: directus_access_filter
+}
+
+input directus_activity_filter {
+  id: number_filter_operators
+  action: string_filter_operators
+  user: directus_users_filter
+  timestamp: date_filter_operators
+  timestamp_func: datetime_function_filter_operators
+  ip: string_filter_operators
+  user_agent: string_filter_operators
+  collection: string_filter_operators
+  item: string_filter_operators
+  origin: string_filter_operators
+  revisions: directus_revisions_quantifier_filter
+  revisions_func: count_function_filter_operators
+  _and: [directus_activity_filter]
+  _or: [directus_activity_filter]
+}
+
+input directus_dashboards_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  icon: string_filter_operators
+  note: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  color: string_filter_operators
+  panels: directus_panels_quantifier_filter
+  panels_func: count_function_filter_operators
+  _and: [directus_dashboards_filter]
+  _or: [directus_dashboards_filter]
+}
+
+input directus_files_filter {
+  id: id_filter_operators
+  storage: string_filter_operators
+  filename_disk: string_filter_operators
+  filename_download: string_filter_operators
+  title: string_filter_operators
+  type: string_filter_operators
+  folder: directus_folders_filter
+  uploaded_by: directus_users_filter
+  created_on: date_filter_operators
+  created_on_func: datetime_function_filter_operators
+  modified_by: directus_users_filter
+  modified_on: date_filter_operators
+  modified_on_func: datetime_function_filter_operators
+  charset: string_filter_operators
+  filesize: big_int_filter_operators
+  width: number_filter_operators
+  height: number_filter_operators
+  duration: number_filter_operators
+  embed: string_filter_operators
+  description: string_filter_operators
+  location: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  focal_point_x: number_filter_operators
+  focal_point_y: number_filter_operators
+  tus_id: string_filter_operators
+  tus_data: string_filter_operators
+  tus_data_func: count_function_filter_operators
+  uploaded_on: date_filter_operators
+  uploaded_on_func: datetime_function_filter_operators
+  _and: [directus_files_filter]
+  _or: [directus_files_filter]
+}
+
+input directus_flows_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  icon: string_filter_operators
+  color: string_filter_operators
+  description: string_filter_operators
+  status: string_filter_operators
+  trigger: string_filter_operators
+  accountability: string_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  operation: directus_operations_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  operations: directus_operations_quantifier_filter
+  operations_func: count_function_filter_operators
+  _and: [directus_flows_filter]
+  _or: [directus_flows_filter]
+}
+
+input directus_folders_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  parent: directus_folders_filter
+  _and: [directus_folders_filter]
+  _or: [directus_folders_filter]
+}
+
+input directus_operations_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  key: string_filter_operators
+  type: string_filter_operators
+  position_x: number_filter_operators
+  position_y: number_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  resolve: directus_operations_filter
+  reject: directus_operations_filter
+  flow: directus_flows_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  _and: [directus_operations_filter]
+  _or: [directus_operations_filter]
+}
+
+""""""
+input directus_operations_quantifier_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  key: string_filter_operators
+  type: string_filter_operators
+  position_x: number_filter_operators
+  position_y: number_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  resolve: directus_operations_filter
+  reject: directus_operations_filter
+  flow: directus_flows_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  _and: [directus_operations_filter]
+  _or: [directus_operations_filter]
+  _some: directus_operations_filter
+  _none: directus_operations_filter
+}
+
+input directus_panels_filter {
+  id: id_filter_operators
+  dashboard: directus_dashboards_filter
+  name: string_filter_operators
+  icon: string_filter_operators
+  color: string_filter_operators
+  show_header: boolean_filter_operators
+  note: string_filter_operators
+  type: string_filter_operators
+  position_x: number_filter_operators
+  position_y: number_filter_operators
+  width: number_filter_operators
+  height: number_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  _and: [directus_panels_filter]
+  _or: [directus_panels_filter]
+}
+
+""""""
+input directus_panels_quantifier_filter {
+  id: id_filter_operators
+  dashboard: directus_dashboards_filter
+  name: string_filter_operators
+  icon: string_filter_operators
+  color: string_filter_operators
+  show_header: boolean_filter_operators
+  note: string_filter_operators
+  type: string_filter_operators
+  position_x: number_filter_operators
+  position_y: number_filter_operators
+  width: number_filter_operators
+  height: number_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  _and: [directus_panels_filter]
+  _or: [directus_panels_filter]
+  _some: directus_panels_filter
+  _none: directus_panels_filter
+}
+
+input directus_permissions_filter {
+  id: number_filter_operators
+  collection: string_filter_operators
+  action: string_filter_operators
+  permissions: string_filter_operators
+  permissions_func: count_function_filter_operators
+  validation: string_filter_operators
+  validation_func: count_function_filter_operators
+  presets: string_filter_operators
+  presets_func: count_function_filter_operators
+  fields: string_filter_operators
+  policy: directus_policies_filter
+  _and: [directus_permissions_filter]
+  _or: [directus_permissions_filter]
+}
+
+""""""
+input directus_permissions_quantifier_filter {
+  id: number_filter_operators
+  collection: string_filter_operators
+  action: string_filter_operators
+  permissions: string_filter_operators
+  permissions_func: count_function_filter_operators
+  validation: string_filter_operators
+  validation_func: count_function_filter_operators
+  presets: string_filter_operators
+  presets_func: count_function_filter_operators
+  fields: string_filter_operators
+  policy: directus_policies_filter
+  _and: [directus_permissions_filter]
+  _or: [directus_permissions_filter]
+  _some: directus_permissions_filter
+  _none: directus_permissions_filter
+}
+
+input directus_policies_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  icon: string_filter_operators
+  description: string_filter_operators
+  ip_access: string_filter_operators
+  enforce_tfa: boolean_filter_operators
+  admin_access: boolean_filter_operators
+  app_access: boolean_filter_operators
+  permissions: directus_permissions_quantifier_filter
+  permissions_func: count_function_filter_operators
+  users: directus_access_quantifier_filter
+  users_func: count_function_filter_operators
+  roles: directus_access_quantifier_filter
+  roles_func: count_function_filter_operators
+  _and: [directus_policies_filter]
+  _or: [directus_policies_filter]
+}
+
+input directus_revisions_filter {
+  id: number_filter_operators
+  activity: directus_activity_filter
+  collection: string_filter_operators
+  item: string_filter_operators
+  data: string_filter_operators
+  data_func: count_function_filter_operators
+  delta: string_filter_operators
+  delta_func: count_function_filter_operators
+  parent: directus_revisions_filter
+  version: directus_versions_filter
+  _and: [directus_revisions_filter]
+  _or: [directus_revisions_filter]
+}
+
+""""""
+input directus_revisions_quantifier_filter {
+  id: number_filter_operators
+  activity: directus_activity_filter
+  collection: string_filter_operators
+  item: string_filter_operators
+  data: string_filter_operators
+  data_func: count_function_filter_operators
+  delta: string_filter_operators
+  delta_func: count_function_filter_operators
+  parent: directus_revisions_filter
+  version: directus_versions_filter
+  _and: [directus_revisions_filter]
+  _or: [directus_revisions_filter]
+  _some: directus_revisions_filter
+  _none: directus_revisions_filter
+}
+
+input directus_roles_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  icon: string_filter_operators
+  description: string_filter_operators
+  parent: directus_roles_filter
+  children: directus_roles_quantifier_filter
+  children_func: count_function_filter_operators
+  policies: directus_access_quantifier_filter
+  policies_func: count_function_filter_operators
+  users: directus_users_quantifier_filter
+  users_func: count_function_filter_operators
+  _and: [directus_roles_filter]
+  _or: [directus_roles_filter]
+}
+
+""""""
+input directus_roles_quantifier_filter {
+  id: id_filter_operators
+  name: string_filter_operators
+  icon: string_filter_operators
+  description: string_filter_operators
+  parent: directus_roles_filter
+  children: directus_roles_quantifier_filter
+  children_func: count_function_filter_operators
+  policies: directus_access_quantifier_filter
+  policies_func: count_function_filter_operators
+  users: directus_users_quantifier_filter
+  users_func: count_function_filter_operators
+  _and: [directus_roles_filter]
+  _or: [directus_roles_filter]
+  _some: directus_roles_filter
+  _none: directus_roles_filter
+}
+
+input directus_sync_id_map_filter {
+  id: number_filter_operators
+  table: string_filter_operators
+  sync_id: string_filter_operators
+  local_id: string_filter_operators
+  created_at: date_filter_operators
+  created_at_func: datetime_function_filter_operators
+  _and: [directus_sync_id_map_filter]
+  _or: [directus_sync_id_map_filter]
+}
+
+input directus_users_filter {
+  id: id_filter_operators
+  first_name: string_filter_operators
+  last_name: string_filter_operators
+  email: string_filter_operators
+  password: hash_filter_operators
+  location: string_filter_operators
+  title: string_filter_operators
+  description: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  avatar: directus_files_filter
+  language: string_filter_operators
+  tfa_secret: hash_filter_operators
+  status: string_filter_operators
+  role: directus_roles_filter
+  token: hash_filter_operators
+  last_access: date_filter_operators
+  last_access_func: datetime_function_filter_operators
+  last_page: string_filter_operators
+  provider: string_filter_operators
+  external_identifier: string_filter_operators
+  auth_data: string_filter_operators
+  auth_data_func: count_function_filter_operators
+  email_notifications: boolean_filter_operators
+  appearance: string_filter_operators
+  theme_dark: string_filter_operators
+  theme_light: string_filter_operators
+  theme_light_overrides: string_filter_operators
+  theme_light_overrides_func: count_function_filter_operators
+  theme_dark_overrides: string_filter_operators
+  theme_dark_overrides_func: count_function_filter_operators
+  text_direction: string_filter_operators
+  policies: directus_access_quantifier_filter
+  policies_func: count_function_filter_operators
+  _and: [directus_users_filter]
+  _or: [directus_users_filter]
+}
+
+""""""
+input directus_users_quantifier_filter {
+  id: id_filter_operators
+  first_name: string_filter_operators
+  last_name: string_filter_operators
+  email: string_filter_operators
+  password: hash_filter_operators
+  location: string_filter_operators
+  title: string_filter_operators
+  description: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  avatar: directus_files_filter
+  language: string_filter_operators
+  tfa_secret: hash_filter_operators
+  status: string_filter_operators
+  role: directus_roles_filter
+  token: hash_filter_operators
+  last_access: date_filter_operators
+  last_access_func: datetime_function_filter_operators
+  last_page: string_filter_operators
+  provider: string_filter_operators
+  external_identifier: string_filter_operators
+  auth_data: string_filter_operators
+  auth_data_func: count_function_filter_operators
+  email_notifications: boolean_filter_operators
+  appearance: string_filter_operators
+  theme_dark: string_filter_operators
+  theme_light: string_filter_operators
+  theme_light_overrides: string_filter_operators
+  theme_light_overrides_func: count_function_filter_operators
+  theme_dark_overrides: string_filter_operators
+  theme_dark_overrides_func: count_function_filter_operators
+  text_direction: string_filter_operators
+  policies: directus_access_quantifier_filter
+  policies_func: count_function_filter_operators
+  _and: [directus_users_filter]
+  _or: [directus_users_filter]
+  _some: directus_users_filter
+  _none: directus_users_filter
+}
+
+input directus_versions_filter {
+  id: id_filter_operators
+  key: string_filter_operators
+  name: string_filter_operators
+  collection: string_filter_operators
+  item: string_filter_operators
+  hash: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  delta: string_filter_operators
+  delta_func: count_function_filter_operators
+  _and: [directus_versions_filter]
+  _or: [directus_versions_filter]
+}
+
+input donation_campaigns_filter {
+  current_amount: number_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  goal_amount: number_filter_operators
+  id: id_filter_operators
+  image: id_filter_operators
+  name: string_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  _and: [donation_campaigns_filter]
+  _or: [donation_campaigns_filter]
+}
+
+input donations_filter {
+  amount: number_filter_operators
+  campaign_id: donation_campaigns_filter
+  contact_id: contacts_filter
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  donation_date: date_filter_operators
+  donation_date_func: date_function_filter_operators
+  donation_type: string_filter_operators
+  id: id_filter_operators
+  notes: string_filter_operators
+  payment_method: string_filter_operators
+  project_id: projects_filter
+  receipt_number: string_filter_operators
+  receipt_sent: boolean_filter_operators
+  status: string_filter_operators
+  tax_deductible: boolean_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  _and: [donations_filter]
+  _or: [donations_filter]
+}
+
+""""""
+input donations_quantifier_filter {
+  amount: number_filter_operators
+  campaign_id: donation_campaigns_filter
+  contact_id: contacts_filter
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  donation_date: date_filter_operators
+  donation_date_func: date_function_filter_operators
+  donation_type: string_filter_operators
+  id: id_filter_operators
+  notes: string_filter_operators
+  payment_method: string_filter_operators
+  project_id: projects_filter
+  receipt_number: string_filter_operators
+  receipt_sent: boolean_filter_operators
+  status: string_filter_operators
+  tax_deductible: boolean_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  _and: [donations_filter]
+  _or: [donations_filter]
+  _some: donations_filter
+  _none: donations_filter
+}
+
+input event_registrations_filter {
+  contact_id: contacts_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  event_id: events_filter
+  id: id_filter_operators
+  notes: string_filter_operators
+  registration_date: date_filter_operators
+  registration_date_func: datetime_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  _and: [event_registrations_filter]
+  _or: [event_registrations_filter]
+}
+
+""""""
+input event_registrations_quantifier_filter {
+  contact_id: contacts_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  event_id: events_filter
+  id: id_filter_operators
+  notes: string_filter_operators
+  registration_date: date_filter_operators
+  registration_date_func: datetime_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  _and: [event_registrations_filter]
+  _or: [event_registrations_filter]
+  _some: event_registrations_filter
+  _none: event_registrations_filter
+}
+
+input events_filter {
+  capacity: number_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  end_date: date_filter_operators
+  end_date_func: datetime_function_filter_operators
+  event_type: string_filter_operators
+  id: id_filter_operators
+  image: id_filter_operators
+  location: string_filter_operators
+  organizer_id: contacts_filter
+  start_date: date_filter_operators
+  start_date_func: datetime_function_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  registrations: event_registrations_quantifier_filter
+  registrations_func: count_function_filter_operators
+  _and: [events_filter]
+  _or: [events_filter]
+}
+
+input form_field_text_filter {
+  id: id_filter_operators
+  label: string_filter_operators
+  _and: [form_field_text_filter]
+  _or: [form_field_text_filter]
+}
+
+input forms_fields_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  item__form_field_text: form_field_text_filter
+}
+
+""""""
+input forms_fields_quantifier_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  _some: forms_fields_filter
+  _none: forms_fields_filter
+  item__form_field_text: form_field_text_filter
+}
+
+input forms_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  title: string_filter_operators
+  fields: forms_fields_quantifier_filter
+  fields_func: count_function_filter_operators
+  _and: [forms_filter]
+  _or: [forms_filter]
+}
+
+input hash_filter_operators {
+  _null: Boolean
+  _nnull: Boolean
+  _empty: Boolean
+  _nempty: Boolean
+}
+
+input id_filter_operators {
+  _eq: ID
+  _neq: ID
+  _contains: ID
+  _icontains: ID
+  _ncontains: ID
+  _starts_with: ID
+  _nstarts_with: ID
+  _istarts_with: ID
+  _nistarts_with: ID
+  _ends_with: ID
+  _nends_with: ID
+  _iends_with: ID
+  _niends_with: ID
+  _in: [ID]
+  _nin: [ID]
+  _null: Boolean
+  _nnull: Boolean
+  _empty: Boolean
+  _nempty: Boolean
+}
+
+input number_filter_operators {
+  _eq: GraphQLStringOrFloat
+  _neq: GraphQLStringOrFloat
+  _in: [GraphQLStringOrFloat]
+  _nin: [GraphQLStringOrFloat]
+  _gt: GraphQLStringOrFloat
+  _gte: GraphQLStringOrFloat
+  _lt: GraphQLStringOrFloat
+  _lte: GraphQLStringOrFloat
+  _null: Boolean
+  _nnull: Boolean
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
+}
+
+input pages_blocks_filter {
+  id: number_filter_operators
+  pages_id: pages_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [pages_blocks_filter]
+  _or: [pages_blocks_filter]
+  item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
+}
+
+""""""
+input pages_blocks_quantifier_filter {
+  id: number_filter_operators
+  pages_id: pages_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [pages_blocks_filter]
+  _or: [pages_blocks_filter]
+  _some: pages_blocks_filter
+  _none: pages_blocks_filter
+  item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
+}
+
+input pages_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  parent: pages_filter
+  title: string_filter_operators
+  blocks: pages_blocks_quantifier_filter
+  blocks_func: count_function_filter_operators
+  _and: [pages_filter]
+  _or: [pages_filter]
+}
+
+input projects_filter {
+  budget: number_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  id: id_filter_operators
+  impact_metrics: string_filter_operators
+  name: string_filter_operators
+  project_manager_id: contacts_filter
+  spent_amount: number_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  volunteer_activities: volunteer_activities_quantifier_filter
+  volunteer_activities_func: count_function_filter_operators
+  _and: [projects_filter]
+  _or: [projects_filter]
+}
+
+input recurring_donations_filter {
+  amount: number_filter_operators
+  contact_id: contacts_filter
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  frequency: string_filter_operators
+  id: id_filter_operators
+  next_payment_date: date_filter_operators
+  next_payment_date_func: date_function_filter_operators
+  payment_method: string_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  _and: [recurring_donations_filter]
+  _or: [recurring_donations_filter]
+}
+
+input string_filter_operators {
+  _eq: String
+  _neq: String
+  _contains: String
+  _icontains: String
+  _ncontains: String
+  _starts_with: String
+  _nstarts_with: String
+  _istarts_with: String
+  _nistarts_with: String
+  _ends_with: String
+  _nends_with: String
+  _iends_with: String
+  _niends_with: String
+  _in: [String]
+  _nin: [String]
+  _null: Boolean
+  _nnull: Boolean
+  _empty: Boolean
+  _nempty: Boolean
+}
+
+input tags_filter {
+  color: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: id_filter_operators
+  name: string_filter_operators
+  slug: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  _and: [tags_filter]
+  _or: [tags_filter]
+}
+
+input update_ai_prompts_input {
+  id: ID
+  sort: Int
+  date_created: Date
+  user_created: update_directus_users_input
+  date_updated: Date
+  user_updated: update_directus_users_input
+  name: String
+  status: String
+  description: String
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: String
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: JSON
+}
+
+input update_articles_input {
+  category: update_categories_input
+
+  """The main content of the article"""
+  content: String
+  date_created: Date
+  date_updated: Date
+
+  """Short description or summary of the article"""
+  excerpt: String
+  featured_image: update_directus_files_input
+  id: ID
+
+  """When the article was published"""
+  published_at: Date
+
+  """URL-friendly version of the title"""
+  slug: String
+
+  """Publication status of the article"""
+  status: String
+
+  """The main title of the article"""
+  title: String
+  user_created: update_directus_users_input
+  user_updated: update_directus_users_input
+  tags: [update_articles_tags_input]
+}
+
+input update_articles_tags_input {
+  id: ID
+  articles_id: update_articles_input
+  tags_id: update_tags_input
+}
+
+input update_block_form_input {
+  id: ID
+  form: update_forms_input
+}
+
+input update_block_richtext_input {
+  id: ID
+  content: String
+}
+
+input update_categories_input {
+  """Color for category display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+
+  """Category description"""
+  description: String
+  id: ID
+
+  """Category name"""
+  name: String
+
+  """URL-friendly version of the name"""
+  slug: String
+  user_created: update_directus_users_input
+  user_updated: update_directus_users_input
+}
+
+input update_contacts_input {
+  address: String
+  contact_type: String
+  date_created: Date
+  date_updated: Date
+  email: String
+  first_name: String
+  id: ID
+  last_name: String
+  notes: String
+  organization: String
+  phone: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [update_donations_input]
+  tags: [update_contacts_tags_input]
+}
+
+input update_contacts_tags_input {
+  id: ID
+  contacts_id: update_contacts_input
+  tags_id: update_tags_input
+}
+
+input update_directus_access_input {
+  id: ID
+  role: update_directus_roles_input
+  user: update_directus_users_input
+  policy: update_directus_policies_input
+  sort: Int
+}
+
+input update_directus_files_input {
+  id: ID
+  storage: String
+  filename_disk: String
+  filename_download: String
+  title: String
+  type: String
+  folder: update_directus_folders_input
+  uploaded_by: update_directus_users_input
+  created_on: Date
+  modified_by: update_directus_users_input
+  modified_on: Date
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  metadata: JSON
+  focal_point_x: Int
+  focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  uploaded_on: Date
+}
+
+input update_directus_folders_input {
+  id: ID
+  name: String
+  parent: update_directus_folders_input
+}
+
+input update_directus_permissions_input {
+  id: ID
+  collection: String
+  action: String
+  permissions: JSON
+  validation: JSON
+  presets: JSON
+  fields: [String]
+  policy: update_directus_policies_input
+}
+
+input update_directus_policies_input {
+  id: ID
+  name: String
+  icon: String
+  description: String
+  ip_access: [String]
+
+  """$t:field_options.directus_policies.enforce_tfa"""
+  enforce_tfa: Boolean
+  admin_access: Boolean
+  app_access: Boolean
+  permissions: [update_directus_permissions_input]
+  users: [update_directus_access_input]
+  roles: [update_directus_access_input]
+}
+
+input update_directus_roles_input {
+  id: ID
+  name: String
+  icon: String
+  description: String
+  parent: update_directus_roles_input
+  children: [update_directus_roles_input]
+  policies: [update_directus_access_input]
+  users: [update_directus_users_input]
+}
+
+input update_directus_sync_id_map_input {
+  id: ID
+  table: String
+  sync_id: String
+  local_id: String
+  created_at: Date
+}
+
+input update_directus_users_input {
+  id: ID
+  first_name: String
+  last_name: String
+  email: String
+  password: Hash
+  location: String
+  title: String
+  description: String
+  tags: JSON
+  avatar: update_directus_files_input
+  language: String
+  tfa_secret: Hash
+  status: String
+  role: update_directus_roles_input
+  token: Hash
+  last_access: Date
+  last_page: String
+  provider: String
+  external_identifier: String
+  auth_data: JSON
+  email_notifications: Boolean
+  appearance: String
+  theme_dark: String
+  theme_light: String
+  theme_light_overrides: JSON
+  theme_dark_overrides: JSON
+  text_direction: String
+  policies: [update_directus_access_input]
+}
+
+input update_donation_campaigns_input {
+  current_amount: Float
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  goal_amount: Float
+  id: ID
+  image: ID
+  name: String
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [update_donations_input]
+}
+
+input update_donations_input {
+  amount: Float
+  campaign_id: update_donation_campaigns_input
+  contact_id: update_contacts_input
+  currency: String
+  date_created: Date
+  date_updated: Date
+  donation_date: Date
+  donation_type: String
+  id: ID
+  notes: String
+  payment_method: String
+  project_id: update_projects_input
+  receipt_number: String
+  receipt_sent: Boolean
+  status: String
+  tax_deductible: Boolean
+  user_created: ID
+  user_updated: ID
+}
+
+input update_event_registrations_input {
+  contact_id: update_contacts_input
+  date_created: Date
+  date_updated: Date
+  event_id: update_events_input
+  id: ID
+  notes: String
+  registration_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+input update_events_input {
+  capacity: Int
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  event_type: String
+  id: ID
+  image: ID
+  location: String
+  organizer_id: update_contacts_input
+  start_date: Date
+  status: String
+  title: String
+  user_created: ID
+  user_updated: ID
+  registrations: [update_event_registrations_input]
+}
+
+input update_form_field_text_input {
+  id: ID
+  label: String
+}
+
+input update_forms_fields_input {
+  id: ID
+  forms_id: update_forms_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input update_forms_input {
+  id: ID
+  status: String
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  title: String
+  fields: [update_forms_fields_input]
+}
+
+input update_pages_blocks_input {
+  id: ID
+  pages_id: update_pages_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input update_pages_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  parent: update_pages_input
+  title: String
+  blocks: [update_pages_blocks_input]
+}
+
+input update_projects_input {
+  budget: Float
+  date_created: Date
+  date_updated: Date
+  description: String
+  end_date: Date
+  id: ID
+  impact_metrics: String
+  name: String
+  project_manager_id: update_contacts_input
+  spent_amount: Float
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+  donations: [update_donations_input]
+  volunteer_activities: [update_volunteer_activities_input]
+}
+
+input update_recurring_donations_input {
+  amount: Float
+  contact_id: update_contacts_input
+  currency: String
+  date_created: Date
+  date_updated: Date
+  end_date: Date
+  frequency: String
+  id: ID
+  next_payment_date: Date
+  payment_method: String
+  start_date: Date
+  status: String
+  user_created: ID
+  user_updated: ID
+}
+
+input update_tags_input {
+  """Color for tag display"""
+  color: String
+  date_created: Date
+  date_updated: Date
+  id: ID
+
+  """Tag name"""
+  name: String
+
+  """URL-friendly version of the name"""
+  slug: String
+  user_created: update_directus_users_input
+  user_updated: update_directus_users_input
+}
+
+input update_volunteer_activities_input {
+  activity_date: Date
+  activity_type: String
+  date_created: Date
+  date_updated: Date
+  hours: Float
+  id: ID
+  notes: String
+  project_id: update_projects_input
+  supervisor_id: update_contacts_input
+  user_created: ID
+  user_updated: ID
+  volunteer_id: update_volunteers_input
+}
+
+input update_volunteers_input {
+  availability: String
+  background_check_date: Date
+  contact_id: update_contacts_input
+  date_created: Date
+  date_updated: Date
+  emergency_contact: String
+  id: ID
+  skills: String
+  status: String
+  user_created: ID
+  user_updated: ID
+  activities: [update_volunteer_activities_input]
+}
+
+input volunteer_activities_filter {
+  activity_date: date_filter_operators
+  activity_date_func: date_function_filter_operators
+  activity_type: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  hours: number_filter_operators
+  id: id_filter_operators
+  notes: string_filter_operators
+  project_id: projects_filter
+  supervisor_id: contacts_filter
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  volunteer_id: volunteers_filter
+  _and: [volunteer_activities_filter]
+  _or: [volunteer_activities_filter]
+}
+
+""""""
+input volunteer_activities_quantifier_filter {
+  activity_date: date_filter_operators
+  activity_date_func: date_function_filter_operators
+  activity_type: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  hours: number_filter_operators
+  id: id_filter_operators
+  notes: string_filter_operators
+  project_id: projects_filter
+  supervisor_id: contacts_filter
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  volunteer_id: volunteers_filter
+  _and: [volunteer_activities_filter]
+  _or: [volunteer_activities_filter]
+  _some: volunteer_activities_filter
+  _none: volunteer_activities_filter
+}
+
+input volunteers_filter {
+  availability: string_filter_operators
+  background_check_date: date_filter_operators
+  background_check_date_func: date_function_filter_operators
+  contact_id: contacts_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  emergency_contact: string_filter_operators
+  id: id_filter_operators
+  skills: string_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  activities: volunteer_activities_quantifier_filter
+  activities_func: count_function_filter_operators
+  _and: [volunteers_filter]
+  _or: [volunteers_filter]
+}

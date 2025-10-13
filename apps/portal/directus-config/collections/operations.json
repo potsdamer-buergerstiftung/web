@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Kondition",
+    "key": "condition_lrjry",
+    "type": "condition",
+    "position_x": 55,
+    "position_y": 1,
+    "options": {
+      "filter": {
+        "$last": {
+          "email": {
+            "_nnull": true
+          }
+        }
+      }
+    },
+    "resolve": "a5d3c51b-eecf-4f5e-9659-795ca0588759",
+    "reject": null,
+    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
+    "_syncId": "ff4dc92a-3550-4bb9-8384-b89ded3555aa"
+  },
+  {
+    "name": "Kondition",
+    "key": "condition_okjj4",
+    "type": "condition",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "filter": {
+        "$trigger": {
+          "payload": {
+            "contact_id": {
+              "_nnull": true
+            }
+          }
+        }
+      }
+    },
+    "resolve": "d10ab8c3-3b60-43c9-9cbf-8ea18fefda85",
+    "reject": null,
+    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
+    "_syncId": "079ecba5-0d59-4895-8df2-29870619154b"
+  },
+  {
+    "name": "Daten lesen",
+    "key": "item_read_of2xv",
+    "type": "item-read",
+    "position_x": 37,
+    "position_y": 1,
+    "options": {
+      "permissions": "$trigger",
+      "emitEvents": false,
+      "collection": "contacts",
+      "key": "{{$trigger.payload.contact_id}}"
+    },
+    "resolve": "ff4dc92a-3550-4bb9-8384-b89ded3555aa",
+    "reject": null,
+    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
+    "_syncId": "d10ab8c3-3b60-43c9-9cbf-8ea18fefda85"
+  },
+  {
+    "name": "Email senden",
+    "key": "mail_skqn0",
+    "type": "mail",
+    "position_x": 73,
+    "position_y": 1,
+    "options": {
+      "type": "markdown",
+      "subject": "Vielen Dank für Ihre Spende",
+      "to": "{{item_read_of2xv.email}}",
+      "body": "Vielen Dank für Ihre Spende, {{item_read_of2xv.first_name}} {{item_read_of2xv.last_name}}"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
+    "_syncId": "a5d3c51b-eecf-4f5e-9659-795ca0588759"
+  }
+]

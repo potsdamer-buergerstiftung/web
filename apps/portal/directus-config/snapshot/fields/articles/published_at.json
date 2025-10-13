@@ -1,0 +1,64 @@
+{
+  "collection": "articles",
+  "field": "published_at",
+  "type": "timestamp",
+  "meta": {
+    "collection": "articles",
+    "conditions": [
+      {
+        "hidden": false,
+        "name": "Show when published",
+        "rule": {
+          "status": {
+            "_eq": "published"
+          }
+        }
+      }
+    ],
+    "display": null,
+    "display_options": null,
+    "field": "published_at",
+    "group": null,
+    "hidden": false,
+    "interface": "datetime",
+    "note": "When the article was published",
+    "options": {
+      "includeSeconds": true
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 10,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Published At"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Veröffentlicht am"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "published_at",
+    "table": "articles",
+    "data_type": "timestamp with time zone",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

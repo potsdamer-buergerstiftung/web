@@ -1,0 +1,20 @@
+[
+  {
+    "language": "de-DE",
+    "key": "published",
+    "value": "Veröffentlicht",
+    "_syncId": "2af089ea-e6c6-4144-9da2-b0b8d6262790"
+  },
+  {
+    "language": "de-DE",
+    "key": "archived",
+    "value": "Archiviert",
+    "_syncId": "66672e95-0e1b-403e-897e-9aaa2a2d9e1e"
+  },
+  {
+    "language": "de-DE",
+    "key": "draft",
+    "value": "Entwurf",
+    "_syncId": "b653fbe0-edec-4ee8-8919-e680bb9bd4ea"
+  }
+]

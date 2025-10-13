@@ -1,0 +1,27 @@
+{
+  "collection": "articles",
+  "field": "tags",
+  "type": "alias",
+  "meta": {
+    "collection": "articles",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "tags",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 8,
+    "special": [
+      "m2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}

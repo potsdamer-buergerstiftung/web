@@ -1,0 +1,59 @@
+{
+  "collection": "donations",
+  "field": "amount",
+  "type": "decimal",
+  "meta": {
+    "collection": "donations",
+    "conditions": null,
+    "display": "formatted-value",
+    "display_options": {
+      "conditionalFormatting": null,
+      "format": true,
+      "icon": "euro_symbol",
+      "suffix": null
+    },
+    "field": "amount",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": null,
+    "options": {
+      "min": 0
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 4,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Amount"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Betrag"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "amount",
+    "table": "donations",
+    "data_type": "numeric",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 10,
+    "numeric_scale": 2,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

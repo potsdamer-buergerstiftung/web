@@ -1,0 +1,67 @@
+{
+  "collection": "recurring_donations",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "recurring_donations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "status",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:active",
+          "value": "active"
+        },
+        {
+          "text": "$t:paused",
+          "value": "paused"
+        },
+        {
+          "text": "$t:cancelled",
+          "value": "cancelled"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Status"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Status"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "status",
+    "table": "recurring_donations",
+    "data_type": "character varying",
+    "default_value": "active",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

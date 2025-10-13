@@ -1,0 +1,36 @@
+{
+  "collection": "events",
+  "field": "registrations",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "registrations",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 13,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Registrations"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Anmeldungen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collection": "donations",
+  "field": "campaign_id",
+  "related_collection": "donation_campaigns",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "donations",
+    "many_field": "campaign_id",
+    "one_allowed_collections": null,
+    "one_collection": "donation_campaigns",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "donations",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "donations",
+    "column": "campaign_id",
+    "foreign_key_table": "donation_campaigns",
+    "foreign_key_column": "id",
+    "constraint_name": "donations_campaign_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collection": "ai_prompts",
+  "field": "meta_prompts_notice",
+  "type": "alias",
+  "meta": {
+    "collection": "ai_prompts",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "meta_prompts_notice",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-notice",
+    "note": null,
+    "options": {
+      "icon": "info",
+      "text": "$t:mcp_prompts_collection_schema.meta_prompts_notice"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 7,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

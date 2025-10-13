@@ -165,7 +165,7 @@ export default async function TeamPage() {
                     des Satzungszwecks wachen. Außerdem wird die Stiftung jährlich vom
                     Finanzamt Potsdam geprüft.
                 </p>
-            } breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Gremien" />]} />} />
+            } breadcrumb={<PageBreadcrumb items={<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Gremien" />} />} />
             {categories.map((category) => (
                 <>
                     <section className="pb-16 pt-8">

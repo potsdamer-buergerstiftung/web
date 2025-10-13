@@ -1,0 +1,54 @@
+{
+  "collection": "volunteer_activities",
+  "field": "volunteer_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "volunteer_activities",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "volunteer_id",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": null,
+    "options": {
+      "template": "{{contact_id.first_name}} {{contact_id.last_name}}"
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Volunteer"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Freiwilliger"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "volunteer_id",
+    "table": "volunteer_activities",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "volunteers",
+    "foreign_key_column": "id"
+  }
+}

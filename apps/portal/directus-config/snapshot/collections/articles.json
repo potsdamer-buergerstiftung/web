@@ -1,0 +1,41 @@
+{
+  "collection": "articles",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "articles",
+    "color": null,
+    "display_template": "{{title}}",
+    "group": "web",
+    "hidden": false,
+    "icon": "article",
+    "item_duplication_fields": null,
+    "note": "Blog articles and posts",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Articles",
+        "singular": "Article",
+        "translation": "Articles"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Artikel",
+        "singular": "Artikel",
+        "translation": "Artikel"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": true
+  },
+  "schema": {
+    "name": "articles"
+  }
+}

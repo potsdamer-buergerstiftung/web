@@ -1,0 +1,54 @@
+{
+  "collection": "recurring_donations",
+  "field": "contact_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "recurring_donations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "contact_id",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": null,
+    "options": {
+      "template": "{{first_name}} {{last_name}}"
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 3,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Contact"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Kontakt"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "contact_id",
+    "table": "recurring_donations",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "contacts",
+    "foreign_key_column": "id"
+  }
+}
