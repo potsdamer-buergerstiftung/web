@@ -1,0 +1,8 @@
+{
+  "collection": "budget_lines",
+  "field": "budget",
+  "related_collection": "budgets",
+  "meta": {"junction_field": null, "many_collection": "budget_lines", "many_field": "budget", "one_allowed_collections": null, "one_collection": "budgets", "one_collection_field": null, "one_deselect_action": "nullify", "one_field": null, "sort_field": null},
+  "schema": {"table": "budget_lines", "column": "budget", "foreign_key_table": "budgets", "foreign_key_column": "id", "constraint_name": "budget_lines_budget_foreign", "on_update": "NO ACTION", "on_delete": "CASCADE"}
+}
+

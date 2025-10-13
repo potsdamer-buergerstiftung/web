@@ -1,0 +1,25 @@
+{
+  "collection": "expenses",
+  "field": "reference_number",
+  "type": "string",
+  "meta": {
+    "collection": "expenses",
+    "field": "reference_number",
+    "interface": "input",
+    "note": "Check number, transaction ID, etc.",
+    "sort": 12,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Reference Number"},
+      {"language": "de-DE", "translation": "Referenznummer"}
+    ]
+  },
+  "schema": {
+    "name": "reference_number",
+    "table": "expenses",
+    "data_type": "character varying",
+    "max_length": 100,
+    "is_nullable": true
+  }
+}
+

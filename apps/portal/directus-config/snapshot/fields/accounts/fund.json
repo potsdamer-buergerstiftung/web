@@ -1,0 +1,57 @@
+{
+  "collection": "accounts",
+  "field": "fund",
+  "type": "uuid",
+  "meta": {
+    "collection": "accounts",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{code}} - {{name}}"
+    },
+    "field": "fund",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": "Associated fund",
+    "options": {
+      "template": "{{code}} - {{name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 5,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Fund"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Fonds"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "fund",
+    "table": "accounts",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "funds",
+    "foreign_key_column": "id"
+  }
+}
+

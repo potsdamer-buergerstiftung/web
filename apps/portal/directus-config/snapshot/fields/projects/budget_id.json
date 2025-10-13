@@ -1,0 +1,29 @@
+{
+  "collection": "projects",
+  "field": "budget_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "projects",
+    "display": "related-values",
+    "display_options": {"template": "{{name}} ({{fiscal_year}})"},
+    "field": "budget_id",
+    "interface": "select-dropdown-m2o",
+    "note": "Project budget",
+    "options": {"template": "{{name}} ({{fiscal_year}})"},
+    "sort": 21,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Budget"},
+      {"language": "de-DE", "translation": "Budget"}
+    ]
+  },
+  "schema": {
+    "name": "budget_id",
+    "table": "projects",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "budgets",
+    "foreign_key_column": "id"
+  }
+}
+

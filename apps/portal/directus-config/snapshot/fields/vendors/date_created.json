@@ -1,0 +1,24 @@
+{
+  "collection": "vendors",
+  "field": "date_created",
+  "type": "timestamp",
+  "meta": {
+    "collection": "vendors",
+    "display": "datetime",
+    "display_options": {"relative": true},
+    "field": "date_created",
+    "hidden": true,
+    "interface": "datetime",
+    "readonly": true,
+    "sort": 12,
+    "special": ["date-created"],
+    "width": "half"
+  },
+  "schema": {
+    "name": "date_created",
+    "table": "vendors",
+    "data_type": "timestamp with time zone",
+    "is_nullable": true
+  }
+}
+

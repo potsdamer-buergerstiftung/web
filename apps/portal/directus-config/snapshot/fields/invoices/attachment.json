@@ -1,0 +1,26 @@
+{
+  "collection": "invoices",
+  "field": "attachment",
+  "type": "uuid",
+  "meta": {
+    "collection": "invoices",
+    "field": "attachment",
+    "interface": "file",
+    "note": "Upload invoice PDF",
+    "sort": 14,
+    "width": "full",
+    "translations": [
+      {"language": "en-US", "translation": "Attachment"},
+      {"language": "de-DE", "translation": "Anhang"}
+    ]
+  },
+  "schema": {
+    "name": "attachment",
+    "table": "invoices",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id"
+  }
+}
+

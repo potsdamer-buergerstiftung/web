@@ -1,0 +1,29 @@
+{
+  "collection": "donations",
+  "field": "fund_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "donations",
+    "display": "related-values",
+    "display_options": {"template": "{{code}} - {{name}}"},
+    "field": "fund_id",
+    "interface": "select-dropdown-m2o",
+    "note": "Allocate donation to specific fund",
+    "options": {"template": "{{code}} - {{name}}"},
+    "sort": 18,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Fund"},
+      {"language": "de-DE", "translation": "Fonds"}
+    ]
+  },
+  "schema": {
+    "name": "fund_id",
+    "table": "donations",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "funds",
+    "foreign_key_column": "id"
+  }
+}
+

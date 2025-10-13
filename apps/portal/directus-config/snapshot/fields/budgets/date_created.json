@@ -1,0 +1,8 @@
+{
+  "collection": "budgets",
+  "field": "date_created",
+  "type": "timestamp",
+  "meta": {"collection": "budgets", "display": "datetime", "display_options": {"relative": true}, "field": "date_created", "hidden": true, "interface": "datetime", "readonly": true, "sort": 10, "special": ["date-created"], "width": "half"},
+  "schema": {"name": "date_created", "table": "budgets", "data_type": "timestamp with time zone", "is_nullable": true}
+}
+

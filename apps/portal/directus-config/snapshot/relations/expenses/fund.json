@@ -1,0 +1,8 @@
+{
+  "collection": "expenses",
+  "field": "fund",
+  "related_collection": "funds",
+  "meta": {"junction_field": null, "many_collection": "expenses", "many_field": "fund", "one_allowed_collections": null, "one_collection": "funds", "one_collection_field": null, "one_deselect_action": "nullify", "one_field": null, "sort_field": null},
+  "schema": {"table": "expenses", "column": "fund", "foreign_key_table": "funds", "foreign_key_column": "id", "constraint_name": "expenses_fund_foreign", "on_update": "NO ACTION", "on_delete": "SET NULL"}
+}
+

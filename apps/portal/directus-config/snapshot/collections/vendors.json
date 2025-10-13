@@ -1,0 +1,42 @@
+{
+  "collection": "vendors",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "vendors",
+    "color": null,
+    "display_template": "{{vendor_number}} - {{name}}",
+    "group": "finance",
+    "hidden": false,
+    "icon": "store",
+    "item_duplication_fields": null,
+    "note": "Vendors and suppliers",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 4,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Vendors",
+        "singular": "Vendor",
+        "translation": "Vendors"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Lieferanten",
+        "singular": "Lieferant",
+        "translation": "Lieferanten"
+      }
+    ],
+    "unarchive_value": "active",
+    "versioning": false
+  },
+  "schema": {
+    "name": "vendors"
+  }
+}
+

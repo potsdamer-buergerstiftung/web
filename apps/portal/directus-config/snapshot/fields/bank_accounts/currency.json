@@ -1,0 +1,7 @@
+{
+  "collection": "bank_accounts",
+  "field": "currency",
+  "type": "string",
+  "meta": {"collection": "bank_accounts", "field": "currency", "interface": "select-dropdown", "options": {"choices": [{"text": "EUR", "value": "EUR"}, {"text": "USD", "value": "USD"}]}, "sort": 5, "width": "half", "translations": [{"language": "en-US", "translation": "Currency"}, {"language": "de-DE", "translation": "Währung"}]},
+  "schema": {"name": "currency", "table": "bank_accounts", "data_type": "character varying", "default_value": "EUR", "max_length": 3, "is_nullable": false}
+}

@@ -1,0 +1,7 @@
+{
+  "collection": "bank_transactions",
+  "field": "balance_after",
+  "type": "decimal",
+  "meta": {"collection": "bank_transactions", "display": "formatted-value", "display_options": {"format": true, "icon": "euro_symbol"}, "field": "balance_after", "interface": "input", "sort": 6, "width": "half", "translations": [{"language": "en-US", "translation": "Balance After"}, {"language": "de-DE", "translation": "Saldo danach"}]},
+  "schema": {"name": "balance_after", "table": "bank_transactions", "data_type": "numeric", "numeric_precision": 10, "numeric_scale": 2, "is_nullable": true}
+}

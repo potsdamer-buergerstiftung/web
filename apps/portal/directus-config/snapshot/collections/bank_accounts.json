@@ -1,0 +1,42 @@
+{
+  "collection": "bank_accounts",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "is_active",
+    "archive_value": false,
+    "collapse": "open",
+    "collection": "bank_accounts",
+    "color": null,
+    "display_template": "{{name}} - {{account_number}}",
+    "group": "finance",
+    "hidden": false,
+    "icon": "account_balance",
+    "item_duplication_fields": null,
+    "note": "Organization bank accounts",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 7,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Bank Accounts",
+        "singular": "Bank Account",
+        "translation": "Bank Accounts"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Bankkonten",
+        "singular": "Bankkonto",
+        "translation": "Bankkonten"
+      }
+    ],
+    "unarchive_value": true,
+    "versioning": false
+  },
+  "schema": {
+    "name": "bank_accounts"
+  }
+}
+

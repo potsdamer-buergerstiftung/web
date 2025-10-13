@@ -1,0 +1,26 @@
+{
+  "collection": "expenses",
+  "field": "receipt_file",
+  "type": "uuid",
+  "meta": {
+    "collection": "expenses",
+    "field": "receipt_file",
+    "interface": "file",
+    "note": "Upload receipt or invoice",
+    "sort": 13,
+    "width": "full",
+    "translations": [
+      {"language": "en-US", "translation": "Receipt File"},
+      {"language": "de-DE", "translation": "Beleg"}
+    ]
+  },
+  "schema": {
+    "name": "receipt_file",
+    "table": "expenses",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id"
+  }
+}
+

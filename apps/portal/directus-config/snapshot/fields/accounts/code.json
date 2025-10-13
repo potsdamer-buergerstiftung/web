@@ -1,0 +1,55 @@
+{
+  "collection": "accounts",
+  "field": "code",
+  "type": "string",
+  "meta": {
+    "collection": "accounts",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "code",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": "Account code/number",
+    "options": {
+      "trim": true
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Code"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Kontonummer"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "code",
+    "table": "accounts",
+    "data_type": "character varying",
+    "default_value": null,
+    "max_length": 50,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": true,
+    "is_indexed": true,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}
+

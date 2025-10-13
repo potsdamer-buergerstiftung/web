@@ -1,0 +1,7 @@
+{
+  "collection": "bank_transactions",
+  "field": "reconciled_with_invoice",
+  "type": "uuid",
+  "meta": {"collection": "bank_transactions", "display": "related-values", "display_options": {"template": "{{invoice_number}}"}, "field": "reconciled_with_invoice", "interface": "select-dropdown-m2o", "options": {"template": "{{invoice_number}}"}, "sort": 10, "width": "half", "translations": [{"language": "en-US", "translation": "Reconciled with Invoice"}, {"language": "de-DE", "translation": "Abgeglichen mit Rechnung"}]},
+  "schema": {"name": "reconciled_with_invoice", "table": "bank_transactions", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "invoices", "foreign_key_column": "id"}
+}

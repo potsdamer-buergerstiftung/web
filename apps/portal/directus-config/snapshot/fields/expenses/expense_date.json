@@ -1,0 +1,26 @@
+{
+  "collection": "expenses",
+  "field": "expense_date",
+  "type": "date",
+  "meta": {
+    "collection": "expenses",
+    "display": "datetime",
+    "display_options": {"relative": false},
+    "field": "expense_date",
+    "interface": "datetime",
+    "required": true,
+    "sort": 3,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Expense Date"},
+      {"language": "de-DE", "translation": "Ausgabendatum"}
+    ]
+  },
+  "schema": {
+    "name": "expense_date",
+    "table": "expenses",
+    "data_type": "date",
+    "is_nullable": false
+  }
+}
+

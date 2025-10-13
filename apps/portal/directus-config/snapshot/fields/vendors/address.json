@@ -1,0 +1,23 @@
+{
+  "collection": "vendors",
+  "field": "address",
+  "type": "text",
+  "meta": {
+    "collection": "vendors",
+    "field": "address",
+    "interface": "input-multiline",
+    "sort": 8,
+    "width": "full",
+    "translations": [
+      {"language": "en-US", "translation": "Address"},
+      {"language": "de-DE", "translation": "Adresse"}
+    ]
+  },
+  "schema": {
+    "name": "address",
+    "table": "vendors",
+    "data_type": "text",
+    "is_nullable": true
+  }
+}
+

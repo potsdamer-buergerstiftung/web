@@ -1,0 +1,8 @@
+{
+  "collection": "budgets",
+  "field": "notes",
+  "type": "text",
+  "meta": {"collection": "budgets", "field": "notes", "interface": "input-multiline", "sort": 9, "width": "full", "translations": [{"language": "en-US", "translation": "Notes"}, {"language": "de-DE", "translation": "Notizen"}]},
+  "schema": {"name": "notes", "table": "budgets", "data_type": "text", "is_nullable": true}
+}
+

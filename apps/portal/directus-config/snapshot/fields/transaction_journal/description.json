@@ -1,0 +1,8 @@
+{
+  "collection": "transaction_journal",
+  "field": "description",
+  "type": "text",
+  "meta": {"collection": "transaction_journal", "field": "description", "interface": "input-multiline", "sort": 7, "width": "full", "translations": [{"language": "en-US", "translation": "Description"}, {"language": "de-DE", "translation": "Beschreibung"}]},
+  "schema": {"name": "description", "table": "transaction_journal", "data_type": "text", "is_nullable": true}
+}
+

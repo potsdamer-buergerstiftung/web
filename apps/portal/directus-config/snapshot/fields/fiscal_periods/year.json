@@ -1,0 +1,8 @@
+{
+  "collection": "fiscal_periods",
+  "field": "year",
+  "type": "integer",
+  "meta": {"collection": "fiscal_periods", "field": "year", "interface": "input", "required": true, "sort": 2, "width": "half", "note": "e.g., 2025", "translations": [{"language": "en-US", "translation": "Year"}, {"language": "de-DE", "translation": "Jahr"}]},
+  "schema": {"name": "year", "table": "fiscal_periods", "data_type": "integer", "is_nullable": false, "is_unique": true}
+}
+

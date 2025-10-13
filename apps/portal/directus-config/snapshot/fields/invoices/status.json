@@ -1,0 +1,39 @@
+{
+  "collection": "invoices",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "invoices",
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {"text": "$t:draft", "value": "draft", "foreground": "#FFFFFF", "background": "#9E9E9E"},
+        {"text": "Pending", "value": "pending", "foreground": "#FFFFFF", "background": "#FF9800"},
+        {"text": "Paid", "value": "paid", "foreground": "#FFFFFF", "background": "#4CAF50"},
+        {"text": "$t:archived", "value": "archived", "foreground": "#FFFFFF", "background": "#607D8B"}
+      ],
+      "showAsDot": true
+    },
+    "field": "status",
+    "interface": "select-dropdown",
+    "options": {
+      "choices": [
+        {"text": "$t:draft", "value": "draft"},
+        {"text": "Pending", "value": "pending"},
+        {"text": "Paid", "value": "paid"},
+        {"text": "$t:archived", "value": "archived"}
+      ]
+    },
+    "sort": 2,
+    "width": "half"
+  },
+  "schema": {
+    "name": "status",
+    "table": "invoices",
+    "data_type": "character varying",
+    "default_value": "draft",
+    "max_length": 255,
+    "is_nullable": false
+  }
+}
+

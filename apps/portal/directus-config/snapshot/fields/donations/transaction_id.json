@@ -1,0 +1,29 @@
+{
+  "collection": "donations",
+  "field": "transaction_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "donations",
+    "display": "related-values",
+    "display_options": {"template": "{{transaction_date}} - {{amount}}"},
+    "field": "transaction_id",
+    "interface": "select-dropdown-m2o",
+    "note": "Link to transaction journal entry",
+    "options": {"template": "{{transaction_date}} - {{amount}}"},
+    "sort": 19,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Transaction"},
+      {"language": "de-DE", "translation": "Transaktion"}
+    ]
+  },
+  "schema": {
+    "name": "transaction_id",
+    "table": "donations",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "transaction_journal",
+    "foreign_key_column": "id"
+  }
+}
+

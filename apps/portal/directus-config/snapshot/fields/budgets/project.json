@@ -1,0 +1,8 @@
+{
+  "collection": "budgets",
+  "field": "project",
+  "type": "uuid",
+  "meta": {"collection": "budgets", "display": "related-values", "display_options": {"template": "{{name}}"}, "field": "project", "interface": "select-dropdown-m2o", "options": {"template": "{{name}}"}, "sort": 8, "width": "half", "translations": [{"language": "en-US", "translation": "Project"}, {"language": "de-DE", "translation": "Projekt"}]},
+  "schema": {"name": "project", "table": "budgets", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "projects", "foreign_key_column": "id"}
+}
+

@@ -1,0 +1,7 @@
+{
+  "collection": "bank_transactions",
+  "field": "reconciled_with_donation",
+  "type": "uuid",
+  "meta": {"collection": "bank_transactions", "display": "related-values", "display_options": {"template": "{{amount}} - {{contact_id.first_name}} {{contact_id.last_name}}"}, "field": "reconciled_with_donation", "interface": "select-dropdown-m2o", "options": {"template": "{{amount}} - {{contact_id.first_name}} {{contact_id.last_name}}"}, "sort": 11, "width": "half", "translations": [{"language": "en-US", "translation": "Reconciled with Donation"}, {"language": "de-DE", "translation": "Abgeglichen mit Spende"}]},
+  "schema": {"name": "reconciled_with_donation", "table": "bank_transactions", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "donations", "foreign_key_column": "id"}
+}

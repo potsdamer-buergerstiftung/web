@@ -1,0 +1,7 @@
+{
+  "collection": "bank_transactions",
+  "field": "user_updated",
+  "type": "uuid",
+  "meta": {"collection": "bank_transactions", "display": "user", "field": "user_updated", "hidden": true, "interface": "select-dropdown-m2o", "options": {"template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"}, "readonly": true, "sort": 15, "special": ["user-updated"], "width": "half"},
+  "schema": {"name": "user_updated", "table": "bank_transactions", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "directus_users", "foreign_key_column": "id"}
+}

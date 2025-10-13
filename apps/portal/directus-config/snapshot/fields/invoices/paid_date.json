@@ -1,0 +1,24 @@
+{
+  "collection": "invoices",
+  "field": "paid_date",
+  "type": "date",
+  "meta": {
+    "collection": "invoices",
+    "display": "datetime",
+    "field": "paid_date",
+    "interface": "datetime",
+    "sort": 9,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Paid Date"},
+      {"language": "de-DE", "translation": "Bezahlt am"}
+    ]
+  },
+  "schema": {
+    "name": "paid_date",
+    "table": "invoices",
+    "data_type": "date",
+    "is_nullable": true
+  }
+}
+

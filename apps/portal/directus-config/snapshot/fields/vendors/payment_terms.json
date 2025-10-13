@@ -1,0 +1,25 @@
+{
+  "collection": "vendors",
+  "field": "payment_terms",
+  "type": "string",
+  "meta": {
+    "collection": "vendors",
+    "field": "payment_terms",
+    "interface": "input",
+    "note": "e.g., Net 30",
+    "sort": 10,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Payment Terms"},
+      {"language": "de-DE", "translation": "Zahlungsbedingungen"}
+    ]
+  },
+  "schema": {
+    "name": "payment_terms",
+    "table": "vendors",
+    "data_type": "character varying",
+    "max_length": 100,
+    "is_nullable": true
+  }
+}
+

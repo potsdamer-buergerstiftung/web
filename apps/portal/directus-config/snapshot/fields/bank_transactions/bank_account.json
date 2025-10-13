@@ -1,0 +1,7 @@
+{
+  "collection": "bank_transactions",
+  "field": "bank_account",
+  "type": "uuid",
+  "meta": {"collection": "bank_transactions", "display": "related-values", "display_options": {"template": "{{name}} - {{account_number}}"}, "field": "bank_account", "interface": "select-dropdown-m2o", "options": {"template": "{{name}} - {{account_number}}"}, "required": true, "sort": 2, "width": "half", "translations": [{"language": "en-US", "translation": "Bank Account"}, {"language": "de-DE", "translation": "Bankkonto"}]},
+  "schema": {"name": "bank_account", "table": "bank_transactions", "data_type": "uuid", "is_nullable": false, "foreign_key_table": "bank_accounts", "foreign_key_column": "id"}
+}

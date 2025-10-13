@@ -1,0 +1,42 @@
+{
+  "collection": "transaction_journal",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": false,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "transaction_journal",
+    "color": null,
+    "display_template": "{{transaction_date}} - {{amount}} {{currency}} - {{description}}",
+    "group": "finance",
+    "hidden": false,
+    "icon": "menu_book",
+    "item_duplication_fields": null,
+    "note": "Unified transaction log for reporting",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 12,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Transaction Journal",
+        "singular": "Transaction",
+        "translation": "Transaction Journal"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Transaktionsjournal",
+        "singular": "Transaktion",
+        "translation": "Transaktionsjournal"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "transaction_journal"
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "collection": "invoices",
+  "field": "date_created",
+  "type": "timestamp",
+  "meta": {
+    "collection": "invoices",
+    "display": "datetime",
+    "display_options": {"relative": true},
+    "field": "date_created",
+    "hidden": true,
+    "interface": "datetime",
+    "readonly": true,
+    "sort": 15,
+    "special": ["date-created"],
+    "width": "half"
+  },
+  "schema": {
+    "name": "date_created",
+    "table": "invoices",
+    "data_type": "timestamp with time zone",
+    "is_nullable": true
+  }
+}
+

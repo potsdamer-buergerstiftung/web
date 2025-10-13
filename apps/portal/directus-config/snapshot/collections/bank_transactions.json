@@ -1,0 +1,42 @@
+{
+  "collection": "bank_transactions",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": false,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "bank_transactions",
+    "color": null,
+    "display_template": "{{transaction_date}} - {{amount}} - {{description}}",
+    "group": "finance",
+    "hidden": false,
+    "icon": "sync_alt",
+    "item_duplication_fields": null,
+    "note": "Bank transactions for reconciliation",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 8,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Bank Transactions",
+        "singular": "Bank Transaction",
+        "translation": "Bank Transactions"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Banktransaktionen",
+        "singular": "Banktransaktion",
+        "translation": "Banktransaktionen"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "bank_transactions"
+  }
+}
+

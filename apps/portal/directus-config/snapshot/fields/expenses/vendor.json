@@ -1,0 +1,28 @@
+{
+  "collection": "expenses",
+  "field": "vendor",
+  "type": "uuid",
+  "meta": {
+    "collection": "expenses",
+    "display": "related-values",
+    "display_options": {"template": "{{vendor_number}} - {{name}}"},
+    "field": "vendor",
+    "interface": "select-dropdown-m2o",
+    "options": {"template": "{{vendor_number}} - {{name}}"},
+    "sort": 6,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Vendor"},
+      {"language": "de-DE", "translation": "Lieferant"}
+    ]
+  },
+  "schema": {
+    "name": "vendor",
+    "table": "expenses",
+    "data_type": "uuid",
+    "is_nullable": true,
+    "foreign_key_table": "vendors",
+    "foreign_key_column": "id"
+  }
+}
+

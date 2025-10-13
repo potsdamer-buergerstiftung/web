@@ -1,0 +1,39 @@
+{
+  "collection": "vendors",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "vendors",
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {"text": "$t:active", "value": "active", "foreground": "#FFFFFF", "background": "#4CAF50"},
+        {"text": "$t:archived", "value": "archived", "foreground": "#FFFFFF", "background": "#9E9E9E"}
+      ],
+      "showAsDot": true
+    },
+    "field": "status",
+    "interface": "select-dropdown",
+    "options": {
+      "choices": [
+        {"text": "$t:active", "value": "active"},
+        {"text": "$t:archived", "value": "archived"}
+      ]
+    },
+    "sort": 2,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Status"},
+      {"language": "de-DE", "translation": "Status"}
+    ]
+  },
+  "schema": {
+    "name": "status",
+    "table": "vendors",
+    "data_type": "character varying",
+    "default_value": "active",
+    "max_length": 255,
+    "is_nullable": false
+  }
+}
+

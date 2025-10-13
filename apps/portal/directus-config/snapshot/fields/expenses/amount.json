@@ -1,0 +1,29 @@
+{
+  "collection": "expenses",
+  "field": "amount",
+  "type": "decimal",
+  "meta": {
+    "collection": "expenses",
+    "display": "formatted-value",
+    "display_options": {"format": true, "icon": "euro_symbol"},
+    "field": "amount",
+    "interface": "input",
+    "options": {"min": 0},
+    "required": true,
+    "sort": 4,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Amount"},
+      {"language": "de-DE", "translation": "Betrag"}
+    ]
+  },
+  "schema": {
+    "name": "amount",
+    "table": "expenses",
+    "data_type": "numeric",
+    "numeric_precision": 10,
+    "numeric_scale": 2,
+    "is_nullable": false
+  }
+}
+

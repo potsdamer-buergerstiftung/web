@@ -1,0 +1,89 @@
+{
+  "collection": "funds",
+  "field": "type",
+  "type": "string",
+  "meta": {
+    "collection": "funds",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "text": "Unrestricted",
+          "value": "unrestricted",
+          "foreground": "#FFFFFF",
+          "background": "#2196F3"
+        },
+        {
+          "text": "Restricted",
+          "value": "restricted",
+          "foreground": "#FFFFFF",
+          "background": "#FF9800"
+        },
+        {
+          "text": "Temporarily Restricted",
+          "value": "temporarily_restricted",
+          "foreground": "#FFFFFF",
+          "background": "#9C27B0"
+        }
+      ]
+    },
+    "field": "type",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": "Fund restriction type",
+    "options": {
+      "choices": [
+        {
+          "text": "Unrestricted",
+          "value": "unrestricted"
+        },
+        {
+          "text": "Restricted",
+          "value": "restricted"
+        },
+        {
+          "text": "Temporarily Restricted",
+          "value": "temporarily_restricted"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 5,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Type"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Typ"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "type",
+    "table": "funds",
+    "data_type": "character varying",
+    "default_value": "unrestricted",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}
+

@@ -1,0 +1,8 @@
+{
+  "collection": "fiscal_periods",
+  "field": "end_date",
+  "type": "date",
+  "meta": {"collection": "fiscal_periods", "display": "datetime", "field": "end_date", "interface": "datetime", "required": true, "sort": 4, "width": "half", "translations": [{"language": "en-US", "translation": "End Date"}, {"language": "de-DE", "translation": "Enddatum"}]},
+  "schema": {"name": "end_date", "table": "fiscal_periods", "data_type": "date", "is_nullable": false}
+}
+

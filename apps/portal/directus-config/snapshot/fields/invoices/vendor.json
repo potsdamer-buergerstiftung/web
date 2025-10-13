@@ -1,0 +1,29 @@
+{
+  "collection": "invoices",
+  "field": "vendor",
+  "type": "uuid",
+  "meta": {
+    "collection": "invoices",
+    "display": "related-values",
+    "display_options": {"template": "{{vendor_number}} - {{name}}"},
+    "field": "vendor",
+    "interface": "select-dropdown-m2o",
+    "options": {"template": "{{vendor_number}} - {{name}}"},
+    "required": true,
+    "sort": 4,
+    "width": "half",
+    "translations": [
+      {"language": "en-US", "translation": "Vendor"},
+      {"language": "de-DE", "translation": "Lieferant"}
+    ]
+  },
+  "schema": {
+    "name": "vendor",
+    "table": "invoices",
+    "data_type": "uuid",
+    "is_nullable": false,
+    "foreign_key_table": "vendors",
+    "foreign_key_column": "id"
+  }
+}
+
