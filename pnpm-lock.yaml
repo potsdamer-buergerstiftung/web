@@ -30,8 +30,8 @@ importers:
         specifier: ^2.0.13
         version: 2.2.0(react@18.3.1)
       '@mollie/api-client':
-        specifier: ^3.7.0
-        version: 3.7.0
+        specifier: ^4.0.0
+        version: 4.3.3(encoding@0.1.13)
       '@types/react-responsive-masonry':
         specifier: ^2.1.0
         version: 2.6.0
@@ -176,8 +176,8 @@ importers:
         specifier: ^1.20.0
         version: 1.20.0
       '@mollie/api-client':
-        specifier: ^3.7.0
-        version: 3.7.0
+        specifier: ^4.0.0
+        version: 4.3.3(encoding@0.1.13)
       '@types/react-responsive-masonry':
         specifier: ^2.1.0
         version: 2.6.0
@@ -1024,9 +1024,9 @@ packages:
     resolution: {integrity: sha512-kOQ4+fHuT4KbR2iq2IjeV32HiihueuOf1vJkq18z08CLZ1UQrTc8BXJpVfxZkq45+inLLD+D4xx4nBjUelJa4Q==}
     engines: {node: '>=18'}
 
-  '@mollie/api-client@3.7.0':
-    resolution: {integrity: sha512-8pYq08xwv7VJIQvOJU+3nThZbXuNLhtD8iJQQ4UYW67kxHw4eC6cVE9SNVtUuHRfxTwcKLv5wrZd9jFb3BFqiA==}
-    engines: {node: '>=6.14'}
+  '@mollie/api-client@4.3.3':
+    resolution: {integrity: sha512-vA8EM3nO8pcTX2AAG93FQElZ9uVpKJ7DBCEalvyStZEnGYGD3fIVPs6Pmr0lIB2tkjrqjEdbhfwwaK4MtBxs+w==}
+    engines: {node: '>=8'}
 
   '@motionone/animation@10.18.0':
     resolution: {integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==}
@@ -1788,6 +1788,9 @@ packages:
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
+
+  '@types/node-fetch@2.6.13':
+    resolution: {integrity: sha512-QGpRVpzSaUs30JBSGPjOg4Uveu384erbHBoT1zeONvyCfwQxIkUshLAOqN/k9EjGviPRmWTTe6aH2qySWKTVSw==}
 
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
@@ -3838,6 +3841,10 @@ packages:
     resolution: {integrity: sha512-qsITQPfmvMOSAdeyZ+12I1c+CKSstAFAwu+97zrnWAbIr5u8wfsExUzCesVLC8NgHuRUqNN4Zy6UPWUTRGslcA==}
     engines: {node: '>= 6'}
 
+  form-data@4.0.4:
+    resolution: {integrity: sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==}
+    engines: {node: '>= 6'}
+
   formdata-node@4.4.1:
     resolution: {integrity: sha512-0iirZp3uVDjVGt9p49aTaqjk84TrglENEDuqfdlZQ1roC9CWlPk6Avf8EEnZNcAqPonwkG35x4n3ww/1THYAeQ==}
     engines: {node: '>= 12.20'}
@@ -4695,7 +4702,6 @@ packages:
     resolution: {integrity: sha512-t0etAxTUk1w5MYdNOkZBZ8rvYYN5iL+2dHCCx/DpkFm/bW28M6y5nUS83D4XdZiHy35Fpaw6LBb+F88fHZnVCw==}
     engines: {node: '>=8.17.0'}
     hasBin: true
-    bundledDependencies: []
 
   jsonpath@1.1.1:
     resolution: {integrity: sha512-l6Cg7jRpixfbgoWgkrl77dgEj8RPvND0wMH6TwQmi9Qs4TFfS9u5cUFnbeKTwj5ga5Y3BTGGNI28k117LJ009w==}
@@ -5921,7 +5927,7 @@ packages:
   puppeteer@14.4.1:
     resolution: {integrity: sha512-+H0Gm84aXUvSLdSiDROtLlOofftClgw2TdceMvvCU9UvMryappoeS3+eOLfKvoy4sm8B8MWnYmPhWxVFudAOFQ==}
     engines: {node: '>=14.1.0'}
-    deprecated: < 24.10.2 is no longer supported
+    deprecated: < 24.15.0 is no longer supported
 
   pure-rand@6.1.0:
     resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
@@ -6377,6 +6383,9 @@ packages:
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
+
+  ruply@1.0.1:
+    resolution: {integrity: sha512-p39LnaaJyuucPGlgaB0KiyifpcuOkn24+Hq5y0ejAD/LlH+mRAbkHn2tckCLgHir+S+nis1WYG+TYEC4zHX0WQ==}
 
   safe-array-concat@1.1.3:
     resolution: {integrity: sha512-AURm5f0jYEOydBj7VQlVvDrjeFgthDdEF5H1dP+6mNpoXOMo1quQqJ4wvJDyRZ9+pO3kGWoOdmV08cSv2aJV6Q==}
@@ -8088,11 +8097,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mollie/api-client@3.7.0':
+  '@mollie/api-client@4.3.3(encoding@0.1.13)':
     dependencies:
-      axios: 0.27.2
+      '@types/node-fetch': 2.6.13
+      node-fetch: 2.7.0(encoding@0.1.13)
+      ruply: 1.0.1
     transitivePeerDependencies:
-      - debug
+      - encoding
 
   '@motionone/animation@10.18.0':
     dependencies:
@@ -8849,6 +8860,11 @@ snapshots:
   '@types/mdurl@2.0.0': {}
 
   '@types/ms@2.1.0': {}
+
+  '@types/node-fetch@2.6.13':
+    dependencies:
+      '@types/node': 17.0.45
+      form-data: 4.0.4
 
   '@types/node@17.0.45': {}
 
@@ -11129,7 +11145,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.37.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.31.0)(eslint@9.37.0(jiti@2.4.2))
+      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-react: 7.37.5(eslint@9.37.0(jiti@2.4.2))
@@ -11148,7 +11164,7 @@ snapshots:
       eslint: 9.37.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-react: 7.37.5(eslint@9.37.0(jiti@2.4.2))
       eslint-plugin-react-hooks: 4.6.2(eslint@9.37.0(jiti@2.4.2))
@@ -11184,18 +11200,6 @@ snapshots:
     dependencies:
       debug: 4.4.1
       eslint: 9.37.0(jiti@2.4.2)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
-      glob: 7.2.3
-      is-glob: 4.0.3
-      resolve: 1.22.10
-      tsconfig-paths: 3.15.0
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0)(eslint@9.37.0(jiti@2.4.2)):
-    dependencies:
-      debug: 4.4.1
-      eslint: 9.37.0(jiti@2.4.2)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2))
       glob: 7.2.3
       is-glob: 4.0.3
@@ -11215,46 +11219,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2)):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3)
-      eslint: 9.37.0(jiti@2.4.2)
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.31.0)(eslint@9.37.0(jiti@2.4.2))
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)):
-    dependencies:
-      '@rtsao/scc': 1.1.0
-      array-includes: 3.1.9
-      array.prototype.findlastindex: 1.2.6
-      array.prototype.flat: 1.3.3
-      array.prototype.flatmap: 1.3.3
-      debug: 3.2.7
-      doctrine: 2.1.0
-      eslint: 9.37.0(jiti@2.4.2)
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
-      hasown: 2.0.2
-      is-core-module: 2.16.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.8
-      object.groupby: 1.0.3
-      object.values: 1.2.1
-      semver: 6.3.1
-      string.prototype.trimend: 1.0.9
-      tsconfig-paths: 3.15.0
-    optionalDependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3)
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
   eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2)):
     dependencies:
       '@rtsao/scc': 1.1.0
@@ -11266,7 +11230,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.37.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1)(eslint@9.37.0(jiti@2.4.2))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.31.0(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2)))(eslint@9.37.0(jiti@2.4.2))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -11692,6 +11656,14 @@ snapshots:
   form-data-encoder@1.9.0: {}
 
   form-data@4.0.3:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      es-set-tostringtag: 2.1.0
+      hasown: 2.0.2
+      mime-types: 2.1.35
+
+  form-data@4.0.4:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
@@ -14842,6 +14814,8 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
+
+  ruply@1.0.1: {}
 
   safe-array-concat@1.1.3:
     dependencies:
