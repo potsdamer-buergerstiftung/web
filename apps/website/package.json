@@ -10,7 +10,7 @@
   "dependencies": {
     "@directus/sdk": "^20.1.0",
     "@directus/visual-editing": "^1.0.1",
-    "@headlessui/react": "^1.7.7",
+    "@headlessui/react": "^2.0.0",
     "@heroicons/react": "^2.0.13",
     "@mollie/api-client": "^3.7.0",
     "@types/react-responsive-masonry": "^2.1.0",
