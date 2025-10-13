@@ -1,0 +1,41 @@
+{
+  "collection": "pages",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "pages",
+    "color": null,
+    "display_template": null,
+    "group": "web",
+    "hidden": true,
+    "icon": null,
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 2,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Pages",
+        "singular": "Page",
+        "translation": "Pages"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Seiten",
+        "singular": "Seite",
+        "translation": "Seiten"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "pages"
+  }
+}

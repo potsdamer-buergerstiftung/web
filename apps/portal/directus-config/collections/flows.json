@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Test",
+    "icon": "bolt",
+    "color": null,
+    "description": null,
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "action",
+      "scope": [
+        "items.create"
+      ],
+      "collections": [
+        "directus_activity"
+      ]
+    },
+    "operation": null,
+    "_syncId": "ba3aec17-36a4-4dbe-9831-f9233aa2f890"
+  }
+]

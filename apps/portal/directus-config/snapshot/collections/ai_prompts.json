@@ -1,0 +1,41 @@
+{
+  "collection": "ai_prompts",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "ai_prompts",
+    "color": null,
+    "display_template": null,
+    "group": null,
+    "hidden": false,
+    "icon": "magic_button",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 3,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "AI Prompts",
+        "singular": "AI Prompt",
+        "translation": "AI Prompts"
+      },
+      {
+        "language": "de-DE",
+        "plural": "KI-Prompts",
+        "singular": "KI-Prompt",
+        "translation": "KI-Prompts"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "ai_prompts"
+  }
+}

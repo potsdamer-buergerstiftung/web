@@ -1,0 +1,41 @@
+{
+  "collection": "articles_tags",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "articles_tags",
+    "color": null,
+    "display_template": null,
+    "group": null,
+    "hidden": true,
+    "icon": "link",
+    "item_duplication_fields": null,
+    "note": "Junction table for articles and tags",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 2,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Article Tags",
+        "singular": "Article Tag",
+        "translation": "Article Tag"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Artikel-Tags",
+        "singular": "Artikel-Tag",
+        "translation": "Artikel-Tag"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "articles_tags"
+  }
+}

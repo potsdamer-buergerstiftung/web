@@ -12,7 +12,7 @@ RUN npm install -g pnpm --force
 USER node
 
 # Installing contributed/custom extensions through npm on Railway
-RUN pnpm install directus-extension-sync
+RUN pnpm install directus-extension-sync && pnpm install @directus-labs/tree-view-table-layout
 
 # Migrations and Directus schema update
 RUN npx directus bootstrap

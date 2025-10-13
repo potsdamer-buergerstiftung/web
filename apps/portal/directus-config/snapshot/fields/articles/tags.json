@@ -1,0 +1,39 @@
+{
+  "collection": "articles",
+  "field": "tags",
+  "type": "alias",
+  "meta": {
+    "collection": "articles",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "tags",
+    "group": null,
+    "hidden": false,
+    "interface": "tags",
+    "note": "Tags associated with the article",
+    "options": {
+      "allowOther": true,
+      "template": "{{name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 8,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Tags"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Tags"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}
