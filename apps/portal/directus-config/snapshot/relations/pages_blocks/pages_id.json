@@ -11,7 +11,7 @@
     "one_collection_field": null,
     "one_deselect_action": "nullify",
     "one_field": "blocks",
-    "sort_field": null
+    "sort_field": "sort"
   },
   "schema": {
     "table": "pages_blocks",

@@ -3,7 +3,7 @@
   "info": {
     "title": "Dynamic API Specification",
     "description": "This is a dynamically generated API specification for all endpoints existing on the current project.",
-    "version": "ccce837d26bc5f11f27569e198bca70ba2d34d87"
+    "version": "b8d4ae10a4fcce18978eda857f3ccfd7135d9e22"
   },
   "servers": [
     {
@@ -10623,15 +10623,15 @@
         ]
       }
     },
-    "/items/websites": {
+    "/items/form_field_text": {
       "post": {
         "summary": "Create an Item",
-        "description": "Create a new websites item.",
+        "description": "Create a new form_field_text item.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "createItemsWebsites",
+        "operationId": "createItemsFormFieldText",
         "parameters": [
           {
             "$ref": "#/components/parameters/Meta"
@@ -10645,11 +10645,11 @@
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/ItemsWebsites"
+                      "$ref": "#/components/schemas/ItemsFormFieldText"
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/ItemsWebsites"
+                    "$ref": "#/components/schemas/ItemsFormFieldText"
                   }
                 ]
               }
@@ -10667,7 +10667,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/ItemsWebsites"
+                        "$ref": "#/components/schemas/ItemsFormFieldText"
                       }
                     }
                   }
@@ -10682,12 +10682,12 @@
       },
       "get": {
         "summary": "List Items",
-        "description": "List the websites items.",
+        "description": "List the form_field_text items.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "readItemsWebsites",
+        "operationId": "readItemsFormFieldText",
         "security": [
           {
             "Auth": []
@@ -10728,7 +10728,7 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "$ref": "#/components/schemas/ItemsWebsites"
+                        "$ref": "#/components/schemas/ItemsFormFieldText"
                       }
                     },
                     "meta": {
@@ -10746,12 +10746,12 @@
       },
       "patch": {
         "summary": "Update Multiple Items",
-        "description": "Update multiple websites items at the same time.",
+        "description": "Update multiple form_field_text items at the same time.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "updateItemsWebsites",
+        "operationId": "updateItemsFormFieldText",
         "parameters": [
           {
             "$ref": "#/components/parameters/Fields"
@@ -10783,11 +10783,11 @@
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/ItemsWebsites"
+                      "$ref": "#/components/schemas/ItemsFormFieldText"
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/ItemsWebsites"
+                    "$ref": "#/components/schemas/ItemsFormFieldText"
                   }
                 ]
               }
@@ -10804,7 +10804,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/ItemsWebsites"
+                        "$ref": "#/components/schemas/ItemsFormFieldText"
                       }
                     }
                   }
@@ -10816,12 +10816,12 @@
       },
       "delete": {
         "summary": "Delete Multiple Items",
-        "description": "Delete multiple existing websites items.",
+        "description": "Delete multiple existing form_field_text items.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "deleteItemsWebsites",
+        "operationId": "deleteItemsFormFieldText",
         "responses": {
           "200": {
             "description": "Successful request"
@@ -10833,15 +10833,15 @@
         "parameters": []
       }
     },
-    "/items/websites/{id}": {
+    "/items/form_field_text/{id}": {
       "get": {
         "summary": "Retrieve an Item",
-        "description": "Retrieve a single websites item by unique identifier.",
+        "description": "Retrieve a single form_field_text item by unique identifier.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "readSingleItemsWebsites",
+        "operationId": "readSingleItemsFormFieldText",
         "parameters": [
           {
             "$ref": "#/components/parameters/Fields"
@@ -10883,7 +10883,7 @@
                   "properties": {
                     "data": {
                       "type": "object",
-                      "$ref": "#/components/schemas/ItemsWebsites"
+                      "$ref": "#/components/schemas/ItemsFormFieldText"
                     }
                   }
                 }
@@ -10900,12 +10900,12 @@
       },
       "patch": {
         "summary": "Update an Item",
-        "description": "Update an existing websites item.",
+        "description": "Update an existing form_field_text item.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "updateSingleItemsWebsites",
+        "operationId": "updateSingleItemsFormFieldText",
         "parameters": [
           {
             "$ref": "#/components/parameters/Fields"
@@ -10939,7 +10939,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "$ref": "#/components/schemas/ItemsWebsites"
+                "$ref": "#/components/schemas/ItemsFormFieldText"
               }
             }
           }
@@ -10954,7 +10954,7 @@
                   "properties": {
                     "data": {
                       "type": "object",
-                      "$ref": "#/components/schemas/ItemsWebsites"
+                      "$ref": "#/components/schemas/ItemsFormFieldText"
                     }
                   }
                 }
@@ -10971,12 +10971,12 @@
       },
       "delete": {
         "summary": "Delete an Item",
-        "description": "Delete an existing websites item.",
+        "description": "Delete an existing form_field_text item.",
         "tags": [
           "Items",
-          "ItemsWebsites"
+          "ItemsFormFieldText"
         ],
-        "operationId": "deleteSingleItemsWebsites",
+        "operationId": "deleteSingleItemsFormFieldText",
         "responses": {
           "200": {
             "description": "Successful request"
@@ -11400,6 +11400,1173 @@
           }
         ]
       }
+    },
+    "/items/forms_fields": {
+      "post": {
+        "summary": "Create an Item",
+        "description": "Create a new forms_fields item.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "createItemsFormsFields",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Meta"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsFormsFields"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsFormsFields"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsFormsFields"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "get": {
+        "summary": "List Items",
+        "description": "List the forms_fields items.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "readItemsFormsFields",
+        "security": [
+          {
+            "Auth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ItemsFormsFields"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/x-metadata"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Multiple Items",
+        "description": "Update multiple forms_fields items at the same time.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "updateItemsFormsFields",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsFormsFields"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsFormsFields"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsFormsFields"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Multiple Items",
+        "description": "Delete multiple existing forms_fields items.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "deleteItemsFormsFields",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/items/forms_fields/{id}": {
+      "get": {
+        "summary": "Retrieve an Item",
+        "description": "Retrieve a single forms_fields item by unique identifier.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "readSingleItemsFormsFields",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Version"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsFormsFields"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an Item",
+        "description": "Update an existing forms_fields item.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "updateSingleItemsFormsFields",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ItemsFormsFields"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsFormsFields"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an Item",
+        "description": "Delete an existing forms_fields item.",
+        "tags": [
+          "Items",
+          "ItemsFormsFields"
+        ],
+        "operationId": "deleteSingleItemsFormsFields",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/items/forms": {
+      "post": {
+        "summary": "Create an Item",
+        "description": "Create a new forms item.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "createItemsForms",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Meta"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsForms"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsForms"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsForms"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "get": {
+        "summary": "List Items",
+        "description": "List the forms items.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "readItemsForms",
+        "security": [
+          {
+            "Auth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ItemsForms"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/x-metadata"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Multiple Items",
+        "description": "Update multiple forms items at the same time.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "updateItemsForms",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsForms"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsForms"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsForms"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Multiple Items",
+        "description": "Delete multiple existing forms items.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "deleteItemsForms",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/items/forms/{id}": {
+      "get": {
+        "summary": "Retrieve an Item",
+        "description": "Retrieve a single forms item by unique identifier.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "readSingleItemsForms",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Version"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsForms"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an Item",
+        "description": "Update an existing forms item.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "updateSingleItemsForms",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ItemsForms"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsForms"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an Item",
+        "description": "Delete an existing forms item.",
+        "tags": [
+          "Items",
+          "ItemsForms"
+        ],
+        "operationId": "deleteSingleItemsForms",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/items/block_form": {
+      "post": {
+        "summary": "Create an Item",
+        "description": "Create a new block_form item.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "createItemsBlockForm",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Meta"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsBlockForm"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsBlockForm"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsBlockForm"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "get": {
+        "summary": "List Items",
+        "description": "List the block_form items.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "readItemsBlockForm",
+        "security": [
+          {
+            "Auth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ItemsBlockForm"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/x-metadata"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Multiple Items",
+        "description": "Update multiple block_form items at the same time.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "updateItemsBlockForm",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsBlockForm"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsBlockForm"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsBlockForm"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Multiple Items",
+        "description": "Delete multiple existing block_form items.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "deleteItemsBlockForm",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/items/block_form/{id}": {
+      "get": {
+        "summary": "Retrieve an Item",
+        "description": "Retrieve a single block_form item by unique identifier.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "readSingleItemsBlockForm",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Version"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsBlockForm"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an Item",
+        "description": "Update an existing block_form item.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "updateSingleItemsBlockForm",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ItemsBlockForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsBlockForm"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an Item",
+        "description": "Delete an existing block_form item.",
+        "tags": [
+          "Items",
+          "ItemsBlockForm"
+        ],
+        "operationId": "deleteSingleItemsBlockForm",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
   },
   "tags": [
@@ -11562,12 +12729,24 @@
       "x-collection": "pages"
     },
     {
-      "name": "ItemsWebsites",
-      "x-collection": "websites"
+      "name": "ItemsFormFieldText",
+      "x-collection": "form_field_text"
     },
     {
       "name": "ItemsPagesBlocks",
       "x-collection": "pages_blocks"
+    },
+    {
+      "name": "ItemsFormsFields",
+      "x-collection": "forms_fields"
+    },
+    {
+      "name": "ItemsForms",
+      "x-collection": "forms"
+    },
+    {
+      "name": "ItemsBlockForm",
+      "x-collection": "block_form"
     }
   ],
   "components": {
@@ -13952,16 +15131,21 @@
             "type": "string",
             "format": "timestamp"
           },
-          "website": {
+          "parent": {
             "nullable": true,
             "oneOf": [
               {
-                "type": "string"
+                "type": "string",
+                "format": "uuid"
               },
               {
-                "$ref": "#/components/schemas/ItemsWebsites"
+                "$ref": "#/components/schemas/ItemsPages"
               }
             ]
+          },
+          "title": {
+            "nullable": true,
+            "type": "string"
           },
           "blocks": {
             "nullable": true,
@@ -13983,17 +15167,23 @@
           "id"
         ]
       },
-      "ItemsWebsites": {
+      "ItemsFormFieldText": {
         "type": "object",
         "properties": {
           "id": {
             "nullable": false,
+            "type": "string",
+            "format": "uuid"
+          },
+          "label": {
+            "nullable": false,
             "type": "string"
           }
         },
-        "x-collection": "websites",
+        "x-collection": "form_field_text",
         "required": [
-          "id"
+          "id",
+          "label"
         ]
       },
       "ItemsPagesBlocks": {
@@ -14025,6 +15215,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/ItemsBlockRichtext"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsBlockForm"
                 }
               ]
             }
@@ -14032,9 +15225,153 @@
           "collection": {
             "nullable": true,
             "type": "string"
+          },
+          "sort": {
+            "nullable": true,
+            "type": "integer"
           }
         },
         "x-collection": "pages_blocks"
+      },
+      "ItemsFormsFields": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "nullable": false,
+            "type": "integer"
+          },
+          "forms_id": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "$ref": "#/components/schemas/ItemsForms"
+              }
+            ]
+          },
+          "item": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsFormFieldText"
+                }
+              ]
+            }
+          },
+          "collection": {
+            "nullable": true,
+            "type": "string"
+          },
+          "sort": {
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "x-collection": "forms_fields"
+      },
+      "ItemsForms": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "nullable": false,
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "nullable": false,
+            "type": "string"
+          },
+          "user_created": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "$ref": "#/components/schemas/Users"
+              }
+            ]
+          },
+          "date_created": {
+            "nullable": true,
+            "type": "string",
+            "format": "timestamp"
+          },
+          "user_updated": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "$ref": "#/components/schemas/Users"
+              }
+            ]
+          },
+          "date_updated": {
+            "nullable": true,
+            "type": "string",
+            "format": "timestamp"
+          },
+          "title": {
+            "nullable": true,
+            "type": "string"
+          },
+          "fields": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsFormsFields"
+                }
+              ]
+            }
+          }
+        },
+        "x-collection": "forms",
+        "required": [
+          "id"
+        ]
+      },
+      "ItemsBlockForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "nullable": false,
+            "type": "string",
+            "format": "uuid"
+          },
+          "form": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "$ref": "#/components/schemas/ItemsForms"
+              }
+            ]
+          }
+        },
+        "x-collection": "block_form",
+        "required": [
+          "id"
+        ]
       }
     },
     "parameters": {

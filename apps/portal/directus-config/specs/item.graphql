@@ -31,14 +31,26 @@ type Query {
   pages_by_id(id: ID!, version: String): pages
   pages_aggregated(groupBy: [String], filter: pages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [pages_aggregated!]!
   pages_by_version(version: String!, id: ID!): version_pages
-  websites(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [websites!]!
-  websites_by_id(id: ID!, version: String): websites
-  websites_aggregated(groupBy: [String], filter: websites_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [websites_aggregated!]!
-  websites_by_version(version: String!, id: ID!): version_websites
+  form_field_text(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [form_field_text!]!
+  form_field_text_by_id(id: ID!, version: String): form_field_text
+  form_field_text_aggregated(groupBy: [String], filter: form_field_text_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [form_field_text_aggregated!]!
+  form_field_text_by_version(version: String!, id: ID!): version_form_field_text
   pages_blocks(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages_blocks!]!
   pages_blocks_by_id(id: ID!, version: String): pages_blocks
   pages_blocks_aggregated(groupBy: [String], filter: pages_blocks_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [pages_blocks_aggregated!]!
   pages_blocks_by_version(version: String!, id: ID!): version_pages_blocks
+  forms_fields(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms_fields!]!
+  forms_fields_by_id(id: ID!, version: String): forms_fields
+  forms_fields_aggregated(groupBy: [String], filter: forms_fields_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [forms_fields_aggregated!]!
+  forms_fields_by_version(version: String!, id: ID!): version_forms_fields
+  forms(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms!]!
+  forms_by_id(id: ID!, version: String): forms
+  forms_aggregated(groupBy: [String], filter: forms_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [forms_aggregated!]!
+  forms_by_version(version: String!, id: ID!): version_forms
+  block_form(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [block_form!]!
+  block_form_by_id(id: ID!, version: String): block_form
+  block_form_aggregated(groupBy: [String], filter: block_form_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [block_form_aggregated!]!
+  block_form_by_version(version: String!, id: ID!): version_block_form
 }
 
 type Mutation {
@@ -58,10 +70,16 @@ type Mutation {
   create_articles_item(data: create_articles_input!): articles
   create_pages_items(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_pages_input!]): [pages!]!
   create_pages_item(data: create_pages_input!): pages
-  create_websites_items(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_websites_input!]): [websites!]!
-  create_websites_item(data: create_websites_input!): websites
+  create_form_field_text_items(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_form_field_text_input!]): [form_field_text!]!
+  create_form_field_text_item(data: create_form_field_text_input!): form_field_text
   create_pages_blocks_items(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_pages_blocks_input!]): [pages_blocks!]!
   create_pages_blocks_item(data: create_pages_blocks_input!): pages_blocks
+  create_forms_fields_items(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_forms_fields_input!]): [forms_fields!]!
+  create_forms_fields_item(data: create_forms_fields_input!): forms_fields
+  create_forms_items(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_forms_input!]): [forms!]!
+  create_forms_item(data: create_forms_input!): forms
+  create_block_form_items(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_block_form_input!]): [block_form!]!
+  create_block_form_item(data: create_block_form_input!): block_form
   update_ai_prompts_items(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_ai_prompts_input!): [ai_prompts!]!
   update_ai_prompts_batch(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_ai_prompts_input!]): [ai_prompts!]!
   update_ai_prompts_item(id: ID!, data: update_ai_prompts_input!): ai_prompts
@@ -86,12 +104,21 @@ type Mutation {
   update_pages_items(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_pages_input!): [pages!]!
   update_pages_batch(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_pages_input!]): [pages!]!
   update_pages_item(id: ID!, data: update_pages_input!): pages
-  update_websites_items(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_websites_input!): [websites!]!
-  update_websites_batch(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_websites_input!]): [websites!]!
-  update_websites_item(id: ID!, data: update_websites_input!): websites
+  update_form_field_text_items(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_form_field_text_input!): [form_field_text!]!
+  update_form_field_text_batch(filter: form_field_text_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_form_field_text_input!]): [form_field_text!]!
+  update_form_field_text_item(id: ID!, data: update_form_field_text_input!): form_field_text
   update_pages_blocks_items(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_pages_blocks_input!): [pages_blocks!]!
   update_pages_blocks_batch(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_pages_blocks_input!]): [pages_blocks!]!
   update_pages_blocks_item(id: ID!, data: update_pages_blocks_input!): pages_blocks
+  update_forms_fields_items(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_forms_fields_input!): [forms_fields!]!
+  update_forms_fields_batch(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_forms_fields_input!]): [forms_fields!]!
+  update_forms_fields_item(id: ID!, data: update_forms_fields_input!): forms_fields
+  update_forms_items(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_forms_input!): [forms!]!
+  update_forms_batch(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_forms_input!]): [forms!]!
+  update_forms_item(id: ID!, data: update_forms_input!): forms
+  update_block_form_items(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_block_form_input!): [block_form!]!
+  update_block_form_batch(filter: block_form_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_block_form_input!]): [block_form!]!
+  update_block_form_item(id: ID!, data: update_block_form_input!): block_form
   delete_ai_prompts_items(ids: [ID]!): delete_many
   delete_ai_prompts_item(id: ID!): delete_one
   delete_directus_sync_id_map_items(ids: [ID]!): delete_many
@@ -108,10 +135,16 @@ type Mutation {
   delete_articles_item(id: ID!): delete_one
   delete_pages_items(ids: [ID]!): delete_many
   delete_pages_item(id: ID!): delete_one
-  delete_websites_items(ids: [ID]!): delete_many
-  delete_websites_item(id: ID!): delete_one
+  delete_form_field_text_items(ids: [ID]!): delete_many
+  delete_form_field_text_item(id: ID!): delete_one
   delete_pages_blocks_items(ids: [ID]!): delete_many
   delete_pages_blocks_item(id: ID!): delete_one
+  delete_forms_fields_items(ids: [ID]!): delete_many
+  delete_forms_fields_item(id: ID!): delete_one
+  delete_forms_items(ids: [ID]!): delete_many
+  delete_forms_item(id: ID!): delete_one
+  delete_block_form_items(ids: [ID]!): delete_many
+  delete_block_form_item(id: ID!): delete_one
 }
 
 type Subscription {
@@ -144,8 +177,11 @@ type Subscription {
   tags_mutated(event: EventEnum): tags_mutated
   articles_mutated(event: EventEnum): articles_mutated
   pages_mutated(event: EventEnum): pages_mutated
-  websites_mutated(event: EventEnum): websites_mutated
+  form_field_text_mutated(event: EventEnum): form_field_text_mutated
   pages_blocks_mutated(event: EventEnum): pages_blocks_mutated
+  forms_fields_mutated(event: EventEnum): forms_fields_mutated
+  forms_mutated(event: EventEnum): forms_mutated
+  block_form_mutated(event: EventEnum): block_form_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -194,7 +230,9 @@ enum EventEnum {
   delete
 }
 
-union pages_blocks_item_union = block_richtext
+union forms_fields_item_union = form_field_text
+
+union pages_blocks_item_union = block_richtext | block_form
 
 type ai_prompts {
   id: ID!
@@ -384,6 +422,29 @@ type articles_tags_mutated {
   key: ID!
   event: EventEnum
   data: articles_tags
+}
+
+type block_form {
+  id: ID!
+  form(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+}
+
+type block_form_aggregated {
+  group: JSON
+  countAll: Int
+  count: block_form_aggregated_count
+  countDistinct: block_form_aggregated_count
+}
+
+type block_form_aggregated_count {
+  id: Int
+  form: Int
+}
+
+type block_form_mutated {
+  key: ID!
+  event: EventEnum
+  data: block_form
 }
 
 type block_richtext {
@@ -1061,6 +1122,107 @@ type directus_webhooks_mutated {
   data: directus_webhooks
 }
 
+type form_field_text {
+  id: ID!
+  label: String!
+}
+
+type form_field_text_aggregated {
+  group: JSON
+  countAll: Int
+  count: form_field_text_aggregated_count
+  countDistinct: form_field_text_aggregated_count
+}
+
+type form_field_text_aggregated_count {
+  id: Int
+  label: Int
+}
+
+type form_field_text_mutated {
+  key: ID!
+  event: EventEnum
+  data: form_field_text
+}
+
+type forms {
+  id: ID!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  title: String
+  fields(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms_fields]
+  fields_func: count_functions
+}
+
+type forms_aggregated {
+  group: JSON
+  countAll: Int
+  count: forms_aggregated_count
+  countDistinct: forms_aggregated_count
+}
+
+type forms_aggregated_count {
+  id: Int
+  status: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  title: Int
+  fields: Int
+}
+
+type forms_fields {
+  id: ID!
+  forms_id(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+  item: forms_fields_item_union
+  collection: String
+  sort: Int
+}
+
+type forms_fields_aggregated {
+  group: JSON
+  countAll: Int
+  count: forms_fields_aggregated_count
+  countDistinct: forms_fields_aggregated_count
+  avg: forms_fields_aggregated_fields
+  sum: forms_fields_aggregated_fields
+  avgDistinct: forms_fields_aggregated_fields
+  sumDistinct: forms_fields_aggregated_fields
+  min: forms_fields_aggregated_fields
+  max: forms_fields_aggregated_fields
+}
+
+type forms_fields_aggregated_count {
+  id: Int
+  forms_id: Int
+  item: Int
+  collection: Int
+  sort: Int
+}
+
+type forms_fields_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+type forms_fields_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms_fields
+}
+
+type forms_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms
+}
+
 type pages {
   id: ID!
   status: String
@@ -1071,7 +1233,8 @@ type pages {
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  website(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): websites
+  parent(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
+  title: String
   blocks(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages_blocks]
   blocks_func: count_functions
 }
@@ -1097,7 +1260,8 @@ type pages_aggregated_count {
   date_created: Int
   user_updated: Int
   date_updated: Int
-  website: Int
+  parent: Int
+  title: Int
   blocks: Int
 }
 
@@ -1110,6 +1274,7 @@ type pages_blocks {
   pages_id(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
   item: pages_blocks_item_union
   collection: String
+  sort: Int
 }
 
 type pages_blocks_aggregated {
@@ -1130,10 +1295,12 @@ type pages_blocks_aggregated_count {
   pages_id: Int
   item: Int
   collection: Int
+  sort: Int
 }
 
 type pages_blocks_aggregated_fields {
   id: Float
+  sort: Float
 }
 
 type pages_blocks_mutated {
@@ -1254,6 +1421,12 @@ type version_articles_tags {
 }
 
 """"""
+type version_block_form {
+  id: ID
+  form: JSON
+}
+
+""""""
 type version_block_richtext {
   id: ID
   content: String
@@ -1289,6 +1462,33 @@ type version_directus_sync_id_map {
 }
 
 """"""
+type version_form_field_text {
+  id: ID
+  label: String
+}
+
+""""""
+type version_forms {
+  id: ID
+  status: String
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  title: String
+  fields: JSON
+}
+
+""""""
+type version_forms_fields {
+  id: ID
+  forms_id: JSON
+  item: String
+  collection: String
+  sort: Int
+}
+
+""""""
 type version_pages {
   id: ID
   status: String
@@ -1297,7 +1497,8 @@ type version_pages {
   date_created: Date
   user_updated: JSON
   date_updated: Date
-  website: JSON
+  parent: JSON
+  title: String
   blocks: JSON
 }
 
@@ -1307,6 +1508,7 @@ type version_pages_blocks {
   pages_id: JSON
   item: String
   collection: String
+  sort: Int
 }
 
 """"""
@@ -1324,32 +1526,6 @@ type version_tags {
   slug: String
   user_created: JSON
   user_updated: JSON
-}
-
-""""""
-type version_websites {
-  id: ID
-}
-
-type websites {
-  id: ID!
-}
-
-type websites_aggregated {
-  group: JSON
-  countAll: Int
-  count: websites_aggregated_count
-  countDistinct: websites_aggregated_count
-}
-
-type websites_aggregated_count {
-  id: Int
-}
-
-type websites_mutated {
-  key: ID!
-  event: EventEnum
-  data: websites
 }
 
 input ai_prompts_filter {
@@ -1415,6 +1591,13 @@ input big_int_filter_operators {
   _nnull: Boolean
   _between: [GraphQLBigInt]
   _nbetween: [GraphQLBigInt]
+}
+
+input block_form_filter {
+  id: id_filter_operators
+  form: forms_filter
+  _and: [block_form_filter]
+  _or: [block_form_filter]
 }
 
 input block_richtext_filter {
@@ -1504,6 +1687,11 @@ input create_articles_tags_input {
   articles_id: create_articles_input
   id: ID
   tags_id: create_tags_input
+}
+
+input create_block_form_input {
+  id: ID
+  form: create_forms_input
 }
 
 input create_block_richtext_input {
@@ -1650,11 +1838,36 @@ input create_directus_users_input {
   policies: [create_directus_access_input]
 }
 
+input create_form_field_text_input {
+  id: ID
+  label: String!
+}
+
+input create_forms_fields_input {
+  id: ID
+  forms_id: create_forms_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input create_forms_input {
+  id: ID
+  status: String
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  title: String
+  fields: [create_forms_fields_input]
+}
+
 input create_pages_blocks_input {
   id: ID
   pages_id: create_pages_input
   item: String
   collection: String
+  sort: Int
 }
 
 input create_pages_input {
@@ -1665,7 +1878,8 @@ input create_pages_input {
   date_created: Date
   user_updated: create_directus_users_input
   date_updated: Date
-  website: create_websites_input
+  parent: create_pages_input
+  title: String
   blocks: [create_pages_blocks_input]
 }
 
@@ -1683,10 +1897,6 @@ input create_tags_input {
   slug: String!
   user_created: create_directus_users_input
   user_updated: create_directus_users_input
-}
-
-input create_websites_input {
-  id: ID!
 }
 
 input date_filter_operators {
@@ -2157,6 +2367,52 @@ input directus_versions_filter {
   _or: [directus_versions_filter]
 }
 
+input form_field_text_filter {
+  id: id_filter_operators
+  label: string_filter_operators
+  _and: [form_field_text_filter]
+  _or: [form_field_text_filter]
+}
+
+input forms_fields_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  item__form_field_text: form_field_text_filter
+}
+
+""""""
+input forms_fields_quantifier_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  _some: forms_fields_filter
+  _none: forms_fields_filter
+  item__form_field_text: form_field_text_filter
+}
+
+input forms_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  title: string_filter_operators
+  fields: forms_fields_quantifier_filter
+  fields_func: count_function_filter_operators
+  _and: [forms_filter]
+  _or: [forms_filter]
+}
+
 input hash_filter_operators {
   _null: Boolean
   _nnull: Boolean
@@ -2205,9 +2461,11 @@ input pages_blocks_filter {
   id: number_filter_operators
   pages_id: pages_filter
   collection: string_filter_operators
+  sort: number_filter_operators
   _and: [pages_blocks_filter]
   _or: [pages_blocks_filter]
   item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
 }
 
 """"""
@@ -2215,11 +2473,13 @@ input pages_blocks_quantifier_filter {
   id: number_filter_operators
   pages_id: pages_filter
   collection: string_filter_operators
+  sort: number_filter_operators
   _and: [pages_blocks_filter]
   _or: [pages_blocks_filter]
   _some: pages_blocks_filter
   _none: pages_blocks_filter
   item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
 }
 
 input pages_filter {
@@ -2232,7 +2492,8 @@ input pages_filter {
   user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  website: websites_filter
+  parent: pages_filter
+  title: string_filter_operators
   blocks: pages_blocks_quantifier_filter
   blocks_func: count_function_filter_operators
   _and: [pages_filter]
@@ -2329,6 +2590,11 @@ input update_articles_tags_input {
   articles_id: update_articles_input
   id: ID
   tags_id: update_tags_input
+}
+
+input update_block_form_input {
+  id: ID
+  form: update_forms_input
 }
 
 input update_block_richtext_input {
@@ -2475,11 +2741,36 @@ input update_directus_users_input {
   policies: [update_directus_access_input]
 }
 
+input update_form_field_text_input {
+  id: ID
+  label: String
+}
+
+input update_forms_fields_input {
+  id: ID
+  forms_id: update_forms_input
+  item: String
+  collection: String
+  sort: Int
+}
+
+input update_forms_input {
+  id: ID
+  status: String
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  title: String
+  fields: [update_forms_fields_input]
+}
+
 input update_pages_blocks_input {
   id: ID
   pages_id: update_pages_input
   item: String
   collection: String
+  sort: Int
 }
 
 input update_pages_input {
@@ -2490,7 +2781,8 @@ input update_pages_input {
   date_created: Date
   user_updated: update_directus_users_input
   date_updated: Date
-  website: update_websites_input
+  parent: update_pages_input
+  title: String
   blocks: [update_pages_blocks_input]
 }
 
@@ -2508,14 +2800,4 @@ input update_tags_input {
   slug: String
   user_created: update_directus_users_input
   user_updated: update_directus_users_input
-}
-
-input update_websites_input {
-  id: ID
-}
-
-input websites_filter {
-  id: string_filter_operators
-  _and: [websites_filter]
-  _or: [websites_filter]
 }

@@ -1,14 +1,13 @@
 {
-  "collection": "pages_blocks",
+  "collection": "forms_fields",
   "field": "item",
   "related_collection": null,
   "meta": {
-    "junction_field": "pages_id",
-    "many_collection": "pages_blocks",
+    "junction_field": "forms_id",
+    "many_collection": "forms_fields",
     "many_field": "item",
     "one_allowed_collections": [
-      "block_richtext",
-      "block_form"
+      "form_field_text"
     ],
     "one_collection": null,
     "one_collection_field": "collection",

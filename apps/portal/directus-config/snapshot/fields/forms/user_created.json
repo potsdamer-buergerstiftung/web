@@ -1,9 +1,9 @@
 {
-  "collection": "pages",
+  "collection": "forms",
   "field": "user_created",
   "type": "uuid",
   "meta": {
-    "collection": "pages",
+    "collection": "forms",
     "conditions": null,
     "display": "user",
     "display_options": null,
@@ -17,7 +17,7 @@
     },
     "readonly": true,
     "required": false,
-    "sort": 6,
+    "sort": 5,
     "special": [
       "user-created"
     ],
@@ -28,7 +28,7 @@
   },
   "schema": {
     "name": "user_created",
-    "table": "pages",
+    "table": "forms",
     "data_type": "uuid",
     "default_value": null,
     "max_length": null,

@@ -1,51 +1,42 @@
 {
-  "collection": "pages",
-  "field": "sort",
+  "collection": "forms_fields",
+  "field": "id",
   "type": "integer",
   "meta": {
-    "collection": "pages",
+    "collection": "forms_fields",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "sort",
+    "field": "id",
     "group": null,
     "hidden": true,
-    "interface": "input",
+    "interface": null,
     "note": null,
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 5,
+    "sort": 1,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Sort Order"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Sortierreihenfolge"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"
   },
   "schema": {
-    "name": "sort",
-    "table": "pages",
+    "name": "id",
+    "table": "forms_fields",
     "data_type": "integer",
-    "default_value": null,
+    "default_value": "nextval('forms_fields_id_seq'::regclass)",
     "max_length": null,
     "numeric_precision": 32,
     "numeric_scale": 0,
-    "is_nullable": true,
-    "is_unique": false,
+    "is_nullable": false,
+    "is_unique": true,
     "is_indexed": false,
-    "is_primary_key": false,
+    "is_primary_key": true,
     "is_generated": false,
     "generation_expression": null,
-    "has_auto_increment": false,
+    "has_auto_increment": true,
     "foreign_key_table": null,
     "foreign_key_column": null
   }

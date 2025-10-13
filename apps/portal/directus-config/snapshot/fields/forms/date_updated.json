@@ -1,25 +1,25 @@
 {
-  "collection": "pages",
-  "field": "user_created",
-  "type": "uuid",
+  "collection": "forms",
+  "field": "date_updated",
+  "type": "timestamp",
   "meta": {
-    "collection": "pages",
+    "collection": "forms",
     "conditions": null,
-    "display": "user",
-    "display_options": null,
-    "field": "user_created",
+    "display": "datetime",
+    "display_options": {
+      "relative": true
+    },
+    "field": "date_updated",
     "group": null,
     "hidden": true,
-    "interface": "select-dropdown-m2o",
+    "interface": "datetime",
     "note": null,
-    "options": {
-      "template": "{{avatar}} {{first_name}} {{last_name}}"
-    },
+    "options": null,
     "readonly": true,
     "required": false,
-    "sort": 6,
+    "sort": 8,
     "special": [
-      "user-created"
+      "date-updated"
     ],
     "translations": null,
     "validation": null,
@@ -27,9 +27,9 @@
     "width": "half"
   },
   "schema": {
-    "name": "user_created",
-    "table": "pages",
-    "data_type": "uuid",
+    "name": "date_updated",
+    "table": "forms",
+    "data_type": "timestamp with time zone",
     "default_value": null,
     "max_length": null,
     "numeric_precision": null,
@@ -41,7 +41,7 @@
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": "directus_users",
-    "foreign_key_column": "id"
+    "foreign_key_table": null,
+    "foreign_key_column": null
   }
 }

@@ -1,13 +1,13 @@
 {
-  "collection": "pages",
-  "field": "user_created",
+  "collection": "forms",
+  "field": "user_updated",
   "type": "uuid",
   "meta": {
-    "collection": "pages",
+    "collection": "forms",
     "conditions": null,
     "display": "user",
     "display_options": null,
-    "field": "user_created",
+    "field": "user_updated",
     "group": null,
     "hidden": true,
     "interface": "select-dropdown-m2o",
@@ -17,9 +17,9 @@
     },
     "readonly": true,
     "required": false,
-    "sort": 6,
+    "sort": 7,
     "special": [
-      "user-created"
+      "user-updated"
     ],
     "translations": null,
     "validation": null,
@@ -27,8 +27,8 @@
     "width": "half"
   },
   "schema": {
-    "name": "user_created",
-    "table": "pages",
+    "name": "user_updated",
+    "table": "forms",
     "data_type": "uuid",
     "default_value": null,
     "max_length": null,

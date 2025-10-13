@@ -270,8 +270,11 @@ type Subscription {
   tags_mutated(event: EventEnum): tags_mutated
   articles_mutated(event: EventEnum): articles_mutated
   pages_mutated(event: EventEnum): pages_mutated
-  websites_mutated(event: EventEnum): websites_mutated
+  form_field_text_mutated(event: EventEnum): form_field_text_mutated
   pages_blocks_mutated(event: EventEnum): pages_blocks_mutated
+  forms_fields_mutated(event: EventEnum): forms_fields_mutated
+  forms_mutated(event: EventEnum): forms_mutated
+  block_form_mutated(event: EventEnum): block_form_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -348,7 +351,9 @@ enum server_info_websocket_rest_authentication {
   strict
 }
 
-union pages_blocks_item_union = block_richtext
+union forms_fields_item_union = form_field_text
+
+union pages_blocks_item_union = block_richtext | block_form
 
 type ai_prompts {
   id: ID!
@@ -434,6 +439,17 @@ type auth_tokens {
   access_token: String
   expires: GraphQLBigInt
   refresh_token: String
+}
+
+type block_form {
+  id: ID!
+  form(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+}
+
+type block_form_mutated {
+  key: ID!
+  event: EventEnum
+  data: block_form
 }
 
 type block_richtext {
@@ -1755,6 +1771,51 @@ type directus_webhooks_mutated {
   data: directus_webhooks
 }
 
+type form_field_text {
+  id: ID!
+  label: String!
+}
+
+type form_field_text_mutated {
+  key: ID!
+  event: EventEnum
+  data: form_field_text
+}
+
+type forms {
+  id: ID!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  title: String
+  fields(filter: forms_fields_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [forms_fields]
+  fields_func: count_functions
+}
+
+type forms_fields {
+  id: ID!
+  forms_id(filter: forms_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): forms
+  item: forms_fields_item_union
+  collection: String
+  sort: Int
+}
+
+type forms_fields_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms_fields
+}
+
+type forms_mutated {
+  key: ID!
+  event: EventEnum
+  data: forms
+}
+
 type pages {
   id: ID!
   status: String
@@ -1765,7 +1826,8 @@ type pages {
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  website(filter: websites_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): websites
+  parent(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
+  title: String
   blocks(filter: pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [pages_blocks]
   blocks_func: count_functions
 }
@@ -1775,6 +1837,7 @@ type pages_blocks {
   pages_id(filter: pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): pages
   item: pages_blocks_item_union
   collection: String
+  sort: Int
 }
 
 type pages_blocks_mutated {
@@ -1865,16 +1928,6 @@ type tags_mutated {
 type users_me_tfa_generate_data {
   secret: String
   otpauth_url: String
-}
-
-type websites {
-  id: ID!
-}
-
-type websites_mutated {
-  key: ID!
-  event: EventEnum
-  data: websites
 }
 
 type write_directus_collections {
@@ -2028,6 +2081,13 @@ input big_int_filter_operators {
   _nnull: Boolean
   _between: [GraphQLBigInt]
   _nbetween: [GraphQLBigInt]
+}
+
+input block_form_filter {
+  id: id_filter_operators
+  form: forms_filter
+  _and: [block_form_filter]
+  _or: [block_form_filter]
 }
 
 input block_richtext_filter {
@@ -2887,6 +2947,52 @@ input directus_webhooks_filter {
   _or: [directus_webhooks_filter]
 }
 
+input form_field_text_filter {
+  id: id_filter_operators
+  label: string_filter_operators
+  _and: [form_field_text_filter]
+  _or: [form_field_text_filter]
+}
+
+input forms_fields_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  item__form_field_text: form_field_text_filter
+}
+
+""""""
+input forms_fields_quantifier_filter {
+  id: number_filter_operators
+  forms_id: forms_filter
+  collection: string_filter_operators
+  sort: number_filter_operators
+  _and: [forms_fields_filter]
+  _or: [forms_fields_filter]
+  _some: forms_fields_filter
+  _none: forms_fields_filter
+  item__form_field_text: form_field_text_filter
+}
+
+input forms_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  title: string_filter_operators
+  fields: forms_fields_quantifier_filter
+  fields_func: count_function_filter_operators
+  _and: [forms_filter]
+  _or: [forms_filter]
+}
+
 input hash_filter_operators {
   _null: Boolean
   _nnull: Boolean
@@ -2935,9 +3041,11 @@ input pages_blocks_filter {
   id: number_filter_operators
   pages_id: pages_filter
   collection: string_filter_operators
+  sort: number_filter_operators
   _and: [pages_blocks_filter]
   _or: [pages_blocks_filter]
   item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
 }
 
 """"""
@@ -2945,11 +3053,13 @@ input pages_blocks_quantifier_filter {
   id: number_filter_operators
   pages_id: pages_filter
   collection: string_filter_operators
+  sort: number_filter_operators
   _and: [pages_blocks_filter]
   _or: [pages_blocks_filter]
   _some: pages_blocks_filter
   _none: pages_blocks_filter
   item__block_richtext: block_richtext_filter
+  item__block_form: block_form_filter
 }
 
 input pages_filter {
@@ -2962,7 +3072,8 @@ input pages_filter {
   user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  website: websites_filter
+  parent: pages_filter
+  title: string_filter_operators
   blocks: pages_blocks_quantifier_filter
   blocks_func: count_function_filter_operators
   _and: [pages_filter]
@@ -3343,12 +3454,6 @@ input update_directus_webhooks_input {
   headers: JSON
   was_active_before_deprecation: Boolean
   migrated_flow: update_directus_flows_input
-}
-
-input websites_filter {
-  id: string_filter_operators
-  _and: [websites_filter]
-  _or: [websites_filter]
 }
 
 input write_directus_collections_input {

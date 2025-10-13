@@ -1,34 +1,41 @@
 {
-  "collection": "public_relations",
+  "collection": "forms",
   "meta": {
     "accountability": "all",
     "archive_app_filter": true,
-    "archive_field": null,
-    "archive_value": null,
+    "archive_field": "status",
+    "archive_value": "archived",
     "collapse": "open",
-    "collection": "public_relations",
+    "collection": "forms",
     "color": null,
     "display_template": null,
-    "group": null,
+    "group": "web",
     "hidden": false,
-    "icon": "barcode_reader",
+    "icon": "keyboard_external_input",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 4,
+    "sort": 2,
     "sort_field": null,
     "translations": [
       {
         "language": "de-DE",
-        "translation": "Öffentlichkeitsarbeit"
+        "plural": "Formulare",
+        "singular": "Formular",
+        "translation": "Formulare"
       },
       {
         "language": "en-US",
-        "translation": "Public Relations"
+        "plural": "Forms",
+        "singular": "Form",
+        "translation": "Forms"
       }
     ],
-    "unarchive_value": null,
+    "unarchive_value": "draft",
     "versioning": false
+  },
+  "schema": {
+    "name": "forms"
   }
 }

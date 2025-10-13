@@ -1,30 +1,30 @@
 {
-  "collection": "ai_prompts",
-  "field": "description",
-  "type": "text",
+  "collection": "pages",
+  "field": "title",
+  "type": "string",
   "meta": {
-    "collection": "ai_prompts",
+    "collection": "pages",
     "conditions": null,
     "display": null,
-    "display_options": null,
-    "field": "description",
+    "display_options": {},
+    "field": "title",
     "group": null,
     "hidden": false,
-    "interface": "input",
+    "interface": null,
     "note": null,
     "options": null,
     "readonly": false,
-    "required": false,
-    "sort": 10,
+    "required": true,
+    "sort": 2,
     "special": null,
     "translations": [
       {
         "language": "en-US",
-        "translation": "Description"
+        "translation": "Title"
       },
       {
         "language": "de-DE",
-        "translation": "Beschreibung"
+        "translation": "Titel"
       }
     ],
     "validation": null,
@@ -32,11 +32,11 @@
     "width": "full"
   },
   "schema": {
-    "name": "description",
-    "table": "ai_prompts",
-    "data_type": "text",
+    "name": "title",
+    "table": "pages",
+    "data_type": "character varying",
     "default_value": null,
-    "max_length": null,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
     "is_nullable": true,

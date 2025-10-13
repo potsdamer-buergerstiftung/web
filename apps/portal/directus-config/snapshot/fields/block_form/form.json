@@ -1,40 +1,33 @@
 {
-  "collection": "ai_prompts",
-  "field": "description",
-  "type": "text",
+  "collection": "block_form",
+  "field": "form",
+  "type": "uuid",
   "meta": {
-    "collection": "ai_prompts",
+    "collection": "block_form",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "description",
+    "field": "form",
     "group": null,
     "hidden": false,
-    "interface": "input",
+    "interface": "select-dropdown-m2o",
     "note": null,
     "options": null,
     "readonly": false,
-    "required": false,
-    "sort": 10,
-    "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Description"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Beschreibung"
-      }
+    "required": true,
+    "sort": 2,
+    "special": [
+      "m2o"
     ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"
   },
   "schema": {
-    "name": "description",
-    "table": "ai_prompts",
-    "data_type": "text",
+    "name": "form",
+    "table": "block_form",
+    "data_type": "uuid",
     "default_value": null,
     "max_length": null,
     "numeric_precision": null,
@@ -46,7 +39,7 @@
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": null,
-    "foreign_key_column": null
+    "foreign_key_table": "forms",
+    "foreign_key_column": "id"
   }
 }

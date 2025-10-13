@@ -1,24 +1,24 @@
 {
-  "collection": "pages",
-  "field": "website",
-  "related_collection": "websites",
+  "collection": "block_form",
+  "field": "form",
+  "related_collection": "forms",
   "meta": {
     "junction_field": null,
-    "many_collection": "pages",
-    "many_field": "website",
+    "many_collection": "block_form",
+    "many_field": "form",
     "one_allowed_collections": null,
-    "one_collection": "websites",
+    "one_collection": "forms",
     "one_collection_field": null,
     "one_deselect_action": "nullify",
     "one_field": null,
     "sort_field": null
   },
   "schema": {
-    "table": "pages",
-    "column": "website",
-    "foreign_key_table": "websites",
+    "table": "block_form",
+    "column": "form",
+    "foreign_key_table": "forms",
     "foreign_key_column": "id",
-    "constraint_name": "pages_website_foreign",
+    "constraint_name": "block_form_form_foreign",
     "on_update": "NO ACTION",
     "on_delete": "SET NULL"
   }

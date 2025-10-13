@@ -1,40 +1,31 @@
 {
-  "collection": "ai_prompts",
-  "field": "description",
-  "type": "text",
+  "collection": "forms_fields",
+  "field": "forms_id",
+  "type": "uuid",
   "meta": {
-    "collection": "ai_prompts",
+    "collection": "forms_fields",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "description",
+    "field": "forms_id",
     "group": null,
-    "hidden": false,
-    "interface": "input",
+    "hidden": true,
+    "interface": null,
     "note": null,
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 10,
+    "sort": 2,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Description"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Beschreibung"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"
   },
   "schema": {
-    "name": "description",
-    "table": "ai_prompts",
-    "data_type": "text",
+    "name": "forms_id",
+    "table": "forms_fields",
+    "data_type": "uuid",
     "default_value": null,
     "max_length": null,
     "numeric_precision": null,
@@ -46,7 +37,7 @@
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": null,
-    "foreign_key_column": null
+    "foreign_key_table": "forms",
+    "foreign_key_column": "id"
   }
 }

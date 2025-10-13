@@ -9,16 +9,29 @@
     "collection": "pages_blocks",
     "color": null,
     "display_template": null,
-    "group": null,
+    "group": "pages",
     "hidden": true,
     "icon": "import_export",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": null,
+    "sort": 1,
     "sort_field": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Page Blocks",
+        "singular": "Page Block",
+        "translation": "Page Blocks"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Seiten-Blöcke",
+        "singular": "Seiten-Block",
+        "translation": "Seiten-Blöcke"
+      }
+    ],
     "unarchive_value": null,
     "versioning": false
   },

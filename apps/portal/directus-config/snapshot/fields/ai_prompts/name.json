@@ -22,7 +22,16 @@
     "required": true,
     "sort": 8,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Name"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Name"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

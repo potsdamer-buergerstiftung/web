@@ -1,0 +1,25 @@
+{
+  "collection": "forms_fields",
+  "field": "forms_id",
+  "related_collection": "forms",
+  "meta": {
+    "junction_field": "item",
+    "many_collection": "forms_fields",
+    "many_field": "forms_id",
+    "one_allowed_collections": null,
+    "one_collection": "forms",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "fields",
+    "sort_field": "sort"
+  },
+  "schema": {
+    "table": "forms_fields",
+    "column": "forms_id",
+    "foreign_key_table": "forms",
+    "foreign_key_column": "id",
+    "constraint_name": "forms_fields_forms_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "collection": "ai_prompts",
-  "field": "description",
-  "type": "text",
+  "collection": "form_field_text",
+  "field": "label",
+  "type": "string",
   "meta": {
-    "collection": "ai_prompts",
+    "collection": "form_field_text",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "description",
+    "field": "label",
     "group": null,
     "hidden": false,
     "interface": "input",
@@ -15,31 +15,22 @@
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 10,
+    "sort": 2,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Description"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Beschreibung"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"
   },
   "schema": {
-    "name": "description",
-    "table": "ai_prompts",
-    "data_type": "text",
+    "name": "label",
+    "table": "form_field_text",
+    "data_type": "character varying",
     "default_value": null,
-    "max_length": null,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": true,
+    "is_nullable": false,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

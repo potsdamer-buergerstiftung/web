@@ -37,7 +37,16 @@
     "required": false,
     "sort": 2,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Content"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Inhalt"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

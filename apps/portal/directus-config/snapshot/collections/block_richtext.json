@@ -16,9 +16,22 @@
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 1,
+    "sort": 3,
     "sort_field": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Rich Text",
+        "singular": "Rich Text",
+        "translation": "Rich Text"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Rich-Text",
+        "singular": "Rich-Text",
+        "translation": "Rich-Text"
+      }
+    ],
     "unarchive_value": null,
     "versioning": false
   },

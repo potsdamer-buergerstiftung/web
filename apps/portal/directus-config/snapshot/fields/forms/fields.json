@@ -1,13 +1,13 @@
 {
-  "collection": "pages",
-  "field": "blocks",
+  "collection": "forms",
+  "field": "fields",
   "type": "alias",
   "meta": {
-    "collection": "pages",
+    "collection": "forms",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "blocks",
+    "field": "fields",
     "group": null,
     "hidden": false,
     "interface": "list-m2a",
@@ -17,20 +17,11 @@
     },
     "readonly": false,
     "required": false,
-    "sort": 10,
+    "sort": 4,
     "special": [
       "m2a"
     ],
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Blocks"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Blöcke"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"

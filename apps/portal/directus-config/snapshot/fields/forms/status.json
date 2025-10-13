@@ -1,9 +1,9 @@
 {
-  "collection": "pages",
+  "collection": "forms",
   "field": "status",
   "type": "string",
   "meta": {
-    "collection": "pages",
+    "collection": "forms",
     "conditions": null,
     "display": "labels",
     "display_options": {
@@ -60,23 +60,14 @@
     "required": false,
     "sort": 3,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Status"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Status"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "half"
   },
   "schema": {
     "name": "status",
-    "table": "pages",
+    "table": "forms",
     "data_type": "character varying",
     "default_value": "draft",
     "max_length": 255,

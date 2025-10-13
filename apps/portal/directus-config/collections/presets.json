@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "pages",
+    "search": null,
+    "layout": "directus-labs-tree-view-table-layout",
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      },
+      "directus-labs-tree-view-table-layout": {
+        "sort": [
+          "sort"
+        ],
+        "page": 1,
+        "fields": [
+          "title",
+          "status"
+        ]
+      }
+    },
+    "layout_options": {
+      "directus-labs-tree-view-table-layout": {
+        "parent": "parent",
+        "widths": {
+          "title": 399
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "0ccbb661-0668-488d-887e-8357a77390a7"
+  }
+]
