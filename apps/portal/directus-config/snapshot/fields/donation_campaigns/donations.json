@@ -1,0 +1,36 @@
+{
+  "collection": "donation_campaigns",
+  "field": "donations",
+  "type": "alias",
+  "meta": {
+    "collection": "donation_campaigns",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "donations",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 10,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Donations"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Spenden"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

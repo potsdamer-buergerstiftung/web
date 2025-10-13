@@ -1,0 +1,71 @@
+{
+  "collection": "recurring_donations",
+  "field": "currency",
+  "type": "string",
+  "meta": {
+    "collection": "recurring_donations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "currency",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "EUR",
+          "value": "EUR"
+        },
+        {
+          "text": "USD",
+          "value": "USD"
+        },
+        {
+          "text": "GBP",
+          "value": "GBP"
+        },
+        {
+          "text": "CHF",
+          "value": "CHF"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 5,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Currency"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Währung"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "currency",
+    "table": "recurring_donations",
+    "data_type": "character varying",
+    "default_value": "EUR",
+    "max_length": 10,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

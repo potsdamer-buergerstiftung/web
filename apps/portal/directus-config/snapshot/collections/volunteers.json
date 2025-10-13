@@ -1,0 +1,41 @@
+{
+  "collection": "volunteers",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "inactive",
+    "collapse": "open",
+    "collection": "volunteers",
+    "color": null,
+    "display_template": "{{contact_id.first_name}} {{contact_id.last_name}}",
+    "group": "operations",
+    "hidden": false,
+    "icon": "volunteer_activism",
+    "item_duplication_fields": null,
+    "note": "Volunteer profiles",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 3,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Volunteers",
+        "singular": "Volunteer",
+        "translation": "Volunteers"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Freiwillige",
+        "singular": "Freiwilliger",
+        "translation": "Freiwillige"
+      }
+    ],
+    "unarchive_value": "active",
+    "versioning": false
+  },
+  "schema": {
+    "name": "volunteers"
+  }
+}

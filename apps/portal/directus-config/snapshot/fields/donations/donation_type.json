@@ -1,0 +1,74 @@
+{
+  "collection": "donations",
+  "field": "donation_type",
+  "type": "string",
+  "meta": {
+    "collection": "donations",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "text": "One-time",
+          "value": "one_time"
+        },
+        {
+          "text": "Recurring",
+          "value": "recurring"
+        }
+      ]
+    },
+    "field": "donation_type",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "One-time",
+          "value": "one_time"
+        },
+        {
+          "text": "Recurring",
+          "value": "recurring"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 6,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Donation Type"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Spendenart"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "donation_type",
+    "table": "donations",
+    "data_type": "character varying",
+    "default_value": "one_time",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

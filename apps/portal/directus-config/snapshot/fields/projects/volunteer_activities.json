@@ -1,0 +1,36 @@
+{
+  "collection": "projects",
+  "field": "volunteer_activities",
+  "type": "alias",
+  "meta": {
+    "collection": "projects",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "volunteer_activities",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 12,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Volunteer Activities"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Freiwilligenaktivitäten"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

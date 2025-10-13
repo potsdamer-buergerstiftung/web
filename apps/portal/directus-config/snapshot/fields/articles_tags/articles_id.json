@@ -9,20 +9,18 @@
     "display_options": null,
     "field": "articles_id",
     "group": null,
-    "hidden": false,
-    "interface": "select-dropdown-m2o",
+    "hidden": true,
+    "interface": null,
     "note": null,
-    "options": {
-      "template": "{{title}}"
-    },
+    "options": null,
     "readonly": false,
-    "required": true,
+    "required": false,
     "sort": 2,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "articles_id",
@@ -32,7 +30,7 @@
     "max_length": null,
     "numeric_precision": 32,
     "numeric_scale": 0,
-    "is_nullable": false,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

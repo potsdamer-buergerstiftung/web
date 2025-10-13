@@ -1,0 +1,25 @@
+{
+  "collection": "volunteer_activities",
+  "field": "volunteer_id",
+  "related_collection": "volunteers",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "volunteer_activities",
+    "many_field": "volunteer_id",
+    "one_allowed_collections": null,
+    "one_collection": "volunteers",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "activities",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "volunteer_activities",
+    "column": "volunteer_id",
+    "foreign_key_table": "volunteers",
+    "foreign_key_column": "id",
+    "constraint_name": "volunteer_activities_volunteer_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

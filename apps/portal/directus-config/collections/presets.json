@@ -33,5 +33,44 @@
     "icon": "bookmark",
     "color": null,
     "_syncId": "0ccbb661-0668-488d-887e-8357a77390a7"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "donations",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "page": 1,
+        "fields": [
+          "amount",
+          "contact_id",
+          "status",
+          "project_id",
+          "campaign_id",
+          "donation_date"
+        ],
+        "sort": [
+          "-donation_date"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "amount": 106,
+          "contact_id": 179,
+          "status": 101,
+          "project_id": 160,
+          "campaign_id": 160
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "c7fa7639-2456-425b-95cb-8ae8a3237559"
   }
 ]

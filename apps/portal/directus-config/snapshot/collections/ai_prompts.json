@@ -9,14 +9,14 @@
     "collection": "ai_prompts",
     "color": null,
     "display_template": null,
-    "group": null,
+    "group": "settings",
     "hidden": false,
     "icon": "magic_button",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 6,
+    "sort": 1,
     "sort_field": "sort",
     "translations": [
       {

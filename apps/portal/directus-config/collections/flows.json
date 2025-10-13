@@ -1,9 +1,9 @@
 [
   {
-    "name": "Test",
-    "icon": "bolt",
+    "name": "Spendenbescheinigung",
+    "icon": "attach_money",
     "color": null,
-    "description": null,
+    "description": "Erstellt automatisch eine Spendenbescheinigung nach einer Spende",
     "status": "active",
     "trigger": "event",
     "accountability": "all",
@@ -13,10 +13,10 @@
         "items.create"
       ],
       "collections": [
-        "directus_activity"
+        "donations"
       ]
     },
-    "operation": null,
-    "_syncId": "ba3aec17-36a4-4dbe-9831-f9233aa2f890"
+    "operation": "079ecba5-0d59-4895-8df2-29870619154b",
+    "_syncId": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd"
   }
 ]

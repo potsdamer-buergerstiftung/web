@@ -1,0 +1,56 @@
+{
+  "collection": "donations",
+  "field": "contact_id",
+  "type": "uuid",
+  "meta": {
+    "collection": "donations",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{first_name}} {{last_name}}"
+    },
+    "field": "contact_id",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": "Donor contact",
+    "options": {
+      "template": "{{first_name}} {{last_name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 3,
+    "special": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Contact"
+      },
+      {
+        "language": "de-DE",
+        "translation": "Kontakt"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "contact_id",
+    "table": "donations",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "contacts",
+    "foreign_key_column": "id"
+  }
+}

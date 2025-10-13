@@ -9,14 +9,14 @@
     "collection": "categories",
     "color": null,
     "display_template": "{{name}}",
-    "group": "public_relations",
+    "group": "articles",
     "hidden": false,
     "icon": "folder",
     "item_duplication_fields": null,
     "note": "Article categories for organization",
     "preview_url": null,
     "singleton": false,
-    "sort": 2,
+    "sort": 1,
     "sort_field": null,
     "translations": [
       {

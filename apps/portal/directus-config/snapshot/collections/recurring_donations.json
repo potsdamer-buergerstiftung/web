@@ -1,0 +1,41 @@
+{
+  "collection": "recurring_donations",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "cancelled",
+    "collapse": "open",
+    "collection": "recurring_donations",
+    "color": null,
+    "display_template": "{{amount}} {{currency}} - {{contact_id.first_name}} {{contact_id.last_name}} ({{frequency}})",
+    "group": "fundraising",
+    "hidden": false,
+    "icon": "sync",
+    "item_duplication_fields": null,
+    "note": "Recurring donation subscriptions",
+    "preview_url": null,
+    "singleton": false,
+    "sort": 3,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Recurring Donations",
+        "singular": "Recurring Donation",
+        "translation": "Recurring Donations"
+      },
+      {
+        "language": "de-DE",
+        "plural": "Wiederkehrende Spenden",
+        "singular": "Wiederkehrende Spende",
+        "translation": "Wiederkehrende Spenden"
+      }
+    ],
+    "unarchive_value": "active",
+    "versioning": false
+  },
+  "schema": {
+    "name": "recurring_donations"
+  }
+}

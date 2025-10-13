@@ -11,27 +11,14 @@
     "display_template": null,
     "group": null,
     "hidden": true,
-    "icon": "link",
+    "icon": "import_export",
     "item_duplication_fields": null,
-    "note": "Junction table for articles and tags",
+    "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 2,
+    "sort": 8,
     "sort_field": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "plural": "Article Tags",
-        "singular": "Article Tag",
-        "translation": "Article Tag"
-      },
-      {
-        "language": "de-DE",
-        "plural": "Artikel-Tags",
-        "singular": "Artikel-Tag",
-        "translation": "Artikel-Tag"
-      }
-    ],
+    "translations": null,
     "unarchive_value": null,
     "versioning": false
   },

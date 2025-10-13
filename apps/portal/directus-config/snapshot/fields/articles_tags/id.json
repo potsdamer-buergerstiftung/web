@@ -10,15 +10,13 @@
     "field": "id",
     "group": null,
     "hidden": true,
-    "interface": "input",
+    "interface": null,
     "note": null,
     "options": null,
-    "readonly": true,
+    "readonly": false,
     "required": false,
     "sort": 1,
-    "special": [
-      "auto-increment"
-    ],
+    "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
