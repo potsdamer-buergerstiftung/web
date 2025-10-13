@@ -21,8 +21,8 @@ importers:
   apps/inselbuehne:
     dependencies:
       '@directus/sdk':
-        specifier: ^10.2.0
-        version: 10.3.5
+        specifier: ^20.0.0
+        version: 20.1.0
       '@headlessui/react':
         specifier: ^1.7.7
         version: 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -145,8 +145,8 @@ importers:
   apps/links:
     dependencies:
       '@directus/sdk':
-        specifier: ^9.12.1
-        version: 9.14.2
+        specifier: ^20.0.0
+        version: 20.1.0
     devDependencies:
       nitropack:
         specifier: 2.11.8
@@ -482,15 +482,9 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@directus/sdk@10.3.5':
-    resolution: {integrity: sha512-ZLn85mfy3MWyIhTSrw46Eka1XdjoRIugZXNQy9w+zSEFm3hAzgB74N1qH7zARj9dGCWx+bAAno3n29Y2NqQv/A==}
-
   '@directus/sdk@20.1.0':
     resolution: {integrity: sha512-EV2bwfiOXc1QFYAIqfGgyZ7JcKgHF43UVEYivUpMjOLiihI9tpmNfcz/qmOXju7LCZrBmSwTOHMRtOXPdZWiLQ==}
     engines: {node: '>=22'}
-
-  '@directus/sdk@9.14.2':
-    resolution: {integrity: sha512-GHLT0qSNt+Lt3/DoOQ3UqPlNyvRB+5mat/bAD6bnWoQF3fDc/3bGgMnfbXHKOBIk43FIzp+JJYpkErkIWRgHFQ==}
 
   '@directus/visual-editing@1.1.0':
     resolution: {integrity: sha512-nEkPnkdB3WXUODlgdd5cyCw9BT2JrL9xHBLYAhz940b/MJ25mZ9NZJ9xdnPAGh0WaRetEMcAcXy7e6t28x/4EQ==}
@@ -2433,9 +2427,6 @@ packages:
   axe-core@4.10.3:
     resolution: {integrity: sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==}
     engines: {node: '>=4'}
-
-  axios@0.24.0:
-    resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
 
   axios@0.27.2:
     resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
@@ -7132,19 +7123,7 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@directus/sdk@10.3.5':
-    dependencies:
-      axios: 0.27.2
-    transitivePeerDependencies:
-      - debug
-
   '@directus/sdk@20.1.0': {}
-
-  '@directus/sdk@9.14.2':
-    dependencies:
-      axios: 0.24.0
-    transitivePeerDependencies:
-      - debug
 
   '@directus/visual-editing@1.1.0':
     dependencies:
@@ -9529,12 +9508,6 @@ snapshots:
       possible-typed-array-names: 1.1.0
 
   axe-core@4.10.3: {}
-
-  axios@0.24.0:
-    dependencies:
-      follow-redirects: 1.15.9
-    transitivePeerDependencies:
-      - debug
 
   axios@0.27.2:
     dependencies:
