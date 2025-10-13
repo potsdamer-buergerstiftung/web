@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 interface PageBreadcrumb {
-    items: React.ReactNode[];
+    items: React.ReactElement;
 }
 
 export default function PageBreadcrumb({ items }: PageBreadcrumb) {

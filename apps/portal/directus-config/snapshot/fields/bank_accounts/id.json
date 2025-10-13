@@ -1,7 +1,0 @@
-{
-  "collection": "bank_accounts",
-  "field": "id",
-  "type": "uuid",
-  "meta": {"collection": "bank_accounts", "field": "id", "hidden": true, "interface": "input", "readonly": true, "sort": 1, "special": ["uuid"], "width": "full"},
-  "schema": {"name": "id", "table": "bank_accounts", "data_type": "uuid", "is_nullable": false, "is_unique": true, "is_primary_key": true}
-}

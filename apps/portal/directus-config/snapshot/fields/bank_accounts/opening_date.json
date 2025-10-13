@@ -1,7 +1,0 @@
-{
-  "collection": "bank_accounts",
-  "field": "opening_date",
-  "type": "date",
-  "meta": {"collection": "bank_accounts", "display": "datetime", "field": "opening_date", "interface": "datetime", "sort": 8, "width": "half", "translations": [{"language": "en-US", "translation": "Opening Date"}, {"language": "de-DE", "translation": "Eröffnungsdatum"}]},
-  "schema": {"name": "opening_date", "table": "bank_accounts", "data_type": "date", "is_nullable": true}
-}

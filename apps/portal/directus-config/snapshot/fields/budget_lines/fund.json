@@ -1,8 +1,0 @@
-{
-  "collection": "budget_lines",
-  "field": "fund",
-  "type": "uuid",
-  "meta": {"collection": "budget_lines", "display": "related-values", "display_options": {"template": "{{code}} - {{name}}"}, "field": "fund", "interface": "select-dropdown-m2o", "options": {"template": "{{code}} - {{name}}"}, "sort": 4, "width": "half", "translations": [{"language": "en-US", "translation": "Fund"}, {"language": "de-DE", "translation": "Fonds"}]},
-  "schema": {"name": "fund", "table": "budget_lines", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "funds", "foreign_key_column": "id"}
-}
-

@@ -276,8 +276,6 @@ type Subscription {
   block_form_mutated(event: EventEnum): block_form_mutated
   contacts_mutated(event: EventEnum): contacts_mutated
   donation_campaigns_mutated(event: EventEnum): donation_campaigns_mutated
-  donations_mutated(event: EventEnum): donations_mutated
-  projects_mutated(event: EventEnum): projects_mutated
   event_registrations_mutated(event: EventEnum): event_registrations_mutated
   events_mutated(event: EventEnum): events_mutated
   recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
@@ -285,6 +283,8 @@ type Subscription {
   volunteers_mutated(event: EventEnum): volunteers_mutated
   contacts_tags_mutated(event: EventEnum): contacts_tags_mutated
   articles_tags_mutated(event: EventEnum): articles_tags_mutated
+  donations_mutated(event: EventEnum): donations_mutated
+  projects_mutated(event: EventEnum): projects_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -1922,7 +1922,6 @@ type events {
   image: ID
   location: String
   organizer_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
-  registered_count: Int!
   start_date: Date!
   start_date_func: datetime_functions
   status: String
@@ -3426,7 +3425,6 @@ input events_filter {
   image: id_filter_operators
   location: string_filter_operators
   organizer_id: contacts_filter
-  registered_count: number_filter_operators
   start_date: date_filter_operators
   start_date_func: datetime_function_filter_operators
   status: string_filter_operators

@@ -1,7 +1,0 @@
-{
-  "collection": "bank_accounts",
-  "field": "date_created",
-  "type": "timestamp",
-  "meta": {"collection": "bank_accounts", "display": "datetime", "display_options": {"relative": true}, "field": "date_created", "hidden": true, "interface": "datetime", "readonly": true, "sort": 10, "special": ["date-created"], "width": "half"},
-  "schema": {"name": "date_created", "table": "bank_accounts", "data_type": "timestamp with time zone", "is_nullable": true}
-}

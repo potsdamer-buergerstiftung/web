@@ -1,8 +1,0 @@
-{
-  "collection": "fiscal_periods",
-  "field": "is_closed",
-  "type": "boolean",
-  "meta": {"collection": "fiscal_periods", "display": "boolean", "field": "is_closed", "interface": "boolean", "sort": 5, "width": "half", "translations": [{"language": "en-US", "translation": "Closed"}, {"language": "de-DE", "translation": "Abgeschlossen"}]},
-  "schema": {"name": "is_closed", "table": "fiscal_periods", "data_type": "boolean", "default_value": false, "is_nullable": false}
-}
-

@@ -1,8 +1,0 @@
-{
-  "collection": "budget_lines",
-  "field": "account_category",
-  "type": "uuid",
-  "meta": {"collection": "budget_lines", "display": "related-values", "display_options": {"template": "{{code}} - {{name}}"}, "field": "account_category", "interface": "select-dropdown-m2o", "options": {"template": "{{code}} - {{name}}"}, "required": true, "sort": 3, "width": "half", "translations": [{"language": "en-US", "translation": "Account Category"}, {"language": "de-DE", "translation": "Kontenkategorie"}]},
-  "schema": {"name": "account_category", "table": "budget_lines", "data_type": "uuid", "is_nullable": false, "foreign_key_table": "account_categories", "foreign_key_column": "id"}
-}
-

@@ -1,8 +1,0 @@
-{
-  "collection": "budgets",
-  "field": "user_created",
-  "type": "uuid",
-  "meta": {"collection": "budgets", "display": "user", "field": "user_created", "hidden": true, "interface": "select-dropdown-m2o", "options": {"template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"}, "readonly": true, "sort": 12, "special": ["user-created"], "width": "half"},
-  "schema": {"name": "user_created", "table": "budgets", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "directus_users", "foreign_key_column": "id"}
-}
-

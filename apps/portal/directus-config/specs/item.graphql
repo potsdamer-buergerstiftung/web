@@ -55,14 +55,6 @@ type Query {
   donation_campaigns_by_id(id: ID!, version: String): donation_campaigns
   donation_campaigns_aggregated(groupBy: [String], filter: donation_campaigns_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donation_campaigns_aggregated!]!
   donation_campaigns_by_version(version: String!, id: ID!): version_donation_campaigns
-  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations!]!
-  donations_by_id(id: ID!, version: String): donations
-  donations_aggregated(groupBy: [String], filter: donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donations_aggregated!]!
-  donations_by_version(version: String!, id: ID!): version_donations
-  projects(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects!]!
-  projects_by_id(id: ID!, version: String): projects
-  projects_aggregated(groupBy: [String], filter: projects_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [projects_aggregated!]!
-  projects_by_version(version: String!, id: ID!): version_projects
   event_registrations(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [event_registrations!]!
   event_registrations_by_id(id: ID!, version: String): event_registrations
   event_registrations_aggregated(groupBy: [String], filter: event_registrations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [event_registrations_aggregated!]!
@@ -91,6 +83,14 @@ type Query {
   articles_tags_by_id(id: ID!, version: String): articles_tags
   articles_tags_aggregated(groupBy: [String], filter: articles_tags_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [articles_tags_aggregated!]!
   articles_tags_by_version(version: String!, id: ID!): version_articles_tags
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations!]!
+  donations_by_id(id: ID!, version: String): donations
+  donations_aggregated(groupBy: [String], filter: donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donations_aggregated!]!
+  donations_by_version(version: String!, id: ID!): version_donations
+  projects(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects!]!
+  projects_by_id(id: ID!, version: String): projects
+  projects_aggregated(groupBy: [String], filter: projects_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [projects_aggregated!]!
+  projects_by_version(version: String!, id: ID!): version_projects
 }
 
 type Mutation {
@@ -122,10 +122,6 @@ type Mutation {
   create_contacts_item(data: create_contacts_input!): contacts
   create_donation_campaigns_items(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donation_campaigns_input!]): [donation_campaigns!]!
   create_donation_campaigns_item(data: create_donation_campaigns_input!): donation_campaigns
-  create_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donations_input!]): [donations!]!
-  create_donations_item(data: create_donations_input!): donations
-  create_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_projects_input!]): [projects!]!
-  create_projects_item(data: create_projects_input!): projects
   create_event_registrations_items(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_event_registrations_input!]): [event_registrations!]!
   create_event_registrations_item(data: create_event_registrations_input!): event_registrations
   create_events_items(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_events_input!]): [events!]!
@@ -140,6 +136,10 @@ type Mutation {
   create_contacts_tags_item(data: create_contacts_tags_input!): contacts_tags
   create_articles_tags_items(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_articles_tags_input!]): [articles_tags!]!
   create_articles_tags_item(data: create_articles_tags_input!): articles_tags
+  create_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donations_input!]): [donations!]!
+  create_donations_item(data: create_donations_input!): donations
+  create_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_projects_input!]): [projects!]!
+  create_projects_item(data: create_projects_input!): projects
   update_ai_prompts_items(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_ai_prompts_input!): [ai_prompts!]!
   update_ai_prompts_batch(filter: ai_prompts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_ai_prompts_input!]): [ai_prompts!]!
   update_ai_prompts_item(id: ID!, data: update_ai_prompts_input!): ai_prompts
@@ -182,12 +182,6 @@ type Mutation {
   update_donation_campaigns_items(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donation_campaigns_input!): [donation_campaigns!]!
   update_donation_campaigns_batch(filter: donation_campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donation_campaigns_input!]): [donation_campaigns!]!
   update_donation_campaigns_item(id: ID!, data: update_donation_campaigns_input!): donation_campaigns
-  update_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donations_input!): [donations!]!
-  update_donations_batch(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donations_input!]): [donations!]!
-  update_donations_item(id: ID!, data: update_donations_input!): donations
-  update_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_projects_input!): [projects!]!
-  update_projects_batch(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_projects_input!]): [projects!]!
-  update_projects_item(id: ID!, data: update_projects_input!): projects
   update_event_registrations_items(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_event_registrations_input!): [event_registrations!]!
   update_event_registrations_batch(filter: event_registrations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_event_registrations_input!]): [event_registrations!]!
   update_event_registrations_item(id: ID!, data: update_event_registrations_input!): event_registrations
@@ -209,6 +203,12 @@ type Mutation {
   update_articles_tags_items(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_articles_tags_input!): [articles_tags!]!
   update_articles_tags_batch(filter: articles_tags_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_articles_tags_input!]): [articles_tags!]!
   update_articles_tags_item(id: ID!, data: update_articles_tags_input!): articles_tags
+  update_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donations_input!): [donations!]!
+  update_donations_batch(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donations_input!]): [donations!]!
+  update_donations_item(id: ID!, data: update_donations_input!): donations
+  update_projects_items(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_projects_input!): [projects!]!
+  update_projects_batch(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_projects_input!]): [projects!]!
+  update_projects_item(id: ID!, data: update_projects_input!): projects
   delete_ai_prompts_items(ids: [ID]!): delete_many
   delete_ai_prompts_item(id: ID!): delete_one
   delete_directus_sync_id_map_items(ids: [ID]!): delete_many
@@ -237,10 +237,6 @@ type Mutation {
   delete_contacts_item(id: ID!): delete_one
   delete_donation_campaigns_items(ids: [ID]!): delete_many
   delete_donation_campaigns_item(id: ID!): delete_one
-  delete_donations_items(ids: [ID]!): delete_many
-  delete_donations_item(id: ID!): delete_one
-  delete_projects_items(ids: [ID]!): delete_many
-  delete_projects_item(id: ID!): delete_one
   delete_event_registrations_items(ids: [ID]!): delete_many
   delete_event_registrations_item(id: ID!): delete_one
   delete_events_items(ids: [ID]!): delete_many
@@ -255,6 +251,10 @@ type Mutation {
   delete_contacts_tags_item(id: ID!): delete_one
   delete_articles_tags_items(ids: [ID]!): delete_many
   delete_articles_tags_item(id: ID!): delete_one
+  delete_donations_items(ids: [ID]!): delete_many
+  delete_donations_item(id: ID!): delete_one
+  delete_projects_items(ids: [ID]!): delete_many
+  delete_projects_item(id: ID!): delete_one
 }
 
 type Subscription {
@@ -293,8 +293,6 @@ type Subscription {
   block_form_mutated(event: EventEnum): block_form_mutated
   contacts_mutated(event: EventEnum): contacts_mutated
   donation_campaigns_mutated(event: EventEnum): donation_campaigns_mutated
-  donations_mutated(event: EventEnum): donations_mutated
-  projects_mutated(event: EventEnum): projects_mutated
   event_registrations_mutated(event: EventEnum): event_registrations_mutated
   events_mutated(event: EventEnum): events_mutated
   recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
@@ -302,6 +300,8 @@ type Subscription {
   volunteers_mutated(event: EventEnum): volunteers_mutated
   contacts_tags_mutated(event: EventEnum): contacts_tags_mutated
   articles_tags_mutated(event: EventEnum): articles_tags_mutated
+  donations_mutated(event: EventEnum): donations_mutated
+  projects_mutated(event: EventEnum): projects_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -1529,7 +1529,6 @@ type events {
   image: ID
   location: String
   organizer_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
-  registered_count: Int!
   start_date: Date!
   start_date_func: datetime_functions
   status: String
@@ -1564,7 +1563,6 @@ type events_aggregated_count {
   image: Int
   location: Int
   organizer_id: Int
-  registered_count: Int
   start_date: Int
   status: Int
   title: Int
@@ -1575,7 +1573,6 @@ type events_aggregated_count {
 
 type events_aggregated_fields {
   capacity: Float
-  registered_count: Float
 }
 
 type events_mutated {
@@ -2144,7 +2141,6 @@ type version_events {
   image: ID
   location: String
   organizer_id: JSON
-  registered_count: Int
   start_date: Date
   status: String
   title: String
@@ -2843,7 +2839,6 @@ input create_events_input {
   image: ID
   location: String
   organizer_id: create_contacts_input
-  registered_count: Int!
   start_date: Date!
   status: String
   title: String!
@@ -3587,7 +3582,6 @@ input events_filter {
   image: id_filter_operators
   location: string_filter_operators
   organizer_id: contacts_filter
-  registered_count: number_filter_operators
   start_date: date_filter_operators
   start_date_func: datetime_function_filter_operators
   status: string_filter_operators
@@ -4110,7 +4104,6 @@ input update_events_input {
   image: ID
   location: String
   organizer_id: update_contacts_input
-  registered_count: Int
   start_date: Date
   status: String
   title: String

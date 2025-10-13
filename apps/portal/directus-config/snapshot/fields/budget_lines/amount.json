@@ -1,8 +1,0 @@
-{
-  "collection": "budget_lines",
-  "field": "amount",
-  "type": "decimal",
-  "meta": {"collection": "budget_lines", "display": "formatted-value", "display_options": {"format": true, "icon": "euro_symbol"}, "field": "amount", "interface": "input", "options": {"min": 0}, "required": true, "sort": 5, "width": "half", "translations": [{"language": "en-US", "translation": "Amount"}, {"language": "de-DE", "translation": "Betrag"}]},
-  "schema": {"name": "amount", "table": "budget_lines", "data_type": "numeric", "numeric_precision": 10, "numeric_scale": 2, "is_nullable": false}
-}
-

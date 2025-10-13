@@ -58,6 +58,7 @@ async function Banner() {
 export default function Header({ nav }: HeaderProps) {
   return (
     <>
+      {/* @ts-ignore-error */}
       <Suspense>
         <Banner />
       </Suspense>

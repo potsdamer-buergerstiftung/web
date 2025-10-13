@@ -1,8 +1,0 @@
-{
-  "collection": "fiscal_periods",
-  "field": "status",
-  "type": "string",
-  "meta": {"collection": "fiscal_periods", "display": "labels", "display_options": {"choices": [{"text": "Open", "value": "open", "foreground": "#FFFFFF", "background": "#4CAF50"}, {"text": "Closed", "value": "closed", "foreground": "#FFFFFF", "background": "#9E9E9E"}], "showAsDot": true}, "field": "status", "interface": "select-dropdown", "options": {"choices": [{"text": "Open", "value": "open"}, {"text": "Closed", "value": "closed"}]}, "sort": 6, "width": "half"},
-  "schema": {"name": "status", "table": "fiscal_periods", "data_type": "character varying", "default_value": "open", "max_length": 50, "is_nullable": false}
-}
-

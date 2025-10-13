@@ -10,7 +10,7 @@
     "color": null,
     "display_template": "{{volunteer_id.contact_id.first_name}} {{volunteer_id.contact_id.last_name}} - {{activity_date}}",
     "group": "operations",
-    "hidden": false,
+    "hidden": true,
     "icon": "schedule",
     "item_duplication_fields": null,
     "note": "Track volunteer hours and activities",

@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "dashboard": "8c0e99cb-53e8-48c2-9147-4b543c9aeafe",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "bar-chart",
+    "position_x": 1,
+    "position_y": 1,
+    "width": 12,
+    "height": 10,
+    "options": {
+      "collection": "donations",
+      "xAxis": "project_id",
+      "yAxis": "amount"
+    },
+    "_syncId": "227dacd9-2dfd-4b97-bc86-cadb3dbd157b"
+  },
+  {
+    "dashboard": "8c0e99cb-53e8-48c2-9147-4b543c9aeafe",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "bar-chart",
+    "position_x": 1,
+    "position_y": 13,
+    "width": 33,
+    "height": 15,
+    "options": {
+      "collection": "donations",
+      "xAxis": "donation_date",
+      "yAxis": "amount"
+    },
+    "_syncId": "7546a2d6-0406-43d4-a560-f0ea425d3fbd"
+  }
+]

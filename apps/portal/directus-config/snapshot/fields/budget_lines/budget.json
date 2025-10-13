@@ -1,8 +1,0 @@
-{
-  "collection": "budget_lines",
-  "field": "budget",
-  "type": "uuid",
-  "meta": {"collection": "budget_lines", "display": "related-values", "display_options": {"template": "{{name}}"}, "field": "budget", "interface": "select-dropdown-m2o", "options": {"template": "{{name}}"}, "required": true, "sort": 2, "width": "half", "translations": [{"language": "en-US", "translation": "Budget"}, {"language": "de-DE", "translation": "Budget"}]},
-  "schema": {"name": "budget", "table": "budget_lines", "data_type": "uuid", "is_nullable": false, "foreign_key_table": "budgets", "foreign_key_column": "id"}
-}
-

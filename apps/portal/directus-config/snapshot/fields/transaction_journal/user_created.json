@@ -1,8 +1,0 @@
-{
-  "collection": "transaction_journal",
-  "field": "user_created",
-  "type": "uuid",
-  "meta": {"collection": "transaction_journal", "display": "user", "field": "user_created", "hidden": true, "interface": "select-dropdown-m2o", "options": {"template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"}, "readonly": true, "sort": 11, "special": ["user-created"], "width": "half"},
-  "schema": {"name": "user_created", "table": "transaction_journal", "data_type": "uuid", "is_nullable": true, "foreign_key_table": "directus_users", "foreign_key_column": "id"}
-}
-

@@ -1,7 +1,0 @@
-{
-  "collection": "bank_accounts",
-  "field": "is_active",
-  "type": "boolean",
-  "meta": {"collection": "bank_accounts", "display": "boolean", "field": "is_active", "interface": "boolean", "sort": 9, "width": "half", "translations": [{"language": "en-US", "translation": "Active"}, {"language": "de-DE", "translation": "Aktiv"}]},
-  "schema": {"name": "is_active", "table": "bank_accounts", "data_type": "boolean", "default_value": true, "is_nullable": false}
-}

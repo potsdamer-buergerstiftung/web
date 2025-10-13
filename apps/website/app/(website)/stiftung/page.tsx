@@ -48,7 +48,7 @@ export default function AboutPage() {
         title="Die Stiftung"
         description={<p>Wer wir sind und was wir tun</p>}
         breadcrumb={
-          <PageBreadcrumb items={[<PageBreadcrumbItem label="Stiftung" />]} />
+          <PageBreadcrumb items={<PageBreadcrumbItem label="Stiftung" /> } />
         }
       />
       <section className="pb-20 pt-20 bg-slate-100">
@@ -77,7 +77,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {priorities.map((priority) => (
-              <div className="container mx-auto flex h-full flex-col">
+              <div className="container mx-auto flex h-full flex-col" key={priority.title}>
                 <div>
                   <h1 className={`text-sm font-semibold uppercase text-gray-600 mb-2 ${priority.color}`}>
                     {priority.subTitle}

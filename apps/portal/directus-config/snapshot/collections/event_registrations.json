@@ -10,7 +10,7 @@
     "color": null,
     "display_template": "{{event_id.title}} - {{contact_id.first_name}} {{contact_id.last_name}}",
     "group": "operations",
-    "hidden": false,
+    "hidden": true,
     "icon": "fact_check",
     "item_duplication_fields": null,
     "note": "Track event attendees",

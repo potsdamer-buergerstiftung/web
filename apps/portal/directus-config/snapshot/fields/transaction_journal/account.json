@@ -1,8 +1,0 @@
-{
-  "collection": "transaction_journal",
-  "field": "account",
-  "type": "uuid",
-  "meta": {"collection": "transaction_journal", "display": "related-values", "display_options": {"template": "{{code}} - {{name}}"}, "field": "account", "interface": "select-dropdown-m2o", "options": {"template": "{{code}} - {{name}}"}, "required": true, "sort": 5, "width": "half", "translations": [{"language": "en-US", "translation": "Account"}, {"language": "de-DE", "translation": "Konto"}]},
-  "schema": {"name": "account", "table": "transaction_journal", "data_type": "uuid", "is_nullable": false, "foreign_key_table": "accounts", "foreign_key_column": "id"}
-}
-

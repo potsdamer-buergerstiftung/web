@@ -35,18 +35,13 @@
       {
         "type": "module",
         "id": "insights",
-        "enabled": false
+        "enabled": true
       },
       {
         "type": "module",
         "id": "settings",
         "enabled": true,
         "locked": true
-      },
-      {
-        "type": "module",
-        "id": "migration",
-        "enabled": false
       }
     ],
     "project_descriptor": "Portal",
@@ -69,7 +64,7 @@
     "mcp_enabled": true,
     "mcp_allow_deletes": false,
     "mcp_prompts_collection": "ai_prompts",
-    "mcp_system_prompt_enabled": true,
+    "mcp_system_prompt_enabled": false,
     "mcp_system_prompt": null,
     "_syncId": "_sync_default_settings"
   }

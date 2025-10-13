@@ -1,7 +1,0 @@
-{
-  "collection": "budgets",
-  "field": "fiscal_year",
-  "type": "integer",
-  "meta": {"collection": "budgets", "field": "fiscal_year", "interface": "input", "required": true, "sort": 4, "width": "half", "note": "e.g., 2025", "translations": [{"language": "en-US", "translation": "Fiscal Year"}, {"language": "de-DE", "translation": "Geschäftsjahr"}]},
-  "schema": {"name": "fiscal_year", "table": "budgets", "data_type": "integer", "is_nullable": false}
-}

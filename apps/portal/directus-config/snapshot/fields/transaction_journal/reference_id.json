@@ -1,8 +1,0 @@
-{
-  "collection": "transaction_journal",
-  "field": "reference_id",
-  "type": "string",
-  "meta": {"collection": "transaction_journal", "field": "reference_id", "interface": "input", "note": "ID of referenced expense/invoice/donation", "sort": 9, "width": "half", "translations": [{"language": "en-US", "translation": "Reference ID"}, {"language": "de-DE", "translation": "Referenz-ID"}]},
-  "schema": {"name": "reference_id", "table": "transaction_journal", "data_type": "character varying", "max_length": 255, "is_nullable": true}
-}
-

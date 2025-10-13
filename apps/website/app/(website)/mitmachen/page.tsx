@@ -10,7 +10,7 @@ export default function HonoraryPage() {
         title="Ehrenamt"
         description="Erfahre, wie du dich bei uns ehrenamtlich einbringen kannst"
         breadcrumb={
-          <PageBreadcrumb items={[<PageBreadcrumbItem label="Mitmachen" />]} />
+          <PageBreadcrumb items={<PageBreadcrumbItem label="Mitmachen" />} />
         }
       />
       <section>
