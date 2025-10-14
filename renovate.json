@@ -3,5 +3,6 @@
   "extends": [
     "config:recommended",
     ":dependencyDashboard"
-  ]
+  ],
+  "prConcurrentLimit": 1
 }
