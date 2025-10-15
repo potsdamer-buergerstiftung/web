@@ -10,6 +10,8 @@ export type UseChatToolsMessage = UIMessage<
 >;
 
 export async function POST(req: Request) {
+    return new Response('Hello, world!', { status: 200 });
+    
     let mcpClient: any = null;
 
     try {
