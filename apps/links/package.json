@@ -7,7 +7,7 @@
     "dev": "nitropack dev --port 3002"
   },
   "devDependencies": {
-    "nitropack": "2.11.8"
+    "nitropack": "2.12.7"
   },
   "dependencies": {
     "@directus/sdk": "^9.12.1"
