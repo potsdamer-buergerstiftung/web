@@ -1,15 +1,14 @@
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { createDirectus } from "@directus/sdk";
-import { rest } from "@directus/sdk";
-import { readItems } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 import PostGrid from "./PostGrid";
 //import VisualEditingPage from "app/VisualEditingPage";
 
 export const revalidate = 60;
 
 async function getPosts() {
+<<<<<<< HEAD
     const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res = await directus.request(readItems("posts", {
         fields: [
@@ -21,10 +20,17 @@ async function getPosts() {
             "project.title",
             "slug",
         ],
+=======
+    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+    const res = await directus.items<any, any>("posts").readByQuery({
+        fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
+>>>>>>> parent of e94ab9f (Update directus SDK to fix url.parse())
         sort: ["-date"],
-    }));
+    });
 
-    return res;
+    console.log(res.data);
+
+    return res.data;
 }
 
 export default function NewsPage() {

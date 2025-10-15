@@ -161,8 +161,8 @@ importers:
         specifier: ^2.0.68
         version: 2.0.68(react@19.1.0)(zod@3.25.61)
       '@directus/sdk':
-        specifier: ^20.1.0
-        version: 20.1.0
+        specifier: ^10.2.0
+        version: 10.3.5
       '@directus/visual-editing':
         specifier: ^1.0.1
         version: 1.1.0
@@ -529,10 +529,6 @@ packages:
 
   '@directus/sdk@10.3.5':
     resolution: {integrity: sha512-ZLn85mfy3MWyIhTSrw46Eka1XdjoRIugZXNQy9w+zSEFm3hAzgB74N1qH7zARj9dGCWx+bAAno3n29Y2NqQv/A==}
-
-  '@directus/sdk@20.1.0':
-    resolution: {integrity: sha512-EV2bwfiOXc1QFYAIqfGgyZ7JcKgHF43UVEYivUpMjOLiihI9tpmNfcz/qmOXju7LCZrBmSwTOHMRtOXPdZWiLQ==}
-    engines: {node: '>=22'}
 
   '@directus/sdk@9.14.2':
     resolution: {integrity: sha512-GHLT0qSNt+Lt3/DoOQ3UqPlNyvRB+5mat/bAD6bnWoQF3fDc/3bGgMnfbXHKOBIk43FIzp+JJYpkErkIWRgHFQ==}
@@ -4510,6 +4506,7 @@ packages:
     resolution: {integrity: sha512-t0etAxTUk1w5MYdNOkZBZ8rvYYN5iL+2dHCCx/DpkFm/bW28M6y5nUS83D4XdZiHy35Fpaw6LBb+F88fHZnVCw==}
     engines: {node: '>=8.17.0'}
     hasBin: true
+    bundledDependencies: []
 
   jsonpath@1.1.1:
     resolution: {integrity: sha512-l6Cg7jRpixfbgoWgkrl77dgEj8RPvND0wMH6TwQmi9Qs4TFfS9u5cUFnbeKTwj5ga5Y3BTGGNI28k117LJ009w==}
@@ -7308,8 +7305,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@directus/sdk@20.1.0': {}
-
   '@directus/sdk@9.14.2':
     dependencies:
       axios: 0.24.0
@@ -9415,7 +9410,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -11193,7 +11188,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -11781,7 +11776,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 

@@ -1,4 +1,4 @@
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
@@ -29,18 +29,18 @@ async function getProjects() {
 }
 
 async function getPosts() {
-  const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
-  const res = await directus.request(readItems("posts", {
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res = await directus.items<any, any>("posts").readByQuery({
     fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
     limit: 4,
     sort: ["-date"],
-  }));
+  });
   return res.data;
 }
 
 async function getEvents() {
-  const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
-  const res = await directus.request(readItems("events", {
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res = await directus.items<any, any>("events").readByQuery({
     fields: [
       "name",
       "start",
@@ -52,8 +52,8 @@ async function getEvents() {
     limit: 3,
     sort: ["start"],
     filter: { start: { _gte: new Date().toISOString() } },
-  }));
-  return res;
+  });
+  return res.data;
 }
 
 export const metadata: Metadata = {
