@@ -1,20 +1,24 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: Build All Projects
+on: [push, pull_request]
 jobs:
-  Explore-GitHub-Actions:
+  build-all-projects:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
+      
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
+      
       - name: Install Dependencies
         shell: bash
         run: |
           pnpm install
-      - name: Build Project
+      
+      - name: Build Projects
         shell: bash
+        env:
+          MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
         run: |
           pnpm build
       
