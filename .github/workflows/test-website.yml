@@ -10,11 +10,10 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
       
-      - name: Install Website Dependencies
+      - name: Install Dependencies
         shell: bash
         run: |
-          cd apps/website
-          npm install
+          pnpm install
       
       - name: Build Website
         shell: bash
