@@ -1,5 +1,10 @@
 name: test Website
-on: [pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
 jobs:
   test-website:
     runs-on: ubuntu-latest
@@ -15,11 +20,11 @@ jobs:
         run: |
           pnpm install
       
-      - name: Build Website
+      - name: Build and Launch Website
         shell: bash
         env:
           MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
           WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
         run: |
           cd apps/website
-          npm run build
+          npm run build && npm run launch
