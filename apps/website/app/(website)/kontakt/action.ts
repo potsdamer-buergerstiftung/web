@@ -2,8 +2,7 @@
 // Weist NextJS an, dass diese Funktion auf dem Server ausgeführt wird
 "use server";
 
-import directus from "../directus";
-import { createItem } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 
 export async function submitForm(prevState: any, formData: FormData) {
 
@@ -18,8 +17,9 @@ export async function submitForm(prevState: any, formData: FormData) {
     };
 
     console.log(data);
-
-    await directus.request(createItem("contact_requests", data));
+    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+    //await directus.request(createItem("contact_requests", data));
+    directus.items<any,any>("contact_requests").createOne(data);
 
     return { success: true, message: "Nachricht erfolgreich gesendet!" };
 }

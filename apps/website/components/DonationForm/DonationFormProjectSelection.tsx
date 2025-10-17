@@ -1,23 +1,23 @@
 "use client";
 
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
 import { donationProgressAtom, projectsAtom, selectedProjectId } from "./state";
 import clsx from "clsx";
-import directus from "app/(website)/directus";
 
 async function getProjects() {
-    const res = await directus.request(readItems("projects", {
+    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+    const res = await directus.items<any, any>("projects").readByQuery({
         fields: ["id", "title", "image"],
         filter: {
             allow_donations: {
                 _eq: true
             }
         }
-    }));
-    return res;
+    });
+    return res.data;
 }
 
 export default function DonationFormProjectSelection() {

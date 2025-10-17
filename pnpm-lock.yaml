@@ -155,14 +155,14 @@ importers:
   apps/website:
     dependencies:
       '@ai-sdk/anthropic':
-        specifier: ^2.0.27
-        version: 2.0.27(zod@3.25.61)
+        specifier: ^2.0.33
+        version: 2.0.33(zod@3.25.61)
       '@ai-sdk/react':
-        specifier: ^2.0.68
-        version: 2.0.68(react@19.1.0)(zod@3.25.61)
+        specifier: ^2.0.76
+        version: 2.0.76(react@19.1.0)(zod@3.25.61)
       '@directus/sdk':
-        specifier: ^20.1.0
-        version: 20.1.0
+        specifier: ^10.2.0
+        version: 10.3.5
       '@directus/visual-editing':
         specifier: ^1.0.1
         version: 1.1.0
@@ -371,14 +371,20 @@ importers:
 
 packages:
 
-  '@ai-sdk/anthropic@2.0.27':
-    resolution: {integrity: sha512-tGXdWNs+dMZLsn6yVroz9PqPZbCY6kqwGl/xxFVxJWDrTPGj3+1t1vE7pzTZ3vDOiG05iVC7wzlXwV2Or650YA==}
+  '@ai-sdk/anthropic@2.0.33':
+    resolution: {integrity: sha512-egqr9PHqqX2Am5mn/Xs1C3+1/wphVKiAjpsVpW85eLc2WpW7AgiAg52DCBr4By9bw3UVVuMeR4uEO1X0dKDUDA==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
   '@ai-sdk/gateway@1.0.39':
     resolution: {integrity: sha512-ijYCKG2sbn2RBVfIgaXNXvzHAf2HpFXxQODtjMI+T7Z4CLryflytchsZZ9qrGtsjiQVopKOV6m6kj4lq5fnbsg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  '@ai-sdk/gateway@2.0.0':
+    resolution: {integrity: sha512-Gj0PuawK7NkZuyYgO/h5kDK/l6hFOjhLdTq3/Lli1FTl47iGmwhH1IZQpAL3Z09BeFYWakcwUmn02ovIm2wy9g==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -393,8 +399,8 @@ packages:
     resolution: {integrity: sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA==}
     engines: {node: '>=18'}
 
-  '@ai-sdk/react@2.0.68':
-    resolution: {integrity: sha512-dj21puWzGsNNrDE/26cytapMlS2/LD5NiN8TrU59fU/FVwuFHjwiepSfscBik54t/xNYRQIU+Qvt7lM7jnXJdg==}
+  '@ai-sdk/react@2.0.76':
+    resolution: {integrity: sha512-ggAPzyaKJTqUWigpxMzI5DuC0Y3iEpDUPCgz6/6CpnKZY/iok+x5xiZhDemeaP0ILw5IQekV0kdgBR8JPgI8zQ==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -529,10 +535,6 @@ packages:
 
   '@directus/sdk@10.3.5':
     resolution: {integrity: sha512-ZLn85mfy3MWyIhTSrw46Eka1XdjoRIugZXNQy9w+zSEFm3hAzgB74N1qH7zARj9dGCWx+bAAno3n29Y2NqQv/A==}
-
-  '@directus/sdk@20.1.0':
-    resolution: {integrity: sha512-EV2bwfiOXc1QFYAIqfGgyZ7JcKgHF43UVEYivUpMjOLiihI9tpmNfcz/qmOXju7LCZrBmSwTOHMRtOXPdZWiLQ==}
-    engines: {node: '>=22'}
 
   '@directus/sdk@9.14.2':
     resolution: {integrity: sha512-GHLT0qSNt+Lt3/DoOQ3UqPlNyvRB+5mat/bAD6bnWoQF3fDc/3bGgMnfbXHKOBIk43FIzp+JJYpkErkIWRgHFQ==}
@@ -1935,6 +1937,10 @@ packages:
     resolution: {integrity: sha512-JekxQ0RApo4gS4un/iMGsIL1/k4KUBe3HmnGcDvzHuFBdQdudEJgTqcsJC7y6Ul4Yw5CeykgvQbX2XeEJd0+DA==}
     engines: {node: '>= 20'}
 
+  '@vercel/oidc@3.0.3':
+    resolution: {integrity: sha512-yNEQvPcVrK9sIe637+I0jD6leluPxzwJKx/Haw6F4H77CdDsszUn5V3o96LPziXkSNE2B83+Z3mjqGKBK/R6Gg==}
+    engines: {node: '>= 20'}
+
   '@vimeo/player@2.8.2':
     resolution: {integrity: sha512-OVD+WLW7mP9R7h+QZ5qeVJsTa3uvQ83nQE2rLFQkhhJ2zl5CnSWr3ctFedn4ggZrykyve6zbovZ8f6Xc0EIJHw==}
 
@@ -2313,6 +2319,12 @@ packages:
 
   ai@5.0.68:
     resolution: {integrity: sha512-SB6r+4TkKVlSg2ozGBSfuf6Is5hrcX/bpGBzOoyHIN3b4ILGhaly0IHEvP8+3GGIHXqtkPVEUmR6V05jKdjNlg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  ai@5.0.76:
+    resolution: {integrity: sha512-ZCxi1vrpyCUnDbtYrO/W8GLvyacV9689f00yshTIQ3mFFphbD7eIv40a2AOZBv3GGRA7SSRYIDnr56wcS/gyQg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -4510,6 +4522,7 @@ packages:
     resolution: {integrity: sha512-t0etAxTUk1w5MYdNOkZBZ8rvYYN5iL+2dHCCx/DpkFm/bW28M6y5nUS83D4XdZiHy35Fpaw6LBb+F88fHZnVCw==}
     engines: {node: '>=8.17.0'}
     hasBin: true
+    bundledDependencies: []
 
   jsonpath@1.1.1:
     resolution: {integrity: sha512-l6Cg7jRpixfbgoWgkrl77dgEj8RPvND0wMH6TwQmi9Qs4TFfS9u5cUFnbeKTwj5ga5Y3BTGGNI28k117LJ009w==}
@@ -7077,7 +7090,7 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/anthropic@2.0.27(zod@3.25.61)':
+  '@ai-sdk/anthropic@2.0.33(zod@3.25.61)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
@@ -7088,6 +7101,13 @@ snapshots:
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
       '@vercel/oidc': 3.0.2
+      zod: 3.25.61
+
+  '@ai-sdk/gateway@2.0.0(zod@3.25.61)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      '@vercel/oidc': 3.0.3
       zod: 3.25.61
 
   '@ai-sdk/provider-utils@3.0.12(zod@3.25.61)':
@@ -7101,10 +7121,10 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@2.0.68(react@19.1.0)(zod@3.25.61)':
+  '@ai-sdk/react@2.0.76(react@19.1.0)(zod@3.25.61)':
     dependencies:
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
-      ai: 5.0.68(zod@3.25.61)
+      ai: 5.0.76(zod@3.25.61)
       react: 19.1.0
       swr: 2.3.6(react@19.1.0)
       throttleit: 2.1.0
@@ -7307,8 +7327,6 @@ snapshots:
       axios: 0.27.2
     transitivePeerDependencies:
       - debug
-
-  '@directus/sdk@20.1.0': {}
 
   '@directus/sdk@9.14.2':
     dependencies:
@@ -8652,6 +8670,8 @@ snapshots:
 
   '@vercel/oidc@3.0.2': {}
 
+  '@vercel/oidc@3.0.3': {}
+
   '@vimeo/player@2.8.2':
     dependencies:
       native-promise-only: 0.8.1
@@ -9415,7 +9435,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9424,6 +9444,14 @@ snapshots:
   ai@5.0.68(zod@3.25.61):
     dependencies:
       '@ai-sdk/gateway': 1.0.39(zod@3.25.61)
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      '@opentelemetry/api': 1.9.0
+      zod: 3.25.61
+
+  ai@5.0.76(zod@3.25.61):
+    dependencies:
+      '@ai-sdk/gateway': 2.0.0(zod@3.25.61)
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
       '@opentelemetry/api': 1.9.0
@@ -11193,7 +11221,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -11781,7 +11809,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 

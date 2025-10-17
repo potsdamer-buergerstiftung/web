@@ -1,19 +1,19 @@
-import { readItems } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 import { Suspense } from "react";
 import Article from "./Article";
-import directus from "app/(website)/directus";
 
 async function getPost(slug: string) {
-    const res = await directus.request(readItems("posts", {
+    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+    const res = await directus.items<any, any>("posts").readByQuery({
         fields: ["title", "content", "user_created.first_name"],
         filter: {
             slug: {
                 _eq: decodeURIComponent(slug),
             },
         }
-    }));
+    });
 
-    return res;
+    return res.data![0];
 }
 
 export default async function PostPage(

@@ -3,16 +3,16 @@ import Logo from "../Logo";
 import HeaderDonationButton from "./HeaderDonationButton";
 import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
-import { createDirectus, readSingleton, rest } from "@directus/sdk";
+import { Directus } from "@directus/sdk";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
 
 interface HeaderProps {
   nav?: React.ReactNode;
 }
 
 async function Banner() {
-  const res: any = await directus.request(readSingleton("website_banner"));
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res: any = await directus.singleton("website_banner").read();
 
   if (!(res.status == "visible")) {
     return null;
