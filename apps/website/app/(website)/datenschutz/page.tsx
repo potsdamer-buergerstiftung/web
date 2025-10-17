@@ -2,13 +2,12 @@ import Blocks from "@components/Block/Block";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { Directus } from "@directus/sdk";
+import { readSingleton } from "@directus/sdk";
+import directus from "../directus";
 
 async function getPrivacy() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res: any = await directus.singleton<any>("privacy_policy").read();
-    const blocks = res.content;
-    return blocks;
+    const res = await directus.request(readSingleton("privacy_policy"));
+    return res.content;
 }
 
 export default async function ImprintPage() {
