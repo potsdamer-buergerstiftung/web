@@ -22,3 +22,11 @@ jobs:
           WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
         run: |
           pnpm build
+
+      - name: Launch Projects
+        shell: bash
+        env:
+          MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: |
+          pnpm dev   
