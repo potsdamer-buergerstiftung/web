@@ -10,26 +10,26 @@ async function getPost(slug: string) {
             slug: {
                 _eq: decodeURIComponent(slug),
             },
-        }
+        },
     }));
 
-    return res;
+    return res[0];
 }
 
 export default async function PostPage(
     props: {
         params: Promise<{ slug: string }>;
-    }
+    },
 ) {
     const params = await props.params;
     const posts = getPost(params.slug);
 
     return (
         <>
+            {/* @ts-ignore-error */}
             <Suspense>
-                {/* @ts-ignore-error */}
                 <Article promise={posts} />
             </Suspense>
         </>
-    )
+    );
 }
