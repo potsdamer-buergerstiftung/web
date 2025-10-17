@@ -1,11 +1,10 @@
 import EventCard from "@components/EventCard";
 import PageTitle from "@components/PageTitle";
+import { Directus } from "@directus/sdk";
 import { Metadata } from "next";
 import Image from "next/image";
 import EventList from "./EventList";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
-import { readItems } from "@directus/sdk";
 
 export const metadata: Metadata = {
   title: "Veranstaltungen - Inselbühne Potsdam",
@@ -15,7 +14,8 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getEvents() {
-  const res = await directus.request(readItems("events", {
+  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
+  const res = await directus.items<any, any>("events").readByQuery({
     fields: [
       "name",
       "start",
@@ -30,9 +30,8 @@ async function getEvents() {
       project: { _eq: "inselbuehne" },
       start: { _gte: new Date().toISOString() },
     },
-  }));
-  
-  return res;
+  });
+  return res.data;
 }
 
 export default function ProgramPage() {
