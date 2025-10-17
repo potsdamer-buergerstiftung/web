@@ -10,6 +10,6 @@
     "nitropack": "2.12.7"
   },
   "dependencies": {
-    "@directus/sdk": "^9.12.1"
+    "@directus/sdk": "^20.1.0"
   }
 }
