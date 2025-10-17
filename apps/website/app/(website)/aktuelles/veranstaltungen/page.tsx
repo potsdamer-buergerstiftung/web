@@ -27,7 +27,7 @@ async function getEvents() {
 async function getPastEvents() {
     const res = await directus.request(readItems("events", {
         fields: ["name", "start", "id", "image", "external_ticket_url", "registration_needed"],
-        sort: ["start"],
+        sort: ["-start"],
         filter: { start: { _lt: new Date().toISOString() } },
     }));
     return res;
