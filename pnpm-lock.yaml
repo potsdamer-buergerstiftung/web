@@ -154,15 +154,9 @@ importers:
 
   apps/website:
     dependencies:
-      '@ai-sdk/anthropic':
-        specifier: ^2.0.27
-        version: 2.0.27(zod@3.25.61)
-      '@ai-sdk/react':
-        specifier: ^2.0.68
-        version: 2.0.68(react@19.1.0)(zod@3.25.61)
       '@directus/sdk':
-        specifier: ^20.1.0
-        version: 20.1.0
+        specifier: ^10.2.0
+        version: 10.3.5
       '@directus/visual-editing':
         specifier: ^1.0.1
         version: 1.1.0
@@ -371,12 +365,6 @@ importers:
 
 packages:
 
-  '@ai-sdk/anthropic@2.0.27':
-    resolution: {integrity: sha512-tGXdWNs+dMZLsn6yVroz9PqPZbCY6kqwGl/xxFVxJWDrTPGj3+1t1vE7pzTZ3vDOiG05iVC7wzlXwV2Or650YA==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      zod: ^3.25.76 || ^4.1.8
-
   '@ai-sdk/gateway@1.0.39':
     resolution: {integrity: sha512-ijYCKG2sbn2RBVfIgaXNXvzHAf2HpFXxQODtjMI+T7Z4CLryflytchsZZ9qrGtsjiQVopKOV6m6kj4lq5fnbsg==}
     engines: {node: '>=18'}
@@ -392,16 +380,6 @@ packages:
   '@ai-sdk/provider@2.0.0':
     resolution: {integrity: sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA==}
     engines: {node: '>=18'}
-
-  '@ai-sdk/react@2.0.68':
-    resolution: {integrity: sha512-dj21puWzGsNNrDE/26cytapMlS2/LD5NiN8TrU59fU/FVwuFHjwiepSfscBik54t/xNYRQIU+Qvt7lM7jnXJdg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      react: ^18 || ^19 || ^19.0.0-rc
-      zod: ^3.25.76 || ^4.1.8
-    peerDependenciesMeta:
-      zod:
-        optional: true
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -529,10 +507,6 @@ packages:
 
   '@directus/sdk@10.3.5':
     resolution: {integrity: sha512-ZLn85mfy3MWyIhTSrw46Eka1XdjoRIugZXNQy9w+zSEFm3hAzgB74N1qH7zARj9dGCWx+bAAno3n29Y2NqQv/A==}
-
-  '@directus/sdk@20.1.0':
-    resolution: {integrity: sha512-EV2bwfiOXc1QFYAIqfGgyZ7JcKgHF43UVEYivUpMjOLiihI9tpmNfcz/qmOXju7LCZrBmSwTOHMRtOXPdZWiLQ==}
-    engines: {node: '>=22'}
 
   '@directus/sdk@9.14.2':
     resolution: {integrity: sha512-GHLT0qSNt+Lt3/DoOQ3UqPlNyvRB+5mat/bAD6bnWoQF3fDc/3bGgMnfbXHKOBIk43FIzp+JJYpkErkIWRgHFQ==}
@@ -4510,6 +4484,7 @@ packages:
     resolution: {integrity: sha512-t0etAxTUk1w5MYdNOkZBZ8rvYYN5iL+2dHCCx/DpkFm/bW28M6y5nUS83D4XdZiHy35Fpaw6LBb+F88fHZnVCw==}
     engines: {node: '>=8.17.0'}
     hasBin: true
+    bundledDependencies: []
 
   jsonpath@1.1.1:
     resolution: {integrity: sha512-l6Cg7jRpixfbgoWgkrl77dgEj8RPvND0wMH6TwQmi9Qs4TFfS9u5cUFnbeKTwj5ga5Y3BTGGNI28k117LJ009w==}
@@ -6452,11 +6427,6 @@ packages:
     resolution: {integrity: sha512-upi/0ZGkYgEcLeGieoz8gT74oWHA0E7JivX7aN9mAf+Tc7BQoRBvnIGHoPDw+f9TXTW4s6kGYCZJtauP6OYp7g==}
     hasBin: true
 
-  swr@2.3.6:
-    resolution: {integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==}
-    peerDependencies:
-      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   system-architecture@0.1.0:
     resolution: {integrity: sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==}
     engines: {node: '>=18'}
@@ -6508,10 +6478,6 @@ packages:
   throttle-debounce@3.0.1:
     resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==}
     engines: {node: '>=10'}
-
-  throttleit@2.1.0:
-    resolution: {integrity: sha512-nt6AMGKW1p/70DF/hGBdJB57B8Tspmbp5gfJ8ilhLnt7kkr2ye7hzD6NVG8GGErk2HWF34igrL2CXmNIkzKqKw==}
-    engines: {node: '>=18'}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -7077,12 +7043,6 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/anthropic@2.0.27(zod@3.25.61)':
-    dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
-      zod: 3.25.61
-
   '@ai-sdk/gateway@1.0.39(zod@3.25.61)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
@@ -7100,16 +7060,6 @@ snapshots:
   '@ai-sdk/provider@2.0.0':
     dependencies:
       json-schema: 0.4.0
-
-  '@ai-sdk/react@2.0.68(react@19.1.0)(zod@3.25.61)':
-    dependencies:
-      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
-      ai: 5.0.68(zod@3.25.61)
-      react: 19.1.0
-      swr: 2.3.6(react@19.1.0)
-      throttleit: 2.1.0
-    optionalDependencies:
-      zod: 3.25.61
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -7307,8 +7257,6 @@ snapshots:
       axios: 0.27.2
     transitivePeerDependencies:
       - debug
-
-  '@directus/sdk@20.1.0': {}
 
   '@directus/sdk@9.14.2':
     dependencies:
@@ -9415,7 +9363,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -11193,7 +11141,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -11781,7 +11729,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -14807,12 +14755,6 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  swr@2.3.6(react@19.1.0):
-    dependencies:
-      dequal: 2.0.3
-      react: 19.1.0
-      use-sync-external-store: 1.5.0(react@19.1.0)
-
   system-architecture@0.1.0: {}
 
   tabbable@6.2.0: {}
@@ -14899,8 +14841,6 @@ snapshots:
   three@0.143.0: {}
 
   throttle-debounce@3.0.1: {}
-
-  throttleit@2.1.0: {}
 
   through@2.3.8: {}
 
