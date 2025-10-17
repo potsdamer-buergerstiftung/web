@@ -1,7 +1,7 @@
-name: Build All Projects
+name: test Website
 on: [pull_request]
 jobs:
-  build-all-projects:
+  test-website:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
