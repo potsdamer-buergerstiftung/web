@@ -5,9 +5,9 @@ import PageTitle from "@components/PageTitle";
 import { createDirectus } from "@directus/sdk";
 import { rest } from "@directus/sdk";
 import { readSingleton } from "@directus/sdk";
-import directus from "../directus";
 
 async function getPrivacy() {
+    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
     const res: any = await directus.request(readSingleton("privacy_policy"));
     const blocks = res.content;
     console.log(blocks);
