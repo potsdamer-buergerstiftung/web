@@ -1,0 +1,26 @@
+name: Build All Projects
+on: [pull_request]
+jobs:
+  build-all-projects:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+      
+      - name: Install Website Dependencies
+        shell: bash
+        run: |
+          cd apps/website
+          npm install
+      
+      - name: Build Website
+        shell: bash
+        env:
+          MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: |
+          cd apps/website
+          npm run build
