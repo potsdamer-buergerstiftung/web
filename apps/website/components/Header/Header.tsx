@@ -5,13 +5,13 @@ import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
 import { createDirectus, readSingleton, rest } from "@directus/sdk";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
 
 interface HeaderProps {
   nav?: React.ReactNode;
 }
 
 async function Banner() {
+  const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
   const res: any = await directus.request(readSingleton("website_banner"));
 
   if (!(res.status == "visible")) {

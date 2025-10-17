@@ -3,11 +3,13 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { readSingleton } from "@directus/sdk";
-import directus from "../directus";
 
 async function getPrivacy() {
-    const res = await directus.request(readSingleton("privacy_policy"));
-    return res.content;
+    const directus = createDirectus("https://portal.potsdamer-buergerstiftung.org").with(rest());
+    const res: any = await directus.request(readSingleton("privacy_policy"));
+    const blocks = res.content;
+    console.log(blocks);
+    return res;
 }
 
 export default async function ImprintPage() {
