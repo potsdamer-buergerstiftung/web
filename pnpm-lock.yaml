@@ -154,6 +154,12 @@ importers:
 
   apps/website:
     dependencies:
+      '@ai-sdk/anthropic':
+        specifier: ^2.0.33
+        version: 2.0.33(zod@3.25.61)
+      '@ai-sdk/react':
+        specifier: ^2.0.76
+        version: 2.0.76(react@19.1.0)(zod@3.25.61)
       '@directus/sdk':
         specifier: ^10.2.0
         version: 10.3.5
@@ -365,8 +371,20 @@ importers:
 
 packages:
 
+  '@ai-sdk/anthropic@2.0.33':
+    resolution: {integrity: sha512-egqr9PHqqX2Am5mn/Xs1C3+1/wphVKiAjpsVpW85eLc2WpW7AgiAg52DCBr4By9bw3UVVuMeR4uEO1X0dKDUDA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   '@ai-sdk/gateway@1.0.39':
     resolution: {integrity: sha512-ijYCKG2sbn2RBVfIgaXNXvzHAf2HpFXxQODtjMI+T7Z4CLryflytchsZZ9qrGtsjiQVopKOV6m6kj4lq5fnbsg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  '@ai-sdk/gateway@2.0.0':
+    resolution: {integrity: sha512-Gj0PuawK7NkZuyYgO/h5kDK/l6hFOjhLdTq3/Lli1FTl47iGmwhH1IZQpAL3Z09BeFYWakcwUmn02ovIm2wy9g==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -380,6 +398,16 @@ packages:
   '@ai-sdk/provider@2.0.0':
     resolution: {integrity: sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA==}
     engines: {node: '>=18'}
+
+  '@ai-sdk/react@2.0.76':
+    resolution: {integrity: sha512-ggAPzyaKJTqUWigpxMzI5DuC0Y3iEpDUPCgz6/6CpnKZY/iok+x5xiZhDemeaP0ILw5IQekV0kdgBR8JPgI8zQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      react: ^18 || ^19 || ^19.0.0-rc
+      zod: ^3.25.76 || ^4.1.8
+    peerDependenciesMeta:
+      zod:
+        optional: true
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -1909,6 +1937,10 @@ packages:
     resolution: {integrity: sha512-JekxQ0RApo4gS4un/iMGsIL1/k4KUBe3HmnGcDvzHuFBdQdudEJgTqcsJC7y6Ul4Yw5CeykgvQbX2XeEJd0+DA==}
     engines: {node: '>= 20'}
 
+  '@vercel/oidc@3.0.3':
+    resolution: {integrity: sha512-yNEQvPcVrK9sIe637+I0jD6leluPxzwJKx/Haw6F4H77CdDsszUn5V3o96LPziXkSNE2B83+Z3mjqGKBK/R6Gg==}
+    engines: {node: '>= 20'}
+
   '@vimeo/player@2.8.2':
     resolution: {integrity: sha512-OVD+WLW7mP9R7h+QZ5qeVJsTa3uvQ83nQE2rLFQkhhJ2zl5CnSWr3ctFedn4ggZrykyve6zbovZ8f6Xc0EIJHw==}
 
@@ -2287,6 +2319,12 @@ packages:
 
   ai@5.0.68:
     resolution: {integrity: sha512-SB6r+4TkKVlSg2ozGBSfuf6Is5hrcX/bpGBzOoyHIN3b4ILGhaly0IHEvP8+3GGIHXqtkPVEUmR6V05jKdjNlg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  ai@5.0.76:
+    resolution: {integrity: sha512-ZCxi1vrpyCUnDbtYrO/W8GLvyacV9689f00yshTIQ3mFFphbD7eIv40a2AOZBv3GGRA7SSRYIDnr56wcS/gyQg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -6427,6 +6465,11 @@ packages:
     resolution: {integrity: sha512-upi/0ZGkYgEcLeGieoz8gT74oWHA0E7JivX7aN9mAf+Tc7BQoRBvnIGHoPDw+f9TXTW4s6kGYCZJtauP6OYp7g==}
     hasBin: true
 
+  swr@2.3.6:
+    resolution: {integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   system-architecture@0.1.0:
     resolution: {integrity: sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==}
     engines: {node: '>=18'}
@@ -6478,6 +6521,10 @@ packages:
   throttle-debounce@3.0.1:
     resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==}
     engines: {node: '>=10'}
+
+  throttleit@2.1.0:
+    resolution: {integrity: sha512-nt6AMGKW1p/70DF/hGBdJB57B8Tspmbp5gfJ8ilhLnt7kkr2ye7hzD6NVG8GGErk2HWF34igrL2CXmNIkzKqKw==}
+    engines: {node: '>=18'}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -7043,11 +7090,24 @@ packages:
 
 snapshots:
 
+  '@ai-sdk/anthropic@2.0.33(zod@3.25.61)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      zod: 3.25.61
+
   '@ai-sdk/gateway@1.0.39(zod@3.25.61)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
       '@vercel/oidc': 3.0.2
+      zod: 3.25.61
+
+  '@ai-sdk/gateway@2.0.0(zod@3.25.61)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      '@vercel/oidc': 3.0.3
       zod: 3.25.61
 
   '@ai-sdk/provider-utils@3.0.12(zod@3.25.61)':
@@ -7060,6 +7120,16 @@ snapshots:
   '@ai-sdk/provider@2.0.0':
     dependencies:
       json-schema: 0.4.0
+
+  '@ai-sdk/react@2.0.76(react@19.1.0)(zod@3.25.61)':
+    dependencies:
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      ai: 5.0.76(zod@3.25.61)
+      react: 19.1.0
+      swr: 2.3.6(react@19.1.0)
+      throttleit: 2.1.0
+    optionalDependencies:
+      zod: 3.25.61
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -8600,6 +8670,8 @@ snapshots:
 
   '@vercel/oidc@3.0.2': {}
 
+  '@vercel/oidc@3.0.3': {}
+
   '@vimeo/player@2.8.2':
     dependencies:
       native-promise-only: 0.8.1
@@ -9372,6 +9444,14 @@ snapshots:
   ai@5.0.68(zod@3.25.61):
     dependencies:
       '@ai-sdk/gateway': 1.0.39(zod@3.25.61)
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
+      '@opentelemetry/api': 1.9.0
+      zod: 3.25.61
+
+  ai@5.0.76(zod@3.25.61):
+    dependencies:
+      '@ai-sdk/gateway': 2.0.0(zod@3.25.61)
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.61)
       '@opentelemetry/api': 1.9.0
@@ -14755,6 +14835,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  swr@2.3.6(react@19.1.0):
+    dependencies:
+      dequal: 2.0.3
+      react: 19.1.0
+      use-sync-external-store: 1.5.0(react@19.1.0)
+
   system-architecture@0.1.0: {}
 
   tabbable@6.2.0: {}
@@ -14841,6 +14927,8 @@ snapshots:
   three@0.143.0: {}
 
   throttle-debounce@3.0.1: {}
+
+  throttleit@2.1.0: {}
 
   through@2.3.8: {}
 
