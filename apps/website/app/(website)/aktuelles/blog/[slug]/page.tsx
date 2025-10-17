@@ -5,7 +5,7 @@ import directus from "app/(website)/directus";
 
 async function getPost(slug: string) {
     const res = await directus.request(readItems("posts", {
-        fields: ["title", "content", "user_created.first_name"],
+        fields: ["title", "content", "user_created.first_name", "image"],
         filter: {
             slug: {
                 _eq: decodeURIComponent(slug),
