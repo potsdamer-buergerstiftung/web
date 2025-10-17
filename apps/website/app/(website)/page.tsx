@@ -1,4 +1,4 @@
-import { Directus } from "@directus/sdk";
+import { createDirectus, readItems, rest } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
@@ -9,6 +9,7 @@ import EventGrid from "./EventGrid";
 import { Metadata } from "next";
 import { wixClient } from "./wix";
 import InstaFeed from "@components/InstaFeed";
+import directus from "./directus";
 
 export const revalidate = 120;
 
@@ -29,18 +30,16 @@ async function getProjects() {
 }
 
 async function getPosts() {
-  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-  const res = await directus.items<any, any>("posts").readByQuery({
+  const res = await directus.request(readItems("posts", {
     fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
     limit: 4,
     sort: ["-date"],
-  });
-  return res.data;
+  }));
+  return res;
 }
 
 async function getEvents() {
-  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-  const res = await directus.items<any, any>("events").readByQuery({
+  const res = await directus.request(readItems("events", {
     fields: [
       "name",
       "start",
@@ -52,8 +51,8 @@ async function getEvents() {
     limit: 3,
     sort: ["start"],
     filter: { start: { _gte: new Date().toISOString() } },
-  });
-  return res.data;
+  }));
+  return res;
 }
 
 export const metadata: Metadata = {

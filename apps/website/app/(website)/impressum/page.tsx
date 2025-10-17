@@ -2,11 +2,11 @@ import Blocks from "@components/Block/Block";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
-import { Directus } from "@directus/sdk";
+import directus from "../directus";
+import { readSingleton } from "@directus/sdk";
 
 async function getProjects() {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res: any = await directus.singleton<any>("imprint").read();
+    const res: any = await directus.request(readSingleton("imprint"));
     const blocks = res.content;
     return blocks;
 }
