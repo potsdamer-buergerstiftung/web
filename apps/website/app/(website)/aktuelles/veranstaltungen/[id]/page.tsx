@@ -13,7 +13,7 @@ async function getEvent(id: string) {
         }
     }));
 
-    return res;
+    return res[0];
 }
 
 export default async function PostPage(
