@@ -29,7 +29,6 @@ This monorepo contains multiple applications and packages:
   - `@tailwindcss/typography`
   - `@tailwindcss/aspect-ratio`
   - `@tailwindcss/forms`
-  - `@tailwindcss/line-clamp`
 - **UI Components**: Headless UI, Heroicons
 - **Responsive Layout**: react-responsive-masonry
 
