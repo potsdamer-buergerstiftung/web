@@ -73,7 +73,7 @@ importers:
         version: 2.3.8
       jotai:
         specifier: ^2.4.0
-        version: 2.12.5(@types/react@18.3.23)(react@18.3.1)
+        version: 2.15.1(@babel/core@7.28.4)(@babel/template@7.27.2)(@types/react@18.3.23)(react@18.3.1)
       next:
         specifier: ^13.4.6
         version: 13.5.11(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)
@@ -228,7 +228,7 @@ importers:
         version: 2.3.8
       jotai:
         specifier: ^1.13.0
-        version: 1.13.1(@babel/core@7.28.4)(@babel/template@7.27.2)(react@19.1.0)
+        version: 2.15.1(@babel/core@7.28.4)(@babel/template@7.27.2)(@types/react@19.1.8)(react@19.1.0)
       next:
         specifier: ^15.3.3
         version: 15.3.3(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.93.2)
@@ -328,7 +328,7 @@ importers:
         version: 10.1.8(eslint@9.37.0(jiti@2.6.1))
       eslint-config-turbo:
         specifier: latest
-        version: 2.5.8(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4)
+        version: 2.6.0(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4)
       eslint-plugin-react:
         specifier: 7.37.5
         version: 7.37.5(eslint@9.37.0(jiti@2.6.1))
@@ -486,11 +486,11 @@ packages:
   '@codemirror/autocomplete@6.18.6':
     resolution: {integrity: sha512-PHHBXFomUs5DF+9tCOM/UoW6XQ4R44lLNNhRaW9PKPTU0D7lIjRg3ElxaJnTwsl/oHiR93WSXDBrekhoUGCPtg==}
 
+  '@codemirror/commands@6.10.0':
+    resolution: {integrity: sha512-2xUIc5mHXQzT16JnyOFkh8PvfeXuIut3pslWGfsGOhxP/lpgRm9HOl/mpzLErgt5mXDovqA0d11P21gofRLb9w==}
+
   '@codemirror/commands@6.8.1':
     resolution: {integrity: sha512-KlGVYufHMQzxbdQONiLyGQDUW0itrLZwq3CcY7xpv9ZLRHqzkBSoteocBHtMCoY7/Ci4xhzSrToIeLg7FxHuaw==}
-
-  '@codemirror/commands@6.9.0':
-    resolution: {integrity: sha512-454TVgjhO6cMufsyyGN70rGIfJxJEjcqjBG2x2Y03Y/+Fm99d3O/Kv1QDYWuG6hvxsgmjXmBuATikIIYvERX+w==}
 
   '@codemirror/lang-json@6.0.1':
     resolution: {integrity: sha512-+T1flHdgpqDDlJZ2Lkil/rLiRy684WMLc74xUnjJH48GQdfJo/pudlTRreZmKwzP8/tGdKf83wlbAdOCzlJOGQ==}
@@ -501,8 +501,8 @@ packages:
   '@codemirror/lint@6.8.5':
     resolution: {integrity: sha512-s3n3KisH7dx3vsoeGMxsbRAgKe4O1vbrnKBClm99PU0fWxmxsx5rR2PfqQgIt+2MMJBHbiJ5rfIdLYfB9NNvsA==}
 
-  '@codemirror/lint@6.9.0':
-    resolution: {integrity: sha512-wZxW+9XDytH3SKvS8cQzMyQCaaazH8XL1EMHleHe00wVzsv7NBQKVW2yzEHrRhmM7ZOhVdItPbvlRBvMp9ej7A==}
+  '@codemirror/lint@6.9.1':
+    resolution: {integrity: sha512-te7To1EQHePBQQzasDKWmK2xKINIXpk+xAiSYr9ZN+VB4KaT+/Hi2PEkeErTk5BV3PTz1TLyQL4MtJfPkKZ9sw==}
 
   '@codemirror/search@6.5.11':
     resolution: {integrity: sha512-KmWepDE6jUdL6n8cAAqIpRmLPBZ5ZKnicE8oGU/s3QrAVID+0VhLFrzUucVKHG5035/BSykhExDL/Xm7dHthiA==}
@@ -994,8 +994,8 @@ packages:
   '@lezer/highlight@1.2.1':
     resolution: {integrity: sha512-Z5duk4RN/3zuVO7Jq0pGLJ3qynpxUVsh7IbUbGj88+uV2ApSAn6kWg2au3iJb+0Zi7kKtqffIESgNcRXWZWmSA==}
 
-  '@lezer/highlight@1.2.2':
-    resolution: {integrity: sha512-z8TQwaBXXQIvG6i2g3e9cgMwUUXu9Ib7jo2qRRggdhwKpM56Dw3PM3wmexn+EGaaOZ7az0K7sjc3/gcGW7sz7A==}
+  '@lezer/highlight@1.2.3':
+    resolution: {integrity: sha512-qXdH7UqTvGfdVBINrgKhDsVTJTxactNNxLk7+UMwZhU13lMHaOBlJe9Vqp907ya56Y3+ed2tlqzys7jDkTmW0g==}
 
   '@lezer/json@1.0.3':
     resolution: {integrity: sha512-BP9KzdF9Y35PDpv04r0VeSTKDeox5vVr3efE7eBbx3r4s3oNLfunchejZhjArmeieBH+nVOpgIiBJpEAv8ilqQ==}
@@ -1051,8 +1051,8 @@ packages:
     resolution: {integrity: sha512-5XUvZuffe3KetyhbWwd4n2ktd7wraocCYw10tlM+/u/95iAz29GjNiuNxbCD1T6Bn1MyGc4QLVNKOWhzJkVFAw==}
     engines: {node: ^14.16.0 || >=16.0.0}
 
-  '@netlify/open-api@2.40.0':
-    resolution: {integrity: sha512-Dp4lilDnkRKGWnljGkFVxfoh1wsWqxheE5/ZOf/sMZPsh3jGu5QZ4hVLEidzXYB/zIKFFqLaUbP2XYVxTqWqyQ==}
+  '@netlify/open-api@2.42.0':
+    resolution: {integrity: sha512-oHFCCo5FigIZcni/IioNKPwL9jC2++RUnHHfHFOhXKyLDGB8x93cU03N15RuZhG92+VM6dOzhM4WDEDeG6hXcQ==}
     engines: {node: '>=14.8.0'}
 
   '@netlify/runtime-utils@1.3.1':
@@ -1769,8 +1769,8 @@ packages:
   '@types/node@22.18.10':
     resolution: {integrity: sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==}
 
-  '@types/node@22.18.11':
-    resolution: {integrity: sha512-Gd33J2XIrXurb+eT2ktze3rJAfAp9ZNjlBdh4SVgyrKEOADwCbdUDaK7QgJno8Ue4kcajscsKqu6n8OBG3hhCQ==}
+  '@types/node@22.18.13':
+    resolution: {integrity: sha512-Bo45YKIjnmFtv6I1TuC8AaHBbqXtIo+Om5fE4QiU1Tj8QR/qt+8O3BAtOimG5IFmwaWiPmB3Mv3jtYzBA4Us2A==}
 
   '@types/prop-types@15.7.15':
     resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
@@ -3354,8 +3354,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.5.8:
-    resolution: {integrity: sha512-wzxmN7dJNFGDwOvR/4j8U2iaIH/ruYez8qg/sCKrezJ3+ljbFMvJLmgKKt/1mDuyU9wj5aZqO6VijP3QH169FA==}
+  eslint-config-turbo@2.6.0:
+    resolution: {integrity: sha512-WdNSKL1vTl5IGyovn8w3xkaEKsK2n+l9Ybk+4oISptcom/vz9sO/9QcjEKuZSXG0zxrj9Oyx/UZA04hRxmOe+Q==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -3425,8 +3425,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-turbo@2.5.8:
-    resolution: {integrity: sha512-bVjx4vTH0oTKIyQ7EGFAXnuhZMrKIfu17qlex/dps7eScPnGQLJ3r1/nFq80l8xA+8oYjsSirSQ2tXOKbz3kEw==}
+  eslint-plugin-turbo@2.6.0:
+    resolution: {integrity: sha512-04TohZhq6YQVXBZVRvrn8ZTj1sUQYZmjUWsfwgFAlaM5Kbk5Fdh5mLBKfhGGzekB55E+Ut9qNzAGh+JW4rjiuA==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -4426,13 +4426,19 @@ packages:
       jotai-zustand:
         optional: true
 
-  jotai@2.12.5:
-    resolution: {integrity: sha512-G8m32HW3lSmcz/4mbqx0hgJIQ0ekndKWiYP7kWVKi0p6saLXdSoye+FZiOFyonnd7Q482LCzm8sMDl7Ar1NWDw==}
+  jotai@2.15.1:
+    resolution: {integrity: sha512-yHT1HAZ3ba2Q8wgaUQ+xfBzEtcS8ie687I8XVCBinfg4bNniyqLIN+utPXWKQE93LMF5fPbQSVRZqgpcN5yd6Q==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
+      '@babel/core': '>=7.0.0'
+      '@babel/template': '>=7.0.0'
       '@types/react': '>=17.0.0'
       react: '>=17.0.0'
     peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
       '@types/react':
         optional: true
       react:
@@ -7233,19 +7239,19 @@ snapshots:
       '@codemirror/view': 6.37.2
       '@lezer/common': 1.3.0
 
+  '@codemirror/commands@6.10.0':
+    dependencies:
+      '@codemirror/language': 6.11.1
+      '@codemirror/state': 6.5.2
+      '@codemirror/view': 6.37.2
+      '@lezer/common': 1.3.0
+
   '@codemirror/commands@6.8.1':
     dependencies:
       '@codemirror/language': 6.11.1
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.37.2
       '@lezer/common': 1.2.3
-
-  '@codemirror/commands@6.9.0':
-    dependencies:
-      '@codemirror/language': 6.11.1
-      '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.37.2
-      '@lezer/common': 1.3.0
 
   '@codemirror/lang-json@6.0.1':
     dependencies:
@@ -7267,7 +7273,7 @@ snapshots:
       '@codemirror/view': 6.37.2
       crelt: 1.0.6
 
-  '@codemirror/lint@6.9.0':
+  '@codemirror/lint@6.9.1':
     dependencies:
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.37.2
@@ -7288,7 +7294,7 @@ snapshots:
       '@codemirror/language': 6.11.1
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.37.2
-      '@lezer/highlight': 1.2.2
+      '@lezer/highlight': 1.2.3
 
   '@codemirror/view@6.37.2':
     dependencies:
@@ -7697,7 +7703,7 @@ snapshots:
     dependencies:
       '@lezer/common': 1.2.3
 
-  '@lezer/highlight@1.2.2':
+  '@lezer/highlight@1.2.3':
     dependencies:
       '@lezer/common': 1.3.0
 
@@ -7812,7 +7818,7 @@ snapshots:
       write-file-atomic: 6.0.0
     optional: true
 
-  '@netlify/open-api@2.40.0':
+  '@netlify/open-api@2.42.0':
     optional: true
 
   '@netlify/runtime-utils@1.3.1':
@@ -8452,7 +8458,7 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/node@22.18.11':
+  '@types/node@22.18.13':
     dependencies:
       undici-types: 6.21.0
     optional: true
@@ -8523,7 +8529,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.18.11
+      '@types/node': 22.18.13
     optional: true
 
   '@typescript-eslint/parser@5.62.0(eslint@9.37.0(jiti@1.21.7))(typescript@5.9.3)':
@@ -9893,9 +9899,9 @@ snapshots:
   codemirror@6.0.1:
     dependencies:
       '@codemirror/autocomplete': 6.18.6
-      '@codemirror/commands': 6.9.0
+      '@codemirror/commands': 6.10.0
       '@codemirror/language': 6.11.1
-      '@codemirror/lint': 6.9.0
+      '@codemirror/lint': 6.9.1
       '@codemirror/search': 6.5.11
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.37.2
@@ -10662,10 +10668,10 @@ snapshots:
     dependencies:
       eslint: 9.37.0(jiti@2.6.1)
 
-  eslint-config-turbo@2.5.8(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4):
+  eslint-config-turbo@2.6.0(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4):
     dependencies:
       eslint: 9.37.0(jiti@2.6.1)
-      eslint-plugin-turbo: 2.5.8(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4)
+      eslint-plugin-turbo: 2.6.0(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4)
       turbo: 1.13.4
 
   eslint-import-resolver-node@0.3.9:
@@ -10918,7 +10924,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-turbo@2.5.8(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4):
+  eslint-plugin-turbo@2.6.0(eslint@9.37.0(jiti@2.6.1))(turbo@1.13.4):
     dependencies:
       dotenv: 16.0.3
       eslint: 9.37.0(jiti@2.6.1)
@@ -12115,10 +12121,19 @@ snapshots:
       '@babel/core': 7.28.4
       '@babel/template': 7.27.2
 
-  jotai@2.12.5(@types/react@18.3.23)(react@18.3.1):
+  jotai@2.15.1(@babel/core@7.28.4)(@babel/template@7.27.2)(@types/react@18.3.23)(react@18.3.1):
     optionalDependencies:
+      '@babel/core': 7.28.4
+      '@babel/template': 7.27.2
       '@types/react': 18.3.23
       react: 18.3.1
+
+  jotai@2.15.1(@babel/core@7.28.4)(@babel/template@7.27.2)(@types/react@19.1.8)(react@19.1.0):
+    optionalDependencies:
+      '@babel/core': 7.28.4
+      '@babel/template': 7.27.2
+      '@types/react': 19.1.8
+      react: 19.1.0
 
   js-tokens@4.0.0: {}
 
@@ -12836,7 +12851,7 @@ snapshots:
 
   netlify@13.3.5:
     dependencies:
-      '@netlify/open-api': 2.40.0
+      '@netlify/open-api': 2.42.0
       lodash-es: 4.17.21
       micro-api-client: 3.3.0
       node-fetch: 3.3.2
