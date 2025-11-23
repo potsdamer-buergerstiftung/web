@@ -7,7 +7,6 @@ import SocialMediaLinks from "@components/SocialMediaLinks";
 import ScrollProgressIndicator from "@components/ScrollProgressIndicator";
 import HeaderQuickDonateDrawer from "@components/Header/HeaderQuickDonateDrawer";
 import DonationForm from "@components/DonationForm/DonationForm";
-import ChatWidget from "@components/ChatWidget/ChatWidget";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

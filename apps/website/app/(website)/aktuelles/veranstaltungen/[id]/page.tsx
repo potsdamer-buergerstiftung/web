@@ -13,6 +13,8 @@ async function getEvent(id: string) {
         }
     }));
 
+    console.log(res[0])
+
     return res[0];
 }
 

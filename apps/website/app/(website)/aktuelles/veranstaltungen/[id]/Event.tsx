@@ -12,7 +12,12 @@ export default async function Event({ promise }: EventProps) {
 
   let html = { __html: event.description };
 
-  let start = event.start;
+  // Directus stores times in Berlin timezone but without timezone indicator
+  // Parse as local time without timezone conversion
+  const [datePart, timePart] = event.start.split('T');
+  const [year, month, day] = datePart.split('-').map(Number);
+  const [hour, minute] = timePart.split(':').map(Number);
+  const start = new Date(year, month - 1, day, hour, minute);
 
   return (
     <div>
@@ -36,7 +41,7 @@ export default async function Event({ promise }: EventProps) {
         description={
             <div>
                 <p>{event.summary}</p>
-                <h5 className="font-bold text-lg mt-2">{new Date(start).toLocaleDateString("de", { weekday: "long", timeZone: "Europe/Berlin", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
+                <h5 className="font-bold text-lg mt-2">{start.toLocaleDateString("de", { weekday: "long", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
             </div>
         }
         isCompact
