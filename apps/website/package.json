@@ -34,7 +34,7 @@
     "html-react-parser": "^3.0.8",
     "html5-qrcode": "^2.3.7",
     "jotai": "^1.13.0",
-    "next": "^15.3.3",
+    "next": "15.3.6",
     "nookies": "^2.5.2",
     "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
