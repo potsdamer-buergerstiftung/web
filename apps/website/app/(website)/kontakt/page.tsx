@@ -64,7 +64,7 @@ export default function ContactPage() {
           </div> */}
         </div>
       </section>
-      <section className="bg-slate-100">
+      {/* <section className="bg-slate-100">
         <div className="container mx-auto grid grid-cols-4 gap-8 px-4 py-16">
           <div className="col-span-4 lg:col-span-1">
             <h1 className="font-header text-3xl font-bold">Allgemeine Fragen</h1>
@@ -77,7 +77,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </div>
-      </section>
+      </section> */}
     </React.Fragment>
   );
 }
