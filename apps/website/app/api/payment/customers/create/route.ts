@@ -5,7 +5,7 @@ const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY });
 
 export async function POST(request: Request) {
 
-    const { firstName, lastName, email, organization } = await request.json();
+    const { firstName, lastName, email, organization, consents } = await request.json();
 
     const customer = await mollieClient.customers.create({
         name: `${firstName} ${lastName}`,
@@ -13,6 +13,7 @@ export async function POST(request: Request) {
         locale: Locale.de_DE,
         metadata: {
             organization,
+            consents: consents ?? {},
         }
     })
 

@@ -4,8 +4,14 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { customerIdAtom, donationProgressAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
+import { checkboxValuesAtom, customerIdAtom, donationProgressAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
 import type { DonationFormConfig } from "./types";
+import DonationFormCheckboxGroups from "./DonationFormCheckboxGroups";
+import {
+    areAllRequiredCheckboxesChecked,
+    getCheckboxGroupsForPlacement,
+    getRequiredCheckboxIds,
+} from "./checkboxes";
 
 type PaymentMethod = {
     id: string;
@@ -27,6 +33,7 @@ export default function DonationFormPayment({ config }: { config: DonationFormCo
     const [donationSubmitted, setDonationSubmitted] = useState(false);
     const [duration] = useAtom(planDuration);
     const [customerId] = useAtom(customerIdAtom);
+    const [checkboxValues] = useAtom(checkboxValuesAtom);
 
     const detailsRequiredForActiveDuration =
         config.features.includes("details") &&
@@ -38,6 +45,13 @@ export default function DonationFormPayment({ config }: { config: DonationFormCo
         !!bankTransferConfig?.enabled &&
         (bankTransferConfig.onlyForDurations ?? ["ONE_TIME"]).includes(duration);
     const bankTransferMethodId = bankTransferConfig?.id ?? "bank_transfer";
+
+    const complianceGroups = getCheckboxGroupsForPlacement(config, "PAYMENT", duration);
+    const requiredIds = getRequiredCheckboxIds(complianceGroups);
+    const requiredChecked = areAllRequiredCheckboxesChecked(
+        checkboxValues,
+        requiredIds
+    );
 
     useEffect(() => {
         if (!selectedPaymentProviderId) return;
@@ -94,6 +108,8 @@ export default function DonationFormPayment({ config }: { config: DonationFormCo
     };
 
     const onContinueClicked = async () => {
+        if (!requiredChecked) return;
+
         if (detailsRequiredForActiveDuration && !customerId) {
             setDonationProgress("DETAILS_FORM");
             return;
@@ -121,6 +137,7 @@ export default function DonationFormPayment({ config }: { config: DonationFormCo
                     description,
                     duration,
                     customerId: id,
+                    consents: checkboxValues,
                 }),
             });
 
@@ -172,10 +189,16 @@ export default function DonationFormPayment({ config }: { config: DonationFormCo
                             </button>
                         ))}
                 </ul>
+                <DonationFormCheckboxGroups config={config} placement="PAYMENT" />
+                {!requiredChecked && requiredIds.length > 0 && (
+                    <p className="mt-4 text-sm text-slate-700">
+                        Bitte bestätige alle Pflichtfelder, um fortzufahren.
+                    </p>
+                )}
                 <button
-                    disabled={!selectedPaymentProviderId}
+                    disabled={!selectedPaymentProviderId || !requiredChecked}
                     className={clsx("text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16",
-                        !selectedPaymentProviderId && "opacity-50 cursor-not-allowed"
+                        (!selectedPaymentProviderId || !requiredChecked) && "opacity-50 cursor-not-allowed"
                     )}
                     onClick={onContinueClicked}
                 >

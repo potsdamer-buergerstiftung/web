@@ -37,6 +37,27 @@ export type DonationFormBenefitsConfig = {
     continueLabel?: string;
 };
 
+export type DonationFormCheckbox = {
+    id: string;
+    required?: boolean;
+    defaultChecked?: boolean;
+    text: string;
+    linkText?: string;
+    linkHref?: string;
+    textAfterLink?: string;
+};
+
+export type DonationFormCheckboxPlacement = "DETAILS_FORM" | "PAYMENT";
+
+export type DonationFormCheckboxGroup = {
+    id: string;
+    placement: DonationFormCheckboxPlacement;
+    title?: string;
+    description?: string;
+    onlyForDurations?: PlanDuration[];
+    checkboxes: DonationFormCheckbox[];
+};
+
 export type DonationFormAmountDurationOption = {
     key: PlanDuration;
     label: string;
@@ -87,6 +108,7 @@ export type DonationFormConfig = {
     header: DonationFormHeaderCopy;
     nav?: DonationFormNavLabels;
     benefits?: DonationFormBenefitsConfig;
+    checkboxGroups?: DonationFormCheckboxGroup[];
     purpose: DonationFormPurposeConfig;
     amount: DonationFormAmountConfig;
     details: DonationFormDetailsConfig;

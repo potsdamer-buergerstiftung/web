@@ -24,6 +24,7 @@ export const selectedAmountAtom = atom(10);
 export const selectedProjectId = atom<number>(0);
 export const selectedPaymentProviderIdAtom = atom<string>("");
 export const projectsAtom = atom<any[]>([]);
+export const checkboxValuesAtom = atom<Record<string, boolean>>({});
 export const customerAtom = atom<Customer>({
     firstName: "",
     lastName: "",

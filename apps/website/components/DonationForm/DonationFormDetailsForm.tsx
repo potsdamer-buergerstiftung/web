@@ -3,8 +3,14 @@
 import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useState } from "react";
-import { customerAtom, customerIdAtom, donationProgressAtom } from "./state";
+import { checkboxValuesAtom, customerAtom, customerIdAtom, donationProgressAtom, planDuration } from "./state";
 import type { DonationFormConfig } from "./types";
+import DonationFormCheckboxGroups from "./DonationFormCheckboxGroups";
+import {
+    areAllRequiredCheckboxesChecked,
+    getCheckboxGroupsForPlacement,
+    getRequiredCheckboxIds,
+} from "./checkboxes";
 
 export default function DonationFormDetailsForm({
     config,
@@ -15,9 +21,23 @@ export default function DonationFormDetailsForm({
     const [_progress, setProgress] = useAtom(donationProgressAtom);
     const [customer, setCustomer] = useAtom(customerAtom);
     const [_customerId, setCustomerId] = useAtom(customerIdAtom);
+    const [checkboxValues] = useAtom(checkboxValuesAtom);
+    const [duration] = useAtom(planDuration);
+
+    const complianceGroups = getCheckboxGroupsForPlacement(
+        config,
+        "DETAILS_FORM",
+        duration
+    );
+    const requiredIds = getRequiredCheckboxIds(complianceGroups);
+    const requiredChecked = areAllRequiredCheckboxesChecked(
+        checkboxValues,
+        requiredIds
+    );
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        if (!requiredChecked) return;
 
         setSubmitting(true);
 
@@ -30,6 +50,7 @@ export default function DonationFormDetailsForm({
                     lastName,
                     email,
                     organization,
+                    consents: checkboxValues,
                 }),
             });
             const data = await c.json();
@@ -84,9 +105,16 @@ export default function DonationFormDetailsForm({
                             placeholder="Deine Organisation" />
                     </div>
                 </div>
+                <DonationFormCheckboxGroups config={config} placement="DETAILS_FORM" />
+                {!requiredChecked && requiredIds.length > 0 && (
+                    <p className="mt-4 text-sm text-slate-700">
+                        Bitte bestätige alle Pflichtfelder, um fortzufahren.
+                    </p>
+                )}
                 <button
+                    disabled={!requiredChecked || submitting}
                     className={clsx("text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16",
-
+                        (!requiredChecked || submitting) && "opacity-50 cursor-not-allowed"
                     )}
                 >
                     {submitting && (

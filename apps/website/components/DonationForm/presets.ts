@@ -21,6 +21,28 @@ export const defaultDonationFormConfig: DonationFormConfig = {
         items: [],
         continueLabel: "Weiter",
     },
+    checkboxGroups: [
+        {
+            id: "default-payment-consents",
+            placement: "PAYMENT",
+            title: "Einverständnis",
+            checkboxes: [
+                {
+                    id: "privacy_policy",
+                    required: true,
+                    text: "Ich akzeptiere die ",
+                    linkText: "Datenschutzerklärung",
+                    linkHref: "/datenschutz",
+                    textAfterLink: ".",
+                },
+                {
+                    id: "newsletter_opt_in",
+                    required: false,
+                    text: "Ich möchte den Newsletter erhalten.",
+                },
+            ],
+        },
+    ],
     purpose: {
         enabled: true,
         title: "Verwendungszweck wählen",

@@ -9,6 +9,7 @@ import DonationFormDetailsForm from "./DonationFormDetailsForm";
 import DonationFormPayment from "./DonationFormPayment";
 import DonationFormProjectSelection from "./DonationFormProjectSelection";
 import {
+    checkboxValuesAtom,
     customerAtom,
     customerIdAtom,
     donationProgressAtom,
@@ -22,6 +23,7 @@ import type { Progress } from "./state";
 import DonationFormBankDetails from "./DonationFormBankDetails";
 import type { DonationFormConfig } from "./types";
 import { defaultDonationFormConfig } from "./presets";
+import { getDefaultCheckboxValues } from "./checkboxes";
 
 function ProgressButton({
     isActive,
@@ -105,21 +107,35 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
         payment: config.nav?.payment ?? "Zahlung bestätigen",
     };
 
-    const mobileTabs: Array<{ key: Progress; label: string; enabled: boolean }> = [
-        { key: "BENEFITS", label: navLabels.benefits, enabled: hasBenefitsFeature },
-        {
-            key: "PROJECT_SELECTION",
-            label: navLabels.purpose,
-            enabled: hasPurposeFeature,
-        },
-        { key: "AMOUNT_SELECTION", label: navLabels.amount, enabled: hasAmountFeature },
-        {
-            key: "DETAILS_FORM",
-            label: navLabels.details,
-            enabled: detailsRequiredForActiveDuration,
-        },
-        { key: "PAYMENT", label: navLabels.payment, enabled: hasPaymentFeature },
-    ].filter((t) => t.enabled);
+    const mobileTabs = (
+        [
+            {
+                key: "BENEFITS",
+                label: navLabels.benefits,
+                enabled: hasBenefitsFeature,
+            },
+            {
+                key: "PROJECT_SELECTION",
+                label: navLabels.purpose,
+                enabled: hasPurposeFeature,
+            },
+            {
+                key: "AMOUNT_SELECTION",
+                label: navLabels.amount,
+                enabled: hasAmountFeature,
+            },
+            {
+                key: "DETAILS_FORM",
+                label: navLabels.details,
+                enabled: detailsRequiredForActiveDuration,
+            },
+            {
+                key: "PAYMENT",
+                label: navLabels.payment,
+                enabled: hasPaymentFeature,
+            },
+        ] satisfies Array<{ key: Progress; label: string; enabled: boolean }>
+    ).filter((t) => t.enabled);
 
     return (
         <div className="bg-emerald-50 rounded-lg p-8 lg:p-16">
@@ -251,6 +267,7 @@ export default function DonationForm(props: DonationFormProps) {
             [selectedProjectId, 0],
             [selectedPaymentProviderIdAtom, ""],
             [projectsAtom, []],
+            [checkboxValuesAtom, getDefaultCheckboxValues(config)],
             [
                 customerAtom,
                 {
