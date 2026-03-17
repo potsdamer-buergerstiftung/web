@@ -26,32 +26,6 @@ export default function IndividualsPage() {
             <section>
                 <div className="container mx-auto grid grid-cols-5 gap-8 px-4 pb-16">
                     <div className="col-span-5 lg:col-span-2">
-                        <h1 className="font-header text-3xl font-bold">Einmalige Spende</h1>
-                        <p className="mt-4">Einmalig, zu Anlässen oder als Geschenk</p>
-                    </div>
-                    <div className="col-span-5 lg:col-span-3">
-                        <p>
-                            Wir freuen uns über jede Spende, die unsere Arbeit für Potsdam
-                            unterstützt. Jeder Euro hilft. Ein besonderer Anlass steht an?
-                            Wünsch dir zum Geburtstag, deiner Hochzeit oder einem Sommerfest
-                            eine Spende für dein Herzensprojekt bei uns. Immer mehr Menschen
-                            wünschen sich im Trauerfall statt Kränzen und Blumen eine Spende
-                            für das Gemeinwohl. Wir helfen dir gerne dabei, deinen Gästen die
-                            Spende so einfach wie möglich zu machen. Du kannst auch selber
-                            eine Spende verschenken und damit doppelt Freude stiften.
-                        </p>
-                        <Link
-                            href="/mitstiften/privatpersonen/spenden"
-                            className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
-                        >
-                            Jetzt spenden
-                        </Link>
-                    </div>
-                </div>
-            </section>
-            <section className="py-6 bg-slate-100">
-                <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
-                    <div className="col-span-5 lg:col-span-2">
                         <h1 className="font-header text-3xl font-bold">Freundeskreis</h1>
                         <p className="mt-4">Kleiner Beitrag, große Freundschaft</p>
                     </div>
@@ -74,6 +48,32 @@ export default function IndividualsPage() {
                             className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
                         >
                             Jetzt beitreten
+                        </Link>
+                    </div>
+                </div>
+            </section>
+            <section className="py-6 bg-slate-100">
+                <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+                    <div className="col-span-5 lg:col-span-2">
+                        <h1 className="font-header text-3xl font-bold">Einmalige Spende</h1>
+                        <p className="mt-4">Einmalig, zu Anlässen oder als Geschenk</p>
+                    </div>
+                    <div className="col-span-5 lg:col-span-3">
+                        <p>
+                            Wir freuen uns über jede Spende, die unsere Arbeit für Potsdam
+                            unterstützt. Jeder Euro hilft. Ein besonderer Anlass steht an?
+                            Wünsch dir zum Geburtstag, deiner Hochzeit oder einem Sommerfest
+                            eine Spende für dein Herzensprojekt bei uns. Immer mehr Menschen
+                            wünschen sich im Trauerfall statt Kränzen und Blumen eine Spende
+                            für das Gemeinwohl. Wir helfen dir gerne dabei, deinen Gästen die
+                            Spende so einfach wie möglich zu machen. Du kannst auch selber
+                            eine Spende verschenken und damit doppelt Freude stiften.
+                        </p>
+                        <Link
+                            href="/mitstiften/privatpersonen/spenden"
+                            className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+                        >
+                            Jetzt spenden
                         </Link>
                     </div>
                 </div>
