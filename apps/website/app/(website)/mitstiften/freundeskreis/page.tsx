@@ -1,10 +1,11 @@
 import DonationForm from "@components/DonationForm/DonationForm";
+import { freundeskreisDonationFormConfig } from "@components/DonationForm/presets";
 
 
-export default function PrivatDonationPage() {
+export default function FreundeskreisJoinPage() {
     return (
         <div className="container px-4 mx-auto pt-28 pb-10">
-            <DonationForm disableProjectSelection={true} />
+            <DonationForm config={freundeskreisDonationFormConfig} />
         </div>
     )
 }

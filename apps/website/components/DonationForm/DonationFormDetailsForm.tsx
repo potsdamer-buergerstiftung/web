@@ -4,12 +4,17 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useState } from "react";
 import { customerAtom, customerIdAtom, donationProgressAtom } from "./state";
+import type { DonationFormConfig } from "./types";
 
-export default function DonationFormDetailsForm() {
+export default function DonationFormDetailsForm({
+    config,
+}: {
+    config: DonationFormConfig;
+}) {
     const [submitting, setSubmitting] = useState(false);
-    const [progress, setProgress] = useAtom(donationProgressAtom);
+    const [_progress, setProgress] = useAtom(donationProgressAtom);
     const [customer, setCustomer] = useAtom(customerAtom);
-    const [customerId, setCustomerId] = useAtom(customerIdAtom);
+    const [_customerId, setCustomerId] = useAtom(customerIdAtom);
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -28,11 +33,9 @@ export default function DonationFormDetailsForm() {
                 }),
             });
             const data = await c.json();
-            console.log(data)
             if (data && data.id) {
                 setCustomerId(data.id);
             }
-            console.log(customerId)
             setSubmitting(false);
             setProgress("PAYMENT");
         } catch (error) {
@@ -42,10 +45,9 @@ export default function DonationFormDetailsForm() {
 
     return (
         <>
-            <h1 className="font-header font-bold text-3xl">Persönliche Angaben</h1>
+            <h1 className="font-header font-bold text-3xl">{config.details.title}</h1>
             <p className="mt-4 mb-10">
-                Wir benötigen diese Daten, damit du deine sich wiederholende Spende später ändern oder beenden kannst. Du kannst das jederzeit
-                über den Link in der Bestätigungsmail tun, oder uns mit deinen Daten an uns wenden.
+                {config.details.description}
             </p>
             <form method="POST" onSubmit={onSubmit}>
                 <div className="grid grid-cols-2 gap-4">

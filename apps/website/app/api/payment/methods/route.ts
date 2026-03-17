@@ -12,7 +12,17 @@ export async function POST(request: Request) {
         sequenceType: duration === "ONE_TIME" ? SequenceType.oneoff : SequenceType.first,
     });
 
-    console.log(methods)
+    const rawMethods =
+        (methods as any)?._embedded?.methods ??
+        (Array.isArray(methods) ? methods : []) ??
+        [];
 
-    return NextResponse.json(methods);
+    const simplified = rawMethods
+        .filter((m: any) => m && m.id)
+        .map((m: any) => ({
+            id: String(m.id),
+            description: String(m.description ?? m.id),
+        }));
+
+    return NextResponse.json(simplified);
 }

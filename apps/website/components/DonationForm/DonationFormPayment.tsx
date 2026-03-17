@@ -5,18 +5,19 @@ import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { customerIdAtom, donationProgressAtom, planDuration, projectsAtom, selectedAmountAtom, selectedPaymentProviderIdAtom, selectedProjectId } from "./state";
+import type { DonationFormConfig } from "./types";
 
-export default function DonationFormPayment() {
+type PaymentMethod = {
+    id: string;
+    description: string;
+};
+
+export default function DonationFormPayment({ config }: { config: DonationFormConfig }) {
     const router = useRouter();
-    const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
-    const [paymentMethods, setPaymentMethods] = useState([
-        {
-            id: 10000,
-            description: "Überweisung",
-        }
-    ]);
+    const [_donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
+    const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([]);
     const [paymentMethodsLoading, setPaymentMethodsLoading] = useState(true);
-    const [paymentMethodsError, setPaymentMethodsError] = useState(null);
+    const [paymentMethodsError, setPaymentMethodsError] = useState<string | null>(null);
     const [selectedPaymentProviderId, setSelectedPaymentProviderId] = useAtom(
         selectedPaymentProviderIdAtom
     );
@@ -25,7 +26,26 @@ export default function DonationFormPayment() {
     const [selectedProject] = useAtom(selectedProjectId);
     const [donationSubmitted, setDonationSubmitted] = useState(false);
     const [duration] = useAtom(planDuration);
-    const [customerId, _] = useAtom(customerIdAtom);
+    const [customerId] = useAtom(customerIdAtom);
+
+    const detailsRequiredForActiveDuration =
+        config.features.includes("details") &&
+        config.details.enabled &&
+        config.details.requiredForDurations.includes(duration);
+
+    const bankTransferConfig = config.payment.bankTransfer;
+    const bankTransferAllowed =
+        !!bankTransferConfig?.enabled &&
+        (bankTransferConfig.onlyForDurations ?? ["ONE_TIME"]).includes(duration);
+    const bankTransferMethodId = bankTransferConfig?.id ?? "bank_transfer";
+
+    useEffect(() => {
+        if (!selectedPaymentProviderId) return;
+        const stillAvailable = paymentMethods.some(
+            (m) => m.id === selectedPaymentProviderId
+        );
+        if (!stillAvailable) setSelectedPaymentProviderId("");
+    }, [paymentMethods, selectedPaymentProviderId, setSelectedPaymentProviderId]);
 
     const requestPaymentMethods = async () => {
         try {
@@ -35,31 +55,69 @@ export default function DonationFormPayment() {
                     duration,
                 }),
             });
-            const data = await response.json();
-            setPaymentMethods([...data, ...paymentMethods]);
-            setPaymentMethodsLoading(false);
+
+            if (!response.ok) {
+                const body = await response.text();
+                throw new Error(`HTTP ${response.status}: ${body}`);
+            }
+
+            const data = (await response.json()) as PaymentMethod[];
+            let methods: PaymentMethod[] = Array.isArray(data) ? data : [];
+
+            if (config.payment.allowedMethodIds?.length) {
+                const allow = new Set(config.payment.allowedMethodIds);
+                methods = methods.filter((m) => allow.has(m.id));
+            }
+            if (config.payment.blockedMethodIds?.length) {
+                const block = new Set(config.payment.blockedMethodIds);
+                methods = methods.filter((m) => !block.has(m.id));
+            }
+
+            if (bankTransferAllowed) {
+                methods = [
+                    ...methods,
+                    {
+                        id: bankTransferMethodId,
+                        description: bankTransferConfig?.label ?? "Überweisung",
+                    },
+                ];
+            }
+
+            setPaymentMethods(methods);
         } catch (error) {
-            setPaymentMethodsError(error);
+            setPaymentMethodsError(
+                error instanceof Error ? error.message : "Unbekannter Fehler"
+            );
+        } finally {
+            setPaymentMethodsLoading(false);
         }
     };
 
     const onContinueClicked = async () => {
-        if (selectedPaymentProviderId === 10000) {
+        if (detailsRequiredForActiveDuration && !customerId) {
+            setDonationProgress("DETAILS_FORM");
+            return;
+        }
+
+        if (selectedPaymentProviderId === bankTransferMethodId) {
             setDonationProgress("BANK_DETAILS");
             return;
         }
 
         setDonationSubmitted(true);
         try {
-            let id = customerId !== "" || customerId !== null ? customerId : null;
-            console.log(id)
-            const description = selectedProject !== 0 ? projects.find((project) => project.id === selectedProject).title : "Allgemeine Arbeit";
+            const id = customerId && customerId.trim() !== "" ? customerId : null;
+            const description =
+                selectedProject !== 0
+                    ? projects.find((project) => project.id === selectedProject)?.title ??
+                      "Allgemeine Arbeit"
+                    : "Allgemeine Arbeit";
             const payment = await fetch("/api/payment/create", {
                 method: "POST",
                 body: JSON.stringify({
                     amount: selectedAmount,
                     method: selectedPaymentProviderId,
-                    redirectUrl: "https://www.potsdamer-buergerstiftung.org/mitstiften/spenden/danke",
+                    redirectUrl: config.payment.redirectUrl,
                     description,
                     duration,
                     customerId: id,
@@ -92,17 +150,13 @@ export default function DonationFormPayment() {
                 </div>
             </div>
             <div className="col-span-3 md:col-span-2">
-                <h1 className="font-header font-bold text-3xl">Bezahlmethode wählen</h1>
-                <p className="mt-4">
-                    Wir unterstützen neuerdings auch die Zahlung durch elektronische
-                    SEPA-Lastschrift, sodass Du das Mandat nicht mehr schriftlich erteilen
-                    musst.
-                </p>
+                <h1 className="font-header font-bold text-3xl">{config.payment.title}</h1>
+                <p className="mt-4">{config.payment.description}</p>
                 <ul className="flex flex-row gap-4 mt-8 flex-wrap">
                     {paymentMethodsLoading && <p>Zahlungsmethoden werden geladen...</p>}
                     {paymentMethodsError && <p>Error: {paymentMethodsError}</p>}
                     {paymentMethods &&
-                        paymentMethods.map((paymentMethod: any) => (
+                        paymentMethods.map((paymentMethod) => (
                             <button
                                 key={paymentMethod.id}
                                 onClick={() => setSelectedPaymentProviderId(paymentMethod.id)}
@@ -119,9 +173,9 @@ export default function DonationFormPayment() {
                         ))}
                 </ul>
                 <button
-                    disabled={selectedPaymentProviderId === 0}
+                    disabled={!selectedPaymentProviderId}
                     className={clsx("text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16",
-                        selectedPaymentProviderId === 0 && "opacity-50 cursor-not-allowed"
+                        !selectedPaymentProviderId && "opacity-50 cursor-not-allowed"
                     )}
                     onClick={onContinueClicked}
                 >
@@ -131,7 +185,7 @@ export default function DonationFormPayment() {
                             <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
                         </svg>
                     )}
-                    Weiter
+                    {config.payment.continueLabel ?? "Weiter"}
                 </button>
             </div>
         </div>
