@@ -101,7 +101,7 @@ const ArticleCard: React.FC<{
           </li>
           <li
             className={clsx(
-              "text-md text-slate-500",
+              "text-md text-slate-700",
               { "group-hover:text-white": compact }
             )}
           >
