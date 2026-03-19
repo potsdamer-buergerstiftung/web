@@ -26,7 +26,7 @@ export default async function ProjectGrid({
     <div className="grid grid-cols-6 gap-8">
       {projects?.map((project: any, i: number) => (
         <div
-          key={project._id}
+          key={project.id}
           className={clsx(
             "col-span-6",
             "lg:col-span-3",
@@ -36,9 +36,9 @@ export default async function ProjectGrid({
         >
           <ProjectCard
             title={project.title}
-            subTitle={project.kurzbeschreibung}
-            projectId={project._id}
-            imageId={project.projektbild}
+            subTitle={project.sub_title}
+            projectId={project.id}
+            imageId={project.image}
             imageSize={indexToSpan(i) * 2 == 2 ? "small" : "large"}
           />
         </div>
