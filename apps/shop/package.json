@@ -13,8 +13,9 @@
     "medusa"
   ],
   "scripts": {
-    "build": "medusa build",
+    "build": "medusa build && medusa build --admin-only",
     "seed": "medusa exec ./src/scripts/seed.ts",
+    "db:migrate": "medusa db:migrate",
     "start": "medusa start",
     "dev": "medusa develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
@@ -28,7 +29,8 @@
     "@medusajs/medusa": "2.13.1",
     "@medusajs/dashboard": "2.13.1",
     "@medusajs/draft-order": "2.13.1",
-    "@medusajs/admin-shared": "2.13.1"
+    "@medusajs/admin-shared": "2.13.1",
+    "@medusajs/admin-bundler": "2.13.1"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.13.1",

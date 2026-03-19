@@ -151,6 +151,9 @@ importers:
 
   apps/shop:
     dependencies:
+      '@medusajs/admin-bundler':
+        specifier: 2.13.1
+        version: 2.13.1(@emotion/is-prop-valid@0.8.8)(@types/node@20.19.37)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(encoding@0.1.13)(sass@1.93.2)(terser@5.42.0)(typescript@5.9.3)
       '@medusajs/admin-sdk':
         specifier: 2.13.1
         version: 2.13.1

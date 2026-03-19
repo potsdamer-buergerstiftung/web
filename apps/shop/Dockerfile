@@ -2,6 +2,7 @@ FROM node:24-alpine AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@10.18.3 --activate
+ENV MEDUSA_ADMIN_ONBOARDING_TYPE=none
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat python3 make g++
@@ -20,7 +21,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
-RUN pnpm turbo run build --filter=shop...
+RUN pnpm run --filter=shop build
 
 FROM base AS runner
 RUN apk add --no-cache libc6-compat
@@ -31,10 +32,14 @@ RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 medusa
 USER medusa
 
-COPY --from=installer --chown=medusa:nodejs /app .
+COPY --from=installer --chown=medusa:nodejs /app/apps/shop/.medusa/server .
 
-WORKDIR /app/apps/shop
+WORKDIR /app
+
+RUN pnpm install
+ENV NODE_ENV=production
 
 EXPOSE 9000
 
+# Run migrations automatically on startup before launching the server
 CMD ["pnpm", "start"]
