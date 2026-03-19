@@ -56,7 +56,10 @@ export default function DonationFormProjectSelection({
                     {config.purpose.title}
                 </h1>
                 <p className="mt-4">{config.purpose.description}</p>
-                <button className={clsx("font-header flex-grow px-4 my-8 bg-emerald-100 rounded-lg relative font-bold py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => setProjectId(0)}>
+                <button className={clsx("font-header flex-grow px-4 my-8 bg-emerald-100 rounded-lg relative font-bold py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => {
+                    setProjectId(0);
+                    setDonationFormProgress("AMOUNT_SELECTION");
+                }}>
                     <span className="text-slate-900">
                         {config.purpose.generalPurposeLabel}
                     </span>
@@ -65,7 +68,10 @@ export default function DonationFormProjectSelection({
                     {projectsLoading && <p className="col-span-3">Projekte werden geladen...</p>}
                     {projectsError && <p>Error: {projectsError}</p>}
                     {projects && projects.map((project: any) => (
-                        <button key={project.id} className="group relative block h-28 w-full cursor-pointer overflow-hidden rounded-lg" onClick={() => setProjectId(project.id)}>
+                        <button key={project.id} className="group relative block h-28 w-full cursor-pointer overflow-hidden rounded-lg" onClick={() => {
+                            setProjectId(project.id);
+                            setDonationFormProgress("AMOUNT_SELECTION");
+                        }}>
                             <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`} height={100} width={100} quality={30}
                                 className="h-full w-full object-cover" alt={`Bild von ${project.title}`} />
                             <div className={clsx("pointer-events-none absolute top-0 bottom-0 left-0 right-0 transition", project.id === projectId ? 'opacity-100 bg-emerald-200' : 'opacity-40 bg-black')} />
