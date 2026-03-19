@@ -65,7 +65,7 @@ export default function DonationFormProjectSelection({
                     {projectsLoading && <p className="col-span-3">Projekte werden geladen...</p>}
                     {projectsError && <p>Error: {projectsError}</p>}
                     {projects && projects.map((project: any) => (
-                        <button key={project.title} className="group relative block h-28 w-full cursor-pointer overflow-hidden rounded-lg" onClick={() => setProjectId(project.id)}>
+                        <button key={project.id} className="group relative block h-28 w-full cursor-pointer overflow-hidden rounded-lg" onClick={() => setProjectId(project.id)}>
                             <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`} height={100} width={100} quality={30}
                                 className="h-full w-full object-cover" alt={`Bild von ${project.title}`} />
                             <div className={clsx("pointer-events-none absolute top-0 bottom-0 left-0 right-0 transition", project.id === projectId ? 'opacity-100 bg-emerald-200' : 'opacity-40 bg-black')} />
