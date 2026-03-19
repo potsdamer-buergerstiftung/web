@@ -9,7 +9,7 @@ export default function HeaderDonationButton() {
     return (
         <button onClick={() => setIsQuickDonateDrawerOpen(true)}
             className={clsx(
-                "bg-emerald-700 text-white hover:bg-emerald-500 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+                "bg-emerald-700 text-white hover:bg-emerald-500 text-md font-header inline-flex rounded-md py-2.5 md:py-1.5 px-6 md:px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
             )}
         >
             Jetzt spenden
