@@ -75,7 +75,7 @@ export default function DonationFormAmountSelection({
                         <li
                             key={durationOption.key}
                             className={clsx(
-                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-500",
+                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-700",
                                 durationOption.key === activePlanDuration
                                     ? "after:opacity-100"
                                     : "after:opacity-0"
@@ -94,7 +94,7 @@ export default function DonationFormAmountSelection({
                     {presetAmounts.map((amount, index) => (
                         <li key={index}
                             className={clsx(
-                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-500",
+                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-700",
                                 amount === selectedAmount && presetAmounts.includes(selectedAmount)
                                     ? "after:opacity-100"
                                     : "after:opacity-0"
@@ -114,7 +114,7 @@ export default function DonationFormAmountSelection({
                     {config.amount.allowCustomAmount !== false && (
                         <li
                             className={clsx(
-                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-500",
+                                "relative font-bold py-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-emerald-700",
                                 !presetAmounts.includes(selectedAmount)
                                     ? "after:opacity-100"
                                     : "after:opacity-0"

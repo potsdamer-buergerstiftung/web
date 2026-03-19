@@ -52,7 +52,7 @@ function ProgressButton({
             {children}
             <span
                 className={clsx(
-                    "absolute top-0 -right-5 bottom-0 w-0.5 bg-emerald-500 transition",
+                    "absolute top-0 -right-5 bottom-0 w-0.5 bg-emerald-700 transition",
                     isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 )}
             />
@@ -138,7 +138,7 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
     ).filter((t) => t.enabled);
 
     return (
-        <div className="bg-emerald-50 rounded-lg p-8 lg:p-16">
+        <div className="bg-white rounded-lg p-8 lg:p-16">
             <h4 className="text-sm font-semibold uppercase text-gray-600 text-center mb-3">
                 {config.header.eyebrow ?? "Mitstiften & Unterstützen"}
             </h4>
@@ -208,7 +208,7 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
                                         className={clsx(
                                             "shrink-0 font-header font-bold pb-2 border-b-2 transition whitespace-nowrap",
                                             donationProgress === tab.key
-                                                ? "border-emerald-500 text-slate-900"
+                                                ? "border-emerald-700 text-slate-900"
                                                 : "border-transparent text-slate-600"
                                         )}
                                     >

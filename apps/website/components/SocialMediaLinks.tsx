@@ -32,7 +32,7 @@ export default function SocialMediaLinks(props: SocialMediaLinksProps) {
         <div className={clsx("flex gap-4", directionClass)}>
             {size === "large" && (
                 <>
-                    <p className="text-sm font-bold text-emerald-500">
+                    <p className="text-sm font-bold text-emerald-700">
                         Folg&apos; uns
                     </p>
                     <span className="text-sm font-bold text-slate-900">-</span>

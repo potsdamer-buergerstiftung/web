@@ -23,7 +23,7 @@ export default function JobsPage() {
         bei uns ihr freiwilliges soziales Jahr, kulturelles Jahr, ökologisches
         Jahr oder Bundesfreiwilligendienst absolvieren möchten. Falls Du
         Interesse hast,{" "}
-        <Link href="/kontakt" className="font-bold text-emerald-500">
+        <Link href="/kontakt" className="font-bold text-emerald-700">
           melde Dich gerne bei uns
         </Link>
         .

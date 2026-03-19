@@ -63,8 +63,8 @@ export default function Header({ nav }: HeaderProps) {
         <Banner />
       </Suspense>
       <header className="absolute z-40 w-full">
-        <div className="z-50 flex w-full flex-row items-center justify-between gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
-          <Link href="/" className="group -ml-2 block p-2 outline-none">
+        <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
+          <Link href="/" className="group xl:-ml-2 block p-2 outline-none">
             <Logo />
           </Link>
           {nav}
