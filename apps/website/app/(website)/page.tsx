@@ -1,4 +1,4 @@
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { readItems } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
@@ -7,8 +7,6 @@ import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
 import { Metadata } from "next";
-import { wixClient } from "./wix";
-import InstaFeed from "@components/InstaFeed";
 import directus from "app/(website)/directus";
 
 export const revalidate = 120;
@@ -236,7 +234,7 @@ export default async function HomePage() {
         <div className="container mx-auto grid grid-cols-6 gap-8 px-4">
           <div className="col-span-6 lg:col-span-4">
             <h4 className="text-sm font-semibold uppercase text-gray-600">
-              Von unserem Instagram
+              Von unserem Blog
             </h4>
             <h1 className="font-header mt-2 text-4xl font-bold">
               Aktuelles & Neues von uns
@@ -266,7 +264,10 @@ export default async function HomePage() {
               </svg>
             </Link>
           </div>
-          <InstaFeed />
+          <Suspense>
+            {/* @ts-ignore-error */}
+            <PostGrid promise={posts} />
+          </Suspense>
         </div>
       </section>
     </>

@@ -18,7 +18,7 @@ export default async function ProjectContent(props: ProjectContentProps) {
         src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`}
         height={400}
         width={800}
-        quality={32}
+        quality={30}
         alt="Bild vom Event"
     />
 

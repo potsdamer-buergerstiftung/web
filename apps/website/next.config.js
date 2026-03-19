@@ -32,6 +32,7 @@ const nextConfig = {
         hostname: 'static.wixstatic.com',
       },
     ],
+    qualities: [30, 75],
     formats: ['image/webp'],
   },
   transpilePackages: ["ui"],
