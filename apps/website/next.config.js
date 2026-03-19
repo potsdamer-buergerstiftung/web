@@ -27,8 +27,11 @@ const nextConfig = {
         hostname: "*.cdninstagram.com",
         port: "",
       },
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+      },
     ],
-    domains: ['static.wixstatic.com'],
     formats: ['image/webp'],
   },
   transpilePackages: ["ui"],
