@@ -19,7 +19,8 @@ directus-extension-display-link \
 @directus-labs/tree-view-table-layout \
 @directus-labs/calculated-fields-bundle \
 @directus-labs/spreadsheet-layout \
-@directus-labs/pdf-viewer-interface
+@directus-labs/pdf-viewer-interface \
+directus-extension-custom-search-okam
 
 # Migrations and Directus schema update
 RUN npx directus bootstrap
