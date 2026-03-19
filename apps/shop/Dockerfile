@@ -28,16 +28,16 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 ENV NODE_ENV=production
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 medusa
-USER medusa
-
 COPY --from=installer --chown=medusa:nodejs /app/apps/shop/.medusa/server .
 
 WORKDIR /app
 
 RUN pnpm install
 ENV NODE_ENV=production
+
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 medusa
+USER medusa
 
 EXPOSE 9000
 
