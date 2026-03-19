@@ -13,6 +13,9 @@ async function getProjects() {
     const res = await directus.request(readItems("projects", {
         fields: ["id", "title", "image"],
         filter: {
+            status: {
+                _in: ["inprogress", "recurring"]
+            },
             allow_donations: {
                 _eq: true
             }
@@ -56,15 +59,16 @@ export default function DonationFormProjectSelection({
                     {config.purpose.title}
                 </h1>
                 <p className="mt-4">{config.purpose.description}</p>
-                <button className={clsx("font-header flex-grow px-4 my-8 bg-emerald-100 rounded-lg relative font-bold py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => {
+                <button className={clsx("text-start font-header flex-grow px-4 my-8 max-w-lg bg-emerald-100 rounded-lg relative py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => {
                     setProjectId(0);
                     setDonationFormProgress("AMOUNT_SELECTION");
                 }}>
-                    <span className="text-slate-900">
+                    <span className="font-bold text-slate-900">
                         {config.purpose.generalPurposeLabel}
                     </span>
+                    <p className="text-sm text-slate-700 font-sans">Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.</p>
                 </button>
-                <div className="mt-8 grid grid-cols-2 lg:grid-cols-3 items-start justify-start gap-4">
+                <div className="mt-2 grid grid-cols-2 lg:grid-cols-3 items-start justify-start gap-4">
                     {projectsLoading && <p className="col-span-3">Projekte werden geladen...</p>}
                     {projectsError && <p>Error: {projectsError}</p>}
                     {projects && projects.map((project: any) => (
@@ -77,7 +81,7 @@ export default function DonationFormProjectSelection({
                             <div className={clsx("pointer-events-none absolute top-0 bottom-0 left-0 right-0 transition", project.id === projectId ? 'opacity-100 bg-emerald-200' : 'opacity-40 bg-black')} />
                             <div className="flex-column absolute top-0 bottom-0 left-0 right-0 flex items-end p-4 justify-start">
                                 <div className="relative w-full">
-                                    <h1 className={clsx("font-header text-xl font-bold transition", project.id === projectId ? 'text-slate-900' : 'text-white')}>{
+                                    <h1 className={clsx("text-start font-header text-xl font-bold transition", project.id === projectId ? 'text-slate-900' : 'text-white')}>{
                                         project.title
                                     }</h1>
                                 </div>
