@@ -4,6 +4,7 @@ import ProjectContent from "./ProjectContent";
 import directus from "app/(website)/directus";
 import { readItem, readItems } from "@directus/sdk";
 import PostGrid from "app/(website)/aktuelles/blog/PostGrid";
+import DonationForm from "@components/DonationForm/DonationForm";
 
 export const revalidate = 120;
 
@@ -40,7 +41,6 @@ export async function generateMetadata(props: Props, parent?: ResolvingMetadata)
     const id = params.slug;
 
     const project = await getProject(id);
-    const posts = await getPosts(id);
 
     return {
         title: `${project.title} - Potsdamer Bürgerstiftung`,
@@ -60,12 +60,35 @@ export default async function ProjectPage(
         <>
             <Suspense>
                 <ProjectContent promise={project} />
-                <div className="container mx-auto px-4 mb-10 mt-10">
-                    <h1 className="text-3xl font-bold mb-10 font-header">Aktuelles zum Projekt</h1>
-                    {/* @ts-ignore-error */}
-                    <PostGrid promise={posts} />
-                </div>
+                <PostsWrapper promise={posts} />
+                <DonationWrapper projectPromise={project} />
             </Suspense>
         </>
+    )
+}
+
+async function DonationWrapper({ projectPromise }: { projectPromise: Promise<any> }) {
+    const project = await projectPromise;
+
+    return (
+        <div className="container mx-auto px-4 mb-10 mt-10">
+            <DonationForm />
+        </div>
+    )
+}
+
+async function PostsWrapper({ promise }: { promise: Promise<any> }) {
+    const posts = await promise;
+
+    if (posts.length === 0) {
+        return null;
+    }
+
+    return (
+        <div className="container mx-auto px-4 mb-10 mt-10">
+            <h1 className="text-3xl font-bold mb-10 font-header">Aktuelles zum Projekt</h1>
+            {/* @ts-ignore-error */}
+            <PostGrid promise={posts} />
+        </div>
     )
 }

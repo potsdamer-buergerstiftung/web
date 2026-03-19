@@ -59,14 +59,14 @@ export default function DonationFormProjectSelection({
                     {config.purpose.title}
                 </h1>
                 <p className="mt-4">{config.purpose.description}</p>
-                <button className={clsx("text-start font-header flex-grow px-4 my-8 max-w-lg bg-emerald-100 rounded-lg relative py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => {
+                <button className={clsx("text-start flex-grow px-4 my-8 max-w-lg bg-emerald-100 rounded-lg relative py-3", projectId === 0 && "ring-2 ring-slate-900")} onClick={() => {
                     setProjectId(0);
                     setDonationFormProgress("AMOUNT_SELECTION");
                 }}>
-                    <span className="font-bold text-slate-900">
+                    <span className="block font-header font-bold text-slate-900">
                         {config.purpose.generalPurposeLabel}
                     </span>
-                    <p className="text-sm text-slate-700 font-sans">Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.</p>
+                    <span className="text-sm text-slate-700">Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.</span>
                 </button>
                 <div className="mt-2 grid grid-cols-2 lg:grid-cols-3 items-start justify-start gap-4">
                     {projectsLoading && <p className="col-span-3">Projekte werden geladen...</p>}
