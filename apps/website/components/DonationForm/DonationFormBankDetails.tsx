@@ -1,18 +1,36 @@
 import { useAtom } from "jotai";
-import { selectedAmountAtom, selectedProjectId, donationProgressAtom } from "./state";
+import { projectsAtom, selectedAmountAtom, selectedProjectId, donationProgressAtom } from "./state";
 import { PaymentCode } from "sepa-payment-code";
 import { QRCodeSVG } from "qrcode.react";
+import type { DonationFormConfig } from "./types";
 
-export default function DonationFormBankDetails() {
+export default function DonationFormBankDetails({ config }: { config: DonationFormConfig }) {
     function onContinueClicked() {
         setFormProgress("PAYMENT");
     }
 
     const [selectedProject] = useAtom(selectedProjectId);
     const [selectedAmount] = useAtom(selectedAmountAtom);   
+    const [projects] = useAtom(projectsAtom);
     const [_formProgress, setFormProgress] = useAtom(donationProgressAtom);
 
-    const qrCode = new PaymentCode("Buergerstiftung Potsdam", "DE93120700000010663300", selectedAmount, `Spende für ${selectedProject}`);
+    const selectedProjectTitle =
+        selectedProject !== 0
+            ? projects.find((project) => project.id === selectedProject)?.title ??
+              String(selectedProject)
+            : "Allgemeine Arbeit";
+
+    const bankTransferTitle = config.payment.bankTransfer?.title ?? "Banküberweisung";
+    const bankTransferDescription =
+        config.payment.bankTransfer?.description ??
+        "Bitte überweise deine Spende mithilfe der folgenden Bankdetails:";
+
+    const qrCode = new PaymentCode(
+        "Buergerstiftung Potsdam",
+        "DE93120700000010663300",
+        selectedAmount,
+        `Spende für ${selectedProjectTitle}`
+    );
 
     return (
         <div className="grid grid-cols-3 gap-10">
@@ -23,11 +41,10 @@ export default function DonationFormBankDetails() {
             </div>
             <div className="col-span-3 md:col-span-2">
                 <h1 className="font-header font-bold text-3xl">
-                    Banküberweisung
+                    {bankTransferTitle}
                 </h1>
                 <p className="mt-4">
-                    Bitte überweise deine Spende mithilfe der folgenden
-                    Bankdetails:
+                    {bankTransferDescription}
                 </p>
                 <div className="mt-4">
                     <p>IBAN: DE93 1207 0000 0010 6633 00</p>
@@ -35,7 +52,7 @@ export default function DonationFormBankDetails() {
                     <p>Bank: Deutsche Bank Potsdam</p>
                     <p>Betrag: {selectedAmount} €</p>
                     <p>
-                        Verwendungszweck: Spende für {selectedProject !== 0 ? selectedProject : "Allgemeine Arbeit"}
+                        Verwendungszweck: Spende für {selectedProjectTitle}
                     </p>
                 </div>
                 <p className="mt-4 mb-4">
