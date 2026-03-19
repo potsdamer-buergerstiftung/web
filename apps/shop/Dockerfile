@@ -2,7 +2,6 @@ FROM node:24-alpine AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@10.18.3 --activate
-ENV MEDUSA_ADMIN_ONBOARDING_TYPE=none
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat python3 make g++
