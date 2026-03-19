@@ -14,9 +14,12 @@ USER node
 # Installing contributed/custom extensions through npm on Railway
 RUN pnpm install \
 directus-extension-sync \
+directus-extension-display-link \
+@formulamicro/directus-extension-editorjs-v2 \
 @directus-labs/tree-view-table-layout \
 @directus-labs/calculated-fields-bundle \
-@directus-labs/spreadsheet-layout
+@directus-labs/spreadsheet-layout \
+@directus-labs/pdf-viewer-interface
 
 # Migrations and Directus schema update
 RUN npx directus bootstrap
