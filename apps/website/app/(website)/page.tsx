@@ -104,9 +104,9 @@ export default async function HomePage() {
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
         <h1 className="font-header text-5xl font-bold text-slate-800 md:text-5xl lg:text-6xl">
-          15 Jahre Bürgerstiftung -
+          15 Jahre Bürgerstiftung &mdash;
           <br />
-          und wir alle tragen sie.
+          <span className="text-emerald-700"><i>und wir alle tragen sie.</i></span>
         </h1>
         <p className="mt-8 text-slate-800 md:text-lg max-w-4xl">
           <b>Seit 2011</b> trägt die Bürgerstiftung <b>Projekte</b>, <b>Menschen</b> und <b>Ideen</b> in
@@ -115,7 +115,7 @@ export default async function HomePage() {
         </p>
         <Link
           href="/mitstiften/freundeskreis"
-          className="text-md font-header mt-8 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          className="text-md font-header mt-8 inline-flex items-center rounded-md text-white bg-emerald-700 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
         >
           Jetzt beitreten
           <svg
@@ -141,9 +141,23 @@ export default async function HomePage() {
         </Suspense>
         <Link
           href="/aktuelles/projekte"
-          className="text-md font-header mt-12 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          className="text-md font-header mt-12 inline-flex items-center rounded-md bg-emerald-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
         >
           Alle Projekte
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-1 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
         </Link>
       </div>
       <section className="bg-slate-100 py-16 lg:py-24">
@@ -249,7 +263,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/aktuelles/blog"
-              className="text-md font-header mt-12 mb-4 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+              className="text-md font-header mt-12 mb-4 inline-flex items-center rounded-md bg-emerald-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
             >
               Alle Beiträge
               <svg

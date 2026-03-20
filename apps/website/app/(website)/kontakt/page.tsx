@@ -24,7 +24,7 @@ export default function ContactPage() {
         actions={
           <a
             href="mailto:info@potsdamer-buergerstiftung.org"
-            className="text-md font-header rounded-md bg-emerald-500 py-1.5 px-4 font-bold text-white transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+            className="text-md font-header rounded-md bg-emerald-700 py-1.5 px-4 font-bold text-white transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
           >
             info@potsdamer-buergerstiftung.org
           </a>

@@ -140,7 +140,7 @@ export const freundeskreisDonationFormConfig: DonationFormConfig = {
             "Regelmäßige Updates zu Projekten und Wirkung deiner Unterstützung",
             "Du wirst Teil einer Gemeinschaft, die Potsdam aktiv mitgestaltet",
         ],
-        continueLabel: "Zur Registrierung",
+        continueLabel: "Weiter",
     },
     purpose: {
         ...defaultDonationFormConfig.purpose,

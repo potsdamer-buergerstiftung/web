@@ -42,7 +42,7 @@ function ProgressButton({
             disabled={disabled}
             className={clsx(
                 "group font-bold font-header py-2 relative",
-                !disabled ? "opacity-100" : "opacity-50 cursor-not-allowed"
+                !disabled ? "opacity-100" : "opacity-50 cursor-not-allowed",
             )}
             onClick={() => {
                 if (disabled) return;
@@ -52,8 +52,10 @@ function ProgressButton({
             {children}
             <span
                 className={clsx(
-                    "absolute top-0 -right-5 bottom-0 w-0.5 bg-emerald-500 transition",
-                    isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    "absolute top-0 -right-5 bottom-0 w-0.5 bg-emerald-700 transition",
+                    isActive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100",
                 )}
             />
         </button>
@@ -65,30 +67,38 @@ interface DonationFormProps {
 }
 
 function DonationFormInner({ config }: { config: DonationFormConfig }) {
-    const [donationProgress, setDonationProgress] = useAtom(donationProgressAtom);
+    const [donationProgress, setDonationProgress] = useAtom(
+        donationProgressAtom,
+    );
     const [activePlanDuration] = useAtom(planDuration);
 
-    const hasBenefitsFeature =
-        config.features.includes("benefits") && !!config.benefits?.enabled;
-    const hasPurposeFeature =
-        config.features.includes("purpose") && config.purpose.enabled;
+    const hasBenefitsFeature = config.features.includes("benefits") &&
+        !!config.benefits?.enabled;
+    const hasPurposeFeature = config.features.includes("purpose") &&
+        config.purpose.enabled;
     const hasAmountFeature = config.features.includes("amount");
-    const hasDetailsFeature =
-        config.features.includes("details") && config.details.enabled;
+    const hasDetailsFeature = config.features.includes("details") &&
+        config.details.enabled;
     const hasPaymentFeature = config.features.includes("payment");
 
-    const detailsRequiredForActiveDuration =
-        hasDetailsFeature &&
+    const detailsRequiredForActiveDuration = hasDetailsFeature &&
         config.details.requiredForDurations.includes(activePlanDuration);
 
     useEffect(() => {
         if (!hasBenefitsFeature && donationProgress === "BENEFITS") {
-            setDonationProgress(hasPurposeFeature ? "PROJECT_SELECTION" : "AMOUNT_SELECTION");
+            setDonationProgress(
+                hasPurposeFeature ? "PROJECT_SELECTION" : "AMOUNT_SELECTION",
+            );
         }
         if (!hasPurposeFeature && donationProgress === "PROJECT_SELECTION") {
             setDonationProgress("AMOUNT_SELECTION");
         }
-    }, [donationProgress, hasBenefitsFeature, hasPurposeFeature, setDonationProgress]);
+    }, [
+        donationProgress,
+        hasBenefitsFeature,
+        hasPurposeFeature,
+        setDonationProgress,
+    ]);
 
     useEffect(() => {
         if (
@@ -97,7 +107,11 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
         ) {
             setDonationProgress("PAYMENT");
         }
-    }, [donationProgress, detailsRequiredForActiveDuration, setDonationProgress]);
+    }, [
+        donationProgress,
+        detailsRequiredForActiveDuration,
+        setDonationProgress,
+    ]);
 
     const navLabels = {
         benefits: config.nav?.benefits ?? "Vorteile",
@@ -138,7 +152,7 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
     ).filter((t) => t.enabled);
 
     return (
-        <div className="bg-emerald-50 rounded-lg p-8 lg:p-16">
+        <div className="bg-white rounded-lg p-8 lg:p-16">
             <h4 className="text-sm font-semibold uppercase text-gray-600 text-center mb-3">
                 {config.header.eyebrow ?? "Mitstiften & Unterstützen"}
             </h4>
@@ -153,47 +167,62 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
             <div className="flex flex-col md:flex-row mt-16 gap-10">
                 <ul className="hidden md:flex flex-col items-end shrink-0">
                     {hasBenefitsFeature && (
-                        <ProgressButton
-                            isActive={donationProgress === "BENEFITS"}
-                            onClick={() => setDonationProgress("BENEFITS")}
-                        >
-                            {navLabels.benefits}
-                        </ProgressButton>
+                        <li>
+                            <ProgressButton
+                                isActive={donationProgress === "BENEFITS"}
+                                onClick={() => setDonationProgress("BENEFITS")}
+                            >
+                                {navLabels.benefits}
+                            </ProgressButton>
+                        </li>
                     )}
                     {hasPurposeFeature && (
-                        <ProgressButton
-                            isActive={donationProgress === "PROJECT_SELECTION"}
-                            onClick={() => setDonationProgress("PROJECT_SELECTION")}
-                        >
-                            {navLabels.purpose}
-                        </ProgressButton>
+                        <li>
+                            <ProgressButton
+                                isActive={donationProgress ===
+                                    "PROJECT_SELECTION"}
+                                onClick={() =>
+                                    setDonationProgress("PROJECT_SELECTION")}
+                            >
+                                {navLabels.purpose}
+                            </ProgressButton>
+                        </li>
                     )}
 
                     {hasAmountFeature && (
-                        <ProgressButton
-                            isActive={donationProgress === "AMOUNT_SELECTION"}
-                            onClick={() => setDonationProgress("AMOUNT_SELECTION")}
-                        >
-                            {navLabels.amount}
-                        </ProgressButton>
+                        <li>
+                            <ProgressButton
+                                isActive={donationProgress ===
+                                    "AMOUNT_SELECTION"}
+                                onClick={() =>
+                                    setDonationProgress("AMOUNT_SELECTION")}
+                            >
+                                {navLabels.amount}
+                            </ProgressButton>
+                        </li>
                     )}
 
                     {detailsRequiredForActiveDuration && (
-                        <ProgressButton
-                            isActive={donationProgress === "DETAILS_FORM"}
-                            onClick={() => setDonationProgress("DETAILS_FORM")}
-                        >
-                            {navLabels.details}
-                        </ProgressButton>
+                        <li>
+                            <ProgressButton
+                                isActive={donationProgress === "DETAILS_FORM"}
+                                onClick={() =>
+                                    setDonationProgress("DETAILS_FORM")}
+                            >
+                                {navLabels.details}
+                            </ProgressButton>
+                        </li>
                     )}
 
                     {hasPaymentFeature && (
-                        <ProgressButton
-                            isActive={donationProgress === "PAYMENT"}
-                            onClick={() => setDonationProgress("PAYMENT")}
-                        >
-                            {navLabels.payment}
-                        </ProgressButton>
+                        <li>
+                            <ProgressButton
+                                isActive={donationProgress === "PAYMENT"}
+                                onClick={() => setDonationProgress("PAYMENT")}
+                            >
+                                {navLabels.payment}
+                            </ProgressButton>
+                        </li>
                     )}
                 </ul>
                 <div className="w-full">
@@ -204,12 +233,13 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
                                     <button
                                         key={tab.key}
                                         type="button"
-                                        onClick={() => setDonationProgress(tab.key)}
+                                        onClick={() =>
+                                            setDonationProgress(tab.key)}
                                         className={clsx(
                                             "shrink-0 font-header font-bold pb-2 border-b-2 transition whitespace-nowrap",
                                             donationProgress === tab.key
-                                                ? "border-emerald-500 text-slate-900"
-                                                : "border-transparent text-slate-600"
+                                                ? "border-emerald-700 text-slate-900"
+                                                : "border-transparent text-slate-600",
                                         )}
                                     >
                                         {tab.label}
@@ -221,15 +251,16 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
                     {donationProgress === "BENEFITS" && hasBenefitsFeature && (
                         <DonationFormBenefits config={config} />
                     )}
-                    {donationProgress === "PROJECT_SELECTION" && hasPurposeFeature && (
+                    {donationProgress === "PROJECT_SELECTION" &&
+                        hasPurposeFeature && (
                         <DonationFormProjectSelection config={config} />
                     )}
-                    {donationProgress === "AMOUNT_SELECTION" && hasAmountFeature && (
+                    {donationProgress === "AMOUNT_SELECTION" &&
+                        hasAmountFeature && (
                         <DonationFormAmountSelection config={config} />
                     )}
-                    {donationProgress === "DETAILS_FORM" && hasDetailsFeature && (
-                        <DonationFormDetailsForm config={config} />
-                    )}
+                    {donationProgress === "DETAILS_FORM" && hasDetailsFeature &&
+                        <DonationFormDetailsForm config={config} />}
                     {donationProgress === "PAYMENT" && hasPaymentFeature && (
                         <DonationFormPayment config={config} />
                     )}
@@ -246,16 +277,16 @@ export default function DonationForm(props: DonationFormProps) {
     const config = props.config ?? defaultDonationFormConfig;
 
     const initialValues = useMemo(() => {
-        const initialDuration =
-            config.amount.defaultDuration ?? config.amount.durations[0]?.key ?? "ONE_TIME";
+        const initialDuration = config.amount.defaultDuration ??
+            config.amount.durations[0]?.key ?? "ONE_TIME";
 
         const minAmount = config.amount.minAmount ?? 1;
-        const defaultAmountCandidate =
-            config.amount.defaultAmount ?? config.amount.amounts[0] ?? minAmount;
+        const defaultAmountCandidate = config.amount.defaultAmount ??
+            config.amount.amounts[0] ?? minAmount;
         const initialAmount = Math.max(minAmount, defaultAmountCandidate);
 
-        const hasPurposeFeature =
-            config.features.includes("purpose") && config.purpose.enabled;
+        const hasPurposeFeature = config.features.includes("purpose") &&
+            config.purpose.enabled;
 
         return [
             [
