@@ -37,7 +37,13 @@
       ],
       "@public": [
         "public"
-      ]
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
     },
     "plugins": [
       {

@@ -13,9 +13,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -30,6 +27,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'static.wixstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'medusa-public-images.s3.eu-west-1.amazonaws.com',
       },
     ],
     qualities: [30, 75],
