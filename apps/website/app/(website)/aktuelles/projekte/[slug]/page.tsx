@@ -1,92 +1,35 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
-import PageTitle from "@components/PageTitle";
-import { Directus } from "@directus/sdk";
-import ProjectGrid from "app/(website)/ProjectGrid";
-import ProjectGridLoading from "app/(website)/ProjectGridLoading";
 import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
-import PostGrid from "../../blog/PostGrid";
-import ProjectFilterTabs from "../ProjectFilterTabs";
-import { isFilter } from "../util";
 import ProjectContent from "./ProjectContent";
-import { wixClient } from "app/(website)/wix";
+import directus from "app/(website)/directus";
+import { readItem, readItems } from "@directus/sdk";
+import PostGrid from "app/(website)/aktuelles/blog/PostGrid";
+import DonationForm from "@components/DonationForm/DonationForm";
 
 export const revalidate = 120;
 
-const slugStatusMap = {
-    "wiederkehrend": "Wiederkehrende Projekte",
-    "abgeschlossen": "Abgeschlossene Projekte",
-    "in-planung": "Projekte in Planung",
-    "laufend": "Laufende Projekte",
-}
-
-function mapSlugToStatus(slug: string) {
-    switch (slug) {
-        case "wiederkehrend":
-            return "recurring";
-        case "abgeschlossen":
-            return "finalized";
-        case "in-planung":
-            return "planning";
-        case "laufend":
-            return "inprogress";
-        default:
-            return "published";
-    }
-}
-
 async function getProject(slug: string) {
-    /* const isFilterS = isFilter(slug);
-
-    let filter: any;
-
-    if (isFilterS) {
-        let formattedSlug = mapSlugToStatus(slug);
-        filter = {
-            status: {
-                _eq: formattedSlug,
-            },
-        };
-    } else {
-        filter = {
-            id: {
-                _eq: slug,
-            },
-        };
-    }
-
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("projects").readByQuery({
+    const res = await directus.request(readItem("projects", slug, {
         fields: ["title", "sub_title", "image", "content", "id", "status"],
-        filter,
-    });
+    }));
 
-    if (isFilterS) {
-        return res.data;
-    }
-
-    return res.data![0]; */
-
-    console.log(slug)
-
-    return (await wixClient.items.get("Projekte", slug));
+    return res;
 }
 
-/* async function getPosts(projectId: string) {
-    const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-    const res = await directus.items<any, any>("posts").readByQuery({
+async function getPosts(projectId: string) {
+    const res = await directus.request(readItems("posts", {
         fields: ["title", "date", "id", "image", "tags", "project.title", "slug"],
         limit: 4,
         filter: {
-          project: {
-              _eq: projectId,
-          }
+            project: {
+                _eq: projectId,
+            }
         },
         sort: ["-date"],
-    });
-    return res.data;
-} */
+    }));
+
+    return res;
+}
 
 type Props = {
     params: Promise<{ slug: string }>
@@ -96,14 +39,6 @@ type Props = {
 export async function generateMetadata(props: Props, parent?: ResolvingMetadata): Promise<Metadata> {
     const params = await props.params;
     const id = params.slug;
-    const isFilterS = isFilter(id);
-
-    if (isFilterS) {
-        const title = slugStatusMap[id];
-        return {
-            title: `${title} - Potsdamer Bürgerstiftung`,
-        }
-    }
 
     const project = await getProject(id);
 
@@ -119,14 +54,41 @@ export default async function ProjectPage(
 ) {
     const params = await props.params;
     const project = getProject(params.slug);
+    const posts = getPosts(params.slug);
 
     return (
         <>
             <Suspense>
-                {/* @ts-ignore-error */}
                 <ProjectContent promise={project} />
-                
+                <PostsWrapper promise={posts} />
+                <DonationWrapper projectPromise={project} />
             </Suspense>
         </>
+    )
+}
+
+async function DonationWrapper({ projectPromise }: { projectPromise: Promise<any> }) {
+    const project = await projectPromise;
+
+    return (
+        <div className="container mx-auto px-4 mb-10 mt-10">
+            <DonationForm />
+        </div>
+    )
+}
+
+async function PostsWrapper({ promise }: { promise: Promise<any> }) {
+    const posts = await promise;
+
+    if (posts.length === 0) {
+        return null;
+    }
+
+    return (
+        <div className="container mx-auto px-4 mb-10 mt-10">
+            <h1 className="text-3xl font-bold mb-10 font-header">Aktuelles zum Projekt</h1>
+            {/* @ts-ignore-error */}
+            <PostGrid promise={posts} />
+        </div>
     )
 }

@@ -3,16 +3,41 @@
 import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useState } from "react";
-import { customerAtom, customerIdAtom, donationProgressAtom } from "./state";
+import { checkboxValuesAtom, customerAtom, customerIdAtom, donationProgressAtom, planDuration } from "./state";
+import type { DonationFormConfig } from "./types";
+import DonationFormCheckboxGroups from "./DonationFormCheckboxGroups";
+import {
+    areAllRequiredCheckboxesChecked,
+    getCheckboxGroupsForPlacement,
+    getRequiredCheckboxIds,
+} from "./checkboxes";
 
-export default function DonationFormDetailsForm() {
+export default function DonationFormDetailsForm({
+    config,
+}: {
+    config: DonationFormConfig;
+}) {
     const [submitting, setSubmitting] = useState(false);
-    const [progress, setProgress] = useAtom(donationProgressAtom);
+    const [_progress, setProgress] = useAtom(donationProgressAtom);
     const [customer, setCustomer] = useAtom(customerAtom);
-    const [customerId, setCustomerId] = useAtom(customerIdAtom);
+    const [_customerId, setCustomerId] = useAtom(customerIdAtom);
+    const [checkboxValues] = useAtom(checkboxValuesAtom);
+    const [duration] = useAtom(planDuration);
+
+    const complianceGroups = getCheckboxGroupsForPlacement(
+        config,
+        "DETAILS_FORM",
+        duration
+    );
+    const requiredIds = getRequiredCheckboxIds(complianceGroups);
+    const requiredChecked = areAllRequiredCheckboxesChecked(
+        checkboxValues,
+        requiredIds
+    );
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        if (!requiredChecked) return;
 
         setSubmitting(true);
 
@@ -25,14 +50,13 @@ export default function DonationFormDetailsForm() {
                     lastName,
                     email,
                     organization,
+                    consents: checkboxValues,
                 }),
             });
             const data = await c.json();
-            console.log(data)
             if (data && data.id) {
                 setCustomerId(data.id);
             }
-            console.log(customerId)
             setSubmitting(false);
             setProgress("PAYMENT");
         } catch (error) {
@@ -42,10 +66,9 @@ export default function DonationFormDetailsForm() {
 
     return (
         <>
-            <h1 className="font-header font-bold text-3xl">Persönliche Angaben</h1>
+            <h1 className="font-header font-bold text-3xl">{config.details.title}</h1>
             <p className="mt-4 mb-10">
-                Wir benötigen diese Daten, damit du deine sich wiederholende Spende später ändern oder beenden kannst. Du kannst das jederzeit
-                über den Link in der Bestätigungsmail tun, oder uns mit deinen Daten an uns wenden.
+                {config.details.description}
             </p>
             <form method="POST" onSubmit={onSubmit}>
                 <div className="grid grid-cols-2 gap-4">
@@ -82,9 +105,16 @@ export default function DonationFormDetailsForm() {
                             placeholder="Deine Organisation" />
                     </div>
                 </div>
+                <DonationFormCheckboxGroups config={config} placement="DETAILS_FORM" />
+                {!requiredChecked && requiredIds.length > 0 && (
+                    <p className="mt-4 text-sm text-slate-700">
+                        Bitte bestätige alle Pflichtfelder, um fortzufahren.
+                    </p>
+                )}
                 <button
+                    disabled={!requiredChecked || submitting}
                     className={clsx("text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16",
-
+                        (!requiredChecked || submitting) && "opacity-50 cursor-not-allowed"
                     )}
                 >
                     {submitting && (

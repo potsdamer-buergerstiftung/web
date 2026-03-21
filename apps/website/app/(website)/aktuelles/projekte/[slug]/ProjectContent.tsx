@@ -1,23 +1,26 @@
-import Block from "@components/Block";
 import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import ProjectContentWrapper from "./ProjectContentWrapper";
 import Image from "next/image";
-import ProjectGrid from "app/(website)/ProjectGrid";
-import { WixMediaImage } from "@components/WixMediaImage";
-import RichContentViewer from "@components/RichContentViewer";
+import Block from "@components/Block";
 
 interface ProjectContentProps {
     promise: Promise<any>;
 }
-  
+
 
 export default async function ProjectContent(props: ProjectContentProps) {
     const project = await props.promise;
 
-    const content = <RichContentViewer content={project.inhalt} />
-    const image = <WixMediaImage media={project.projektbild} alt={project.title} width={800} height={400}/>;
+    const content = project.content ? <Block data={project.content} /> : null;
+    const image = <Image
+        src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`}
+        height={400}
+        width={800}
+        quality={30}
+        alt="Bild vom Event"
+    />
 
     return (
         <>
@@ -34,7 +37,7 @@ export default async function ProjectContent(props: ProjectContentProps) {
                     />
                 }
             />
-            <ProjectContentWrapper content={content} image={image}/>
+            <ProjectContentWrapper content={content} image={image} />
         </>
     );
 }

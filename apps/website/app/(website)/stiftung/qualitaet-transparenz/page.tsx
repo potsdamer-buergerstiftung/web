@@ -38,7 +38,7 @@ export default function QualityAndTransparencyPage() {
               Bürgerstiftungen verliehen, deren Satzung die{" "}
               <a
                 href="https://www.buergerstiftungen.org/de/buergerstiftungen/10-merkmale"
-                className="text-emerald-500 font-bold"
+                className="text-emerald-700 font-bold"
               >
                 10 Merkmale einer Bürgerstiftung
               </a>{" "}
@@ -57,7 +57,7 @@ export default function QualityAndTransparencyPage() {
                 der ProPotsdam GmbH für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/buntes-essen"
-                  className="text-emerald-500"
+                  className="text-emerald-700"
                 >
                   Buntes Essen
                 </Link>
@@ -67,7 +67,7 @@ export default function QualityAndTransparencyPage() {
                 Stadtwerke Potsdam und ProPotsdam GmbH 2019 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/potspresso"
-                  className="font-bold text-emerald-500"
+                  className="font-bold text-emerald-700"
                 >
                   Potspresso
                 </Link>
@@ -81,7 +81,7 @@ export default function QualityAndTransparencyPage() {
                 ProPotsdam GmbH 2021 für das Projekt{" "}
                 <Link
                   href="/aktuelles/projekte/inselbuehne"
-                  className="font-bold text-emerald-500"
+                  className="font-bold text-emerald-700"
                 >
                   Inselbühne
                 </Link>
@@ -114,7 +114,7 @@ export default function QualityAndTransparencyPage() {
               Vollständige Satzung sowie Angaben zu den Zielen unserer Stiftung
             </h4>
             <p>
-              <Link href="/Satzung.pdf" className="text-emerald-500">
+              <Link href="/Satzung.pdf" className="text-emerald-700">
                 Satzung
               </Link>
             </p>
@@ -131,7 +131,7 @@ export default function QualityAndTransparencyPage() {
               Name und Funktionen wesentlicher Entscheidungsträger
             </h4>
             <p>
-              <Link href="/stiftung/gremien" className="text-emerald-500">
+              <Link href="/stiftung/gremien" className="text-emerald-700">
                 Gremien
               </Link>
             </p>
@@ -141,7 +141,7 @@ export default function QualityAndTransparencyPage() {
             <p>
               <Link
                 href="https://portal.potsdamer-buergerstiftung.org/assets/e6a2fab6-9a4a-4cd7-bed2-3199b57764f3"
-                className="text-emerald-500"
+                className="text-emerald-700"
               >
                 Jahresbericht 2022
               </Link>
@@ -160,7 +160,7 @@ export default function QualityAndTransparencyPage() {
             <p>
               <Link
                 href="https://portal.potsdamer-buergerstiftung.org/assets/e6a2fab6-9a4a-4cd7-bed2-3199b57764f3"
-                className="text-emerald-500"
+                className="text-emerald-700"
               >
                 Jahresbericht 2022
               </Link>
@@ -171,7 +171,7 @@ export default function QualityAndTransparencyPage() {
             <p>
               <Link
                 href="https://portal.potsdamer-buergerstiftung.org/assets/e6a2fab6-9a4a-4cd7-bed2-3199b57764f3"
-                className="text-emerald-500"
+                className="text-emerald-700"
               >
                 Jahresbericht 2022
               </Link>

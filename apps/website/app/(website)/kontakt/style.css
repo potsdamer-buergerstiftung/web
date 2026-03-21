@@ -1,0 +1,20 @@
+.altcha-main {
+    padding: 0 !important;
+}
+
+.altcha-checkbox {
+    width: 1rem !important;
+}
+
+.altcha-checkbox input {
+    border-radius: .125rem;
+    width: 1rem !important;
+    height: 1rem !important;
+    @apply bg-slate-100;
+    @apply border-slate-300;
+}
+
+.altcha-label {
+    @apply text-sm;
+    @apply font-medium;
+}

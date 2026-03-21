@@ -56,7 +56,7 @@ const ArticleCard: React.FC<{
             src={`https://portal.potsdamer-buergerstiftung.org/assets/${imageId}`}
             height={400}
             width={400}
-            quality={32}
+            quality={30}
             alt="Bild vom Event"
             className={clsx(
               "h-full",

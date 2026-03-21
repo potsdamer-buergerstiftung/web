@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY });
 
 export async function POST(request: Request) {
-    const { amount, description, redirectUrl, method, duration, customerId } = await request.json();
+    const { amount, description, redirectUrl, method, duration, customerId, consents } = await request.json();
 
     const formattedValue = amount.toFixed(2).replace(',', '.').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 
@@ -26,6 +26,9 @@ export async function POST(request: Request) {
         method,
         customerId,
         sequenceType: checkedDuration,
+        metadata: {
+            consents: consents ?? {},
+        },
     });
 
     return NextResponse.json(payment);

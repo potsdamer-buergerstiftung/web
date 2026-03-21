@@ -1,4 +1,6 @@
 packages:
-  - "apps/*"
+  - "apps/inselbuehne"
+  - "apps/links"
+  - "apps/portal/extensions/tree-view-table-layout"
+  - "apps/website"
   - "packages/*"
-

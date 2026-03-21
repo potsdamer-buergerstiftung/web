@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    serverActions: true,
-  },
   async rewrites() {
     return [
       {
@@ -19,8 +15,16 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'portal.potsdamer-buergerstiftung.org',
       },
+      {
+        protocol: "https",
+        hostname: "*.cdninstagram.com",
+        port: "",
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+      },
     ],
-    domains: ['static.wixstatic.com'],
     formats: ['image/webp'],
   },
   transpilePackages: ["ui"],

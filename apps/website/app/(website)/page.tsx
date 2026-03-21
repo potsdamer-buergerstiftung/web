@@ -1,4 +1,4 @@
-import { createDirectus, readItems, rest } from "@directus/sdk";
+import { readItems } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
@@ -7,26 +7,27 @@ import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
 import { Metadata } from "next";
-import { wixClient } from "./wix";
-import InstaFeed from "@components/InstaFeed";
-import directus from "./directus";
+import directus from "app/(website)/directus";
 
 export const revalidate = 120;
 
-/* async function getProjects() {
-  const directus = new Directus("https://portal.potsdamer-buergerstiftung.org");
-  const res = await directus.items<any, any>("projects").readByQuery({
-    limit: 5,
-  });
-  return res.data;
-} */
-
 async function getProjects() {
-  const projects = await wixClient.items.query("Projekte").limit(7).find();
+  const res = await directus.request(readItems("projects", {
+        fields: [
+            "id",
+            "status",
+            "title",
+            "image",
+            "sub_title"
+        ],
+        filter: {
+            status: { _in: ["inprogress", "recurring"] }
+        },
+        sort: ["sort"],
+        limit: 5,
+    }));
 
-  console.log(projects.items);
-  
-  return projects.items;
+    return res;
 }
 
 async function getPosts() {
@@ -69,28 +70,32 @@ export default async function HomePage() {
       subTitle: "Nachhaltigkeit",
       title: "Nachhaltig engagieren und handeln",
       assetId: "2f152755-94d6-472e-9102-be17106c63c0",
-      description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
+      description:
+        `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
       color: "text-emerald-200",
     },
     {
       subTitle: "Kultur",
       title: "Kultur und Teilhabe fördern",
       assetId: "72baf604-4397-4f22-9ac7-195df8b1a591",
-      description: `Freier Zugang zu Kultur und Unterhaltung ist wichtiger denn je. Wir ermöglichen Kunstschaffenen sich in Potsdam zu präsentieren und allen Menschen, Teil des Publikums zu sein.`,
+      description:
+        `Freier Zugang zu Kultur und Unterhaltung ist wichtiger denn je. Wir ermöglichen Kunstschaffenen sich in Potsdam zu präsentieren und allen Menschen, Teil des Publikums zu sein.`,
       color: "text-red-200",
     },
     {
       subTitle: "Begegnung & Toleranz",
       title: "Menschen zusammenbringen",
       assetId: "db74ab6f-0e47-415d-8686-a3a6afa2b6a1",
-      description: `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
+      description:
+        `Zusammenhalt, Solidarität und Toleranz entsteht durch Begegnung. Wir organisieren Zusammentreffen aller Art und vereinfachen Begegnung durch gemeinsame Interessen. Wir alle sind Potsdam.`,
       color: "text-blue-200",
     },
     {
       subTitle: "Bildung & Jugend",
       title: "Zukünftige Generationen stärken",
       assetId: "16033de6-d1a2-4280-bef7-3851aad0ed6d",
-      description: `Alle Kinder in Potsdam sollten die gleichen Chancen haben. Kinder und Jugendliche sind die Potsdamer Bürgerschaft von morgen: Damit sie stark, glücklich und erfolgreich in die Zukunft sehen und gehen können, möchten wir sie beteiligen und fördern.`,
+      description:
+        `Alle Kinder in Potsdam sollten die gleichen Chancen haben. Kinder und Jugendliche sind die Potsdamer Bürgerschaft von morgen: Damit sie stark, glücklich und erfolgreich in die Zukunft sehen und gehen können, möchten wir sie beteiligen und fördern.`,
       color: "text-yellow-200",
     },
   ];
@@ -98,23 +103,21 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
-        <h1 className="font-header text-5xl font-bold text-slate-800 md:text-6xl lg:text-7xl">
-          Brücken bauen,
+        <h1 className="font-header text-5xl font-bold text-slate-800 md:text-5xl lg:text-6xl">
+          15 Jahre Bürgerstiftung &mdash;
           <br />
-          Menschen verbinden
+          <span className="text-emerald-700"><i>und wir alle tragen sie.</i></span>
         </h1>
-        <p className="mt-8 text-slate-800 md:text-lg">
-          Wir sind die Potsdamer Bürgerstiftung und fördern als Mitmach-Stiftung
-          ehrenamtliches Engagement.
-        </p>
-        <p className="font-bold md:text-lg text-emerald-500">
-          Lass uns gemeinsam unsere schöne Stadt noch l(i)ebenswerter machen.
+        <p className="mt-8 text-slate-800 md:text-lg max-w-4xl">
+          <b>Seit 2011</b> trägt die Bürgerstiftung <b>Projekte</b>, <b>Menschen</b> und <b>Ideen</b> in
+          Potsdam. <b>Mach mit, komm in unseren Freundeskreis!</b> Mit 100 Euro
+          jährlich trägst du das Engagement mit. Dein Beitrag wirkt!
         </p>
         <Link
-          href="/mitmachen"
-          className="text-md font-header mt-8 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          href="/mitstiften/freundeskreis"
+          className="text-md font-header mt-8 inline-flex items-center rounded-md text-white bg-emerald-700 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
         >
-          Jetzt engagieren
+          Jetzt beitreten
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ml-1 h-4 w-4"
@@ -138,9 +141,23 @@ export default async function HomePage() {
         </Suspense>
         <Link
           href="/aktuelles/projekte"
-          className="text-md font-header mt-12 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          className="text-md font-header mt-12 inline-flex items-center rounded-md bg-emerald-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
         >
           Alle Projekte
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-1 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
         </Link>
       </div>
       <section className="bg-slate-100 py-16 lg:py-24">
@@ -160,9 +177,11 @@ export default async function HomePage() {
               Gleichgesinnte, versammeln engagierte Menschen, bieten
               Unterstützung als Plattform für Ehrenamt und möchten es den
               Menschen in Potsdam leichter machen, das{" "}
-              <b>Gemeinwohl zu stärken</b>, Gemeinschaftsgefühl zu erleben, ein{" "}
-              <b>herzliches Miteinander</b> und eine starke Zukunft für Potsdam
-              zu stiften. Mit unserer Arbeit konnten wir seit unserer Gründung{" "}
+              <b>Gemeinwohl zu stärken</b>, Gemeinschaftsgefühl zu erleben, ein
+              {" "}
+              <b>herzliches Miteinander</b>{" "}
+              und eine starke Zukunft für Potsdam zu stiften. Mit unserer Arbeit
+              konnten wir seit unserer Gründung{" "}
               <b>erste Schwerpunkte setzen</b>.
             </p>
           </div>
@@ -233,7 +252,7 @@ export default async function HomePage() {
         <div className="container mx-auto grid grid-cols-6 gap-8 px-4">
           <div className="col-span-6 lg:col-span-4">
             <h4 className="text-sm font-semibold uppercase text-gray-600">
-              Von unserem Instagram
+              Von unserem Blog
             </h4>
             <h1 className="font-header mt-2 text-4xl font-bold">
               Aktuelles & Neues von uns
@@ -244,7 +263,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/aktuelles/blog"
-              className="text-md font-header mt-12 mb-4 inline-flex items-center rounded-md bg-green-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+              className="text-md font-header mt-12 mb-4 inline-flex items-center rounded-md bg-emerald-100 py-1.5 px-4 font-bold transition ease-in-out hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
             >
               Alle Beiträge
               <svg
@@ -263,7 +282,10 @@ export default async function HomePage() {
               </svg>
             </Link>
           </div>
-          <InstaFeed />
+          <Suspense>
+            {/* @ts-ignore-error */}
+            <PostGrid promise={posts} />
+          </Suspense>
         </div>
       </section>
     </>

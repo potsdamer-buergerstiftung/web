@@ -9,23 +9,13 @@ This monorepo contains multiple applications and packages:
 
 ## Technical Stack
 
-### Core Technologies
-
-- **Framework**: Next.js 13-15 (App Router)
-- **Language**: TypeScript
-- **Package Manager**: pnpm
-- **Monorepo**: Turborepo
-- **Styling**: Tailwind CSS
-- **State Management**: Jotai
-- **Animations**: Framer Motion
-
 ### Key Dependencies
 
 #### Frontend
 
-- **React**: 18-19 (latest)
-- **Next.js**: 13.4.6 - 15.3.3
-- **Tailwind CSS**: 3.2.4 with plugins:
+- **React**: 19
+- **Next.js**: 16.2.0
+- **Tailwind CSS**: 4.1.17 with plugins:
   - `@tailwindcss/typography`
   - `@tailwindcss/aspect-ratio`
   - `@tailwindcss/forms`
@@ -66,7 +56,7 @@ buergerstiftung/
 
 ### Prerequisites
 
-- Node.js >= 14.0.0
+- Node.js >= 24.0.0
 - pnpm 10.12.0
 
 ### Installation

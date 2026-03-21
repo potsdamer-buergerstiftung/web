@@ -1,11 +1,11 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { submitForm } from "./action";
+import { AltchaWidget } from "./AltchaWidget";
 
 export default function ContactForm() {
-
-    const [state, formAction, pending] = useFormState(submitForm, null);
+    const [state, formAction, pending] = useActionState(submitForm, null);
 
     if (state?.success) {
         return (
@@ -105,7 +105,7 @@ export default function ContactForm() {
                     />
                 </div>
                 <div className="col-span-3">
-                    <div className="mb-6 flex items-start">
+                    <div className="mb-4 flex items-start">
                         <div className="flex h-5 items-center">
                             <input
                                 name="remember"
@@ -124,8 +124,19 @@ export default function ContactForm() {
                             Anliegens weiterverarbeitet werden.
                         </label>
                     </div>
+                    <div>
+                        <AltchaWidget />
+                    </div>
+
+                    {state?.success === false && state?.message
+                        ? (
+                            <div className="mb-6 text-red-600">
+                                {state.message}
+                            </div>
+                        )
+                        : null}
                     <button
-                        className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16"
+                        className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-8"
                         type="submit"
                         disabled={pending}
                     >

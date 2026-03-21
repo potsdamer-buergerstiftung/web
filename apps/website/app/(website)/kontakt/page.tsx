@@ -3,8 +3,6 @@ import PageBreadcrumb from "@components/PageBreadcrumb";
 import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { Metadata } from "next";
-import directus from "../directus";
-import { createItem } from "@directus/sdk";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -24,7 +22,7 @@ export default function ContactPage() {
         actions={
           <a
             href="mailto:info@potsdamer-buergerstiftung.org"
-            className="text-md font-header rounded-md bg-emerald-500 py-1.5 px-4 font-bold text-white transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+            className="text-md font-header rounded-md bg-emerald-700 py-1.5 px-4 font-bold text-white transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
           >
             info@potsdamer-buergerstiftung.org
           </a>
@@ -64,20 +62,20 @@ export default function ContactPage() {
           </div> */}
         </div>
       </section>
-      {/* <section className="bg-slate-100">
+      <section className="bg-slate-100">
         <div className="container mx-auto grid grid-cols-4 gap-8 px-4 py-16">
           <div className="col-span-4 lg:col-span-1">
             <h1 className="font-header text-3xl font-bold">Allgemeine Fragen</h1>
             <p className="mt-4">
-              Füllen Sie gerne das Formular aus oder
-              <b>senden Sie uns eine E-Mail</b>
+              Füllen Sie gerne das Formular aus oder{" "}
+              <b> senden Sie uns eine E-Mail</b>
             </p>
           </div>
           <div className="col-span-4 lg:col-span-3">
             <ContactForm />
           </div>
         </div>
-      </section> */}
+      </section>
     </React.Fragment>
   );
 }

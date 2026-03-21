@@ -1,36 +1,45 @@
-# Explicitly specify a Directus version to use on Railway
-FROM directus/directus:11.12
+FROM node:22-bookworm AS isolate
+
+WORKDIR /app
 
 USER root
+RUN corepack enable
 
-# Set the environment variable for your timezone if needed
-# RUN apk add --no-cache tzdata
-# ENV TZ=America/New_York
+COPY . .
 
-RUN npm install -g pnpm --force
+RUN pnpx turbo prune @directus-labs/tree-view-table-layout
+
+FROM node:22-bookworm AS builder
+
+WORKDIR /app
+
+COPY --from=isolate /app/out .
+
+USER root
+RUN corepack enable
+
+RUN pnpm install
+
+RUN pnpm --filter "@directus-labs/tree-view-table-layout" build
+
+FROM directus/directus:11.16
+
+USER root
+RUN corepack enable
 
 USER node
 
-# Installing contributed/custom extensions through npm on Railway
-RUN pnpm install \
-directus-extension-sync \
-@directus-labs/tree-view-table-layout \
-@directus-labs/calculated-fields-bundle \
-@directus-labs/spreadsheet-layout
-
-# Migrations and Directus schema update
-RUN npx directus bootstrap
-# Copying the extensions, templates, migrations, and snapshots to the Directus container
-COPY ./extensions /directus/extensions
-COPY ./templates /directus/templates
-COPY ./migrations /directus/migrations
-COPY ./snapshots /directus/snapshots
-COPY ./config.cjs /directus/config.cjs           
-
-# Custom entrypoint script to run Directus on Railway for migrations, snapshots, and extensions
-COPY entrypoint.sh /directus/entrypoint.sh
 WORKDIR /directus
-USER root
-RUN chmod +x ./entrypoint.sh
-USER node
-ENTRYPOINT ["./entrypoint.sh"]
+
+RUN pnpm install \
+    directus-extension-sync \
+    directus-extension-display-link \
+    @directus-labs/calculated-fields-bundle \
+    @directus-labs/spreadsheet-layout \
+    @directus-labs/pdf-viewer-interface \
+    directus-extension-custom-search-okam \
+    directus-extension-field-actions
+
+COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/dist /directus/extensions/tree-view-table-layout/dist
+COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/package.json /directus/extensions/tree-view-table-layout/package.json
+
