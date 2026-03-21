@@ -38,7 +38,8 @@ RUN pnpm install \
     @directus-labs/spreadsheet-layout \
     @directus-labs/pdf-viewer-interface \
     directus-extension-custom-search-okam \
-    directus-extension-field-actions
+    directus-extension-field-actions \
+    dcb-tree-view
 
 COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/dist /directus/extensions/tree-view-table-layout/dist
 COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/package.json /directus/extensions/tree-view-table-layout/package.json
