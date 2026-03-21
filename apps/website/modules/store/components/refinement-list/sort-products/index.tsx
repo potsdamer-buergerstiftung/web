@@ -26,7 +26,6 @@ const sortOptions = [
 ]
 
 const SortProducts = ({
-  "data-testid": dataTestId,
   sortBy,
   setQueryParams,
 }: SortProductsProps) => {
@@ -40,7 +39,6 @@ const SortProducts = ({
       items={sortOptions}
       value={sortBy}
       handleChange={handleChange}
-      data-testid={dataTestId}
     />
   )
 }
