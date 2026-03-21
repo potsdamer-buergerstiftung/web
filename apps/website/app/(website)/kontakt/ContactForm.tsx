@@ -105,7 +105,7 @@ export default function ContactForm() {
                     />
                 </div>
                 <div className="col-span-3">
-                    <div className="mb-6 flex items-start">
+                    <div className="mb-4 flex items-start">
                         <div className="flex h-5 items-center">
                             <input
                                 name="remember"
@@ -124,7 +124,7 @@ export default function ContactForm() {
                             Anliegens weiterverarbeitet werden.
                         </label>
                     </div>
-                    <div className="mt-8">
+                    <div>
                         <AltchaWidget />
                     </div>
 
@@ -136,7 +136,7 @@ export default function ContactForm() {
                         )
                         : null}
                     <button
-                        className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-16"
+                        className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-8"
                         type="submit"
                         disabled={pending}
                     >
