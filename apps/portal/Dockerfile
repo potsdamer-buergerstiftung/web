@@ -9,9 +9,12 @@ USER node
 RUN pnpm install \
 directus-extension-sync \
 directus-extension-display-link \
-directus-extension-editorjs \
 @directus-labs/tree-view-table-layout \
 @directus-labs/calculated-fields-bundle \
 @directus-labs/spreadsheet-layout \
 @directus-labs/pdf-viewer-interface \
-directus-extension-custom-search-okam          
+directus-extension-custom-search-okam
+
+RUN pnpm -F @pbs/directus-editorjs build
+
+COPY extensions/editorjs/dist extensions/editorjs/package.json /directus/extensions/
