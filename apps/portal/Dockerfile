@@ -34,7 +34,6 @@ WORKDIR /directus
 RUN pnpm install \
     directus-extension-sync \
     directus-extension-display-link \
-    @directus-labs/tree-view-table-layout \
     @directus-labs/calculated-fields-bundle \
     @directus-labs/spreadsheet-layout \
     @directus-labs/pdf-viewer-interface \
