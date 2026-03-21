@@ -40,6 +40,6 @@ RUN pnpm install \
     directus-extension-custom-search-okam \
     directus-extension-field-actions
 
-COPY --from=builder /app/apps/portal/extensions/editorjs/dist /directus/extensions/editorjs/dist
-COPY --from=builder /app/apps/portal/extensions/editorjs/package.json /directus/extensions/editorjs/package.json
+COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/dist /directus/extensions/tree-view-table-layout/dist
+COPY --from=builder /app/apps/portal/extensions/tree-view-table-layout/package.json /directus/extensions/tree-view-table-layout/package.json
 
