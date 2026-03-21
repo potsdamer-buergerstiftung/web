@@ -31,8 +31,6 @@ import { ref, onMounted, onUnmounted, watch, withDefaults } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useApi, useStores } from '@directus/extensions-sdk';
 import EditorJS from '@editorjs/editorjs';
-import isEqual from 'lodash/isEqual';
-import cloneDeep from 'lodash/cloneDeep';
 import useDirectusToken from './use-directus-token';
 import useFileHandler from './use-filehandler';
 import getTools from './get-tools';
@@ -96,6 +94,45 @@ const tools = getTools(
 	props.tools,
 	haveFilesAccess
 );
+
+function isEqual(value1, value2) {
+  if (Object.is(value1, value2)) {
+    return true;
+  }
+
+  if (
+    typeof value1 !== 'object' || value1 === null ||
+    typeof value2 !== 'object' || value2 === null
+  ) {
+    return false;
+  }
+
+  if (value1 instanceof Date && value2 instanceof Date) {
+    return value1.getTime() === value2.getTime();
+  }
+  if (value1 instanceof RegExp && value2 instanceof RegExp) {
+    return value1.toString() === value2.toString();
+  }
+
+  if (Object.getPrototypeOf(value1) !== Object.getPrototypeOf(value2)) {
+    return false;
+  }
+
+  const keys1 = Object.keys(value1);
+  const keys2 = Object.keys(value2);
+
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+
+  for (const key of keys1) {
+    if (!Object.prototype.hasOwnProperty.call(value2, key) || !isEqual(value1[key], value2[key])) {
+      return false;
+    }
+  }
+
+  return true;
+}
 
 onMounted(() => {
 	const initialValue = getSanitizedValue(props.value);
@@ -175,7 +212,7 @@ async function emitValue(context: EditorJS.API, event: CustomEvent) {
 function getSanitizedValue(value: any): EditorJS.OutputData | null {
 	if (!value || typeof value !== 'object' || !value.blocks || value.blocks.length < 1) return null;
 
-	return cloneDeep({
+	return structuredClone({
 		time: value?.time || Date.now(),
 		version: value?.version || '0.0.0',
 		blocks: value.blocks,
