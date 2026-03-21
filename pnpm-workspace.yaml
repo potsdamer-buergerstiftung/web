@@ -3,4 +3,5 @@ packages:
   - "apps/links"
   - "apps/portal/extensions/tree-view-table-layout"
   - "apps/website"
+  - "apps/shop"
   - "packages/*"

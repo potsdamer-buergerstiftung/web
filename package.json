@@ -2,13 +2,6 @@
   "name": "pbs",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/inselbuehne",
-    "apps/links",
-    "apps/portal/extensions/tree-view-table-layout",
-    "apps/website",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
