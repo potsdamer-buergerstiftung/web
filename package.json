@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/**/*",
+    "apps/inselbuehne",
+    "apps/links",
+    "apps/portal/extensions/editorjs",
+    "apps/website",
     "packages/*"
   ],
   "scripts": {

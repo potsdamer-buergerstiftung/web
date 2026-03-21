@@ -1,4 +1,7 @@
 packages:
-  - "apps/**/*"
-  - "packages/**/*"
+  - "apps/inselbuehne"
+  - "apps/links"
+  - "apps/portal/extensions/editorjs"
+  - "apps/website"
+  - "packages/*"
 
