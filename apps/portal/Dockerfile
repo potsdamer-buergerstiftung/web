@@ -7,7 +7,7 @@ RUN corepack enable
 
 COPY . .
 
-RUN pnpx turbo prune @pbs/directus-editorjs
+RUN pnpx turbo prune @directus-labs/tree-view-table-layout
 
 FROM node:22-bookworm AS builder
 
@@ -20,7 +20,7 @@ RUN corepack enable
 
 RUN pnpm install
 
-RUN pnpm --filter "@pbs/directus-editorjs" build
+RUN pnpm --filter "@directus-labs/tree-view-table-layout" build
 
 FROM directus/directus:11.16
 
@@ -37,7 +37,8 @@ RUN pnpm install \
     @directus-labs/calculated-fields-bundle \
     @directus-labs/spreadsheet-layout \
     @directus-labs/pdf-viewer-interface \
-    directus-extension-custom-search-okam
+    directus-extension-custom-search-okam \
+    directus-extension-field-actions
 
 COPY --from=builder /app/apps/portal/extensions/editorjs/dist /directus/extensions/editorjs/dist
 COPY --from=builder /app/apps/portal/extensions/editorjs/package.json /directus/extensions/editorjs/package.json
