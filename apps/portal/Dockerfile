@@ -2,16 +2,10 @@
 FROM directus/directus:11.16
 
 USER root
-
-# Set the environment variable for your timezone if needed
-# RUN apk add --no-cache tzdata
-# ENV TZ=America/New_York
-
-RUN npm install -g pnpm --force
+RUN corepack enable
 
 USER node
 
-# Installing contributed/custom extensions through npm on Railway
 RUN pnpm install \
 directus-extension-sync \
 directus-extension-display-link \
@@ -20,21 +14,4 @@ directus-extension-editorjs \
 @directus-labs/calculated-fields-bundle \
 @directus-labs/spreadsheet-layout \
 @directus-labs/pdf-viewer-interface \
-directus-extension-custom-search-okam
-
-# Migrations and Directus schema update
-RUN npx directus bootstrap
-# Copying the extensions, templates, migrations, and snapshots to the Directus container
-COPY ./extensions /directus/extensions
-COPY ./templates /directus/templates
-COPY ./migrations /directus/migrations
-COPY ./snapshots /directus/snapshots
-COPY ./config.cjs /directus/config.cjs           
-
-# Custom entrypoint script to run Directus on Railway for migrations, snapshots, and extensions
-COPY entrypoint.sh /directus/entrypoint.sh
-WORKDIR /directus
-USER root
-RUN chmod +x ./entrypoint.sh
-USER node
-ENTRYPOINT ["./entrypoint.sh"]
+directus-extension-custom-search-okam          
