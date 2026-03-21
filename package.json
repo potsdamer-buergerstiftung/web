@@ -5,7 +5,7 @@
   "workspaces": [
     "apps/inselbuehne",
     "apps/links",
-    "apps/portal/extensions/editorjs",
+    "apps/portal/extensions/tree-view-table-layout",
     "apps/website",
     "packages/*"
   ],
