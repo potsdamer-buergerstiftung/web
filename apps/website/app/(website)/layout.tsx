@@ -99,12 +99,6 @@ export default function WebsiteLayout(
                                 href="/kontakt"
                                 key="kontakt"
                             />,
-                            <HeaderNavItem
-                                index={5}
-                                label="Shop"
-                                href="/shop"
-                                key="shop"
-                            />,
                         ]}
                     />
                 }
