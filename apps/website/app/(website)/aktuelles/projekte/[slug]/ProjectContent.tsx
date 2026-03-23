@@ -30,7 +30,7 @@ export default async function ProjectContent(props: ProjectContentProps) {
                 breadcrumb={
                     <PageBreadcrumb
                         items={[
-                            <PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles" />,
+                            <PageBreadcrumbItem label="Aktuelles & Projekte" />,
                             <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />,
                             <PageBreadcrumbItem label={project.title} />,
                         ]}

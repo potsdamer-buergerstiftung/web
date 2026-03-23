@@ -11,7 +11,7 @@ export default function ProjectLoading() {
                 breadcrumb={
                     <PageBreadcrumb
                         items={[
-                            <PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles" />,
+                            <PageBreadcrumbItem label="Aktuelles & Projekte" />,
                             <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />,
                             <PageBreadcrumbItem label="..." />,
                         ]}
