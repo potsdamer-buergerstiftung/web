@@ -6,9 +6,14 @@ import PostGrid from "./PostGrid";
 import PostGridLoading from "./PostGridLoading";
 import directus from "app/(website)/directus";
 import { Suspense } from "react";
+import { Metadata } from "next";
 //import VisualEditingPage from "app/VisualEditingPage";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+    title: "News & Blog - Potsdamer Bürgerstiftung",
+}
 
 async function getPosts() {
     const res = await directus.request(readItems("posts", {
