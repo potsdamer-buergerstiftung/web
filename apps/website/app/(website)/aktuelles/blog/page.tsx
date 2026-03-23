@@ -3,7 +3,9 @@ import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
 import PageTitle from "@components/PageTitle";
 import { readItems } from "@directus/sdk";
 import PostGrid from "./PostGrid";
+import PostGridLoading from "./PostGridLoading";
 import directus from "app/(website)/directus";
+import { Suspense } from "react";
 //import VisualEditingPage from "app/VisualEditingPage";
 
 export const revalidate = 60;
@@ -49,7 +51,9 @@ export default function NewsPage() {
             />
             <div className="container mx-auto px-4 mb-10">
                 {/* @ts-ignore-error */}
-                <PostGrid promise={posts} />
+                <Suspense fallback={<PostGridLoading />}>
+                    <PostGrid promise={posts} />
+                </Suspense>
             </div>
         </>
     );

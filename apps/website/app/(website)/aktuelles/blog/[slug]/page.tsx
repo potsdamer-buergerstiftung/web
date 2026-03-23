@@ -1,6 +1,7 @@
 import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
 import Article from "./Article";
+import ArticleLoading from "./ArticleLoading";
 import directus from "app/(website)/directus";
 
 async function getPost(slug: string) {
@@ -27,7 +28,7 @@ export default async function PostPage(
     return (
         <>
             {/* @ts-ignore-error */}
-            <Suspense>
+            <Suspense fallback={<ArticleLoading />}>
                 <Article promise={posts} />
             </Suspense>
         </>
