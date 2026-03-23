@@ -6,9 +6,7 @@ export default function PostGridLoading() {
     return (
         <PostGridWrapper>
             {items.map((_, i) => (
-                <div key={i}>
-                    <ArticleCardLoading />
-                </div>
+                <ArticleCardLoading key={i} />
             ))}
         </PostGridWrapper>
     );
