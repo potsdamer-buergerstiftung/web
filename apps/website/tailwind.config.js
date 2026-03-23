@@ -37,6 +37,10 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        primary: "#047857",
+        "primary-foreground": "#ffffff",
+        secondary: "#1e293b",
+        "secondary-foreground": "#ffffff",
       },
       borderRadius: {
         none: "0px",

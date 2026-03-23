@@ -1,5 +1,3 @@
-import "./style.css";
-
 export function AltchaWidget() {
     if (typeof window === undefined) {
         return null;

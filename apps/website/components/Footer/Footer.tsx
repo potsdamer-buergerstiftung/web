@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
               <p className="">IBAN: DE93 1207 0000 0010 6633 00</p>
               <p className="">BIC: DEUTDEBB160</p>
 
-              <p className="mt-6 font-bold">Andere Zahlungsmöglichkeiten</p>
+              <p className="mt-6 mb-4 font-bold">Andere Zahlungsmöglichkeiten</p>
               <FooterDonateButton />
               {/* <form>
                 <input
