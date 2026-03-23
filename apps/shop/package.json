@@ -23,14 +23,15 @@
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
   },
   "dependencies": {
+    "@medusajs/admin-bundler": "2.13.4",
     "@medusajs/admin-sdk": "2.13.4",
+    "@medusajs/admin-shared": "2.13.4",
     "@medusajs/cli": "2.13.4",
-    "@medusajs/framework": "2.13.4",
-    "@medusajs/medusa": "2.13.4",
     "@medusajs/dashboard": "2.13.4",
     "@medusajs/draft-order": "2.13.4",
-    "@medusajs/admin-shared": "2.13.4",
-    "@medusajs/admin-bundler": "2.13.4"
+    "@medusajs/framework": "2.13.4",
+    "@medusajs/medusa": "2.13.4",
+    "@variablevic/mollie-payments-medusa": "^0.0.13"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.13.4",
