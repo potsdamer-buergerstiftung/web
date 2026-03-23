@@ -5,6 +5,9 @@ import RefinementList from "@modules/store/components/refinement-list"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
 import PaginatedProducts from "./paginated-products"
+import PageTitle from "@components/PageTitle"
+import PageBreadcrumb from "@components/PageBreadcrumb"
+import PageBreadcrumbItem from "@components/PageBreadcrumbItem"
 
 const StoreTemplate = ({
   sortBy,
@@ -19,14 +22,21 @@ const StoreTemplate = ({
   const sort = sortBy || "created_at"
 
   return (
-    <div
-      className="flex flex-col sm:flex-row sm:items-start py-6 container mx-auto"
-    >
-      <RefinementList sortBy={sort} />
-      <div className="w-full">
-        <div className="mb-8 text-2xl font-semibold font-header">
-          <h1>Alle Produkte</h1>
-        </div>
+    <>
+      <PageTitle
+        title="Shop"
+        breadcrumb={
+          <PageBreadcrumb
+            items={
+              <>
+                <PageBreadcrumbItem label="Shop" />
+              </>
+            }
+          />
+        }
+      />
+      {/* <RefinementList sortBy={sort} /> */}
+      <div className="container mx-auto px-4">
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sort}
@@ -35,7 +45,7 @@ const StoreTemplate = ({
           />
         </Suspense>
       </div>
-    </div>
+    </>
   )
 }
 
