@@ -3,6 +3,12 @@
 import { useActionState } from "react";
 import { submitForm } from "./action";
 import { AltchaWidget } from "./AltchaWidget";
+import { Label } from "@components/ui/label";
+import { Input } from "@components/ui/input";
+import { Field, FieldGroup, FieldLabel } from "@components/ui/field";
+import { Textarea } from "@components/ui/textarea";
+import { Checkbox } from "@components/ui/checkbox";
+import { Button } from "@components/ui/button";
 
 export default function ContactForm() {
     const [state, formAction, pending] = useActionState(submitForm, null);
@@ -16,134 +22,140 @@ export default function ContactForm() {
     }
 
     return (
-        <form action={formAction}>
-            <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">
-                        Vorname (Erforderlich)
-                    </label>
-                    <input
-                        name="firstName"
-                        id="firstName"
-                        type="text"
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Dein Vorname"
-                        required
-                    />
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">
-                        Nachname (Erforderlich)
-                    </label>
-                    <input
-                        name="lastName"
-                        id="lastName"
-                        type="text"
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Dein Nachname"
-                        required
-                    />
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">Organisation</label>
-                    <input
-                        name="organisation"
-                        id="organisation"
-                        type="text"
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Deine Organisation"
-                    />
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">
-                        E-Mail (Erforderlich)
-                    </label>
-                    <input
-                        name="email"
-                        id="email"
-                        type="email"
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Deine E-Mail"
-                        required
-                    />
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">Telefon</label>
-                    <input
-                        name="phone"
-                        id="phone"
-                        type="text"
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Deine Telefonnummer"
-                    />
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <label className="text-sm font-medium">Projektbezug</label>
-                </div>
-                <div className="col-span-3">
-                    <label className="text-sm font-medium">
-                        Betreff (Erforderlich)
-                    </label>
-                    <input
-                        name="subject"
-                        id="subject"
-                        type="text"
-                        required
-                        className="mt-2 w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Dein Betreff"
-                    />
-                </div>
-                <div className="col-span-3">
-                    <label className="text-sm font-medium">
-                        Nachricht (Erforderlich)
-                    </label>
-                    <textarea
-                        name="message"
-                        id="message"
-                        className="mt-2 h-40 min-h-max w-full rounded-md border-none bg-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                        placeholder="Deine Nachricht"
-                    />
-                </div>
-                <div className="col-span-3">
-                    <div className="mb-4 flex items-start">
-                        <div className="flex h-5 items-center">
-                            <input
+        <div>
+            <form action={formAction}>
+                <FieldGroup className="grid grid-cols-3 gap-4">
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="firstName">
+                            Vorname (Erforderlich)
+                        </FieldLabel>
+                        <Input
+                            name="firstName"
+                            id="firstName"
+                            type="text"
+                            placeholder="Dein Vorname"
+                            required
+                        />
+                    </Field>
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="lastName">
+                            Nachname (Erforderlich)
+                        </FieldLabel>
+                        <Input
+                            name="lastName"
+                            id="lastName"
+                            type="text"
+                            placeholder="Dein Nachname"
+                            required
+                        />
+                    </Field>
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="organisation">
+                            Organisation
+                        </FieldLabel>
+                        <Input
+                            name="organisation"
+                            id="organisation"
+                            type="text"
+                            placeholder="Deine Organisation"
+                        />
+                    </Field>
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="email">
+                            E-Mail (Erforderlich)
+                        </FieldLabel>
+                        <Input
+                            name="email"
+                            id="email"
+                            type="email"
+                            placeholder="Deine E-Mail"
+                            required
+                        />
+                    </Field>
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="phone">
+                            Telefon
+                        </FieldLabel>
+                        <Input
+                            name="phone"
+                            id="phone"
+                            type="text"
+                            placeholder="Deine Telefonnummer"
+                        />
+                    </Field>
+                    <Field className="col-span-3 md:col-span-1">
+                        <FieldLabel htmlFor="project">
+                            Projektbezug
+                        </FieldLabel>
+                        <Input
+                            name="project"
+                            id="project"
+                            type="text"
+                            placeholder="Dein Projektbezug"
+                        />
+                    </Field>
+                    <Field className="col-span-3">
+                        <FieldLabel htmlFor="subject">
+                            Betreff (Erforderlich)
+                        </FieldLabel>
+                        <Input
+                            name="subject"
+                            id="subject"
+                            type="text"
+                            required
+                            placeholder="Dein Betreff"
+                        />
+                    </Field>
+                    <Field className="col-span-3">
+                        <FieldLabel htmlFor="message">
+                            Nachricht (Erforderlich)
+                        </FieldLabel>
+                        <Textarea
+                            name="message"
+                            id="message"
+                            placeholder="Deine Nachricht"
+                            className="min-h-40"
+                        />
+                    </Field>
+                    <FieldGroup className="col-span-3">
+                        <Field orientation="horizontal">
+                            <Checkbox
                                 name="remember"
                                 id="remember"
-                                type="checkbox"
-                                className="focus:ring-3 h-4 w-4 rounded-sm border border-slate-300 bg-slate-100 accent-emerald-500 focus:ring-emerald-300"
                                 required
                             />
-                        </div>
-                        <label
-                            htmlFor="remember"
-                            className="ml-2 max-w-xl text-sm font-medium"
-                        >
-                            Ich erkläre mich einverstanden, dass die
-                            eingegebenen Daten für die Bearbeitung meines
-                            Anliegens weiterverarbeitet werden.
-                        </label>
-                    </div>
-                    <div>
-                        <AltchaWidget />
-                    </div>
+                            <FieldLabel
+                                htmlFor="remember"
+                            >
+                                Ich erkläre mich einverstanden, dass die
+                                eingegebenen Daten für die Bearbeitung meines
+                                Anliegens weiterverarbeitet werden.
+                            </FieldLabel>
+                        </Field>
+                        <Field>
+                            <AltchaWidget />
+                        </Field>
 
-                    {state?.success === false && state?.message
-                        ? (
-                            <div className="mb-6 text-red-600">
-                                {state.message}
-                            </div>
-                        )
-                        : null}
-                    <button
-                        className="text-md font-header inline-flex items-center rounded-md bg-slate-800 py-3 px-5 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 mt-8"
-                        type="submit"
-                        disabled={pending}
-                    >
-                        Absenden
-                    </button>
-                </div>
-            </div>
-        </form>
+                        {state?.success === false && state?.message
+                            ? (
+                                <div className="mb-6 text-red-600">
+                                    {state.message}
+                                </div>
+                            )
+                            : null}
+                        <Field orientation="horizontal">
+                            <Button
+                                type="submit"
+                                disabled={pending}
+                                size="lg"
+                            >
+                                Absenden
+                            </Button>
+                        </Field>
+
+                    </FieldGroup>
+                </FieldGroup>
+            </form>
+        </div>
     );
 }

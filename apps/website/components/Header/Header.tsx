@@ -3,12 +3,14 @@ import Logo from "../Logo";
 import HeaderDonationButton from "./HeaderDonationButton";
 import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
-import { createDirectus, readSingleton, rest } from "@directus/sdk";
+import { readSingleton, rest } from "@directus/sdk";
 import { Suspense } from "react";
 import directus from "app/(website)/directus";
 
 interface HeaderProps {
   nav?: React.ReactNode;
+  section?: string;
+  actions?: React.ReactNode;
 }
 
 async function Banner() {
@@ -31,7 +33,8 @@ async function Banner() {
           <div
             className="text-sm md:text-md md:prose-md"
             dangerouslySetInnerHTML={{ __html: res.text }}
-          ></div>
+          >
+          </div>
           <span className="text-sm md:text-md text-emerald-500 font-header inline-flex items-center rounded-md px-4 ml-1 font-bold transition ease-in-out group focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
             {res.link_label}
             <svg
@@ -46,7 +49,8 @@ async function Banner() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
+              >
+              </path>
             </svg>
           </span>
         </div>
@@ -55,7 +59,7 @@ async function Banner() {
   );
 }
 
-export default function Header({ nav }: HeaderProps) {
+export default function Header({ nav, section, actions }: HeaderProps) {
   return (
     <>
       {/* @ts-ignore-error */}
@@ -64,13 +68,23 @@ export default function Header({ nav }: HeaderProps) {
       </Suspense>
       <header className="absolute z-40 w-full">
         <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
-          <Link href="/" className="group xl:-ml-2 block p-2 outline-none">
-            <Logo />
-          </Link>
+          <div className="flex flex-row items-center gap-4">
+            <Link href="/" className="group xl:-ml-2 block p-2 outline-none">
+              <Logo />
+            </Link>
+            {section && (
+              <>
+                <div className="h-4 w-[1px] bg-slate-700" />
+                <span className="text-md font-header inline-flex items-center rounded-md py-1.5 font-bold transition ease-in-out">
+                  {section}
+                </span>
+              </>
+            )}
+          </div>
           {nav}
           <div className="flex flex-row items-center gap-4 py-3">
             <div className="hidden flex-row md:flex">
-              <HeaderDonationButton />
+              {actions}
             </div>
             <div className="block lg:hidden">
               <HeaderMobileMenuButton isDark={false} />

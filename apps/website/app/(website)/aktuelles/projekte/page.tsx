@@ -68,7 +68,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
 
     return (
         <>
-            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />]} />} actions={
+            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />, <PageBreadcrumbItem label="Projekte" />]} />} actions={
                 <ProjectFilterTabs activeSlug={params.status || ""} />
             } />
             <div className="container mx-auto px-4 pb-20">
