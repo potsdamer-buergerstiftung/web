@@ -1,6 +1,7 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
 import ProjectContent from "./ProjectContent";
+import ProjectLoading from "./ProjectLoading";
 import directus from "app/(website)/directus";
 import { readItem, readItems } from "@directus/sdk";
 import PostGrid from "app/(website)/aktuelles/blog/PostGrid";
@@ -58,7 +59,7 @@ export default async function ProjectPage(
 
     return (
         <>
-            <Suspense>
+            <Suspense fallback={<ProjectLoading />}>
                 <ProjectContent promise={project} />
                 <PostsWrapper promise={posts} />
                 <DonationWrapper projectPromise={project} />
