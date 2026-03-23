@@ -14,21 +14,22 @@ export default async function Article({ promise }: ArticleProps) {
     return (
         <div>
             <PageTitle
+                isCompact
                 title={post.title}
                 breadcrumb={
                     <PageBreadcrumb
                         items={
                             <>
-                                <PageBreadcrumbItem label="Stiftung" />
                                 <PageBreadcrumbItem label="Aktuelles" />
+                                <PageBreadcrumbItem label="Blog" href="/aktuelles/blog" />
                                 <PageBreadcrumbItem label={post.title} />
                             </>
                         }
                     />
                 }
             />
-            <div className="container px-4 mx-auto max-w-3xl">
-                <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${post.image}`} alt={post.title} width={800} height={500} className="mb-8"/>
+            <div className="container px-4 mx-auto max-w-4xl">
+                <Image src={`https://portal.potsdamer-buergerstiftung.org/assets/${post.image}`} alt={post.title} width={800} height={500} className="mb-8" />
                 <Block data={post.content} />
             </div>
         </div>
