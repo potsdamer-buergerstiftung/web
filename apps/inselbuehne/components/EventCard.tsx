@@ -3,6 +3,7 @@
 import Image from "@components/Image";
 import clsx from "clsx";
 import NextImage from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface EventCardProps {
@@ -28,8 +29,8 @@ export default function EventCard({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <a
-      href={`https://potsdamer-buergerstiftung.org/aktuelles/veranstaltungen/${eventId}`}
+    <Link
+      href={`/veranstaltungen/${eventId}`}
       // onClick={() => setExpanded(!expanded)}
       className={clsx([
         "cursor-pointer bg-white grid min-h-max w-full grid-cols-5 overflow-hidden rounded-tl-2xl rounded-br-2xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl",
@@ -88,7 +89,7 @@ export default function EventCard({
             <p
               className={clsx(
                 "text-md mt-4 leading-relaxed",
-                !expanded && "line-clamp-4 lg:line-clamp-2"
+                !expanded && "line-clamp-4 lg:line-clamp-2",
               )}
             >
               {summary}
@@ -96,6 +97,6 @@ export default function EventCard({
           )}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

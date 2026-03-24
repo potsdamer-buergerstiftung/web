@@ -11,7 +11,7 @@ export default function HeaderNav() {
         <HeaderNavItem label="Veranstaltungen" href="/veranstaltungen" />
         <HeaderNavItem
           label="Blog"
-          href="https://www.potsdamer-buergerstiftung.org/aktuelles/blog"
+          href="/blog"
         />
       </div>
       <HeaderNavBrand />

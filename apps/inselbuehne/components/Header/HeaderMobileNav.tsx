@@ -21,7 +21,7 @@ export default function HeaderMobileNav() {
         <HeaderNavItem label="Veranstaltungen" href="/veranstaltungen" />
         <HeaderNavItem
           label="Blog"
-          href="https://www.potsdamer-buergerstiftung.org/aktuelles/blog"
+          href="/blog"
         />
         <HeaderNavItem
           label="Über uns"

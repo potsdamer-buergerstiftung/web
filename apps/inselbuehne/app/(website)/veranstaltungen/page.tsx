@@ -6,6 +6,7 @@ import EventList from "./EventList";
 import { Suspense } from "react";
 import directus from "app/(website)/directus";
 import { readItems } from "@directus/sdk";
+import EventListLoading from "./EventListLoading";
 
 export const metadata: Metadata = {
   title: "Veranstaltungen - Inselbühne Potsdam",
@@ -15,23 +16,25 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getEvents() {
-  const res = await directus.request(readItems("events", {
-    fields: [
-      "name",
-      "start",
-      "id",
-      "image",
-      "external_ticket_url",
-      "registration_needed",
-      "summary",
-    ],
-    sort: ["start"],
-    filter: {
-      project: { _eq: "inselbuehne" },
-      start: { _gte: new Date().toISOString() },
-    },
-  }));
-  
+  const res = await directus.request(
+    readItems("events", {
+      fields: [
+        "name",
+        "start",
+        "id",
+        "image",
+        "external_ticket_url",
+        "registration_needed",
+        "summary",
+      ],
+      sort: ["start"],
+      filter: {
+        project: { _eq: "inselbuehne" },
+        start: { _gte: new Date().toISOString() },
+      },
+    }),
+  );
+
   return res;
 }
 
@@ -44,7 +47,7 @@ export default function ProgramPage() {
 
       <section className="bg-gray-50">
         <div className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center">
-          <Suspense>
+          <Suspense fallback={<EventListLoading />}>
             {/* @ts-ignore-error */}
             <EventList promise={events} />
           </Suspense>

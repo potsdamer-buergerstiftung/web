@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { readItems } from "@directus/sdk";
 import Logo from "@components/Logo";
 import { Link } from "@components/ui/link";
 import { Button } from "@components/ui/button";
+import directus from "app/(website)/directus";
+import PostCard from "@components/PostCard";
 
 export const metadata: Metadata = {
   title: "Die 5. Saison steht vor der Tür! - Inselbühne Potsdam",
@@ -10,7 +13,38 @@ export const metadata: Metadata = {
     "Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.",
 };
 
-export default function HomePage() {
+async function getPosts() {
+  return directus.request(
+    readItems("posts", {
+      fields: ["title", "date", "id", "image", "excerpt", "slug"],
+      sort: ["-date"],
+      filter: { project: { _eq: "inselbuehne" } },
+      limit: 3,
+    }),
+  );
+}
+
+function BlogPreviewGrid({ posts }: { posts: any[] }) {
+  return (
+    <div className="mt-12 grid grid-cols-1 items-start gap-8 md:grid-cols-2 xl:grid-cols-3">
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          date={post.date}
+          slug={post.slug}
+          id={post.id}
+          image={post.image}
+          excerpt={post.excerpt}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default async function HomePage() {
+  const posts = await getPosts();
+
   return (
     <>
       <section className="bg-green-100 overflow-visible">
@@ -27,9 +61,7 @@ export default function HomePage() {
               Im Sommer sind wir wieder da! Ab Mai 2026 geht&apos;s mit einem
               tollen Open-Air-Programm weiter. Schau bald wieder vorbei!
             </p>
-            <Link href="/veranstaltungen">
-              Zu den Veranstaltungen
-            </Link>
+            <Link href="/veranstaltungen">Zu den Veranstaltungen</Link>
           </div>
           <div className="col-span-6 md:col-span-3">
             <div className="relative w-full overflow-visible py-10">
@@ -52,7 +84,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto px-20">
+      <section className="container mx-auto px-20 py-6">
         <div className="flex flex-row flex-wrap justify-center gap-4 items-center">
           <div>
             <Image
@@ -60,7 +92,7 @@ export default function HomePage() {
               height={400}
               width={200}
               alt="Landeshauptstadt Potsdam"
-              className="mx-auto px-4 py-8"
+              className="mx-auto"
             />
           </div>
           <div>
@@ -68,36 +100,27 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* <section>
+      <section className="bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 pt-12 pb-8 md:pt-16">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div>
-              <hr className="h-1 w-16 bg-green-500" />
+              <hr className="h-1 w-16 bg-primary" />
               <h1 className="pt-5 font-serif text-3xl md:text-4xl">
-                Was es Neues bei uns gibt
+                Neues von der Insel
               </h1>
               <h4 className="mt-2 text-lg text-gray-500">
-                Und was alles passiert ist
+                Hintergrundberichte, aktuelle Ankündigungen und Einblicke in
+                unser Programm auf der Inselbühne
               </h4>
             </div>
             <div>
-              <Link
-                href="/blog"
-                className="text-md rounded-tl-lg rounded-br-lg bg-green-500 px-4 py-2.5 font-medium text-white shadow-md transition hover:bg-green-400"
-              >
-                Alle Beiträge
-              </Link>
+              <Link href="/blog">Alle Beiträge</Link>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-6 gap-8">
-            <div
-              v-for="post in posts"
-              className="col-span-6 md:col-span-3 xl:col-span-2"
-            ></div>
-          </div>
+          <BlogPreviewGrid posts={posts} />
         </div>
-      </section> */}
-      <section className="bg-gradient-to-b from-white to-slate-100">
+      </section>
+      <section className="bg-gray-50">
         <div className="container mx-auto grid grid-cols-2 items-center gap-16 px-4 pt-16">
           <div className="order-2 col-span-2 lg:order-1 lg:col-span-1">
             <Image
@@ -132,7 +155,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-slate-100">
+      <section className="bg-gray-50">
         <div className="mx-auto max-w-3xl px-4 pt-24 pb-24 text-center md:pt-32 md:pb-32">
           <h4 className="text-sm font-bold uppercase tracking-widest text-primary">
             Die Inselbühne
@@ -143,9 +166,7 @@ export default function HomePage() {
             wir Menschen, die Zeit, Know-how, Material und Geld spenden.
           </p>
           <div className="flex flex-row justify-center gap-x-4 mt-6">
-            <Link
-              href="https://www.potsdamer-buergerstiftung.org/mitmachen"
-            >
+            <Link href="https://www.potsdamer-buergerstiftung.org/mitmachen">
               Mitmachen
             </Link>
             <Link

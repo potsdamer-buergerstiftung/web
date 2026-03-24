@@ -15,15 +15,13 @@ export default function PageTitle({
     <section className="bg-gray-50">
       <div className="mx-auto max-w-3xl px-4 pt-48 pb-24 text-center lg:px-0">
         {heading && (
-          <h4 className="text-sm font-bold uppercase tracking-widest text-green-500">
+          <h4 className="text-sm font-bold uppercase tracking-widest text-primary">
             {heading}
           </h4>
         )}
         <h1 className="mt-6 font-serif text-5xl md:text-6xl">{title}</h1>
         {description && (
-          <p className="pt-5 text-lg text-gray-600" v-if="$slots.description">
-            {description}
-          </p>
+          <p className="pt-5 text-lg text-gray-600">{description}</p>
         )}
       </div>
     </section>

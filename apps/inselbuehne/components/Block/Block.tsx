@@ -38,8 +38,6 @@ const Blocks = ({
 
   const hasBlockId = true;
 
-  console.log(data);
-
   if (loading) {
     let i = new Array(10).fill(0);
     return (
