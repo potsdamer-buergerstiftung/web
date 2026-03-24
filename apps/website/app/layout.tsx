@@ -1,4 +1,4 @@
-import Script from 'next/script';
+import Script from "next/script";
 import { Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
@@ -17,9 +17,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL || '';
-  const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || '';
-  
+  const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL || "";
+  const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || "";
+
   return (
     <html className={`${font.variable} font-sans`} lang="de">
       <body className="antialiased">
@@ -27,7 +27,7 @@ export default function RootLayout({
         {children}
         {umamiUrl && websiteId && (
           <Script
-            src={`${umamiUrl}/umami.js`}
+            src={"/api/analytics"}
             data-website-id={websiteId}
             strategy="afterInteractive"
           />
