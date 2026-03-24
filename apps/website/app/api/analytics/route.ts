@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL || '';
-  const scriptUrl = `${umamiUrl}/umami.js`;
+  const scriptUrl = `${umamiUrl}/script.js`;
   
   try {
     const res = await fetch(scriptUrl);
@@ -12,7 +12,7 @@ export async function GET() {
     return new NextResponse(scriptContent, {
       headers: {
         'Content-Type': 'application/javascript',
-        'Cache-Control': 'public, max-age=3600', // Cache 1 hour
+        'Cache-Control': 'public, max-age=3600',
       },
     });
   } catch (error) {
