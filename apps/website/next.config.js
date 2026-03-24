@@ -5,12 +5,12 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/portal",
-        destination: "https://portal.potsdamer-buergerstiftung.org",
+        source: "/portal/:path*",
+        destination: "https://portal.potsdamer-buergerstiftung.org/:path*",
       },
       {
-        source: "/analytics",
-        destination: "https://analytics.potsdamer-buergerstiftung.org",
+        source: "/analytics/:path*",
+        destination: "https://analytics.potsdamer-buergerstiftung.org/:path*",
       },
     ];
   },
