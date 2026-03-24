@@ -5,7 +5,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api",
+        source: "/portal",
         destination: "https://portal.potsdamer-buergerstiftung.org",
       },
       {
