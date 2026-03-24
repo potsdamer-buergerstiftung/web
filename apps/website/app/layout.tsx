@@ -2,6 +2,7 @@ import Script from "next/script";
 import { Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
+import { ThemeProvider } from "next-themes";
 
 //import VisualEditing from "./VisualEditing";
 
@@ -22,15 +23,22 @@ export default function RootLayout({
   return (
     <html className={`${font.variable} font-sans`} lang="de">
       <body className="antialiased">
-        {/* <VisualEditing /> */}
-        {children}
-        {websiteId && (
-          <Script
-            src={"/analytics/script.js"}
-            data-website-id={websiteId}
-            strategy="afterInteractive"
-          />
-        )}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* <VisualEditing /> */}
+          {children}
+          {websiteId && (
+            <Script
+              src={"/analytics/script.js"}
+              data-website-id={websiteId}
+              strategy="afterInteractive"
+            />
+          )}
+        </ThemeProvider>
       </body>
     </html>
   );

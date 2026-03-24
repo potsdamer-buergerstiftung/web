@@ -59,7 +59,7 @@
   --primary: oklch(50.81% 0.105 165.61);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(27.95% 0.037 260.03);
-  --secondary-foreground: oklch(95% 0.00000 0);
+  --secondary-foreground: oklch(95% 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -84,13 +84,13 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(15.3% 0.006 107.1);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(50.81% 0.105 165.61);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -131,20 +131,20 @@
 }
 
 .altcha-main {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .altcha-checkbox {
-    width: 1rem !important;
+  width: 1rem !important;
 }
 
 .altcha-checkbox input {
-    border-radius: .125rem;
-    width: 1rem !important;
-    height: 1rem !important;
-    @apply bg-slate-100 border-slate-300;
+  border-radius: 0.125rem;
+  width: 1rem !important;
+  height: 1rem !important;
+  @apply bg-slate-100 border-slate-300;
 }
 
 .altcha-label {
-    @apply text-sm font-medium;
+  @apply text-sm font-medium;
 }

@@ -36,7 +36,7 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/freundeskreis"
               data-umami-event="donation_mitstiften_friendeskreis"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              className="mt-8 bg-primary/10 text-slate-800 hover:bg-primary/20 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75"
             >
               Jetzt beitreten
             </Link>
@@ -63,7 +63,7 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/privatpersonen/spenden"
               data-umami-event="donation_mitstiften_private_spenden"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              className="mt-8 bg-primary/10 text-slate-800 hover:bg-primary/20 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75"
             >
               Jetzt spenden
             </Link>
