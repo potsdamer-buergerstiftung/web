@@ -1,6 +1,7 @@
-import "../styles/globals.css";
-
+import Script from "next/script";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+
+import "../styles/globals.css";
 
 const sans = DM_Sans({
   variable: "--font-sans",
@@ -21,9 +22,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || "";
+
   return (
     <html className={`${serif.variable} ${sans.variable}`} lang="de">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">{children}{websiteId && (
+        <Script
+          src={"/analytics/script.js"}
+          data-website-id={websiteId}
+          strategy="afterInteractive"
+        />
+      )}</body>
     </html>
   );
 }

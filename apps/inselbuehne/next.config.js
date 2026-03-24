@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  allowedDevOrigins: ['portal.potsdamer-buergerstiftung.org'],
   async rewrites() {
     return [
       {
-        source: "/api",
-        destination: "https://portal.potsdamer-buergerstiftung.org",
+        source: "/portal/:path*",
+        destination: "https://portal.potsdamer-buergerstiftung.org/:path*",
+      },
+      {
+        source: "/analytics/:path*",
+        destination: "https://analytics.potsdamer-buergerstiftung.org/:path*",
       },
     ];
   },
