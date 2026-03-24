@@ -8,6 +8,10 @@ const nextConfig = {
         source: "/api",
         destination: "https://portal.potsdamer-buergerstiftung.org",
       },
+      {
+        source: "/analytics",
+        destination: "https://analytics.potsdamer-buergerstiftung.org",
+      },
     ];
   },
   typescript: {

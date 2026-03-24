@@ -17,7 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL || "";
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || "";
 
   return (
@@ -25,9 +24,9 @@ export default function RootLayout({
       <body className="antialiased">
         {/* <VisualEditing /> */}
         {children}
-        {umamiUrl && websiteId && (
+        {websiteId && (
           <Script
-            src={"/api/analytics"}
+            src={"/analytics/script.js"}
             data-website-id={websiteId}
             strategy="afterInteractive"
           />
