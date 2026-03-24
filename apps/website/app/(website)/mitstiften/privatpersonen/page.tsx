@@ -37,6 +37,7 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/mitstiften/privatpersonen/spenden"
+              data-umami-event="donation_privatpersonen_spenden"
               className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
             >
               Jetzt spenden
@@ -66,6 +67,7 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/mitstiften/privatpersonen/spenden"
+              data-umami-event="donation_privatpersonen_beitreten"
               className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
             >
               Jetzt beitreten
