@@ -103,7 +103,7 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
-        <h1 className="font-header text-5xl font-bold text-slate-900 dark:text-slate-50 md:text-5xl lg:text-6xl">
+        <h1 className="leading-tight font-header text-5xl font-bold text-slate-900 dark:text-slate-50 md:text-5xl lg:text-6xl">
           15 Jahre Bürgerstiftung &mdash;
           <br />
           <span className="text-primary italic underline decoration-primary/20">

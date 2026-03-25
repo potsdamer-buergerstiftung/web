@@ -1,8 +1,9 @@
 import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import TeamMemberCard from "@components/TeamMemberCard";
-import { wixClient } from "app/(website)/wix";
+import directus from "portal";
 import { Metadata } from "next";
+import { readItems } from "@directus/sdk";
 
 const officeTeam = [
     {
@@ -132,18 +133,14 @@ const boardOfCurators = [
 ];
 
 async function getTeam() {
-    const categories = (await wixClient.items.query("Gremien").ascending("_manualSort_511e0c09-9471-4ff4-bd55-0beb3135c2da").find()).items;
+    const categories = await directus.request(readItems("website_team_categories", {
+        fields: ["id", "title", "description", {
+            website_team_members: ["id", "name", "responsibilities", "image"]
+        }],
+        sort: ["sort"]
+    }))
 
-    const members = (await wixClient.items.query("Team").ascending("_manualSort_74f73ecd-5fc3-419a-b893-8f87eda0a854").find()).items;
-
-    const mapped = categories.map((c) => {
-        return {
-            members: members.filter((d) => d.gremium == c._id),
-            ...c
-        } as any
-    })
-
-    return mapped
+    return categories;
 }
 
 export const metadata: Metadata = {
@@ -171,7 +168,7 @@ export default async function TeamPage() {
             </PageBreadcrumb>
             } />
             {categories.map((category) => (
-                <div key={category._id}>
+                <div key={category.id}>
                     <section className="pb-16 pt-8">
                         <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
                             <div>
@@ -180,18 +177,14 @@ export default async function TeamPage() {
                                 </h4>
                                 <h1 className="font-header mt-2 text-4xl font-bold">{category.title}</h1>
                             </div>
-                            <div>
-                                <p>
-                                    {category.beschreibung}
-                                </p>
-                            </div>
+                            <div dangerouslySetInnerHTML={{ __html: category.description }} />
                         </div>
                     </section>
                     <section className="pb-16">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
-                            {category.members.map((member) => (
-                                <div key={member._id}>
-                                    <TeamMemberCard title={member.bereichPosition} image={member.image} description={member.beschreibung} name={member.title} />
+                            {category.website_team_members.map((member) => (
+                                <div key={member.id}>
+                                    <TeamMemberCard title={member.responsibilities} image={member.image} description={member.responsibilities} name={member.name} />
                                 </div>
                             ))}
                         </div>

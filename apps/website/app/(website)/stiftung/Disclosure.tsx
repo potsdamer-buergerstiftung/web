@@ -41,7 +41,7 @@ export default function FactsDisclosure() {
     return (
         <Accordion className="max-w-lg">
             {disclosures.map((disclosure) => (
-                <AccordionItem value={disclosure.key}>
+                <AccordionItem value={disclosure.key} key={disclosure.key}>
                     <AccordionTrigger>{disclosure.title}</AccordionTrigger>
                     <AccordionContent>
                         <p className="mb-4">{disclosure.content}</p>

@@ -1,9 +1,7 @@
 import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import { readItems } from "@directus/sdk";
-import { Suspense } from "react";
 import MediaReportsGrid from "./MediaReportsGrid";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Metadata } from "next";
 import directus from "app/(website)/directus";
 

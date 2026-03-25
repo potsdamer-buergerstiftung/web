@@ -1,33 +1,25 @@
-import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
+import directus from "portal";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import PublicationsGrid from "./PublicationsGrid";
-import { wixClient } from "app/(website)/wix";
-import { media } from "@wix/sdk";
-
-export const dynamic = 'force-dynamic';
+import { readItems } from "@directus/sdk";
 
 async function getPublicationCategories() {
-    const categories = (await wixClient.items.query("Download-Kategorien").find()).items;
+    const res = await directus.request(readItems("publication_categories", {
+        fields: ["id", "title", "description", {
+            publications: ["title", "id", "date_created", {
+                file: ["id", "filename_disk", "filename_download"]
+            }]
+        }],
+        sort: ["sort"]
+    }));
 
-    const downloads = (await wixClient.items.query("Downloads").find()).items.map((i) => {
-        const d = i;
-        return {
-            link: media.getDocumentUrl(d.document),
-            ...d
-        } as any
-    })
-
-    const mapped = categories.map((c) => {
-        return {
-            downloads: downloads.filter((d) => d.kategorie == c._id),
-            ...c
-        }
-    })
-
-    return mapped
+    return res;
 }
+
+export type PublicationsQuery = Awaited<ReturnType<typeof getPublicationCategories>>;
 
 export const metadata: Metadata = {
     title: "Veröffentlichungen - Potsdamer Bürgerstiftung",
@@ -39,10 +31,10 @@ export default function PublicationsPage() {
         <>
             <PageTitle title="Veröffentlichungen" breadcrumb={<PageBreadcrumb>
                 <PageBreadcrumbItem label="Stiftung" href="/stiftung" />
+                <PageBreadcrumbSeparator />
                 <PageBreadcrumbItem label="Veröffentlichungen" />
             </PageBreadcrumb>} />
             <Suspense>
-                {/* @ts-ignore-error */}
                 <PublicationsGrid promise={categories} />
             </Suspense>
         </>

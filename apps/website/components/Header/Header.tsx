@@ -6,6 +6,7 @@ import HeaderNavBackground from "./HeaderNavBackground";
 import { readSingleton, rest } from "@directus/sdk";
 import { Suspense } from "react";
 import directus from "app/(website)/directus";
+import Image from "next/image";
 
 interface HeaderProps {
   nav?: React.ReactNode;
@@ -69,8 +70,15 @@ export default function Header({ nav, section, actions }: HeaderProps) {
       <header className="absolute z-40 w-full text-slate-900 dark:text-slate-50">
         <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
           <div className="flex flex-row items-center gap-4">
-            <Link href="/" className="group xl:-ml-2 block py-2 outline-none">
+            <Link href="/" className="gap-2 group xl:-ml-2 inline-flex py-2 outline-none">
               <Logo />
+              <Image
+                src="/img/15-jahre.png"
+                alt="15 Jahre Bürgerstiftung"
+                width={100}
+                height={100}
+                className="size-10 md:size-14 lg:size-16"
+              />
             </Link>
             {section && (
               <>
