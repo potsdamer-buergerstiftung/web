@@ -59,7 +59,7 @@ export default function DonationFormProjectSelection({
                     {config.purpose.title}
                 </h1>
                 <p className="mt-4">{config.purpose.description}</p>
-                <button className={clsx("text-start flex-grow px-4 my-8 max-w-lg bg-emerald-100 rounded-lg relative py-3", projectId === 0 && "ring-2 ring-emerald-700")} onClick={() => {
+                <button className={clsx("text-start flex-grow px-4 my-8 max-w-lg bg-primary/10 rounded-lg relative py-3", projectId === 0 && "ring-2 ring-primary")} onClick={() => {
                     setProjectId(0);
                     setDonationFormProgress("AMOUNT_SELECTION");
                 }}>

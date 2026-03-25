@@ -53,7 +53,7 @@ function ProgressButton({
       {children}
       <span
         className={clsx(
-          "absolute top-0 -right-5 bottom-0 w-0.5 bg-emerald-700 transition",
+          "absolute top-0 -right-5 bottom-0 w-0.5 bg-primary transition",
           isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100",
         )}
       />
@@ -231,7 +231,7 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
                     className={clsx(
                       "shrink-0 font-header font-bold pb-2 border-b-2 transition whitespace-nowrap",
                       donationProgress === tab.key
-                        ? "border-emerald-700 text-slate-900"
+                        ? "border-primary text-slate-900"
                         : "border-transparent text-slate-600",
                     )}
                   >

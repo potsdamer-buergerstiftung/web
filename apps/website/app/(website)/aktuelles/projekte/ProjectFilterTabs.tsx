@@ -14,7 +14,7 @@ function FilterTabButton({ isActive, status, label }: { isActive: boolean, statu
             } : undefined,
         }}>
             {label}
-            <span className={clsx("absolute left-0 right-0 bottom-0 h-0.5 bg-emerald-700 transition", isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100')} />
+            <span className={clsx("absolute left-0 right-0 bottom-0 h-0.5 bg-primary transition", isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100')} />
         </Link>
     )
 }
