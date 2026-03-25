@@ -21,7 +21,7 @@ export default function RootLayout({
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || "";
 
   return (
-    <html className={`${font.variable} font-sans`} lang="de">
+    <html className={`${font.variable} font-sans`} lang="de" suppressHydrationWarning>
       <body className="antialiased">
         <ThemeProvider
           attribute="class"

@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Image from "next/image";
 
@@ -10,7 +9,9 @@ export default function HonoraryPage() {
         title="Ehrenamt"
         description="Erfahre, wie du dich bei uns ehrenamtlich einbringen kannst"
         breadcrumb={
-          <PageBreadcrumb items={<PageBreadcrumbItem label="Mitmachen" />} />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitmachen" />
+          </PageBreadcrumb>
         }
       />
       <section>

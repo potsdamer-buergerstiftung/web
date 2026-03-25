@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 
@@ -10,15 +9,14 @@ export default function ContributePage() {
         title="Spenden"
         description="Erfahre, wie Du uns mit Geld oder mit Deiner Zeit unterstützen kannst."
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem
-                label="Mitstiften & mitmachen"
-                href="/mitstiften"
-              />,
-              <PageBreadcrumbItem label="Spenden" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem
+              label="Mitstiften & mitmachen"
+              href="/mitstiften"
+            />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Spenden" />
+          </PageBreadcrumb>
         }
       />
       <section className="bg-white">

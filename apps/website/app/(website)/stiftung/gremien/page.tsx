@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import TeamMemberCard from "@components/TeamMemberCard";
 import { wixClient } from "app/(website)/wix";
@@ -165,9 +164,14 @@ export default async function TeamPage() {
                     des Satzungszwecks wachen. Außerdem wird die Stiftung jährlich vom
                     Finanzamt Potsdam geprüft.
                 </p>
-            } breadcrumb={<PageBreadcrumb items={<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Gremien" />} />} />
+            } breadcrumb={<PageBreadcrumb>
+                <PageBreadcrumbItem label="Stiftung" href="/stiftung" />
+                <PageBreadcrumbSeparator />
+                <PageBreadcrumbItem label="Gremien" />
+            </PageBreadcrumb>
+            } />
             {categories.map((category) => (
-                <>
+                <div key={category._id}>
                     <section className="pb-16 pt-8">
                         <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
                             <div>
@@ -186,13 +190,13 @@ export default async function TeamPage() {
                     <section className="pb-16">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
                             {category.members.map((member) => (
-                                <div>
+                                <div key={member._id}>
                                     <TeamMemberCard title={member.bereichPosition} image={member.image} description={member.beschreibung} name={member.title} />
                                 </div>
                             ))}
                         </div>
                     </section>
-                </>
+                </div>
             ))}
         </>
     )

@@ -147,7 +147,7 @@ function DonationFormInner({ config }: { config: DonationFormConfig }) {
   ).filter((t) => t.enabled);
 
   return (
-    <div className="bg-white rounded-lg p-8 lg:p-16">
+    <div className="bg-white dark:bg-slate-950 rounded-lg p-8 lg:p-16">
       <h4 className="text-sm font-semibold uppercase text-gray-600 text-center mb-3">
         {config.header.eyebrow ?? "Mitstiften & Unterstützen"}
       </h4>

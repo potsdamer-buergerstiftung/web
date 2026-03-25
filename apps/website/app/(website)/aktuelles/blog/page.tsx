@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import { readItems } from "@directus/sdk";
 import PostGrid from "./PostGrid";
@@ -41,17 +40,14 @@ export default function NewsPage() {
                 title="News & Blog"
                 description="Was bei uns und unseren Projekten passiert"
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={
-                            <>
-                                <PageBreadcrumbItem
-                                    label="Aktuelles & Projekte"
-                                    href="/aktuelles/projekte"
-                                />
-                                <PageBreadcrumbItem label="News & Blog" />
-                            </>
-                        }
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem
+                            label="Aktuelles & Projekte"
+                            href="/aktuelles/projekte"
+                        />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="News & Blog" />
+                    </PageBreadcrumb>
                 }
             />
             <div className="container mx-auto px-4 mb-10">

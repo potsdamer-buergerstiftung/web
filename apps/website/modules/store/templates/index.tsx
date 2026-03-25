@@ -6,8 +6,7 @@ import { SortOptions } from "@modules/store/components/refinement-list/sort-prod
 
 import PaginatedProducts from "./paginated-products"
 import PageTitle from "@components/PageTitle"
-import PageBreadcrumb from "@components/PageBreadcrumb"
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem"
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb"
 
 const StoreTemplate = ({
   sortBy,
@@ -26,13 +25,9 @@ const StoreTemplate = ({
       <PageTitle
         title="Shop"
         breadcrumb={
-          <PageBreadcrumb
-            items={
-              <>
-                <PageBreadcrumbItem label="Shop" />
-              </>
-            }
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Shop" />
+          </PageBreadcrumb>
         }
       />
       {/* <RefinementList sortBy={sort} /> */}

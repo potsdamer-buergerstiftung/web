@@ -91,7 +91,7 @@ const ArticleCard: React.FC<{
       )}
       <div
         className={clsx(
-          "relative bg-slate-100 px-6 py-8 transition",
+          "relative bg-slate-100 dark:bg-slate-950 px-6 py-8 transition",
           compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200"
         )}
       >

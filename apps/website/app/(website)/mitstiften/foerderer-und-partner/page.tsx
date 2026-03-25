@@ -1,5 +1,4 @@
-import PageBreadcrumb from '@components/PageBreadcrumb';
-import PageBreadcrumbItem from '@components/PageBreadcrumbItem';
+import { PageBreadcrumb, PageBreadcrumbItem } from '@components/PageBreadcrumb';
 import PageTitle from '@components/PageTitle';
 import Image from 'next/image';
 
@@ -7,9 +6,9 @@ export default function SupportersPage() {
     return (
         <><PageTitle
             title="Förderer & Partner"
-            breadcrumb={<PageBreadcrumb items={
-                [<PageBreadcrumbItem label="Förderer & Partner" />]
-            } />}
+            breadcrumb={<PageBreadcrumb>
+                <PageBreadcrumbItem label="Förderer & Partner" />
+            </PageBreadcrumb>}
         />
             <section className="container px-4 mx-auto pb-10">
                 <div className="grid grid-cols-12 gap-10 items-center">

@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
@@ -38,9 +37,11 @@ export default function EventsPage() {
     const pastEvents = getPastEvents();
     return (
         <>
-            <PageTitle title="Veranstaltungen" description="Wann und wo du dich engagieren kannst" breadcrumb={<PageBreadcrumb items={
-                [<PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />, <PageBreadcrumbItem label="Veranstaltungen" />]
-            } />} />
+            <PageTitle title="Veranstaltungen" description="Wann und wo du dich engagieren kannst" breadcrumb={<PageBreadcrumb>
+                <PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles/projekte" />
+                <PageBreadcrumbSeparator />
+                <PageBreadcrumbItem label="Veranstaltungen" />
+            </PageBreadcrumb>} />
             <section className="container px-4 mx-auto grid grid-cols-6 pb-16 gap-8">
                 <h1 className="col-span-6 text-2xl font-bold">Aktuelle Veranstaltungen</h1>
                 <Suspense>

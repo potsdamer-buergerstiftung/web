@@ -106,8 +106,8 @@ export default async function HomePage() {
         <h1 className="font-header text-5xl font-bold text-slate-900 dark:text-slate-50 md:text-5xl lg:text-6xl">
           15 Jahre Bürgerstiftung &mdash;
           <br />
-          <span className="text-primary">
-            <i>und wir alle tragen sie.</i>
+          <span className="text-primary italic underline decoration-primary/20">
+            und wir alle tragen sie.
           </span>
         </h1>
         <p className="mt-8 mb-8 max-w-4xl md:text-lg">

@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 
@@ -10,12 +9,11 @@ export default function IndividualsPage() {
         title="Stiften als Privatperson"
         description="Erfahre, wie Du persönlich mitstiften kannst."
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />,
-              <PageBreadcrumbItem label="Privatpersonen" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Privatpersonen" />
+          </PageBreadcrumb>
         }
       />
       <section>

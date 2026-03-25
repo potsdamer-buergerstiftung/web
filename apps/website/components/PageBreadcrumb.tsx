@@ -1,25 +1,40 @@
 import Link from "next/link"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from "@components/ui/breadcrumb";
 
-interface PageBreadcrumb {
-    items: React.ReactNode;
-}
-
-export default function PageBreadcrumb({ items }: PageBreadcrumb) {
+export function PageBreadcrumb({ children }: React.PropsWithChildren) {
     return (
-        <nav className="flex" aria-label="Breadcrumb">
-            <ol role="list" className="flex flex-row items-center space-x-2 flex-wrap">
-                <li>
-                    <div className="flex items-center">
-                        <Link
-                            href="/"
-                            className="text-sm font-bold transition hover:text-emerald-500"
-                        >
-                            Startseite
-                        </Link>
-                    </div>
-                </li>
-                {items}
-            </ol >
-        </nav >
+        <Breadcrumb>
+            <BreadcrumbList>
+                <BreadcrumbItem>
+                    <BreadcrumbLink render={<Link href="/">Startseite</Link>} />
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                {children}
+            </BreadcrumbList>
+        </Breadcrumb>
     );
 }
+
+
+interface PageBreadcrumbItemProps {
+    label: string;
+    href?: string;
+}
+
+export function PageBreadcrumbItem({ label, href }: PageBreadcrumbItemProps) {
+    if (!href) {
+        return (
+            <BreadcrumbItem>
+                <BreadcrumbPage>{label}</BreadcrumbPage>
+            </BreadcrumbItem>
+        )
+    }
+
+    return (
+        <BreadcrumbItem>
+            <BreadcrumbLink render={<Link href={href}>{label}</Link>} />
+        </BreadcrumbItem>
+    );
+}
+
+export { BreadcrumbSeparator as PageBreadcrumbSeparator }

@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,12 +9,11 @@ export default function QualityAndTransparencyPage() {
       <PageTitle
         title="Qualität & Transparenz"
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem label="Stiftung" href="/stiftung" />,
-              <PageBreadcrumbItem label="Qualität & Transparenz" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Stiftung" href="/stiftung" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Qualität & Transparenz" />
+          </PageBreadcrumb>
         }
       />
       <section>

@@ -1,6 +1,5 @@
 import PageTitle from "@components/PageTitle";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 
 export default function ProjectLoading() {
     return (
@@ -9,13 +8,13 @@ export default function ProjectLoading() {
                 isLoading
                 title=""
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={[
-                            <PageBreadcrumbItem label="Aktuelles & Projekte" />,
-                            <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />,
-                            <PageBreadcrumbItem label="..." />,
-                        ]}
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem label="Aktuelles & Projekte" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="..." />
+                    </PageBreadcrumb>
                 }
             />
             <div className="container mx-auto px-4 pb-10 animate-pulse">

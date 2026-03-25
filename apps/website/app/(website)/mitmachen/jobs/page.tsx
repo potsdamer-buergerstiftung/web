@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 
@@ -9,12 +8,11 @@ export default function JobsPage() {
       <PageTitle
         title="Jobs"
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem label="Mitmachen" href="/mitmachen" />,
-              <PageBreadcrumbItem label="Jobs" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitmachen" href="/mitmachen" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Jobs" />
+          </PageBreadcrumb>
         }
       />
       <section className="pt-8 pb-16 container mx-auto maxw-4xl px-4">

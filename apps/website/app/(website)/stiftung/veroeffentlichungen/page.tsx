@@ -1,7 +1,5 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
-import { Directus } from "@directus/sdk";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import PublicationsGrid from "./PublicationsGrid";
@@ -39,9 +37,10 @@ export default function PublicationsPage() {
     const categories = getPublicationCategories();
     return (
         <>
-            <PageTitle title="Veröffentlichungen" breadcrumb={<PageBreadcrumb items={
-                [<PageBreadcrumbItem label="Stiftung" href="/stiftung" />, <PageBreadcrumbItem label="Veröffentlichungen" />]
-            } />} />
+            <PageTitle title="Veröffentlichungen" breadcrumb={<PageBreadcrumb>
+                <PageBreadcrumbItem label="Stiftung" href="/stiftung" />
+                <PageBreadcrumbItem label="Veröffentlichungen" />
+            </PageBreadcrumb>} />
             <Suspense>
                 {/* @ts-ignore-error */}
                 <PublicationsGrid promise={categories} />

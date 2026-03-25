@@ -18,7 +18,7 @@ export default function PageTitle({
   isLoading = false,
 }: PageTitleProps) {
   return (
-    <section className="bg-white dark:bg-slate-950">
+    <section className="bg-white dark:bg-background">
       <div
         className={clsx(
           "container mx-auto px-4 pt-36 pb-8 md:pt-44",

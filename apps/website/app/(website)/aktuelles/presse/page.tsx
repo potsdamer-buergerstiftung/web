@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
@@ -28,17 +27,14 @@ export default function MediaReportsPage() {
                 title="Presseberichte"
                 description="Was andere über uns berichten"
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={
-                            <>
-                                <PageBreadcrumbItem
-                                    label="Aktuelles & Projekte"
-                                    href="/aktuelles/projekte"
-                                />
-                                <PageBreadcrumbItem label="Presseberichte" />
-                            </>
-                        }
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem
+                            label="Aktuelles & Projekte"
+                            href="/aktuelles/projekte"
+                        />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="Presseberichte" />
+                    </PageBreadcrumb>
                 }
             />
             <div className="container px-4 mx-auto mb-10">

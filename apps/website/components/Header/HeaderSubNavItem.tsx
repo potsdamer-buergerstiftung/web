@@ -3,21 +3,22 @@
 import clsx from "clsx";
 import { useAtom } from "jotai";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { headerExpanded, mobileMenuOpen } from "./state";
 
 interface HeaderSubNavItemProps {
   label: string;
   href: string;
-  isActive?: boolean;
 }
 
 export default function HeaderSubNavItem({
   label,
   href,
-  isActive,
 }: HeaderSubNavItemProps) {
+  const pathname = usePathname();
   const [, setHeaderExpanded] = useAtom(headerExpanded);
   const [, setMobileMenuOpen] = useAtom(mobileMenuOpen);
+  const isActive = pathname ? pathname.startsWith(href) : false;
 
   function handleClick() {
     setHeaderExpanded(false);
