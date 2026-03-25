@@ -3,6 +3,7 @@ import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@co
 import PageTitle from "@components/PageTitle";
 import { Metadata } from "next";
 import ContactForm from "./ContactForm";
+import { Link } from "@components/ui/link";
 
 export const metadata: Metadata = {
   title: "Kontakt - Potsdamer Bürgerstiftung",
@@ -19,12 +20,11 @@ export default function ContactPage() {
           </p>
         }
         actions={
-          <a
+          <Link
             href="mailto:info@potsdamer-buergerstiftung.org"
-            className="text-md font-header rounded-md bg-emerald-700 py-1.5 px-4 font-bold text-white transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 dark:bg-emerald-600 dark:focus:ring-emerald-400"
           >
             info@potsdamer-buergerstiftung.org
-          </a>
+          </Link>
         }
         breadcrumb={
           <PageBreadcrumb>
