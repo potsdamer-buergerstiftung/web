@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Image from "next/image";
 
@@ -10,7 +9,9 @@ export default function HonoraryPage() {
         title="Ehrenamt"
         description="Erfahre, wie du dich bei uns ehrenamtlich einbringen kannst"
         breadcrumb={
-          <PageBreadcrumb items={<PageBreadcrumbItem label="Mitmachen" />} />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitmachen" />
+          </PageBreadcrumb>
         }
       />
       <section>
@@ -46,7 +47,7 @@ export default function HonoraryPage() {
           className="w-full h-[20rem] object-cover mt-10 md:mt-24"
           alt="Freiwillige auf der Inselbühne"
         />
-        <div className="absolute top-0 left-0 right-0 bottom-0 bg-emerald-700/70" />
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-primary/70" />
         <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16 absolute top-0 right-0 left-0 bottom-0">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold text-white">

@@ -1,6 +1,5 @@
 import Blocks from "@components/Block/Block";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import directus from "../directus";
 import { readSingleton } from "@directus/sdk";
@@ -19,9 +18,9 @@ export default async function ImprintPage() {
             <PageTitle
                 title="Impressum"
                 isCompact
-                breadcrumb={<PageBreadcrumb items={
-                    [<PageBreadcrumbItem label="Impressum" />]
-                } />}
+                breadcrumb={<PageBreadcrumb>
+                    <PageBreadcrumbItem label="Impressum" />
+                </PageBreadcrumb>}
             />
             <section className="pb-20 max-w-4xl mx-auto px-4">
                 <Blocks data={data} />

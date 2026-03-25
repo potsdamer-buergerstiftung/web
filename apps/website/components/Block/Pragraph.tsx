@@ -6,7 +6,7 @@ export interface ParagraphBlockData {
   text: string;
 }
 
-const Paragraph: RenderFn<ParagraphBlockData> = ({ data, className = 'prose lg:prose-lg mb-6' }) => {
+const Paragraph: RenderFn<ParagraphBlockData> = ({ data, className = 'prose lg:prose-lg mb-6 dark:text-foreground' }) => {
   const props: {
     [s: string]: string;
   } = {};

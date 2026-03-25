@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import ProjectGrid from "app/(website)/ProjectGrid";
 import ProjectGridLoading from "app/(website)/ProjectGridLoading";
@@ -64,12 +63,17 @@ async function getProjects(status?: string) {
 
 export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
     const params = await searchParams;
-    const projects = getProjects(params.status);
+
+    const projects = getProjects(typeof params.status === "string" ? params.status : undefined);
 
     return (
         <>
-            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb items={[<PageBreadcrumbItem label="Aktuelles & Projekte" />, <PageBreadcrumbItem label="Projekte" />]} />} actions={
-                <ProjectFilterTabs activeSlug={params.status || ""} />
+            <PageTitle title="Aktuelles & Projekte" breadcrumb={<PageBreadcrumb>
+                <PageBreadcrumbItem label="Aktuelles & Projekte" href="/aktuelles" />
+                <PageBreadcrumbSeparator />
+                <PageBreadcrumbItem label="Projekte" />
+            </PageBreadcrumb>} actions={
+                <ProjectFilterTabs activeSlug={typeof params.status === "string" ? params.status : ""} />
             } />
             <div className="container mx-auto px-4 pb-20">
                 <Suspense fallback={<ProjectGridLoading />}>

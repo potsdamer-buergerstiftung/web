@@ -16,8 +16,8 @@ export default function TeamMemberCard({ title, name, description, image }: Team
                     className="absolute bottom-0 top-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-transparent"
                 />
                 {image && (
-                    <WixMediaImage
-                        media={image}
+                    <Image
+                        src={`https://portal.potsdamer-buergerstiftung.org/assets/${image}`}
                         className="h-full w-full object-cover"
                         height={800}
                         width={400}

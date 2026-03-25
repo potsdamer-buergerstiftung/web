@@ -2,6 +2,7 @@ packages:
   - "apps/inselbuehne"
   - "apps/links"
   - "apps/portal/extensions/tree-view-table-layout"
+  - "apps/portal"
   - "apps/website"
   - "apps/shop"
   - "packages/*"

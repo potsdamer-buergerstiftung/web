@@ -1,7 +1,6 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
-import Link from "next/link";
+import { Link } from "@components/ui/link";
 
 export default function IndividualsPage() {
   return (
@@ -16,7 +15,9 @@ export default function IndividualsPage() {
           </p>
         }
         breadcrumb={
-          <PageBreadcrumb items={[<PageBreadcrumbItem label="Mitstiften" />]} />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitstiften" />
+          </PageBreadcrumb>
         }
       />
       <section>
@@ -36,14 +37,15 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/freundeskreis"
               data-umami-event="donation_mitstiften_friendeskreis"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              variant="light"
+              className="mt-8"
             >
               Jetzt beitreten
             </Link>
           </div>
         </div>
       </section>
-      <section className="py-6 bg-slate-100">
+      <section className="py-6 bg-slate-100 dark:bg-slate-950">
         <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Einmalige Spende</h1>
@@ -63,7 +65,8 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/privatpersonen/spenden"
               data-umami-event="donation_mitstiften_private_spenden"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              variant="light"
+              className="mt-8"
             >
               Jetzt spenden
             </Link>
@@ -91,7 +94,7 @@ export default function IndividualsPage() {
           </div>
         </div>
       </section>
-      <section className="py-6 bg-slate-100">
+      <section className="py-6 bg-slate-100 dark:bg-slate-950">
         <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Zustiftung</h1>

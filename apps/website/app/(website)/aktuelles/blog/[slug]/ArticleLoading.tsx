@@ -1,6 +1,5 @@
 import PageTitle from "@components/PageTitle";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
 
 export default function ArticleLoading() {
     return (
@@ -10,15 +9,11 @@ export default function ArticleLoading() {
                 isCompact
                 title=""
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={
-                            <>
-                                <PageBreadcrumbItem label="Aktuelles" />
-                                <PageBreadcrumbItem label="Blog" href="/aktuelles/blog" />
-                                <PageBreadcrumbItem label="..." />
-                            </>
-                        }
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem label="Aktuelles" />
+                        <PageBreadcrumbItem label="Blog" href="/aktuelles/blog" />
+                        <PageBreadcrumbItem label="..." />
+                    </PageBreadcrumb>
                 }
             />
             <div className="container px-4 mx-auto max-w-4xl animate-pulse">

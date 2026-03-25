@@ -1,6 +1,5 @@
 import Block from "@components/Block";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Image from "next/image";
 
@@ -65,15 +64,13 @@ export default async function Article({ promise }: ArticleProps) {
                 title={post.title}
                 actions={<Actions />}
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={
-                            <>
-                                <PageBreadcrumbItem label="Aktuelles" />
-                                <PageBreadcrumbItem label="Blog" href="/aktuelles/blog" />
-                                <PageBreadcrumbItem label={post.title} />
-                            </>
-                        }
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem label="Aktuelles" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="Blog" href="/aktuelles/blog" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label={post.title} />
+                    </PageBreadcrumb>
                 }
             />
             <div className="container px-4 mx-auto max-w-4xl">

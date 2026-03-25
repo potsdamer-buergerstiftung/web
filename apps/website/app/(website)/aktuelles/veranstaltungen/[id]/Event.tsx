@@ -1,6 +1,5 @@
 import Image from "next/image";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 
 interface EventProps {
@@ -24,19 +23,19 @@ export default async function Event({ promise }: EventProps) {
       <PageTitle
         title={event.name}
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem
-                label="Aktuelles & Projekte"
-                href="/aktuelles/projekte"
-              />,
-              <PageBreadcrumbItem
-                label="Veranstaltungen"
-                href="/aktuelles/veranstaltungen"
-              />,
-              <PageBreadcrumbItem label={event.name} />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem
+              label="Aktuelles & Projekte"
+              href="/aktuelles/projekte"
+            />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem
+              label="Veranstaltungen"
+              href="/aktuelles/veranstaltungen"
+            />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label={event.name} />
+          </PageBreadcrumb>
         }
         description={
             <div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Disclosure from "./Disclosure";
 import ParallaxImage from "@components/ParallaxImage";
@@ -48,10 +47,12 @@ export default function AboutPage() {
         title="Die Stiftung"
         description={<p>Wer wir sind und was wir tun</p>}
         breadcrumb={
-          <PageBreadcrumb items={<PageBreadcrumbItem label="Stiftung" /> } />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Stiftung" />
+          </PageBreadcrumb>
         }
       />
-      <section className="pb-20 pt-20 bg-slate-100">
+      <section className="bg-slate-100 pb-20 pt-20 dark:bg-slate-900">
         <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
           <div>
             <h1 className="font-header mt-2 text-4xl font-bold">
@@ -59,7 +60,7 @@ export default function AboutPage() {
             </h1>
           </div>
           <div>
-            <p>
+            <p className="text-slate-700 dark:text-slate-300">
               Wir, die Potsdamer Bürgerstiftung, vernetzen Gleichgesinnte,
               versammeln engagierte Menschen, bieten Unterstützung als Plattform
               für Ehrenamt und möchten es den Menschen in Potsdam leichter
@@ -77,16 +78,23 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {priorities.map((priority) => (
-              <div className="container mx-auto flex h-full flex-col" key={priority.title}>
+              <div
+                className="container mx-auto flex h-full flex-col"
+                key={priority.title}
+              >
                 <div>
-                  <h1 className={`text-sm font-semibold uppercase text-gray-600 mb-2 ${priority.color}`}>
+                  <h1
+                    className={`text-sm font-semibold uppercase text-gray-600 dark:text-slate-400 mb-2 ${priority.color}`}
+                  >
                     {priority.subTitle}
                   </h1>
-                  <h2 className="font-header text-2xl font-bold mb-4">
+                  <h2 className="font-header text-2xl font-bold mb-4 text-slate-900 dark:text-slate-100">
                     {priority.title}
                   </h2>
                 </div>
-                <p className="">{priority.description}</p>
+                <p className="text-slate-700 dark:text-slate-300">
+                  {priority.description}
+                </p>
               </div>
             ))}
           </div>
@@ -94,7 +102,7 @@ export default function AboutPage() {
       </section>
       <section className="pt-8 md:pt-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-header text-4xl font-bold md:-mb-4 xl:-mb-10 max-w-xl">
+          <h2 className="font-header text-4xl font-bold md:-mb-4 xl:-mb-10 max-w-xl text-slate-900 dark:text-slate-100">
             Gemeinsam Gutes tun und stiften
           </h2>
         </div>
@@ -109,8 +117,8 @@ export default function AboutPage() {
               alt="Freiwillige auf der Inselbühne"
             />
           </div>
-          <div className="bg-slate-50 px-4 py-16 md:px-16 lg:pr-24 col-span-6 md:col-span-4 xl:col-span-3">
-            <h2 className="font-header text-3xl font-bold mb-8 max-w-md">
+          <div className="bg-slate-50 px-4 py-16 md:px-16 lg:pr-24 col-span-6 md:col-span-4 xl:col-span-3 dark:bg-slate-950">
+            <h2 className="font-header text-3xl font-bold mb-8 max-w-md text-slate-900 dark:text-slate-100">
               Wie unsere Stiftung aufgebaut ist und arbeitet
             </h2>
             <Disclosure />

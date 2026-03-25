@@ -1,0 +1,19 @@
+{
+  "name": "portal",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "gen": "directus-sdk-typegen -u https://portal.potsdamer-buergerstiftung.org -o ./src/types/directus.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@directus/sdk": "^20.1.0"
+  },
+  "devDependencies": {
+    "tsconfig": "*",
+    "typescript": "^5.4.5",
+    "directus-sdk-typegen": "^0.2.1"
+  }
+}

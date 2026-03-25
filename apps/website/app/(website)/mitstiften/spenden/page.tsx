@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 
@@ -10,15 +9,14 @@ export default function ContributePage() {
         title="Spenden"
         description="Erfahre, wie Du uns mit Geld oder mit Deiner Zeit unterstützen kannst."
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem
-                label="Mitstiften & mitmachen"
-                href="/mitstiften"
-              />,
-              <PageBreadcrumbItem label="Spenden" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem
+              label="Mitstiften & mitmachen"
+              href="/mitstiften"
+            />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Spenden" />
+          </PageBreadcrumb>
         }
       />
       <section className="bg-white">
@@ -41,12 +39,12 @@ export default function ContributePage() {
             </p>
             <Link
               href="/mitstiften/freundeskreis"
-              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-emerald-500"
+              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-primary"
             >
               Mehr erfahren
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500"
+                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -78,7 +76,7 @@ export default function ContributePage() {
               <Link
                 href="/mitstiften/spenden/privat"
                 data-umami-event="donation_spenden_privat"
-                className="text-md font-header inline-flex items-center justify-center rounded-md bg-emerald-500 py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
+                className="text-md font-header inline-flex items-center justify-center rounded-md bg-primary py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-opacity-75"
               >
                 Jetzt spenden
               </Link>
@@ -104,12 +102,12 @@ export default function ContributePage() {
             </p>
             <Link
               href="/mitstiften/freundeskreis"
-              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-emerald-500"
+              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-primary"
             >
               Mehr erfahren
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500"
+                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -140,7 +138,7 @@ export default function ContributePage() {
                 <Link
                   href="/mitstiften/spenden/privat"
                   data-umami-event="donation_spenden_privat_repeat"
-                  className="text-md font-header inline-flex items-center justify-center rounded-md bg-emerald-500 py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75"
+                  className="text-md font-header inline-flex items-center justify-center rounded-md bg-primary py-1.5 px-4 text-center font-bold text-white transition ease-in-out hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-opacity-75"
                 >
                   Jetzt spenden
                 </Link>
@@ -169,12 +167,12 @@ export default function ContributePage() {
             </p>
             <Link
               href="/mitstiften/freundeskreis"
-              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-emerald-500"
+              className="group mt-6 inline-flex items-center rounded-md text-base font-bold text-slate-900 transition hover:text-primary"
             >
               Mehr erfahren
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-emerald-500"
+                className="ml-1 h-5 w-5 transition group-hover:translate-x-1 group-hover:text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -198,7 +196,7 @@ export default function ContributePage() {
             </p>
             <Link
               href="/mitstiften"
-              className="text-md font-header mt-6 inline-flex items-center rounded-md bg-slate-900 py-1.5 px-4 font-bold text-white transition ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              className="text-md font-header mt-6 inline-flex items-center rounded-md bg-slate-900 py-1.5 px-4 font-bold text-white transition ease-in-out hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75"
             >
               Sprechen Sie uns an
               <svg

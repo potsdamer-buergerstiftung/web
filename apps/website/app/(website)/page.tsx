@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import ProjectGridLoading from "./ProjectGridLoading";
 import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
+import EventGridLoading from "./EventGridLoading";
 import { Metadata } from "next";
 import directus from "app/(website)/directus";
 import { Button, buttonVariants } from "@components/ui/button";
@@ -74,7 +75,7 @@ export default async function HomePage() {
       title: "Nachhaltig engagieren und handeln",
       assetId: "2f152755-94d6-472e-9102-be17106c63c0",
       description: `Wir verschaffen Nachhaltigkeit und Müllvermeidung in Potsdam mehr Aufmerksamkeit und leisten unseren Beitrag zu Umweltschutz, Stadtgrün und Klima.`,
-      color: "text-emerald-200",
+      color: "text-primary/20",
     },
     {
       subTitle: "Kultur",
@@ -102,14 +103,14 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto px-4 pt-32 md:pt-44">
-        <h1 className="font-header text-5xl font-bold text-slate-800 md:text-5xl lg:text-6xl">
+        <h1 className="leading-tight font-header text-5xl font-bold text-slate-900 dark:text-slate-50 md:text-5xl lg:text-6xl">
           15 Jahre Bürgerstiftung &mdash;
           <br />
-          <span className="text-emerald-700">
-            <i>und wir alle tragen sie.</i>
+          <span className="text-primary italic underline decoration-primary/20">
+            und wir alle tragen sie.
           </span>
         </h1>
-        <p className="mt-8 mb-8 text-slate-800 md:text-lg max-w-4xl">
+        <p className="mt-8 mb-8 max-w-4xl md:text-lg">
           <b>Seit 2011</b> trägt die Bürgerstiftung <b>Projekte</b>,{" "}
           <b>Menschen</b> und <b>Ideen</b> in Potsdam.{" "}
           <b>Mach mit, komm in unseren Freundeskreis!</b> Mit 100 Euro jährlich
@@ -133,18 +134,18 @@ export default async function HomePage() {
           <ArrowLongRightIcon />
         </Link>
       </div>
-      <section className="bg-slate-100 py-16 lg:py-24">
+      <section className="bg-slate-100 py-16 lg:py-24 dark:bg-slate-950">
         <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
           <div>
-            <h4 className="text-sm font-semibold uppercase text-gray-600">
+            <h4 className="text-sm font-semibold uppercase text-gray-600 dark:text-slate-400">
               Lebe deine Stadt
             </h4>
-            <h1 className="font-header mt-2 text-4xl font-bold">
+            <h1 className="font-header mt-2 text-4xl font-bold text-slate-900 dark:text-slate-50">
               Ehrenamtlich, engagiert, miteinander
             </h1>
           </div>
           <div>
-            <p>
+            <p className="text-slate-700 dark:text-slate-300">
               Alle sind eingeladen, sich mit Ideen, Zeit und Geld für eine{" "}
               <b>positive Entwicklung Potsdams einzubringen</b>. Wir vernetzen
               Gleichgesinnte, versammeln engagierte Menschen, bieten
@@ -198,21 +199,21 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
-          <div className="relative col-span-12 md:col-span-12 lg:col-span-12 bg-slate-100">
+          <div className="relative col-span-12 md:col-span-12 lg:col-span-12 bg-slate-100 dark:bg-slate-950">
             <div className="absolute z-[-1] h-full w-full">
               <div className="absolute bottom-0 top-0 left-0 right-0" />
             </div>
-            <div className="container mx-auto grid grid-cols-6 gap-8 h-full flex-col justify-end px-4 py-16 md:px-8 md:py-16 lg:px-4">
+            <div className="container mx-auto grid h-full grid-cols-6 flex-col justify-end gap-8 px-4 py-16 md:px-8 md:py-16 lg:px-4">
               <div className="col-span-6">
-                <h4 className="text-sm font-semibold uppercase text-gray-600">
+                <h4 className="text-sm font-semibold uppercase text-gray-600 dark:text-slate-400">
                   Nimm teil
                 </h4>
-                <h1 className="font-header mt-2 text-4xl font-bold">
+                <h1 className="font-header mt-2 text-4xl font-bold text-slate-900 dark:text-slate-50">
                   Kommende Veranstaltungen
                 </h1>
               </div>
               {/* @ts-ignore-error */}
-              <Suspense>
+              <Suspense fallback={<EventGridLoading />}>
                 <EventGrid promise={events} />
               </Suspense>
             </div>
@@ -222,13 +223,13 @@ export default async function HomePage() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto grid grid-cols-6 gap-8 px-4">
           <div className="col-span-6 lg:col-span-4">
-            <h4 className="text-sm font-semibold uppercase text-gray-600">
+            <h4 className="text-sm font-semibold uppercase text-gray-600 dark:text-slate-400">
               Von unserem Blog
             </h4>
-            <h1 className="font-header mt-2 text-4xl font-bold">
+            <h1 className="font-header mt-2 text-4xl font-bold text-slate-900 dark:text-slate-50">
               Aktuelles & Neues von uns
             </h1>
-            <p className="mt-4 max-w-2xl">
+            <p className="mt-4 max-w-2xl text-slate-700 dark:text-slate-300">
               Verfolge die Entwicklung unserer Projekte, die dank Deiner
               großzügigen Beiträge und Deiner Unterstützung möglich wurden.
             </p>

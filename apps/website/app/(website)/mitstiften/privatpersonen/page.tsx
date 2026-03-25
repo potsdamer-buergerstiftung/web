@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 
@@ -10,12 +9,11 @@ export default function IndividualsPage() {
         title="Stiften als Privatperson"
         description="Erfahre, wie Du persönlich mitstiften kannst."
         breadcrumb={
-          <PageBreadcrumb
-            items={[
-              <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />,
-              <PageBreadcrumbItem label="Privatpersonen" />,
-            ]}
-          />
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Privatpersonen" />
+          </PageBreadcrumb>
         }
       />
       <section>
@@ -38,7 +36,7 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/privatpersonen/spenden"
               data-umami-event="donation_privatpersonen_spenden"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              className="mt-8 bg-primary/10 text-slate-800 hover:bg-primary/20 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75"
             >
               Jetzt spenden
             </Link>
@@ -68,7 +66,7 @@ export default function IndividualsPage() {
             <Link
               href="/mitstiften/privatpersonen/spenden"
               data-umami-event="donation_privatpersonen_beitreten"
-              className="mt-8 bg-emerald-100 text-slate-800 hover:bg-emerald-200 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+              className="mt-8 bg-primary/10 text-slate-800 hover:bg-primary/20 text-md font-header inline-flex rounded-md py-1.5 px-4 font-bold transition ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75"
             >
               Jetzt beitreten
             </Link>

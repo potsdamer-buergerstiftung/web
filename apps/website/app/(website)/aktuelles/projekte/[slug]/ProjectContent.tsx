@@ -1,5 +1,4 @@
-import PageBreadcrumb from "@components/PageBreadcrumb";
-import PageBreadcrumbItem from "@components/PageBreadcrumbItem";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
 import PageTitle from "@components/PageTitle";
 import ProjectContentWrapper from "./ProjectContentWrapper";
 import Image from "next/image";
@@ -28,13 +27,13 @@ export default async function ProjectContent(props: ProjectContentProps) {
                 title={project.title}
                 description={project.sub_title}
                 breadcrumb={
-                    <PageBreadcrumb
-                        items={[
-                            <PageBreadcrumbItem label="Aktuelles & Projekte" />,
-                            <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />,
-                            <PageBreadcrumbItem label={project.title} />,
-                        ]}
-                    />
+                    <PageBreadcrumb>
+                        <PageBreadcrumbItem label="Aktuelles & Projekte" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label="Projekte" href="/aktuelles/projekte" />
+                        <PageBreadcrumbSeparator />
+                        <PageBreadcrumbItem label={project.title} />
+                    </PageBreadcrumb>
                 }
             />
             <ProjectContentWrapper content={content} image={image} />
