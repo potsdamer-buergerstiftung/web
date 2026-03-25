@@ -63,10 +63,10 @@ export default function DonationFormProjectSelection({
                     setProjectId(0);
                     setDonationFormProgress("AMOUNT_SELECTION");
                 }}>
-                    <span className="block font-header font-bold text-slate-900">
+                    <span className="block font-header font-bold">
                         {config.purpose.generalPurposeLabel}
                     </span>
-                    <span className="text-sm text-slate-700">Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.</span>
+                    <span className="text-sm text-foreground brightness-70">Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.</span>
                 </button>
                 <div className="mt-2 grid grid-cols-2 lg:grid-cols-3 items-start justify-start gap-4">
                     {projectsLoading && <p className="col-span-3">Projekte werden geladen...</p>}
