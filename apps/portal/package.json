@@ -9,7 +9,7 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@directus/sdk": "^20.1.0"
+    "@directus/sdk": "^21.2.1"
   },
   "devDependencies": {
     "tsconfig": "*",

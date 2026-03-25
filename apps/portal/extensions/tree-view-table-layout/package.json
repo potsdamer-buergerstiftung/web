@@ -49,10 +49,10 @@
 		"link": "directus-extension link"
 	},
 	"devDependencies": {
-		"@directus/composables": "11.1.5",
-		"@directus/extensions-sdk": "^17.0.11",
-		"@directus/system-data": "4.3.0",
-		"@directus/utils": "^13.3.1",
+		"@directus/composables": "11.2.16",
+		"@directus/extensions-sdk": "^17.1.0",
+		"@directus/system-data": "4.4.0",
+		"@directus/utils": "^13.3.2",
 		"@json2csv/plainjs": "^7.0.6",
 		"@types/file-saver": "^2.0.7",
 		"@types/lodash": "^4.17.13",
