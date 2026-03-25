@@ -18,6 +18,7 @@
     "@medusajs/ui": "latest",
     "@mollie/api-client": "^3.7.0",
     "@radix-ui/react-accordion": "^1.2.12",
+    "@stepperize/react": "^6.1.0",
     "@stripe/react-stripe-js": "^5.6.1",
     "@stripe/stripe-js": "^8.11.0",
     "altcha": "^2.3.0",
