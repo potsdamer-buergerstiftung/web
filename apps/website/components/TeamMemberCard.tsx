@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { WixMediaImage } from "./WixMediaImage";
 
 interface TeamMemberCardProps {
     title: string;

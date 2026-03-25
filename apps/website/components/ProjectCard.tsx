@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { WixMediaImage } from "./WixMediaImage";
 
 const ProjectCard: React.FC<{
   title: string;
