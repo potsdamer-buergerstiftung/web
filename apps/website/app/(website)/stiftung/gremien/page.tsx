@@ -4,6 +4,7 @@ import TeamMemberCard from "@components/TeamMemberCard";
 import directus from "portal";
 import { Metadata } from "next";
 import { readItems } from "@directus/sdk";
+import { cn } from "@lib/utils";
 
 const officeTeam = [
     {
@@ -181,7 +182,7 @@ export default async function TeamPage() {
                         </div>
                     </section>
                     <section className="pb-16">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-hidden">
+                        <div className={cn("grid grid-cols-1 sm:grid-cols-2 overflow-hidden", category.website_team_members.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3 xl:grid-cols-5")}>
                             {category.website_team_members.map((member) => (
                                 <div key={member.id}>
                                     <TeamMemberCard title={member.responsibilities} image={member.image} description={member.responsibilities} name={member.name} />
