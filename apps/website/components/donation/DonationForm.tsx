@@ -68,7 +68,7 @@ export function DonationForm({ projects, paymentMethods }: DonationFormProps) {
                 <PaymentStep methods={paymentMethods} />
               </Stepper.Content>
 
-              <Stepper.Actions className="flex gap-2 justify-end">
+              <Stepper.Actions className="flex gap-2">
                 <Stepper.Prev
                   render={(props) => (
                     <Button {...props} size="lg">

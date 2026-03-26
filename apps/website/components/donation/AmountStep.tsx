@@ -22,9 +22,8 @@ export function AmountStep() {
         description="Jeder Euro zählt. Ab einer Spende von 50€ stellen wir Dir gerne eine Spendenbescheinigung aus."
         className="mb-8"
       />
-      <div className="grid grid-cols-3 gap-10">
-        <img src="/img/choose.svg" className="col-span-1" />
-        <FieldGroup className="col-span-2">
+      <div className="max-w-sm">
+        <FieldGroup>
           <RadioGroup
             value={interval}
             onValueChange={(value) =>

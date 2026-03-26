@@ -298,6 +298,9 @@ importers:
       '@directus/visual-editing':
         specifier: ^1.0.1
         version: 1.2.0
+      '@google-pay/button-react':
+        specifier: ^3.2.1
+        version: 3.2.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@headlessui/react':
         specifier: ^2.2.9
         version: 2.2.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -317,8 +320,8 @@ importers:
         specifier: latest
         version: 4.1.5(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
       '@mollie/api-client':
-        specifier: ^3.7.0
-        version: 3.7.0
+        specifier: 4.4.0
+        version: 4.4.0
       '@radix-ui/react-accordion':
         specifier: ^1.2.12
         version: 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -337,6 +340,9 @@ importers:
       altcha-lib:
         specifier: ^1.4.1
         version: 1.4.1
+      apple-pay-button:
+        specifier: ^1.2.1
+        version: 1.2.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1710,6 +1716,15 @@ packages:
 
   '@formatjs/intl-localematcher@0.6.2':
     resolution: {integrity: sha512-XOMO2Hupl0wdd172Y06h6kLpBz6Dv+J4okPLl4LPtzbr8f66WbIoy4ev98EBuZ6ZK4h5ydTN6XneT4QVpD7cdA==}
+
+  '@google-pay/button-react@3.2.1':
+    resolution: {integrity: sha512-PO4mmK4P43EteCsXmxMjiEpuSmTjsVvQxcTBxJ9HpBMrp9/q2UDDhjMFxp8+8QBDr1ZOguQIrlWDc4AIlXPMZw==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      '@types/react': 19.2.14
+      '@types/react-dom': 19.2.3
+      react: '>=16.3.0'
+      react-dom: '>=16.3.0'
 
   '@graphql-codegen/core@4.0.2':
     resolution: {integrity: sha512-IZbpkhwVqgizcjNiaVzNAzm/xbWT6YnGgeOLwVjm4KbJn3V2jchVtuzHH09G5/WkkLSk2wgbXNdwjM41JxO6Eg==}
@@ -5986,6 +6001,9 @@ packages:
   '@types/geojson@7946.0.16':
     resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
 
+  '@types/googlepay@0.7.10':
+    resolution: {integrity: sha512-ByXjDfxEp87zsjw5cVsNKEeA+AIJYcWwJvRqPu85jO0Lp/FeG67csnf4mqbPaIxmdI6+Khp3v5I0yyjq9MrGhw==}
+
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
 
@@ -6402,6 +6420,12 @@ packages:
 
   append-field@1.0.0:
     resolution: {integrity: sha512-klpgFSWLW1ZEs8svjfb7g4qWY0YS5imI82dTg+QahUvJ8YqAY0P10Uk8tTyh9ZGuYEZEMaeJYCF5BFuX552hsw==}
+
+  apple-pay-button@1.2.1:
+    resolution: {integrity: sha512-8k7dz/t7BKruVms3Sha2fz5HucZzpACVnsElQHTOrGYofF0BjChtBGSI/xbBrEVMCqeUMgLdZKACpKPQTJTZnA==}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
 
   archiver-utils@5.0.2:
     resolution: {integrity: sha512-wuLJMmIBQYCsGZgYLTy5FIB2pF6Lfb6cXMSF8Qywwk3t20zWnAi7zLcQFdKQmIB8wyZpY5ER38x08GbwtR2cLA==}
@@ -14094,6 +14118,14 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@google-pay/button-react@3.2.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@types/googlepay': 0.7.10
+      '@types/react': 19.2.14
+      '@types/react-dom': 19.2.3(@types/react@19.2.14)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@graphql-codegen/core@4.0.2(graphql@16.13.1)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.1(graphql@16.13.1)
@@ -14647,7 +14679,7 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-mock: 29.7.0
 
   '@jest/expect-utils@29.7.0':
@@ -14665,7 +14697,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -14681,7 +14713,7 @@ snapshots:
 
   '@jest/pattern@30.0.1':
     dependencies:
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-regex-util: 30.0.1
 
   '@jest/reporters@29.7.0':
@@ -21153,9 +21185,11 @@ snapshots:
 
   '@types/geojson@7946.0.16': {}
 
+  '@types/googlepay@0.7.10': {}
+
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
 
   '@types/har-format@1.2.16': {}
 
@@ -21693,6 +21727,11 @@ snapshots:
       - openapi-types
 
   append-field@1.0.0: {}
+
+  apple-pay-button@1.2.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   archiver-utils@5.0.2:
     dependencies:
@@ -24619,7 +24658,7 @@ snapshots:
       '@jest/expect': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.7.2
@@ -24713,7 +24752,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -24762,7 +24801,7 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-util: 29.7.0
 
   jest-pnp-resolver@1.2.3(jest-resolve@29.7.0):
@@ -24901,7 +24940,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 20.19.37
+      '@types/node': 22.19.15
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
