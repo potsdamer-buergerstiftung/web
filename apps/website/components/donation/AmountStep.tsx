@@ -9,11 +9,22 @@ import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
 import { StepTitle } from "./StepTitle";
 import { useFormContext } from "react-hook-form";
 import type { DonationFormValues } from "./form";
+import { Checkbox } from "@components/ui/checkbox";
+import { useEffect } from "react";
 
 export function AmountStep() {
   const { setValue, watch } = useFormContext<DonationFormValues>();
   const interval = watch("interval") ?? "monthly";
   const amountPreset = watch("amountPreset") ?? "10.00";
+  const wantsReceipt = watch("wantsReceipt") ?? false;
+  const amountValue = Number.parseFloat(amountPreset);
+  const showReceiptOption = !Number.isNaN(amountValue) && amountValue >= 50;
+
+  useEffect(() => {
+    if (!showReceiptOption && wantsReceipt) {
+      setValue("wantsReceipt", false, { shouldDirty: true });
+    }
+  }, [setValue, showReceiptOption, wantsReceipt]);
 
   return (
     <div>
@@ -94,6 +105,24 @@ export function AmountStep() {
               </Field>
             </FieldLabel>
           </RadioGroup>
+          {showReceiptOption ? (
+            <FieldGroup>
+              <Field orientation="horizontal">
+                <Checkbox
+                  id="wants-receipt"
+                  checked={wantsReceipt}
+                  onCheckedChange={(checked) =>
+                    setValue("wantsReceipt", Boolean(checked), {
+                      shouldDirty: true,
+                    })
+                  }
+                />
+                <FieldLabel htmlFor="wants-receipt">
+                  Ich möchte eine Spendenbescheinigung erhalten
+                </FieldLabel>
+              </Field>
+            </FieldGroup>
+          ) : null}
         </FieldGroup>
       </div>
     </div>
