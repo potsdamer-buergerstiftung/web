@@ -58,13 +58,11 @@ export default async function ProjectPage(
     const posts = getPosts(params.slug);
 
     return (
-        <>
-            <Suspense fallback={<ProjectLoading />}>
-                <ProjectContent promise={project} />
-                <PostsWrapper promise={posts} />
-                <DonationWrapper projectPromise={project} />
-            </Suspense>
-        </>
+        <Suspense fallback={<ProjectLoading />}>
+            <ProjectContent promise={project} />
+            <PostsWrapper promise={posts} />
+            <DonationWrapper projectPromise={project} />
+        </Suspense>
     )
 }
 
