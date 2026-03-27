@@ -12,9 +12,6 @@ interface ProjectContentProps {
 export default async function ProjectContent(props: ProjectContentProps) {
     const project = await props.promise;
 
-
-    console.log(project)
-
     const content = project.content ? <Block data={project.content} /> : null;
     const image = <Image
         src={`https://portal.potsdamer-buergerstiftung.org/assets/${project.image}`}
