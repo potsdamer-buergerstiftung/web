@@ -38,15 +38,13 @@ const Blocks = ({
 
     const hasBlockId = true
 
-    console.log(data)
-
     if (loading) {
-        let i = new Array(10).fill(0);
+        const i = Array.from({ length: 10 }).fill(0);
         return (
             <div>{
-                i.map((i) => {
-                    let rand = Math.floor(Math.random() * (100 - 80 + 1) + 80);
-                    return <div className={clsx("h-4 animate-pulse bg-slate-100 mb-4")} style={{ width: `${rand}%` }}></div>
+                i.map((_, i) => {
+                    const rand = Math.floor(Math.random() * (100 - 80 + 1) + 80);
+                    return <div key={i} className={clsx("h-4 animate-pulse bg-slate-100 mb-4")} style={{ width: `${rand}%` }}></div>
                 })}
             </div>
         );

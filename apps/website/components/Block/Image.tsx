@@ -50,8 +50,8 @@ const Image: RenderFn<ImageBlockData, ImageBlockConfig> = ({
 
   return (
     <figure {...figureprops}>
-      {data?.file?.url && <img src={data.file.url} alt={data.caption || data.file.name} />}
-      {data?.url && <img src={data.url} alt={data.caption} />}
+      {data?.file?.url && <img src={`https://portal.potsdamer-buergerstiftung.org${data.file.url}`} alt={data.caption || data.file.name} />}
+      {data?.url && <img src={`https://portal.potsdamer-buergerstiftung.org${data.url}`} alt={data.caption} />}
       {data?.caption && <figcaption>{HTMLReactParser(data.caption)}</figcaption>}
     </figure>
   );
