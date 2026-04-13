@@ -38,9 +38,9 @@ export function DonationForm({ projects, paymentMethods }: DonationFormProps) {
                             <Stepper.List className="flex flex-col">
                                 {stepper.state.all.map((step) => (
                                     <Stepper.Item key={step.id} step={step.id}>
-                                        <Stepper.Trigger>
-                                            <Stepper.Indicator />
-                                            <Stepper.Title>{step.title}</Stepper.Title>
+                                        <Stepper.Trigger className="flex flex-row py-1.5 relative">
+                                            <Stepper.Indicator className="absolute top-1 left-0 bottom-1 w-0.5 bg-primary opacity-0 data-[status=active]:opacity-100"/>
+                                            <Stepper.Title className="pl-3">{step.title}</Stepper.Title>
                                         </Stepper.Trigger>
                                     </Stepper.Item>
                                 ))}
