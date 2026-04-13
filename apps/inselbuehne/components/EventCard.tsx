@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "@components/Image";
 import clsx from "clsx";
 import NextImage from "next/image";
 import Link from "next/link";

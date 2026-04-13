@@ -1,17 +1,18 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { readItems } from "@directus/sdk";
-import Logo from "@components/Logo";
-import { Link } from "@components/ui/link";
-import { Button } from "@components/ui/button";
-import directus from "app/(website)/directus";
-import PostCard from "@components/PostCard";
+import Logo from "@/components/Logo";
+import { Link } from "@/components/ui/link";
+import directus from "@/app/(website)/directus";
+import PostCard from "@/components/PostCard";
 
 export const metadata: Metadata = {
   title: "Die 5. Saison steht vor der Tür! - Inselbühne Potsdam",
   description:
     "Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.",
 };
+
+export const revalidate = 60;
 
 async function getPosts() {
   return directus.request(

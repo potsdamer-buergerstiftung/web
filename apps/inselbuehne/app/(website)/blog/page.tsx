@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { readItems } from "@directus/sdk";
-import PageTitle from "@components/PageTitle";
-import directus from "app/(website)/directus";
+import PageTitle from "@/components/PageTitle";
+import directus from "@/app/(website)/directus";
 import PostGrid from "./PostGrid";
 import PostGridLoading from "./PostGridLoading";
 

@@ -1,9 +1,6 @@
-import Footer from "@components/Footer/Footer";
-import Header from "@components/Header";
-import SocialMediaLinks from "@components/SocialMediaLinks";
-import ScrollProgressIndicator from "@components/ScrollProgressIndicator";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header";
 import { Metadata } from "next";
-import HeaderBanner from "@components/Header/HeaderBanner";
 
 export const metadata: Metadata = {
   description:

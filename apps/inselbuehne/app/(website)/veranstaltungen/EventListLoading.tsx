@@ -1,4 +1,4 @@
-import EventCardLoading from "@components/ProjectCardLoading";
+import EventCardLoading from "@/components/ProjectCardLoading";
 
 export default function EventListLoading() {
   return (
