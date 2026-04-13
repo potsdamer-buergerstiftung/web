@@ -1,6 +1,6 @@
 import Image from "next/image";
-import PageTitle from "@components/PageTitle";
-import Block from "@components/Block";
+import PageTitle from "@/components/PageTitle";
+import Block from "@/components/Block";
 
 interface Props {
   promise: Promise<any>;

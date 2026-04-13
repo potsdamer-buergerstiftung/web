@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { readItems } from "@directus/sdk";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import Article from "./Article";
 import ArticleLoading from "./ArticleLoading";
 

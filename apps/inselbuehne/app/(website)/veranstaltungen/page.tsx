@@ -1,10 +1,10 @@
-import EventCard from "@components/EventCard";
-import PageTitle from "@components/PageTitle";
+import EventCard from "@/components/EventCard";
+import PageTitle from "@/components/PageTitle";
 import { Metadata } from "next";
 import Image from "next/image";
 import EventList from "./EventList";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import { readItems } from "@directus/sdk";
 import EventListLoading from "./EventListLoading";
 

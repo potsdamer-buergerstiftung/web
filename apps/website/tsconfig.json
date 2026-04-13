@@ -19,30 +19,7 @@
     "jsx": "react-jsx",
     "incremental": true,
     "paths": {
-      "@components/*": [
-        "./components/*"
-      ],
-      "@components": [
-        "./components"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@styles": [
-        "./src/styles"
-      ],
-      "@public/*": [
-        "./public/*"
-      ],
-      "@public": [
-        "./public"
-      ],
-      "@lib/*": [
-        "./lib/*"
-      ],
-      "@modules/*": [
-        "./modules/*"
-      ],
+      "@/*": ["./*"]
     },
     "plugins": [
       {
