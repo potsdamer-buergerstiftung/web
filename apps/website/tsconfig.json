@@ -18,31 +18,30 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "components/*"
+        "./components/*"
       ],
       "@components": [
-        "components"
+        "./components"
       ],
       "@styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "@styles": [
-        "src/styles"
+        "./src/styles"
       ],
       "@public/*": [
-        "public/*"
+        "./public/*"
       ],
       "@public": [
-        "public"
+        "./public"
       ],
       "@lib/*": [
-        "lib/*"
+        "./lib/*"
       ],
       "@modules/*": [
-        "modules/*"
+        "./modules/*"
       ],
     },
     "plugins": [
