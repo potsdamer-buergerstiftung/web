@@ -7,10 +7,10 @@ import {
     FieldSet,
     FieldTitle,
 } from "@/components/ui/field";
-import { StepTitle } from "../StepTitle";
+import { StepTitle } from "../step-title";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "../form";
+import type { DonationFormValues } from "../../form-definition";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 import {
     CreditCardIcon,

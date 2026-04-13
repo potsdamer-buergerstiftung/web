@@ -8,7 +8,9 @@ const donationFormSchema = z
   .object({
     purposeId: z.string().min(1, "Bitte einen Verwendungszweck wählen."),
     interval: z.enum(["once", "monthly", "yearly"]),
-    amountPreset: z.enum(["10.00", "50.00", "100.00"]),
+    amountPreset: z.enum(["10.00", "50.00", "100.00", "custom"]),
+    amountCustom: z.string().optional(),
+    paymentMethodId: z.string().optional(),
     wantsReceipt: z.boolean(),
     isAnonymous: z.boolean(),
     firstName: z.string().trim().optional(),
@@ -19,6 +21,17 @@ const donationFormSchema = z
   .superRefine((values, ctx) => {
     if (values.isAnonymous) {
       return;
+    }
+
+    if (values.amountPreset === "custom") {
+      const amount = Number.parseFloat(values.amountCustom ?? "");
+      if (Number.isNaN(amount) || amount <= 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["amountCustom"],
+          message: "Bitte einen gültigen Betrag eingeben.",
+        });
+      }
     }
 
     if (!values.firstName?.trim()) {
@@ -75,7 +88,9 @@ export function DonationFormProvider({
     defaultValues: {
       purposeId: "general",
       interval: "monthly",
-      amountPreset: "10.00",
+      amountPreset: "100.00",
+      amountCustom: "100.00",
+      paymentMethodId: "",
       wantsReceipt: false,
       isAnonymous: false,
       firstName: "",

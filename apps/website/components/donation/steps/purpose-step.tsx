@@ -2,14 +2,16 @@ import {
   Field,
   FieldContent,
   FieldDescription,
+  FieldError,
+  FieldGroup,
   FieldLabel,
   FieldTitle,
 } from "@/components/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ClassAttributes, LabelHTMLAttributes } from "react";
-import { StepTitle } from "./StepTitle";
-import { useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "./form";
+import { StepTitle } from "./step-title";
+import { Controller, useFormContext } from "react-hook-form";
+import type { DonationFormValues } from "../form-definition";
 
 interface Purpose {
   id: string;
@@ -26,8 +28,8 @@ export function PurposeStep({
   generalPurposeAvailable = true,
   items,
 }: PurposeStepProps) {
-  const { setValue, watch } = useFormContext<DonationFormValues>();
-  const selectedPurposeId = watch("purposeId") ?? "general";
+  const { control } = useFormContext<DonationFormValues>();
+
   function SingleItem({
     item,
     ...props
@@ -47,32 +49,38 @@ export function PurposeStep({
   }
 
   return (
-    <Field>
+    <FieldGroup>
       <StepTitle
         title="Verwendungszweck"
         description="Du kannst mit Deiner Spende ein bestimmtes Projekt oder die allgemeine Arbeit der Stiftung unterstützen."
         className="mb-8"
       />
-      <RadioGroup
-        value={selectedPurposeId}
-        onValueChange={(value) =>
-          setValue("purposeId", value, { shouldDirty: true })
-        }
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      >
-        <SingleItem
-          item={{
-            id: "general",
-            title: "Allgemeine Arbeit",
-            description:
-              "Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.",
-          }}
-          className="md:col-span-2 lg:col-span-3"
-        />
-        {items.map((item) => (
-          <SingleItem key={item.id} item={item} />
-        ))}
-      </RadioGroup>
-    </Field>
+      <Controller
+        name="purposeId"
+        control={control}
+        render={({ field, fieldState }) => (
+          <Field data-invalid={fieldState.invalid}>
+            <RadioGroup
+              {...field}
+              onValueChange={field.onChange}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <SingleItem
+                item={{
+                  id: "general",
+                  title: "Allgemeine Arbeit",
+                  description:
+                    "Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.",
+                }}
+                className="md:col-span-2 lg:col-span-3"
+              />
+              {items.map((item) => (
+                <SingleItem key={item.id} item={item} />
+              ))}
+            </RadioGroup>
+          </Field>
+        )}
+      />
+    </FieldGroup>
   );
 }

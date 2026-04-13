@@ -2,11 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Stepper } from "./steps";
-import { PurposeStep } from "./PurposeStep";
-import { AmountStep } from "./AmountStep";
-import { PersonalDetailsStep } from "./PersonalDetailsStep";
-import { PaymentStep } from "./payment/step";
-import { DonationFormProvider } from "./form";
+import { PurposeStep } from "./steps/purpose-step";
+import { AmountStep } from "./steps/amount-step";
+import { PersonalDetailsStep } from "./steps/personal-details-step";
+import { PaymentStep } from "./steps/payment";
+import { DonationFormProvider } from "./form-definition";
 import { useFormContext } from "react-hook-form";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 
