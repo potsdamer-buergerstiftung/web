@@ -2,7 +2,6 @@ import {
   Field,
   FieldContent,
   FieldDescription,
-  FieldError,
   FieldGroup,
   FieldLabel,
   FieldTitle,
@@ -58,8 +57,8 @@ export function PurposeStep({
       <Controller
         name="purposeId"
         control={control}
-        render={({ field, fieldState }) => (
-          <Field data-invalid={fieldState.invalid}>
+        render={({ field }) => (
+          <Field>
             <RadioGroup
               {...field}
               onValueChange={field.onChange}

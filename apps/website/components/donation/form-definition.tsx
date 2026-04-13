@@ -19,24 +19,24 @@ const donationFormSchema = z
     organisation: z.string().trim().optional(),
   })
   .superRefine((values, ctx) => {
-    if (values.isAnonymous) {
-      return;
-    }
-
     if (values.amountPreset === "custom") {
       const amount = Number.parseFloat(values.amountCustom ?? "");
-      if (Number.isNaN(amount) || amount <= 0) {
+      if (Number.isNaN(amount) || amount < 1) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["amountCustom"],
-          message: "Bitte einen gültigen Betrag eingeben.",
+          message: "Bitte mindestens 1 Euro eingeben.",
         });
       }
     }
 
+    if (values.isAnonymous) {
+      return;
+    }
+
     if (!values.firstName?.trim()) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["firstName"],
         message: "Bitte den Vornamen angeben.",
       });
@@ -44,7 +44,7 @@ const donationFormSchema = z
 
     if (!values.lastName?.trim()) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["lastName"],
         message: "Bitte den Nachnamen angeben.",
       });
@@ -53,16 +53,16 @@ const donationFormSchema = z
     const emailValue = values.email?.trim();
     if (!emailValue) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["email"],
         message: "Bitte eine gueltige E-Mail angeben.",
       });
       return;
     }
 
-    if (!z.string().email().safeParse(emailValue).success) {
+    if (!z.email().safeParse(emailValue).success) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["email"],
         message: "Bitte eine gueltige E-Mail angeben.",
       });
@@ -103,7 +103,7 @@ export function DonationFormProvider({
 
   const handleSubmit = onSubmit
     ? methods.handleSubmit(onSubmit)
-    : (event: React.FormEvent<HTMLFormElement>) => {
+    : (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
       };
 

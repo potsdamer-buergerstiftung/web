@@ -7,19 +7,7 @@ import { AmountStep } from "./steps/amount-step";
 import { PersonalDetailsStep } from "./steps/personal-details-step";
 import { PaymentStep } from "./steps/payment";
 import { DonationFormProvider } from "./form-definition";
-import { useFormContext } from "react-hook-form";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
-
-function DonationFormDebugValues() {
-    const { watch } = useFormContext();
-    const values = watch();
-
-    return (
-        <pre className="mt-4 rounded-md bg-muted/60 p-4 text-xs text-muted-foreground">
-            {JSON.stringify(values, null, 2)}
-        </pre>
-    );
-}
 
 interface DonationFormProps {
     projects: any[];
@@ -45,7 +33,6 @@ export function DonationForm({ projects, paymentMethods }: DonationFormProps) {
                                     </Stepper.Item>
                                 ))}
                             </Stepper.List>
-                            {/* <DonationFormDebugValues /> */}
                         </div>
 
                         <div className="flex-1 flex flex-col gap-8">

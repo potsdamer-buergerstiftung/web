@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/field";
 import { StepTitle } from "../step-title";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useFormContext } from "react-hook-form";
+import { useController, useFormContext } from "react-hook-form";
 import type { DonationFormValues } from "../../form-definition";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 import {
@@ -44,8 +44,12 @@ function CreditCardOption() {
 }
 
 export function PaymentStep({ methods }: PaymentStepProps) {
-    const { setValue, watch } = useFormContext<DonationFormValues>();
-    const paymentMethodId = watch("paymentMethodId") ?? methods[0]?.id ?? "";
+    const { control } = useFormContext<DonationFormValues>();
+    const { field: paymentMethodField } = useController({
+        name: "paymentMethodId",
+        control,
+    });
+    const paymentMethodId = paymentMethodField.value ?? methods[0]?.id ?? "";
 
     return (
         <div>
@@ -73,24 +77,22 @@ export function PaymentStep({ methods }: PaymentStepProps) {
                         <FieldLegend>Weitere Zahlungsoptionen</FieldLegend>
                         <RadioGroup
                             value={paymentMethodId}
-                            onValueChange={(value) =>
-                                setValue("paymentMethodId", value, { shouldDirty: true })
-                            }
+                            onValueChange={paymentMethodField.onChange}
                         >
                             {methods.map((method) => {
-                                console.log(method);
                                 switch (method.id) {
                                     case "paypal":
                                         return <PayPalOption key="paypal" />;
                                     case "creditcard":
                                         return <CreditCardOption key="creditcard" />;
-                                    case "paybybank":
-                                        return <PayByBankOption key="paybybank" />;
+                                    case "banktransfer":
+                                        return <PayByBankOption key="banktransfer" />;
+                                    case "directdebit":
+                                        return <DirectDebitOption key="directdebit" />;
                                     default:
                                         return null;
                                 }
                             })}
-                            <DirectDebitOption key="directdebit" />
                         </RadioGroup>
                     </FieldSet>
                 </FieldGroup>
