@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookieSettingsLink from "@/components/CookieConsent/CookieSettingsLink";
 
 const FooterCopyright: React.FC = () => {
   const year = new Date().getFullYear();
@@ -13,6 +14,11 @@ const FooterCopyright: React.FC = () => {
           >
             Kontakt
           </Link>
+        </li>
+        <li>
+          <CookieSettingsLink className="text-navy-900 transition hover:text-green-500">
+            Cookie-Einstellungen
+          </CookieSettingsLink>
         </li>
         <li>
           <Link

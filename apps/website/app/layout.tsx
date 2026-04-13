@@ -1,8 +1,10 @@
-import Script from "next/script";
 import { Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+
+import { CookieConsentBanner } from "@/components/CookieConsent";
+import { UmamiScript } from "@/components/analytics";
 
 //import VisualEditing from "./VisualEditing";
 
@@ -18,8 +20,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || "";
-
   return (
     <html className={`${font.variable} font-sans`} lang="de" suppressHydrationWarning>
       <body className="antialiased">
@@ -31,13 +31,8 @@ export default function RootLayout({
         >
           {/* <VisualEditing /> */}
           {children}
-          {websiteId && (
-            <Script
-              src={"/analytics/script.js"}
-              data-website-id={websiteId}
-              strategy="afterInteractive"
-            />
-          )}
+          <UmamiScript />
+          <CookieConsentBanner />
         </ThemeProvider>
       </body>
     </html>
