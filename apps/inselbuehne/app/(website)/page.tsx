@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     "Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.",
 };
 
+export const revalidate = 60;
+
 async function getPosts() {
   return directus.request(
     readItems("posts", {
