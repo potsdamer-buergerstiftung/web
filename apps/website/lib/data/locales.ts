@@ -1,6 +1,6 @@
 "use server"
 
-import { sdk } from "@lib/config"
+import { sdk } from "@/lib/config"
 import { getCacheOptions } from "./cookies"
 
 export type Locale = {

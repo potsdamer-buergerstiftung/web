@@ -4,7 +4,7 @@ import * as React from "react"
 import NextLink, { type LinkProps as NextLinkProps } from "next/link"
 import { type VariantProps } from "class-variance-authority"
 
-import { cn } from "@lib/utils"
+import { cn } from "@/lib/utils"
 import { buttonVariants } from "./button"
 
 export interface LinkProps

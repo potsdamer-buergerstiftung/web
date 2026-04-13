@@ -1,14 +1,14 @@
-import Footer from "@components/Footer/Footer";
-import Header from "@components/Header";
-import HeaderNavItem from "@components/Header/HaderNavItem";
-import HeaderSubNavItem from "@components/Header/HeaderSubNavItem";
-import HeaderNav from "@components/Header/HeaderNav";
-import SocialMediaLinks from "@components/SocialMediaLinks";
-import ScrollProgressIndicator from "@components/ScrollProgressIndicator";
-import HeaderQuickDonateDrawer from "@components/Header/HeaderQuickDonateDrawer";
-import DonationForm from "@components/DonationForm/DonationForm";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header";
+import HeaderNavItem from "@/components/Header/HaderNavItem";
+import HeaderSubNavItem from "@/components/Header/HeaderSubNavItem";
+import HeaderNav from "@/components/Header/HeaderNav";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
+import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
+import HeaderQuickDonateDrawer from "@/components/Header/HeaderQuickDonateDrawer";
+import DonationForm from "@/components/DonationForm/DonationForm";
 import { Metadata } from "next";
-import HeaderDonationButton from "@components/Header/HeaderDonationButton";
+import HeaderDonationButton from "@/components/Header/HeaderDonationButton";
 
 export const metadata: Metadata = {
     description:

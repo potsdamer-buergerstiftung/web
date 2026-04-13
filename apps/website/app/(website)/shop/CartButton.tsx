@@ -1,8 +1,8 @@
 "use client";
 
-import { buttonVariants } from "@components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
 import clsx from "clsx";
 
 export default function CartButtonButton() {

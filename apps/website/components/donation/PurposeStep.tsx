@@ -4,8 +4,8 @@ import {
   FieldDescription,
   FieldLabel,
   FieldTitle,
-} from "@components/ui/field";
-import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
+} from "@/components/ui/field";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ClassAttributes, LabelHTMLAttributes } from "react";
 import { StepTitle } from "./StepTitle";
 import { useFormContext } from "react-hook-form";

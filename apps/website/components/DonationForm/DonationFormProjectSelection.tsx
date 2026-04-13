@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useAtom } from "jotai";
 import { donationProgressAtom, projectsAtom, selectedProjectId } from "./state";
 import clsx from "clsx";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import type { DonationFormConfig } from "./types";
 
 async function getProjects() {

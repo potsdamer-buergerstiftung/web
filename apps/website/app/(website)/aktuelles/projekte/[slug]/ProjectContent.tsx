@@ -1,8 +1,8 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import ProjectContentWrapper from "./ProjectContentWrapper";
 import Image from "next/image";
-import Block from "@components/Block";
+import Block from "@/components/Block";
 
 interface ProjectContentProps {
     promise: Promise<any>;

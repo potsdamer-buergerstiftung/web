@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 
 interface EventProps {
   promise: Promise<any>;

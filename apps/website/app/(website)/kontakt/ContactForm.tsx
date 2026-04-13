@@ -3,12 +3,12 @@
 import { useActionState } from "react";
 import { submitForm } from "./action";
 import { AltchaWidget } from "./AltchaWidget";
-import { Label } from "@components/ui/label";
-import { Input } from "@components/ui/input";
-import { Field, FieldGroup, FieldLabel } from "@components/ui/field";
-import { Textarea } from "@components/ui/textarea";
-import { Checkbox } from "@components/ui/checkbox";
-import { Button } from "@components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
 
 export default function ContactForm() {
   const [state, formAction, pending] = useActionState(submitForm, null);

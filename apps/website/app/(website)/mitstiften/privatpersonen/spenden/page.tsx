@@ -1,7 +1,7 @@
-import { DonationForm } from "@components/donation";
+import { DonationForm } from "@/components/donation";
 import { readItems } from "@directus/sdk";
 import directus from "portal";
-import { getDonationPaymentMethods } from "@lib/data/donation";
+import { getDonationPaymentMethods } from "@/lib/data/donation";
 
 async function getProjects() {
   const res = await directus.request(

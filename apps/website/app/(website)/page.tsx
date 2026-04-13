@@ -1,5 +1,5 @@
 import { readItems } from "@directus/sdk";
-import { Link } from "@components/ui/link";
+import { Link } from "@/components/ui/link";
 import Image from "next/image";
 import ProjectGrid from "./ProjectGrid";
 import { Suspense } from "react";
@@ -8,10 +8,10 @@ import PostGrid from "./PostGrid";
 import EventGrid from "./EventGrid";
 import EventGridLoading from "./EventGridLoading";
 import { Metadata } from "next";
-import directus from "app/(website)/directus";
-import { Button, buttonVariants } from "@components/ui/button";
+import directus from "@/app/(website)/directus";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import { cn } from "@lib/utils";
+import { cn } from "@/lib/utils";
 
 export const revalidate = 120;
 

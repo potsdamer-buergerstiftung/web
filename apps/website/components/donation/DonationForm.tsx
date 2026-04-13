@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Stepper } from "./steps";
 import { PurposeStep } from "./PurposeStep";
 import { AmountStep } from "./AmountStep";
@@ -8,7 +8,7 @@ import { PersonalDetailsStep } from "./PersonalDetailsStep";
 import { PaymentStep } from "./payment/step";
 import { DonationFormProvider } from "./form";
 import { useFormContext } from "react-hook-form";
-import type { DonationPaymentMethod } from "@lib/data/donation";
+import type { DonationPaymentMethod } from "@/lib/data/donation";
 
 function DonationFormDebugValues() {
     const { watch } = useFormContext();

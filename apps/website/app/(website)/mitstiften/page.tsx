@@ -1,6 +1,6 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
-import { Link } from "@components/ui/link";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
+import { Link } from "@/components/ui/link";
 
 export default function IndividualsPage() {
   return (

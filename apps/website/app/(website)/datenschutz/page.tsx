@@ -1,6 +1,6 @@
-import Blocks from "@components/Block/Block";
-import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import Blocks from "@/components/Block/Block";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import { readSingleton } from "@directus/sdk";
 import directus from "../directus";
 

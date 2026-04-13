@@ -2,7 +2,7 @@
 
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
 
-import { cn } from "@lib/utils"
+import { cn } from "@/lib/utils"
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline"
 
 function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {

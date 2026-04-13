@@ -1,5 +1,5 @@
-import { Field, FieldContent, FieldLabel, FieldTitle } from "@components/ui/field";
-import { RadioGroupItem } from "@components/ui/radio-group";
+import { Field, FieldContent, FieldLabel, FieldTitle } from "@/components/ui/field";
+import { RadioGroupItem } from "@/components/ui/radio-group";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
 
 export function DirectDebitOption() {

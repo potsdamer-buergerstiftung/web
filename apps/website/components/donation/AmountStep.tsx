@@ -4,12 +4,12 @@ import {
   FieldGroup,
   FieldLabel,
   FieldTitle,
-} from "@components/ui/field";
-import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
+} from "@/components/ui/field";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { StepTitle } from "./StepTitle";
 import { useFormContext } from "react-hook-form";
 import type { DonationFormValues } from "./form";
-import { Checkbox } from "@components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect } from "react";
 
 export function AmountStep() {

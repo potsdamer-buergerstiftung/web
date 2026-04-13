@@ -1,5 +1,5 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
 
 export default function ContributePage() {

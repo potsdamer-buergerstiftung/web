@@ -2,8 +2,8 @@
 
 import { useAtom } from "jotai";
 import { quickDonateDrawerOpen } from "./state";
-import { Button } from "@components/ui/button";
-import { trackUmami } from "@components/analytics/umami";
+import { Button } from "@/components/ui/button";
+import { trackUmami } from "@/components/analytics/umami";
 
 export default function HeaderDonationButton() {
   const [_, setIsQuickDonateDrawerOpen] = useAtom(quickDonateDrawerOpen);

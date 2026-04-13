@@ -1,5 +1,5 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 
 export default function CompaniesPage() {
     return (

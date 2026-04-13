@@ -1,5 +1,5 @@
-import PageTitle from "@components/PageTitle";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
 
 export default function ProjectLoading() {
     return (

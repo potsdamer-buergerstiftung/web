@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Metadata, ResolvingMetadata } from "next";
 import Article from "./Article";
 import ArticleLoading from "./ArticleLoading";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 
 async function getPost(slug: string) {
     const res = await directus.request(readItems("posts", {

@@ -1,5 +1,5 @@
-import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
 export default function HonoraryPage() {

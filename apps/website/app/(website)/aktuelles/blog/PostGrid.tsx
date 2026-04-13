@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ArticleCard from "@components/ArticleCard";
+import ArticleCard from "@/components/ArticleCard";
 import PostGridWrapper from "./PostGridWrapper";
 
 interface PostsGridProps {

@@ -1,9 +1,9 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import { readItems } from "@directus/sdk";
 import MediaReportsGrid from "./MediaReportsGrid";
 import { Metadata } from "next";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 
 async function getMediaReports() {
     const res = await directus.request(readItems("media_reports", {

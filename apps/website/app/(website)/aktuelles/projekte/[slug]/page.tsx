@@ -2,10 +2,10 @@ import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
 import ProjectContent from "./ProjectContent";
 import ProjectLoading from "./ProjectLoading";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import { readItem, readItems } from "@directus/sdk";
-import PostGrid from "app/(website)/aktuelles/blog/PostGrid";
-import DonationForm from "@components/DonationForm/DonationForm";
+import PostGrid from "@/app/(website)/aktuelles/blog/PostGrid";
+import DonationForm from "@/components/DonationForm/DonationForm";
 
 export const revalidate = 120;
 

@@ -4,7 +4,7 @@ import directus from "../directus";
 import { createItem } from "@directus/sdk";
 import * as alcha from 'altcha';
 import { verifySolution } from "altcha-lib";
-import { ALTCHA_HMAC_KEY } from "app/api/altcha/route";
+import { ALTCHA_HMAC_KEY } from "@/app/api/altcha/route";
 
 export async function submitForm(prevState: any, formData: FormData) {
     const altcha = formData.get('altcha')

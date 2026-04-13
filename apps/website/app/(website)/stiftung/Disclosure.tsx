@@ -1,7 +1,7 @@
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@components/ui/accordion";
-import { Link } from "@components/ui/link";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "@/components/ui/link";
 import { Disclosure, Transition } from "@headlessui/react";
 import { LinkIcon } from "@heroicons/react/24/outline";
 import React, { Fragment } from "react";

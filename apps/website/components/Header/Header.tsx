@@ -5,7 +5,7 @@ import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
 import HeaderNavBackground from "./HeaderNavBackground";
 import { readSingleton, rest } from "@directus/sdk";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import Image from "next/image";
 
 interface HeaderProps {

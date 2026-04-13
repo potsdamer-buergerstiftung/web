@@ -1,9 +1,9 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
 import EventGrid from "./EventGrid";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 
 export const revalidate = 60;
 

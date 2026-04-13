@@ -4,17 +4,17 @@ import React, { useEffect, useState, useActionState } from "react"
 import { PencilSquare as Edit, Trash } from "@medusajs/icons"
 import { Button, Heading, Text, clx } from "@medusajs/ui"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
-import CountrySelect from "@modules/checkout/components/country-select"
-import Input from "@modules/common/components/input"
-import Modal from "@modules/common/components/modal"
-import Spinner from "@modules/common/icons/spinner"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
+import useToggleState from "@/lib/hooks/use-toggle-state"
+import CountrySelect from "@/modules/checkout/components/country-select"
+import Input from "@/modules/common/components/input"
+import Modal from "@/modules/common/components/modal"
+import Spinner from "@/modules/common/icons/spinner"
+import { SubmitButton } from "@/modules/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
 import {
   deleteCustomerAddress,
   updateCustomerAddress,
-} from "@lib/data/customer"
+} from "@/lib/data/customer"
 
 type EditAddressProps = {
   region: HttpTypes.StoreRegion

@@ -1,5 +1,5 @@
 import PostGridWrapper from "./PostGridWrapper";
-import ArticleCardLoading from "@components/ArticleCardLoading";
+import ArticleCardLoading from "@/components/ArticleCardLoading";
 
 export default function PostGridLoading() {
     const items = new Array(6).fill(0);

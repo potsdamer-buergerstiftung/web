@@ -1,9 +1,9 @@
-import { Field, FieldGroup, FieldLabel } from "@components/ui/field";
-import { Input } from "@components/ui/input";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { StepTitle } from "./StepTitle";
 import { useFormContext } from "react-hook-form";
 import type { DonationFormValues } from "./form";
-import { Checkbox } from "@components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect } from "react";
 
 export function PersonalDetailsStep() {

@@ -4,13 +4,13 @@ import { Plus } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
 import { useEffect, useState, useActionState } from "react"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
-import CountrySelect from "@modules/checkout/components/country-select"
-import Input from "@modules/common/components/input"
-import Modal from "@modules/common/components/modal"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
+import useToggleState from "@/lib/hooks/use-toggle-state"
+import CountrySelect from "@/modules/checkout/components/country-select"
+import Input from "@/modules/common/components/input"
+import Modal from "@/modules/common/components/modal"
+import { SubmitButton } from "@/modules/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
-import { addCustomerAddress } from "@lib/data/customer"
+import { addCustomerAddress } from "@/lib/data/customer"
 
 const AddAddress = ({
   region,

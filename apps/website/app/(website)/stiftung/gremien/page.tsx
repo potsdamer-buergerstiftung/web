@@ -1,10 +1,10 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
-import TeamMemberCard from "@components/TeamMemberCard";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
+import TeamMemberCard from "@/components/TeamMemberCard";
 import directus from "portal";
 import { Metadata } from "next";
 import { readItems } from "@directus/sdk";
-import { cn } from "@lib/utils";
+import { cn } from "@/lib/utils";
 
 const officeTeam = [
     {

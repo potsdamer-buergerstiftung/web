@@ -1,9 +1,9 @@
 import React from "react";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import { Metadata } from "next";
 import ContactForm from "./ContactForm";
-import { Link } from "@components/ui/link";
+import { Link } from "@/components/ui/link";
 
 export const metadata: Metadata = {
   title: "Kontakt - Potsdamer Bürgerstiftung",

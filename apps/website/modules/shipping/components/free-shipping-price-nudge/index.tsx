@@ -1,6 +1,6 @@
 "use client"
 
-import { convertToLocale } from "@lib/util/money"
+import { convertToLocale } from "@/lib/util/money"
 import { CheckCircleSolid, XMark } from "@medusajs/icons"
 import {
   HttpTypes,
@@ -9,7 +9,7 @@ import {
   StorePrice,
 } from "@medusajs/types"
 import { Button, clx } from "@medusajs/ui"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 import { useState } from "react"
 import { StoreFreeShippingPrice } from "types/global"
 

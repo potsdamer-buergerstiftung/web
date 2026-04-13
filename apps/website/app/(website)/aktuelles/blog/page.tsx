@@ -1,12 +1,12 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import { readItems } from "@directus/sdk";
 import PostGrid from "./PostGrid";
 import PostGridLoading from "./PostGridLoading";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import { Suspense } from "react";
 import { Metadata } from "next";
-//import VisualEditingPage from "app/VisualEditingPage";
+//import VisualEditingPage from "@/app/VisualEditingPage";
 
 export const revalidate = 60;
 

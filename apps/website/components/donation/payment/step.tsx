@@ -6,17 +6,17 @@ import {
     FieldLegend,
     FieldSet,
     FieldTitle,
-} from "@components/ui/field";
+} from "@/components/ui/field";
 import { StepTitle } from "../StepTitle";
-import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useFormContext } from "react-hook-form";
 import type { DonationFormValues } from "../form";
-import type { DonationPaymentMethod } from "@lib/data/donation";
+import type { DonationPaymentMethod } from "@/lib/data/donation";
 import {
     CreditCardIcon,
     LockClosedIcon,
 } from "@heroicons/react/24/solid";
-import { Badge } from "@components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { GooglePayOption } from "./google-pay";
 import { ApplePayOption } from "./apple-pay";
 import { PayPalOption } from "./paypal";

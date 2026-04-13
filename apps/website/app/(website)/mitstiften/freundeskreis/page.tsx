@@ -1,5 +1,5 @@
-import DonationForm from "@components/DonationForm/DonationForm";
-import { freundeskreisDonationFormConfig } from "@components/DonationForm/presets";
+import DonationForm from "@/components/DonationForm/DonationForm";
+import { freundeskreisDonationFormConfig } from "@/components/DonationForm/presets";
 
 
 export default function FreundeskreisJoinPage() {

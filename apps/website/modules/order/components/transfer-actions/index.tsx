@@ -1,6 +1,6 @@
 "use client"
 
-import { acceptTransferRequest, declineTransferRequest } from "@lib/data/orders"
+import { acceptTransferRequest, declineTransferRequest } from "@/lib/data/orders"
 import { Button, Text } from "@medusajs/ui"
 import { useState } from "react"
 

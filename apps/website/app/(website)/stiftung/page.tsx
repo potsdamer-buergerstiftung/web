@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
 import Disclosure from "./Disclosure";
-import ParallaxImage from "@components/ParallaxImage";
+import ParallaxImage from "@/components/ParallaxImage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

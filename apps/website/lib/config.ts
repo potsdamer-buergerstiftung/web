@@ -1,4 +1,4 @@
-import { getLocaleHeader } from "@lib/util/get-locale-header"
+import { getLocaleHeader } from "@/lib/util/get-locale-header"
 import Medusa, { FetchArgs, FetchInput } from "@medusajs/js-sdk"
 
 // Defaults to standard port for Medusa server

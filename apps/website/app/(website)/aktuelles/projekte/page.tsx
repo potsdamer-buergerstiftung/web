@@ -1,10 +1,10 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
-import ProjectGrid from "app/(website)/ProjectGrid";
-import ProjectGridLoading from "app/(website)/ProjectGridLoading";
+import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
+import PageTitle from "@/components/PageTitle";
+import ProjectGrid from "@/app/(website)/ProjectGrid";
+import ProjectGridLoading from "@/app/(website)/ProjectGridLoading";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import directus from "app/(website)/directus";
+import directus from "@/app/(website)/directus";
 import { readItems } from "@directus/sdk";
 import ProjectFilterTabs from "./ProjectFilterTabs";
 

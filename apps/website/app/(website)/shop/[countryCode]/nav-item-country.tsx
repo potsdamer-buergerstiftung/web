@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import HeaderNavItem from "@components/Header/HaderNavItem";
+import HeaderNavItem from "@/components/Header/HaderNavItem";
 
 interface HeaderNavItemLocalizedProps {
     index: number

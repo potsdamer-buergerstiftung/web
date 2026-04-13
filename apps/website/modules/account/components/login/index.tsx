@@ -1,8 +1,8 @@
-import { login } from "@lib/data/customer"
-import { LOGIN_VIEW } from "@modules/account/templates/login-template"
-import ErrorMessage from "@modules/checkout/components/error-message"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
-import Input from "@modules/common/components/input"
+import { login } from "@/lib/data/customer"
+import { LOGIN_VIEW } from "@/modules/account/templates/login-template"
+import ErrorMessage from "@/modules/checkout/components/error-message"
+import { SubmitButton } from "@/modules/checkout/components/submit-button"
+import Input from "@/modules/common/components/input"
 import { useActionState } from "react"
 
 type Props = {

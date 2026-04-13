@@ -2,12 +2,12 @@
 
 import React, { useEffect, useMemo, useActionState } from "react"
 
-import Input from "@modules/common/components/input"
-import NativeSelect from "@modules/common/components/native-select"
+import Input from "@/modules/common/components/input"
+import NativeSelect from "@/modules/common/components/native-select"
 
 import AccountInfo from "../account-info"
 import { HttpTypes } from "@medusajs/types"
-import { addCustomerAddress, updateCustomerAddress } from "@lib/data/customer"
+import { addCustomerAddress, updateCustomerAddress } from "@/lib/data/customer"
 
 type MyInformationProps = {
   customer: HttpTypes.StoreCustomer

@@ -16,7 +16,7 @@ import {
 } from "./state";
 import type { DonationFormConfig } from "./types";
 import DonationFormCheckboxGroups from "./DonationFormCheckboxGroups";
-import { trackUmami } from "@components/analytics/umami";
+import { trackUmami } from "@/components/analytics/umami";
 import {
   areAllRequiredCheckboxesChecked,
   getCheckboxGroupsForPlacement,

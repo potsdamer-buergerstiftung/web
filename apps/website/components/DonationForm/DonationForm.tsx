@@ -24,7 +24,7 @@ import DonationFormBankDetails from "./DonationFormBankDetails";
 import type { DonationFormConfig } from "./types";
 import { defaultDonationFormConfig } from "./presets";
 import { getDefaultCheckboxValues } from "./checkboxes";
-import { trackUmami } from "@components/analytics/umami";
+import { trackUmami } from "@/components/analytics/umami";
 
 function ProgressButton({
   isActive,

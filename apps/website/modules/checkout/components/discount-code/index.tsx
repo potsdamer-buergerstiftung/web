@@ -3,10 +3,10 @@
 import { Badge, Heading, Input, Label, Text } from "@medusajs/ui"
 import React from "react"
 
-import { applyPromotions } from "@lib/data/cart"
-import { convertToLocale } from "@lib/util/money"
+import { applyPromotions } from "@/lib/data/cart"
+import { convertToLocale } from "@/lib/util/money"
 import { HttpTypes } from "@medusajs/types"
-import Trash from "@modules/common/icons/trash"
+import Trash from "@/modules/common/icons/trash"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
 
