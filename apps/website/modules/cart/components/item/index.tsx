@@ -1,8 +1,10 @@
 "use client"
 
-import { Table, Text, clx } from "@medusajs/ui"
-import { updateLineItem } from "@/lib/data/cart"
+import { useState } from "react"
 import { HttpTypes } from "@medusajs/types"
+
+import { updateLineItem } from "@/lib/data/cart"
+import { cn } from "@/lib/utils"
 import CartItemSelect from "@/modules/cart/components/cart-item-select"
 import ErrorMessage from "@/modules/checkout/components/error-message"
 import DeleteButton from "@/modules/common/components/delete-button"
@@ -12,7 +14,6 @@ import LineItemUnitPrice from "@/modules/common/components/line-item-unit-price"
 import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 import Spinner from "@/modules/common/icons/spinner"
 import Thumbnail from "@/modules/products/components/thumbnail"
-import { useState } from "react"
 
 type ItemProps = {
   item: HttpTypes.StoreCartLineItem
@@ -45,13 +46,13 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
   const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
 
   return (
-    <Table.Row className="w-full" data-testid="product-row">
-      <Table.Cell className="!pl-0 p-4 w-24">
+    <article className="rounded-2xl border border-border bg-white p-4 shadow-sm">
+      <div className="flex gap-4">
         <LocalizedClientLink
           href={`/products/${item.product_handle}`}
-          className={clx("flex", {
+          className={cn("shrink-0", {
             "w-16": type === "preview",
-            "small:w-24 w-12": type === "full",
+            "w-24": type === "full",
           })}
         >
           <Thumbnail
@@ -60,84 +61,79 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
             size="square"
           />
         </LocalizedClientLink>
-      </Table.Cell>
 
-      <Table.Cell className="text-left">
-        <Text
-          className="txt-medium-plus text-ui-fg-base"
-          data-testid="product-title"
-        >
-          {item.product_title}
-        </Text>
-        <LineItemOptions variant={item.variant} data-testid="product-variant" />
-      </Table.Cell>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h3 className="text-base font-semibold text-foreground">
+                <LocalizedClientLink href={`/products/${item.product_handle}`} data-testid="product-link">
+                  {item.product_title}
+                </LocalizedClientLink>
+              </h3>
+              <LineItemOptions variant={item.variant} data-testid="product-variant" />
+            </div>
 
-      {type === "full" && (
-        <Table.Cell>
-          <div className="flex gap-2 items-center w-28">
-            <DeleteButton id={item.id} data-testid="product-delete-button" />
-            <CartItemSelect
-              value={item.quantity}
-              onChange={(value) => changeQuantity(parseInt(value.target.value))}
-              className="w-14 h-10 p-4"
-              data-testid="product-select-button"
-            >
-              {/* TODO: Update this with the v2 way of managing inventory */}
-              {Array.from(
-                {
-                  length: Math.min(maxQuantity, 10),
-                },
-                (_, i) => (
-                  <option value={i + 1} key={i}>
-                    {i + 1}
-                  </option>
-                )
+            <div className="shrink-0 text-right">
+              {type === "full" && (
+                <div className="mb-1 hidden sm:block">
+                  <LineItemUnitPrice
+                    item={item}
+                    style="tight"
+                    currencyCode={currencyCode}
+                  />
+                </div>
               )}
-
-              <option value={1} key={1}>
-                1
-              </option>
-            </CartItemSelect>
-            {updating && <Spinner />}
+              <LineItemPrice
+                item={item}
+                style="tight"
+                currencyCode={currencyCode}
+              />
+            </div>
           </div>
-          <ErrorMessage error={error} data-testid="product-error-message" />
-        </Table.Cell>
-      )}
 
-      {type === "full" && (
-        <Table.Cell className="hidden small:table-cell">
-          <LineItemUnitPrice
-            item={item}
-            style="tight"
-            currencyCode={currencyCode}
-          />
-        </Table.Cell>
-      )}
+          {type === "full" ? (
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <DeleteButton id={item.id} data-testid="product-delete-button">
+                Remove
+              </DeleteButton>
+              <CartItemSelect
+                value={item.quantity}
+                onChange={(value) => changeQuantity(parseInt(value.target.value))}
+                className="w-16"
+                data-testid="product-select-button"
+              >
+                {Array.from(
+                  {
+                    length: Math.min(maxQuantity, 10),
+                  },
+                  (_, i) => (
+                    <option value={i + 1} key={i}>
+                      {i + 1}
+                    </option>
+                  )
+                )}
 
-      <Table.Cell className="!pr-0">
-        <span
-          className={clx("!pr-0", {
-            "flex flex-col items-end h-full justify-center": type === "preview",
-          })}
-        >
-          {type === "preview" && (
-            <span className="flex gap-x-1 ">
-              <Text className="text-ui-fg-muted">{item.quantity}x </Text>
+                <option value={1} key={1}>
+                  1
+                </option>
+              </CartItemSelect>
+              {updating && <Spinner />}
+            </div>
+          ) : (
+            <div className="mt-4 flex items-center justify-between gap-4 text-sm text-muted-foreground">
+              <span>{item.quantity}x</span>
               <LineItemUnitPrice
                 item={item}
                 style="tight"
                 currencyCode={currencyCode}
               />
-            </span>
+            </div>
           )}
-          <LineItemPrice
-            item={item}
-            style="tight"
-            currencyCode={currencyCode}
-          />
-        </span>
-      </Table.Cell>
-    </Table.Row>
+
+          <ErrorMessage error={error} data-testid="product-error-message" />
+        </div>
+      </div>
+    </article>
   )
 }
 

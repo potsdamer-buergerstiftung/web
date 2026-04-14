@@ -1,6 +1,7 @@
-import { Container, clx } from "@medusajs/ui"
 import Image from "next/image"
 import React from "react"
+
+import { cn } from "@/lib/utils"
 
 import PlaceholderImage from "@/modules/common/icons/placeholder-image"
 
@@ -23,26 +24,33 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
+  const aspectRatio = isFeatured
+    ? "11 / 14"
+    : size === "square"
+      ? "1 / 1"
+      : "9 / 16"
+
+  const width =
+    size === "small"
+      ? 180
+      : size === "medium"
+        ? 290
+        : size === "large"
+          ? 440
+          : undefined
 
   return (
-    <Container
-      className={clx(
-        "relative w-full overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
+    <div
+      className={cn(
+        "relative w-full overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition-shadow duration-150 group-hover:shadow-md",
         className,
-        {
-          "aspect-[11/14]": isFeatured,
-          "aspect-[9/16]": !isFeatured && size !== "square",
-          "aspect-[1/1]": size === "square",
-          "w-[180px]": size === "small",
-          "w-[290px]": size === "medium",
-          "w-[440px]": size === "large",
-          "w-full": size === "full",
-        }
+        { "w-full": size === "full" }
       )}
+      style={{ aspectRatio, width }}
       data-testid={dataTestid}
     >
       <ImageOrPlaceholder image={initialImage} size={size} />
-    </Container>
+    </div>
   )
 }
 
@@ -61,7 +69,7 @@ const ImageOrPlaceholder = ({
       fill
     />
   ) : (
-    <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 flex h-full w-full items-center justify-center bg-muted/40">
       <PlaceholderImage size={size === "small" ? 16 : 24} />
     </div>
   )

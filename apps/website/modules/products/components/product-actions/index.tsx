@@ -3,7 +3,7 @@
 import { addToCart } from "@/lib/data/cart"
 import { useIntersection } from "@/lib/hooks/use-in-view"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { Button } from "@/components/ui/button"
 import Divider from "@/modules/common/components/divider"
 import OptionSelect from "@/modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
@@ -137,10 +137,10 @@ export default function ProductActions({
 
   return (
     <>
-      <div className="flex flex-col gap-y-2" ref={actionsRef}>
-        <div>
+      <div className="flex flex-col gap-6" ref={actionsRef}>
+        <div className="space-y-4">
           {(product.variants?.length ?? 0) > 1 && (
-            <div className="flex flex-col gap-y-4">
+            <div className="space-y-4">
               {(product.options || []).map((option) => {
                 return (
                   <div key={option.id}>
@@ -172,15 +172,16 @@ export default function ProductActions({
             !isValidVariant
           }
           variant="primary"
-          className="w-full h-10"
+          className="w-full"
+          size="lg"
           isLoading={isAdding}
           data-testid="add-product-button"
         >
           {!selectedVariant && !options
-            ? "Select variant"
+            ? "Variante auswählen"
             : !inStock || !isValidVariant
             ? "Out of stock"
-            : "Add to cart"}
+            : "In den Warenkorb"}
         </Button>
         <MobileActions
           product={product}

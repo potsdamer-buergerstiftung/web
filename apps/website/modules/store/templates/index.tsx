@@ -24,6 +24,7 @@ const StoreTemplate = ({
     <>
       <PageTitle
         title="Shop"
+        description="Sorgfältig ausgewählte Produkte, mit Liebe hergestellt und deine Möglichkeit, die Arbeit der Stiftung zu unterstützen."
         breadcrumb={
           <PageBreadcrumb>
             <PageBreadcrumbItem label="Shop" />

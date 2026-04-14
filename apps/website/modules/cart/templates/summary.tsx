@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Heading } from "@medusajs/ui"
+import { Button } from "@/components/ui/button"
 
 import CartTotals from "@/modules/common/components/cart-totals"
 import Divider from "@/modules/common/components/divider"
@@ -28,10 +28,10 @@ const Summary = ({ cart }: SummaryProps) => {
   const step = getCheckoutStep(cart)
 
   return (
-    <div className="flex flex-col gap-y-4">
-      <Heading level="h2" className="text-[2rem] leading-[2.75rem]">
-        Summary
-      </Heading>
+    <div className="flex flex-col gap-4">
+      <h2 className="font-header text-3xl font-bold text-foreground">
+        Zusammenfassung
+      </h2>
       <DiscountCode cart={cart} />
       <Divider />
       <CartTotals totals={cart} />
@@ -39,7 +39,9 @@ const Summary = ({ cart }: SummaryProps) => {
         href={"/checkout?step=" + step}
         data-testid="checkout-button"
       >
-        <Button className="w-full h-10">Go to checkout</Button>
+        <Button className="w-full" size="lg">
+          Zur Kasse gehen
+        </Button>
       </LocalizedClientLink>
     </div>
   )

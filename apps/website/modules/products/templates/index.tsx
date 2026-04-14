@@ -32,33 +32,37 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   return (
     <>
       <div
-        className="content-container  flex flex-col small:flex-row small:items-start py-6 relative"
+        className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-8 lg:grid lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,420px)] lg:items-start lg:px-6"
         data-testid="product-container"
       >
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
-          <ProductInfo product={product} />
-          <ProductTabs product={product} />
-        </div>
-        <div className="block w-full relative">
+        <div className="space-y-6">
           <ImageGallery images={images} />
+          <div className="rounded-3xl border border-border bg-white/90 p-5 shadow-sm lg:p-6">
+            <ProductTabs product={product} />
+          </div>
         </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
+        <aside className="space-y-6 lg:sticky lg:top-32">
+          <div className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
+            <ProductInfo product={product} />
+          </div>
           <ProductOnboardingCta />
-          <Suspense
-            fallback={
-              <ProductActions
-                disabled={true}
-                product={product}
-                region={region}
-              />
-            }
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
-        </div>
+          <div className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
+            <Suspense
+              fallback={
+                <ProductActions
+                  disabled={true}
+                  product={product}
+                  region={region}
+                />
+              }
+            >
+              <ProductActionsWrapper id={product.id} region={region} />
+            </Suspense>
+          </div>
+        </aside>
       </div>
       <div
-        className="content-container my-16 small:my-32"
+        className="mx-auto my-16 w-full max-w-7xl px-4 sm:my-24 lg:px-6"
         data-testid="related-products-container"
       >
         <Suspense fallback={<SkeletonRelatedProducts />}>

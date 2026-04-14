@@ -1,7 +1,10 @@
 import { deleteLineItem } from "@/lib/data/cart"
-import { Spinner, Trash } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
 import { useState } from "react"
+
+import { TrashIcon } from "@heroicons/react/24/outline"
+
+import { cn } from "@/lib/utils"
+import Spinner from "@/modules/common/icons/spinner"
 
 const DeleteButton = ({
   id,
@@ -23,16 +26,13 @@ const DeleteButton = ({
 
   return (
     <div
-      className={clx(
-        "flex items-center justify-between text-small-regular",
-        className
-      )}
+      className={cn("flex items-center justify-between text-sm", className)}
     >
       <button
-        className="flex gap-x-1 text-ui-fg-subtle hover:text-ui-fg-base cursor-pointer"
+        className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
         onClick={() => handleDelete(id)}
       >
-        {isDeleting ? <Spinner className="animate-spin" /> : <Trash />}
+        {isDeleting ? <Spinner size="14" /> : <TrashIcon className="size-4" />}
         <span>{children}</span>
       </button>
     </div>

@@ -1,5 +1,3 @@
-import { ChevronUpDown } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
 import {
   SelectHTMLAttributes,
   forwardRef,
@@ -8,6 +6,10 @@ import {
   useRef,
   useState,
 } from "react"
+
+import { ChevronUpDownIcon } from "@heroicons/react/24/solid"
+
+import { cn } from "@/lib/utils"
 
 export type NativeSelectProps = {
   placeholder?: string
@@ -41,11 +43,11 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
         <div
           onFocus={() => innerRef.current?.focus()}
           onBlur={() => innerRef.current?.blur()}
-          className={clx(
-            "relative flex items-center text-base-regular border border-ui-border-base bg-ui-bg-subtle rounded-md hover:bg-ui-bg-field-hover",
+          className={cn(
+            "relative flex w-full items-center rounded-md border border-border bg-white text-base transition-colors hover:border-primary/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10",
             className,
             {
-              "text-ui-fg-muted": isPlaceholder,
+              "text-muted-foreground": isPlaceholder,
             }
           )}
         >
@@ -53,7 +55,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             ref={innerRef}
             defaultValue={defaultValue}
             {...props}
-            className="appearance-none flex-1 bg-transparent border-none px-4 py-2.5 transition-colors duration-150 outline-none "
+            className="h-12 appearance-none flex-1 border-none bg-transparent px-4 py-2.5 outline-none"
           >
             <option disabled value="">
               {placeholder}
@@ -61,7 +63,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             {children}
           </select>
           <span className="absolute right-4 inset-y-0 flex items-center pointer-events-none ">
-            <ChevronUpDown />
+            <ChevronUpDownIcon className="size-4" />
           </span>
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client"
 
-import { IconBadge, clx } from "@medusajs/ui"
 import {
   SelectHTMLAttributes,
   forwardRef,
@@ -11,6 +10,7 @@ import {
 } from "react"
 
 import ChevronDown from "@/modules/common/icons/chevron-down"
+import { cn } from "@/lib/utils"
 
 type NativeSelectProps = {
   placeholder?: string
@@ -38,21 +38,21 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
 
     return (
       <div>
-        <IconBadge
+        <div
           onFocus={() => innerRef.current?.focus()}
           onBlur={() => innerRef.current?.blur()}
-          className={clx(
-            "relative flex items-center txt-compact-small border text-ui-fg-base group",
+          className={cn(
+            "relative flex h-12 w-16 items-center justify-center rounded-md border border-border bg-white text-sm text-foreground transition-colors hover:border-primary/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 group",
             className,
             {
-              "text-ui-fg-subtle": isPlaceholder,
+              "text-muted-foreground": isPlaceholder,
             }
           )}
         >
           <select
             ref={innerRef}
             {...props}
-            className="appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center"
+            className="h-full w-full appearance-none border-none bg-transparent px-4 text-center outline-none"
           >
             <option disabled value="">
               {placeholder}
@@ -62,7 +62,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
           <span className="absolute flex pointer-events-none justify-end w-8 group-hover:animate-pulse">
             <ChevronDown />
           </span>
-        </IconBadge>
+        </div>
       </div>
     )
   }

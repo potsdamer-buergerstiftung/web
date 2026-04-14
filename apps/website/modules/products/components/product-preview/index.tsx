@@ -1,4 +1,3 @@
-import { Text } from "@medusajs/ui"
 import { listProducts } from "@/lib/data/products"
 import { getProductPrice } from "@/lib/util/get-product-price"
 import { HttpTypes } from "@medusajs/types"
@@ -20,19 +19,19 @@ export default async function ProductPreview({
   })
 
   return (
-    <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div>
+    <LocalizedClientLink href={`/products/${product.handle}`} className="group block">
+      <div className="space-y-3">
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}
           size="full"
           isFeatured={isFeatured}
         />
-        <div className="flex txt-compact-medium mt-4 justify-between">
-          <p className="text-ui-fg-subtle" data-testid="product-title">
+        <div className="flex items-start justify-between gap-3">
+          <p className="text-sm font-medium text-foreground" data-testid="product-title">
             {product.title}
           </p>
-          <div className="flex items-center gap-x-2">
+          <div className="flex items-center gap-2 text-sm">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
         </div>
