@@ -132,19 +132,27 @@
 
 .altcha-main {
   padding: 0 !important;
+  @apply gap-2;
 }
 
 .altcha-checkbox {
-  width: 1rem !important;
+  @apply w-4!;
 }
 
 .altcha-checkbox input {
   border-radius: 0.125rem;
-  width: 1rem !important;
-  height: 1rem !important;
-  @apply bg-slate-100 border-slate-300;
+  @apply size-4!;
+  @apply border border-input! bg-transparent! dark:bg-input/30!;
+}
+
+.altcha-checkbox input:checked {
+  @apply bg-primary border-primary;
+}
+
+.altcha-checkbox input:focus-visible {
+  @apply outline-none ring-3 ring-ring/50 border-ring;
 }
 
 .altcha-label {
-  @apply text-sm font-medium;
+  @apply text-sm font-medium text-foreground;
 }
