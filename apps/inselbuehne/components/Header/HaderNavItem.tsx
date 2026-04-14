@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import { useAtom } from "jotai";
 import Link from "next/link";
 import { mobileMenuOpen } from "./state";
@@ -21,7 +20,8 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
   return (
     <Link
       href={href}
-      className="relative px-2 py-3 text-xl transition hover:text-green-500 lg:p-2 lg:text-lg"
+      aria-current={isActive ? "page" : undefined}
+      className="relative rounded-md px-2 py-3 text-xl outline-none transition hover:text-green-500 focus-visible:ring-2 focus-visible:ring-primary/40 lg:p-2 lg:text-lg"
       onClick={() => setOpen(false)}
     >
       {label}
