@@ -62,7 +62,7 @@ export function PurposeStep({
             <RadioGroup
               {...field}
               onValueChange={field.onChange}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              className="grid grid-cols-1 md:grid-cols-2"
             >
               <SingleItem
                 item={{
@@ -71,7 +71,7 @@ export function PurposeStep({
                   description:
                     "Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.",
                 }}
-                className="md:col-span-2 lg:col-span-3"
+                className="md:col-span-2 lg:col-span-2"
               />
               {items.map((item) => (
                 <SingleItem key={item.id} item={item} />

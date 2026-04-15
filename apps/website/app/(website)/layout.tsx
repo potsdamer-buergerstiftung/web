@@ -5,7 +5,7 @@ import HeaderSubNavItem from "@/components/Header/HeaderSubNavItem";
 import HeaderNav from "@/components/Header/HeaderNav";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
-import HeaderQuickDonateDrawer from "@/components/Header/HeaderQuickDonateDrawer";
+import HeaderQuickDonateDrawer from "@/components/Header/quick-donate-drawer";
 import { Metadata } from "next";
 import HeaderDonationButton from "@/components/Header/HeaderDonationButton";
 
