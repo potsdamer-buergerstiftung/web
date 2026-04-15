@@ -8,72 +8,76 @@ import {
   type SubmitHandler,
   type UseFormReturn,
 } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod/v4-mini";
 
 const donationFormSchema = z
   .object({
-    purposeId: z.string().min(1, "Bitte einen Verwendungszweck wählen."),
+    purposeId: z
+      .string()
+      .check(z.minLength(1, "Bitte einen Verwendungszweck wählen.")),
     interval: z.enum(["once", "monthly", "yearly"]),
     amountPreset: z.enum(["10.00", "50.00", "100.00", "custom"]),
-    amountCustom: z.string().optional(),
-    paymentMethodId: z.string().optional(),
+    amountCustom: z.optional(z.string()),
+    paymentMethodId: z.optional(z.string()),
     wantsReceipt: z.boolean(),
     isAnonymous: z.boolean(),
-    firstName: z.string().trim().optional(),
-    lastName: z.string().trim().optional(),
-    email: z.string().trim().optional(),
-    organisation: z.string().trim().optional(),
+    firstName: z.optional(z.string().check(z.trim())),
+    lastName: z.optional(z.string().check(z.trim())),
+    email: z.optional(z.email().check(z.trim())),
+    organisation: z.optional(z.string()),
   })
-  .superRefine((values, ctx) => {
-    if (values.amountPreset === "custom") {
-      const amount = Number.parseFloat(values.amountCustom ?? "");
-      if (Number.isNaN(amount) || amount < 1) {
+  .check(
+    z.superRefine((values, ctx) => {
+      if (values.amountPreset === "custom") {
+        const amount = Number.parseFloat(values.amountCustom ?? "");
+        if (Number.isNaN(amount) || amount < 1) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["amountCustom"],
+            message: "Bitte mindestens 1 Euro eingeben.",
+          });
+        }
+      }
+
+      if (values.isAnonymous) {
+        return;
+      }
+
+      if (!values.firstName?.trim()) {
         ctx.addIssue({
           code: "custom",
-          path: ["amountCustom"],
-          message: "Bitte mindestens 1 Euro eingeben.",
+          path: ["firstName"],
+          message: "Bitte den Vornamen angeben.",
         });
       }
-    }
 
-    if (values.isAnonymous) {
-      return;
-    }
+      if (!values.lastName?.trim()) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["lastName"],
+          message: "Bitte den Nachnamen angeben.",
+        });
+      }
 
-    if (!values.firstName?.trim()) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["firstName"],
-        message: "Bitte den Vornamen angeben.",
-      });
-    }
+      const emailValue = values.email?.trim();
+      if (!emailValue) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["email"],
+          message: "Bitte eine gueltige E-Mail angeben.",
+        });
+        return;
+      }
 
-    if (!values.lastName?.trim()) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["lastName"],
-        message: "Bitte den Nachnamen angeben.",
-      });
-    }
-
-    const emailValue = values.email?.trim();
-    if (!emailValue) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["email"],
-        message: "Bitte eine gueltige E-Mail angeben.",
-      });
-      return;
-    }
-
-    if (!z.email().safeParse(emailValue).success) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["email"],
-        message: "Bitte eine gueltige E-Mail angeben.",
-      });
-    }
-  });
+      if (!z.email().safeParse(emailValue).success) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["email"],
+          message: "Bitte eine gueltige E-Mail angeben.",
+        });
+      }
+    }),
+  );
 
 export type DonationFormValues = z.infer<typeof donationFormSchema>;
 export type DonationFormMethods = UseFormReturn<DonationFormValues>;
@@ -88,7 +92,9 @@ const DonationFormInstanceIdContext = createContext<string | undefined>(
 export function useDonationForm() {
   const donationForm = useContext(DonationFormContext);
   if (!donationForm) {
-    throw new Error("useDonationForm must be used within a DonationFormProvider");
+    throw new Error(
+      "useDonationForm must be used within a DonationFormProvider",
+    );
   }
   return donationForm;
 }

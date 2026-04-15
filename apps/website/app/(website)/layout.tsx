@@ -70,7 +70,6 @@ export default async function WebsiteLayout({
                 key="mitstiften"
               />,
               <HeaderNavItem label="Kontakt" href="/kontakt" key="kontakt" />,
-              <HeaderNavItem label="Shop" href="/shop" key="shop" />,
             ]}
           />
         }
