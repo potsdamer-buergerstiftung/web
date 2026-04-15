@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { quickDonateDrawerOpen } from "./state";
@@ -15,26 +15,42 @@ import {
   DonationFormContent,
   DonationFormActions,
 } from "../donation";
+import { Button } from "@/components/ui/button";
 
 export default function HeaderQuickDonateDrawer() {
   const [isQuickDonateDrawerOpen, setIsQuickDonateDrawerOpen] = useAtom(
     quickDonateDrawerOpen,
   );
 
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isQuickDonateDrawerOpen) return;
+
+    const rafId = requestAnimationFrame(() => {
+      closeButtonRef.current?.focus();
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [isQuickDonateDrawerOpen]);
+
   return (
     <Drawer
       open={isQuickDonateDrawerOpen}
       onOpenChange={setIsQuickDonateDrawerOpen}
       direction="right"
+      modal
     >
       <DonationProvider>
-        <DrawerContent
-          className="overflow-y-auto overflow-x-hidden data-[vaul-drawer-direction=right]:w-full lg:data-[vaul-drawer-direction=right]:w-2/3 xl:data-[vaul-drawer-direction=right]:w-2/3 data-[vaul-drawer-direction=right]:sm:max-w-none"
-        >
+        <DrawerContent className="grid h-svh min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden data-[vaul-drawer-direction=right]:w-full lg:data-[vaul-drawer-direction=right]:w-2/3 xl:data-[vaul-drawer-direction=right]:w-2/3 data-[vaul-drawer-direction=right]:sm:max-w-none lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)]">
           <DrawerTitle className="sr-only">Spenden</DrawerTitle>
           <div className="absolute top-4 right-4 z-10">
             <DrawerClose asChild>
-              <button className="block rounded-full p-4 ring-primary/40 transition hover:ring-1 bg-slate-100 dark:bg-slate-800">
+              <Button
+                size="icon-rounded-lg"
+                variant="light"
+                ref={closeButtonRef}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 text-slate-900"
@@ -49,36 +65,32 @@ export default function HeaderQuickDonateDrawer() {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </button>
+              </Button>
             </DrawerClose>
           </div>
-          <div className="overflow-y-auto p-8 lg:p-16">
-            <div>
-              <h4 className="text-sm font-semibold uppercase text-gray-600 text-center mb-3">
+          <div className="mx-auto h-full min-h-0 w-full max-w-5xl overflow-y-auto px-6 py-12 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-8 lg:px-8">
+            <div className="lg:col-span-2">
+              <h4 className="mb-3 text-center text-sm font-semibold uppercase text-gray-600">
                 Mitstiften & Unterstützen
               </h4>
-              <h1 className="text-center font-header text-4xl font-bold">
+              <h1 className="font-header text-center text-4xl font-bold">
                 Spenden
               </h1>
-              <p className="text-center max-w-xl mx-auto mt-4">
+              <p className="mx-auto mt-4 max-w-xl text-center">
                 Wir legen bei unseren Projekten großen Wert darauf, dass sie nachhaltig wirken. Das ist jedoch nur möglich, wenn wir langfristig planen und fördern können. Mit Deiner regelmäßigen und verlässlichen Unterstützung können wir diese wichtigen Voraussetzungen schaffen.
               </p>
             </div>
-            <div className="grid grid-cols-6 gap-6 mt-8 lg:mt-16">
-              <div className="col-span-6 md:col-span-2 lg:col-span-1">
-                <DonationFormProgress />
-              </div>
-              <div className="col-span-6 md:col-span-4 lg:col-span-5">
-                <DonationFormContent />
-              </div>
+            <DonationFormProgress className="shrink-0" />
+            <div className="min-w-0">
+              <DonationFormContent />
             </div>
           </div>
-          <DrawerFooter className="px-8 lg:px-16 gap-6 grid grid-cols-6">
+          <div className="mx-auto grid w-full max-w-5xl shrink-0 self-end gap-8 px-6 py-4 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-0 lg:px-8">
             <div />
-            <div className="col-span-3 md:col-span-1">
-              <DonationFormActions />
+            <div className="min-w-0">
+              <DonationFormActions className="justify-start" />
             </div>
-          </DrawerFooter>
+          </div>
         </DrawerContent>
       </DonationProvider>
     </Drawer>
