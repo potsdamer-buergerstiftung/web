@@ -79,9 +79,21 @@ async function DonationWrapper({
   const project = await projectPromise;
 
   return (
-    <div className="container mx-auto px-4 mb-10 mt-10">
+    <section className="container max-w-4xl mx-auto px-4 py-12">
+      <div className="mb-10">
+        <h4 className="mb-3 text-center text-sm font-semibold uppercase text-gray-600">
+          Mitstiften & Unterstützen
+        </h4>
+        <h1 className="font-header text-center text-4xl font-bold">Spenden</h1>
+        <p className="mx-auto mt-4 max-w-xl text-center">
+          Wir legen bei unseren Projekten großen Wert darauf, dass sie
+          nachhaltig wirken. Das ist jedoch nur möglich, wenn wir langfristig
+          planen und fördern können. Mit Deiner regelmäßigen und verlässlichen
+          Unterstützung können wir diese wichtigen Voraussetzungen schaffen.
+        </p>
+      </div>
       <DonationForm />
-    </div>
+    </section>
   );
 }
 
