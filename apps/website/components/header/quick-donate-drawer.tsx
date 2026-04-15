@@ -2,9 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
-import {
-  Drawer,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { quickDonateDrawerOpen } from "./state";
 import dynamic from "next/dynamic";
 
@@ -45,7 +43,10 @@ export default function HeaderQuickDonateDrawer() {
       direction="right"
       modal
     >
-      <QuickDonateForm closeButtonRef={closeButtonRef} />
+      <DrawerContent className="data-[vaul-drawer-direction=right]:w-full lg:data-[vaul-drawer-direction=right]:w-2/3 xl:data-[vaul-drawer-direction=right]:w-1/2 data-[vaul-drawer-direction=right]:sm:max-w-none">
+        <DrawerTitle className="sr-only">Spenden</DrawerTitle>
+        <QuickDonateForm closeButtonRef={closeButtonRef} />
+      </DrawerContent>
     </Drawer>
   );
 }

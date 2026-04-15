@@ -4,15 +4,17 @@ import {
   DonationFormProgress,
   DonationProvider,
 } from "@/modules/donation";
-import { DrawerClose, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
+import { DrawerClose } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { useRef, useEffect } from "react";
 
-export default function QuickDonateForm({ closeButtonRef }: { closeButtonRef: React.RefObject<HTMLButtonElement> }) {
+export default function QuickDonateForm({
+  closeButtonRef,
+}: {
+  closeButtonRef: React.RefObject<HTMLButtonElement>;
+}) {
   return (
     <DonationProvider>
-      <DrawerContent className="grid h-svh min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden data-[vaul-drawer-direction=right]:w-full lg:data-[vaul-drawer-direction=right]:w-2/3 xl:data-[vaul-drawer-direction=right]:w-1/2 data-[vaul-drawer-direction=right]:sm:max-w-none lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)]">
-        <DrawerTitle className="sr-only">Spenden</DrawerTitle>
+      <div className="h-svh min-h-0 grid grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)]">
         <div className="absolute top-4 right-4 z-10">
           <DrawerClose asChild>
             <Button size="icon-rounded-lg" variant="light" ref={closeButtonRef}>
@@ -60,7 +62,7 @@ export default function QuickDonateForm({ closeButtonRef }: { closeButtonRef: Re
             <DonationFormActions className="justify-start" />
           </div>
         </div>
-      </DrawerContent>
+      </div>
     </DonationProvider>
   );
 }
