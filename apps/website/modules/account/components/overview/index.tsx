@@ -1,14 +1,14 @@
-import { Container } from "@medusajs/ui"
+import { Container } from "@medusajs/ui";
 
-import ChevronDown from "@modules/common/icons/chevron-down"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { convertToLocale } from "@lib/util/money"
-import { HttpTypes } from "@medusajs/types"
+import ChevronDown from "@/modules/common/icons/chevron-down";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import { convertToLocale } from "@/lib/util/money";
+import { HttpTypes } from "@medusajs/types";
 
 type OverviewProps = {
-  customer: HttpTypes.StoreCustomer | null
-  orders: HttpTypes.StoreOrder[] | null
-}
+  customer: HttpTypes.StoreCustomer | null;
+  orders: HttpTypes.StoreOrder[] | null;
+};
 
 const Overview = ({ customer, orders }: OverviewProps) => {
   return (
@@ -16,10 +16,10 @@ const Overview = ({ customer, orders }: OverviewProps) => {
       <div className="hidden small:block">
         <div className="text-xl-semi flex justify-between items-center mb-4">
           <span data-testid="welcome-message" data-value={customer?.first_name}>
-            Hello {customer?.first_name}
+            Hallo {customer?.first_name}
           </span>
           <span className="text-small-regular text-ui-fg-base">
-            Signed in as:{" "}
+            Angemeldet als:{" "}
             <span
               className="font-semibold"
               data-testid="customer-email"
@@ -33,7 +33,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
           <div className="flex flex-col gap-y-4 h-full col-span-1 row-span-2 flex-1">
             <div className="flex items-start gap-x-16 mb-6">
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Profile</h3>
+                <h3 className="text-large-semi">Profil</h3>
                 <div className="flex items-end gap-x-2">
                   <span
                     className="text-3xl-semi leading-none"
@@ -43,13 +43,13 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                     {getProfileCompletion(customer)}%
                   </span>
                   <span className="uppercase text-base-regular text-ui-fg-subtle">
-                    Completed
+                    Abgeschlossen
                   </span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Addresses</h3>
+                <h3 className="text-large-semi">Adressen</h3>
                 <div className="flex items-end gap-x-2">
                   <span
                     className="text-3xl-semi leading-none"
@@ -59,7 +59,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                     {customer?.addresses?.length || 0}
                   </span>
                   <span className="uppercase text-base-regular text-ui-fg-subtle">
-                    Saved
+                    Gespeichert
                   </span>
                 </div>
               </div>
@@ -67,7 +67,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
 
             <div className="flex flex-col gap-y-4">
               <div className="flex items-center gap-x-2">
-                <h3 className="text-large-semi">Recent orders</h3>
+                <h3 className="text-large-semi">Letzte Bestellungen</h3>
               </div>
               <ul
                 className="flex flex-col gap-y-4"
@@ -86,12 +86,14 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                         >
                           <Container className="bg-gray-50 flex justify-between items-center p-4">
                             <div className="grid grid-cols-3 grid-rows-2 text-small-regular gap-x-4 flex-1">
-                              <span className="font-semibold">Date placed</span>
                               <span className="font-semibold">
-                                Order number
+                                Bestelldatum
                               </span>
                               <span className="font-semibold">
-                                Total amount
+                                Bestellnummer
+                              </span>
+                              <span className="font-semibold">
+                                Gesamtbetrag
                               </span>
                               <span data-testid="order-created-date">
                                 {new Date(order.created_at).toDateString()}
@@ -114,17 +116,19 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                               data-testid="open-order-button"
                             >
                               <span className="sr-only">
-                                Go to order #{order.display_id}
+                                Zur Bestellung #{order.display_id}
                               </span>
                               <ChevronDown className="-rotate-90" />
                             </button>
                           </Container>
                         </LocalizedClientLink>
                       </li>
-                    )
+                    );
                   })
                 ) : (
-                  <span data-testid="no-orders-message">No recent orders</span>
+                  <span data-testid="no-orders-message">
+                    Keine aktuellen Bestellungen
+                  </span>
                 )}
               </ul>
             </div>
@@ -132,37 +136,37 @@ const Overview = ({ customer, orders }: OverviewProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const getProfileCompletion = (customer: HttpTypes.StoreCustomer | null) => {
-  let count = 0
+  let count = 0;
 
   if (!customer) {
-    return 0
+    return 0;
   }
 
   if (customer.email) {
-    count++
+    count++;
   }
 
   if (customer.first_name && customer.last_name) {
-    count++
+    count++;
   }
 
   if (customer.phone) {
-    count++
+    count++;
   }
 
   const billingAddress = customer.addresses?.find(
-    (addr) => addr.is_default_billing
-  )
+    (addr) => addr.is_default_billing,
+  );
 
   if (billingAddress) {
-    count++
+    count++;
   }
 
-  return (count / 4) * 100
-}
+  return (count / 4) * 100;
+};
 
-export default Overview
+export default Overview;

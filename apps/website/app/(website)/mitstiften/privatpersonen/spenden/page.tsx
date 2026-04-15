@@ -1,11 +1,37 @@
-import DonationForm from "@components/DonationForm/DonationForm";
-import { privateDonationFormConfig } from "@components/DonationForm/presets";
+import { DonationForm } from "@/modules/donation";
+import PageTitle from "@/components/page-title";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
 
-
-export default function PrivatDonationPage() {
-    return (
-        <div className="container px-4 mx-auto pt-28 pb-10">
-            <DonationForm config={privateDonationFormConfig} />
-        </div>
-    )
+export default function FreundeskreisJoinPage() {
+  return (
+    <>
+      <PageTitle
+        title="Spenden"
+        isCompact={true}
+        isCentered={true}
+        description={
+          <p className="max-w-4xl">
+            Wir legen bei unseren Projekten großen Wert darauf, dass sie
+            nachhaltig wirken. Das ist jedoch nur möglich, wenn wir langfristig
+            planen und fördern können. Mit Deiner regelmäßigen und verlässlichen
+            Unterstützung können wir diese wichtigen Voraussetzungen schaffen.
+          </p>
+        }
+        breadcrumb={
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Spenden" />
+          </PageBreadcrumb>
+        }
+      />
+      <section className="container max-w-4xl mx-auto px-4 pb-16 mt-10">
+        <DonationForm />
+      </section>
+    </>
+  );
 }

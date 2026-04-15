@@ -1,58 +1,21 @@
-## Project Overview
+# Potsdamer Bürgerstiftung: Web Projects
 
-This monorepo contains multiple applications and packages:
+This monorepo contains all public projects representing the Bürgerstiftung Potsdam on the web.
 
-- **Website** - Main public website with donation functionality
-- **Inselbühne** - Event management and ticketing platform
-- **Links** - URL shortener service
-- **UI Package** - Shared React components
+- **Website** - Main public website
+- **Inselbühne** - Public website for our event location
+- **Links** - URL shortener service and QR-Code-Redirection tool to prevent QR-Codes from going "dead"
+- **Portal** - Custom Directus instance and build modified to fit our needs
+- **Shop** - Work in progress integration of MedusaJS
 
-## Technical Stack
+## Contributing
 
-### Key Dependencies
-
-#### Frontend
-
-- **React**: 19
-- **Next.js**: 16.2.0
-- **Tailwind CSS**: 4.1.17 with plugins:
-  - `@tailwindcss/typography`
-  - `@tailwindcss/aspect-ratio`
-  - `@tailwindcss/forms`
-- **UI Components**: Headless UI, Heroicons
-- **Responsive Layout**: react-responsive-masonry
-
-#### Backend & APIs
-
-- **Wix SDK**: Content management and data
-- **Directus SDK**: Headless CMS integration
-- **Mollie API**: Payment processing
-- **Frappe SDK**: ERP integration
-- **GraphQL**: Data fetching
-
-#### Development Tools
-
-- **ESLint**: Code linting with custom config
-- **Prettier**: Code formatting
-- **TypeScript**: Static type checking
-- **PostCSS**: CSS processing
-
-## Project Structure
-
-```
-buergerstiftung/
-├── apps/
-│   ├── website/          # Main public website (port 3000)
-│   ├── inselbuehne/      # Event platform (port 3001)
-│   └── links/            # URL shortener (port 3002)
-├── packages/
-│   ├── ui/               # Shared React components
-│   ├── eslint-config-custom/  # Shared ESLint config
-│   └── tsconfig/         # Shared TypeScript config
-└── turbo.json           # Turborepo configuration
-```
+This, as the work of the Bürgerstiftung in general, is mostly done in our free time. We are always open for useful contributions. Please contact us to get access to our test environments and API-keys if you want to help us improving these projects.
 
 ## Getting Started
+If you have done things with React before, you're probably familiar with this setup. If not, just get in contact with us. We will support you on setting things up.
+
+You will find a .env.example in each project. Rename this file to .env and setup the keys you got from us. These keys to our backend services are all pointing to test environments, so you can just do whatever you want and test things without braking anything.
 
 ### Prerequisites
 
@@ -62,69 +25,18 @@ buergerstiftung/
 ### Installation
 
 ```bash
-# Install dependencies
 pnpm install
-
-# Start development servers
-pnpm dev
 ```
 
 ### Development Commands
 
 ```bash
-# Start all applications in development mode
 pnpm dev
-
-# Build all applications
 pnpm build
-
-# Lint all packages
 pnpm lint
-
-# Format code
 pnpm format
 ```
 
-### Environment Variables
+You can filter by specific projects by passing the --filter=**project** flag to every command, if you don't want to run them in parallel.
 
-The following environment variables are required:
 
-- `MOLLIE_API_KEY` - Payment processing
-- `WIX_API_KEY` - Content management
-- `NEXT_PUBLIC_INSTAGRAM_TOKEN` - Social media integration
-- `DIRECTUS_TOKEN`- Directus SDK API-Token: See [this site](https://learndirectus.com/how-to-create-an-api-key/) on how to generate one and **do not forget to hit the save button in the upper right corner!**
-
-## Applications
-
-### Website (Port 3000)
-
-Main public website featuring:
-
-- Donation system with Mollie integration
-- Project showcase
-- News and blog
-- Event listings
-- Contact forms
-- Visual editing with Directus
-
-### Inselbühne (Port 3001)
-
-Event management platform with:
-
-- Event creation and management
-- Ticket sales
-- QR code scanning
-- Event listings
-- Wix integration for content
-
-### Links (Port 3002)
-
-URL shortener service built with Nitro (Nuxt's server engine):
-
-- Short URL generation
-- Redirect handling
-- Analytics tracking
-
-## License
-
-Private project - All rights reserved

@@ -1,18 +1,18 @@
-import { Dialog, Transition } from "@headlessui/react"
-import { clx } from "@medusajs/ui"
-import React, { Fragment } from "react"
+import { Dialog, Transition } from "@headlessui/react";
+import { clx } from "@medusajs/ui";
+import React, { Fragment } from "react";
 
-import { ModalProvider, useModal } from "@lib/context/modal-context"
-import X from "@modules/common/icons/x"
+import { ModalProvider, useModal } from "@/lib/context/modal-context";
+import X from "@/modules/common/icons/x";
 
 type ModalProps = {
-  isOpen: boolean
-  close: () => void
-  size?: "small" | "medium" | "large"
-  search?: boolean
-  children: React.ReactNode
-  'data-testid'?: string
-}
+  isOpen: boolean;
+  close: () => void;
+  size?: "small" | "medium" | "large";
+  search?: boolean;
+  children: React.ReactNode;
+  "data-testid"?: string;
+};
 
 const Modal = ({
   isOpen,
@@ -20,7 +20,7 @@ const Modal = ({
   size = "medium",
   search = false,
   children,
-  'data-testid': dataTestId
+  "data-testid": dataTestId,
 }: ModalProps) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -44,7 +44,7 @@ const Modal = ({
               {
                 "items-center": !search,
                 "items-start": search,
-              }
+              },
             )}
           >
             <Transition.Child
@@ -66,7 +66,7 @@ const Modal = ({
                     "max-w-3xl": size === "large",
                     "bg-transparent shadow-none": search,
                     "bg-white shadow-xl border rounded-rounded": !search,
-                  }
+                  },
                 )}
               >
                 <ModalProvider close={close}>{children}</ModalProvider>
@@ -76,11 +76,11 @@ const Modal = ({
         </div>
       </Dialog>
     </Transition>
-  )
-}
+  );
+};
 
 const Title: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { close } = useModal()
+  const { close } = useModal();
 
   return (
     <Dialog.Title className="flex items-center justify-between">
@@ -91,28 +91,30 @@ const Title: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </button>
       </div>
     </Dialog.Title>
-  )
-}
+  );
+};
 
 const Description: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Dialog.Description className="flex text-small-regular text-ui-fg-base items-center justify-center pt-2 pb-4 h-full">
       {children}
     </Dialog.Description>
-  )
-}
+  );
+};
 
 const Body: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div className="flex justify-center">{children}</div>
-}
+  return <div className="flex justify-center">{children}</div>;
+};
 
 const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div className="flex items-center justify-end gap-x-4">{children}</div>
-}
+  return (
+    <div className="flex items-center justify-end gap-x-4">{children}</div>
+  );
+};
 
-Modal.Title = Title
-Modal.Description = Description
-Modal.Body = Body
-Modal.Footer = Footer
+Modal.Title = Title;
+Modal.Description = Description;
+Modal.Body = Body;
+Modal.Footer = Footer;
 
-export default Modal
+export default Modal;

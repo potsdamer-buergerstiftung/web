@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Listbox,
@@ -6,36 +6,36 @@ import {
   ListboxOption,
   ListboxOptions,
   Transition,
-} from "@headlessui/react"
-import { Fragment, useEffect, useMemo, useState } from "react"
-import ReactCountryFlag from "react-country-flag"
+} from "@headlessui/react";
+import { Fragment, useEffect, useMemo, useState } from "react";
+import ReactCountryFlag from "react-country-flag";
 
-import { StateType } from "@lib/hooks/use-toggle-state"
-import { useParams, usePathname } from "next/navigation"
-import { updateRegion } from "@lib/data/cart"
-import { HttpTypes } from "@medusajs/types"
+import { StateType } from "@/lib/hooks/use-toggle-state";
+import { useParams, usePathname } from "next/navigation";
+import { updateRegion } from "@/lib/data/cart";
+import { HttpTypes } from "@medusajs/types";
 
 type CountryOption = {
-  country: string
-  region: string
-  label: string
-}
+  country: string;
+  region: string;
+  label: string;
+};
 
 type CountrySelectProps = {
-  toggleState: StateType
-  regions: HttpTypes.StoreRegion[]
-}
+  toggleState: StateType;
+  regions: HttpTypes.StoreRegion[];
+};
 
 const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
   const [current, setCurrent] = useState<
     | { country: string | undefined; region: string; label: string | undefined }
     | undefined
-  >(undefined)
+  >(undefined);
 
-  const { countryCode } = useParams()
-  const currentPath = usePathname().split(`/shop/${countryCode}`)[1]
+  const { countryCode } = useParams();
+  const currentPath = usePathname().split(`/shop/${countryCode}`)[1];
 
-  const { state, close } = toggleState
+  const { state, close } = toggleState;
 
   const options = useMemo(() => {
     return regions
@@ -44,23 +44,23 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
           country: c.iso_2,
           region: r.id,
           label: c.display_name,
-        }))
+        }));
       })
       .flat()
-      .sort((a, b) => (a?.label ?? "").localeCompare(b?.label ?? ""))
-  }, [regions])
+      .sort((a, b) => (a?.label ?? "").localeCompare(b?.label ?? ""));
+  }, [regions]);
 
   useEffect(() => {
     if (countryCode) {
-      const option = options?.find((o) => o?.country === countryCode)
-      setCurrent(option)
+      const option = options?.find((o) => o?.country === countryCode);
+      setCurrent(option);
     }
-  }, [options, countryCode])
+  }, [options, countryCode]);
 
   const handleChange = (option: CountryOption) => {
-    updateRegion(option.country, currentPath)
-    close()
-  }
+    updateRegion(option.country, currentPath);
+    close();
+  };
 
   return (
     <div>
@@ -122,14 +122,14 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
                     />{" "}
                     {o?.label}
                   </ListboxOption>
-                )
+                );
               })}
             </ListboxOptions>
           </Transition>
         </div>
       </Listbox>
     </div>
-  )
-}
+  );
+};
 
-export default CountrySelect
+export default CountrySelect;

@@ -1,12 +1,12 @@
-import { isEmpty } from "./isEmpty"
+import { isEmpty } from "./isEmpty";
 
 type ConvertToLocaleParams = {
-  amount: number
-  currency_code: string
-  minimumFractionDigits?: number
-  maximumFractionDigits?: number
-  locale?: string
-}
+  amount: number;
+  currency_code: string;
+  minimumFractionDigits?: number;
+  maximumFractionDigits?: number;
+  locale?: string;
+};
 
 export const convertToLocale = ({
   amount,
@@ -22,5 +22,5 @@ export const convertToLocale = ({
         minimumFractionDigits,
         maximumFractionDigits,
       }).format(amount)
-    : amount.toString()
-}
+    : amount.toString();
+};

@@ -1,15 +1,16 @@
-import { HttpTypes } from "@medusajs/types"
-import { clx } from "@medusajs/ui"
-import React from "react"
+import { HttpTypes } from "@medusajs/types";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import React from "react";
 
 type OptionSelectProps = {
-  option: HttpTypes.StoreProductOption
-  current: string | undefined
-  updateOption: (title: string, value: string) => void
-  title: string
-  disabled: boolean
-  "data-testid"?: string
-}
+  option: HttpTypes.StoreProductOption;
+  current: string | undefined;
+  updateOption: (title: string, value: string) => void;
+  title: string;
+  disabled: boolean;
+  "data-testid"?: string;
+};
 
 const OptionSelect: React.FC<OptionSelectProps> = ({
   option,
@@ -19,38 +20,33 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
   "data-testid": dataTestId,
   disabled,
 }) => {
-  const filteredOptions = (option.values ?? []).map((v) => v.value)
+  const filteredOptions = (option.values ?? []).map((v) => v.value);
 
   return (
-    <div className="flex flex-col gap-y-3">
-      <span className="text-sm">Select {title}</span>
-      <div
-        className="flex flex-wrap justify-between gap-2"
-        data-testid={dataTestId}
-      >
+    <div className="flex flex-col gap-3">
+      <span className="text-sm font-medium text-foreground">
+        {title} auswählen
+      </span>
+      <div className="flex flex-wrap gap-2" data-testid={dataTestId}>
         {filteredOptions.map((v) => {
           return (
-            <button
+            <Button
+              type="button"
               onClick={() => updateOption(option.id, v)}
               key={v}
-              className={clx(
-                "border-ui-border-base bg-ui-bg-subtle border text-small-regular h-10 rounded-rounded p-2 flex-1 ",
-                {
-                  "border-ui-border-interactive": v === current,
-                  "hover:shadow-elevation-card-rest transition-shadow ease-in-out duration-150":
-                    v !== current,
-                }
-              )}
+              variant={v === current ? "default" : "secondary"}
+              size="sm"
+              className={cn("flex-1", v !== current && "shadow-none")}
               disabled={disabled}
               data-testid="option-button"
             >
               {v}
-            </button>
-          )
+            </Button>
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OptionSelect
+export default OptionSelect;

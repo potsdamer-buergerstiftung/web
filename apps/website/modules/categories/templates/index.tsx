@@ -1,13 +1,13 @@
-import { notFound } from "next/navigation"
-import { Suspense } from "react"
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
-import InteractiveLink from "@modules/common/components/interactive-link"
-import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
-import RefinementList from "@modules/store/components/refinement-list"
-import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-import PaginatedProducts from "@modules/store/templates/paginated-products"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { HttpTypes } from "@medusajs/types"
+import InteractiveLink from "@/modules/common/components/interactive-link";
+import SkeletonProductGrid from "@/modules/skeletons/templates/skeleton-product-grid";
+import RefinementList from "@/modules/store/components/refinement-list";
+import { SortOptions } from "@/modules/store/components/refinement-list/sort-products";
+import PaginatedProducts from "@/modules/store/templates/paginated-products";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import { HttpTypes } from "@medusajs/types";
 
 export default function CategoryTemplate({
   category,
@@ -15,26 +15,26 @@ export default function CategoryTemplate({
   page,
   countryCode,
 }: {
-  category: HttpTypes.StoreProductCategory
-  sortBy?: SortOptions
-  page?: string
-  countryCode: string
+  category: HttpTypes.StoreProductCategory;
+  sortBy?: SortOptions;
+  page?: string;
+  countryCode: string;
 }) {
-  const pageNumber = page ? parseInt(page) : 1
-  const sort = sortBy || "created_at"
+  const pageNumber = page ? parseInt(page) : 1;
+  const sort = sortBy || "created_at";
 
-  if (!category || !countryCode) notFound()
+  if (!category || !countryCode) notFound();
 
-  const parents = [] as HttpTypes.StoreProductCategory[]
+  const parents = [] as HttpTypes.StoreProductCategory[];
 
   const getParents = (category: HttpTypes.StoreProductCategory) => {
     if (category.parent_category) {
-      parents.push(category.parent_category)
-      getParents(category.parent_category)
+      parents.push(category.parent_category);
+      getParents(category.parent_category);
     }
-  }
+  };
 
-  getParents(category)
+  getParents(category);
 
   return (
     <div
@@ -93,5 +93,5 @@ export default function CategoryTemplate({
         </Suspense>
       </div>
     </div>
-  )
+  );
 }

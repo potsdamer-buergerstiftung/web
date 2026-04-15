@@ -1,6 +1,10 @@
 import Image from "next/image";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
+import PageTitle from "@/components/page-title";
 
 interface EventProps {
   promise: Promise<any>;
@@ -13,9 +17,9 @@ export default async function Event({ promise }: EventProps) {
 
   // Directus stores times in Berlin timezone but without timezone indicator
   // Parse as local time without timezone conversion
-  const [datePart, timePart] = event.start.split('T');
-  const [year, month, day] = datePart.split('-').map(Number);
-  const [hour, minute] = timePart.split(':').map(Number);
+  const [datePart, timePart] = event.start.split("T");
+  const [year, month, day] = datePart.split("-").map(Number);
+  const [hour, minute] = timePart.split(":").map(Number);
   const start = new Date(year, month - 1, day, hour, minute);
 
   return (
@@ -38,10 +42,18 @@ export default async function Event({ promise }: EventProps) {
           </PageBreadcrumb>
         }
         description={
-            <div>
-                <p>{event.summary}</p>
-                <h5 className="font-bold text-lg mt-2">{start.toLocaleDateString("de", { weekday: "long", day:"2-digit", month: "long", hour: "numeric", minute: "2-digit" })}</h5>
-            </div>
+          <div>
+            <p>{event.summary}</p>
+            <h5 className="font-bold text-lg mt-2">
+              {start.toLocaleDateString("de", {
+                weekday: "long",
+                day: "2-digit",
+                month: "long",
+                hour: "numeric",
+                minute: "2-digit",
+              })}
+            </h5>
+          </div>
         }
         isCompact
       />

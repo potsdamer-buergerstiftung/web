@@ -1,8 +1,12 @@
 import Image from "next/image";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
+import PageTitle from "@/components/page-title";
 import Disclosure from "./Disclosure";
-import ParallaxImage from "@components/ParallaxImage";
+import ParallaxImage from "./parallax-image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -110,7 +114,7 @@ export default function AboutPage() {
           <div className="col-span-6 md:col-span-2 xl:col-span-3">
             <Image
               src="https://portal.potsdamer-buergerstiftung.org/assets/7d0a648b-c484-4e4e-9d69-f0230f7278bd"
-              quality="50"
+              quality="30"
               width="1800"
               height="800"
               className="w-full h-[20rem] object-cover mt-10 md:mt-24"

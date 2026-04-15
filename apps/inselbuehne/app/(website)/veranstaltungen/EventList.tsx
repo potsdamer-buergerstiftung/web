@@ -24,8 +24,8 @@ export default async function EventList({ promise }: EventListProps) {
           start={
             new Date(
               new Date(event.start).setHours(
-                new Date(event.start).getHours() - 2
-              )
+                new Date(event.start).getHours() - 2,
+              ),
             )
           }
           summary={event.summary}

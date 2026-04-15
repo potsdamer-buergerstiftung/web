@@ -1,4 +1,4 @@
-import SkeletonCartTotals from "@modules/skeletons/components/skeleton-cart-totals"
+import SkeletonCartTotals from "@/modules/skeletons/components/skeleton-cart-totals";
 
 const SkeletonOrderInformation = () => {
   return (
@@ -30,7 +30,7 @@ const SkeletonOrderInformation = () => {
         <SkeletonCartTotals />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonOrderInformation
+export default SkeletonOrderInformation;

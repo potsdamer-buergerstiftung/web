@@ -1,6 +1,6 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "$schema": "https://turborepo.org/schema.json",
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", ".medusa/**"]
@@ -8,13 +8,13 @@
     "lint": {
       "outputs": []
     },
+    "dev": {
+      "cache": false
+    },
     "website#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["MOLLIE_API_KEY", "WIX_API_KEY", "NEXT_PUBLIC_INSTAGRAM_TOKEN"]
-    },
-    "dev": {
-      "cache": false
+      "env": ["DIRECTUS_TOKEN", "MOLLIE_API_KEY", "ALTCHA_HMAC_KEY"]
     }
   }
 }

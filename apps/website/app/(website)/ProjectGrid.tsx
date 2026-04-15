@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import ProjectCard from "@components/ProjectCard";
+import ProjectCard from "@/components/project/card";
 
 export const revalidate = 120;
 
@@ -31,7 +31,7 @@ export default async function ProjectGrid({
             "col-span-6",
             "lg:col-span-3",
             indexToSpan(i) * 2 == 2 && "xl:col-span-2",
-            indexToSpan(i) * 2 == 4 && "xl:col-span-4"
+            indexToSpan(i) * 2 == 4 && "xl:col-span-4",
           )}
         >
           <ProjectCard

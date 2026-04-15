@@ -1,64 +1,64 @@
-"use client"
+"use client";
 
 import React, { useEffect, useActionState } from "react";
 
-import Input from "@modules/common/components/input"
+import Input from "@/modules/common/components/input";
 
-import AccountInfo from "../account-info"
-import { HttpTypes } from "@medusajs/types"
-// import { updateCustomer } from "@lib/data/customer"
+import AccountInfo from "../account-info";
+import { HttpTypes } from "@medusajs/types";
+// import { updateCustomer } from "@/lib/data/customer"
 
 type MyInformationProps = {
-  customer: HttpTypes.StoreCustomer
-}
+  customer: HttpTypes.StoreCustomer;
+};
 
 const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
-  const [successState, setSuccessState] = React.useState(false)
+  const [successState, setSuccessState] = React.useState(false);
 
   // TODO: It seems we don't support updating emails now?
   const updateCustomerEmail = (
     _currentState: Record<string, unknown>,
-    formData: FormData
+    formData: FormData,
   ) => {
     const customer = {
       email: formData.get("email") as string,
-    }
+    };
 
     try {
       // await updateCustomer(customer)
-      return { success: true, error: null }
+      return { success: true, error: null };
     } catch (error: any) {
-      return { success: false, error: error.toString() }
+      return { success: false, error: error.toString() };
     }
-  }
+  };
 
   const [state, formAction] = useActionState(updateCustomerEmail, {
     error: false,
     success: false,
-  })
+  });
 
   const clearState = () => {
-    setSuccessState(false)
-  }
+    setSuccessState(false);
+  };
 
   useEffect(() => {
-    setSuccessState(state.success)
-  }, [state])
+    setSuccessState(state.success as boolean);
+  }, [state]);
 
   return (
     <form action={formAction} className="w-full">
       <AccountInfo
-        label="Email"
+        label="E-Mail"
         currentInfo={`${customer.email}`}
         isSuccess={successState}
         isError={!!state.error}
-        errorMessage={state.error}
+        errorMessage={state.error as string | null}
         clearState={clearState}
         data-testid="account-email-editor"
       >
         <div className="grid grid-cols-1 gap-y-2">
           <Input
-            label="Email"
+            label="E-Mail"
             name="email"
             type="email"
             autoComplete="email"
@@ -69,7 +69,7 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
         </div>
       </AccountInfo>
     </form>
-  )
-}
+  );
+};
 
-export default ProfileEmail
+export default ProfileEmail;

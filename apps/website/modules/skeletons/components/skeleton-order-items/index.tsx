@@ -37,7 +37,7 @@ const SkeletonOrderItems = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonOrderItems
+export default SkeletonOrderItems;

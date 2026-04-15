@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useParams } from "next/navigation"
-import React from "react"
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import React from "react";
 
 /**
  * Use this component to create a Next.js `<Link />` that persists the current country code in the url,
@@ -13,20 +13,20 @@ const LocalizedClientLink = ({
   href,
   ...props
 }: {
-  children?: React.ReactNode
-  href: string
-  className?: string
-  onClick?: () => void
-  passHref?: true
-  [x: string]: any
+  children?: React.ReactNode;
+  href: string;
+  className?: string;
+  onClick?: () => void;
+  passHref?: true;
+  [x: string]: any;
 }) => {
-  const { countryCode } = useParams()
+  const { countryCode } = useParams();
 
   return (
     <Link href={`/shop/${countryCode}${href}`} {...props}>
       {children}
     </Link>
-  )
-}
+  );
+};
 
-export default LocalizedClientLink
+export default LocalizedClientLink;

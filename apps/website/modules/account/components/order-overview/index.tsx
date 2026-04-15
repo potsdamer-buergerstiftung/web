@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@medusajs/ui"
+import { Button } from "@medusajs/ui";
 
-import OrderCard from "../order-card"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { HttpTypes } from "@medusajs/types"
+import OrderCard from "../order-card";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import { HttpTypes } from "@medusajs/types";
 
 const OrderOverview = ({ orders }: { orders: HttpTypes.StoreOrder[] }) => {
   if (orders?.length) {
@@ -19,7 +19,7 @@ const OrderOverview = ({ orders }: { orders: HttpTypes.StoreOrder[] }) => {
           </div>
         ))}
       </div>
-    )
+    );
   }
 
   return (
@@ -27,19 +27,19 @@ const OrderOverview = ({ orders }: { orders: HttpTypes.StoreOrder[] }) => {
       className="w-full flex flex-col items-center gap-y-4"
       data-testid="no-orders-container"
     >
-      <h2 className="text-large-semi">Nothing to see here</h2>
+      <h2 className="text-large-semi">Hier gibt es nichts zu sehen</h2>
       <p className="text-base-regular">
-        You don&apos;t have any orders yet, let us change that {":)"}
+        Sie haben noch keine Bestellungen, lassen Sie uns das ändern {":)"}
       </p>
       <div className="mt-4">
         <LocalizedClientLink href="/" passHref>
           <Button data-testid="continue-shopping-button">
-            Continue shopping
+            Weiter einkaufen
           </Button>
         </LocalizedClientLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrderOverview
+export default OrderOverview;

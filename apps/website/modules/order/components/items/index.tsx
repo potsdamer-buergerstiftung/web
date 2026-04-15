@@ -1,17 +1,17 @@
-import repeat from "@lib/util/repeat"
-import { HttpTypes } from "@medusajs/types"
-import { Table } from "@medusajs/ui"
+import repeat from "@/lib/util/repeat";
+import { HttpTypes } from "@medusajs/types";
+import { Table } from "@medusajs/ui";
 
-import Divider from "@modules/common/components/divider"
-import Item from "@modules/order/components/item"
-import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
+import Divider from "@/modules/common/components/divider";
+import Item from "@/modules/order/components/item";
+import SkeletonLineItem from "@/modules/skeletons/components/skeleton-line-item";
 
 type ItemsProps = {
-  order: HttpTypes.StoreOrder
-}
+  order: HttpTypes.StoreOrder;
+};
 
 const Items = ({ order }: ItemsProps) => {
-  const items = order.items
+  const items = order.items;
 
   return (
     <div className="flex flex-col">
@@ -21,7 +21,7 @@ const Items = ({ order }: ItemsProps) => {
           {items?.length
             ? items
                 .sort((a, b) => {
-                  return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
+                  return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1;
                 })
                 .map((item) => {
                   return (
@@ -30,15 +30,15 @@ const Items = ({ order }: ItemsProps) => {
                       item={item}
                       currencyCode={order.currency_code}
                     />
-                  )
+                  );
                 })
             : repeat(5).map((i) => {
-                return <SkeletonLineItem key={i} />
+                return <SkeletonLineItem key={i} />;
               })}
         </Table.Body>
       </Table>
     </div>
-  )
-}
+  );
+};
 
-export default Items
+export default Items;

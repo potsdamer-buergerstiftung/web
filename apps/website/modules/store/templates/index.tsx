@@ -1,29 +1,33 @@
-import { Suspense } from "react"
+import { Suspense } from "react";
 
-import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
-import RefinementList from "@modules/store/components/refinement-list"
-import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
+import SkeletonProductGrid from "@/modules/skeletons/templates/skeleton-product-grid";
+import RefinementList from "@/modules/store/components/refinement-list";
+import { SortOptions } from "@/modules/store/components/refinement-list/sort-products";
 
-import PaginatedProducts from "./paginated-products"
-import PageTitle from "@components/PageTitle"
-import { PageBreadcrumb, PageBreadcrumbItem } from "@components/PageBreadcrumb"
+import PaginatedProducts from "./paginated-products";
+import PageTitle from "@/components/page-title";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+} from "@/components/page-breadcrumb";
 
 const StoreTemplate = ({
   sortBy,
   page,
   countryCode,
 }: {
-  sortBy?: SortOptions
-  page?: string
-  countryCode: string
+  sortBy?: SortOptions;
+  page?: string;
+  countryCode: string;
 }) => {
-  const pageNumber = page ? parseInt(page) : 1
-  const sort = sortBy || "created_at"
+  const pageNumber = page ? parseInt(page) : 1;
+  const sort = sortBy || "created_at";
 
   return (
     <>
       <PageTitle
         title="Shop"
+        description="Sorgfältig ausgewählte Produkte, mit Liebe hergestellt und deine Möglichkeit, die Arbeit der Stiftung zu unterstützen."
         breadcrumb={
           <PageBreadcrumb>
             <PageBreadcrumbItem label="Shop" />
@@ -41,7 +45,7 @@ const StoreTemplate = ({
         </Suspense>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default StoreTemplate
+export default StoreTemplate;

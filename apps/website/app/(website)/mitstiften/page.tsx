@@ -1,6 +1,10 @@
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@components/PageBreadcrumb";
-import PageTitle from "@components/PageTitle";
-import { Link } from "@components/ui/link";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
+import PageTitle from "@/components/page-title";
+import { Link } from "@/components/ui/link";
 
 export default function IndividualsPage() {
   return (
@@ -36,7 +40,6 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/mitstiften/freundeskreis"
-              data-umami-event="donation_mitstiften_friendeskreis"
               variant="light"
               className="mt-8"
             >
@@ -64,7 +67,6 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/mitstiften/privatpersonen/spenden"
-              data-umami-event="donation_mitstiften_private_spenden"
               variant="light"
               className="mt-8"
             >

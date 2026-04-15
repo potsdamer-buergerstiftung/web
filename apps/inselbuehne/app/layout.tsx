@@ -26,13 +26,16 @@ export default function RootLayout({
 
   return (
     <html className={`${serif.variable} ${sans.variable}`} lang="de">
-      <body className="antialiased">{children}{websiteId && (
-        <Script
-          src={"/analytics/script.js"}
-          data-website-id={websiteId}
-          strategy="afterInteractive"
-        />
-      )}</body>
+      <body className="antialiased">
+        {children}
+        {websiteId && (
+          <Script
+            src={"/analytics/script.js"}
+            data-website-id={websiteId}
+            strategy="afterInteractive"
+          />
+        )}
+      </body>
     </html>
   );
 }

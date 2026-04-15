@@ -1,5 +1,5 @@
-import type { Ref } from 'vue';
-import { onBeforeUnmount, onMounted, unref } from 'vue';
+import type { Ref } from "vue";
+import { onBeforeUnmount, onMounted, unref } from "vue";
 
 /**
  * Adds the given event listener to the given element on mount. Auto-cleans up the event listener on
@@ -11,24 +11,24 @@ import { onBeforeUnmount, onMounted, unref } from 'vue';
  * @param options - The event listener options.
  */
 export function useEventListener<T extends EventTarget, E extends Event>(
-	target: T | Ref<T>,
-	type: string,
-	handler: (this: T, evt: E) => void,
-	options?: AddEventListenerOptions,
+  target: T | Ref<T>,
+  type: string,
+  handler: (this: T, evt: E) => void,
+  options?: AddEventListenerOptions,
 ): void {
-	onMounted(() => {
-		unref(target).addEventListener(
-			type,
-			handler as (evt: Event) => void,
-			options,
-		);
-	});
+  onMounted(() => {
+    unref(target).addEventListener(
+      type,
+      handler as (evt: Event) => void,
+      options,
+    );
+  });
 
-	onBeforeUnmount(() => {
-		unref(target).removeEventListener(
-			type,
-			handler as (evt: Event) => void,
-			options,
-		);
-	});
+  onBeforeUnmount(() => {
+    unref(target).removeEventListener(
+      type,
+      handler as (evt: Event) => void,
+      options,
+    );
+  });
 }

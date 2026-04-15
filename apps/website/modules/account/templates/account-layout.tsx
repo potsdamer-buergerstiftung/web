@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 
-import UnderlineLink from "@modules/common/components/interactive-link"
+import UnderlineLink from "@/modules/common/components/interactive-link";
 
-import AccountNav from "../components/account-nav"
-import { HttpTypes } from "@medusajs/types"
+import AccountNav from "../components/account-nav";
+import { HttpTypes } from "@medusajs/types";
 
 interface AccountLayoutProps {
-  customer: HttpTypes.StoreCustomer | null
-  children: React.ReactNode
+  customer: HttpTypes.StoreCustomer | null;
+  children: React.ReactNode;
 }
 
 const AccountLayout: React.FC<AccountLayoutProps> = ({
@@ -23,21 +23,21 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({
         </div>
         <div className="flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 py-12 gap-8">
           <div>
-            <h3 className="text-xl-semi mb-4">Got questions?</h3>
+            <h3 className="text-xl-semi mb-4">Haben Sie Fragen?</h3>
             <span className="txt-medium">
-              You can find frequently asked questions and answers on our
-              customer service page.
+              Häufig gestellte Fragen und Antworten finden Sie auf unserer
+              Kundenservice-Seite.
             </span>
           </div>
           <div>
             <UnderlineLink href="/customer-service">
-              Customer Service
+              Kundenservice
             </UnderlineLink>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AccountLayout
+export default AccountLayout;

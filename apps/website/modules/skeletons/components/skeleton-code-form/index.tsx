@@ -7,7 +7,7 @@ const SkeletonCodeForm = () => {
         <div className="bg-gray-100 h-12"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonCodeForm
+export default SkeletonCodeForm;

@@ -1,5 +1,5 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
+import { Github } from "@medusajs/icons";
+import { Button, Heading } from "@medusajs/ui";
 
 const Hero = () => {
   return (
@@ -30,7 +30,7 @@ const Hero = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

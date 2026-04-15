@@ -8,7 +8,7 @@ const SkeletonOrderConfirmedHeader = () => {
         <div className="w-12 h-4 bg-gray-100"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonOrderConfirmedHeader
+export default SkeletonOrderConfirmedHeader;

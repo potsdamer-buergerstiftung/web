@@ -6,7 +6,10 @@
     "gen": "directus-sdk-typegen -u https://portal.potsdamer-buergerstiftung.org -o ./src/types/directus.ts"
   },
   "exports": {
-    ".": "./src/index.ts"
+    "./server": "./src/server.ts",
+    "./browser": "./src/browser.ts",
+    "./types": "./src/types/directus.ts",
+    "./sdk": "./src/sdk.ts"
   },
   "dependencies": {
     "@directus/sdk": "^21.2.1"
