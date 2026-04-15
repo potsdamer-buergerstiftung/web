@@ -16,11 +16,16 @@ export enum DonationDuration {
 export async function listAvailablePaymentMethods(
   forDuration: DonationDuration
 ): Promise<DonationPaymentMethod[]> {
+  const sequenceType = forDuration === DonationDuration.ONE_TIME ? SequenceType.oneoff : SequenceType.recurring;
+
+  console.log(`Fetching available payment methods for duration: ${forDuration} (sequence type: ${sequenceType})`);
+  
   const methods = await mollieClient.methods.list({
     locale: Locale.de_DE,
-    sequenceType:
-      forDuration === DonationDuration.ONE_TIME ? SequenceType.oneoff : SequenceType.first,
+    sequenceType
   });
+
+  console.log("Available payment methods from Mollie API:", methods);
 
   const rawMethods =
     (methods as any)?._embedded?.methods ??

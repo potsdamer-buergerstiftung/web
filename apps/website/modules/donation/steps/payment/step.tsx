@@ -14,6 +14,7 @@ import { useDonationFieldId, useDonationForm } from "../../form-definition";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 import { CreditCardIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 import { Badge } from "@/components/ui/badge";
+import { useEffect } from "react";
 /* import { GooglePayOption } from "./google-pay";
 import { ApplePayOption } from "./apple-pay"; */
 import { PayPalOption } from "./paypal";
@@ -50,6 +51,17 @@ export function PaymentStep({ methods }: PaymentStepProps) {
     name: "paymentMethodId",
     control,
   });
+
+  useEffect(() => {
+    const hasCurrentMethod = methods.some(
+      (method) => method.id === paymentMethodField.value,
+    );
+
+    if (!hasCurrentMethod && methods[0]?.id) {
+      paymentMethodField.onChange(methods[0].id);
+    }
+  }, [methods, paymentMethodField]);
+
   const paymentMethodId = paymentMethodField.value ?? methods[0]?.id ?? "";
 
   return (

@@ -8,42 +8,60 @@ import {
   useContext,
   useMemo,
 } from "react";
+import {
+  amountStepSchema,
+  paymentStepSchema,
+  personalDataStepSchema,
+  purposeStepSchema,
+} from "./form-definition";
+
+type StepSchema = {
+  safeParse: (values: unknown) => { success: boolean };
+};
+
+type DonationStep = {
+  id: string;
+  title: string;
+  schema: StepSchema;
+  data: {
+    schema: StepSchema;
+  };
+};
+
+function createStep(id: string, title: string, schema: StepSchema): DonationStep {
+  return {
+    id,
+    title,
+    schema,
+    data: {
+      schema,
+    },
+  };
+}
 
 function createDonationStepper(
   fixedPurposeSet: boolean,
   amountStepDisabled: boolean,
 ) {
-  let steps: Array<{ id: string; title: string; }> = [];
+  let steps: DonationStep[] = [];
 
   if (!fixedPurposeSet) {
     steps = [
-      {
-        id: "purpose",
-        title: "Verwendungszweck",
-      },
+      createStep("purpose", "Verwendungszweck", purposeStepSchema),
     ];
   }
 
   if (!amountStepDisabled) {
     steps = [
       ...steps,
-      {
-        id: "amount",
-        title: "Betrag",
-      },
+      createStep("amount", "Betrag", amountStepSchema),
     ];
   }
 
   steps = [
     ...steps,
-    {
-      id: "personal-data",
-      title: "Persönliche Daten",
-    },
-    {
-      id: "payment",
-      title: "Zahlung bestätigen",
-    },
+    createStep("personal-data", "Persönliche Daten", personalDataStepSchema),
+    createStep("payment", "Zahlung bestätigen", paymentStepSchema),
   ];
 
   return defineStepper(...steps);

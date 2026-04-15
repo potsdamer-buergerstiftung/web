@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
+import { useWatch } from "react-hook-form";
 import {
   DonationFormProvider,
   DonationFormValues,
@@ -70,9 +71,9 @@ function DonationStateProvider({
   config: Required<DonationConfig>;
   children: ReactNode;
 }) {
-  const { watch, setValue } = useDonationForm();
-  const interval = watch("interval");
-  const amountPreset = watch("amountPreset");
+  const { control, setValue } = useDonationForm();
+  const interval = useWatch({ control, name: "interval" });
+  const amountPreset = useWatch({ control, name: "amountPreset" });
 
   const allowedIntervals = config.allowedIntervals;
   const allowedAmounts = config.allowedAmounts;
@@ -164,7 +165,21 @@ function DonationStateProvider({
 
   // Payment methods fetch on interval change
   useEffect(() => {
+    if (!interval) {
+      return;
+    }
+
     setPaymentMethodsLoading(true);
+    setPaymentMethodsError(null);
+
+    // Reset the selected method so the payment step can pick a valid one
+    // from the newly fetched interval-specific method list.
+    setValue("paymentMethodId", "", {
+      shouldDirty: false,
+      shouldTouch: false,
+      shouldValidate: false,
+    });
+
     fetchPaymentMethods(interval)
       .then((data) => {
         console.log("Fetched payment methods:", data);
@@ -175,9 +190,10 @@ function DonationStateProvider({
       .catch((err) => {
         console.error("Failed to fetch payment methods:", err);
         setPaymentMethodsError("Zahlungsarten konnten nicht geladen werden.");
+        setPaymentMethods([]);
         setPaymentMethodsLoading(false);
       });
-  }, [interval]);
+  }, [interval, setValue]);
 
   const projectsState = {
     projects,

@@ -8,85 +8,182 @@ import {
   type SubmitHandler,
   type UseFormReturn,
 } from "react-hook-form";
-import * as z from "zod/v4-mini";
+import { z } from "zod";
+
+const purposeIdSchema = z.string().min(1, "Bitte einen Verwendungszweck wählen.");
+const intervalSchema = z.enum(["once", "monthly", "yearly"]);
+const amountPresetSchema = z.string();
+const amountCustomSchema = z.string().optional();
+const paymentMethodIdSchema = z.string().min(1, "Bitte eine Zahlungsart wählen.");
+const wantsReceiptSchema = z.boolean();
+const isAnonymousSchema = z.boolean();
+const firstNameSchema = z.string().optional();
+const lastNameSchema = z.string().optional();
+const emailSchema = z.string().optional();
+const organisationSchema = z.string().optional();
+
+export const purposeStepSchema = z.object({
+  purposeId: purposeIdSchema,
+});
+
+export const amountStepSchema = z
+  .object({
+    interval: intervalSchema,
+    amountPreset: amountPresetSchema,
+    amountCustom: amountCustomSchema,
+  })
+  .superRefine((values, ctx) => {
+    if (values.amountPreset === "custom") {
+      const amount = Number.parseFloat(values.amountCustom ?? "");
+      if (Number.isNaN(amount) || amount < 1) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["amountCustom"],
+          message: "Bitte mindestens 1 Euro eingeben.",
+        });
+      }
+      return;
+    }
+
+    const amount = Number.parseFloat(values.amountPreset);
+    if (Number.isNaN(amount) || amount < 1) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["amountPreset"],
+        message: "Bitte einen gueltigen Spendenbetrag wählen.",
+      });
+    }
+  });
+
+export const personalDataStepSchema = z
+  .object({
+    interval: intervalSchema,
+    wantsReceipt: wantsReceiptSchema,
+    isAnonymous: isAnonymousSchema,
+    firstName: firstNameSchema,
+    lastName: lastNameSchema,
+    email: emailSchema,
+    organisation: organisationSchema,
+  })
+  .superRefine((values, ctx) => {
+    const canBeAnonymous = values.interval === "once" && !values.wantsReceipt;
+    if (values.isAnonymous && canBeAnonymous) {
+      return;
+    }
+
+    if (!values.firstName?.trim()) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["firstName"],
+        message: "Bitte den Vornamen angeben.",
+      });
+    }
+
+    if (!values.lastName?.trim()) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["lastName"],
+        message: "Bitte den Nachnamen angeben.",
+      });
+    }
+
+    const emailValue = values.email?.trim();
+    if (!emailValue) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["email"],
+        message: "Bitte eine gueltige E-Mail angeben.",
+      });
+      return;
+    }
+
+    if (!z.string().email().safeParse(emailValue).success) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["email"],
+        message: "Bitte eine gueltige E-Mail angeben.",
+      });
+    }
+  });
+
+export const paymentStepSchema = z.object({
+  paymentMethodId: paymentMethodIdSchema,
+});
 
 const donationFormSchema = z
   .object({
-    purposeId: z
-      .string()
-      .check(z.minLength(1, "Bitte einen Verwendungszweck wählen.")),
-    interval: z.enum(["once", "monthly", "yearly"]),
-    amountPreset: z.string(),
-    amountCustom: z.optional(z.string()),
-    paymentMethodId: z.optional(z.string()),
-    wantsReceipt: z.boolean(),
-    isAnonymous: z.boolean(),
-    firstName: z.optional(z.string().check(z.trim())),
-    lastName: z.optional(z.string().check(z.trim())),
-    email: z.optional(z.email().check(z.trim())),
-    organisation: z.optional(z.string()),
+    purposeId: purposeIdSchema,
+    interval: intervalSchema,
+    amountPreset: amountPresetSchema,
+    amountCustom: amountCustomSchema,
+    paymentMethodId: paymentMethodIdSchema,
+    wantsReceipt: wantsReceiptSchema,
+    isAnonymous: isAnonymousSchema,
+    firstName: firstNameSchema,
+    lastName: lastNameSchema,
+    email: emailSchema,
+    organisation: organisationSchema,
   })
-  .check(
-    z.superRefine((values, ctx) => {
-      if (values.amountPreset === "custom") {
-        const amount = Number.parseFloat(values.amountCustom ?? "");
-        if (Number.isNaN(amount) || amount < 1) {
-          ctx.addIssue({
-            code: "custom",
-            path: ["amountCustom"],
-            message: "Bitte mindestens 1 Euro eingeben.",
-          });
-        }
-      } else {
-        const amount = Number.parseFloat(values.amountPreset);
-        if (Number.isNaN(amount) || amount < 1) {
-          ctx.addIssue({
-            code: "custom",
-            path: ["amountPreset"],
-            message: "Bitte einen gueltigen Spendenbetrag wählen.",
-          });
-        }
-      }
-
-      if (values.isAnonymous) {
-        return;
-      }
-
-      if (!values.firstName?.trim()) {
+  .superRefine((values, ctx) => {
+    if (values.amountPreset === "custom") {
+      const amount = Number.parseFloat(values.amountCustom ?? "");
+      if (Number.isNaN(amount) || amount < 1) {
         ctx.addIssue({
           code: "custom",
-          path: ["firstName"],
-          message: "Bitte den Vornamen angeben.",
+          path: ["amountCustom"],
+          message: "Bitte mindestens 1 Euro eingeben.",
         });
       }
-
-      if (!values.lastName?.trim()) {
+    } else {
+      const amount = Number.parseFloat(values.amountPreset);
+      if (Number.isNaN(amount) || amount < 1) {
         ctx.addIssue({
           code: "custom",
-          path: ["lastName"],
-          message: "Bitte den Nachnamen angeben.",
+          path: ["amountPreset"],
+          message: "Bitte einen gueltigen Spendenbetrag wählen.",
         });
       }
+    }
 
-      const emailValue = values.email?.trim();
-      if (!emailValue) {
-        ctx.addIssue({
-          code: "custom",
-          path: ["email"],
-          message: "Bitte eine gueltige E-Mail angeben.",
-        });
-        return;
-      }
+    const canBeAnonymous = values.interval === "once" && !values.wantsReceipt;
+    if (values.isAnonymous && canBeAnonymous) {
+      return;
+    }
 
-      if (!z.email().safeParse(emailValue).success) {
-        ctx.addIssue({
-          code: "custom",
-          path: ["email"],
-          message: "Bitte eine gueltige E-Mail angeben.",
-        });
-      }
-    }),
-  );
+    if (!values.firstName?.trim()) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["firstName"],
+        message: "Bitte den Vornamen angeben.",
+      });
+    }
+
+    if (!values.lastName?.trim()) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["lastName"],
+        message: "Bitte den Nachnamen angeben.",
+      });
+    }
+
+    const emailValue = values.email?.trim();
+    if (!emailValue) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["email"],
+        message: "Bitte eine gueltige E-Mail angeben.",
+      });
+      return;
+    }
+
+    if (!z.string().email().safeParse(emailValue).success) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["email"],
+        message: "Bitte eine gueltige E-Mail angeben.",
+      });
+    }
+  });
 
 export type DonationFormValues = z.infer<typeof donationFormSchema>;
 export type DonationFormMethods = UseFormReturn<DonationFormValues>;
@@ -151,9 +248,9 @@ export function DonationFormProvider({
 
   const handleSubmit = onSubmit
     ? methods.handleSubmit(onSubmit)
-    : (event: React.SubmitEvent<HTMLFormElement>) => {
-        event.preventDefault();
-      };
+    : methods.handleSubmit((values) => {
+        console.log("Donation form values:", values);
+      });
 
   return (
     <DonationFormContext.Provider value={methods}>
