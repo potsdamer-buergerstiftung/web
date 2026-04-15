@@ -32,7 +32,7 @@
     "html-react-parser": "^3.0.16",
     "jotai": "^1.13.0",
     "lodash": "^4.17.23",
-    "next": "16.1.0",
+    "next": "16.2.3",
     "next-themes": "^0.4.6",
     "nookies": "^2.5.2",
     "pg": "^8.11.3",
