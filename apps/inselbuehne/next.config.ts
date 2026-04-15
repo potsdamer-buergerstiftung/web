@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { type NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   allowedDevOrigins: ['portal.potsdamer-buergerstiftung.org'],
   async rewrites() {
@@ -35,4 +36,4 @@ const nextConfig = {
   transpilePackages: ["ui"],
 };
 
-module.exports = nextConfig;
+export default nextConfig;
