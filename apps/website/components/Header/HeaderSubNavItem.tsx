@@ -29,8 +29,9 @@ export default function HeaderSubNavItem({
     <Link
       href={href}
       onClick={handleClick}
+      aria-current={isActive ? "page" : undefined}
       className={clsx(
-        "py-2 text-xl font-medium transition hover:text-primary lg:py-1 lg:text-lg",
+        "rounded-md py-2 text-xl font-medium outline-none transition hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 lg:py-1 lg:text-lg",
         isActive
           ? "text-primary"
           : "text-slate-300 lg:text-slate-900 dark:text-slate-400 dark:lg:text-slate-300",

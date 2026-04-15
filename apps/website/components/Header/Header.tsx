@@ -22,7 +22,7 @@ async function Banner() {
   }
 
   return (
-    <div className="relative w-full z-[1000]">
+    <div className="relative w-full z-1000">
       <a
         className="group flex cursor-pointer justify-center bg-primary/10 px-10 py-2 transition hover:bg-primary/20 dark:bg-slate-900 dark:hover:bg-slate-800 md:py-3"
         href={res.link}
@@ -70,19 +70,22 @@ export default function Header({ nav, section, actions }: HeaderProps) {
       <header className="absolute z-40 w-full text-slate-900 dark:text-slate-50">
         <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
           <div className="flex flex-row items-center gap-4">
-            <Link href="/" className="gap-2 group xl:-ml-2 inline-flex py-2 outline-none">
+            <Link
+              href="/"
+              className="gap-2 group xl:-ml-2 inline-flex rounded-md py-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
               <Logo />
-              <Image
+              {/* <Image
                 src="/img/15-jahre.png"
                 alt="15 Jahre Bürgerstiftung"
                 width={100}
                 height={100}
                 className="size-10 md:size-14 lg:size-16"
-              />
+              /> */}
             </Link>
             {section && (
               <>
-                <div className="h-4 w-[1px] bg-slate-700 dark:bg-slate-400" />
+                <div className="h-4 w-px bg-slate-700 dark:bg-slate-400" />
                 <span className="text-md font-header inline-flex items-center rounded-md py-1.5 font-bold transition ease-in-out">
                   {section}
                 </span>

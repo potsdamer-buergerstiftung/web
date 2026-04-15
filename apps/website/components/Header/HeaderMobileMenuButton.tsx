@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { useAtom } from "jotai";
-import { Fragment } from "react";
 import { mobileMenuOpen } from "./state";
 
 interface HeaderMobileMenuButtonProps {
@@ -26,9 +25,13 @@ export default function HeaderMobileMenuButton({
 
   return (
     <button
+      type="button"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
+      aria-controls="header-navigation"
+      aria-expanded={isMenuOpen}
+      aria-label={variant === "open" ? "Menü öffnen" : "Menü schließen"}
       className={clsx(
-        "rounded-full p-4 ring-primary/40 transition hover:ring-1",
+        "rounded-full p-4 ring-primary/40 transition hover:ring-1 focus-visible:outline-none focus-visible:ring-2",
         backgroundColorClass,
       )}
     >
