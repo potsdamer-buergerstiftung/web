@@ -97,6 +97,7 @@ function DonationStateProvider({
     setPaymentMethodsLoading(true);
     fetchPaymentMethods(interval)
       .then((data) => {
+        console.log("Fetched payment methods:", data);
         setPaymentMethods(data);
         setPaymentMethodsError(null);
         setPaymentMethodsLoading(false);

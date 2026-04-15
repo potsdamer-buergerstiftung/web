@@ -17,7 +17,7 @@ export function PayByBankOption({ inputId }: { inputId: string }) {
           </div>
           <FieldTitle>Sofortüberweisung</FieldTitle>
         </FieldContent>
-        <RadioGroupItem value="banktransfer" id={inputId} />
+        <RadioGroupItem value="paybybank" id={inputId} />
       </Field>
     </FieldLabel>
   );

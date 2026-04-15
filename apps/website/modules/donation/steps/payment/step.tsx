@@ -14,8 +14,8 @@ import { useDonationFieldId, useDonationForm } from "../../form-definition";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 import { CreditCardIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 import { Badge } from "@/components/ui/badge";
-import { GooglePayOption } from "./google-pay";
-import { ApplePayOption } from "./apple-pay";
+/* import { GooglePayOption } from "./google-pay";
+import { ApplePayOption } from "./apple-pay"; */
 import { PayPalOption } from "./paypal";
 import { PayByBankOption } from "./pay-by-bank";
 import { DirectDebitOption } from "./direct-debit";
@@ -67,13 +67,13 @@ export function PaymentStep({ methods }: PaymentStepProps) {
       </div>
       <div className="max-w-sm">
         <FieldGroup>
-          <FieldSet>
+          {/* <FieldSet>
             <FieldLegend>Schnell spenden</FieldLegend>
             <div className="w-full flex flex-col">
               <GooglePayOption />
               <ApplePayOption />
             </div>
-          </FieldSet>
+          </FieldSet> */}
           <FieldSet>
             <FieldLegend>Weitere Zahlungsoptionen</FieldLegend>
             <RadioGroup
@@ -91,10 +91,10 @@ export function PaymentStep({ methods }: PaymentStepProps) {
                         inputId={creditcardId}
                       />
                     );
-                  case "banktransfer":
+                  case "paybybank":
                     return (
                       <PayByBankOption
-                        key="banktransfer"
+                        key="paybybank"
                         inputId={banktransferId}
                       />
                     );
