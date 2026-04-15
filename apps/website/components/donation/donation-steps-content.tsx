@@ -6,7 +6,6 @@ import { AmountStep } from "./steps/amount-step";
 import { PersonalDetailsStep } from "./steps/personal-details-step";
 import { PaymentStep } from "./steps/payment";
 import { useDonation } from "./donation-context";
-import { Suspense } from "react";
 
 export function DonationSteps() {
   const { config, projects, paymentMethods } = useDonation();
