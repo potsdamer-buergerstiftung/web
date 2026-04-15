@@ -1,66 +1,71 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 
-import { applyPromotions } from "@/lib/data/cart"
-import { convertToLocale } from "@/lib/util/money"
-import { HttpTypes } from "@medusajs/types"
-import Trash from "@/modules/common/icons/trash"
-import ErrorMessage from "../error-message"
-import { SubmitButton } from "../submit-button"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { applyPromotions } from "@/lib/data/cart";
+import { convertToLocale } from "@/lib/util/money";
+import { HttpTypes } from "@medusajs/types";
+import Trash from "@/modules/common/icons/trash";
+import ErrorMessage from "../error-message";
+import { SubmitButton } from "../submit-button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 type DiscountCodeProps = {
   cart: HttpTypes.StoreCart & {
-    promotions: HttpTypes.StorePromotion[]
-  }
-}
+    promotions: HttpTypes.StorePromotion[];
+  };
+};
 
 const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const [errorMessage, setErrorMessage] = React.useState("")
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState("");
 
-  const { promotions = [] } = cart
+  const { promotions = [] } = cart;
   const removePromotionCode = async (code: string) => {
     const validPromotions = promotions.filter(
-      (promotion) => promotion.code !== code
-    )
+      (promotion) => promotion.code !== code,
+    );
 
     await applyPromotions(
-      validPromotions.filter((p) => p.code !== undefined).map((p) => p.code!)
-    )
-  }
+      validPromotions.filter((p) => p.code !== undefined).map((p) => p.code!),
+    );
+  };
 
   const addPromotionCode = async (formData: FormData) => {
-    setErrorMessage("")
+    setErrorMessage("");
 
-    const code = formData.get("code")
+    const code = formData.get("code");
     if (!code) {
-      return
+      return;
     }
-    const input = document.getElementById("promotion-input") as HTMLInputElement
+    const input = document.getElementById(
+      "promotion-input",
+    ) as HTMLInputElement;
     const codes = promotions
       .filter((p) => p.code !== undefined)
-      .map((p) => p.code!)
-    codes.push(code.toString())
+      .map((p) => p.code!);
+    codes.push(code.toString());
 
     try {
-      await applyPromotions(codes)
+      await applyPromotions(codes);
     } catch (e: any) {
-      setErrorMessage(e.message)
+      setErrorMessage(e.message);
     }
 
     if (input) {
-      input.value = ""
+      input.value = "";
     }
-  }
+  };
 
   return (
     <div className="rounded-3xl border border-border bg-white/90 p-5 shadow-sm">
-      <form action={(a) => addPromotionCode(a)} className="flex w-full flex-col gap-4">
+      <form
+        action={(a) => addPromotionCode(a)}
+        className="flex w-full flex-col gap-4"
+      >
         <div className="flex items-center justify-between gap-3">
           <Label className="text-sm font-medium text-foreground">
             Aktionscode
@@ -87,7 +92,10 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                 autoFocus={false}
                 data-testid="discount-input"
               />
-              <SubmitButton variant="secondary" data-testid="discount-apply-button">
+              <SubmitButton
+                variant="secondary"
+                data-testid="discount-apply-button"
+              >
                 Anwenden
               </SubmitButton>
             </div>
@@ -112,7 +120,10 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                   className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-background/60 px-4 py-3"
                   data-testid="discount-row"
                 >
-                  <div className="min-w-0 text-sm text-muted-foreground" data-testid="discount-code">
+                  <div
+                    className="min-w-0 text-sm text-muted-foreground"
+                    data-testid="discount-code"
+                  >
                     <Badge
                       variant={promotion.is_automatic ? "secondary" : "outline"}
                       className="mr-2"
@@ -121,43 +132,49 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                     </Badge>
                     <span className="truncate">
                       {promotion.application_method?.value !== undefined &&
-                        promotion.application_method.currency_code !== undefined && (
+                        promotion.application_method.currency_code !==
+                          undefined && (
                           <>
-                            ({promotion.application_method.type === "percentage"
+                            (
+                            {promotion.application_method.type === "percentage"
                               ? `${promotion.application_method.value}%`
                               : convertToLocale({
                                   amount: +promotion.application_method.value,
-                                  currency_code: promotion.application_method.currency_code,
-                                })})
+                                  currency_code:
+                                    promotion.application_method.currency_code,
+                                })}
+                            )
                           </>
                         )}
                     </span>
                   </div>
                   {!promotion.is_automatic && (
                     <button
-                        type="button"
+                      type="button"
                       className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                       onClick={() => {
                         if (!promotion.code) {
-                          return
+                          return;
                         }
 
-                        removePromotionCode(promotion.code)
+                        removePromotionCode(promotion.code);
                       }}
                       data-testid="remove-discount-button"
                     >
-                      <span className="sr-only">Aktionscode aus der Bestellung entfernen</span>
+                      <span className="sr-only">
+                        Aktionscode aus der Bestellung entfernen
+                      </span>
                       <Trash size={14} />
                     </button>
                   )}
                 </div>
-              )
+              );
             })}
           </div>
         )}
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default DiscountCode
+export default DiscountCode;

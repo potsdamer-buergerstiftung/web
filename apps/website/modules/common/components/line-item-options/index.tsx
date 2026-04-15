@@ -1,10 +1,10 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@medusajs/types";
 
 type LineItemOptionsProps = {
-  variant: HttpTypes.StoreProductVariant | undefined
-  "data-testid"?: string
-  "data-value"?: HttpTypes.StoreProductVariant
-}
+  variant: HttpTypes.StoreProductVariant | undefined;
+  "data-testid"?: string;
+  "data-value"?: HttpTypes.StoreProductVariant;
+};
 
 const LineItemOptions = ({
   variant,
@@ -19,7 +19,7 @@ const LineItemOptions = ({
     >
       Variant: {variant?.title}
     </p>
-  )
-}
+  );
+};
 
-export default LineItemOptions
+export default LineItemOptions;

@@ -9,10 +9,7 @@ export default function HeaderNav() {
     <nav className="container mx-auto flex h-full w-full flex-row items-center justify-between px-4 lg:justify-center lg:px-0">
       <div className="hidden h-full w-full flex-row items-center justify-end gap-x-3 lg:flex xl:gap-x-5">
         <HeaderNavItem label="Veranstaltungen" href="/veranstaltungen" />
-        <HeaderNavItem
-          label="Blog"
-          href="/blog"
-        />
+        <HeaderNavItem label="Blog" href="/blog" />
       </div>
       <HeaderNavBrand />
       <HeaderMobileMenuButton />

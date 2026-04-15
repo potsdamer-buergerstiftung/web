@@ -2,8 +2,8 @@ const Radio = ({
   checked,
   "data-testid": dataTestId,
 }: {
-  checked: boolean
-  "data-testid"?: string
+  checked: boolean;
+  "data-testid"?: string;
 }) => {
   return (
     <button
@@ -20,7 +20,7 @@ const Radio = ({
         )}
       </span>
     </button>
-  )
-}
+  );
+};
 
-export default Radio
+export default Radio;

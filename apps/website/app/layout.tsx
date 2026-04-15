@@ -3,8 +3,8 @@ import { Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 
-import { CookieConsentBanner } from "@/components/CookieConsent";
-import { UmamiScript } from "@/components/analytics";
+import { CookieConsentBanner } from "@/modules/cookie-consent";
+import { UmamiScript } from "@/modules/analytics";
 
 //import VisualEditing from "./VisualEditing";
 
@@ -21,7 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${font.variable} font-sans`} lang="de" suppressHydrationWarning>
+    <html
+      className={`${font.variable} font-sans`}
+      lang="de"
+      suppressHydrationWarning
+    >
       <body className="antialiased">
         <ThemeProvider
           attribute="class"

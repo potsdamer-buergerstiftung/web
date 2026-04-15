@@ -1,6 +1,6 @@
-import { Heading } from "@medusajs/ui"
-import LocalizedClientLink from "@/modules/common/components/localized-client-link"
-import React from "react"
+import { Heading } from "@medusajs/ui";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import React from "react";
 
 const Help = () => {
   return (
@@ -13,13 +13,13 @@ const Help = () => {
           </li>
           <li>
             <LocalizedClientLink href="/contact">
-                Rückgaben & Umtausch
+              Rückgaben & Umtausch
             </LocalizedClientLink>
           </li>
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Help
+export default Help;

@@ -1,18 +1,18 @@
-import { convertToLocale } from "@/lib/util/money"
-import { HttpTypes } from "@medusajs/types"
-import { Heading, Text } from "@medusajs/ui"
+import { convertToLocale } from "@/lib/util/money";
+import { HttpTypes } from "@medusajs/types";
+import { Heading, Text } from "@medusajs/ui";
 
-import Divider from "@/modules/common/components/divider"
+import Divider from "@/modules/common/components/divider";
 
 type ShippingDetailsProps = {
-  order: HttpTypes.StoreOrder
-}
+  order: HttpTypes.StoreOrder;
+};
 
 const ShippingDetails = ({ order }: ShippingDetailsProps) => {
   return (
     <div>
       <Heading level="h2" className="flex flex-row text-3xl-regular my-6">
-          Lieferung
+        Lieferung
       </Heading>
       <div className="flex items-start gap-x-8">
         <div
@@ -20,7 +20,7 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
           data-testid="shipping-address-summary"
         >
           <Text className="txt-medium-plus text-ui-fg-base mb-1">
-              Lieferadresse
+            Lieferadresse
           </Text>
           <Text className="txt-medium text-ui-fg-subtle">
             {order.shipping_address?.first_name}{" "}
@@ -67,7 +67,7 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
       </div>
       <Divider className="mt-8" />
     </div>
-  )
-}
+  );
+};
 
-export default ShippingDetails
+export default ShippingDetails;

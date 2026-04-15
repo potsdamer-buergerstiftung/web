@@ -1,27 +1,27 @@
-import { Button } from "@medusajs/ui"
-import { useMemo } from "react"
+import { Button } from "@medusajs/ui";
+import { useMemo } from "react";
 
-import Thumbnail from "@/modules/products/components/thumbnail"
-import LocalizedClientLink from "@/modules/common/components/localized-client-link"
-import { convertToLocale } from "@/lib/util/money"
-import { HttpTypes } from "@medusajs/types"
+import Thumbnail from "@/modules/products/components/thumbnail";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import { convertToLocale } from "@/lib/util/money";
+import { HttpTypes } from "@medusajs/types";
 
 type OrderCardProps = {
-  order: HttpTypes.StoreOrder
-}
+  order: HttpTypes.StoreOrder;
+};
 
 const OrderCard = ({ order }: OrderCardProps) => {
   const numberOfLines = useMemo(() => {
     return (
       order.items?.reduce((acc, item) => {
-        return acc + item.quantity
+        return acc + item.quantity;
       }, 0) ?? 0
-    )
-  }, [order])
+    );
+  }, [order]);
 
   const numberOfProducts = useMemo(() => {
-    return order.items?.length ?? 0
-  }, [order])
+    return order.items?.length ?? 0;
+  }, [order]);
 
   return (
     <div className="bg-white flex flex-col" data-testid="order-card">
@@ -62,11 +62,11 @@ const OrderCard = ({ order }: OrderCardProps) => {
                 <span data-testid="item-quantity">{i.quantity}</span>
               </div>
             </div>
-          )
+          );
         })}
         {numberOfProducts > 4 && (
           <div className="w-full h-full flex flex-col items-center justify-center">
-              <span className="text-small-regular text-ui-fg-base">
+            <span className="text-small-regular text-ui-fg-base">
               + {numberOfLines - 4}
             </span>
             <span className="text-small-regular text-ui-fg-base">mehr</span>
@@ -81,7 +81,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
         </LocalizedClientLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrderCard
+export default OrderCard;

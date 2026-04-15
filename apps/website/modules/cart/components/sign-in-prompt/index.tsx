@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import LocalizedClientLink from "@/modules/common/components/localized-client-link"
+import { Button } from "@/components/ui/button";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
 
 const SignInPrompt = () => {
   return (
@@ -20,7 +20,7 @@ const SignInPrompt = () => {
         </LocalizedClientLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignInPrompt
+export default SignInPrompt;

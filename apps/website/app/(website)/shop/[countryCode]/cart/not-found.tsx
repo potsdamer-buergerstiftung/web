@@ -1,11 +1,11 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import InteractiveLink from "@/modules/common/components/interactive-link"
+import InteractiveLink from "@/modules/common/components/interactive-link";
 
 export const metadata: Metadata = {
   title: "404",
   description: "Etwas ist schiefgelaufen",
-}
+};
 
 export default function NotFound() {
   return (
@@ -17,5 +17,5 @@ export default function NotFound() {
       </p>
       <InteractiveLink href="/">Zur Startseite</InteractiveLink>
     </div>
-  )
+  );
 }

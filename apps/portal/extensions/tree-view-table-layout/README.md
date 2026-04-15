@@ -22,5 +22,5 @@ To use the Tree View Table features, make sure the `Parent (M2O)` field is set c
 
 ### Things to note
 
--   The sort event is not fired with this implementation, but instead you could listen for an update event on the `sort` or `parent` fields via a hook extension or flow.
--   This implementation does not support touch devices as of this writing.
+- The sort event is not fired with this implementation, but instead you could listen for an update event on the `sort` or `parent` fields via a hook extension or flow.
+- This implementation does not support touch devices as of this writing.

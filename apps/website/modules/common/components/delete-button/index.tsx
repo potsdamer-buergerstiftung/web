@@ -1,33 +1,31 @@
-import { deleteLineItem } from "@/lib/data/cart"
-import { useState } from "react"
+import { deleteLineItem } from "@/lib/data/cart";
+import { useState } from "react";
 
-import { TrashIcon } from "@heroicons/react/24/outline"
+import { TrashIcon } from "@heroicons/react/24/outline";
 
-import { cn } from "@/lib/utils"
-import Spinner from "@/modules/common/icons/spinner"
+import { cn } from "@/lib/utils";
+import Spinner from "@/modules/common/icons/spinner";
 
 const DeleteButton = ({
   id,
   children,
   className,
 }: {
-  id: string
-  children?: React.ReactNode
-  className?: string
+  id: string;
+  children?: React.ReactNode;
+  className?: string;
 }) => {
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async (id: string) => {
-    setIsDeleting(true)
+    setIsDeleting(true);
     await deleteLineItem(id).catch((err) => {
-      setIsDeleting(false)
-    })
-  }
+      setIsDeleting(false);
+    });
+  };
 
   return (
-    <div
-      className={cn("flex items-center justify-between text-sm", className)}
-    >
+    <div className={cn("flex items-center justify-between text-sm", className)}>
       <button
         className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
         onClick={() => handleDelete(id)}
@@ -36,7 +34,7 @@ const DeleteButton = ({
         <span>{children}</span>
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default DeleteButton
+export default DeleteButton;

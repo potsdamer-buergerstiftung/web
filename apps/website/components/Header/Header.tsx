@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Logo from "../Logo";
-import HeaderDonationButton from "./HeaderDonationButton";
-import HeaderMobileMenuButton from "./HeaderMobileMenuButton";
-import HeaderNavBackground from "./HeaderNavBackground";
+import Logo from "../logo";
+import HeaderMobileMenuButton from "./mobile-menu-button";
+import HeaderNavBackground from "./nav-background";
 import { readSingleton, rest } from "@directus/sdk";
 import { Suspense } from "react";
 import directus from "@/app/(website)/directus";
-import Image from "next/image";
 
 interface HeaderProps {
   nav?: React.ReactNode;

@@ -1,43 +1,43 @@
-"use client"
+"use client";
 
-import { useActionState, useState } from "react"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { CheckCircleIcon } from "@heroicons/react/24/solid"
-import { HttpTypes } from "@medusajs/types"
+import { useActionState, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { HttpTypes } from "@medusajs/types";
 
-import { setAddresses } from "@/lib/data/cart"
-import compareAddresses from "@/lib/util/compare-addresses"
-import Divider from "@/modules/common/components/divider"
-import Spinner from "@/modules/common/icons/spinner"
-import BillingAddress from "../billing_address"
-import ErrorMessage from "../error-message"
-import ShippingAddress from "../shipping-address"
-import { SubmitButton } from "../submit-button"
+import { setAddresses } from "@/lib/data/cart";
+import compareAddresses from "@/lib/util/compare-addresses";
+import Divider from "@/modules/common/components/divider";
+import Spinner from "@/modules/common/icons/spinner";
+import BillingAddress from "../billing_address";
+import ErrorMessage from "../error-message";
+import ShippingAddress from "../shipping-address";
+import { SubmitButton } from "../submit-button";
 
 const Addresses = ({
   cart,
   customer,
 }: {
-  cart: HttpTypes.StoreCart | null
-  customer: HttpTypes.StoreCustomer | null
+  cart: HttpTypes.StoreCart | null;
+  customer: HttpTypes.StoreCustomer | null;
 }) => {
-  const searchParams = useSearchParams()
-  const router = useRouter()
-  const pathname = usePathname()
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const isOpen = searchParams.get("step") === "address"
+  const isOpen = searchParams.get("step") === "address";
 
   const [sameAsBilling, setSameAsBilling] = useState(
     cart?.shipping_address && cart?.billing_address
       ? compareAddresses(cart.shipping_address, cart.billing_address)
-      : true
-  )
+      : true,
+  );
 
   const handleEdit = () => {
-    router.push(pathname + "?step=address")
-  }
+    router.push(pathname + "?step=address");
+  };
 
-  const [message, formAction] = useActionState(setAddresses, null)
+  const [message, formAction] = useActionState(setAddresses, null);
 
   return (
     <section className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
@@ -88,15 +88,20 @@ const Addresses = ({
           {cart && cart.shipping_address ? (
             <div className="grid gap-4 md:grid-cols-3">
               <div data-testid="shipping-address-summary">
-                <p className="mb-1 font-medium text-foreground">Lieferadresse</p>
-                <p>
-                  {cart.shipping_address.first_name} {cart.shipping_address.last_name}
+                <p className="mb-1 font-medium text-foreground">
+                  Lieferadresse
                 </p>
                 <p>
-                  {cart.shipping_address.address_1} {cart.shipping_address.address_2}
+                  {cart.shipping_address.first_name}{" "}
+                  {cart.shipping_address.last_name}
                 </p>
                 <p>
-                  {cart.shipping_address.postal_code}, {cart.shipping_address.city}
+                  {cart.shipping_address.address_1}{" "}
+                  {cart.shipping_address.address_2}
+                </p>
+                <p>
+                  {cart.shipping_address.postal_code},{" "}
+                  {cart.shipping_address.city}
                 </p>
                 <p>{cart.shipping_address.country_code?.toUpperCase()}</p>
               </div>
@@ -108,20 +113,25 @@ const Addresses = ({
               </div>
 
               <div data-testid="billing-address-summary">
-                <p className="mb-1 font-medium text-foreground">Rechnungsadresse</p>
+                <p className="mb-1 font-medium text-foreground">
+                  Rechnungsadresse
+                </p>
 
                 {sameAsBilling ? (
                   <p>Rechnungs- und Lieferadresse sind identisch.</p>
                 ) : (
                   <>
                     <p>
-                      {cart.billing_address?.first_name} {cart.billing_address?.last_name}
+                      {cart.billing_address?.first_name}{" "}
+                      {cart.billing_address?.last_name}
                     </p>
                     <p>
-                      {cart.billing_address?.address_1} {cart.billing_address?.address_2}
+                      {cart.billing_address?.address_1}{" "}
+                      {cart.billing_address?.address_2}
                     </p>
                     <p>
-                      {cart.billing_address?.postal_code}, {cart.billing_address?.city}
+                      {cart.billing_address?.postal_code},{" "}
+                      {cart.billing_address?.city}
                     </p>
                     <p>{cart.billing_address?.country_code?.toUpperCase()}</p>
                   </>
@@ -138,7 +148,7 @@ const Addresses = ({
 
       <Divider className="mt-8" />
     </section>
-  )
-}
+  );
+};
 
-export default Addresses
+export default Addresses;

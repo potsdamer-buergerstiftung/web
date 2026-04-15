@@ -21,7 +21,7 @@ const SkeletonCartItem = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonCartItem
+export default SkeletonCartItem;

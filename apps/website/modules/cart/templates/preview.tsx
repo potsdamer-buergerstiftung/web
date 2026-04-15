@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import repeat from "@/lib/util/repeat"
-import { HttpTypes } from "@medusajs/types"
+import repeat from "@/lib/util/repeat";
+import { HttpTypes } from "@medusajs/types";
 
-import Item from "@/modules/cart/components/item"
-import SkeletonLineItem from "@/modules/skeletons/components/skeleton-line-item"
+import Item from "@/modules/cart/components/item";
+import SkeletonLineItem from "@/modules/skeletons/components/skeleton-line-item";
 
 type ItemsTemplateProps = {
-  cart: HttpTypes.StoreCart
-}
+  cart: HttpTypes.StoreCart;
+};
 
 const ItemsPreviewTemplate = ({ cart }: ItemsTemplateProps) => {
-  const items = cart.items
-  const hasOverflow = items && items.length > 4
+  const items = cart.items;
+  const hasOverflow = items && items.length > 4;
 
   return (
     <div
@@ -23,7 +23,7 @@ const ItemsPreviewTemplate = ({ cart }: ItemsTemplateProps) => {
         {items
           ? items
               .sort((a, b) => {
-                return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
+                return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1;
               })
               .map((item) => {
                 return (
@@ -33,14 +33,14 @@ const ItemsPreviewTemplate = ({ cart }: ItemsTemplateProps) => {
                     type="preview"
                     currencyCode={cart.currency_code}
                   />
-                )
+                );
               })
           : repeat(5).map((i) => {
-              return <SkeletonLineItem key={i} />
+              return <SkeletonLineItem key={i} />;
             })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemsPreviewTemplate
+export default ItemsPreviewTemplate;

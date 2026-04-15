@@ -21,7 +21,7 @@ const SkeletonLineItem = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonLineItem
+export default SkeletonLineItem;

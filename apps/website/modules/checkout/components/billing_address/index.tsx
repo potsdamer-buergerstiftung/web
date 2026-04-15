@@ -1,7 +1,7 @@
-import { HttpTypes } from "@medusajs/types"
-import Input from "@/modules/common/components/input"
-import React, { useState } from "react"
-import CountrySelect from "../country-select"
+import { HttpTypes } from "@medusajs/types";
+import Input from "@/modules/common/components/input";
+import React, { useState } from "react";
+import CountrySelect from "../country-select";
 
 const BillingAddress = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
   const [formData, setFormData] = useState<any>({
@@ -14,18 +14,18 @@ const BillingAddress = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
     "billing_address.country_code": cart?.billing_address?.country_code || "",
     "billing_address.province": cart?.billing_address?.province || "",
     "billing_address.phone": cart?.billing_address?.phone || "",
-  })
+  });
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLInputElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -108,7 +108,7 @@ const BillingAddress = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default BillingAddress
+export default BillingAddress;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   SelectHTMLAttributes,
@@ -7,34 +7,34 @@ import {
   useImperativeHandle,
   useRef,
   useState,
-} from "react"
+} from "react";
 
-import ChevronDown from "@/modules/common/icons/chevron-down"
-import { cn } from "@/lib/utils"
+import ChevronDown from "@/modules/common/icons/chevron-down";
+import { cn } from "@/lib/utils";
 
 type NativeSelectProps = {
-  placeholder?: string
-  errors?: Record<string, unknown>
-  touched?: Record<string, unknown>
-} & Omit<SelectHTMLAttributes<HTMLSelectElement>, "size">
+  placeholder?: string;
+  errors?: Record<string, unknown>;
+  touched?: Record<string, unknown>;
+} & Omit<SelectHTMLAttributes<HTMLSelectElement>, "size">;
 
 const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
   ({ placeholder = "Select...", className, children, ...props }, ref) => {
-    const innerRef = useRef<HTMLSelectElement>(null)
-    const [isPlaceholder, setIsPlaceholder] = useState(false)
+    const innerRef = useRef<HTMLSelectElement>(null);
+    const [isPlaceholder, setIsPlaceholder] = useState(false);
 
     useImperativeHandle<HTMLSelectElement | null, HTMLSelectElement | null>(
       ref,
-      () => innerRef.current
-    )
+      () => innerRef.current,
+    );
 
     useEffect(() => {
       if (innerRef.current && innerRef.current.value === "") {
-        setIsPlaceholder(true)
+        setIsPlaceholder(true);
       } else {
-        setIsPlaceholder(false)
+        setIsPlaceholder(false);
       }
-    }, [innerRef.current?.value])
+    }, [innerRef.current?.value]);
 
     return (
       <div>
@@ -46,7 +46,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             className,
             {
               "text-muted-foreground": isPlaceholder,
-            }
+            },
           )}
         >
           <select
@@ -64,10 +64,10 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
           </span>
         </div>
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-CartItemSelect.displayName = "CartItemSelect"
+CartItemSelect.displayName = "CartItemSelect";
 
-export default CartItemSelect
+export default CartItemSelect;

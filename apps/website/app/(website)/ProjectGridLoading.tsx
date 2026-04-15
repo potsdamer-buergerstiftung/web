@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import ProjectCardLoading from "@/components/ProjectCardLoading";
+import ProjectCardLoading from "@/components/project/card-loading";
 
 export const revalidate = 120;
 

@@ -1,25 +1,25 @@
-import { Heading } from "@medusajs/ui"
-import { cookies as nextCookies } from "next/headers"
+import { Heading } from "@medusajs/ui";
+import { cookies as nextCookies } from "next/headers";
 
-import CartTotals from "@/modules/common/components/cart-totals"
-import Help from "@/modules/order/components/help"
-import Items from "@/modules/order/components/items"
-import OnboardingCta from "@/modules/order/components/onboarding-cta"
-import OrderDetails from "@/modules/order/components/order-details"
-import ShippingDetails from "@/modules/order/components/shipping-details"
-import PaymentDetails from "@/modules/order/components/payment-details"
-import { HttpTypes } from "@medusajs/types"
+import CartTotals from "@/modules/common/components/cart-totals";
+import Help from "@/modules/order/components/help";
+import Items from "@/modules/order/components/items";
+import OnboardingCta from "@/modules/order/components/onboarding-cta";
+import OrderDetails from "@/modules/order/components/order-details";
+import ShippingDetails from "@/modules/order/components/shipping-details";
+import PaymentDetails from "@/modules/order/components/payment-details";
+import { HttpTypes } from "@medusajs/types";
 
 type OrderCompletedTemplateProps = {
-  order: HttpTypes.StoreOrder
-}
+  order: HttpTypes.StoreOrder;
+};
 
 export default async function OrderCompletedTemplate({
   order,
 }: OrderCompletedTemplateProps) {
-  const cookies = await nextCookies()
+  const cookies = await nextCookies();
 
-  const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true"
+  const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true";
 
   return (
     <div className="py-6 min-h-[calc(100vh-64px)]">
@@ -33,12 +33,12 @@ export default async function OrderCompletedTemplate({
             level="h1"
             className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
           >
-              <span>Vielen Dank!</span>
-              <span>Ihre Bestellung wurde erfolgreich aufgegeben.</span>
+            <span>Vielen Dank!</span>
+            <span>Ihre Bestellung wurde erfolgreich aufgegeben.</span>
           </Heading>
           <OrderDetails order={order} />
           <Heading level="h2" className="flex flex-row text-3xl-regular">
-              Zusammenfassung
+            Zusammenfassung
           </Heading>
           <Items order={order} />
           <CartTotals totals={order} />
@@ -48,5 +48,5 @@ export default async function OrderCompletedTemplate({
         </div>
       </div>
     </div>
-  )
+  );
 }

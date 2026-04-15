@@ -1,41 +1,44 @@
-"use client"
+"use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useCallback } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback } from "react";
 
-import SortProducts, { SortOptions } from "./sort-products"
+import SortProducts, { SortOptions } from "./sort-products";
 
 type RefinementListProps = {
-  sortBy: SortOptions
-  search?: boolean
-  'data-testid'?: string
-}
+  sortBy: SortOptions;
+  search?: boolean;
+  "data-testid"?: string;
+};
 
-const RefinementList = ({ sortBy, 'data-testid': dataTestId }: RefinementListProps) => {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
+const RefinementList = ({
+  sortBy,
+  "data-testid": dataTestId,
+}: RefinementListProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams)
-      params.set(name, value)
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
 
-      return params.toString()
+      return params.toString();
     },
-    [searchParams]
-  )
+    [searchParams],
+  );
 
   const setQueryParams = (name: string, value: string) => {
-    const query = createQueryString(name, value)
-    router.push(`${pathname}?${query}`)
-  }
+    const query = createQueryString(name, value);
+    router.push(`${pathname}?${query}`);
+  };
 
   return (
     <div className="flex sm:flex-col gap-12 py-4 mb-8 sm:px-0 pl-6 sm:min-w-[250px] sm:ml-[1.675rem]">
       <SortProducts sortBy={sortBy} setQueryParams={setQueryParams} />
     </div>
-  )
-}
+  );
+};
 
-export default RefinementList
+export default RefinementList;

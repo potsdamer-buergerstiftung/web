@@ -1,8 +1,8 @@
 import Link from "next/link";
-import FooterBanner from "./FooterBanner";
-import FooterBrand from "./FooterBrand";
-import FooterCopyright from "./FooterCopyright";
-import FooterDonateButton from "./FooterDonateButton";
+import FooterBanner from "./banner";
+import FooterBrand from "./brand";
+import FooterCopyright from "./copyright";
+import FooterDonateButton from "./donate-button";
 
 const Footer: React.FC = () => {
   return (

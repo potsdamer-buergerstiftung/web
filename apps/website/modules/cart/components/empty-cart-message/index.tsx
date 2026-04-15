@@ -1,4 +1,4 @@
-import InteractiveLink from "@/modules/common/components/interactive-link"
+import InteractiveLink from "@/modules/common/components/interactive-link";
 
 const EmptyCartMessage = () => {
   return (
@@ -15,7 +15,7 @@ const EmptyCartMessage = () => {
       </p>
       <InteractiveLink href="/store">Produkte entdecken</InteractiveLink>
     </div>
-  )
-}
+  );
+};
 
-export default EmptyCartMessage
+export default EmptyCartMessage;

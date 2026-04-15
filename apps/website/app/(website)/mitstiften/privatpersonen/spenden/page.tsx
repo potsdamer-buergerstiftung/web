@@ -1,4 +1,4 @@
-import { DonationForm } from "@/components/donation";
+import { DonationForm } from "@/modules/donation";
 import { readItems } from "portal/sdk";
 import serverClient from "portal/server";
 import { getDonationPaymentMethods } from "@/lib/data/donation";

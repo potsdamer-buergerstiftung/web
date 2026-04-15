@@ -1,10 +1,10 @@
-import { HttpTypes } from "@medusajs/types"
-import Checkbox from "@/modules/common/components/checkbox"
-import Input from "@/modules/common/components/input"
-import { mapKeys } from "lodash"
-import React, { useEffect, useMemo, useState } from "react"
-import AddressSelect from "../address-select"
-import CountrySelect from "../country-select"
+import { HttpTypes } from "@medusajs/types";
+import Checkbox from "@/modules/common/components/checkbox";
+import Input from "@/modules/common/components/input";
+import { mapKeys } from "lodash";
+import React, { useEffect, useMemo, useState } from "react";
+import AddressSelect from "../address-select";
+import CountrySelect from "../country-select";
 
 const ShippingAddress = ({
   customer,
@@ -12,10 +12,10 @@ const ShippingAddress = ({
   checked,
   onChange,
 }: {
-  customer: HttpTypes.StoreCustomer | null
-  cart: HttpTypes.StoreCart | null
-  checked: boolean
-  onChange: () => void
+  customer: HttpTypes.StoreCustomer | null;
+  cart: HttpTypes.StoreCart | null;
+  checked: boolean;
+  onChange: () => void;
 }) => {
   const [formData, setFormData] = useState<Record<string, any>>({
     "shipping_address.first_name": cart?.shipping_address?.first_name || "",
@@ -28,25 +28,25 @@ const ShippingAddress = ({
     "shipping_address.province": cart?.shipping_address?.province || "",
     "shipping_address.phone": cart?.shipping_address?.phone || "",
     email: cart?.email || "",
-  })
+  });
 
   const countriesInRegion = useMemo(
     () => cart?.region?.countries?.map((c) => c.iso_2),
-    [cart?.region]
-  )
+    [cart?.region],
+  );
 
   // check if customer has saved addresses that are in the current region
   const addressesInRegion = useMemo(
     () =>
       customer?.addresses.filter(
-        (a) => a.country_code && countriesInRegion?.includes(a.country_code)
+        (a) => a.country_code && countriesInRegion?.includes(a.country_code),
       ),
-    [customer?.addresses, countriesInRegion]
-  )
+    [customer?.addresses, countriesInRegion],
+  );
 
   const setFormAddress = (
     address?: HttpTypes.StoreCartAddress,
-    email?: string
+    email?: string,
   ) => {
     address &&
       setFormData((prevState: Record<string, any>) => ({
@@ -60,36 +60,36 @@ const ShippingAddress = ({
         "shipping_address.country_code": address?.country_code || "",
         "shipping_address.province": address?.province || "",
         "shipping_address.phone": address?.phone || "",
-      }))
+      }));
 
     email &&
       setFormData((prevState: Record<string, any>) => ({
         ...prevState,
         email: email,
-      }))
-  }
+      }));
+  };
 
   useEffect(() => {
     // Ensure cart is not null and has a shipping_address before setting form data
     if (cart && cart.shipping_address) {
-      setFormAddress(cart?.shipping_address, cart?.email)
+      setFormAddress(cart?.shipping_address, cart?.email);
     }
 
     if (cart && !cart.email && customer?.email) {
-      setFormAddress(undefined, customer.email)
+      setFormAddress(undefined, customer.email);
     }
-  }, [cart]) // Add cart as a dependency
+  }, [cart]); // Add cart as a dependency
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLInputElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -102,7 +102,7 @@ const ShippingAddress = ({
             addresses={customer.addresses}
             addressInput={
               mapKeys(formData, (_, key) =>
-                key.replace("shipping_address.", "")
+                key.replace("shipping_address.", ""),
               ) as HttpTypes.StoreCartAddress
             }
             onSelect={setFormAddress}
@@ -212,7 +212,7 @@ const ShippingAddress = ({
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ShippingAddress
+export default ShippingAddress;

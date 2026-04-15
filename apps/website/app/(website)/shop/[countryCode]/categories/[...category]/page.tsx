@@ -1,29 +1,29 @@
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { getCategoryByHandle, listCategories } from "@/lib/data/categories"
-import { listRegions } from "@/lib/data/regions"
-import { StoreRegion } from "@medusajs/types"
-import CategoryTemplate from "@/modules/categories/templates"
-import { SortOptions } from "@/modules/store/components/refinement-list/sort-products"
+import { getCategoryByHandle, listCategories } from "@/lib/data/categories";
+import { listRegions } from "@/lib/data/regions";
+import { StoreRegion } from "@medusajs/types";
+import CategoryTemplate from "@/modules/categories/templates";
+import { SortOptions } from "@/modules/store/components/refinement-list/sort-products";
 
 type Props = {
-  params: Promise<{ category: string[]; countryCode: string }>
+  params: Promise<{ category: string[]; countryCode: string }>;
   searchParams: Promise<{
-    sortBy?: SortOptions
-    page?: string
-  }>
-}
+    sortBy?: SortOptions;
+    page?: string;
+  }>;
+};
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params
+  const params = await props.params;
   try {
-    const productCategory = await getCategoryByHandle(params.category)
+    const productCategory = await getCategoryByHandle(params.category);
 
-    const title = productCategory.name + " | Potsdamer Bürgerstiftung Shop"
+    const title = productCategory.name + " | Potsdamer Bürgerstiftung Shop";
 
     const description =
-      productCategory.description ?? `Kategorie ${productCategory.name}.`
+      productCategory.description ?? `Kategorie ${productCategory.name}.`;
 
     return {
       title,
@@ -31,21 +31,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       alternates: {
         canonical: `${params.category.join("/")}`,
       },
-    }
+    };
   } catch (error) {
-    notFound()
+    notFound();
   }
 }
 
 export default async function CategoryPage(props: Props) {
-  const searchParams = await props.searchParams
-  const params = await props.params
-  const { sortBy, page } = searchParams
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+  const { sortBy, page } = searchParams;
 
-  const productCategory = await getCategoryByHandle(params.category)
+  const productCategory = await getCategoryByHandle(params.category);
 
   if (!productCategory) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -55,5 +55,5 @@ export default async function CategoryPage(props: Props) {
       page={page}
       countryCode={params.countryCode}
     />
-  )
+  );
 }

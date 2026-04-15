@@ -49,7 +49,7 @@ const ArticleCard: React.FC<{
             "overflow-hidden",
             compact
               ? "absolute bottom-0 top-0 left-0 right-0"
-              : "relative aspect-[5/4]"
+              : "relative aspect-[5/4]",
           )}
         >
           <Image
@@ -64,7 +64,7 @@ const ArticleCard: React.FC<{
               "object-cover",
               "transition",
               "duration-500",
-              { "group-hover:scale-110": !compact }
+              { "group-hover:scale-110": !compact },
             )}
           />
           <div
@@ -72,7 +72,7 @@ const ArticleCard: React.FC<{
               "absolute left-0 right-0 bottom-0 transition duration-500",
               compact
                 ? "top-0 bg-slate-900 bg-opacity-60"
-                : "translate-y-3 bg-gradient-to-t from-slate-900 to-transparent p-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
+                : "translate-y-3 bg-gradient-to-t from-slate-900 to-transparent p-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
             )}
           >
             {!compact && (
@@ -87,7 +87,7 @@ const ArticleCard: React.FC<{
       <div
         className={clsx(
           "relative bg-slate-100 px-6 py-8 transition",
-          compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200"
+          compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200",
         )}
       >
         <ul className="flex flex-wrap">
@@ -125,7 +125,7 @@ const ArticleCard: React.FC<{
                   "rounded-md bg-slate-200 py-1 px-2 text-sm font-medium transition hover:bg-slate-300",
                   {
                     "group-hover:bg-opacity-10 group-hover:text-white": compact,
-                  }
+                  },
                 )}
               >
                 {tag}

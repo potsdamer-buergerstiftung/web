@@ -1,5 +1,5 @@
 import EventCard from "@/components/EventCard";
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/page-title";
 import { Metadata } from "next";
 import Image from "next/image";
 import EventList from "./EventList";

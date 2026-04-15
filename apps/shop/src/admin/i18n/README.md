@@ -17,24 +17,24 @@ To add translations, create JSON translation files for each language under the `
 Then, export the translations in `src/admin/i18n/index.ts`:
 
 ```ts
-import en from "./json/en.json" with { type: "json" }
+import en from "./json/en.json" with { type: "json" };
 
 export default {
   en: {
     translation: en,
   },
-}
+};
 ```
 
 Finally, use translations in your admin widgets and routes using the `useTranslation` hook:
 
 ```tsx
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading } from "@medusajs/ui"
-import { useTranslation } from "react-i18next"
+import { defineWidgetConfig } from "@medusajs/admin-sdk";
+import { Button, Container, Heading } from "@medusajs/ui";
+import { useTranslation } from "react-i18next";
 
 const ProductWidget = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <Container className="p-0">
       <div className="flex items-center justify-between px-6 py-4">
@@ -45,14 +45,14 @@ const ProductWidget = () => {
         <Button variant="primary">{t("done")}</Button>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 export const config = defineWidgetConfig({
   zone: "product.details.before",
-})
+});
 
-export default ProductWidget
+export default ProductWidget;
 ```
 
 Learn more about translating admin extensions in the [Translate Admin Customizations](https://docs.medusajs.com/learn/fundamentals/admin/translations) documentation.

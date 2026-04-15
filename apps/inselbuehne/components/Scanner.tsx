@@ -18,7 +18,7 @@ export default function Scanner() {
     let html5QrcodeScanner = new Html5QrcodeScanner(
       "reader",
       { fps: 10, qrbox: { width: 600, height: 600 } },
-      /* verbose= */ false
+      /* verbose= */ false,
     );
     html5QrcodeScanner.render(onScanSuccess, () => {});
   }, []);

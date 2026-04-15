@@ -1,48 +1,48 @@
-"use client"
+"use client";
 
 import React, { useEffect, useActionState } from "react";
 
-import Input from "@/modules/common/components/input"
+import Input from "@/modules/common/components/input";
 
-import AccountInfo from "../account-info"
-import { HttpTypes } from "@medusajs/types"
-import { updateCustomer } from "@/lib/data/customer"
+import AccountInfo from "../account-info";
+import { HttpTypes } from "@medusajs/types";
+import { updateCustomer } from "@/lib/data/customer";
 
 type MyInformationProps = {
-  customer: HttpTypes.StoreCustomer
-}
+  customer: HttpTypes.StoreCustomer;
+};
 
 const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
-  const [successState, setSuccessState] = React.useState(false)
+  const [successState, setSuccessState] = React.useState(false);
 
   const updateCustomerPhone = async (
     _currentState: Record<string, unknown>,
-    formData: FormData
+    formData: FormData,
   ) => {
     const customer = {
       phone: formData.get("phone") as string,
-    }
+    };
 
     try {
-      await updateCustomer(customer)
-      return { success: true, error: null }
+      await updateCustomer(customer);
+      return { success: true, error: null };
     } catch (error: any) {
-      return { success: false, error: error.toString() }
+      return { success: false, error: error.toString() };
     }
-  }
+  };
 
   const [state, formAction] = useActionState(updateCustomerPhone, {
     error: false,
     success: false,
-  })
+  });
 
   const clearState = () => {
-    setSuccessState(false)
-  }
+    setSuccessState(false);
+  };
 
   useEffect(() => {
-    setSuccessState(state.success)
-  }, [state])
+    setSuccessState(state.success);
+  }, [state]);
 
   return (
     <form action={formAction} className="w-full">
@@ -68,7 +68,7 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
         </div>
       </AccountInfo>
     </form>
-  )
-}
+  );
+};
 
-export default ProfileEmail
+export default ProfileEmail;

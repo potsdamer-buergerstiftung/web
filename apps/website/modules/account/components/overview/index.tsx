@@ -1,14 +1,14 @@
-import { Container } from "@medusajs/ui"
+import { Container } from "@medusajs/ui";
 
-import ChevronDown from "@/modules/common/icons/chevron-down"
-import LocalizedClientLink from "@/modules/common/components/localized-client-link"
-import { convertToLocale } from "@/lib/util/money"
-import { HttpTypes } from "@medusajs/types"
+import ChevronDown from "@/modules/common/icons/chevron-down";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
+import { convertToLocale } from "@/lib/util/money";
+import { HttpTypes } from "@medusajs/types";
 
 type OverviewProps = {
-  customer: HttpTypes.StoreCustomer | null
-  orders: HttpTypes.StoreOrder[] | null
-}
+  customer: HttpTypes.StoreCustomer | null;
+  orders: HttpTypes.StoreOrder[] | null;
+};
 
 const Overview = ({ customer, orders }: OverviewProps) => {
   return (
@@ -16,10 +16,10 @@ const Overview = ({ customer, orders }: OverviewProps) => {
       <div className="hidden small:block">
         <div className="text-xl-semi flex justify-between items-center mb-4">
           <span data-testid="welcome-message" data-value={customer?.first_name}>
-                Hallo {customer?.first_name}
+            Hallo {customer?.first_name}
           </span>
-              <span className="text-small-regular text-ui-fg-base">
-                Angemeldet als:{" "}
+          <span className="text-small-regular text-ui-fg-base">
+            Angemeldet als:{" "}
             <span
               className="font-semibold"
               data-testid="customer-email"
@@ -86,7 +86,9 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                         >
                           <Container className="bg-gray-50 flex justify-between items-center p-4">
                             <div className="grid grid-cols-3 grid-rows-2 text-small-regular gap-x-4 flex-1">
-                              <span className="font-semibold">Bestelldatum</span>
+                              <span className="font-semibold">
+                                Bestelldatum
+                              </span>
                               <span className="font-semibold">
                                 Bestellnummer
                               </span>
@@ -121,10 +123,12 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                           </Container>
                         </LocalizedClientLink>
                       </li>
-                    )
+                    );
                   })
                 ) : (
-                  <span data-testid="no-orders-message">Keine aktuellen Bestellungen</span>
+                  <span data-testid="no-orders-message">
+                    Keine aktuellen Bestellungen
+                  </span>
                 )}
               </ul>
             </div>
@@ -132,37 +136,37 @@ const Overview = ({ customer, orders }: OverviewProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const getProfileCompletion = (customer: HttpTypes.StoreCustomer | null) => {
-  let count = 0
+  let count = 0;
 
   if (!customer) {
-    return 0
+    return 0;
   }
 
   if (customer.email) {
-    count++
+    count++;
   }
 
   if (customer.first_name && customer.last_name) {
-    count++
+    count++;
   }
 
   if (customer.phone) {
-    count++
+    count++;
   }
 
   const billingAddress = customer.addresses?.find(
-    (addr) => addr.is_default_billing
-  )
+    (addr) => addr.is_default_billing,
+  );
 
   if (billingAddress) {
-    count++
+    count++;
   }
 
-  return (count / 4) * 100
-}
+  return (count / 4) * 100;
+};
 
-export default Overview
+export default Overview;

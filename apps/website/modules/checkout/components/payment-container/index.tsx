@@ -1,23 +1,23 @@
-import { Radio as RadioGroupOption } from "@headlessui/react"
-import React, { useContext, useMemo, type JSX } from "react"
+import { Radio as RadioGroupOption } from "@headlessui/react";
+import React, { useContext, useMemo, type JSX } from "react";
 
-import Radio from "@/modules/common/components/radio"
+import Radio from "@/modules/common/components/radio";
 
-import { isManual } from "@/lib/constants"
-import SkeletonCardDetails from "@/modules/skeletons/components/skeleton-card-details"
-import { CardElement } from "@stripe/react-stripe-js"
-import { StripeCardElementOptions } from "@stripe/stripe-js"
-import PaymentTest from "../payment-test"
-import { StripeContext } from "../payment-wrapper/stripe-wrapper"
-import { cn } from "@/lib/utils"
+import { isManual } from "@/lib/constants";
+import SkeletonCardDetails from "@/modules/skeletons/components/skeleton-card-details";
+import { CardElement } from "@stripe/react-stripe-js";
+import { StripeCardElementOptions } from "@stripe/stripe-js";
+import PaymentTest from "../payment-test";
+import { StripeContext } from "../payment-wrapper/stripe-wrapper";
+import { cn } from "@/lib/utils";
 
 type PaymentContainerProps = {
-  paymentProviderId: string
-  selectedPaymentOptionId: string | null
-  disabled?: boolean
-  paymentInfoMap: Record<string, { title: string; icon: JSX.Element }>
-  children?: React.ReactNode
-}
+  paymentProviderId: string;
+  selectedPaymentOptionId: string | null;
+  disabled?: boolean;
+  paymentInfoMap: Record<string, { title: string; icon: JSX.Element }>;
+  children?: React.ReactNode;
+};
 
 const PaymentContainer: React.FC<PaymentContainerProps> = ({
   paymentProviderId,
@@ -26,7 +26,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
   disabled = false,
   children,
 }) => {
-  const isDevelopment = process.env.NODE_ENV === "development"
+  const isDevelopment = process.env.NODE_ENV === "development";
 
   return (
     <RadioGroupOption
@@ -38,7 +38,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         selectedPaymentOptionId === paymentProviderId
           ? "border-primary bg-primary/5 shadow-sm"
           : "border-border bg-white hover:border-primary/40",
-        disabled && "cursor-not-allowed opacity-50"
+        disabled && "cursor-not-allowed opacity-50",
       )}
     >
       <div className="flex items-center justify-between gap-3">
@@ -60,10 +60,10 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
       )}
       {children}
     </RadioGroupOption>
-  )
-}
+  );
+};
 
-export default PaymentContainer
+export default PaymentContainer;
 
 export const StripeCardContainer = ({
   paymentProviderId,
@@ -74,11 +74,11 @@ export const StripeCardContainer = ({
   setError,
   setCardComplete,
 }: Omit<PaymentContainerProps, "children"> & {
-  setCardBrand: (brand: string) => void
-  setError: (error: string | null) => void
-  setCardComplete: (complete: boolean) => void
+  setCardBrand: (brand: string) => void;
+  setError: (error: string | null) => void;
+  setCardComplete: (complete: boolean) => void;
 }) => {
-  const stripeReady = useContext(StripeContext)
+  const stripeReady = useContext(StripeContext);
 
   const useOptions: StripeCardElementOptions = useMemo(() => {
     return {
@@ -94,8 +94,8 @@ export const StripeCardContainer = ({
       classes: {
         base: "block w-full rounded-md border border-border bg-white px-4 py-3 text-sm outline-none transition-colors",
       },
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <PaymentContainer
@@ -114,10 +114,10 @@ export const StripeCardContainer = ({
               options={useOptions as StripeCardElementOptions}
               onChange={(e) => {
                 setCardBrand(
-                  e.brand && e.brand.charAt(0).toUpperCase() + e.brand.slice(1)
-                )
-                setError(e.error?.message || null)
-                setCardComplete(e.complete)
+                  e.brand && e.brand.charAt(0).toUpperCase() + e.brand.slice(1),
+                );
+                setError(e.error?.message || null);
+                setCardComplete(e.complete);
               }}
             />
           </div>
@@ -125,5 +125,5 @@ export const StripeCardContainer = ({
           <SkeletonCardDetails />
         ))}
     </PaymentContainer>
-  )
-}
+  );
+};

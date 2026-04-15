@@ -1,36 +1,36 @@
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 type AccordionItemProps = AccordionPrimitive.AccordionItemProps & {
-  title: string
-  subtitle?: string
-  description?: string
-  required?: boolean
-  tooltip?: string
-  forceMountContent?: true
-  headingSize?: "small" | "medium" | "large"
-  customTrigger?: React.ReactNode
-  complete?: boolean
-  active?: boolean
-  triggerable?: boolean
-  children: React.ReactNode
-}
+  title: string;
+  subtitle?: string;
+  description?: string;
+  required?: boolean;
+  tooltip?: string;
+  forceMountContent?: true;
+  headingSize?: "small" | "medium" | "large";
+  customTrigger?: React.ReactNode;
+  complete?: boolean;
+  active?: boolean;
+  triggerable?: boolean;
+  children: React.ReactNode;
+};
 
 type AccordionProps =
   | (AccordionPrimitive.AccordionSingleProps &
       React.RefAttributes<HTMLDivElement>)
   | (AccordionPrimitive.AccordionMultipleProps &
-      React.RefAttributes<HTMLDivElement>)
+      React.RefAttributes<HTMLDivElement>);
 
 const Accordion: React.FC<AccordionProps> & {
-  Item: React.FC<AccordionItemProps>
+  Item: React.FC<AccordionItemProps>;
 } = ({ children, ...props }) => {
   return (
     <AccordionPrimitive.Root {...props}>{children}</AccordionPrimitive.Root>
-  )
-}
+  );
+};
 
 const Item: React.FC<AccordionItemProps> = ({
   title,
@@ -47,20 +47,27 @@ const Item: React.FC<AccordionItemProps> = ({
   return (
     <AccordionPrimitive.Item
       {...props}
-      className={cn("group border-t border-border py-3 last:border-b", className)}
+      className={cn(
+        "group border-t border-border py-3 last:border-b",
+        className,
+      )}
     >
       <AccordionPrimitive.Header className="px-1">
         <div className="flex flex-col">
           <div className="flex w-full items-center justify-between">
             <div className="flex items-center gap-4">
-              <span className="text-sm font-medium text-foreground">{title}</span>
+              <span className="text-sm font-medium text-foreground">
+                {title}
+              </span>
             </div>
             <AccordionPrimitive.Trigger>
               {customTrigger || <MorphingTrigger />}
             </AccordionPrimitive.Trigger>
           </div>
           {subtitle && (
-            <span className="mt-1 text-sm text-muted-foreground">{subtitle}</span>
+            <span className="mt-1 text-sm text-muted-foreground">
+              {subtitle}
+            </span>
           )}
         </div>
       </AccordionPrimitive.Header>
@@ -69,15 +76,17 @@ const Item: React.FC<AccordionItemProps> = ({
         className="px-1 radix-state-closed:pointer-events-none radix-state-closed:animate-accordion-close radix-state-open:animate-accordion-open"
       >
         <div className="group-radix-state-closed:animate-accordion-close">
-          {description && <p className="text-sm text-muted-foreground">{description}</p>}
+          {description && (
+            <p className="text-sm text-muted-foreground">{description}</p>
+          )}
           <div className="w-full">{children}</div>
         </div>
       </AccordionPrimitive.Content>
     </AccordionPrimitive.Item>
-  )
-}
+  );
+};
 
-Accordion.Item = Item
+Accordion.Item = Item;
 
 const MorphingTrigger = () => {
   return (
@@ -87,7 +96,7 @@ const MorphingTrigger = () => {
         <span className="bg-current absolute inset-x-[31.75%] top-[48%] bottom-1/2 h-[1.5px] rounded-full duration-300 group-radix-state-open:rotate-90" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

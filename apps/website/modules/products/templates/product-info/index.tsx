@@ -1,9 +1,9 @@
-import { HttpTypes } from "@medusajs/types"
-import LocalizedClientLink from "@/modules/common/components/localized-client-link"
+import { HttpTypes } from "@medusajs/types";
+import LocalizedClientLink from "@/modules/common/components/localized-client-link";
 
 type ProductInfoProps = {
-  product: HttpTypes.StoreProduct
-}
+  product: HttpTypes.StoreProduct;
+};
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
   return (
@@ -32,7 +32,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductInfo
+export default ProductInfo;

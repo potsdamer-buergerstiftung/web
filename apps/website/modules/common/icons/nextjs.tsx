@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { IconProps } from "types/icon"
+import { IconProps } from "types/icon";
 
 const NextJs: React.FC<IconProps> = ({
   size = "20",
@@ -21,7 +21,7 @@ const NextJs: React.FC<IconProps> = ({
         fill={color}
       />
     </svg>
-  )
-}
+  );
+};
 
-export default NextJs
+export default NextJs;

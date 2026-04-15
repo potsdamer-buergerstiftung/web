@@ -1,14 +1,14 @@
-import { cookies as nextCookies } from "next/headers"
+import { cookies as nextCookies } from "next/headers";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 async function ProductOnboardingCta() {
-  const cookies = await nextCookies()
+  const cookies = await nextCookies();
 
-  const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true"
+  const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true";
 
   if (!isOnboarding) {
-    return null
+    return null;
   }
 
   return (
@@ -27,7 +27,7 @@ async function ProductOnboardingCta() {
         </a>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProductOnboardingCta
+export default ProductOnboardingCta;

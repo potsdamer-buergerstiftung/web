@@ -1,5 +1,5 @@
-import Blocks from "./Block";
-import Paragraph from "./Pragraph";
-import Image from "./Image";
+import Blocks from "./block";
+import Paragraph from "./paragraph";
+import Image from "./image";
 
 export { Blocks as default, Paragraph as ParagraphBlock, Image as ImageBlock };

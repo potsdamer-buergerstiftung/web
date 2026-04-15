@@ -1,24 +1,24 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-import { getProductPrice } from "@/lib/util/get-product-price"
-import { HttpTypes } from "@medusajs/types"
+import { getProductPrice } from "@/lib/util/get-product-price";
+import { HttpTypes } from "@medusajs/types";
 
 export default function ProductPrice({
   product,
   variant,
 }: {
-  product: HttpTypes.StoreProduct
-  variant?: HttpTypes.StoreProductVariant
+  product: HttpTypes.StoreProduct;
+  variant?: HttpTypes.StoreProductVariant;
 }) {
   const { cheapestPrice, variantPrice } = getProductPrice({
     product,
     variantId: variant?.id,
-  })
+  });
 
-  const selectedPrice = variant ? variantPrice : cheapestPrice
+  const selectedPrice = variant ? variantPrice : cheapestPrice;
 
   if (!selectedPrice) {
-    return <div className="h-10 w-32 animate-pulse rounded-md bg-muted" />
+    return <div className="h-10 w-32 animate-pulse rounded-md bg-muted" />;
   }
 
   return (
@@ -54,5 +54,5 @@ export default function ProductPrice({
         </>
       )}
     </div>
-  )
+  );
 }

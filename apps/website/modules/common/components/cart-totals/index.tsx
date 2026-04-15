@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { convertToLocale } from "@/lib/util/money"
-import React from "react"
+import { convertToLocale } from "@/lib/util/money";
+import React from "react";
 
-import Divider from "@/modules/common/components/divider"
+import Divider from "@/modules/common/components/divider";
 
 type CartTotalsProps = {
   totals: {
-    total?: number | null
-    subtotal?: number | null
-    tax_total?: number | null
-    currency_code: string
-    item_subtotal?: number | null
-    shipping_subtotal?: number | null
-    discount_subtotal?: number | null
-  }
-}
+    total?: number | null;
+    subtotal?: number | null;
+    tax_total?: number | null;
+    currency_code: string;
+    item_subtotal?: number | null;
+    shipping_subtotal?: number | null;
+    discount_subtotal?: number | null;
+  };
+};
 
 const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
   const {
@@ -25,7 +25,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
     item_subtotal,
     shipping_subtotal,
     discount_subtotal,
-  } = totals
+  } = totals;
 
   return (
     <div className="flex flex-col gap-3 text-sm text-muted-foreground">
@@ -66,13 +66,17 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
       <Divider className="my-1" />
       <div className="flex items-center justify-between font-medium text-foreground">
         <span>Total</span>
-        <span className="text-xl" data-testid="cart-total" data-value={total || 0}>
+        <span
+          className="text-xl"
+          data-testid="cart-total"
+          data-value={total || 0}
+        >
           {convertToLocale({ amount: total ?? 0, currency_code })}
         </span>
       </div>
       <Divider className="mt-1" />
     </div>
-  )
-}
+  );
+};
 
-export default CartTotals
+export default CartTotals;

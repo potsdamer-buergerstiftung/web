@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils"
-import { VariantPrice } from "types/global"
+import { cn } from "@/lib/utils";
+import { VariantPrice } from "types/global";
 
 export default async function PreviewPrice({ price }: { price: VariantPrice }) {
   if (!price) {
-    return null
+    return null;
   }
 
   return (
@@ -25,5 +25,5 @@ export default async function PreviewPrice({ price }: { price: VariantPrice }) {
         {price.calculated_price}
       </span>
     </>
-  )
+  );
 }

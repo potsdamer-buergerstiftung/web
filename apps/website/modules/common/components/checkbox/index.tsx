@@ -1,24 +1,24 @@
-import React from "react"
+import React from "react";
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 type CheckboxProps = {
-  checked?: boolean
-  onChange?: () => void
-  label: string
-  name?: string
-  'data-testid'?: string
-}
+  checked?: boolean;
+  onChange?: () => void;
+  label: string;
+  name?: string;
+  "data-testid"?: string;
+};
 
 const CheckboxWithLabel: React.FC<CheckboxProps> = ({
   checked = true,
   onChange,
   label,
   name,
-  'data-testid': dataTestId
+  "data-testid": dataTestId,
 }) => {
-  const checkboxId = name || "checkbox"
+  const checkboxId = name || "checkbox";
 
   return (
     <div className="flex items-center gap-3">
@@ -33,7 +33,7 @@ const CheckboxWithLabel: React.FC<CheckboxProps> = ({
         {label}
       </Label>
     </div>
-  )
-}
+  );
+};
 
-export default CheckboxWithLabel
+export default CheckboxWithLabel;

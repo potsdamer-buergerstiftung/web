@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Back from "@/modules/common/icons/back"
-import FastDelivery from "@/modules/common/icons/fast-delivery"
-import Refresh from "@/modules/common/icons/refresh"
+import Back from "@/modules/common/icons/back";
+import FastDelivery from "@/modules/common/icons/fast-delivery";
+import Refresh from "@/modules/common/icons/refresh";
 
-import Accordion from "./accordion"
-import { HttpTypes } from "@medusajs/types"
+import Accordion from "./accordion";
+import { HttpTypes } from "@medusajs/types";
 
 type ProductTabsProps = {
-  product: HttpTypes.StoreProduct
-}
+  product: HttpTypes.StoreProduct;
+};
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = [
@@ -21,7 +21,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
       label: "Versand & Rückgabe",
       component: <ShippingInfoTab />,
     },
-  ]
+  ];
 
   return (
     <div className="w-full">
@@ -38,8 +38,8 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
         ))}
       </Accordion>
     </div>
-  )
-}
+  );
+};
 
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
   return (
@@ -75,8 +75,8 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const ShippingInfoTab = () => {
   return (
@@ -115,7 +115,7 @@ const ShippingInfoTab = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductTabs
+export default ProductTabs;

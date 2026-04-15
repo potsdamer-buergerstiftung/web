@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { IconProps } from "types/icon"
+import { IconProps } from "types/icon";
 
 const EyeOff: React.FC<IconProps> = ({
   size = "20",
@@ -31,7 +31,7 @@ const EyeOff: React.FC<IconProps> = ({
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default EyeOff
+export default EyeOff;

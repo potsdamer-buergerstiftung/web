@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { IconProps } from "types/icon"
+import { IconProps } from "types/icon";
 
 const Eye: React.FC<IconProps> = ({
   size = "20",
@@ -31,7 +31,7 @@ const Eye: React.FC<IconProps> = ({
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Eye
+export default Eye;

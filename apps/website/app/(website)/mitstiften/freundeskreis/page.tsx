@@ -1,11 +1,5 @@
-import DonationForm from "@/components/DonationForm/DonationForm";
-import { freundeskreisDonationFormConfig } from "@/components/DonationForm/presets";
-
+import { DonationForm } from "@/modules/donation/form-component";
 
 export default function FreundeskreisJoinPage() {
-    return (
-        <div className="container px-4 mx-auto pt-28 pb-10">
-            <DonationForm config={freundeskreisDonationFormConfig} />
-        </div>
-    )
+  return <DonationForm />;
 }

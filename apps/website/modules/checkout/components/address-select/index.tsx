@@ -1,21 +1,21 @@
-import { Listbox, Transition } from "@headlessui/react"
-import { Fragment, useMemo } from "react"
+import { Listbox, Transition } from "@headlessui/react";
+import { Fragment, useMemo } from "react";
 
-import Radio from "@/modules/common/components/radio"
-import compareAddresses from "@/lib/util/compare-addresses"
-import { HttpTypes } from "@medusajs/types"
-import { ChevronUpDownIcon } from "@heroicons/react/24/solid"
+import Radio from "@/modules/common/components/radio";
+import compareAddresses from "@/lib/util/compare-addresses";
+import { HttpTypes } from "@medusajs/types";
+import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 type AddressSelectProps = {
-  addresses: HttpTypes.StoreCustomerAddress[]
-  addressInput: HttpTypes.StoreCartAddress | null
+  addresses: HttpTypes.StoreCustomerAddress[];
+  addressInput: HttpTypes.StoreCartAddress | null;
   onSelect: (
     address: HttpTypes.StoreCartAddress | undefined,
-    email?: string
-  ) => void
-}
+    email?: string,
+  ) => void;
+};
 
 const AddressSelect = ({
   addresses,
@@ -23,15 +23,15 @@ const AddressSelect = ({
   onSelect,
 }: AddressSelectProps) => {
   const handleSelect = (id: string) => {
-    const savedAddress = addresses.find((a) => a.id === id)
+    const savedAddress = addresses.find((a) => a.id === id);
     if (savedAddress) {
-      onSelect(savedAddress as HttpTypes.StoreCartAddress)
+      onSelect(savedAddress as HttpTypes.StoreCartAddress);
     }
-  }
+  };
 
   const selectedAddress = useMemo(() => {
-    return addresses.find((a) => compareAddresses(a, addressInput))
-  }, [addresses, addressInput])
+    return addresses.find((a) => compareAddresses(a, addressInput));
+  }, [addresses, addressInput]);
 
   return (
     <Listbox onChange={handleSelect} value={selectedAddress?.id}>
@@ -45,7 +45,7 @@ const AddressSelect = ({
               <span className="block truncate">
                 {selectedAddress
                   ? `${selectedAddress.first_name} ${selectedAddress.last_name}`
-                    : "Adresse auswählen"}
+                  : "Adresse auswählen"}
               </span>
               <ChevronUpDownIcon
                 className={cn("size-4 transition-transform duration-200", {
@@ -105,13 +105,13 @@ const AddressSelect = ({
                     </div>
                   </div>
                 </Listbox.Option>
-              )
+              );
             })}
           </Listbox.Options>
         </Transition>
       </div>
     </Listbox>
-  )
-}
+  );
+};
 
-export default AddressSelect
+export default AddressSelect;

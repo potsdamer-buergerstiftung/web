@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { IconProps } from "types/icon"
+import { IconProps } from "types/icon";
 
 const Medusa: React.FC<IconProps> = ({
   size = "20",
@@ -21,7 +21,7 @@ const Medusa: React.FC<IconProps> = ({
         fill={color}
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Medusa
+export default Medusa;

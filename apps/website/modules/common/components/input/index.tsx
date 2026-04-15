@@ -1,39 +1,39 @@
-import React, { useEffect, useImperativeHandle, useState } from "react"
+import React, { useEffect, useImperativeHandle, useState } from "react";
 
-import { Input as InputBase } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Input as InputBase } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-import Eye from "@/modules/common/icons/eye"
-import EyeOff from "@/modules/common/icons/eye-off"
+import Eye from "@/modules/common/icons/eye";
+import EyeOff from "@/modules/common/icons/eye-off";
 
 type InputProps = Omit<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
   "placeholder"
 > & {
-  label: string
-  errors?: Record<string, unknown>
-  touched?: Record<string, unknown>
-  name: string
-  topLabel?: string
-}
+  label: string;
+  errors?: Record<string, unknown>;
+  touched?: Record<string, unknown>;
+  name: string;
+  topLabel?: string;
+};
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ type, name, label, touched, required, topLabel, ...props }, ref) => {
-    const inputRef = React.useRef<HTMLInputElement>(null)
-    const [showPassword, setShowPassword] = useState(false)
-    const [inputType, setInputType] = useState(type)
+    const inputRef = React.useRef<HTMLInputElement>(null);
+    const [showPassword, setShowPassword] = useState(false);
+    const [inputType, setInputType] = useState(type);
 
     useEffect(() => {
       if (type === "password" && showPassword) {
-        setInputType("text")
+        setInputType("text");
       }
 
       if (type === "password" && !showPassword) {
-        setInputType("password")
+        setInputType("password");
       }
-    }, [type, showPassword])
+    }, [type, showPassword]);
 
-    useImperativeHandle(ref, () => inputRef.current!)
+    useImperativeHandle(ref, () => inputRef.current!);
 
     return (
       <div className="flex w-full flex-col gap-2">
@@ -69,10 +69,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </div>
         </div>
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Input.displayName = "Input"
+Input.displayName = "Input";
 
-export default Input
+export default Input;

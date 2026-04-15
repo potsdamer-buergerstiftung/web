@@ -1,12 +1,15 @@
 import React from "react";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCard from "@/components/article/card";
 
 interface PostsGridProps {
   promise: Promise<any>;
   compact?: boolean;
 }
 
-export default async function PostGrid({ promise, compact = true }: PostsGridProps) {
+export default async function PostGrid({
+  promise,
+  compact = true,
+}: PostsGridProps) {
   const posts = await promise;
   return (
     <React.Fragment>

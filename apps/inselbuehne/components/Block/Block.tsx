@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import Image from "./Image";
-import Paragraph from "./Pragraph";
+import Image from "./image";
+import Paragraph from "./paragraph";
 import { ConfigProp, RenderersProp } from "./render";
 
 export interface Block {

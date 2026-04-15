@@ -1,28 +1,28 @@
-import { Dialog, Transition } from "@headlessui/react"
-import React, { Fragment, useMemo } from "react"
+import { Dialog, Transition } from "@headlessui/react";
+import React, { Fragment, useMemo } from "react";
 
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import useToggleState from "@/lib/hooks/use-toggle-state"
-import ChevronDown from "@/modules/common/icons/chevron-down"
-import X from "@/modules/common/icons/x"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import useToggleState from "@/lib/hooks/use-toggle-state";
+import ChevronDown from "@/modules/common/icons/chevron-down";
+import X from "@/modules/common/icons/x";
 
-import { getProductPrice } from "@/lib/util/get-product-price"
-import OptionSelect from "./option-select"
-import { HttpTypes } from "@medusajs/types"
-import { isSimpleProduct } from "@/lib/util/product"
+import { getProductPrice } from "@/lib/util/get-product-price";
+import OptionSelect from "./option-select";
+import { HttpTypes } from "@medusajs/types";
+import { isSimpleProduct } from "@/lib/util/product";
 
 type MobileActionsProps = {
-  product: HttpTypes.StoreProduct
-  variant?: HttpTypes.StoreProductVariant
-  options: Record<string, string | undefined>
-  updateOptions: (title: string, value: string) => void
-  inStock?: boolean
-  handleAddToCart: () => void
-  isAdding?: boolean
-  show: boolean
-  optionsDisabled: boolean
-}
+  product: HttpTypes.StoreProduct;
+  variant?: HttpTypes.StoreProductVariant;
+  options: Record<string, string | undefined>;
+  updateOptions: (title: string, value: string) => void;
+  inStock?: boolean;
+  handleAddToCart: () => void;
+  isAdding?: boolean;
+  show: boolean;
+  optionsDisabled: boolean;
+};
 
 const MobileActions: React.FC<MobileActionsProps> = ({
   product,
@@ -35,23 +35,23 @@ const MobileActions: React.FC<MobileActionsProps> = ({
   show,
   optionsDisabled,
 }) => {
-  const { state, open, close } = useToggleState()
+  const { state, open, close } = useToggleState();
 
   const price = getProductPrice({
     product: product,
     variantId: variant?.id,
-  })
+  });
 
   const selectedPrice = useMemo(() => {
     if (!price) {
-      return null
+      return null;
     }
-    const { variantPrice, cheapestPrice } = price
+    const { variantPrice, cheapestPrice } = price;
 
-    return variantPrice || cheapestPrice || null
-  }, [price])
+    return variantPrice || cheapestPrice || null;
+  }, [price]);
 
-  const isSimple = isSimpleProduct(product)
+  const isSimple = isSimpleProduct(product);
 
   return (
     <>
@@ -98,7 +98,11 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 <div></div>
               )}
             </div>
-            <div className={cn("grid w-full grid-cols-2 gap-4", { "grid-cols-1": isSimple })}>
+            <div
+              className={cn("grid w-full grid-cols-2 gap-4", {
+                "grid-cols-1": isSimple,
+              })}
+            >
               {!isSimple && (
                 <Button
                   onClick={open}
@@ -127,8 +131,8 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 {!variant
                   ? "Variante auswählen"
                   : !inStock
-                  ? "Out of stock"
-                  : "In den Warenkorb"}
+                    ? "Out of stock"
+                    : "In den Warenkorb"}
               </Button>
             </div>
           </div>
@@ -186,7 +190,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                                 disabled={optionsDisabled}
                               />
                             </div>
-                          )
+                          );
                         })}
                       </div>
                     )}
@@ -198,7 +202,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
         </Dialog>
       </Transition>
     </>
-  )
-}
+  );
+};
 
-export default MobileActions
+export default MobileActions;

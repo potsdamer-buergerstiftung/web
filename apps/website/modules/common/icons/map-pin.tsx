@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { IconProps } from "types/icon"
+import { IconProps } from "types/icon";
 
 const MapPin: React.FC<IconProps> = ({
   size = "20",
@@ -31,7 +31,7 @@ const MapPin: React.FC<IconProps> = ({
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default MapPin
+export default MapPin;

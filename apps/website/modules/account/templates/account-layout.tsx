@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 
-import UnderlineLink from "@/modules/common/components/interactive-link"
+import UnderlineLink from "@/modules/common/components/interactive-link";
 
-import AccountNav from "../components/account-nav"
-import { HttpTypes } from "@medusajs/types"
+import AccountNav from "../components/account-nav";
+import { HttpTypes } from "@medusajs/types";
 
 interface AccountLayoutProps {
-  customer: HttpTypes.StoreCustomer | null
-  children: React.ReactNode
+  customer: HttpTypes.StoreCustomer | null;
+  children: React.ReactNode;
 }
 
 const AccountLayout: React.FC<AccountLayoutProps> = ({
@@ -37,7 +37,7 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AccountLayout
+export default AccountLayout;

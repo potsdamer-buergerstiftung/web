@@ -1,6 +1,10 @@
 import React from "react";
-import { PageBreadcrumb, PageBreadcrumbItem, PageBreadcrumbSeparator } from "@/components/PageBreadcrumb";
-import PageTitle from "@/components/PageTitle";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
+import PageTitle from "@/components/page-title";
 import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import { Link } from "@/components/ui/link";
@@ -20,9 +24,7 @@ export default function ContactPage() {
           </p>
         }
         actions={
-          <Link
-            href="mailto:info@potsdamer-buergerstiftung.org"
-          >
+          <Link href="mailto:info@potsdamer-buergerstiftung.org">
             info@potsdamer-buergerstiftung.org
           </Link>
         }

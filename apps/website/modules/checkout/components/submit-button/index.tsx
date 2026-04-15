@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from "react"
-import { useFormStatus } from "react-dom"
+import React from "react";
+import { useFormStatus } from "react-dom";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function SubmitButton({
   children,
@@ -11,12 +11,12 @@ export function SubmitButton({
   className,
   "data-testid": dataTestId,
 }: {
-  children: React.ReactNode
-  variant?: "primary" | "secondary" | "transparent" | "danger" | null
-  className?: string
-  "data-testid"?: string
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "transparent" | "danger" | null;
+  className?: string;
+  "data-testid"?: string;
 }) {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
 
   const buttonVariant =
     variant === "secondary"
@@ -25,7 +25,7 @@ export function SubmitButton({
         ? "ghost"
         : variant === "danger"
           ? "destructive"
-          : "default"
+          : "default";
 
   return (
     <Button
@@ -38,5 +38,5 @@ export function SubmitButton({
     >
       {children}
     </Button>
-  )
+  );
 }

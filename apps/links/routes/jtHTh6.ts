@@ -4,6 +4,6 @@ export default eventHandler((event) => {
   return sendRedirect(
     event,
     "https://www.potsdamer-buergerstiftung.org/mitstiften",
-    307
+    307,
   );
 });

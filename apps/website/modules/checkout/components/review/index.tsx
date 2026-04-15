@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import PaymentButton from "../payment-button"
-import { useSearchParams } from "next/navigation"
-import { cn } from "@/lib/utils"
+import PaymentButton from "../payment-button";
+import { useSearchParams } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const Review = ({ cart }: { cart: any }) => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  const isOpen = searchParams.get("step") === "review"
+  const isOpen = searchParams.get("step") === "review";
 
   const paidByGiftcard =
-    cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0
+    cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0;
 
   const previousStepsCompleted =
     cart.shipping_address &&
     cart.shipping_methods.length > 0 &&
-    (cart.payment_collection || paidByGiftcard)
+    (cart.payment_collection || paidByGiftcard);
 
   return (
     <section className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
@@ -23,7 +23,7 @@ const Review = ({ cart }: { cart: any }) => {
         <h2
           className={cn(
             "font-header text-3xl font-bold text-foreground",
-            !isOpen && "opacity-50"
+            !isOpen && "opacity-50",
           )}
         >
           Prüfung
@@ -45,7 +45,7 @@ const Review = ({ cart }: { cart: any }) => {
         </>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default Review
+export default Review;

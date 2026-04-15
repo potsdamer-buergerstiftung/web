@@ -6,12 +6,12 @@ import LocalizedClientLink from "@/modules/common/components/localized-client-li
 import clsx from "clsx";
 
 export default function CartButtonButton() {
-    return (
-        <LocalizedClientLink
-            href="/cart"
-            className={buttonVariants({ size: "icon" })}
-        >
-            <ShoppingCartIcon />
-        </LocalizedClientLink>
-    );
+  return (
+    <LocalizedClientLink
+      href="/cart"
+      className={buttonVariants({ size: "icon" })}
+    >
+      <ShoppingCartIcon />
+    </LocalizedClientLink>
+  );
 }

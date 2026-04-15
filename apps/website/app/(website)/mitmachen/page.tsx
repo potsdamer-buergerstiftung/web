@@ -1,5 +1,8 @@
-import { PageBreadcrumb, PageBreadcrumbItem } from "@/components/PageBreadcrumb";
-import PageTitle from "@/components/PageTitle";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+} from "@/components/page-breadcrumb";
+import PageTitle from "@/components/page-title";
 import Image from "next/image";
 
 export default function HonoraryPage() {
@@ -99,9 +102,9 @@ export default function HonoraryPage() {
           <div className="col-span-3 lg:col-span-1">
             <h1 className="font-header text-3xl font-bold mb-4">Ich kann...</h1>
             <p>
-              gut mit Zahlen umgehen, gärtnern, programmieren,
-              texten, reden, verkaufen, organisieren, ordnen, handwerken, gut
-              allein oder im Team arbeiten, Untersützung gewinnen
+              gut mit Zahlen umgehen, gärtnern, programmieren, texten, reden,
+              verkaufen, organisieren, ordnen, handwerken, gut allein oder im
+              Team arbeiten, Untersützung gewinnen
             </p>
             <h1 className="font-header text-3xl font-bold mt-4">
               ...mitmachen!

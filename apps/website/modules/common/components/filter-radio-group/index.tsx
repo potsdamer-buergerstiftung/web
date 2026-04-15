@@ -1,16 +1,16 @@
-import { EllipseMiniSolid } from "@medusajs/icons"
-import { Label, RadioGroup, Text, clx } from "@medusajs/ui"
+import { EllipseMiniSolid } from "@medusajs/icons";
+import { Label, RadioGroup, Text, clx } from "@medusajs/ui";
 
 type FilterRadioGroupProps = {
-  title: string
+  title: string;
   items: {
-    value: string
-    label: string
-  }[]
-  value: any
-  handleChange: (...args: any[]) => void
-  "data-testid"?: string
-}
+    value: string;
+    label: string;
+  }[];
+  value: any;
+  handleChange: (...args: any[]) => void;
+  "data-testid"?: string;
+};
 
 const FilterRadioGroup = ({
   title,
@@ -48,7 +48,7 @@ const FilterRadioGroup = ({
         ))}
       </RadioGroup>
     </div>
-  )
-}
+  );
+};
 
-export default FilterRadioGroup
+export default FilterRadioGroup;

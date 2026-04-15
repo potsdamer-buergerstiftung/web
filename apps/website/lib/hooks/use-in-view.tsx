@@ -1,29 +1,29 @@
-import { RefObject, useEffect, useState } from "react"
+import { RefObject, useEffect, useState } from "react";
 
 export const useIntersection = (
   element: RefObject<HTMLDivElement | null>,
-  rootMargin: string
+  rootMargin: string,
 ) => {
-  const [isVisible, setState] = useState(false)
+  const [isVisible, setState] = useState(false);
 
   useEffect(() => {
     if (!element.current) {
-      return
+      return;
     }
 
-    const el = element.current
+    const el = element.current;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setState(entry.isIntersecting)
+        setState(entry.isIntersecting);
       },
-      { rootMargin }
-    )
+      { rootMargin },
+    );
 
-    observer.observe(el)
+    observer.observe(el);
 
-    return () => observer.unobserve(el)
-  }, [element, rootMargin])
+    return () => observer.unobserve(el);
+  }, [element, rootMargin]);
 
-  return isVisible
-}
+  return isVisible;
+};
