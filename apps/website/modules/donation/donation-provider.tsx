@@ -22,8 +22,13 @@ export interface DonationProviderProps {
   defaultValues?: Partial<DonationFormValues>;
 }
 
-const defaultConfig: DonationConfig = {
+const defaultConfig: Required<DonationConfig> = {
   generalPurposeAvailable: true,
+  fixedPurposeId: null,
+  allowedIntervals: ["once", "monthly", "yearly"],
+  defaultInterval: "monthly",
+  allowedAmounts: [10, 25, 50, 100],
+  allowCustomAmount: false,
 };
 
 async function fetchProjects() {
@@ -45,7 +50,7 @@ async function fetchProjects() {
 
 async function fetchPaymentMethods(interval: "once" | "monthly" | "yearly") {
   const duration = interval === "once" ? "ONE_TIME" : "RECURRING";
-  const res = await fetch("/api/payment/methods", {
+  const res = await fetch("/api/donation/payment-methods", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,11 +67,76 @@ function DonationStateProvider({
   config,
   children,
 }: {
-  config: DonationConfig;
+  config: Required<DonationConfig>;
   children: ReactNode;
 }) {
-  const { watch } = useDonationForm();
+  const { watch, setValue } = useDonationForm();
   const interval = watch("interval");
+  const amountPreset = watch("amountPreset");
+
+  const allowedIntervals = config.allowedIntervals;
+  const allowedAmounts = config.allowedAmounts;
+
+  useEffect(() => {
+    if (!config.fixedPurposeId) {
+      return;
+    }
+
+    setValue("purposeId", config.fixedPurposeId, {
+      shouldDirty: false,
+      shouldTouch: false,
+      shouldValidate: true,
+    });
+  }, [config.fixedPurposeId, setValue]);
+
+  useEffect(() => {
+    const defaultInterval = config.defaultInterval;
+    const hasCurrentInterval = allowedIntervals.includes(interval);
+    const hasValidDefaultInterval =
+      defaultInterval !== undefined && allowedIntervals.includes(defaultInterval);
+    const nextInterval = hasCurrentInterval
+      ? interval
+      : hasValidDefaultInterval
+        ? defaultInterval
+        : allowedIntervals[0];
+
+    if (interval !== nextInterval) {
+      setValue("interval", nextInterval, {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: true,
+      });
+    }
+  }, [allowedIntervals, config.defaultInterval, interval, setValue]);
+
+  useEffect(() => {
+    const allowedPresetValues = allowedAmounts.map((amount) => `${amount.toFixed(2)}`);
+    const allowCustomAmount = config.allowCustomAmount;
+
+    const nextAmountPreset = allowCustomAmount
+      ? amountPreset === "custom" || allowedPresetValues.includes(amountPreset)
+        ? amountPreset
+        : allowedPresetValues[0]
+      : allowedPresetValues.includes(amountPreset)
+        ? amountPreset
+        : allowedPresetValues[0];
+
+    if (amountPreset !== nextAmountPreset) {
+      setValue("amountPreset", nextAmountPreset, {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: true,
+      });
+    }
+
+    if (!allowCustomAmount) {
+      setValue("amountCustom", "", {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: false,
+      });
+    }
+  }, [allowedAmounts, amountPreset, config.allowCustomAmount, setValue]);
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [projectsLoading, setProjectsLoading] = useState(true);
@@ -135,18 +205,33 @@ function DonationStateProvider({
 }
 
 export function DonationProvider({
-  config = defaultConfig,
+  config,
   children,
   defaultValues,
 }: DonationProviderProps) {
+  const resolvedConfig: Required<DonationConfig> = {
+    ...defaultConfig,
+    ...config,
+  };
+
+  const amountStepDisabled =
+    resolvedConfig.allowedIntervals.length === 1 &&
+    resolvedConfig.allowedAmounts.length === 1 &&
+    !resolvedConfig.allowCustomAmount;
+
   return (
     <DonationFormProvider
       defaultValues={{
         ...defaultValues,
       }}
     >
-      <DonationStateProvider config={config}>
-        <DonationStepperProvider>{children}</DonationStepperProvider>
+      <DonationStateProvider config={resolvedConfig}>
+        <DonationStepperProvider
+          fixedPurposeSet={Boolean(resolvedConfig.fixedPurposeId)}
+          amountStepDisabled={amountStepDisabled}
+        >
+          {children}
+        </DonationStepperProvider>
       </DonationStateProvider>
     </DonationFormProvider>
   );

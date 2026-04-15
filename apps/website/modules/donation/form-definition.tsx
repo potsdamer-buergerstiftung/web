@@ -16,7 +16,7 @@ const donationFormSchema = z
       .string()
       .check(z.minLength(1, "Bitte einen Verwendungszweck wählen.")),
     interval: z.enum(["once", "monthly", "yearly"]),
-    amountPreset: z.enum(["10.00", "50.00", "100.00", "custom"]),
+    amountPreset: z.string(),
     amountCustom: z.optional(z.string()),
     paymentMethodId: z.optional(z.string()),
     wantsReceipt: z.boolean(),
@@ -35,6 +35,15 @@ const donationFormSchema = z
             code: "custom",
             path: ["amountCustom"],
             message: "Bitte mindestens 1 Euro eingeben.",
+          });
+        }
+      } else {
+        const amount = Number.parseFloat(values.amountPreset);
+        if (Number.isNaN(amount) || amount < 1) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["amountPreset"],
+            message: "Bitte einen gueltigen Spendenbetrag wählen.",
           });
         }
       }

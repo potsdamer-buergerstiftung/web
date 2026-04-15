@@ -11,6 +11,7 @@ export default function IndividualsPage() {
     <>
       <PageTitle
         title="Mitstiften"
+        className="bg-muted/50"
         description={
           <p className="max-w-4xl">
             Erfahre, wie du persönlich mitstiften kannst. Wenn du uns als
@@ -25,7 +26,7 @@ export default function IndividualsPage() {
         }
       />
       <section>
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 pb-16">
+        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 pb-16 pt-12">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Freundeskreis</h1>
             <p className="mt-4">Kleiner Beitrag, große Freundschaft</p>

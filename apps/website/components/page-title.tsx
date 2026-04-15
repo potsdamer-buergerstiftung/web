@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import clsx from "clsx";
 
 interface PageTitleProps {
@@ -8,6 +9,7 @@ interface PageTitleProps {
   isCentered?: boolean;
   isCompact?: boolean;
   isLoading?: boolean;
+  className?: string;
 }
 
 export default function PageTitle({
@@ -18,9 +20,10 @@ export default function PageTitle({
   isCompact = false,
   isLoading = false,
   isCentered = false,
+  className,
 }: PageTitleProps) {
   return (
-    <section className="bg-white dark:bg-background">
+    <section className={cn("bg-white dark:bg-background", className)}>
       <div
         className={clsx(
           "container mx-auto px-4 pt-36 pb-8 md:pt-44",

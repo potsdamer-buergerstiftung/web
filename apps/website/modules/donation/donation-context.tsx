@@ -4,7 +4,12 @@ import { createContext, useContext } from "react";
 import type { Project } from "portal/types";
 
 export interface DonationConfig {
-  generalPurposeAvailable: boolean;
+  generalPurposeAvailable?: boolean;
+  fixedPurposeId?: "general" | string;
+  allowedIntervals?: ("once" | "monthly" | "yearly")[];
+  defaultInterval?: "once" | "monthly" | "yearly";
+  allowedAmounts?: number[];
+  allowCustomAmount?: boolean;
 }
 
 export type PaymentMethod = {

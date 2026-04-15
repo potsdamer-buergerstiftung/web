@@ -68,15 +68,17 @@ export function PurposeStep({
               onValueChange={field.onChange}
               className="grid grid-cols-1 md:grid-cols-2"
             >
-              <SingleItem
-                item={{
-                  id: "general",
-                  title: "Allgemeine Arbeit",
-                  description:
-                    "Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.",
-                }}
-                className="md:col-span-2 lg:col-span-2"
-              />
+              {generalPurposeAvailable && (
+                <SingleItem
+                  item={{
+                    id: "general",
+                    title: "Allgemeine Arbeit",
+                    description:
+                      "Wir setzen deinen Beitrag genau da ein, wo er gerade am meisten gebraucht wird.",
+                  }}
+                  className="md:col-span-2 lg:col-span-2"
+                />
+              )}
               {items.map((item) => (
                 <SingleItem key={item.id} item={item} />
               ))}

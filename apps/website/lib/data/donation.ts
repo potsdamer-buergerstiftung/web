@@ -1,21 +1,25 @@
 "use server";
 
-import createMollieClient, { Locale, SequenceType } from "@mollie/api-client";
-
-const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY });
+import { Locale, MandateMethod, SequenceType } from "@mollie/api-client";
+import { mollieClient } from "./mollie";
 
 export type DonationPaymentMethod = {
   id: string;
   description: string;
 };
 
-export async function getDonationPaymentMethods(
-  duration: "ONE_TIME" | "RECURRING",
+export enum DonationDuration {
+  ONE_TIME = "oneTime",
+  RECURRING = "recurring",
+}
+
+export async function listAvailablePaymentMethods(
+  forDuration: DonationDuration
 ): Promise<DonationPaymentMethod[]> {
   const methods = await mollieClient.methods.list({
     locale: Locale.de_DE,
     sequenceType:
-      duration === "ONE_TIME" ? SequenceType.oneoff : SequenceType.first,
+      forDuration === DonationDuration.ONE_TIME ? SequenceType.oneoff : SequenceType.first,
   });
 
   const rawMethods =
@@ -29,4 +33,33 @@ export async function getDonationPaymentMethods(
       id: String(method.id),
       description: String(method.description ?? method.id),
     }));
+}
+
+export async function createCustomerMandate(
+  customerId: string,
+  consumerName: string,
+  consumerAccount: string
+) {
+  const customer = await mollieClient.customerMandates.create({
+    customerId,
+    method: MandateMethod.directdebit,
+    consumerAccount,
+    consumerName,
+  });
+
+  return customer;
+}
+
+export async function createCustomer(firstName: string, lastName: string, email: string, organization?: string, consents?: Record<string, boolean>) {
+  const customer = await mollieClient.customers.create({
+    name: `${firstName} ${lastName}`,
+    email,
+    locale: Locale.de_DE,
+    metadata: {
+      organization,
+      consents: consents ?? {},
+    },
+  });
+
+  return customer;
 }

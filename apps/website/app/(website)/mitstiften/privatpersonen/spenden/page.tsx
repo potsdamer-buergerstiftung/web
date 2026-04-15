@@ -13,6 +13,7 @@ export default function FreundeskreisJoinPage() {
         title="Spenden"
         isCompact={true}
         isCentered={true}
+        className="bg-muted/50"
         description={
           <p className="max-w-4xl">
             Wir legen bei unseren Projekten großen Wert darauf, dass sie
@@ -29,8 +30,8 @@ export default function FreundeskreisJoinPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="container max-w-4xl mx-auto px-4 pb-16 mt-10">
-        <DonationForm />
+      <section className="container max-w-4xl mx-auto px-4 pb-16 mt-12">
+        <DonationForm config={{ fixedPurposeId: "general" }} />
       </section>
     </>
   );

@@ -16,6 +16,7 @@ import {
   useDonationForm,
   type DonationFormValues,
 } from "../form-definition";
+import { useDonation } from "../donation-context";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect } from "react";
 import {
@@ -27,11 +28,28 @@ import {
 
 function IntervalField() {
   const { control } = useDonationForm();
+  const { config } = useDonation();
   const onceId = useDonationFieldId("interval-once");
   const monthlyId = useDonationFieldId("interval-monthly");
   const yearlyId = useDonationFieldId("interval-yearly");
   const { field } = useController({ name: "interval", control });
-  const value = field.value ?? "monthly";
+  const configuredIntervals = config.allowedIntervals ?? ["once", "monthly", "yearly"];
+  const intervalOptions = [
+    { value: "once" as const, title: "Einmalig", id: onceId },
+    { value: "monthly" as const, title: "Monatlich", id: monthlyId },
+    { value: "yearly" as const, title: "Jährlich", id: yearlyId },
+  ].filter((option) => configuredIntervals.includes(option.value));
+  const hasSingleAllowedInterval = intervalOptions.length === 1;
+  const fallbackValue = intervalOptions[0]?.value ?? "monthly";
+  const value = intervalOptions.some((option) => option.value === field.value)
+    ? field.value
+    : fallbackValue;
+
+  useEffect(() => {
+    if (field.value !== value) {
+      field.onChange(value);
+    }
+  }, [field, value]);
 
   return (
     <FieldGroup>
@@ -42,32 +60,19 @@ function IntervalField() {
           onValueChange={(next) =>
             field.onChange(next as DonationFormValues["interval"])
           }
+          disabled={hasSingleAllowedInterval}
           className="flex flex-row flex-wrap"
         >
-          <FieldLabel htmlFor={onceId} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>Einmalig</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="once" id={onceId} />
-            </Field>
-          </FieldLabel>
-          <FieldLabel htmlFor={monthlyId} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>Monatlich</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="monthly" id={monthlyId} />
-            </Field>
-          </FieldLabel>
-          <FieldLabel htmlFor={yearlyId} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>Jährlich</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="yearly" id={yearlyId} />
-            </Field>
-          </FieldLabel>
+          {intervalOptions.map((option) => (
+            <FieldLabel key={option.value} htmlFor={option.id} className="w-fit!">
+              <Field orientation="horizontal">
+                <FieldContent>
+                  <FieldTitle>{option.title}</FieldTitle>
+                </FieldContent>
+                <RadioGroupItem value={option.value} id={option.id} />
+              </Field>
+            </FieldLabel>
+          ))}
         </RadioGroup>
       </FieldSet>
     </FieldGroup>
@@ -111,12 +116,33 @@ function AmountCustomField() {
 
 function AmountPresetField() {
   const { control } = useDonationForm();
-  const amount10Id = useDonationFieldId("amount-10");
-  const amount50Id = useDonationFieldId("amount-50");
-  const amount100Id = useDonationFieldId("amount-100");
+  const { config } = useDonation();
+  const amountFieldIdPrefix = useDonationFieldId("amount");
   const amountCustomPresetId = useDonationFieldId("amount-custom-preset");
   const { field } = useController({ name: "amountPreset", control });
-  const value = field.value ?? "10.00";
+  const amountOptions = (config.allowedAmounts ?? [10, 25, 50, 100]).map(
+    (amount) => ({
+      value: `${amount.toFixed(2)}`,
+      label: `${amount}€`,
+      id: `${amountFieldIdPrefix}-${amount}`,
+    }),
+  );
+  const allowCustomAmount = config.allowCustomAmount ?? false;
+  const hasSingleAllowedAmount = amountOptions.length === 1;
+  const disableAmountSelection = hasSingleAllowedAmount && !allowCustomAmount;
+  const fallbackValue = amountOptions[0]?.value ?? "10.00";
+  const value =
+    field.value === "custom" && allowCustomAmount
+      ? field.value
+      : amountOptions.some((option) => option.value === field.value)
+        ? field.value
+        : fallbackValue;
+
+  useEffect(() => {
+    if (field.value !== value) {
+      field.onChange(value);
+    }
+  }, [field, value]);
 
   return (
     <FieldGroup>
@@ -127,42 +153,31 @@ function AmountPresetField() {
           onValueChange={(next) =>
             field.onChange(next as DonationFormValues["amountPreset"])
           }
+          disabled={disableAmountSelection}
           className="flex flex-row flex-wrap"
         >
-          <FieldLabel htmlFor={amount10Id} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>10€</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="10.00" id={amount10Id} />
-            </Field>
-          </FieldLabel>
-          <FieldLabel htmlFor={amount50Id} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>50€</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="50.00" id={amount50Id} />
-            </Field>
-          </FieldLabel>
-          <FieldLabel htmlFor={amount100Id} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>100€</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="100.00" id={amount100Id} />
-            </Field>
-          </FieldLabel>
-          <FieldLabel htmlFor={amountCustomPresetId} className="w-fit!">
-            <Field orientation="horizontal">
-              <FieldContent>
-                <FieldTitle>Anderer Betrag</FieldTitle>
-              </FieldContent>
-              <RadioGroupItem value="custom" id={amountCustomPresetId} />
-            </Field>
-          </FieldLabel>
+          {amountOptions.map((option) => (
+            <FieldLabel key={option.value} htmlFor={option.id} className="w-fit!">
+              <Field orientation="horizontal">
+                <FieldContent>
+                  <FieldTitle>{option.label}</FieldTitle>
+                </FieldContent>
+                <RadioGroupItem value={option.value} id={option.id} />
+              </Field>
+            </FieldLabel>
+          ))}
+          {allowCustomAmount && (
+            <FieldLabel htmlFor={amountCustomPresetId} className="w-fit!">
+              <Field orientation="horizontal">
+                <FieldContent>
+                  <FieldTitle>Anderer Betrag</FieldTitle>
+                </FieldContent>
+                <RadioGroupItem value="custom" id={amountCustomPresetId} />
+              </Field>
+            </FieldLabel>
+          )}
         </RadioGroup>
-        {value === "custom" && <AmountCustomField />}
+        {allowCustomAmount && value === "custom" && <AmountCustomField />}
       </FieldSet>
     </FieldGroup>
   );
