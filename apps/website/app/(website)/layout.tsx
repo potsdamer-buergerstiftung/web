@@ -6,7 +6,6 @@ import HeaderNav from "@/components/Header/HeaderNav";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
 import HeaderQuickDonateDrawer from "@/components/Header/HeaderQuickDonateDrawer";
-import DonationForm from "@/components/DonationForm/DonationForm";
 import { Metadata } from "next";
 import HeaderDonationButton from "@/components/Header/HeaderDonationButton";
 
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
         "Wir vernetzen Gleichgesinnte, versammeln engagierte Menschen, bieten Unterstützung als Plattform für Ehrenamt und möchten es den Menschen in Potsdam leichter machen, das Gemeinwohl zu stärken, Gemeinschaftsgefühl zu erleben, ein herzliches Miteinander und eine starke Zukunft für Potsdam zu stiften.",
 };
 
-export default function WebsiteLayout(
+export default async function WebsiteLayout(
     { children }: { children: React.ReactNode },
 ) {
     return (
@@ -26,7 +25,6 @@ export default function WebsiteLayout(
                     <HeaderNav
                         items={[
                             <HeaderNavItem
-                                index={1}
                                 label="Die Stiftung"
                                 key="die-stiftung"
                             >
@@ -52,7 +50,6 @@ export default function WebsiteLayout(
                                 />
                             </HeaderNavItem>,
                             <HeaderNavItem
-                                index={2}
                                 label="Aktuelles & Projekte"
                                 key="aktuelles-projekte"
                             >
@@ -74,7 +71,6 @@ export default function WebsiteLayout(
                                 />
                             </HeaderNavItem>,
                             <HeaderNavItem
-                                index={3}
                                 label="Mitmachen"
                                 key="mitmachen"
                             >
@@ -88,22 +84,25 @@ export default function WebsiteLayout(
                                 />
                             </HeaderNavItem>,
                             <HeaderNavItem
-                                index={3}
                                 label="Mitstiften"
                                 href="/mitstiften"
                                 key="mitstiften"
                             />,
                             <HeaderNavItem
-                                index={4}
                                 label="Kontakt"
                                 href="/kontakt"
                                 key="kontakt"
+                            />,
+                            <HeaderNavItem
+                                label="Shop"
+                                href="/shop"
+                                key="shop"
                             />,
                         ]}
                     />
                 }
             />
-            <HeaderQuickDonateDrawer donationForm={<DonationForm />} />
+            <HeaderQuickDonateDrawer />
             <main>
                 {children}
             </main>
@@ -120,7 +119,6 @@ export default function WebsiteLayout(
             >
                 <SocialMediaLinks size="large" direction="horizontal" />
             </div>
-            {/* <ChatWidget /> */}
         </>
     );
 }

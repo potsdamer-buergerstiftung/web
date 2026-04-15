@@ -1,10 +1,10 @@
 import { DonationForm } from "@/components/donation";
-import { readItems } from "@directus/sdk";
-import directus from "portal";
+import { readItems } from "portal/sdk";
+import serverClient from "portal/server";
 import { getDonationPaymentMethods } from "@/lib/data/donation";
 
 async function getProjects() {
-  const res = await directus.request(
+  const res = await serverClient.request(
     readItems("projects", {
       fields: ["id", "title", "sub_title"],
       filter: {
@@ -25,7 +25,7 @@ export default async function PrivatDonationPage() {
   const paymentMethods = await getDonationPaymentMethods("ONE_TIME");
   return (
     <div className="container max-w-4xl px-4 mx-auto pt-48 pb-10">
-      <DonationForm projects={projects} paymentMethods={paymentMethods} />
+      <DonationForm />
     </div>
   );
 }
