@@ -48,7 +48,7 @@ export default async function Article({ promise }: Props) {
         <div className="mb-8 flex gap-8 text-sm text-slate-600">
           <div>
             <span className="block text-xs uppercase tracking-widest">
-              Autor
+              Autor:in
             </span>
             {post.user_created?.first_name ?? "Inselbuehne"}
           </div>
