@@ -16,7 +16,7 @@ export default function QuickDonateForm() {
                     </p>
                 </div>
                 <DonationFormProgress className="shrink-0" />
-                <div className="min-w-0">
+                <div className="mt-8 min-w-0 lg:mt-0">
                     <DonationFormContent />
                 </div>
             </div>
