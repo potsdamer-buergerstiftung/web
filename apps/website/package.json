@@ -74,6 +74,6 @@
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
     "tsconfig": "*",
-    "typescript": "^5.4.5"
+    "typescript": "^6.0.2"
   }
 }
