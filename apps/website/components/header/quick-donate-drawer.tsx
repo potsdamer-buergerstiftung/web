@@ -4,20 +4,7 @@ import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { quickDonateDrawerOpen } from "./state";
-import dynamic from "next/dynamic";
-
-const QuickDonateForm = dynamic(() => import("./quick-donate-form"), {
-  ssr: false,
-  loading: () => (
-    <div className="mx-auto h-full min-h-0 w-full max-w-5xl overflow-y-auto px-6 py-12 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-8 lg:px-8">
-      <div className="lg:col-span-2">
-        <p className="mx-auto mt-4 max-w-xl text-center">
-          Spendenformular wird geladen...
-        </p>
-      </div>
-    </div>
-  ),
-});
+import QuickDonateDrawerContent from "./quick-donate-drawer-content";
 
 export default function HeaderQuickDonateDrawer() {
   const [isQuickDonateDrawerOpen, setIsQuickDonateDrawerOpen] = useAtom(
@@ -45,7 +32,7 @@ export default function HeaderQuickDonateDrawer() {
     >
       <DrawerContent className="data-[vaul-drawer-direction=right]:w-full lg:data-[vaul-drawer-direction=right]:w-2/3 xl:data-[vaul-drawer-direction=right]:w-1/2 data-[vaul-drawer-direction=right]:sm:max-w-none">
         <DrawerTitle className="sr-only">Spenden</DrawerTitle>
-        <QuickDonateForm closeButtonRef={closeButtonRef} />
+        <QuickDonateDrawerContent closeButtonRef={closeButtonRef} />
       </DrawerContent>
     </Drawer>
   );
