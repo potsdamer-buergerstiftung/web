@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { readItems } from "@directus/sdk";
-import directus from "@/app/(website)/directus";
+import { readItems } from "portal/sdk";
+import portalServer from "portal/server";
 import EventArticle from "./EventArticle";
 import EventArticleLoading from "./EventArticleLoading";
 
 export const revalidate = 60;
 
-async function getEvent(id: string) {
-  const events = await directus.request(
+async function getEvent(id: number) {
+  const events = await portalServer.request(
     readItems("events", {
       fields: [
         "id",
@@ -32,6 +32,13 @@ type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { id } = await props.params;
+
+  if (typeof id !== "number") {
+    return {
+      title: "Veranstaltung nicht gefunden - Inselbühne Potsdam",
+    };
+  }
+  
   const event = await getEvent(id);
 
   return {
@@ -41,6 +48,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export default async function EventPage(props: Props) {
   const { id } = await props.params;
+
+  if (typeof id !== "number") {
+    return <div>Veranstaltung nicht gefunden</div>;
+  }
+  
   const event = getEvent(id);
 
   return (

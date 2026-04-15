@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { readItems } from "@directus/sdk";
-import directus from "@/app/(website)/directus";
+import { readItems } from "portal/sdk";
+import portalServer from "portal/server";
 import Article from "./Article";
 import ArticleLoading from "./ArticleLoading";
 
 export const revalidate = 60;
 
 async function getPost(slug: string) {
-  const posts = await directus.request(
+  const posts = await portalServer.request(
     readItems("posts", {
       fields: [
         "title",
@@ -17,7 +17,9 @@ async function getPost(slug: string) {
         "image",
         "excerpt",
         "slug",
-        "user_created.first_name",
+        {
+          "user_created": ["first_name"],
+        }
       ],
       filter: {
         slug: { _eq: decodeURIComponent(slug) },

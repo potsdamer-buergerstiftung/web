@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { readItems } from "@directus/sdk";
+import { readItems } from "portal/sdk";
 import PageTitle from "@/components/page-title";
-import directus from "@/app/(website)/directus";
+import portalServer from "portal/server";
 import PostGrid from "./PostGrid";
 import PostGridLoading from "./PostGridLoading";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getPosts() {
-  return directus.request(
+  return portalServer.request(
     readItems("posts", {
       fields: ["title", "date", "id", "image", "excerpt", "slug"],
       sort: ["-date"],

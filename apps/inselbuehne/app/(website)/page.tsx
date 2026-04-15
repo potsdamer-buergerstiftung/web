@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { readItems } from "@directus/sdk";
+import { readItems } from "portal/sdk";
 import Logo from "@/components/Logo";
 import { Link } from "@/components/ui/link";
-import directus from "@/app/(website)/directus";
+import portalServer from "portal/server";
 import PostCard from "@/components/PostCard";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getPosts() {
-  return directus.request(
+  return portalServer.request(
     readItems("posts", {
       fields: ["title", "date", "id", "image", "excerpt", "slug"],
       sort: ["-date"],
@@ -54,7 +54,7 @@ export default async function HomePage() {
             <h1 className="font-serif text-5xl lg:text-6xl leading-tight">
               Deine Insel &mdash;
               <br />
-              <span className="text-primary italic italic underline decoration-primary/30 underline-offset-8">
+              <span className="text-primary italic underline decoration-primary/30 underline-offset-8">
                 deine Bühne!
               </span>
             </h1>
@@ -70,7 +70,7 @@ export default async function HomePage() {
                 src="/img/bg.svg"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute right-0 top-0 z-0 w-full max-w-[540px] rotate-[-5deg] select-none md:max-w-[560px] md:right-[-4px] md:top-[-4px] md:translate-y-[3%]"
+                className="pointer-events-none absolute right-0 top-0 z-0 w-full max-w-135 rotate-[-5deg] select-none md:max-w-140 md:-right-1 md:-top-1 md:translate-y-[3%]"
               />
               <div className="relative z-10 w-full">
                 <Image
@@ -78,7 +78,7 @@ export default async function HomePage() {
                   width={400}
                   height={300}
                   alt="test"
-                  className="h-full w-full object-right-top"
+                  className="h-full w-full object-top-right"
                 />
               </div>
             </div>
@@ -101,7 +101,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-b from-white to-gray-50">
+      <section className="bg-linear-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 pt-12 pb-8 md:pt-16">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div>

@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import EventList from "./EventList";
 import { Suspense } from "react";
-import directus from "@/app/(website)/directus";
-import { readItems } from "@directus/sdk";
+import portalServer from "portal/server";
+import { readItems } from "portal/sdk";
 import EventListLoading from "./EventListLoading";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getEvents() {
-  const res = await directus.request(
+  const res = await portalServer.request(
     readItems("events", {
       fields: [
         "name",
@@ -29,8 +29,9 @@ async function getEvents() {
       ],
       sort: ["start"],
       filter: {
-        project: { _eq: "inselbuehne" },
+        // @ts-ignore
         start: { _gte: new Date().toISOString() },
+        project: { _eq: "inselbuehne" },
       },
     }),
   );
