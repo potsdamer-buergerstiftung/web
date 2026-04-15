@@ -74,10 +74,12 @@ const Shipping: React.FC<ShippingProps> = ({
   const isOpen = searchParams.get("step") === "delivery";
 
   const _shippingMethods = availableShippingMethods?.filter(
+    // @ts-ignore
     (sm) => sm.service_zone?.fulfillment_set?.type !== "pickup",
   );
 
   const _pickupMethods = availableShippingMethods?.filter(
+    // @ts-ignore
     (sm) => sm.service_zone?.fulfillment_set?.type === "pickup",
   );
 
@@ -342,6 +344,7 @@ const Shipping: React.FC<ShippingProps> = ({
                               </span>
                               <span className="text-sm text-muted-foreground">
                                 {formatAddress(
+                                  // @ts-ignore
                                   option.service_zone?.fulfillment_set?.location
                                     ?.address,
                                 )}
@@ -372,7 +375,6 @@ const Shipping: React.FC<ShippingProps> = ({
               size="lg"
               className="mt-6"
               onClick={handleSubmit}
-              isLoading={isLoading}
               disabled={!cart.shipping_methods?.[0]}
               data-testid="submit-delivery-option-button"
             >

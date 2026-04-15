@@ -138,7 +138,6 @@ const StripePaymentButton = ({
         disabled={disabled || notReady}
         onClick={handlePayment}
         size="lg"
-        isLoading={submitting}
         data-testid={dataTestId}
       >
         Bestellung aufgeben
@@ -175,7 +174,6 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
     <>
       <Button
         disabled={notReady}
-        isLoading={submitting}
         onClick={handlePayment}
         size="lg"
         data-testid="submit-order-button"

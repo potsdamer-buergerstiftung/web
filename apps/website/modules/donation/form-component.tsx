@@ -4,8 +4,6 @@ import { DonationConfig, DonationProvider } from "./donation-context";
 import { DonationProgressIndicator } from "./donation-progress";
 import { DonationSteps } from "./donation-steps-content";
 import { DonationActions } from "./donation-actions";
-import type { DonationPaymentMethod } from "@/lib/data/donation";
-import { DonationFormConfig } from "../DonationForm/types";
 
 interface DonationFormProps {
   config?: DonationConfig;

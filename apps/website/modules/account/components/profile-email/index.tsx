@@ -42,7 +42,7 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
   };
 
   useEffect(() => {
-    setSuccessState(state.success);
+    setSuccessState(state.success as boolean);
   }, [state]);
 
   return (
@@ -52,7 +52,7 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
         currentInfo={`${customer.email}`}
         isSuccess={successState}
         isError={!!state.error}
-        errorMessage={state.error}
+        errorMessage={state.error as string | null}
         clearState={clearState}
         data-testid="account-email-editor"
       >

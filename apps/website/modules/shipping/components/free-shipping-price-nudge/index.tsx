@@ -11,7 +11,7 @@ import {
 import { Button, clx } from "@medusajs/ui";
 import LocalizedClientLink from "@/modules/common/components/localized-client-link";
 import { useState } from "react";
-import { StoreFreeShippingPrice } from "types/global";
+import { StoreFreeShippingPrice } from "@/types/global";
 
 const computeTarget = (
   cart: HttpTypes.StoreCart,

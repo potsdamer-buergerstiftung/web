@@ -125,7 +125,6 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 disabled={!inStock || !variant}
                 className="w-full"
                 size="lg"
-                isLoading={isAdding}
                 data-testid="mobile-cart-button"
               >
                 {!variant

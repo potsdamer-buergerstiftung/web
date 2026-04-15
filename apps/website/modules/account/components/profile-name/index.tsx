@@ -42,7 +42,7 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
   };
 
   useEffect(() => {
-    setSuccessState(state.success);
+    setSuccessState(state.success as boolean);
   }, [state]);
 
   return (

@@ -173,10 +173,8 @@ export default function ProductActions({
             isAdding ||
             !isValidVariant
           }
-          variant="primary"
           className="w-full"
           size="lg"
-          isLoading={isAdding}
           data-testid="add-product-button"
         >
           {!selectedVariant && !options

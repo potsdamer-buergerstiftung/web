@@ -32,7 +32,6 @@ export function SubmitButton({
       size="lg"
       className={className}
       type="submit"
-      isLoading={pending}
       variant={buttonVariant}
       data-testid={dataTestId}
     >

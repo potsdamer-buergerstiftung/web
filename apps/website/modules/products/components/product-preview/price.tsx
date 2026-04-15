@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { VariantPrice } from "types/global";
+import { VariantPrice } from "@/types/global";
 
 export default async function PreviewPrice({ price }: { price: VariantPrice }) {
   if (!price) {

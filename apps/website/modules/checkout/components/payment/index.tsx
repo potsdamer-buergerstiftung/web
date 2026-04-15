@@ -183,7 +183,6 @@ const Payment = ({
           size="lg"
           className="mt-6"
           onClick={handleSubmit}
-          isLoading={isLoading}
           disabled={
             (isStripeLike(selectedPaymentMethod) && !cardComplete) ||
             (!selectedPaymentMethod && !paidByGiftcard)
