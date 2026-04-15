@@ -8,6 +8,9 @@
     "lint": {
       "outputs": []
     },
+    "dev": {
+      "cache": false
+    },
     "website#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
