@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  allowedDevOrigins: ["portal.potsdamer-buergerstiftung.org", "wixapis.com"],
+  allowedDevOrigins: ["portal.potsdamer-buergerstiftung.org"],
   async rewrites() {
     return [
       {
@@ -20,19 +19,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "portal.potsdamer-buergerstiftung.org",
-      },
-      {
-        protocol: "https",
-        hostname: "*.cdninstagram.com",
-        port: "",
-      },
-      {
-        protocol: "https",
-        hostname: "static.wixstatic.com",
-      },
-      {
-        protocol: "https",
-        hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
       },
       {
         protocol: "https",
