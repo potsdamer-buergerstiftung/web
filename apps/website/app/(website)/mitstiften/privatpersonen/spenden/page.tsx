@@ -1,31 +1,36 @@
 import { DonationForm } from "@/modules/donation";
-import { readItems } from "portal/sdk";
-import serverClient from "portal/server";
-import { getDonationPaymentMethods } from "@/lib/data/donation";
+import PageTitle from "@/components/page-title";
+import {
+  PageBreadcrumb,
+  PageBreadcrumbItem,
+  PageBreadcrumbSeparator,
+} from "@/components/page-breadcrumb";
 
-async function getProjects() {
-  const res = await serverClient.request(
-    readItems("projects", {
-      fields: ["id", "title", "sub_title"],
-      filter: {
-        status: {
-          _in: ["inprogress", "recurring"],
-        },
-        allow_donations: {
-          _eq: true,
-        },
-      },
-    }),
-  );
-  return res;
-}
-
-export default async function PrivatDonationPage() {
-  const projects = await getProjects();
-  const paymentMethods = await getDonationPaymentMethods("ONE_TIME");
+export default function FreundeskreisJoinPage() {
   return (
-    <div className="container max-w-4xl px-4 mx-auto pt-48 pb-10">
-      <DonationForm />
-    </div>
+    <>
+      <PageTitle
+        title="Spenden"
+        isCompact={true}
+        isCentered={true}
+        description={
+          <p className="max-w-4xl">
+            Erfahre, wie du persönlich mitstiften kannst. Wenn du uns als
+            Unternehmen unterstützen möchtest kontaktiere uns gerne, um über
+            Sponsorings, Kooperationen, Sachspenden und mehr zu erfahren.
+          </p>
+        }
+        breadcrumb={
+          <PageBreadcrumb>
+            <PageBreadcrumbItem label="Mitstiften" href="/mitstiften" />
+            <PageBreadcrumbSeparator />
+            <PageBreadcrumbItem label="Spenden" />
+          </PageBreadcrumb>
+        }
+      />
+      <section className="container max-w-4xl mx-auto px-4 pb-16 mt-10">
+        <DonationForm />
+      </section>
+    </>
   );
 }
