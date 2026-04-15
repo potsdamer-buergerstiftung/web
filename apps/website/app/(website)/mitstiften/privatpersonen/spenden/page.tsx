@@ -15,9 +15,10 @@ export default function FreundeskreisJoinPage() {
         isCentered={true}
         description={
           <p className="max-w-4xl">
-            Erfahre, wie du persönlich mitstiften kannst. Wenn du uns als
-            Unternehmen unterstützen möchtest kontaktiere uns gerne, um über
-            Sponsorings, Kooperationen, Sachspenden und mehr zu erfahren.
+            Wir legen bei unseren Projekten großen Wert darauf, dass sie
+            nachhaltig wirken. Das ist jedoch nur möglich, wenn wir langfristig
+            planen und fördern können. Mit Deiner regelmäßigen und verlässlichen
+            Unterstützung können wir diese wichtigen Voraussetzungen schaffen.
           </p>
         }
         breadcrumb={
