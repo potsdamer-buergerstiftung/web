@@ -1,6 +1,6 @@
 "use client";
 
-import { useStepper, Stepper } from "./steps";
+import { useDonationStepper } from "./steps";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,7 @@ export function DonationActions({
   nextLabel = "Weiter",
   prevLabel = "Zurück",
 }: DonationActionsProps) {
+  const { useStepper, Stepper } = useDonationStepper();
   const stepper = useStepper();
 
   return (

@@ -1,8 +1,12 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
-import { DonationFormProvider, DonationFormValues } from "./form-definition";
-import { Scoped } from "./steps";
+import {
+  DonationFormProvider,
+  DonationFormValues,
+  useDonationForm,
+} from "./form-definition";
+import { DonationStepperProvider } from "./steps";
 import {
   DonationContext,
   DonationConfig,
@@ -11,7 +15,6 @@ import {
 import browserClient from "portal/browser";
 import { readItems } from "portal/sdk";
 import type { Project } from "portal/types";
-import { useFormContext } from "react-hook-form";
 
 export interface DonationProviderProps {
   config?: DonationConfig;
@@ -62,7 +65,7 @@ function DonationStateProvider({
   config: DonationConfig;
   children: ReactNode;
 }) {
-  const { watch } = useFormContext<DonationFormValues>();
+  const { watch } = useDonationForm();
   const interval = watch("interval");
 
   const [projects, setProjects] = useState<Project[]>([]);
@@ -142,7 +145,7 @@ export function DonationProvider({
       }}
     >
       <DonationStateProvider config={config}>
-        <Scoped>{children}</Scoped>
+        <DonationStepperProvider>{children}</DonationStepperProvider>
       </DonationStateProvider>
     </DonationFormProvider>
   );

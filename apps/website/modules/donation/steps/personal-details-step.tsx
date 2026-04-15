@@ -6,13 +6,18 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { StepTitle } from "./step-title";
-import { useController, useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "../form-definition";
+import { useController } from "react-hook-form";
+import { useDonationFieldId, useDonationForm } from "../form-definition";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect } from "react";
 
 export function PersonalDetailsStep() {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const isAnonymousId = useDonationFieldId("is-anonymous");
+  const firstNameId = useDonationFieldId("first-name");
+  const lastNameId = useDonationFieldId("last-name");
+  const emailId = useDonationFieldId("email");
+  const organisationId = useDonationFieldId("organisation");
   const { field: isAnonymousField } = useController({
     name: "isAnonymous",
     control,
@@ -85,14 +90,14 @@ export function PersonalDetailsStep() {
           <FieldGroup>
             <Field orientation="horizontal">
               <Checkbox
-                id="is-anonymous"
+                id={isAnonymousId}
                 checked={isAnonymous}
                 disabled={!allowAnonymous}
                 onCheckedChange={(checked) =>
                   isAnonymousField.onChange(Boolean(checked))
                 }
               />
-              <FieldLabel htmlFor="is-anonymous">
+              <FieldLabel htmlFor={isAnonymousId}>
                 Ich möchte anonym spenden
               </FieldLabel>
             </Field>
@@ -104,13 +109,13 @@ export function PersonalDetailsStep() {
               className="col-span-2 md:col-span-1"
               data-invalid={firstNameState.invalid}
             >
-              <FieldLabel htmlFor="firstName">
+              <FieldLabel htmlFor={firstNameId}>
                 Vorname (Erforderlich)
               </FieldLabel>
               <Input
                 {...firstNameField}
                 value={firstNameField.value ?? ""}
-                id="firstName"
+                id={firstNameId}
                 type="text"
                 placeholder="Dein Vorname"
                 aria-invalid={firstNameState.invalid}
@@ -123,13 +128,13 @@ export function PersonalDetailsStep() {
               className="col-span-2 md:col-span-1"
               data-invalid={lastNameState.invalid}
             >
-              <FieldLabel htmlFor="lastName">
+              <FieldLabel htmlFor={lastNameId}>
                 Nachname (Erforderlich)
               </FieldLabel>
               <Input
                 {...lastNameField}
                 value={lastNameField.value ?? ""}
-                id="lastName"
+                id={lastNameId}
                 type="text"
                 placeholder="Dein Nachname"
                 aria-invalid={lastNameState.invalid}
@@ -142,11 +147,11 @@ export function PersonalDetailsStep() {
               className="col-span-2 md:col-span-1"
               data-invalid={emailState.invalid}
             >
-              <FieldLabel htmlFor="email">E-Mail (Erforderlich)</FieldLabel>
+              <FieldLabel htmlFor={emailId}>E-Mail (Erforderlich)</FieldLabel>
               <Input
                 {...emailField}
                 value={emailField.value ?? ""}
-                id="email"
+                id={emailId}
                 type="email"
                 placeholder="Deine E-Mail"
                 aria-invalid={emailState.invalid}
@@ -154,11 +159,11 @@ export function PersonalDetailsStep() {
               {emailState.invalid && <FieldError errors={[emailState.error]} />}
             </Field>
             <Field className="col-span-2 md:col-span-1">
-              <FieldLabel htmlFor="organisation">Organisation</FieldLabel>
+              <FieldLabel htmlFor={organisationId}>Organisation</FieldLabel>
               <Input
                 {...organisationField}
                 value={organisationField.value ?? ""}
-                id="organisation"
+                id={organisationId}
                 type="text"
                 placeholder="Deine Organisation"
               />

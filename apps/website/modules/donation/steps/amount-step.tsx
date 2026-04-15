@@ -10,8 +10,12 @@ import {
 } from "@/components/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { StepTitle } from "./step-title";
-import { useController, useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "../form-definition";
+import { useController } from "react-hook-form";
+import {
+  useDonationFieldId,
+  useDonationForm,
+  type DonationFormValues,
+} from "../form-definition";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect } from "react";
 import {
@@ -22,7 +26,10 @@ import {
 } from "@/components/ui/input-group";
 
 function IntervalField() {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const onceId = useDonationFieldId("interval-once");
+  const monthlyId = useDonationFieldId("interval-monthly");
+  const yearlyId = useDonationFieldId("interval-yearly");
   const { field } = useController({ name: "interval", control });
   const value = field.value ?? "monthly";
 
@@ -37,28 +44,28 @@ function IntervalField() {
           }
           className="flex flex-row flex-wrap"
         >
-          <FieldLabel htmlFor="once" className="w-fit!">
+          <FieldLabel htmlFor={onceId} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Einmalig</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="once" id="once" />
+              <RadioGroupItem value="once" id={onceId} />
             </Field>
           </FieldLabel>
-          <FieldLabel htmlFor="monthly" className="w-fit!">
+          <FieldLabel htmlFor={monthlyId} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Monatlich</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="monthly" id="monthly" />
+              <RadioGroupItem value="monthly" id={monthlyId} />
             </Field>
           </FieldLabel>
-          <FieldLabel htmlFor="yearly" className="w-fit!">
+          <FieldLabel htmlFor={yearlyId} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Jährlich</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="yearly" id="yearly" />
+              <RadioGroupItem value="yearly" id={yearlyId} />
             </Field>
           </FieldLabel>
         </RadioGroup>
@@ -68,7 +75,8 @@ function IntervalField() {
 }
 
 function AmountCustomField() {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const amountCustomId = useDonationFieldId("amount-custom");
   const { field, fieldState } = useController({
     name: "amountCustom",
     control,
@@ -76,7 +84,7 @@ function AmountCustomField() {
 
   return (
     <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor="amountCustom">Betrag in Euro</FieldLabel>
+      <FieldLabel htmlFor={amountCustomId}>Betrag in Euro</FieldLabel>
       <InputGroup className="mt-2 h-12 rounded-md">
         <InputGroupAddon>
           <InputGroupText>€</InputGroupText>
@@ -84,7 +92,7 @@ function AmountCustomField() {
         <InputGroupInput
           {...field}
           value={field.value ?? ""}
-          id="amountCustom"
+          id={amountCustomId}
           type="number"
           step="1"
           min="1"
@@ -102,7 +110,11 @@ function AmountCustomField() {
 }
 
 function AmountPresetField() {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const amount10Id = useDonationFieldId("amount-10");
+  const amount50Id = useDonationFieldId("amount-50");
+  const amount100Id = useDonationFieldId("amount-100");
+  const amountCustomPresetId = useDonationFieldId("amount-custom-preset");
   const { field } = useController({ name: "amountPreset", control });
   const value = field.value ?? "10.00";
 
@@ -117,36 +129,36 @@ function AmountPresetField() {
           }
           className="flex flex-row flex-wrap"
         >
-          <FieldLabel htmlFor="10.00" className="w-fit!">
+          <FieldLabel htmlFor={amount10Id} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>10€</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="10.00" id="10.00" />
+              <RadioGroupItem value="10.00" id={amount10Id} />
             </Field>
           </FieldLabel>
-          <FieldLabel htmlFor="50.00" className="w-fit!">
+          <FieldLabel htmlFor={amount50Id} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>50€</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="50.00" id="50.00" />
+              <RadioGroupItem value="50.00" id={amount50Id} />
             </Field>
           </FieldLabel>
-          <FieldLabel htmlFor="100.00" className="w-fit!">
+          <FieldLabel htmlFor={amount100Id} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>100€</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="100.00" id="100.00" />
+              <RadioGroupItem value="100.00" id={amount100Id} />
             </Field>
           </FieldLabel>
-          <FieldLabel htmlFor="custom" className="w-fit!">
+          <FieldLabel htmlFor={amountCustomPresetId} className="w-fit!">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Anderer Betrag</FieldTitle>
               </FieldContent>
-              <RadioGroupItem value="custom" id="custom" />
+              <RadioGroupItem value="custom" id={amountCustomPresetId} />
             </Field>
           </FieldLabel>
         </RadioGroup>
@@ -157,7 +169,8 @@ function AmountPresetField() {
 }
 
 function ReceiptField() {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const wantsReceiptId = useDonationFieldId("wants-receipt");
   const { field: amountPresetField } = useController({
     name: "amountPreset",
     control,
@@ -195,11 +208,11 @@ function ReceiptField() {
     <FieldGroup>
       <Field orientation="horizontal">
         <Checkbox
-          id="wants-receipt"
+          id={wantsReceiptId}
           checked={wantsReceipt}
           onCheckedChange={(checked) => onWantsReceiptChange(Boolean(checked))}
         />
-        <FieldLabel htmlFor="wants-receipt">
+        <FieldLabel htmlFor={wantsReceiptId}>
           Ich möchte eine Spendenbescheinigung erhalten
         </FieldLabel>
       </Field>

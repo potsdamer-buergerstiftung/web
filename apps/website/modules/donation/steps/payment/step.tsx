@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/field";
 import { StepTitle } from "../step-title";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useController, useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "../../form-definition";
+import { useController } from "react-hook-form";
+import { useDonationFieldId, useDonationForm } from "../../form-definition";
 import type { DonationPaymentMethod } from "@/lib/data/donation";
 import { CreditCardIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 import { Badge } from "@/components/ui/badge";
@@ -24,9 +24,9 @@ type PaymentStepProps = {
   methods: DonationPaymentMethod[];
 };
 
-function CreditCardOption() {
+function CreditCardOption({ inputId }: { inputId: string }) {
   return (
-    <FieldLabel htmlFor={`payment-method-creditcard`}>
+    <FieldLabel htmlFor={inputId}>
       <Field orientation="horizontal">
         <FieldContent className="flex flex-row">
           <div className="border border-border rounded-md p-2 mr-2">
@@ -34,14 +34,18 @@ function CreditCardOption() {
           </div>
           <FieldTitle>Kredit-/Debitkarte</FieldTitle>
         </FieldContent>
-        <RadioGroupItem value="creditcard" id={`payment-method-creditcard`} />
+        <RadioGroupItem value="creditcard" id={inputId} />
       </Field>
     </FieldLabel>
   );
 }
 
 export function PaymentStep({ methods }: PaymentStepProps) {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const paypalId = useDonationFieldId("payment-paypal");
+  const creditcardId = useDonationFieldId("payment-creditcard");
+  const banktransferId = useDonationFieldId("payment-banktransfer");
+  const directdebitId = useDonationFieldId("payment-directdebit");
   const { field: paymentMethodField } = useController({
     name: "paymentMethodId",
     control,
@@ -79,13 +83,28 @@ export function PaymentStep({ methods }: PaymentStepProps) {
               {methods.map((method) => {
                 switch (method.id) {
                   case "paypal":
-                    return <PayPalOption key="paypal" />;
+                    return <PayPalOption key="paypal" inputId={paypalId} />;
                   case "creditcard":
-                    return <CreditCardOption key="creditcard" />;
+                    return (
+                      <CreditCardOption
+                        key="creditcard"
+                        inputId={creditcardId}
+                      />
+                    );
                   case "banktransfer":
-                    return <PayByBankOption key="banktransfer" />;
+                    return (
+                      <PayByBankOption
+                        key="banktransfer"
+                        inputId={banktransferId}
+                      />
+                    );
                   case "directdebit":
-                    return <DirectDebitOption key="directdebit" />;
+                    return (
+                      <DirectDebitOption
+                        key="directdebit"
+                        inputId={directdebitId}
+                      />
+                    );
                   default:
                     return null;
                 }

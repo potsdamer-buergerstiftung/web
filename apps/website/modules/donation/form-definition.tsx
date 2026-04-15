@@ -1,7 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
+import { createContext, useContext, useId } from "react";
+import {
+  FormProvider,
+  useForm,
+  type SubmitHandler,
+  type UseFormReturn,
+} from "react-hook-form";
 import { z } from "zod";
 
 const donationFormSchema = z
@@ -70,6 +76,32 @@ const donationFormSchema = z
   });
 
 export type DonationFormValues = z.infer<typeof donationFormSchema>;
+export type DonationFormMethods = UseFormReturn<DonationFormValues>;
+
+const DonationFormContext = createContext<DonationFormMethods | undefined>(
+  undefined,
+);
+const DonationFormInstanceIdContext = createContext<string | undefined>(
+  undefined,
+);
+
+export function useDonationForm() {
+  const donationForm = useContext(DonationFormContext);
+  if (!donationForm) {
+    throw new Error("useDonationForm must be used within a DonationFormProvider");
+  }
+  return donationForm;
+}
+
+export function useDonationFieldId(fieldKey: string) {
+  const formInstanceId = useContext(DonationFormInstanceIdContext);
+  if (!formInstanceId) {
+    throw new Error(
+      "useDonationFieldId must be used within a DonationFormProvider",
+    );
+  }
+  return `${formInstanceId}-${fieldKey}`;
+}
 
 type DonationFormProviderProps = {
   children: React.ReactNode;
@@ -82,6 +114,7 @@ export function DonationFormProvider({
   defaultValues,
   onSubmit,
 }: DonationFormProviderProps) {
+  const formInstanceId = useId().replace(/:/g, "");
   const methods = useForm<DonationFormValues>({
     mode: "onBlur",
     resolver: zodResolver(donationFormSchema),
@@ -108,10 +141,14 @@ export function DonationFormProvider({
       };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit} className="w-full">
-        {children}
-      </form>
-    </FormProvider>
+    <DonationFormContext.Provider value={methods}>
+      <DonationFormInstanceIdContext.Provider value={formInstanceId}>
+        <FormProvider {...methods}>
+          <form onSubmit={handleSubmit} className="w-full">
+            {children}
+          </form>
+        </FormProvider>
+      </DonationFormInstanceIdContext.Provider>
+    </DonationFormContext.Provider>
   );
 }

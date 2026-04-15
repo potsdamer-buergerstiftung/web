@@ -7,9 +7,9 @@ import {
 import { RadioGroupItem } from "@/components/ui/radio-group";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
 
-export function DirectDebitOption() {
+export function DirectDebitOption({ inputId }: { inputId: string }) {
   return (
-    <FieldLabel htmlFor={`payment-method-directdebit`}>
+    <FieldLabel htmlFor={inputId}>
       <Field orientation="horizontal">
         <FieldContent className="flex flex-row">
           <div className="border border-border rounded-md p-2 mr-2">
@@ -17,7 +17,7 @@ export function DirectDebitOption() {
           </div>
           <FieldTitle>SEPA-Lastschrift</FieldTitle>
         </FieldContent>
-        <RadioGroupItem value="directdebit" id={`payment-method-directdebit`} />
+        <RadioGroupItem value="directdebit" id={inputId} />
       </Field>
     </FieldLabel>
   );

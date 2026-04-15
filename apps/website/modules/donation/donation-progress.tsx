@@ -1,6 +1,6 @@
 "use client";
 
-import { useStepper, Stepper } from "./steps";
+import { useDonationStepper } from "./steps";
 import { cn } from "@/lib/utils";
 
 interface DonationProgressIndicatorProps {
@@ -10,6 +10,7 @@ interface DonationProgressIndicatorProps {
 export function DonationProgressIndicator({
   className,
 }: DonationProgressIndicatorProps) {
+  const { useStepper, Stepper } = useDonationStepper();
   const stepper = useStepper();
 
   return (

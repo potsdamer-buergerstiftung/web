@@ -1,6 +1,6 @@
 "use client";
 
-import { Stepper } from "./steps";
+import { useDonationStepper } from "./steps";
 import { PurposeStep } from "./steps/purpose-step";
 import { AmountStep } from "./steps/amount-step";
 import { PersonalDetailsStep } from "./steps/personal-details-step";
@@ -9,6 +9,7 @@ import { useDonation } from "./donation-context";
 
 export function DonationSteps() {
   const { config, projects, paymentMethods } = useDonation();
+  const { Stepper } = useDonationStepper();
 
   return (
     <div className="flex-1 flex flex-col gap-8">

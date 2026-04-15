@@ -9,8 +9,8 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ClassAttributes, LabelHTMLAttributes } from "react";
 import { StepTitle } from "./step-title";
-import { Controller, useFormContext } from "react-hook-form";
-import type { DonationFormValues } from "../form-definition";
+import { Controller } from "react-hook-form";
+import { useDonationFieldId, useDonationForm } from "../form-definition";
 
 interface Purpose {
   id: string;
@@ -27,21 +27,24 @@ export function PurposeStep({
   generalPurposeAvailable = true,
   items,
 }: PurposeStepProps) {
-  const { control } = useFormContext<DonationFormValues>();
+  const { control } = useDonationForm();
+  const purposeGroupId = useDonationFieldId("purpose");
 
   function SingleItem({
     item,
     ...props
   }: { item: Purpose } & ClassAttributes<HTMLLabelElement> &
     LabelHTMLAttributes<HTMLLabelElement>) {
+    const itemId = useDonationFieldId(`purpose-${item.id}`);
+
     return (
-      <FieldLabel {...props} htmlFor={item.id}>
+      <FieldLabel {...props} htmlFor={itemId}>
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>{item.title}</FieldTitle>
             <FieldDescription>{item.description}</FieldDescription>
           </FieldContent>
-          <RadioGroupItem value={item.id} id={item.id} />
+          <RadioGroupItem value={item.id} id={itemId} />
         </Field>
       </FieldLabel>
     );
@@ -61,6 +64,7 @@ export function PurposeStep({
           <Field>
             <RadioGroup
               {...field}
+              id={purposeGroupId}
               onValueChange={field.onChange}
               className="grid grid-cols-1 md:grid-cols-2"
             >

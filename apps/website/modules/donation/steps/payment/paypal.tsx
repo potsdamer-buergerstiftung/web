@@ -6,9 +6,9 @@ import {
 } from "@/components/ui/field";
 import { RadioGroupItem } from "@/components/ui/radio-group";
 
-export function PayPalOption() {
+export function PayPalOption({ inputId }: { inputId: string }) {
   return (
-    <FieldLabel htmlFor={`payment-method-paypal`}>
+    <FieldLabel htmlFor={inputId}>
       <Field orientation="horizontal">
         <FieldContent className="flex flex-row">
           <div className="border border-border rounded-md p-2 mr-2">
@@ -24,7 +24,7 @@ export function PayPalOption() {
           </div>
           <FieldTitle>PayPal</FieldTitle>
         </FieldContent>
-        <RadioGroupItem value="paypal" id={`payment-method-paypal`} />
+        <RadioGroupItem value="paypal" id={inputId} />
       </Field>
     </FieldLabel>
   );
