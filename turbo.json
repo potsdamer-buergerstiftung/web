@@ -12,9 +12,6 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": ["DIRECTUS_TOKEN", "MOLLIE_API_KEY", "ALTCHA_HMAC_KEY"]
-    },
-    "dev": {
-      "cache": false
     }
   }
 }
