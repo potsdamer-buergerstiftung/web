@@ -72,7 +72,7 @@ export default function CookieConsentBanner() {
             {showBanner && (
                 <div
                     className={cn(
-                        "fixed left-4 bottom-4 z-50 max-w-lg rounded-lg border border-border bg-background p-4 shadow-lg"
+                        "fixed left-4 bottom-4 z-50 max-w-lg rounded-lg bg-background/95 p-4 backdrop-blur supports-backdrop-filter:bg-background/80"
                     )}
                     role="region"
                     aria-label="Cookie-Einstellungen"
