@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "gen": "directus-sdk-typegen -u https://portal.potsdamer-buergerstiftung.org -o ./src/types/directus.ts"
+    "gen": "directus-sdk-typegen -u https://portal.dev.potsdamer-buergerstiftung.org -o ./src/types/directus.ts"
   },
   "exports": {
     "./server": "./src/server.ts",
