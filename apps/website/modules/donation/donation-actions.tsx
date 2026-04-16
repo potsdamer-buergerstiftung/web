@@ -38,13 +38,22 @@ export function DonationActions({
           type="button"
           variant="secondary"
           size="lg"
-          onClick={() => stepper.navigation.prev()}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            stepper.navigation.prev();
+          }}
         >
           {prevLabel}
         </Button>
       )}
       {stepper.state.isLast ? (
-        <Button type="submit" disabled={!isCurrentStepValid} size="lg">
+        <Button
+          type="submit"
+          data-donation-submit="true"
+          disabled={!isCurrentStepValid}
+          size="lg"
+        >
           Jetzt spenden
         </Button>
       ) : (
@@ -52,7 +61,11 @@ export function DonationActions({
           type="button"
           disabled={!isCurrentStepValid}
           size="lg"
-          onClick={() => stepper.navigation.next()}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            stepper.navigation.next();
+          }}
         >
           {nextLabel}
         </Button>

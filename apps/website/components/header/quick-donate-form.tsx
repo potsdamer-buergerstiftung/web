@@ -14,7 +14,7 @@ export default function QuickDonateForm({
 }) {
   return (
     <DonationProvider>
-      <div className="h-svh min-h-0 grid grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)]">
+      <div className="flex h-dvh min-h-0 flex-col overflow-hidden lg:grid lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)] lg:grid-rows-[auto_minmax(0,1fr)_auto]">
         <div className="absolute top-4 right-4 z-10">
           <DrawerClose asChild>
             <Button size="icon-rounded-lg" variant="light" ref={closeButtonRef}>
@@ -35,7 +35,7 @@ export default function QuickDonateForm({
             </Button>
           </DrawerClose>
         </div>
-        <div className="mx-auto h-full min-h-0 w-full max-w-5xl overflow-y-auto px-6 py-12 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-8 lg:px-8">
+        <div className="mx-auto h-full min-h-0 w-full max-w-5xl flex-1 overflow-y-auto px-6 py-12 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-8 lg:px-8">
           <div className="lg:col-span-2">
             <h4 className="mb-3 text-center text-sm font-semibold uppercase text-gray-600">
               Mitstiften & Unterstützen
@@ -56,7 +56,7 @@ export default function QuickDonateForm({
             <DonationFormContent />
           </div>
         </div>
-        <div className="mx-auto grid w-full max-w-5xl shrink-0 self-end gap-8 px-6 py-4 lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-0 lg:px-8">
+        <div className="mx-auto grid w-full max-w-5xl shrink-0 self-end gap-8 px-6 py-4 pb-[calc(env(safe-area-inset-bottom)+1rem)] lg:col-span-2 lg:grid lg:grid-cols-subgrid lg:gap-x-10 lg:gap-y-0 lg:px-8 lg:pb-4">
           <div />
           <div className="min-w-0">
             <DonationFormActions className="justify-start" />

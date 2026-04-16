@@ -246,11 +246,28 @@ export function DonationFormProvider({
     },
   });
 
-  const handleSubmit = onSubmit
-    ? methods.handleSubmit(onSubmit)
-    : methods.handleSubmit((values) => {
-        console.log("Donation form values:", values);
-      });
+  const submitDonation = methods.handleSubmit(
+    onSubmit
+      ? onSubmit
+      : (values) => {
+          console.log("Donation form values:", values);
+        },
+  );
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const submitter =
+      (event.nativeEvent as SubmitEvent).submitter as
+        | HTMLButtonElement
+        | HTMLInputElement
+        | null;
+
+    if (submitter?.getAttribute("data-donation-submit") !== "true") {
+      event.preventDefault();
+      return;
+    }
+
+    return submitDonation(event);
+  };
 
   return (
     <DonationFormContext.Provider value={methods}>
