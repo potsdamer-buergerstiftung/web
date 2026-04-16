@@ -203,6 +203,18 @@ type Query {
   website_team_categories_by_id(id: ID!, version: String): website_team_categories
   website_team_categories_aggregated(groupBy: [String], filter: website_team_categories_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [website_team_categories_aggregated!]!
   website_team_categories_by_version(version: String!, id: ID!): version_website_team_categories
+  recurring_donations(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [recurring_donations!]!
+  recurring_donations_by_id(id: ID!, version: String): recurring_donations
+  recurring_donations_aggregated(groupBy: [String], filter: recurring_donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [recurring_donations_aggregated!]!
+  recurring_donations_by_version(version: String!, id: ID!): version_recurring_donations
+  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donor!]!
+  donor_by_id(id: ID!, version: String): donor
+  donor_aggregated(groupBy: [String], filter: donor_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donor_aggregated!]!
+  donor_by_version(version: String!, id: ID!): version_donor
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations!]!
+  donations_by_id(id: ID!, version: String): donations
+  donations_aggregated(groupBy: [String], filter: donations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [donations_aggregated!]!
+  donations_by_version(version: String!, id: ID!): version_donations
 }
 
 type Mutation {
@@ -304,6 +316,12 @@ type Mutation {
   create_website_team_members_item(data: create_website_team_members_input!): website_team_members
   create_website_team_categories_items(filter: website_team_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_website_team_categories_input!]): [website_team_categories!]!
   create_website_team_categories_item(data: create_website_team_categories_input!): website_team_categories
+  create_recurring_donations_items(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_recurring_donations_input!]): [recurring_donations!]!
+  create_recurring_donations_item(data: create_recurring_donations_input!): recurring_donations
+  create_donor_items(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donor_input!]): [donor!]!
+  create_donor_item(data: create_donor_input!): donor
+  create_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_donations_input!]): [donations!]!
+  create_donations_item(data: create_donations_input!): donations
   update_campaigns_items(filter: campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_campaigns_input!): [campaigns!]!
   update_campaigns_batch(filter: campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_campaigns_input!]): [campaigns!]!
   update_campaigns_item(id: ID!, data: update_campaigns_input!): campaigns
@@ -455,6 +473,15 @@ type Mutation {
   update_website_team_categories_items(filter: website_team_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_website_team_categories_input!): [website_team_categories!]!
   update_website_team_categories_batch(filter: website_team_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_website_team_categories_input!]): [website_team_categories!]!
   update_website_team_categories_item(id: ID!, data: update_website_team_categories_input!): website_team_categories
+  update_recurring_donations_items(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_recurring_donations_input!): [recurring_donations!]!
+  update_recurring_donations_batch(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_recurring_donations_input!]): [recurring_donations!]!
+  update_recurring_donations_item(id: ID!, data: update_recurring_donations_input!): recurring_donations
+  update_donor_items(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donor_input!): [donor!]!
+  update_donor_batch(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donor_input!]): [donor!]!
+  update_donor_item(id: ID!, data: update_donor_input!): donor
+  update_donations_items(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_donations_input!): [donations!]!
+  update_donations_batch(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_donations_input!]): [donations!]!
+  update_donations_item(id: ID!, data: update_donations_input!): donations
   delete_campaigns_items(ids: [ID]!): delete_many
   delete_campaigns_item(id: ID!): delete_one
   delete_block_hero_items(ids: [ID]!): delete_many
@@ -553,6 +580,12 @@ type Mutation {
   delete_website_team_members_item(id: ID!): delete_one
   delete_website_team_categories_items(ids: [ID]!): delete_many
   delete_website_team_categories_item(id: ID!): delete_one
+  delete_recurring_donations_items(ids: [ID]!): delete_many
+  delete_recurring_donations_item(id: ID!): delete_one
+  delete_donor_items(ids: [ID]!): delete_many
+  delete_donor_item(id: ID!): delete_one
+  delete_donations_items(ids: [ID]!): delete_many
+  delete_donations_item(id: ID!): delete_one
 }
 
 type Subscription {
@@ -632,6 +665,9 @@ type Subscription {
   directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
   website_team_members_mutated(event: EventEnum): website_team_members_mutated
   website_team_categories_mutated(event: EventEnum): website_team_categories_mutated
+  recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
+  donor_mutated(event: EventEnum): donor_mutated
+  donations_mutated(event: EventEnum): donations_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -1887,6 +1923,145 @@ type documentation_articles_mutated {
   key: ID!
   event: EventEnum
   data: documentation_articles
+}
+
+type donations {
+  id: ID!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
+  project: String
+  amount_value: Float
+  currency: String
+  interval_type: String
+  payment_method: String!
+  kind: String
+  checkout_url: String
+  return_url: String
+  webhook_url: String
+  paid_at: Date
+  paid_at_func: datetime_functions
+  failed_at: Date
+  failed_at_func: datetime_functions
+  canceled_at: Date
+  canceled_at_func: datetime_functions
+  expired_at: Date
+  expired_at_func: datetime_functions
+  created_from: String
+  metadata: JSON
+  metadata_func: count_functions
+}
+
+type donations_aggregated {
+  group: JSON
+  countAll: Int
+  count: donations_aggregated_count
+  countDistinct: donations_aggregated_count
+  avg: donations_aggregated_fields
+  sum: donations_aggregated_fields
+  avgDistinct: donations_aggregated_fields
+  sumDistinct: donations_aggregated_fields
+  min: donations_aggregated_fields
+  max: donations_aggregated_fields
+}
+
+type donations_aggregated_count {
+  id: Int
+  status: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  donor: Int
+  project: Int
+  amount_value: Int
+  currency: Int
+  interval_type: Int
+  payment_method: Int
+  kind: Int
+  checkout_url: Int
+  return_url: Int
+  webhook_url: Int
+  paid_at: Int
+  failed_at: Int
+  canceled_at: Int
+  expired_at: Int
+  created_from: Int
+  metadata: Int
+}
+
+type donations_aggregated_fields {
+  amount_value: Float
+}
+
+type donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: donations
+}
+
+type donor {
+  id: ID!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  first_name: String
+  last_name: String
+  organization: String
+  email_raw: String
+  email_normalized: String
+  phone: String
+  metadata: JSON
+  metadata_func: count_functions
+  status: String
+  is_anonymous: Boolean!
+  wants_receipt: Boolean!
+  locale: String
+  directus_contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  consents: JSON
+  consents_func: count_functions
+}
+
+type donor_aggregated {
+  group: JSON
+  countAll: Int
+  count: donor_aggregated_count
+  countDistinct: donor_aggregated_count
+}
+
+type donor_aggregated_count {
+  id: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  first_name: Int
+  last_name: Int
+  organization: Int
+  email_raw: Int
+  email_normalized: Int
+  phone: Int
+  metadata: Int
+  status: Int
+  is_anonymous: Int
+  wants_receipt: Int
+  locale: Int
+  directus_contact_id: Int
+  consents: Int
+}
+
+type donor_mutated {
+  key: ID!
+  event: EventEnum
+  data: donor
 }
 
 type events {
@@ -3230,6 +3405,86 @@ type publications_mutated {
   data: publications
 }
 
+type recurring_donations {
+  id: ID!
+  status: String
+  sort: Int
+  user_created: ID
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated: ID
+  date_updated: Date
+  date_updated_func: datetime_functions
+  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
+  frequency: String!
+  amount_value: Float!
+  currency: String
+  start_date: Date!
+  start_date_func: date_functions
+  next_payment_date: Date
+  next_payment_date_func: date_functions
+  end_date: Date
+  end_date_func: date_functions
+  payment_method: String!
+  mandate_status: String
+  last_payment_status: String
+  last_payment_at: Date
+  last_payment_at_func: datetime_functions
+  canceled_at: Date
+  canceled_at_func: datetime_functions
+  cancel_reason: String
+  metadata: JSON
+  metadata_func: count_functions
+}
+
+type recurring_donations_aggregated {
+  group: JSON
+  countAll: Int
+  count: recurring_donations_aggregated_count
+  countDistinct: recurring_donations_aggregated_count
+  avg: recurring_donations_aggregated_fields
+  sum: recurring_donations_aggregated_fields
+  avgDistinct: recurring_donations_aggregated_fields
+  sumDistinct: recurring_donations_aggregated_fields
+  min: recurring_donations_aggregated_fields
+  max: recurring_donations_aggregated_fields
+}
+
+type recurring_donations_aggregated_count {
+  id: Int
+  status: Int
+  sort: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  donor: Int
+  frequency: Int
+  amount_value: Int
+  currency: Int
+  start_date: Int
+  next_payment_date: Int
+  end_date: Int
+  payment_method: Int
+  mandate_status: Int
+  last_payment_status: Int
+  last_payment_at: Int
+  canceled_at: Int
+  cancel_reason: Int
+  metadata: Int
+}
+
+type recurring_donations_aggregated_fields {
+  sort: Float
+  amount_value: Float
+}
+
+type recurring_donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: recurring_donations
+}
+
 type stadtbande_form_submissions {
   id: ID!
   sort: Int
@@ -3678,6 +3933,54 @@ type version_documentation_articles {
 }
 
 """"""
+type version_donations {
+  id: ID
+  status: String
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  donor: JSON
+  project: String
+  amount_value: Float
+  currency: String
+  interval_type: String
+  payment_method: String
+  kind: String
+  checkout_url: String
+  return_url: String
+  webhook_url: String
+  paid_at: Date
+  failed_at: Date
+  canceled_at: Date
+  expired_at: Date
+  created_from: String
+  metadata: JSON
+}
+
+""""""
+type version_donor {
+  id: ID
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  first_name: String
+  last_name: String
+  organization: String
+  email_raw: String
+  email_normalized: String
+  phone: String
+  metadata: JSON
+  status: String
+  is_anonymous: Boolean
+  wants_receipt: Boolean
+  locale: String
+  directus_contact_id: JSON
+  consents: JSON
+}
+
+""""""
 type version_events {
   id: ID
   status: String
@@ -4030,6 +4333,31 @@ type version_publications {
   title: String
   file: JSON
   category: JSON
+}
+
+""""""
+type version_recurring_donations {
+  id: ID
+  status: String
+  sort: Int
+  user_created: ID
+  date_created: Date
+  user_updated: ID
+  date_updated: Date
+  donor: JSON
+  frequency: String
+  amount_value: Float
+  currency: String
+  start_date: Date
+  next_payment_date: Date
+  end_date: Date
+  payment_method: String
+  mandate_status: String
+  last_payment_status: String
+  last_payment_at: Date
+  canceled_at: Date
+  cancel_reason: String
+  metadata: JSON
 }
 
 """"""
@@ -4865,6 +5193,52 @@ input create_documentation_articles_input {
   content: String
 }
 
+input create_donations_input {
+  id: ID
+  status: String
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  donor: create_donor_input
+  project: String
+  amount_value: Float
+  currency: String
+  interval_type: String
+  payment_method: String!
+  kind: String
+  checkout_url: String
+  return_url: String
+  webhook_url: String
+  paid_at: Date
+  failed_at: Date
+  canceled_at: Date
+  expired_at: Date
+  created_from: String
+  metadata: JSON
+}
+
+input create_donor_input {
+  id: ID
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  first_name: String
+  last_name: String
+  organization: String
+  email_raw: String
+  email_normalized: String
+  phone: String
+  metadata: JSON
+  status: String
+  is_anonymous: Boolean!
+  wants_receipt: Boolean!
+  locale: String
+  directus_contact_id: create_contacts_input
+  consents: JSON
+}
+
 input create_events_input {
   id: ID
   status: String
@@ -5179,6 +5553,30 @@ input create_publications_input {
   title: String
   file: create_directus_files_input
   category: create_publication_categories_input
+}
+
+input create_recurring_donations_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: ID
+  date_created: Date
+  user_updated: ID
+  date_updated: Date
+  donor: create_donor_input
+  frequency: String!
+  amount_value: Float!
+  currency: String
+  start_date: Date!
+  next_payment_date: Date
+  end_date: Date
+  payment_method: String!
+  mandate_status: String
+  last_payment_status: String
+  last_payment_at: Date
+  canceled_at: Date
+  cancel_reason: String
+  metadata: JSON
 }
 
 input create_stadtbande_form_submissions_input {
@@ -5905,6 +6303,67 @@ input documentation_articles_filter {
   _or: [documentation_articles_filter]
 }
 
+input donations_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  donor: donor_filter
+  project: string_filter_operators
+  amount_value: number_filter_operators
+  currency: string_filter_operators
+  interval_type: string_filter_operators
+  payment_method: string_filter_operators
+  kind: string_filter_operators
+  checkout_url: string_filter_operators
+  return_url: string_filter_operators
+  webhook_url: string_filter_operators
+  paid_at: date_filter_operators
+  paid_at_func: datetime_function_filter_operators
+  failed_at: date_filter_operators
+  failed_at_func: datetime_function_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  expired_at: date_filter_operators
+  expired_at_func: datetime_function_filter_operators
+  created_from: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  _and: [donations_filter]
+  _or: [donations_filter]
+}
+
+input donor_filter {
+  id: id_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  first_name: string_filter_operators
+  last_name: string_filter_operators
+  organization: string_filter_operators
+  email_raw: string_filter_operators
+  email_normalized: string_filter_operators
+  phone: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  status: string_filter_operators
+  is_anonymous: boolean_filter_operators
+  wants_receipt: boolean_filter_operators
+  locale: string_filter_operators
+  directus_contact_id: contacts_filter
+  consents: string_filter_operators
+  consents_func: count_function_filter_operators
+  _and: [donor_filter]
+  _or: [donor_filter]
+}
+
 input events_filter {
   id: number_filter_operators
   status: string_filter_operators
@@ -6481,6 +6940,40 @@ input publications_quantifier_filter {
   _none: publications_filter
 }
 
+input recurring_donations_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: id_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: id_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  donor: donor_filter
+  frequency: string_filter_operators
+  amount_value: number_filter_operators
+  currency: string_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  next_payment_date: date_filter_operators
+  next_payment_date_func: date_function_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  payment_method: string_filter_operators
+  mandate_status: string_filter_operators
+  last_payment_status: string_filter_operators
+  last_payment_at: date_filter_operators
+  last_payment_at_func: datetime_function_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  cancel_reason: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  _and: [recurring_donations_filter]
+  _or: [recurring_donations_filter]
+}
+
 input stadtbande_form_submissions_filter {
   id: number_filter_operators
   sort: number_filter_operators
@@ -6881,6 +7374,52 @@ input update_documentation_articles_input {
   content: String
 }
 
+input update_donations_input {
+  id: ID
+  status: String
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  donor: update_donor_input
+  project: String
+  amount_value: Float
+  currency: String
+  interval_type: String
+  payment_method: String
+  kind: String
+  checkout_url: String
+  return_url: String
+  webhook_url: String
+  paid_at: Date
+  failed_at: Date
+  canceled_at: Date
+  expired_at: Date
+  created_from: String
+  metadata: JSON
+}
+
+input update_donor_input {
+  id: ID
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  first_name: String
+  last_name: String
+  organization: String
+  email_raw: String
+  email_normalized: String
+  phone: String
+  metadata: JSON
+  status: String
+  is_anonymous: Boolean
+  wants_receipt: Boolean
+  locale: String
+  directus_contact_id: update_contacts_input
+  consents: JSON
+}
+
 input update_events_input {
   id: ID
   status: String
@@ -7205,6 +7744,30 @@ input update_publications_input {
   title: String
   file: update_directus_files_input
   category: update_publication_categories_input
+}
+
+input update_recurring_donations_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: ID
+  date_created: Date
+  user_updated: ID
+  date_updated: Date
+  donor: update_donor_input
+  frequency: String
+  amount_value: Float
+  currency: String
+  start_date: Date
+  next_payment_date: Date
+  end_date: Date
+  payment_method: String
+  mandate_status: String
+  last_payment_status: String
+  last_payment_at: Date
+  canceled_at: Date
+  cancel_reason: String
+  metadata: JSON
 }
 
 input update_stadtbande_form_submissions_input {

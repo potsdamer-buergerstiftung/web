@@ -10,13 +10,13 @@
     "color": "#6644FF",
     "display_template": null,
     "group": null,
-    "hidden": false,
+    "hidden": true,
     "icon": "app_shortcut",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 6,
+    "sort": 7,
     "sort_field": null,
     "translations": [
       {

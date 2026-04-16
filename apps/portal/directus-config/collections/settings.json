@@ -102,8 +102,8 @@
       }
     ],
     "mcp_enabled": false,
-    "mcp_allow_deletes": false,
-    "mcp_prompts_collection": null,
+    "mcp_allow_deletes": true,
+    "mcp_prompts_collection": "ai_prompts",
     "mcp_system_prompt_enabled": true,
     "mcp_system_prompt": null,
     "project_owner": "mts@potsdamer-buergerstiftung.org",

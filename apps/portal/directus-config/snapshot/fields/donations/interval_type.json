@@ -1,0 +1,59 @@
+{
+  "collection": "donations",
+  "field": "interval_type",
+  "type": "string",
+  "meta": {
+    "collection": "donations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "interval_type",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "One Time",
+          "value": "once"
+        },
+        {
+          "text": "Monthly",
+          "value": "monthly"
+        },
+        {
+          "text": "Yearly",
+          "value": "yearly"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 12,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "interval_type",
+    "table": "donations",
+    "data_type": "character varying",
+    "default_value": "once",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

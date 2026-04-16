@@ -338,6 +338,9 @@ type Subscription {
   directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
   website_team_members_mutated(event: EventEnum): website_team_members_mutated
   website_team_categories_mutated(event: EventEnum): website_team_categories_mutated
+  recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
+  donor_mutated(event: EventEnum): donor_mutated
+  donations_mutated(event: EventEnum): donations_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -2052,6 +2055,75 @@ type documentation_articles_mutated {
   data: documentation_articles
 }
 
+type donations {
+  id: ID!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
+  project: String
+  amount_value: Float
+  currency: String
+  interval_type: String
+  payment_method: String!
+  kind: String
+  checkout_url: String
+  return_url: String
+  webhook_url: String
+  paid_at: Date
+  paid_at_func: datetime_functions
+  failed_at: Date
+  failed_at_func: datetime_functions
+  canceled_at: Date
+  canceled_at_func: datetime_functions
+  expired_at: Date
+  expired_at_func: datetime_functions
+  created_from: String
+  metadata: JSON
+  metadata_func: count_functions
+}
+
+type donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: donations
+}
+
+type donor {
+  id: ID!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  first_name: String
+  last_name: String
+  organization: String
+  email_raw: String
+  email_normalized: String
+  phone: String
+  metadata: JSON
+  metadata_func: count_functions
+  status: String
+  is_anonymous: Boolean!
+  wants_receipt: Boolean!
+  locale: String
+  directus_contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  consents: JSON
+  consents_func: count_functions
+}
+
+type donor_mutated {
+  key: ID!
+  event: EventEnum
+  data: donor
+}
+
 type events {
   id: ID!
   status: String
@@ -2620,6 +2692,44 @@ type publications_mutated {
   key: ID!
   event: EventEnum
   data: publications
+}
+
+type recurring_donations {
+  id: ID!
+  status: String
+  sort: Int
+  user_created: ID
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated: ID
+  date_updated: Date
+  date_updated_func: datetime_functions
+  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
+  frequency: String!
+  amount_value: Float!
+  currency: String
+  start_date: Date!
+  start_date_func: date_functions
+  next_payment_date: Date
+  next_payment_date_func: date_functions
+  end_date: Date
+  end_date_func: date_functions
+  payment_method: String!
+  mandate_status: String
+  last_payment_status: String
+  last_payment_at: Date
+  last_payment_at_func: datetime_functions
+  canceled_at: Date
+  canceled_at_func: datetime_functions
+  cancel_reason: String
+  metadata: JSON
+  metadata_func: count_functions
+}
+
+type recurring_donations_mutated {
+  key: ID!
+  event: EventEnum
+  data: recurring_donations
 }
 
 type server_info {
@@ -4195,6 +4305,33 @@ input directus_versions_filter {
   delta_func: count_function_filter_operators
   _and: [directus_versions_filter]
   _or: [directus_versions_filter]
+}
+
+input donor_filter {
+  id: id_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  first_name: string_filter_operators
+  last_name: string_filter_operators
+  organization: string_filter_operators
+  email_raw: string_filter_operators
+  email_normalized: string_filter_operators
+  phone: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  status: string_filter_operators
+  is_anonymous: boolean_filter_operators
+  wants_receipt: boolean_filter_operators
+  locale: string_filter_operators
+  directus_contact_id: contacts_filter
+  consents: string_filter_operators
+  consents_func: count_function_filter_operators
+  _and: [donor_filter]
+  _or: [donor_filter]
 }
 
 input events_filter {
