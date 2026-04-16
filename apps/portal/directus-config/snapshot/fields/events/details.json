@@ -1,0 +1,37 @@
+{
+  "collection": "events",
+  "field": "details",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "details",
+    "group": null,
+    "hidden": false,
+    "interface": "group-detail",
+    "note": null,
+    "options": {
+      "start": "closed"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 8,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Details"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

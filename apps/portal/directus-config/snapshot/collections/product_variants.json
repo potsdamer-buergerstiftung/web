@@ -1,0 +1,35 @@
+{
+  "collection": "product_variants",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "product_variants",
+    "color": null,
+    "display_template": "{{name}}",
+    "group": "sales",
+    "hidden": true,
+    "icon": null,
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 3,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Produkt-Varianten",
+        "singular": "Produkt-Variante",
+        "translation": "Produkt-Varianten"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "product_variants"
+  }
+}

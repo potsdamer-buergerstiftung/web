@@ -5,39 +5,30 @@
   "meta": {
     "collection": "contacts",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "extension-display-link",
+    "display_options": {
+      "kind": "email"
+    },
     "field": "email",
     "group": null,
     "hidden": false,
     "interface": "input",
     "note": null,
     "options": {
-      "iconLeft": "email"
+      "kind": "email"
     },
     "readonly": false,
     "required": false,
-    "sort": 5,
+    "searchable": true,
+    "sort": 10,
     "special": null,
     "translations": [
       {
-        "language": "en-US",
-        "translation": "Email"
-      },
-      {
         "language": "de-DE",
-        "translation": "E-Mail"
+        "translation": "E-Mail-Adresse"
       }
     ],
-    "validation": {
-      "_and": [
-        {
-          "email": {
-            "_submitted": true
-          }
-        }
-      ]
-    },
+    "validation": null,
     "validation_message": null,
     "width": "half"
   },

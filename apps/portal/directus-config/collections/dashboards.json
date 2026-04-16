@@ -1,9 +1,114 @@
 [
   {
-    "name": "Ausgaben",
-    "icon": "space_dashboard",
+    "name": "2000 Buntes B",
+    "icon": "currency_bitcoin",
+    "note": null,
+    "color": "#A2B5CD",
+    "_syncId": "073c7817-1830-4ca7-9ff5-3f221c85ade7"
+  },
+  {
+    "name": "3002 International Tuesday",
+    "icon": "sentiment_satisfied_alt",
+    "note": null,
+    "color": "#FF00D0",
+    "_syncId": "14dfc5b1-06af-412f-839d-ae454f49174b"
+  },
+  {
+    "name": "1000 Potspresso",
+    "icon": "delete",
+    "note": null,
+    "color": "#118E01",
+    "_syncId": "158ed968-cb54-4e78-a070-f1b33edf082f"
+  },
+  {
+    "name": "5000 Bürgerstiftung Allgemein",
+    "icon": "change_history",
+    "note": null,
+    "color": "#8F8F8F",
+    "_syncId": "1a0e2f40-f943-45fd-baad-4e00bf2af7c2"
+  },
+  {
+    "name": "3063 Inselbühne Hauptförderung LHP",
+    "icon": "account_balance",
+    "note": null,
+    "color": "#8C00B3",
+    "_syncId": "36b5b65c-ca34-4d9b-b27d-26f110f88f5b"
+  },
+  {
+    "name": "3001 Bürgermobil",
+    "icon": "directions_bike",
+    "note": null,
+    "color": "#C70000",
+    "_syncId": "76e59fc5-bb0d-4711-9566-0a089ef6fa68"
+  },
+  {
+    "name": "3066 Inselbühne - MWFK",
+    "icon": "account_balance",
+    "note": null,
+    "color": "#8C00B3",
+    "_syncId": "7b24d4ad-0d1d-4b09-af94-883f6bc84578"
+  },
+  {
+    "name": "3064 Inselbühne - Schallschutzwand",
+    "icon": "account_balance",
+    "note": null,
+    "color": "#8C00B3",
+    "_syncId": "7d1174a3-51db-47e3-bd14-bb0ef4dbe252"
+  },
+  {
+    "name": "3065 Inselbühne - Kultursommer LHP",
+    "icon": "account_balance",
+    "note": null,
+    "color": "#8C00B3",
+    "_syncId": "81025511-82ae-4a47-aebf-44fba32a4cbb"
+  },
+  {
+    "name": "3062 Inselbühne - Gastro",
+    "icon": "account_balance",
+    "note": null,
+    "color": "#8C00B3",
+    "_syncId": "a42dc4dc-d60b-446b-9aa2-224f39431960"
+  },
+  {
+    "name": "1502 Potspresso ",
+    "icon": "delete",
+    "note": null,
+    "color": "#118E01",
+    "_syncId": "b565b2b5-16a0-4305-9c08-8c8df282044c"
+  },
+  {
+    "name": "1501 Potspresso (bis 02/2022)",
+    "icon": "delete",
+    "note": null,
+    "color": "#118E01",
+    "_syncId": "b9e9e799-f664-4b86-a6d3-524a04b6b2d4"
+  },
+  {
+    "name": "3004 Drachenboot",
+    "icon": "sailing",
+    "note": null,
+    "color": "#424FFF",
+    "_syncId": "c9507aca-813f-4786-8a8d-41a873550213"
+  },
+  {
+    "name": "1503 Fit für die Mehrwegpflicht",
+    "icon": "delete",
+    "note": null,
+    "color": "#118E01",
+    "_syncId": "dd15527a-5318-4a25-8b70-53add5239eb5"
+  },
+  {
+    "name": "Spenden",
+    "icon": "back_hand",
     "note": null,
     "color": null,
-    "_syncId": "8c0e99cb-53e8-48c2-9147-4b543c9aeafe"
+    "_syncId": "ebbd54ca-b61a-4ca2-8173-6d4a3ff45be2"
+  },
+  {
+    "name": "3300 Neustart Kultur Programm FSK",
+    "icon": "analytics",
+    "note": null,
+    "color": "#FFC23B",
+    "_syncId": "f2f6fde3-0567-4a71-b4ef-383465a97bf9"
   }
 ]

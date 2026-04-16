@@ -1,0 +1,35 @@
+{
+  "collection": "product_categories",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "product_categories",
+    "color": "#6644FF",
+    "display_template": null,
+    "group": "sales",
+    "hidden": true,
+    "icon": null,
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Produkt-Kategorien",
+        "singular": "Produkt-Kategorie",
+        "translation": "Produkt-Kategorien"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "product_categories"
+  }
+}

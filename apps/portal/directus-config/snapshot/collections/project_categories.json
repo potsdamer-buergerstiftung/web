@@ -1,0 +1,35 @@
+{
+  "collection": "project_categories",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "project_categories",
+    "color": "#2ECDA7",
+    "display_template": "{{name}}",
+    "group": "projects",
+    "hidden": false,
+    "icon": "filter_vintage",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 3,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Projektkategorie",
+        "singular": "Projektkategorie",
+        "translation": "Projektkategorien"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "project_categories"
+  }
+}

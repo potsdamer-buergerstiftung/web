@@ -1,0 +1,30 @@
+{
+  "collection": "publication_categories",
+  "field": "publications",
+  "type": "alias",
+  "meta": {
+    "collection": "publication_categories",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "publications",
+    "group": null,
+    "hidden": true,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "template": "{{title}}"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

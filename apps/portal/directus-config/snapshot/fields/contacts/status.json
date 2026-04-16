@@ -9,14 +9,25 @@
     "display_options": {
       "choices": [
         {
-          "text": "$t:active",
-          "value": "active"
+          "background": "var(--primary)",
+          "foreground": "#FFFFFF",
+          "text": "$t:published",
+          "value": "published"
         },
         {
+          "background": "#D3DAE4",
+          "foreground": "#18222F",
+          "text": "$t:draft",
+          "value": "draft"
+        },
+        {
+          "background": "var(--warning)",
+          "foreground": "#FFFFFF",
           "text": "$t:archived",
           "value": "archived"
         }
-      ]
+      ],
+      "showAsDot": true
     },
     "field": "status",
     "group": null,
@@ -26,8 +37,12 @@
     "options": {
       "choices": [
         {
-          "text": "$t:active",
-          "value": "active"
+          "text": "$t:published",
+          "value": "published"
+        },
+        {
+          "text": "$t:draft",
+          "value": "draft"
         },
         {
           "text": "$t:archived",
@@ -37,27 +52,19 @@
     },
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 2,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Status"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Status"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "status",
     "table": "contacts",
     "data_type": "character varying",
-    "default_value": "active",
+    "default_value": "draft",
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,

@@ -5,8 +5,30 @@
   "meta": {
     "collection": "projects",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "background": "var(--primary)",
+          "foreground": "#FFFFFF",
+          "text": "$t:published",
+          "value": "published"
+        },
+        {
+          "background": "#D3DAE4",
+          "foreground": "#18222F",
+          "text": "$t:draft",
+          "value": "draft"
+        },
+        {
+          "background": "var(--warning)",
+          "foreground": "#FFFFFF",
+          "text": "$t:archived",
+          "value": "archived"
+        }
+      ],
+      "showAsDot": true
+    },
     "field": "status",
     "group": null,
     "hidden": false,
@@ -19,36 +41,36 @@
           "value": "draft"
         },
         {
-          "text": "$t:active",
-          "value": "active"
-        },
-        {
-          "text": "$t:completed",
-          "value": "completed"
-        },
-        {
           "text": "$t:archived",
           "value": "archived"
+        },
+        {
+          "text": "$t:planning",
+          "value": "planning"
+        },
+        {
+          "text": "$t:inprogress",
+          "value": "inprogress"
+        },
+        {
+          "text": "$t:finalized",
+          "value": "finalized"
+        },
+        {
+          "text": "$t:recurring",
+          "value": "recurring"
         }
       ]
     },
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 2,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Status"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Status"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "status",
@@ -58,7 +80,7 @@
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": false,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

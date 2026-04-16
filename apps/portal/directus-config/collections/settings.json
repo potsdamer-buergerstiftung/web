@@ -1,13 +1,23 @@
 [
   {
-    "project_name": "Bürgerstiftung",
+    "project_name": "Portal",
     "project_color": "#10B981",
-    "public_note": null,
+    "public_note": "Brücken bauen, Menschen verbinden",
     "auth_login_attempts": 25,
-    "auth_password_policy": null,
+    "auth_password_policy": "/^.{8,}$/",
     "storage_asset_transform": "all",
-    "storage_asset_presets": null,
-    "custom_css": null,
+    "storage_asset_presets": [
+      {
+        "key": "low-1000",
+        "fit": "contain",
+        "width": 1000,
+        "quality": 30,
+        "withoutEnlargement": false,
+        "format": "",
+        "transforms": []
+      }
+    ],
+    "custom_css": "",
     "storage_default_folder": null,
     "basemaps": null,
     "mapbox_key": null,
@@ -16,11 +26,6 @@
         "type": "module",
         "id": "content",
         "enabled": true
-      },
-      {
-        "type": "module",
-        "id": "visual",
-        "enabled": false
       },
       {
         "type": "module",
@@ -39,33 +44,98 @@
       },
       {
         "type": "module",
+        "id": "visual",
+        "enabled": true
+      },
+      {
+        "type": "link",
+        "id": "Ud-FlUaPvsGBdlJyQiLW7",
+        "name": "Website",
+        "url": "https://www.potsdamer-buergerstiftung.org",
+        "icon": "public",
+        "enabled": true
+      },
+      {
+        "type": "module",
+        "id": "deployments",
+        "enabled": true
+      },
+      {
+        "type": "link",
+        "id": "1mup53fZ80b2mh9xIPiCL",
+        "name": "Shop",
+        "url": "https://shop.potsdamer-buergerstiftung.org",
+        "icon": "shopping_cart",
+        "enabled": true
+      },
+      {
+        "type": "module",
         "id": "settings",
         "enabled": true,
         "locked": true
       }
     ],
-    "project_descriptor": "Portal",
+    "project_descriptor": "Potsdamer Bürgerstiftung",
     "default_language": "de-DE",
     "custom_aspect_ratios": null,
     "default_appearance": "auto",
     "default_theme_light": "Directus Default",
     "theme_light_overrides": null,
-    "default_theme_dark": null,
+    "default_theme_dark": "Directus Default",
     "theme_dark_overrides": null,
     "report_error_url": null,
     "report_bug_url": null,
     "report_feature_url": null,
     "public_registration": false,
     "public_registration_verify_email": true,
-    "public_registration_role": null,
+    "public_registration_role": "b427fc33-3cd2-48ff-997b-fe5eb51d687b",
     "public_registration_email_filter": null,
-    "visual_editor_urls": null,
-    "accepted_terms": true,
-    "mcp_enabled": true,
+    "visual_editor_urls": [
+      {
+        "url": "https://www.potsdamer-buergerstiftung.org"
+      },
+      {
+        "url": "https://www.inselbuehne-potsdam.de"
+      },
+      {
+        "url": "http://localhost:3000"
+      }
+    ],
+    "mcp_enabled": false,
     "mcp_allow_deletes": false,
-    "mcp_prompts_collection": "ai_prompts",
-    "mcp_system_prompt_enabled": false,
+    "mcp_prompts_collection": null,
+    "mcp_system_prompt_enabled": true,
     "mcp_system_prompt": null,
+    "project_owner": "mts@potsdamer-buergerstiftung.org",
+    "project_usage": "community",
+    "org_name": null,
+    "product_updates": false,
+    "project_status": null,
+    "ai_openai_api_key": null,
+    "ai_anthropic_api_key": null,
+    "ai_system_prompt": null,
+    "ai_google_api_key": null,
+    "ai_openai_compatible_api_key": null,
+    "ai_openai_compatible_base_url": null,
+    "ai_openai_compatible_name": null,
+    "ai_openai_compatible_models": null,
+    "ai_openai_compatible_headers": null,
+    "ai_openai_allowed_models": [
+      "gpt-5-nano",
+      "gpt-5-mini",
+      "gpt-5"
+    ],
+    "ai_anthropic_allowed_models": [
+      "claude-haiku-4-5",
+      "claude-sonnet-4-5"
+    ],
+    "ai_google_allowed_models": [
+      "gemini-3-pro-preview",
+      "gemini-3-flash-preview",
+      "gemini-2.5-pro",
+      "gemini-2.5-flash"
+    ],
+    "collaborative_editing_enabled": true,
     "_syncId": "_sync_default_settings"
   }
 ]

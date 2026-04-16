@@ -1,0 +1,55 @@
+{
+  "collection": "invoices",
+  "field": "amount",
+  "type": "float",
+  "meta": {
+    "collection": "invoices",
+    "conditions": null,
+    "display": "formatted-value",
+    "display_options": {
+      "suffix": "€"
+    },
+    "field": "amount",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": null,
+    "options": {
+      "iconLeft": "euro_symbol",
+      "max": 100000,
+      "min": 0
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 16,
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Betrag (Brutto)"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "amount",
+    "table": "invoices",
+    "data_type": "real",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 24,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

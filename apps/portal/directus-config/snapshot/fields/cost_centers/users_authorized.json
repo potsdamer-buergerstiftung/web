@@ -1,0 +1,35 @@
+{
+  "collection": "cost_centers",
+  "field": "users_authorized",
+  "type": "alias",
+  "meta": {
+    "collection": "cost_centers",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "users_authorized",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": "Benutzer, die als autorisierte Personen angegeben sind, verfügen über die Berechtigung alle Rechnungen, die an diese Kostenstelle gebunden werden zu bearbeiten, zu löschen und zu erstellen. Alternativ kann der Zugriff auf Rechnungen auch durch die Zuweisung eines Projektes erteilt werden. Ist die Person dieses Projektes als Projektleiter angegeben, verfügt er über die gleichen Berechtigungen.",
+    "options": {
+      "enableCreate": false
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Autorisierte Personen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

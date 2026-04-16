@@ -17,7 +17,8 @@
     "options": null,
     "readonly": true,
     "required": false,
-    "sort": 13,
+    "searchable": true,
+    "sort": 4,
     "special": [
       "date-created"
     ],

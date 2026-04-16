@@ -1,0 +1,25 @@
+{
+  "collection": "products",
+  "field": "category",
+  "related_collection": "product_categories",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "products",
+    "many_field": "category",
+    "one_allowed_collections": null,
+    "one_collection": "product_categories",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  },
+  "schema": {
+    "table": "products",
+    "column": "category",
+    "foreign_key_table": "product_categories",
+    "foreign_key_column": "id",
+    "constraint_name": "products_category_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

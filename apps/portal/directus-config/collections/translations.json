@@ -1,20 +1,206 @@
 [
   {
     "language": "de-DE",
-    "key": "published",
-    "value": "Veröffentlicht",
-    "_syncId": "2af089ea-e6c6-4144-9da2-b0b8d6262790"
+    "key": "active",
+    "value": "Aktiv",
+    "_syncId": "1902b0ef-3b9f-4bd9-ac38-bcd5968e35c8"
+  },
+  {
+    "language": "de-DE",
+    "key": "closed",
+    "value": "Geschlossen",
+    "_syncId": "29d9aae1-70f3-4ad6-82bf-e43e6ef5c59b"
+  },
+  {
+    "language": "de-DE",
+    "key": "approved",
+    "value": "Freigegeben",
+    "_syncId": "2c2002fc-279e-4131-a06b-b663dcea7a22"
+  },
+  {
+    "language": "de-DE",
+    "key": "free",
+    "value": "Kostenlos",
+    "_syncId": "329aabb1-3cd9-45b1-82b7-206c0ed8629a"
+  },
+  {
+    "language": "de-DE",
+    "key": "outgoing_invoice",
+    "value": "Ausgangsrechnung",
+    "_syncId": "3ccc8528-eb61-48f6-b77a-02e9db4c793a"
+  },
+  {
+    "language": "de-DE",
+    "key": "settled",
+    "value": "Bezahlt",
+    "_syncId": "3f6bd8aa-3943-4af4-a12b-2c9faf89ab2d"
   },
   {
     "language": "de-DE",
     "key": "archived",
     "value": "Archiviert",
-    "_syncId": "66672e95-0e1b-403e-897e-9aaa2a2d9e1e"
+    "_syncId": "40f7cad2-d8d7-4b4c-99b3-4460b512b6d1"
+  },
+  {
+    "language": "de-DE",
+    "key": "yes",
+    "value": "Ja",
+    "_syncId": "458fc14c-0a59-46c9-8958-48a5b06ad905"
+  },
+  {
+    "language": "de-DE",
+    "key": "outgoing",
+    "value": "Ausgehend",
+    "_syncId": "488c8e4a-3899-4f39-a813-8568e1dad8fa"
+  },
+  {
+    "language": "de-DE",
+    "key": "inprogress",
+    "value": "Laufend",
+    "_syncId": "4a1bde63-b123-4a13-bbe4-0e398438ee9d"
+  },
+  {
+    "language": "de-DE",
+    "key": "donation",
+    "value": "Spende",
+    "_syncId": "4e300483-715d-4e49-8179-de358e92db4d"
+  },
+  {
+    "language": "de-DE",
+    "key": "incoming_invoice",
+    "value": "Eingangsrechnung",
+    "_syncId": "57e04748-51f0-4ee3-b1ad-346bcf16b3fe"
+  },
+  {
+    "language": "de-DE",
+    "key": "opened",
+    "value": "Geöffnet",
+    "_syncId": "59bc3fba-57af-485e-ac56-76f843c450ab"
+  },
+  {
+    "language": "de-DE",
+    "key": "income",
+    "value": "Einnahme",
+    "_syncId": "5b25afa1-38e2-4e2f-9bf3-17cf180115be"
+  },
+  {
+    "language": "de-DE",
+    "key": "open",
+    "value": "Offen",
+    "_syncId": "7d8d1aec-0426-4770-8f2f-34c7b4f83069"
+  },
+  {
+    "language": "de-DE",
+    "key": "no",
+    "value": "Nein",
+    "_syncId": "7ec7c0ee-5f55-4093-9381-b00ff8046f4b"
+  },
+  {
+    "language": "de-DE",
+    "key": "sent",
+    "value": "Gesendet",
+    "_syncId": "8185dc40-55b5-4911-9a32-50f86d4ade04"
+  },
+  {
+    "language": "de-DE",
+    "key": "recurring",
+    "value": "Wiederkehrend",
+    "_syncId": "820da8f6-95bb-40d2-86ae-a8864a2ee6ab"
+  },
+  {
+    "language": "de-DE",
+    "key": "hidden",
+    "value": "Ausgeblendet",
+    "_syncId": "86e8c6d4-ff1a-42b4-9e1b-51403280d57e"
+  },
+  {
+    "language": "de-DE",
+    "key": "in_progress",
+    "value": "In Klärung",
+    "_syncId": "8b7af357-37af-4739-9378-cf819934ca08"
+  },
+  {
+    "language": "de-DE",
+    "key": "unprocessed",
+    "value": "Unbearbeitet",
+    "_syncId": "8c46e787-2667-4d41-ae48-798eed75ee56"
+  },
+  {
+    "language": "de-DE",
+    "key": "canceled",
+    "value": "Abgesagt",
+    "_syncId": "8dcc661d-3e93-4871-9331-08c63273f5b5"
+  },
+  {
+    "language": "de-DE",
+    "key": "paid",
+    "value": "Kostenpflichtig",
+    "_syncId": "a9f3f24a-5056-4a22-8046-add736d0df3a"
+  },
+  {
+    "language": "de-DE",
+    "key": "planning",
+    "value": "In Planung",
+    "_syncId": "ad182d32-30bf-44fb-8c19-a4b968fac238"
+  },
+  {
+    "language": "de-DE",
+    "key": "on_sale",
+    "value": "Im Verkauf",
+    "_syncId": "b2c5445d-614e-41e4-9ccf-1085af925974"
+  },
+  {
+    "language": "de-DE",
+    "key": "completed",
+    "value": "Abgeschlossen",
+    "_syncId": "cd5ea279-9f69-47c4-9050-247c74e06e87"
+  },
+  {
+    "language": "de-DE",
+    "key": "publications",
+    "value": "Publikationen",
+    "_syncId": "dd3bc879-ed36-4190-a6e5-d160242fab36"
   },
   {
     "language": "de-DE",
     "key": "draft",
     "value": "Entwurf",
-    "_syncId": "b653fbe0-edec-4ee8-8919-e680bb9bd4ea"
+    "_syncId": "de860403-6564-4451-a1e7-03a117ed819d"
+  },
+  {
+    "language": "de-DE",
+    "key": "issued",
+    "value": "Ausgestellt",
+    "_syncId": "e6f6e43d-363f-490f-94f6-35bb4c32d7e6"
+  },
+  {
+    "language": "de-DE",
+    "key": "rejected",
+    "value": "Abgelehnt",
+    "_syncId": "e9154ccd-6fb7-406a-b1af-70bc77ec11a6"
+  },
+  {
+    "language": "de-DE",
+    "key": "incoming",
+    "value": "Eingehend",
+    "_syncId": "efdae6f3-f844-40df-93a7-da487a066d5e"
+  },
+  {
+    "language": "de-DE",
+    "key": "finalized",
+    "value": "Abgeschlossen",
+    "_syncId": "f71a3b11-e9cd-447e-8dcb-ab2dea12f486"
+  },
+  {
+    "language": "de-DE",
+    "key": "visible",
+    "value": "Sichtbar",
+    "_syncId": "fbf90d37-5e8c-4241-b5ff-1e5e4d403324"
+  },
+  {
+    "language": "de-DE",
+    "key": "expense",
+    "value": "Ausgabe",
+    "_syncId": "ffa01041-7d5c-4f26-83ca-79581714e517"
   }
 ]

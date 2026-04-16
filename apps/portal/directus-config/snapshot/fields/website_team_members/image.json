@@ -1,0 +1,58 @@
+{
+  "collection": "website_team_members",
+  "field": "image",
+  "type": "uuid",
+  "meta": {
+    "collection": "website_team_members",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "image",
+    "group": null,
+    "hidden": false,
+    "interface": "file-image",
+    "note": null,
+    "options": {
+      "allowedMimeTypes": [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ],
+      "folder": "f375aa6d-3bc3-4d7a-8681-1b76cd43e91c"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 10,
+    "special": [
+      "file"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Bild"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "image",
+    "table": "website_team_members",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id"
+  }
+}

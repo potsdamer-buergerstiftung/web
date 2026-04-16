@@ -1,0 +1,35 @@
+{
+  "collection": "privacy_policy",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "privacy_policy",
+    "color": null,
+    "display_template": null,
+    "group": "website",
+    "hidden": false,
+    "icon": "privacy_tip",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": true,
+    "sort": 5,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Datenschutzerklärung",
+        "singular": "Datenschutzerklärung",
+        "translation": "Datenschutzerklärung"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "privacy_policy"
+  }
+}

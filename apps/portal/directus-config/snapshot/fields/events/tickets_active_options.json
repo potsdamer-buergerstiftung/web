@@ -1,0 +1,45 @@
+{
+  "collection": "events",
+  "field": "tickets_active_options",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": [
+      {
+        "hidden": true,
+        "name": "registration not needed",
+        "options": {},
+        "rule": {
+          "_and": [
+            {
+              "registration_needed": {
+                "_eq": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "display": null,
+    "display_options": null,
+    "field": "tickets_active_options",
+    "group": "ticket_management",
+    "hidden": false,
+    "interface": "group-raw",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 2,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

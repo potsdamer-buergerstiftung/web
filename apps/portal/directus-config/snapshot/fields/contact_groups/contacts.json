@@ -1,0 +1,28 @@
+{
+  "collection": "contact_groups",
+  "field": "contacts",
+  "type": "alias",
+  "meta": {
+    "collection": "contact_groups",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "contacts",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": [
+      "m2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

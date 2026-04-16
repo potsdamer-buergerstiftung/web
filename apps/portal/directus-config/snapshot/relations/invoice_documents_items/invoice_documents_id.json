@@ -1,0 +1,25 @@
+{
+  "collection": "invoice_documents_items",
+  "field": "invoice_documents_id",
+  "related_collection": "invoice_documents",
+  "meta": {
+    "junction_field": "item",
+    "many_collection": "invoice_documents_items",
+    "many_field": "invoice_documents_id",
+    "one_allowed_collections": null,
+    "one_collection": "invoice_documents",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "items",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "invoice_documents_items",
+    "column": "invoice_documents_id",
+    "foreign_key_table": "invoice_documents",
+    "foreign_key_column": "id",
+    "constraint_name": "invoice_documents_items_invoice_documents_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

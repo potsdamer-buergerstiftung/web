@@ -1,0 +1,25 @@
+{
+  "collection": "invoices_cost_centers",
+  "field": "invoices_id",
+  "related_collection": "invoices",
+  "meta": {
+    "junction_field": "cost_centers_id",
+    "many_collection": "invoices_cost_centers",
+    "many_field": "invoices_id",
+    "one_allowed_collections": null,
+    "one_collection": "invoices",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "cost_centers",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "invoices_cost_centers",
+    "column": "invoices_id",
+    "foreign_key_table": "invoices",
+    "foreign_key_column": "id",
+    "constraint_name": "invoices_cost_centers_invoices_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

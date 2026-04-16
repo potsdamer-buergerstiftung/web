@@ -1,0 +1,50 @@
+{
+  "collection": "events",
+  "field": "tickets",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": [
+      {
+        "hidden": true,
+        "name": "external ticket deactivated",
+        "options": {
+          "enableCreate": true,
+          "enableSelect": true
+        },
+        "readonly": true,
+        "rule": {
+          "_and": [
+            {
+              "use_external_ticket_provider": {
+                "_eq": true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "display": null,
+    "display_options": null,
+    "field": "tickets",
+    "group": "tickets_active_options",
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "enableSelect": false,
+      "template": "{{name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 3,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

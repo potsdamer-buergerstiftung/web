@@ -14,14 +14,11 @@
     "note": null,
     "options": null,
     "readonly": false,
-    "required": true,
-    "sort": 4,
+    "required": false,
+    "searchable": true,
+    "sort": 8,
     "special": null,
     "translations": [
-      {
-        "language": "en-US",
-        "translation": "Last Name"
-      },
       {
         "language": "de-DE",
         "translation": "Nachname"
@@ -39,7 +36,7 @@
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": false,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

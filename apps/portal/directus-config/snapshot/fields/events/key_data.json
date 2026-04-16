@@ -1,0 +1,35 @@
+{
+  "collection": "events",
+  "field": "key_data",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "key_data",
+    "group": null,
+    "hidden": false,
+    "interface": "group-detail",
+    "note": "Nennen Sie Ihre Veranstaltung und sagen Sie den Besuchern, warum sie kommen sollten. Fügen Sie Details hinzu, die die Einzigartigkeit der Veranstaltung unterstreichen.",
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 7,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Eckdaten"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

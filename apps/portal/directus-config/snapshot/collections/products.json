@@ -1,0 +1,35 @@
+{
+  "collection": "products",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "products",
+    "color": "#6644FF",
+    "display_template": null,
+    "group": "sales",
+    "hidden": false,
+    "icon": "hardware",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 2,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Produkte",
+        "singular": "Produkt",
+        "translation": "Produkte"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "products"
+  }
+}

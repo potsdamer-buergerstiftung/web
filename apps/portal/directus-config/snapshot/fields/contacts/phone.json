@@ -12,18 +12,13 @@
     "hidden": false,
     "interface": "input",
     "note": null,
-    "options": {
-      "iconLeft": "phone"
-    },
+    "options": null,
     "readonly": false,
     "required": false,
-    "sort": 6,
+    "searchable": true,
+    "sort": 12,
     "special": null,
     "translations": [
-      {
-        "language": "en-US",
-        "translation": "Phone"
-      },
       {
         "language": "de-DE",
         "translation": "Telefon"
@@ -31,7 +26,7 @@
     ],
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "phone",

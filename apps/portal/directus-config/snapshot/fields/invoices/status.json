@@ -1,0 +1,108 @@
+{
+  "collection": "invoices",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "invoices",
+    "conditions": [],
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "background": null,
+          "foreground": "#3399FF",
+          "text": "$t:approved",
+          "value": "approved"
+        },
+        {
+          "background": null,
+          "foreground": "#2ECDA7",
+          "text": "$t:settled",
+          "value": "settled"
+        },
+        {
+          "background": null,
+          "foreground": "#FFA439",
+          "text": "$t:unprocessed",
+          "value": "unprocessed"
+        },
+        {
+          "foreground": "#3399FF",
+          "text": "$t:open",
+          "value": "open"
+        },
+        {
+          "foreground": "#FFC23B",
+          "text": "$t:draft",
+          "value": "draft"
+        },
+        {
+          "background": "#FFC23B",
+          "foreground": "#18222F",
+          "text": "$t:in_progress",
+          "value": "in_progress"
+        }
+      ]
+    },
+    "field": "status",
+    "group": null,
+    "hidden": false,
+    "interface": "select-radio",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:draft",
+          "value": "draft"
+        },
+        {
+          "text": "$t:unprocessed",
+          "value": "unprocessed"
+        },
+        {
+          "text": "$t:open",
+          "value": "open"
+        },
+        {
+          "text": "$t:in_progress",
+          "value": "in_progress"
+        },
+        {
+          "text": "$t:approved",
+          "value": "approved"
+        },
+        {
+          "text": "$t:settled",
+          "value": "settled"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 3,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "status",
+    "table": "invoices",
+    "data_type": "character varying",
+    "default_value": "unprocessed",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

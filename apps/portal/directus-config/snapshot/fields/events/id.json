@@ -1,7 +1,7 @@
 {
   "collection": "events",
   "field": "id",
-  "type": "uuid",
+  "type": "integer",
   "meta": {
     "collection": "events",
     "conditions": null,
@@ -15,10 +15,9 @@
     "options": null,
     "readonly": true,
     "required": false,
+    "searchable": true,
     "sort": 1,
-    "special": [
-      "uuid"
-    ],
+    "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
@@ -27,18 +26,18 @@
   "schema": {
     "name": "id",
     "table": "events",
-    "data_type": "uuid",
-    "default_value": null,
+    "data_type": "integer",
+    "default_value": "nextval('events_id_seq'::regclass)",
     "max_length": null,
-    "numeric_precision": null,
-    "numeric_scale": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
     "is_nullable": false,
     "is_unique": true,
     "is_indexed": false,
     "is_primary_key": true,
     "is_generated": false,
     "generation_expression": null,
-    "has_auto_increment": false,
+    "has_auto_increment": true,
     "foreign_key_table": null,
     "foreign_key_column": null
   }

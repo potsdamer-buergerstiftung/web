@@ -1,0 +1,35 @@
+{
+  "collection": "projects",
+  "field": "categories",
+  "type": "alias",
+  "meta": {
+    "collection": "projects",
+    "conditions": null,
+    "display": null,
+    "display_options": {
+      "template": "{{project_categories_id.name}}"
+    },
+    "field": "categories",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 15,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Kategorien"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}

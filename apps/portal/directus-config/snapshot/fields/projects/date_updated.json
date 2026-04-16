@@ -5,8 +5,10 @@
   "meta": {
     "collection": "projects",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "datetime",
+    "display_options": {
+      "relative": true
+    },
     "field": "date_updated",
     "group": null,
     "hidden": true,
@@ -15,14 +17,15 @@
     "options": null,
     "readonly": true,
     "required": false,
-    "sort": 3,
+    "searchable": true,
+    "sort": 7,
     "special": [
       "date-updated"
     ],
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "date_updated",

@@ -1,0 +1,35 @@
+{
+  "collection": "campaigns",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "campaigns",
+    "color": "#2ECDA7",
+    "display_template": "{{name}}",
+    "group": "projects",
+    "hidden": false,
+    "icon": "campaign",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 4,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Kampagnen",
+        "singular": "Kampagne",
+        "translation": "Kampagnen"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "campaigns"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collection": "website_pages",
+  "field": "parent_page",
+  "related_collection": "website_pages",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "website_pages",
+    "many_field": "parent_page",
+    "one_allowed_collections": null,
+    "one_collection": "website_pages",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "website_pages",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "website_pages",
+    "column": "parent_page",
+    "foreign_key_table": "website_pages",
+    "foreign_key_column": "id",
+    "constraint_name": "website_pages_parent_page_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "NO ACTION"
+  }
+}

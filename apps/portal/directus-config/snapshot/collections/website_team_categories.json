@@ -1,0 +1,35 @@
+{
+  "collection": "website_team_categories",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "website_team_categories",
+    "color": null,
+    "display_template": "{{title}}",
+    "group": "websiteteam",
+    "hidden": false,
+    "icon": "bookmark",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Team-Kategorien",
+        "singular": "Team-Kategorie",
+        "translation": "Team-Kategorien"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "website_team_categories"
+  }
+}

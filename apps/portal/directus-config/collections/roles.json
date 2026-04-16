@@ -5,5 +5,47 @@
     "description": "$t:admin_description",
     "parent": null,
     "_syncId": "_sync_default_admin_role"
+  },
+  {
+    "name": "Inselbühne Veranstaltungsleitung",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "4d4660f6-a0be-4f39-9e0a-8deae8699dd0"
+  },
+  {
+    "name": "Standard",
+    "icon": "supervised_user_circle",
+    "description": "Die Rolle, die beim ersten Anmelden automatisch vergeben wird.",
+    "parent": null,
+    "_syncId": "b427fc33-3cd2-48ff-997b-fe5eb51d687b"
+  },
+  {
+    "name": "Projektleiter",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "ca0e8e4a-062f-4be4-8e41-04d45e531f4d"
+  },
+  {
+    "name": "Zugriff Bilderpool",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "e0b577bb-cd55-4ce0-a6d8-21edf17def33"
+  },
+  {
+    "name": "Zahlungsberechtigte",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "e53c4a05-f41d-41fa-92d5-5c5d49a7880c"
+  },
+  {
+    "name": "Buchungsverantwortlich",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "efefbb5b-f466-4f19-8ee8-0db0739b71b4"
   }
 ]

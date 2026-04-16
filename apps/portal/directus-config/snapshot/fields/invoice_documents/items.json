@@ -1,0 +1,33 @@
+{
+  "collection": "invoice_documents",
+  "field": "items",
+  "type": "alias",
+  "meta": {
+    "collection": "invoice_documents",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "items",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2a",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 10,
+    "special": [
+      "m2a"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Posten"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collection": "public_links",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": false,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "public_links",
+    "color": "#FFA439",
+    "display_template": null,
+    "group": null,
+    "hidden": false,
+    "icon": "link",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 9,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Gekürzte Links",
+        "singular": "Gekürzter Link",
+        "translation": "Gekürzte Links"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "public_links"
+  }
+}

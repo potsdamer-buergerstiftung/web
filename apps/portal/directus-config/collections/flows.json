@@ -1,9 +1,29 @@
 [
   {
-    "name": "Spendenbescheinigung",
-    "icon": "attach_money",
+    "name": "Interessentenbogen Stadtbande",
+    "icon": "floor",
     "color": null,
-    "description": "Erstellt automatisch eine Spendenbescheinigung nach einer Spende",
+    "description": "Das Formular für die Stadtbande wurde abgesendet",
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "filter",
+      "scope": [
+        "items.create"
+      ],
+      "collections": [
+        "stadtbande_form_submissions"
+      ]
+    },
+    "operation": "59ff5a2c-2139-4963-85ca-c44ac3a6e62a",
+    "_syncId": "20b0863b-9596-475b-ac02-9fce70277e0e"
+  },
+  {
+    "name": "E-Mail benachrichtugung",
+    "icon": "email",
+    "color": null,
+    "description": "Wird ausgeführt, wenn eine neue Kontaktanfrage kommt.",
     "status": "active",
     "trigger": "event",
     "accountability": "all",
@@ -13,10 +33,30 @@
         "items.create"
       ],
       "collections": [
-        "donations"
+        "contact_requests"
       ]
     },
-    "operation": "079ecba5-0d59-4895-8df2-29870619154b",
-    "_syncId": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd"
+    "operation": "5c6ad34d-6e9d-429f-aff4-56717d8e0f0c",
+    "_syncId": "a0afecb0-ae5d-41f9-b8bb-b86bad1fe330"
+  },
+  {
+    "name": "Alert bei Kontaktanfrage",
+    "icon": "contact_mail",
+    "color": null,
+    "description": null,
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "action",
+      "scope": [
+        "items.create"
+      ],
+      "collections": [
+        "contact_requests"
+      ]
+    },
+    "operation": "50e72adc-fbf1-4739-9c2b-820a0a5a87c7",
+    "_syncId": "b262647e-0d7d-49ac-91a8-8fe08c91cfea"
   }
 ]
