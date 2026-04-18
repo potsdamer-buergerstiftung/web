@@ -13,6 +13,24 @@ export enum DonationDuration {
   RECURRING = "recurring",
 }
 
+export type DonationPaymentInput = {
+  amountValue: number;
+  paymentMethodId: "creditcard" | "paypal" | "paybybank" | "directdebit";
+  isRecurring: boolean;
+  customerId?: string;
+  returnUrl: string;
+  webhookUrl: string;
+  metadata: Record<string, unknown>;
+};
+
+export type DonationPaymentResult = {
+  id: string;
+  status: string;
+  amount: unknown;
+  mandateId?: string;
+  checkoutUrl?: string;
+};
+
 export async function listAvailablePaymentMethods(
   forDuration: DonationDuration
 ): Promise<DonationPaymentMethod[]> {
@@ -67,4 +85,34 @@ export async function createCustomer(firstName: string, lastName: string, email:
   });
 
   return customer;
+}
+
+export async function createDonationPayment(
+  input: DonationPaymentInput,
+): Promise<DonationPaymentResult> {
+  const payment = await mollieClient.payments.create({
+    amount: {
+      currency: "EUR",
+      value: input.amountValue.toFixed(2),
+    },
+    description: input.isRecurring
+      ? "Regelmäßige Spende - Erster Beitrag"
+      : "Spende",
+    method: input.paymentMethodId,
+    sequenceType: input.isRecurring ? SequenceType.first : SequenceType.oneoff,
+    customerId: input.customerId,
+    redirectUrl: input.returnUrl,
+    webhookUrl: input.webhookUrl,
+    metadata: input.metadata,
+  } as any);
+
+  return {
+    id: (payment as any).id,
+    status: (payment as any).status,
+    amount: (payment as any).amount,
+    mandateId: (payment as any).mandateId,
+    checkoutUrl: typeof (payment as any).getCheckoutUrl === "function"
+      ? (payment as any).getCheckoutUrl()
+      : undefined,
+  };
 }

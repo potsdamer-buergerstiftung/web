@@ -33,6 +33,16 @@ type DonationInput = {
   metadata?: Record<string, unknown>;
 };
 
+type RecurringDonationInput = {
+  donorId: string;
+  amountValue: RecurringDonation["amount_value"];
+  currency: RecurringDonation["currency"];
+  frequency: RecurringDonation["frequency"];
+  paymentMethod: RecurringDonation["payment_method"];
+  startDate: string;
+  metadata?: Record<string, unknown>;
+};
+
 type MolliePaymentSync = {
   paymentId: string;
   status: string;
@@ -48,6 +58,19 @@ const DONATION_STATUS_BY_MOLLIE_STATUS: Record<string, DonationStatus> = {
   failed: "failed",
   canceled: "canceled",
   expired: "expired",
+  open: "pending",
+  pending: "pending",
+  authorized: "pending",
+};
+
+const RECURRING_DONATION_STATUS_BY_MOLLIE_STATUS: Record<
+  string,
+  RecurringDonationStatus
+> = {
+  paid: "active",
+  failed: "failed",
+  canceled: "canceled",
+  expired: "failed",
   open: "pending",
   pending: "pending",
   authorized: "pending",
@@ -145,6 +168,25 @@ export async function createDonation(input: DonationInput): Promise<{ id: string
   return { id: (created as { id: string }).id };
 }
 
+export async function createRecurringDonation(
+  input: RecurringDonationInput,
+): Promise<{ id: string }> {
+  const created = await serverClient.request(
+    createItem("recurring_donations", {
+      status: "pending" as RecurringDonationStatus,
+      donor: input.donorId,
+      amount_value: input.amountValue,
+      currency: input.currency,
+      frequency: input.frequency,
+      payment_method: input.paymentMethod,
+      start_date: input.startDate,
+      metadata: input.metadata ?? {},
+    }),
+  );
+
+  return { id: (created as { id: string }).id };
+}
+
 export async function findDonationByPaymentId(paymentId: string): Promise<{ id: string } | null> {
   const result = await serverClient.request(
     readItems("donations", {
@@ -176,6 +218,29 @@ export async function updateDonationAfterPayment(
       failed_at: input.failedAt ?? null,
       canceled_at: input.canceledAt ?? null,
       expired_at: input.expiredAt ?? null,
+      metadata: input.metadata ?? {},
+    }),
+  );
+}
+
+export async function updateRecurringDonationAfterPayment(
+  recurringDonationId: string,
+  input: {
+    status: string;
+    paidAt?: string | null;
+    canceledAt?: string | null;
+    metadata?: Record<string, unknown>;
+  },
+): Promise<void> {
+  const mappedStatus =
+    RECURRING_DONATION_STATUS_BY_MOLLIE_STATUS[input.status] ?? "pending";
+
+  await serverClient.request(
+    updateItem("recurring_donations", recurringDonationId, {
+      status: mappedStatus,
+      last_payment_status: input.status,
+      last_payment_at: input.paidAt ?? null,
+      canceled_at: input.canceledAt ?? null,
       metadata: input.metadata ?? {},
     }),
   );

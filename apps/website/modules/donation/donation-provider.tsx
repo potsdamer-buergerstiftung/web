@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import { useWatch } from "react-hook-form";
 import {
   DonationFormProvider,
@@ -235,11 +235,33 @@ export function DonationProvider({
     resolvedConfig.allowedAmounts.length === 1 &&
     !resolvedConfig.allowCustomAmount;
 
+  const handleSubmit = useCallback(async (values: DonationFormValues) => {
+    const response = await fetch("/api/donation/donate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      throw new Error("Donation initialization failed");
+    }
+
+    const payload = (await response.json()) as { checkoutUrl?: string };
+    if (!payload.checkoutUrl) {
+      throw new Error("Missing Mollie checkout URL");
+    }
+
+    window.location.assign(payload.checkoutUrl);
+  }, []);
+
   return (
     <DonationFormProvider
       defaultValues={{
         ...defaultValues,
       }}
+      onSubmit={handleSubmit}
     >
       <DonationStateProvider config={resolvedConfig}>
         <DonationStepperProvider
