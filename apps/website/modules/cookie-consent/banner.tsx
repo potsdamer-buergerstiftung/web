@@ -106,7 +106,7 @@ export default function CookieConsentBanner() {
             <DialogDescription>
               Verwalte hier optionale Technologien. Notwendige Cookies sind
               immer aktiv. Mehr Infos über die Verwendung findest Du in der{" "}
-              <Link href="/datenschutz" variant="link" className="px-0">
+              <Link href="/datenschutz" className="px-0 underline">
                 Datenschutzerklärung
               </Link>
               .

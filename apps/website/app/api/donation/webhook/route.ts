@@ -10,6 +10,17 @@ function asString(value: unknown): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+function getMetadataValue(
+  metadata: unknown,
+  key: string,
+): unknown {
+  if (!metadata || typeof metadata !== "object") {
+    return undefined;
+  }
+
+  return (metadata as Record<string, unknown>)[key];
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.text();
@@ -46,7 +57,9 @@ export async function POST(request: Request) {
       },
     });
 
-    const recurringDonationId = asString(payment.metadata?.recurring_donation_id);
+    const recurringDonationId = asString(
+      getMetadataValue(payment.metadata, "recurring_donation_id"),
+    );
     if (recurringDonationId) {
       await updateRecurringDonationAfterPayment(recurringDonationId, {
         status: payment.status,
