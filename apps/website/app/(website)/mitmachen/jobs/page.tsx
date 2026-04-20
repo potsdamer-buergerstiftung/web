@@ -19,7 +19,7 @@ export default function JobsPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="pt-8 pb-16 container mx-auto maxw-4xl px-4">
+      <section className="pt-8 pb-16 container maxw-4xl px-4">
         Wir sind immer auf der Suche nach neuen Talenten, die uns bei unserer
         Arbeit unterstützen. Dafür suchen wir Werkstudierende und Menschen, die
         bei uns ihr freiwilliges soziales Jahr, kulturelles Jahr, ökologisches

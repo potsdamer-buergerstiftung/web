@@ -24,7 +24,7 @@ export default function ContributePage() {
         }
       />
       <section className="bg-white">
-        <div className="container mx-auto grid grid-cols-8 gap-x-8 gap-y-12 px-4 pb-16">
+        <div className="container grid grid-cols-8 gap-x-8 gap-y-12 px-4 pb-16">
           <div className="col-span-8 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Privatspende</h1>
             <p className="mt-3">
@@ -89,7 +89,7 @@ export default function ContributePage() {
         </div>
       </section>
       <section className="bg-slate-100">
-        <div className="container mx-auto grid grid-cols-8 gap-x-8 gap-y-12 px-4 py-16">
+        <div className="container grid grid-cols-8 gap-x-8 gap-y-12 px-4 py-16">
           <div className="col-span-8 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Freundeskreis</h1>
             <p className="mt-3">
@@ -152,7 +152,7 @@ export default function ContributePage() {
         </div>
       </section>
       <section className="bg-white">
-        <div className="container mx-auto grid grid-cols-8 gap-x-8 gap-y-12 px-4 py-16">
+        <div className="container grid grid-cols-8 gap-x-8 gap-y-12 px-4 py-16">
           <div className="col-span-8 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Firmenspende</h1>
             <p className="mt-3">

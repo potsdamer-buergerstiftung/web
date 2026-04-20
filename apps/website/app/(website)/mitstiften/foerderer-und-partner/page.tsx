@@ -16,7 +16,7 @@ export default function SupportersPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="container px-4 mx-auto pb-10">
+      <section className="container pb-10">
         <div className="grid grid-cols-12 gap-10 items-center">
           <Image
             src="/img/fs-sw.jpg"

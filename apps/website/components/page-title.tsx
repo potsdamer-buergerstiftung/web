@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import clsx from "clsx";
+import { Heading } from "@/components/ui/heading";
 
 interface PageTitleProps {
   title: string;
@@ -23,35 +23,21 @@ export default function PageTitle({
   className,
 }: PageTitleProps) {
   return (
-    <section className={cn("bg-white dark:bg-background", className)}>
+    <section className={className}>
       <div
-        className={clsx(
-          "container mx-auto px-4 pt-36 pb-8 md:pt-44",
+        className={cn(
+          "mx-auto px-4 md:px-8 pt-36 pb-8 md:pt-44",
           isCompact && "max-w-4xl",
           isCentered && "text-center",
         )}
       >
-        <h1
-          className={clsx(
-            "font-header text-5xl font-bold text-slate-900 dark:text-slate-50 md:text-6xl lg:text-7xl",
-            isCentered && "mx-auto",
-          )}
-        >
-          {isLoading ? (
-            <div
-              className={clsx(
-                "h-16 w-3/4 animate-pulse rounded-md bg-slate-200 dark:bg-slate-800",
-                isCentered && "mx-auto",
-              )}
-            />
-          ) : (
-            title
-          )}
-        </h1>
+        <Heading size="lg" className={cn(isCentered && "mx-auto")} isLoading={isLoading}>
+          {title}
+        </Heading>
         {description && (
           <div
-            className={clsx(
-              "mt-4 text-slate-700 dark:text-slate-300",
+            className={cn(
+              "mt-4 text-muted-foreground",
               isCentered && "mx-auto max-w-3xl",
             )}
           >
@@ -60,8 +46,8 @@ export default function PageTitle({
         )}
         {actions && (
           <div
-            className={clsx(
-              "mt-4 text-slate-700 dark:text-slate-300",
+            className={cn(
+              "mt-4 text-muted-foreground",
               isCentered && "flex justify-center",
             )}
           >
@@ -70,7 +56,7 @@ export default function PageTitle({
         )}
         {breadcrumb && (
           <div
-            className={clsx(
+            className={cn(
               "mt-16 md:mt-24",
               isCentered && "flex justify-center",
             )}

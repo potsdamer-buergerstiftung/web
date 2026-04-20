@@ -77,7 +77,7 @@ export default async function Article({ promise }: ArticleProps) {
           </PageBreadcrumb>
         }
       />
-      <div className="container px-4 mx-auto max-w-4xl">
+      <div className="container max-w-4xl">
         <Image
           src={`https://portal.potsdamer-buergerstiftung.org/assets/${post.image}`}
           alt={post.title}

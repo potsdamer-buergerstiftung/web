@@ -23,6 +23,7 @@ export default async function ProjectContent(props: ProjectContentProps) {
       width={800}
       quality={30}
       alt="Bild vom Event"
+      className="rounded-2xl"
     />
   );
 

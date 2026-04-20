@@ -19,7 +19,7 @@ export default function ArticleLoading() {
           </PageBreadcrumb>
         }
       />
-      <div className="container px-4 mx-auto max-w-4xl animate-pulse">
+      <div className="container max-w-4xl animate-pulse">
         <div className="w-full aspect-[16/10] bg-slate-200 mb-8 rounded-md" />
         <div className="space-y-4">
           <div className="h-4 bg-slate-200 rounded w-full" />

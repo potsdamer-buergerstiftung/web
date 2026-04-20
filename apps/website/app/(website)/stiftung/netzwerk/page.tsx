@@ -21,7 +21,7 @@ export default function NetworkPage() {
         }
       />
       <section>
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 pb-16">
+        <div className="container grid grid-cols-5 gap-8 px-4 pb-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Mitgliedschaften</h1>
           </div>
@@ -80,7 +80,7 @@ export default function NetworkPage() {
         </div>
       </section>
       {/* <section className="py-6 bg-slate-100">
-                <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+                <div className="container grid grid-cols-5 gap-8 px-4 py-16">
                     <div className="col-span-5 lg:col-span-2">
                         <h1 className="font-header text-3xl font-bold">Kooperationen</h1>
                     </div>

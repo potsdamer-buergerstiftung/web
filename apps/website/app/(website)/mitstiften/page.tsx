@@ -26,7 +26,7 @@ export default function IndividualsPage() {
         }
       />
       <section>
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 pb-16 pt-12">
+        <div className="container grid grid-cols-5 gap-8 px-4 pb-16 pt-12">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Freundeskreis</h1>
             <p className="mt-4">Kleiner Beitrag, große Freundschaft</p>
@@ -50,7 +50,7 @@ export default function IndividualsPage() {
         </div>
       </section>
       <section className="py-6 bg-slate-100 dark:bg-slate-950">
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+        <div className="container grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Einmalige Spende</h1>
             <p className="mt-4">Einmalig, zu Anlässen oder als Geschenk</p>
@@ -77,7 +77,7 @@ export default function IndividualsPage() {
         </div>
       </section>
       <section className="py-6">
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+        <div className="container grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Patenschaft</h1>
             <p className="mt-4">Projektarbeit ermöglichen und fördern</p>
@@ -98,7 +98,7 @@ export default function IndividualsPage() {
         </div>
       </section>
       <section className="py-6 bg-slate-100 dark:bg-slate-950">
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+        <div className="container grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Zustiftung</h1>
             <p className="mt-4">
@@ -118,7 +118,7 @@ export default function IndividualsPage() {
         </div>
       </section>
       <section className="py-6">
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16">
+        <div className="container grid grid-cols-5 gap-8 px-4 py-16">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">Vererben</h1>
             <p className="mt-4">Gutes tun und Gutes weitergeben</p>

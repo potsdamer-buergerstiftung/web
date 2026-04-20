@@ -1,4 +1,4 @@
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
@@ -8,12 +8,20 @@ import { UmamiScript } from "@/modules/analytics";
 
 //import VisualEditing from "./VisualEditing";
 
-const font = Space_Grotesk({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-header",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal"],
 });
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
+});
+
 
 export default function RootLayout({
   children,
@@ -22,11 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html
-      className={`${font.variable} font-sans`}
+      className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}
       lang="de"
       suppressHydrationWarning
     >
-      <body className="antialiased">
+      <body className="antialiased bg-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

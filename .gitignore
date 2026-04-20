@@ -16,7 +16,7 @@ coverage
 .next/
 out/
 build
-.swc/
+.swc
 
 # nuxt.js
 .nuxt/

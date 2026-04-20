@@ -17,7 +17,7 @@ const ProjectCard: React.FC<{
   return (
     <Link
       href={`/aktuelles/projekte/${projectId}`}
-      className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg"
+      className="group relative block h-96 border border-border shadow-2xl w-full cursor-pointer overflow-hidden rounded-2xl"
     >
       <Image
         src={`https://portal.potsdamer-buergerstiftung.org/assets/${imageId}`}

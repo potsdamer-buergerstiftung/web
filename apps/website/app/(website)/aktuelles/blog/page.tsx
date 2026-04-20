@@ -48,7 +48,7 @@ export default function NewsPage() {
           </PageBreadcrumb>
         }
       />
-      <div className="container mx-auto px-4 mb-10">
+      <div className="container mb-10">
         {/* @ts-ignore-error */}
         <Suspense fallback={<PostGridLoading />}>
           <PostGrid promise={posts} />

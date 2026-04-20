@@ -5,6 +5,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --container-8xl: 1920px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -50,7 +54,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.9818 0.0054 95.1);
   --foreground: oklch(12.9% 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -58,16 +62,16 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(50.81% 0.105 165.61);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(27.95% 0.037 260.03);
+  --secondary: oklch(12.9% 0.042 264.695);
   --secondary-foreground: oklch(95% 0 0);
-  --muted: oklch(95.712% 0.06571 157.779);
-  --muted-foreground: var(--foreground);
-  --accent: oklch(0.97 0 0);
+  --muted: oklch(from var(--primary) l c h / 0.10);
+  --muted-foreground: oklch(38.937% 0.02408 275.71);
+  --accent: oklch(88.689% 0.01903 96.925);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(92.88% 0.0126 255.51);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(86.9% 0.022 252.894);
+  --input: var(--color-muted);
+  --ring: var(--primary);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -128,6 +132,12 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+}
+
+@utility container {
+  margin-inline: auto;
+  max-width: var(--container-8xl);
+  @apply px-4 md:px-8;
 }
 
 .altcha-main {

@@ -3,8 +3,6 @@ import Header from "@/components/header";
 import HeaderNavItem from "@/components/header/nav-item";
 import HeaderSubNavItem from "@/components/header/sub-nav-item";
 import HeaderNav from "@/components/header/nav";
-import SocialMediaLinks from "@/components/social-media-links";
-import ScrollProgressIndicator from "@/components/scroll-progress-indicator";
 import HeaderQuickDonateDrawer from "@/components/header/quick-donate-drawer";
 import { Metadata } from "next";
 import HeaderDonationButton from "@/components/header/donation-button";
@@ -77,18 +75,18 @@ export default async function WebsiteLayout({
       <HeaderQuickDonateDrawer />
       <main>{children}</main>
       <Footer />
-      <div
+      {/* <div
         className="hidden lg:inline-flex fixed left-[4vh] top-[50%] z-40 origin-top-left items-center align-middle"
         style={{ transform: "rotate(-90deg) translate(-50%, 0)" }}
       >
         <ScrollProgressIndicator />
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className="fixed right-[4vh] top-[50%] z-40 hidden origin-top-right items-center align-middle lg:inline-flex"
         style={{ transform: "rotate(-90deg) translate(50%, -100%)" }}
       >
         <SocialMediaLinks size="large" direction="horizontal" />
-      </div>
+      </div> */}
     </>
   );
 }

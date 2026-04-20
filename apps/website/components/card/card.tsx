@@ -3,9 +3,9 @@ import Image from "next/image";
 import clsx from "clsx";
 import { setAttr } from "@directus/visual-editing";
 
-const ArticleCard: React.FC<{
+const Card: React.FC<{
   title: string;
-  date: Date;
+  subtitle?: string;
   imageId?: string;
   projectTitle?: string;
   author?: string;
@@ -13,27 +13,22 @@ const ArticleCard: React.FC<{
   compact?: boolean;
   link?: string;
   id?: string;
+  variant?: "overlay" | "separated";
 }> = (props) => {
   const {
     compact = false,
     title,
-    date,
+    subtitle,
     imageId,
     projectTitle,
-    author,
     tags,
     link,
     id,
+    variant = "separated",
   } = props;
 
-  const formattedDate = date.toLocaleDateString("de", {
-    year: "numeric",
-    day: "numeric",
-    month: "long",
-  });
-
   const wrapperClass =
-    "bg-card group relative block h-full w-full overflow-hidden rounded-2xl border border-border shadow-2xl";
+    "group relative block h-full w-full overflow-hidden rounded-md";
 
   const Wrapper = ({ children }) =>
     link ? (
@@ -98,7 +93,7 @@ const ArticleCard: React.FC<{
       )}
       <div
         className={clsx(
-          "relative px-6 py-8 transition",
+          "relative bg-slate-100 dark:bg-slate-950 px-6 py-8 transition",
           compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200",
         )}
       >
@@ -110,7 +105,7 @@ const ArticleCard: React.FC<{
                 projectTitle,
             })}
           >
-            {formattedDate}
+            {subtitle}
           </li>
           <li
             className={clsx("text-md text-slate-700", {
@@ -150,4 +145,4 @@ const ArticleCard: React.FC<{
   );
 };
 
-export default ArticleCard;
+export default Card;

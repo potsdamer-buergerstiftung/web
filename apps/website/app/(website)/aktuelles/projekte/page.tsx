@@ -94,7 +94,7 @@ export default async function ProjectsPage({
           />
         }
       />
-      <div className="container mx-auto px-4 pb-20">
+      <div className="container pb-20">
         <Suspense fallback={<ProjectGridLoading />}>
           {/* @ts-ignore-error */}
           <ProjectGrid promise={projects} />

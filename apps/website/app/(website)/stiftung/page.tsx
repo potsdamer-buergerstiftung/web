@@ -56,8 +56,8 @@ export default function AboutPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="bg-slate-100 pb-20 pt-20 dark:bg-slate-900">
-        <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
+      <section className="bg-muted pb-20 pt-20 dark:bg-slate-900">
+        <div className="container grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
             <h1 className="font-header mt-2 text-4xl font-bold">
               Ehrenamtlich, engagiert, miteinander
@@ -79,11 +79,11 @@ export default function AboutPage() {
         <ParallaxImage />
       </section>
       <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {priorities.map((priority) => (
               <div
-                className="container mx-auto flex h-full flex-col"
+                className="container flex h-full flex-col"
                 key={priority.title}
               >
                 <div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="pt-8 md:pt-16">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <h2 className="font-header text-4xl font-bold md:-mb-4 xl:-mb-10 max-w-xl text-slate-900 dark:text-slate-100">
             Gemeinsam Gutes tun und stiften
           </h2>
@@ -121,7 +121,7 @@ export default function AboutPage() {
               alt="Freiwillige auf der Inselbühne"
             />
           </div>
-          <div className="bg-slate-50 px-4 py-16 md:px-16 lg:pr-24 col-span-6 md:col-span-4 xl:col-span-3 dark:bg-slate-950">
+          <div className="bg-muted px-4 py-16 md:px-16 lg:pr-24 col-span-6 md:col-span-4 xl:col-span-3 dark:bg-slate-950">
             <h2 className="font-header text-3xl font-bold mb-8 max-w-md text-slate-900 dark:text-slate-100">
               Wie unsere Stiftung aufgebaut ist und arbeitet
             </h2>
@@ -130,7 +130,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* <section className="mt-16 pb-16">
-                <div className="container mx-auto grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
+                <div className="container grid grid-cols-1 gap-8 px-4 lg:grid-cols-2">
                     <div>
                         <h4 className="text-sm font-semibold uppercase text-gray-600">
                             Förderer und Partner
