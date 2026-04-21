@@ -8,6 +8,7 @@ import { readItems } from "@directus/sdk";
 import { Suspense } from "react";
 import EventGrid from "./EventGrid";
 import directus from "@/app/(website)/directus";
+import { Heading } from "@/components/ui/heading";
 
 export const revalidate = 60;
 
@@ -66,19 +67,19 @@ export default function EventsPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="container px-4 mx-auto grid grid-cols-6 pb-16 gap-8">
-        <h1 className="col-span-6 text-2xl font-bold">
+      <section className="container grid grid-cols-6 pb-16 gap-8">
+        <Heading size="sm" className="col-span-6">
           Aktuelle Veranstaltungen
-        </h1>
+        </Heading>
         <Suspense>
           {/* @ts-ignore-error */}
           <EventGrid promise={events} />
         </Suspense>
       </section>
-      <section className="container px-4 mx-auto grid grid-cols-6 pb-16 gap-8">
-        <h1 className="col-span-6 text-2xl font-bold">
+      <section className="container grid grid-cols-6 pb-16 gap-8">
+        <Heading size="sm" className="col-span-6">
           Vergangene Veranstaltungen
-        </h1>
+        </Heading>
         <Suspense>
           {/* @ts-ignore-error */}
           <EventGrid promise={pastEvents} />

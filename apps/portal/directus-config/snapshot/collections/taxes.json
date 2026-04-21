@@ -1,0 +1,35 @@
+{
+  "collection": "taxes",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "taxes",
+    "color": "#E35169",
+    "display_template": null,
+    "group": "accounting_settings",
+    "hidden": false,
+    "icon": "new_label",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 5,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Steuern",
+        "singular": "Steuer",
+        "translation": "Steuern"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "taxes"
+  }
+}

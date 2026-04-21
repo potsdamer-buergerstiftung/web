@@ -86,15 +86,14 @@ export function PersonalDetailsStep() {
         className="mb-8"
       />
       <FieldGroup>
-        {showAnonymousOption ? (
+        {allowAnonymous ? (
           <FieldGroup>
             <Field orientation="horizontal">
               <Checkbox
                 id={isAnonymousId}
                 checked={isAnonymous}
-                disabled={!allowAnonymous}
                 onCheckedChange={(checked) =>
-                  isAnonymousField.onChange(Boolean(checked))
+                  onIsAnonymousChange(Boolean(checked))
                 }
               />
               <FieldLabel htmlFor={isAnonymousId}>
@@ -103,7 +102,7 @@ export function PersonalDetailsStep() {
             </Field>
           </FieldGroup>
         ) : null}
-        {(!isAnonymous || !showAnonymousOption) && (
+        {(!isAnonymous || !allowAnonymous) && (
           <FieldGroup className="grid grid-cols-2 gap-4">
             <Field
               className="col-span-2 md:col-span-1"

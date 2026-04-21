@@ -1,0 +1,39 @@
+{
+  "collection": "events",
+  "field": "ticket_management",
+  "type": "alias",
+  "meta": {
+    "collection": "events",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "ticket_management",
+    "group": null,
+    "hidden": false,
+    "interface": "group-detail",
+    "note": null,
+    "options": {
+      "headerIcon": null,
+      "links": null,
+      "start": "closed"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 9,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Ticketverwaltung"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

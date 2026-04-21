@@ -1,0 +1,79 @@
+{
+  "collection": "invoices",
+  "field": "type",
+  "type": "string",
+  "meta": {
+    "collection": "invoices",
+    "conditions": null,
+    "display": "formatted-value",
+    "display_options": {
+      "conditionalFormatting": [
+        {
+          "background": "#18222F",
+          "color": "#E35169",
+          "icon": "arrow_back",
+          "operator": "eq",
+          "text": "$t:outgoing_invoice",
+          "value": "outgoing"
+        },
+        {
+          "background": "#18222F",
+          "color": "#2ECDA7",
+          "icon": "arrow_forward",
+          "operator": "eq",
+          "text": "$t:incoming_invoice",
+          "value": "incoming"
+        }
+      ]
+    },
+    "field": "type",
+    "group": null,
+    "hidden": false,
+    "interface": "select-radio",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:incoming",
+          "value": "incoming"
+        },
+        {
+          "text": "$t:outgoing",
+          "value": "outgoing"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Rechnungsart"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "type",
+    "table": "invoices",
+    "data_type": "character varying",
+    "default_value": "incoming",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collection": "donors",
+  "field": "recurring_donations",
+  "type": "alias",
+  "meta": {
+    "collection": "donors",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "recurring_donations",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 10,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

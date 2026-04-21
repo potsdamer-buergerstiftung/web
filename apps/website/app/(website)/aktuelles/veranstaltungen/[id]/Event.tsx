@@ -57,7 +57,7 @@ export default async function Event({ promise }: EventProps) {
         }
         isCompact
       />
-      <div className="container px-4 mx-auto max-w-4xl pb-16">
+      <div className="container max-w-4xl pb-16">
         <Image
           src={`https://portal.potsdamer-buergerstiftung.org/assets/${event.image}`}
           alt={event.name}

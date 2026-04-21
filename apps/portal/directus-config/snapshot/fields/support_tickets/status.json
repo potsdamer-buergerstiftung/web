@@ -1,0 +1,71 @@
+{
+  "collection": "support_tickets",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "support_tickets",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "background": "#FFA439",
+          "foreground": null,
+          "text": "$t:open",
+          "value": "open"
+        },
+        {
+          "background": "#2ECDA7",
+          "text": "$t:closed",
+          "value": "closed"
+        }
+      ],
+      "defaultColor": "#FFA439",
+      "showAsDot": true
+    },
+    "field": "status",
+    "group": null,
+    "hidden": false,
+    "interface": "select-radio",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:open",
+          "value": "open"
+        },
+        {
+          "text": "$t:closed",
+          "value": "closed"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "status",
+    "table": "support_tickets",
+    "data_type": "character varying",
+    "default_value": "open",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

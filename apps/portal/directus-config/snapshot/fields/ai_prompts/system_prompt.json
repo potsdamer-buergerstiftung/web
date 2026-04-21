@@ -15,18 +15,10 @@
     "options": null,
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 11,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "System Prompt"
-      },
-      {
-        "language": "de-DE",
-        "translation": "System-Prompt"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"

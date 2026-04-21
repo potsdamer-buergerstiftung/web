@@ -1,0 +1,51 @@
+{
+  "collection": "contacts_contact_groups",
+  "field": "contact_groups_id",
+  "type": "integer",
+  "meta": {
+    "collection": "contacts_contact_groups",
+    "conditions": null,
+    "display": null,
+    "display_options": {
+      "template": "{{name}}"
+    },
+    "field": "contact_groups_id",
+    "group": null,
+    "hidden": true,
+    "interface": null,
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Kontakt-Gruppen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "contact_groups_id",
+    "table": "contacts_contact_groups",
+    "data_type": "integer",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "contact_groups",
+    "foreign_key_column": "id"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collection": "website_banner",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "website_banner",
+    "color": null,
+    "display_template": null,
+    "group": "website",
+    "hidden": false,
+    "icon": "circle_notifications",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": true,
+    "sort": 2,
+    "sort_field": null,
+    "translations": null,
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "website_banner"
+  }
+}

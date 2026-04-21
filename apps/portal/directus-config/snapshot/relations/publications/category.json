@@ -1,0 +1,25 @@
+{
+  "collection": "publications",
+  "field": "category",
+  "related_collection": "publication_categories",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "publications",
+    "many_field": "category",
+    "one_allowed_collections": null,
+    "one_collection": "publication_categories",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "publications",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "publications",
+    "column": "category",
+    "foreign_key_table": "publication_categories",
+    "foreign_key_column": "id",
+    "constraint_name": "publications_category_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

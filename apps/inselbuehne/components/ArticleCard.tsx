@@ -87,7 +87,7 @@ const ArticleCard: React.FC<{
       <div
         className={clsx(
           "relative bg-slate-100 px-6 py-8 transition",
-          compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200",
+          compact ? "h-full hover:bg-transparent" : "hover:bg-muted",
         )}
       >
         <ul className="flex flex-wrap">
@@ -122,7 +122,7 @@ const ArticleCard: React.FC<{
                 href="/aktuelles"
                 key={index}
                 className={clsx(
-                  "rounded-md bg-slate-200 py-1 px-2 text-sm font-medium transition hover:bg-slate-300",
+                  "rounded-md bg-slate-200 py-1 px-2 text-sm font-medium transition hover:bg-muted",
                   {
                     "group-hover:bg-opacity-10 group-hover:text-white": compact,
                   },

@@ -1,0 +1,28 @@
+{
+  "collection": "website_pages",
+  "field": "website_pages",
+  "type": "alias",
+  "meta": {
+    "collection": "website_pages",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "website_pages",
+    "group": null,
+    "hidden": true,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 12,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

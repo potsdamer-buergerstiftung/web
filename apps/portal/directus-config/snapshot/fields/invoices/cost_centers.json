@@ -1,0 +1,37 @@
+{
+  "collection": "invoices",
+  "field": "cost_centers",
+  "type": "alias",
+  "meta": {
+    "collection": "invoices",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{cost_centers_id.id}} - {{cost_centers_id.name}}"
+    },
+    "field": "cost_centers",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": {
+      "enableCreate": false
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 14,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Kostenstellen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}

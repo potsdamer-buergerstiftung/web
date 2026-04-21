@@ -20,18 +20,10 @@
     },
     "readonly": false,
     "required": true,
+    "searchable": true,
     "sort": 8,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Name"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Name"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "half"

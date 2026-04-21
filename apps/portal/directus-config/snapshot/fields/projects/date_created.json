@@ -5,8 +5,10 @@
   "meta": {
     "collection": "projects",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "datetime",
+    "display_options": {
+      "relative": true
+    },
     "field": "date_created",
     "group": null,
     "hidden": true,
@@ -15,14 +17,15 @@
     "options": null,
     "readonly": true,
     "required": false,
-    "sort": 2,
+    "searchable": true,
+    "sort": 5,
     "special": [
       "date-created"
     ],
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "date_created",

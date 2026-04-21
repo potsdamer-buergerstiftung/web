@@ -1,0 +1,64 @@
+{
+  "collection": "tickets",
+  "field": "pricing",
+  "type": "string",
+  "meta": {
+    "collection": "tickets",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "pricing",
+    "group": null,
+    "hidden": false,
+    "interface": "select-radio",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:free",
+          "value": "free"
+        },
+        {
+          "text": "$t:donation",
+          "value": "donation"
+        },
+        {
+          "text": "$t:paid",
+          "value": "paid"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 8,
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Preisgestaltung"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "pricing",
+    "table": "tickets",
+    "data_type": "character varying",
+    "default_value": "free",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

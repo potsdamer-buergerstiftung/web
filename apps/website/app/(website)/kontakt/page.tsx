@@ -2,12 +2,18 @@ import React from "react";
 import {
   PageBreadcrumb,
   PageBreadcrumbItem,
-  PageBreadcrumbSeparator,
 } from "@/components/page-breadcrumb";
 import PageTitle from "@/components/page-title";
 import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import { Link } from "@/components/ui/link";
+import {
+  PageSection,
+  PageSectionContent,
+  PageSectionDescription,
+  PageSectionHeader,
+  PageSectionTitle,
+} from "@/components/page-section";
 
 export const metadata: Metadata = {
   title: "Kontakt - Potsdamer Bürgerstiftung",
@@ -24,7 +30,10 @@ export default function ContactPage() {
           </p>
         }
         actions={
-          <Link href="mailto:info@potsdamer-buergerstiftung.org">
+          <Link
+            href="mailto:info@potsdamer-buergerstiftung.org"
+            variant="light"
+          >
             info@potsdamer-buergerstiftung.org
           </Link>
         }
@@ -34,15 +43,15 @@ export default function ContactPage() {
           </PageBreadcrumb>
         }
       />
-      <section className="bg-white dark:bg-slate-950">
-        <div className="container mx-auto grid grid-cols-4 gap-8 px-4 pb-20 pt-8 text-slate-900 dark:text-slate-100">
-          <div className="col-span-4 lg:col-span-1">
-            <h1 className="font-header text-3xl font-bold">Unsere Standorte</h1>
-            <p className="mt-3 text-slate-700 dark:text-slate-300">
-              Komm gerne vorbei, aber ruf vorher bitte an
-            </p>
-          </div>
-          <div className="col-span-4 md:col-span-2 lg:col-span-1">
+      <PageSection grid="1/3">
+        <PageSectionHeader>
+          <PageSectionTitle>Unsere Standorte</PageSectionTitle>
+          <PageSectionDescription>
+            Komm gerne vorbei, aber ruf vorher bitte an
+          </PageSectionDescription>
+        </PageSectionHeader>
+        <PageSectionContent className="flex flex-col md:flex-row gap-8">
+          <div>
             <h2 className="font-header text-xl font-bold">
               Rechenzentrum Potsdam
             </h2>
@@ -58,7 +67,7 @@ export default function ContactPage() {
             </p>
             <p className="text-slate-700 dark:text-slate-300">9 Uhr - 15 Uhr</p>
           </div>
-          <div className="col-span-4 md:col-span-2 lg:col-span-1">
+          <div>
             <h2 className="font-header text-xl font-bold">Inselbühne</h2>
             <p className="mt-4 text-slate-700 dark:text-slate-300">
               Burgstraße
@@ -70,32 +79,20 @@ export default function ContactPage() {
             {/* <p className="mt-4">Besuchszeiten: Freitag - Samstag</p>
             <p>18 Uhr - 20 Uhr</p> */}
           </div>
-          {/* 
-          <div className="col-span-4 md:col-span-2 lg:col-span-1">
-            <h2 className="font-header text-xl font-bold">Staudenhof</h2>
-            <p className="mt-4">Am Alten Markt 10</p>
-            <p>14467 Potsdam</p>
-            <p className="mt-4">Öffnungszeiten: Freitag - Samstag</p>
-            <p>18 Uhr - 23 Uhr</p>
-          </div> */}
-        </div>
-      </section>
-      <section className="bg-slate-100 dark:bg-slate-900">
-        <div className="container mx-auto grid grid-cols-4 gap-8 px-4 py-16 text-slate-900 dark:text-slate-100">
-          <div className="col-span-4 lg:col-span-1">
-            <h1 className="font-header text-3xl font-bold">
-              Allgemeine Fragen
-            </h1>
-            <p className="mt-4 text-slate-700 dark:text-slate-300">
-              Füllen Sie gerne das Formular aus oder{" "}
-              <b> senden Sie uns eine E-Mail</b>
-            </p>
-          </div>
-          <div className="col-span-4 lg:col-span-3">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+        </PageSectionContent>
+      </PageSection>
+      <PageSection grid="1/3">
+        <PageSectionHeader>
+          <PageSectionTitle>Allgemeine Fragen</PageSectionTitle>
+          <PageSectionDescription>
+            Füllen Sie gerne das Formular aus oder{" "}
+            <b> senden Sie uns eine E-Mail</b>
+          </PageSectionDescription>
+        </PageSectionHeader>
+        <PageSectionContent>
+          <ContactForm />
+        </PageSectionContent>
+      </PageSection>
     </React.Fragment>
   );
 }

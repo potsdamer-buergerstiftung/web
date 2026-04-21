@@ -41,7 +41,7 @@ export default function MediaReportsPage() {
           </PageBreadcrumb>
         }
       />
-      <div className="container px-4 mx-auto mb-10">
+      <div className="container mb-10">
         {/* @ts-ignore-error */}
         <MediaReportsGrid promise={posts} />
       </div>

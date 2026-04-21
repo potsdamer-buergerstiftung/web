@@ -1,0 +1,33 @@
+{
+  "collection": "projects",
+  "field": "users_authorized",
+  "type": "alias",
+  "meta": {
+    "collection": "projects",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "users_authorized",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 11,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Projektleiter"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}

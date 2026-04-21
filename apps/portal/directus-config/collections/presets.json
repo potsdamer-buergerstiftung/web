@@ -1,8 +1,179 @@
 [
   {
+    "bookmark": "Inselbühne",
+    "role": null,
+    "collection": "events",
+    "search": null,
+    "layout": "calendar",
+    "layout_query": null,
+    "layout_options": {
+      "calendar": {
+        "viewInfo": {
+          "type": "dayGridMonth",
+          "startDateStr": "2022-06-01T00:00:00+02:00"
+        },
+        "startDateField": "start",
+        "endDateField": "end",
+        "firstDay": 1,
+        "template": "{{name}}"
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "project": {
+            "id": {
+              "_contains": "inselbuehne"
+            }
+          }
+        }
+      ]
+    },
+    "icon": "castle",
+    "color": "#6644FF",
+    "_syncId": "01ca40e2-005d-46a7-b2b3-3885b2b1ffbe"
+  },
+  {
     "bookmark": null,
     "role": null,
-    "collection": "pages",
+    "collection": "website_team_members",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "name",
+          "category",
+          "responsibilities"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "name": 175.9609375,
+          "category": 160,
+          "responsibilities": 260.03125
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "0bd54bfb-bd72-43b7-9d98-b22d0a288d85"
+  },
+  {
+    "bookmark": "Freigegeben",
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "type",
+          "amount",
+          "booked",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "status": {
+            "_eq": "approved"
+          }
+        }
+      ]
+    },
+    "icon": "library_add_check",
+    "color": null,
+    "_syncId": "19801361-7bfb-4fb2-8bc7-05ce45e4ad59"
+  },
+  {
+    "bookmark": "$t:income",
+    "role": null,
+    "collection": "transactions",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "type": {
+            "_eq": "income"
+          }
+        }
+      ]
+    },
+    "icon": "pin_end",
+    "color": "#E35169",
+    "_syncId": "1d79ba4d-141a-4fe2-a1db-072c0dcbc503"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "website_team_categories",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "title",
+          "description"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "title": 168.58984375,
+          "description": 451.484375
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "31a53d6e-42b4-494d-bbf2-a66dad0edabb"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "website_pages",
     "search": null,
     "layout": "directus-labs-tree-view-table-layout",
     "layout_query": {
@@ -10,60 +181,166 @@
         "page": 1
       },
       "directus-labs-tree-view-table-layout": {
-        "sort": [
-          "sort"
-        ],
-        "page": 1,
         "fields": [
           "title",
+          "slug",
           "status"
         ]
       }
     },
     "layout_options": {
       "directus-labs-tree-view-table-layout": {
-        "parent": "parent",
+        "parent": "parent_page",
         "widths": {
-          "title": 399
+          "title": 232.57421875
         }
+      },
+      "dcb-tree-view": {
+        "labelPrimary": "{{title}}",
+        "labelSecondary": "{{slug}} {{date_created}} von {{user_updated}}",
+        "statusIndicator": "status",
+        "collapsed": [],
+        "metaCollectionName": "website_pages_meta",
+        "slugifyFieldName": "title",
+        "debug": false
       }
     },
     "refresh_interval": null,
     "filter": null,
     "icon": "bookmark",
     "color": null,
-    "_syncId": "0ccbb661-0668-488d-887e-8357a77390a7"
+    "_syncId": "363e72fb-0211-45ab-83bb-e2d1f953744d"
   },
   {
     "bookmark": null,
     "role": null,
-    "collection": "donations",
+    "collection": "media_reports",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "49fb52b6-d4b8-46ad-9ad3-4c3db722eb99"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "posts",
     "search": null,
     "layout": "tabular",
     "layout_query": {
       "tabular": {
-        "page": 1,
         "fields": [
-          "amount",
-          "contact_id",
+          "title",
           "status",
-          "project_id",
-          "campaign_id",
-          "donation_date"
+          "date",
+          "user_created"
         ],
+        "page": 1,
         "sort": [
-          "-donation_date"
+          "-date"
         ]
       }
     },
     "layout_options": {
       "tabular": {
         "widths": {
-          "amount": 106,
-          "contact_id": 179,
-          "status": 101,
-          "project_id": 160,
-          "campaign_id": 160
+          "title": 401,
+          "status": 95,
+          "date": 219,
+          "user_created": 193
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "53f117e4-193e-4679-861a-f8e2f95a91b3"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "events",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "name",
+          "start",
+          "project.title"
+        ],
+        "sort": [
+          "start"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "name": 406,
+          "start": 148
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "end": {
+            "_gt": "$NOW"
+          }
+        }
+      ]
+    },
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "6bfb4281-5a78-4b5e-b8e0-e5456943f4ac"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "type",
+          "amount",
+          "booked",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
         }
       }
     },
@@ -71,6 +348,687 @@
     "filter": null,
     "icon": "bookmark",
     "color": null,
-    "_syncId": "c7fa7639-2456-425b-95cb-8ae8a3237559"
+    "_syncId": "73fcab39-042a-4278-9321-18c95132b12c"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "public_links",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "description",
+          "id",
+          "destination"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "id": 259,
+          "destination": 448
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "776c397e-aede-4764-8e36-86702e3d89b4"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "projects",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "map": {
+        "limit": 1000
+      },
+      "cards": {
+        "sort": [
+          "sort"
+        ],
+        "page": 1
+      },
+      "tabular": {
+        "fields": [
+          "title",
+          "sub_title",
+          "id",
+          "status"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "title": 190.6875,
+          "sub_title": 317.96484375,
+          "id": 198.26171875,
+          "status": 160
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "7d2196e9-3abb-4dd3-ada9-b75805c22de4"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "publication_categories",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "title",
+          "description"
+        ],
+        "page": 1,
+        "sort": [
+          "title"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "title": 188.296875,
+          "description": 614.9765625
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "8250b111-d45b-4c4a-bf53-f16cb46b7e92"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "locations",
+    "search": null,
+    "layout": "map",
+    "layout_query": null,
+    "layout_options": {
+      "map": {
+        "geometryField": "coordinates",
+        "displayTemplate": "{{name}}"
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "86ba81a2-323b-4801-b858-4ed46fd25854"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "publications",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1,
+        "fields": [
+          "title",
+          "category"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "title": 343.07421875,
+          "file": 160,
+          "category": 160
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "8b55809a-cc40-4ad8-ab54-65384850f12d"
+  },
+  {
+    "bookmark": "$t:expense",
+    "role": null,
+    "collection": "transactions",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "type": {
+            "_eq": "Ausgabe"
+          }
+        }
+      ]
+    },
+    "icon": "pin_invoke",
+    "color": "#E35169",
+    "_syncId": "98f6f7b4-e5a8-4dd8-891a-65d9f37d1b15"
+  },
+  {
+    "bookmark": "Nicht gebucht",
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "type",
+          "amount",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "booked": {
+            "_eq": false
+          }
+        }
+      ]
+    },
+    "icon": "balance",
+    "color": "#E35169",
+    "_syncId": "993de6e4-d8b0-4724-a1b1-7d7ce93140b9"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "products",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "a5baeb54-ca23-4318-9e87-09d7275fe4a4"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "recurring_donations",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "ae36de57-117b-4806-86df-6447bba6076e"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "passwords",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "name",
+          "email",
+          "login",
+          "service"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "name": 235,
+          "email": 320,
+          "login": 329
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "af78da8a-5138-4305-b8d4-b5d210fb389a"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "support_tickets",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "subject",
+          "status",
+          "tags",
+          "date_created",
+          "user_created.last_name"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "subject": 312.330810546875,
+          "status": 95.10955810546875,
+          "tags": 350.126220703125
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "b9019ffc-af86-45de-b2a2-18fa3bf05741"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "donations",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1,
+        "fields": [
+          "amount_value",
+          "donor",
+          "project",
+          "status"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "amount_value": 141.234375,
+          "donor": 207.57421875,
+          "project": 144,
+          "status": 144
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "bc75aaa3-81e1-4833-b0d1-abcc75c43f12"
+  },
+  {
+    "bookmark": "$t:outgoing",
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "amount",
+          "booked",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "type": {
+            "_eq": "outgoing"
+          }
+        }
+      ]
+    },
+    "icon": "arrow_left_alt",
+    "color": "#E35169",
+    "_syncId": "ccb48321-37d5-410c-aac5-62d3b5a89110"
+  },
+  {
+    "bookmark": "$t:incoming",
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "amount",
+          "booked",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "type": {
+            "_eq": "incoming"
+          }
+        }
+      ]
+    },
+    "icon": "arrow_right_alt",
+    "color": "#2ECDA7",
+    "_syncId": "da513018-f485-459b-85ec-741c1f7a7441"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "contact_requests",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "date_created",
+          "first_name",
+          "last_name",
+          "email",
+          "subject"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "date_created": 204.796875,
+          "first_name": 129.52734375,
+          "last_name": 148.22265625,
+          "email": 185.48828125,
+          "subject": 156.02734375
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "df51929a-623b-4db3-a2be-e19a1239d54f"
+  },
+  {
+    "bookmark": "$t:completed",
+    "role": null,
+    "collection": "events",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "name",
+          "start"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "name": 419,
+          "start": 256
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "end": {
+            "_lt": "$NOW"
+          }
+        }
+      ]
+    },
+    "icon": "done_all",
+    "color": "#6644FF",
+    "_syncId": "df6d8687-96f9-4b3e-ba9b-c4e750a3f10b"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "cost_centers",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "id",
+          "name",
+          "project"
+        ],
+        "sort": [
+          "id"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "id": 95,
+          "name": 309,
+          "project": 168
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "e7c78ae2-aabc-4ce3-820f-17a7ecb55b48"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "companies",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "name",
+          "phone",
+          "status"
+        ],
+        "sort": [
+          "name"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "name": 282,
+          "phone": 171
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark_border",
+    "color": null,
+    "_syncId": "ef3a126d-b6aa-4330-8fa1-e85a7d4e1c8d"
+  },
+  {
+    "bookmark": "$t:open",
+    "role": null,
+    "collection": "invoices",
+    "search": null,
+    "layout": "tabular",
+    "layout_query": {
+      "tabular": {
+        "fields": [
+          "contact.name",
+          "type",
+          "amount",
+          "booked",
+          "ksk_mandatory",
+          "status",
+          "date_issued",
+          "date_created"
+        ],
+        "sort": [
+          "-date_issued"
+        ],
+        "page": 1
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "contact.name": 214.97265625,
+          "type": 152.61328125,
+          "amount": 149.640625,
+          "booked": 116.64453125,
+          "ksk_mandatory": 92.10546875,
+          "status": 118.64453125,
+          "date_issued": 160,
+          "date_created": 152.546875
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": {
+      "_and": [
+        {
+          "status": {
+            "_neq": "settled"
+          }
+        }
+      ]
+    },
+    "icon": "payments",
+    "color": "#3399FF",
+    "_syncId": "f3e7268c-5338-4d8e-96e4-24c79aca8ff6"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "contacts",
+    "search": null,
+    "layout": "directus-labs-spreadsheet-layout",
+    "layout_query": {
+      "directus-labs-spreadsheet-layout": {
+        "fields": [
+          "first_name",
+          "last_name",
+          "email",
+          "status",
+          "phone"
+        ]
+      }
+    },
+    "layout_options": {
+      "directus-labs-spreadsheet-layout": {
+        "widths": {
+          "email": 369.453125
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "f78b502a-e8ce-4dc2-a941-dbc1fd394117"
   }
 ]

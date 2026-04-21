@@ -1,7 +1,7 @@
 {
   "collection": "projects",
   "field": "id",
-  "type": "uuid",
+  "type": "string",
   "meta": {
     "collection": "projects",
     "conditions": null,
@@ -9,17 +9,25 @@
     "display_options": null,
     "field": "id",
     "group": null,
-    "hidden": true,
+    "hidden": false,
     "interface": "input",
-    "note": null,
-    "options": null,
-    "readonly": true,
-    "required": false,
+    "note": "Der Slug wird für Web-Services genutzt und sollte daher mit Bedacht gewählt werden.",
+    "options": {
+      "placeholder": null,
+      "slug": true,
+      "softLength": 10
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
     "sort": 1,
-    "special": [
-      "uuid"
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "ID (Slug)"
+      }
     ],
-    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"
@@ -27,9 +35,9 @@
   "schema": {
     "name": "id",
     "table": "projects",
-    "data_type": "uuid",
+    "data_type": "character varying",
     "default_value": null,
-    "max_length": null,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
     "is_nullable": false,

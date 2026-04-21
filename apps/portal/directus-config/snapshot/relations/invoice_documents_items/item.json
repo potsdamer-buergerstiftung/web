@@ -1,0 +1,19 @@
+{
+  "collection": "invoice_documents_items",
+  "field": "item",
+  "related_collection": null,
+  "meta": {
+    "junction_field": "invoice_documents_id",
+    "many_collection": "invoice_documents_items",
+    "many_field": "item",
+    "one_allowed_collections": [
+      "products",
+      "invoice_document_items"
+    ],
+    "one_collection": null,
+    "one_collection_field": "collection",
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  }
+}

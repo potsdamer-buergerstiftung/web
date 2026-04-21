@@ -1,44 +1,60 @@
 {
   "collection": "events",
   "field": "location",
-  "type": "string",
+  "type": "integer",
   "meta": {
     "collection": "events",
-    "conditions": null,
+    "conditions": [
+      {
+        "hidden": true,
+        "name": "is online event",
+        "options": {},
+        "rule": {
+          "_and": [
+            {
+              "is_online_event": {
+                "_eq": true
+              }
+            }
+          ]
+        }
+      }
+    ],
     "display": null,
     "display_options": null,
     "field": "location",
-    "group": null,
+    "group": "details",
     "hidden": false,
-    "interface": "input",
+    "interface": "select-dropdown-m2o",
     "note": null,
-    "options": null,
+    "options": {
+      "template": "{{name}}"
+    },
     "readonly": false,
     "required": false,
-    "sort": 8,
-    "special": null,
+    "searchable": true,
+    "sort": 3,
+    "special": [
+      "m2o"
+    ],
     "translations": [
       {
-        "language": "en-US",
-        "translation": "Location"
-      },
-      {
         "language": "de-DE",
-        "translation": "Ort"
+        "translation": "Standort"
       }
     ],
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "location",
     "table": "events",
-    "data_type": "character varying",
+    "data_type": "integer",
     "default_value": null,
-    "max_length": 500,
-    "numeric_precision": null,
-    "numeric_scale": null,
+    "max_length": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
     "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
@@ -46,7 +62,7 @@
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": null,
-    "foreign_key_column": null
+    "foreign_key_table": "locations",
+    "foreign_key_column": "id"
   }
 }

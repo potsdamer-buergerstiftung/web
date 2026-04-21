@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "name": "Stadtgrün",
+    "parent": null,
+    "_syncId": "8a4800bb-218e-4a72-8ef7-2bf81132fc99"
+  },
+  {
+    "name": "Bilderpool",
+    "parent": null,
+    "_syncId": "a041bb8e-4832-48ee-9f90-8649fed2de7a"
+  },
+  {
+    "name": "Benefizkonzert",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "aca0c2d3-0ace-4437-a7fe-47789e2105d4"
+  },
+  {
+    "name": "Rechnungen",
+    "parent": null,
+    "_syncId": "c7d32554-8a12-49d8-a380-1a10027a263b"
+  },
+  {
+    "name": "Bilder Manfred",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "d1adfd84-eafd-421c-90a1-30ecfa76f2b3"
+  },
+  {
+    "name": "Inselbühne ",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "d97c0159-cb3d-4703-848a-901cf3b8fecb"
+  },
+  {
+    "name": "2022",
+    "parent": "d97c0159-cb3d-4703-848a-901cf3b8fecb",
+    "_syncId": "da5ebea8-8a05-47d4-be94-df16529b869d"
+  },
+  {
+    "name": "Buntes B - Staudenhof",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "dcf55769-48d6-4d49-aa93-da81f8c4aa5b"
+  },
+  {
+    "name": "2022 Office-Team Fotoshooting Stefan Paape",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "e38eccaf-7f86-434a-8bb0-08252c120889"
+  },
+  {
+    "name": "Team-Bürgerstiftung",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "e64ef572-04fe-48d2-9e4c-0af70079e8ea"
+  },
+  {
+    "name": "Drachenboot",
+    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
+    "_syncId": "ec9f6937-47a5-40c0-a054-d81abda26164"
+  },
+  {
+    "name": "Öffentlich",
+    "parent": null,
+    "_syncId": "f375aa6d-3bc3-4d7a-8681-1b76cd43e91c"
+  }
+]

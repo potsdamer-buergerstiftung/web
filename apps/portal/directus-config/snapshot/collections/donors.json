@@ -1,0 +1,35 @@
+{
+  "collection": "donors",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "donors",
+    "color": "#3399FF",
+    "display_template": null,
+    "group": "fundraising",
+    "hidden": false,
+    "icon": "person_celebrate",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Spendende",
+        "singular": "Spender:in",
+        "translation": "Spendende"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "donors"
+  }
+}

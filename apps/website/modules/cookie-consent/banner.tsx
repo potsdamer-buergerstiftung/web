@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Link } from "@/components/ui/link";
+import Link from "next/link";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Label } from "@/components/ui/label";
 import {
@@ -80,7 +80,7 @@ export default function CookieConsentBanner() {
           </p>
           <p className="text-sm text-foreground">
             Mehr Informationen findest du in unserer{" "}
-            <Link href="/datenschutz" variant="link" className="px-0">
+            <Link href="/datenschutz" className="px-0 underline">
               Datenschutzerklärung
             </Link>
             .
@@ -106,7 +106,7 @@ export default function CookieConsentBanner() {
             <DialogDescription>
               Verwalte hier optionale Technologien. Notwendige Cookies sind
               immer aktiv. Mehr Infos über die Verwendung findest Du in der{" "}
-              <Link href="/datenschutz" variant="link" className="px-0">
+              <Link href="/datenschutz" className="px-0 underline">
                 Datenschutzerklärung
               </Link>
               .

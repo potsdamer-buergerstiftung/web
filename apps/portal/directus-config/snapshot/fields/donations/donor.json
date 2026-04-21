@@ -1,0 +1,56 @@
+{
+  "collection": "donations",
+  "field": "donor",
+  "type": "uuid",
+  "meta": {
+    "collection": "donations",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{first_name}} {{last_name}}"
+    },
+    "field": "donor",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": null,
+    "options": {
+      "enableLink": true,
+      "template": "{{first_name}} {{last_name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 25,
+    "special": [
+      "m2o"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Spener:in"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "donor",
+    "table": "donations",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "donors",
+    "foreign_key_column": "id"
+  }
+}

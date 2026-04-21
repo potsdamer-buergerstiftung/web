@@ -1,0 +1,35 @@
+{
+  "collection": "password_tiers",
+  "field": "users",
+  "type": "alias",
+  "meta": {
+    "collection": "password_tiers",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "users",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": {
+      "enableCreate": false
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Benutzer"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -35,7 +35,7 @@ const StoreTemplate = ({
         }
       />
       {/* <RefinementList sortBy={sort} /> */}
-      <div className="container mx-auto px-4">
+      <div className="container">
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sort}

@@ -6,7 +6,7 @@ export default function ThankYouPage() {
     <>
       <PageTitle title="Dankeschön!" />
 
-      <div className="container mx-auto px-4 grid gap-10 lg:grid-cols-2 my-10 items-center">
+      <div className="container grid gap-10 lg:grid-cols-2 my-10 items-center">
         <p>
           Durch deine Spende hast du dazu beigetragen, dass die Potsdamer
           Bürgerstiftung ihre wertvolle Arbeit fortsetzen kann. Mit deinem

@@ -15,50 +15,31 @@
     "options": {
       "choices": [
         {
-          "text": "EUR",
+          "icon": "euro",
+          "text": "Euro",
           "value": "EUR"
-        },
-        {
-          "text": "USD",
-          "value": "USD"
-        },
-        {
-          "text": "GBP",
-          "value": "GBP"
-        },
-        {
-          "text": "CHF",
-          "value": "CHF"
         }
       ]
     },
     "readonly": false,
-    "required": false,
-    "sort": 5,
+    "required": true,
+    "searchable": true,
+    "sort": 9,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Currency"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Währung"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "currency",
     "table": "donations",
     "data_type": "character varying",
     "default_value": "EUR",
-    "max_length": 10,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": false,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

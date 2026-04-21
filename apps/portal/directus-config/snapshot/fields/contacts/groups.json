@@ -1,0 +1,40 @@
+{
+  "collection": "contacts",
+  "field": "groups",
+  "type": "alias",
+  "meta": {
+    "collection": "contacts",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{contact_groups_id.name}}"
+    },
+    "field": "groups",
+    "group": null,
+    "hidden": false,
+    "interface": "m2mtags",
+    "note": null,
+    "options": {
+      "iconLeft": "tag",
+      "referencingField": "name",
+      "sortDirection": "asc",
+      "sortField": "name"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 11,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Gruppen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

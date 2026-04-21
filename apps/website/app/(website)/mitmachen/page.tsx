@@ -18,7 +18,7 @@ export default function HonoraryPage() {
         }
       />
       <section>
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4">
+        <div className="container grid grid-cols-5 gap-8">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold">
               Engagiere dich für Potsdam
@@ -51,7 +51,7 @@ export default function HonoraryPage() {
           alt="Freiwillige auf der Inselbühne"
         />
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-primary/70" />
-        <div className="container mx-auto grid grid-cols-5 gap-8 px-4 py-16 absolute top-0 right-0 left-0 bottom-0">
+        <div className="container grid grid-cols-5 gap-8 py-16 absolute top-0 right-0 left-0 bottom-0">
           <div className="col-span-5 lg:col-span-2">
             <h1 className="font-header text-3xl font-bold text-white">
               Wie wir dich unterstützen
@@ -74,7 +74,7 @@ export default function HonoraryPage() {
         </div>
       </section>
       <section className="pt-6 pb-16">
-        <div className="container mx-auto grid grid-cols-3 gap-8 px-4 py-16">
+        <div className="container grid grid-cols-3 gap-8 py-16">
           <div className="col-span-3 lg:col-span-1">
             <h1 className="font-header text-3xl font-bold mb-4">Ich will...</h1>
             <p>
@@ -111,7 +111,7 @@ export default function HonoraryPage() {
             </h1>
           </div>
         </div>
-        <div className="text-center px-4 max-w-4xl mx-auto font-bold text-lg">
+        <div className="text-center max-w-4xl mx-auto font-bold text-lg">
           Egal wer du bist, egal was du kannst: Wir freuen uns darauf, dich
           kennenzulernen. Bei uns gibt es immer viel zu tun und wir finden
           sicher einen Platz für dich im Team.

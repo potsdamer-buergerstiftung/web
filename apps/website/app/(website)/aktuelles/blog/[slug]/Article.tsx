@@ -41,7 +41,7 @@ export default async function Article({ promise }: ArticleProps) {
   const Actions = () => (
     <div className="flex flex-row gap-8">
       <div>
-        <p className="text-slate-500 text-sm">Autor</p>
+        <p className="text-slate-500 text-sm">Autor:in</p>
         <p className="font-bold">{post.user_created.first_name}</p>
       </div>
       <div>
@@ -77,7 +77,7 @@ export default async function Article({ promise }: ArticleProps) {
           </PageBreadcrumb>
         }
       />
-      <div className="container px-4 mx-auto max-w-4xl">
+      <div className="container max-w-4xl">
         <Image
           src={`https://portal.potsdamer-buergerstiftung.org/assets/${post.image}`}
           alt={post.title}

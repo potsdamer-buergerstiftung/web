@@ -1,0 +1,25 @@
+{
+  "collection": "donations",
+  "field": "donor",
+  "related_collection": "donors",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "donations",
+    "many_field": "donor",
+    "one_allowed_collections": null,
+    "one_collection": "donors",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "donations",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "donations",
+    "column": "donor",
+    "foreign_key_table": "donors",
+    "foreign_key_column": "id",
+    "constraint_name": "donations_donor_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "NO ACTION"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "collection": "events",
+  "field": "external_ticket_url",
+  "type": "string",
+  "meta": {
+    "collection": "events",
+    "conditions": [
+      {
+        "hidden": true,
+        "name": "external ticket provider used",
+        "options": {
+          "clear": false,
+          "font": "sans-serif",
+          "masked": false,
+          "slug": false,
+          "trim": false
+        },
+        "readonly": true,
+        "rule": {
+          "_and": [
+            {
+              "use_external_ticket_provider": {
+                "_eq": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "display": null,
+    "display_options": null,
+    "field": "external_ticket_url",
+    "group": "tickets_active_options",
+    "hidden": false,
+    "interface": "input",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 2,
+    "special": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "URL des Ticket-Dienstleisters"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "external_ticket_url",
+    "table": "events",
+    "data_type": "character varying",
+    "default_value": null,
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

@@ -15,18 +15,10 @@
     "options": null,
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 10,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Description"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Beschreibung"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"

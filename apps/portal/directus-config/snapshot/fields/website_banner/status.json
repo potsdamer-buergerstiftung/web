@@ -1,0 +1,69 @@
+{
+  "collection": "website_banner",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "website_banner",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "background": "#FFA439",
+          "text": "$t:hidden",
+          "value": "hidden"
+        },
+        {
+          "background": "#2ECDA7",
+          "text": "$t:visible",
+          "value": "visible"
+        }
+      ],
+      "showAsDot": true
+    },
+    "field": "status",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "$t:visible",
+          "value": "visible"
+        },
+        {
+          "text": "$t:hidden",
+          "value": "hidden"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 2,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "status",
+    "table": "website_banner",
+    "data_type": "character varying",
+    "default_value": "draft",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

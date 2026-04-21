@@ -5,8 +5,19 @@
   "meta": {
     "collection": "recurring_donations",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "text": "$t:yearly",
+          "value": "yearly"
+        },
+        {
+          "text": "$t:monthly",
+          "value": "monthly"
+        }
+      ]
+    },
     "field": "frequency",
     "group": null,
     "hidden": false,
@@ -15,36 +26,29 @@
     "options": {
       "choices": [
         {
-          "text": "Monthly",
+          "text": "$t:monthly",
           "value": "monthly"
         },
         {
-          "text": "Quarterly",
-          "value": "quarterly"
-        },
-        {
-          "text": "Yearly",
+          "text": "$t:yearly",
           "value": "yearly"
         }
       ]
     },
     "readonly": false,
     "required": true,
-    "sort": 6,
+    "searchable": true,
+    "sort": 10,
     "special": null,
     "translations": [
       {
-        "language": "en-US",
-        "translation": "Frequency"
-      },
-      {
         "language": "de-DE",
-        "translation": "Häufigkeit"
+        "translation": "Intervall"
       }
     ],
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "frequency",

@@ -1,0 +1,28 @@
+{
+  "collection": "website_pages",
+  "field": "blocks",
+  "type": "alias",
+  "meta": {
+    "collection": "website_pages",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "blocks",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2a",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 11,
+    "special": [
+      "m2a"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

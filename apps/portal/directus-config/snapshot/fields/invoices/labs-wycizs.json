@@ -1,0 +1,32 @@
+{
+  "collection": "invoices",
+  "field": "labs-wycizs",
+  "type": "alias",
+  "meta": {
+    "collection": "invoices",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "labs-wycizs",
+    "group": null,
+    "hidden": false,
+    "interface": "directus-labs-pdf-viewer-interface",
+    "note": null,
+    "options": {
+      "button_label": "Vorschau der Rechnung",
+      "file_field": "attachment"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 19,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

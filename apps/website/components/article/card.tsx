@@ -33,7 +33,7 @@ const ArticleCard: React.FC<{
   });
 
   const wrapperClass =
-    "group relative block h-full w-full overflow-hidden rounded-md";
+    "bg-card group relative block h-full w-full overflow-hidden rounded-2xl border border-border shadow-2xl";
 
   const Wrapper = ({ children }) =>
     link ? (
@@ -98,8 +98,8 @@ const ArticleCard: React.FC<{
       )}
       <div
         className={clsx(
-          "relative bg-slate-100 dark:bg-slate-950 px-6 py-8 transition",
-          compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200",
+          "relative px-6 py-8 transition",
+          compact ? "h-full hover:bg-transparent" : "hover:bg-muted",
         )}
       >
         <ul className="flex flex-wrap">

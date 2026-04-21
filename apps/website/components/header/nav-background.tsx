@@ -25,14 +25,14 @@ export default function HeaderNavBackground() {
     <React.Fragment>
       <div
         className={clsx(
-          "invisible fixed top-0 right-0 left-0 bottom-0 bg-slate-900 transition duration-500 lg:visible -z-[1] pointer-events-none dark:bg-slate-950",
+          "invisible fixed top-0 right-0 left-0 bottom-0 bg-slate-900 transition duration-500 lg:visible -z-1 pointer-events-none dark:bg-slate-950",
           expanded || isQuickDonateDrawerOpen ? "opacity-70" : "opacity-0",
         )}
         style={{ zIndex: isQuickDonateDrawerOpen ? "100" : "-1" }}
       />
       <div
         className={clsx(
-          "transition-[height, opacity] invisible absolute top-0 left-0 w-full bg-white duration-500 lg:visible dark:bg-slate-900",
+          "transition-[height, opacity] invisible absolute top-0 left-0 w-full bg-white duration-500 lg:visible dark:bg-slate-900 rounded-b-2xl",
           expanded ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0",
         )}
         style={{

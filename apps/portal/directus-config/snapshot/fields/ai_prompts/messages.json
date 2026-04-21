@@ -82,20 +82,12 @@
     },
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 12,
     "special": [
       "cast-json"
     ],
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Messages"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Nachrichten"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
     "width": "full"

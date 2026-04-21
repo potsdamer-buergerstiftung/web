@@ -1,0 +1,33 @@
+{
+  "collection": "projects",
+  "field": "campaigns",
+  "type": "alias",
+  "meta": {
+    "collection": "projects",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "campaigns",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 17,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Kampagnen"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -22,7 +22,7 @@ RUN pnpm install
 
 RUN pnpm --filter "@directus-labs/tree-view-table-layout" build
 
-FROM directus/directus:11.17
+FROM directus/directus:11.17.0
 
 USER root
 RUN corepack enable

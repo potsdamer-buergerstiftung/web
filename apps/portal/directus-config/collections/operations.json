@@ -1,78 +1,58 @@
 [
   {
-    "name": "Kondition",
-    "key": "condition_lrjry",
-    "type": "condition",
-    "position_x": 55,
-    "position_y": 1,
-    "options": {
-      "filter": {
-        "$last": {
-          "email": {
-            "_nnull": true
-          }
-        }
-      }
-    },
-    "resolve": "a5d3c51b-eecf-4f5e-9659-795ca0588759",
-    "reject": null,
-    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
-    "_syncId": "ff4dc92a-3550-4bb9-8384-b89ded3555aa"
-  },
-  {
-    "name": "Kondition",
-    "key": "condition_okjj4",
-    "type": "condition",
+    "name": "Email senden",
+    "key": "email_senden",
+    "type": "mail",
     "position_x": 19,
     "position_y": 1,
     "options": {
-      "filter": {
-        "$trigger": {
-          "payload": {
-            "contact_id": {
-              "_nnull": true
-            }
-          }
-        }
-      }
-    },
-    "resolve": "d10ab8c3-3b60-43c9-9cbf-8ea18fefda85",
-    "reject": null,
-    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
-    "_syncId": "079ecba5-0d59-4895-8df2-29870619154b"
-  },
-  {
-    "name": "Daten lesen",
-    "key": "item_read_of2xv",
-    "type": "item-read",
-    "position_x": 37,
-    "position_y": 1,
-    "options": {
-      "permissions": "$trigger",
-      "emitEvents": false,
-      "collection": "contacts",
-      "key": "{{$trigger.payload.contact_id}}"
-    },
-    "resolve": "ff4dc92a-3550-4bb9-8384-b89ded3555aa",
-    "reject": null,
-    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
-    "_syncId": "d10ab8c3-3b60-43c9-9cbf-8ea18fefda85"
-  },
-  {
-    "name": "Email senden",
-    "key": "mail_skqn0",
-    "type": "mail",
-    "position_x": 73,
-    "position_y": 1,
-    "options": {
-      "type": "markdown",
-      "subject": "Vielen Dank für Ihre Spende",
-      "to": "{{item_read_of2xv.email}}",
-      "body": "Vielen Dank für Ihre Spende, {{item_read_of2xv.first_name}} {{item_read_of2xv.last_name}}"
+      "subject": "Test",
+      "to": [
+        "md1289@gmx.de"
+      ],
+      "body": "Foo"
     },
     "resolve": null,
     "reject": null,
-    "flow": "2d99c11f-eb47-42a1-89d6-ec83da5d17bd",
-    "_syncId": "a5d3c51b-eecf-4f5e-9659-795ca0588759"
+    "flow": "20b0863b-9596-475b-ac02-9fce70277e0e",
+    "_syncId": "59ff5a2c-2139-4963-85ca-c44ac3a6e62a"
+  },
+  {
+    "name": "Benachrichtigung senden",
+    "key": "notification_8psrc",
+    "type": "notification",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "permissions": "$full",
+      "recipient": [
+        "c7e9a72b-02c3-4d65-9c62-788db84eb608"
+      ],
+      "subject": "Neue Kontaktanfrage von Website"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "b262647e-0d7d-49ac-91a8-8fe08c91cfea",
+    "_syncId": "50e72adc-fbf1-4739-9c2b-820a0a5a87c7"
+  },
+  {
+    "name": "E-Mail senden",
+    "key": "send_email",
+    "type": "mail",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "type": "markdown",
+      "subject": "Neue Kontaktanfrage auf Website",
+      "body": "Kontaktanfrage von: {{$trigger.payload.first_name}} {{$trigger.payload.last_name}}\nBetreff: {{$trigger.payload.subject}}\nNachricht: {{$trigger.payload.message}}",
+      "replyTo": "{{$trigger.payload.email}}",
+      "to": [
+        "info@potsdamer-buergerstiftung.org"
+      ]
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "a0afecb0-ae5d-41f9-b8bb-b86bad1fe330",
+    "_syncId": "5c6ad34d-6e9d-429f-aff4-56717d8e0f0c"
   }
 ]

@@ -5,8 +5,54 @@
   "meta": {
     "collection": "recurring_donations",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "background": "var(--theme--background-normal)",
+          "color": "var(--theme--foreground)",
+          "foreground": "var(--theme--foreground)",
+          "text": "Pending",
+          "value": "pending"
+        },
+        {
+          "background": "var(--theme--primary-background)",
+          "color": "var(--theme--primary)",
+          "foreground": "var(--theme--primary)",
+          "text": "Active",
+          "value": "active"
+        },
+        {
+          "background": "var(--theme--warning-background)",
+          "color": "var(--theme--warning)",
+          "foreground": "var(--theme--warning)",
+          "text": "Paused",
+          "value": "paused"
+        },
+        {
+          "background": "var(--theme--danger-background)",
+          "color": "var(--theme--danger)",
+          "foreground": "var(--theme--danger)",
+          "text": "Failed",
+          "value": "failed"
+        },
+        {
+          "background": "var(--theme--warning-background)",
+          "color": "var(--theme--warning)",
+          "foreground": "var(--theme--warning)",
+          "text": "Canceled",
+          "value": "canceled"
+        },
+        {
+          "background": "var(--theme--background-normal)",
+          "color": "var(--theme--foreground)",
+          "foreground": "var(--theme--foreground)",
+          "text": "Ended",
+          "value": "ended"
+        }
+      ],
+      "showAsDot": true
+    },
     "field": "status",
     "group": null,
     "hidden": false,
@@ -15,42 +61,52 @@
     "options": {
       "choices": [
         {
-          "text": "$t:active",
+          "color": "var(--theme--foreground)",
+          "text": "Pending",
+          "value": "pending"
+        },
+        {
+          "color": "var(--theme--primary)",
+          "text": "Active",
           "value": "active"
         },
         {
-          "text": "$t:paused",
+          "color": "var(--theme--warning)",
+          "text": "Paused",
           "value": "paused"
         },
         {
-          "text": "$t:cancelled",
-          "value": "cancelled"
+          "color": "var(--theme--danger)",
+          "text": "Failed",
+          "value": "failed"
+        },
+        {
+          "color": "var(--theme--warning)",
+          "text": "Canceled",
+          "value": "canceled"
+        },
+        {
+          "color": "var(--theme--foreground)",
+          "text": "Ended",
+          "value": "ended"
         }
       ]
     },
     "readonly": false,
     "required": false,
+    "searchable": true,
     "sort": 2,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Status"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Status"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "status",
     "table": "recurring_donations",
     "data_type": "character varying",
-    "default_value": "active",
+    "default_value": "pending",
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,

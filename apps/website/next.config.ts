@@ -1,7 +1,8 @@
+import { withWorkflow } from "workflow/next";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["portal.potsdamer-buergerstiftung.org"],
+  allowedDevOrigins: ["portal.potsdamer-buergerstiftung.org", "*.ngrok-free.app"],
   async rewrites() {
     return [
       {
@@ -31,4 +32,4 @@ const nextConfig: NextConfig = {
   transpilePackages: ["ui"],
 };
 
-export default nextConfig;
+export default withWorkflow(nextConfig);

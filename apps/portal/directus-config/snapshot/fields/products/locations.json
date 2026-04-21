@@ -1,0 +1,33 @@
+{
+  "collection": "products",
+  "field": "locations",
+  "type": "alias",
+  "meta": {
+    "collection": "products",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "locations",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 9,
+    "special": [
+      "m2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Verkaufsstandorte"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  }
+}

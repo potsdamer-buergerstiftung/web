@@ -1,0 +1,31 @@
+{
+  "collection": "projects",
+  "field": "images",
+  "type": "alias",
+  "meta": {
+    "collection": "projects",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "images",
+    "group": null,
+    "hidden": false,
+    "interface": "files",
+    "note": null,
+    "options": {
+      "folder": "f375aa6d-3bc3-4d7a-8681-1b76cd43e91c",
+      "limit": 8
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 16,
+    "special": [
+      "files"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

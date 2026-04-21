@@ -1,0 +1,28 @@
+{
+  "collection": "locations",
+  "field": "products",
+  "type": "alias",
+  "meta": {
+    "collection": "locations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "products",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": null,
+    "special": [
+      "m2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

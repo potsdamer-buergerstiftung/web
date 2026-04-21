@@ -17,45 +17,25 @@
         {
           "text": "EUR",
           "value": "EUR"
-        },
-        {
-          "text": "USD",
-          "value": "USD"
-        },
-        {
-          "text": "GBP",
-          "value": "GBP"
-        },
-        {
-          "text": "CHF",
-          "value": "CHF"
         }
       ]
     },
     "readonly": false,
-    "required": false,
-    "sort": 5,
+    "required": true,
+    "searchable": true,
+    "sort": 12,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Currency"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Währung"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "currency",
     "table": "recurring_donations",
     "data_type": "character varying",
     "default_value": "EUR",
-    "max_length": 10,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
     "is_nullable": false,

@@ -9,7 +9,7 @@ export default function FooterDonateButton() {
   const [_, setIsQuickDonateDrawerOpen] = useAtom(quickDonateDrawerOpen);
   return (
     <Button
-      variant="secondary"
+      variant="light"
       data-umami-event="donation_opened_footer"
       onClick={() => {
         trackUmami("donation_opened", { location: "footer" });

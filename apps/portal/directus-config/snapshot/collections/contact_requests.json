@@ -1,0 +1,35 @@
+{
+  "collection": "contact_requests",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": null,
+    "archive_value": null,
+    "collapse": "open",
+    "collection": "contact_requests",
+    "color": "#FFC23B",
+    "display_template": null,
+    "group": "Zielgruppen",
+    "hidden": false,
+    "icon": "connect_without_contact",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 2,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Kontaktanfragen",
+        "singular": "Kontaktanfrage",
+        "translation": "Kontaktanfragen"
+      }
+    ],
+    "unarchive_value": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "contact_requests"
+  }
+}

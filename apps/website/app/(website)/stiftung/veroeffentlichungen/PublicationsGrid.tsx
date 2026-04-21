@@ -9,7 +9,7 @@ export default async function PublicationsGrid(props: PublicationsGridProps) {
   const categories = await props.promise;
   return categories.map((category: PublicationsQuery[number]) => (
     <section key={category.id}>
-      <div className="container mx-auto px-4 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="container pb-20 grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="col-span-1">
           <h1 className="font-header mt-2 text-4xl font-bold">
             {category.title}

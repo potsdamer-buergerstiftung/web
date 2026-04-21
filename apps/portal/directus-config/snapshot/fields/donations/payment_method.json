@@ -15,44 +15,32 @@
     "options": {
       "choices": [
         {
-          "text": "Bank Transfer",
-          "value": "bank_transfer"
-        },
-        {
           "text": "Credit Card",
-          "value": "credit_card"
+          "value": "creditcard"
         },
         {
           "text": "PayPal",
           "value": "paypal"
         },
         {
-          "text": "Cash",
-          "value": "cash"
+          "text": "Pay by Bank",
+          "value": "paybybank"
         },
         {
-          "text": "Check",
-          "value": "check"
+          "text": "SEPA Direct Debit",
+          "value": "directdebit"
         }
       ]
     },
     "readonly": false,
-    "required": false,
-    "sort": 7,
+    "required": true,
+    "searchable": true,
+    "sort": 10,
     "special": null,
-    "translations": [
-      {
-        "language": "en-US",
-        "translation": "Payment Method"
-      },
-      {
-        "language": "de-DE",
-        "translation": "Zahlungsmethode"
-      }
-    ],
+    "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   },
   "schema": {
     "name": "payment_method",
@@ -62,7 +50,7 @@
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": true,
+    "is_nullable": false,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

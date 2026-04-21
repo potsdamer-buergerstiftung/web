@@ -8,30 +8,63 @@ import {
   useContext,
   useMemo,
 } from "react";
+import {
+  amountStepSchema,
+  paymentStepSchema,
+  personalDataStepSchema,
+  purposeStepSchema,
+} from "./form-definition";
 
-function createDonationStepper() {
-  return defineStepper(
-    {
-      id: "purpose",
-      title: "Verwendungszweck",
-      description: "Description for step 1",
+type StepSchema = {
+  safeParse: (values: unknown) => { success: boolean };
+};
+
+type DonationStep = {
+  id: string;
+  title: string;
+  schema: StepSchema;
+  data: {
+    schema: StepSchema;
+  };
+};
+
+function createStep(id: string, title: string, schema: StepSchema): DonationStep {
+  return {
+    id,
+    title,
+    schema,
+    data: {
+      schema,
     },
-    {
-      id: "amount",
-      title: "Betrag",
-      description: "Description for step 1",
-    },
-    {
-      id: "personal-data",
-      title: "Persönliche Daten",
-      description: "Description for step 2",
-    },
-    {
-      id: "payment",
-      title: "Zahlung bestätigen",
-      description: "Description for step 3",
-    },
-  );
+  };
+}
+
+function createDonationStepper(
+  fixedPurposeSet: boolean,
+  amountStepDisabled: boolean,
+) {
+  let steps: DonationStep[] = [];
+
+  if (!fixedPurposeSet) {
+    steps = [
+      createStep("purpose", "Verwendungszweck", purposeStepSchema),
+    ];
+  }
+
+  if (!amountStepDisabled) {
+    steps = [
+      ...steps,
+      createStep("amount", "Betrag", amountStepSchema),
+    ];
+  }
+
+  steps = [
+    ...steps,
+    createStep("personal-data", "Persönliche Daten", personalDataStepSchema),
+    createStep("payment", "Zahlung bestätigen", paymentStepSchema),
+  ];
+
+  return defineStepper(...steps);
 }
 
 type DonationStepperValue = ReturnType<typeof createDonationStepper>;
@@ -40,8 +73,19 @@ const DonationStepperContext = createContext<DonationStepperValue | undefined>(
   undefined,
 );
 
-export function DonationStepperProvider({ children }: { children: ReactNode }) {
-  const donationStepper = useMemo(() => createDonationStepper(), []);
+export function DonationStepperProvider({
+  children,
+  fixedPurposeSet = false,
+  amountStepDisabled = false,
+}: {
+  children: ReactNode;
+  fixedPurposeSet?: boolean;
+  amountStepDisabled?: boolean;
+}) {
+  const donationStepper = useMemo(
+    () => createDonationStepper(fixedPurposeSet, amountStepDisabled),
+    [fixedPurposeSet, amountStepDisabled],
+  );
   const { Scoped } = donationStepper;
 
   return createElement(

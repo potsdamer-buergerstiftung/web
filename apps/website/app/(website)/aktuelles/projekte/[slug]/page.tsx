@@ -105,7 +105,7 @@ async function PostsWrapper({ promise }: { promise: Promise<any> }) {
   }
 
   return (
-    <div className="container mx-auto px-4 mb-10 mt-10">
+    <div className="container mb-10 mt-10">
       <h1 className="text-3xl font-bold mb-10 font-header">
         Aktuelles zum Projekt
       </h1>

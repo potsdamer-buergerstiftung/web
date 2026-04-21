@@ -1,0 +1,37 @@
+{
+  "collection": "invoices",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": false,
+    "archive_field": null,
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "invoices",
+    "color": "#E35169",
+    "display_template": "{{contact.name}}",
+    "group": "accounting",
+    "hidden": false,
+    "icon": "request_quote",
+    "item_duplication_fields": [
+      "contact.name"
+    ],
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Rechnungen",
+        "singular": "Rechnung",
+        "translation": "Rechnungen"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "invoices"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collection": "website_pages",
+  "meta": {
+    "accountability": "all",
+    "archive_app_filter": true,
+    "archive_field": "status",
+    "archive_value": "archived",
+    "collapse": "open",
+    "collection": "website_pages",
+    "color": "#2ECDA7",
+    "display_template": null,
+    "group": "website",
+    "hidden": false,
+    "icon": "insert_page_break",
+    "item_duplication_fields": null,
+    "note": null,
+    "preview_url": null,
+    "singleton": false,
+    "sort": 1,
+    "sort_field": "sort",
+    "translations": [
+      {
+        "language": "de-DE",
+        "plural": "Seiten",
+        "singular": "Seite",
+        "translation": "Seiten"
+      }
+    ],
+    "unarchive_value": "draft",
+    "versioning": false
+  },
+  "schema": {
+    "name": "website_pages"
+  }
+}

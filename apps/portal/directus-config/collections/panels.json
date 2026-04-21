@@ -1,40 +1,2763 @@
 [
   {
-    "dashboard": "8c0e99cb-53e8-48c2-9147-4b543c9aeafe",
+    "dashboard": "7b24d4ad-0d1d-4b09-af94-883f6bc84578",
     "name": null,
     "icon": null,
     "color": null,
     "show_header": false,
     "note": null,
-    "type": "bar-chart",
-    "position_x": 1,
-    "position_y": 1,
-    "width": 12,
-    "height": 10,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 23,
+    "height": 6,
     "options": {
-      "collection": "donations",
-      "xAxis": "project_id",
-      "yAxis": "amount"
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3066"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
     },
-    "_syncId": "227dacd9-2dfd-4b97-bc86-cadb3dbd157b"
+    "_syncId": "03354011-6c2d-4b1f-991f-d67e39fc71d3"
   },
   {
-    "dashboard": "8c0e99cb-53e8-48c2-9147-4b543c9aeafe",
+    "dashboard": "7d1174a3-51db-47e3-bd14-bb0ef4dbe252",
     "name": null,
     "icon": null,
     "color": null,
     "show_header": false,
     "note": null,
-    "type": "bar-chart",
-    "position_x": 1,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Inselbühne - Schallschutzwand"
+    },
+    "_syncId": "034067d1-9b1f-4f22-8f78-6efc8633178b"
+  },
+  {
+    "dashboard": "073c7817-1830-4ca7-9ff5-3f221c85ade7",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 29,
     "position_y": 13,
-    "width": 33,
+    "width": 39,
     "height": 15,
     "options": {
-      "collection": "donations",
-      "xAxis": "donation_date",
-      "yAxis": "amount"
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "2000"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
     },
-    "_syncId": "7546a2d6-0406-43d4-a560-f0ea425d3fbd"
+    "_syncId": "0795914e-5cc9-483b-afa3-1534e08c4c4f"
+  },
+  {
+    "dashboard": "76e59fc5-bb0d-4711-9566-0a089ef6fa68",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 18,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3001"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "14cc37df-23db-49a0-b798-734886abd68b"
+  },
+  {
+    "dashboard": "14dfc5b1-06af-412f-839d-ae454f49174b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3002"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "1bc52a15-372a-48ee-8704-c99ca3747e1e"
+  },
+  {
+    "dashboard": "7b24d4ad-0d1d-4b09-af94-883f6bc84578",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 57,
+    "height": 6,
+    "options": {
+      "text": "Inselbühne - MWFK"
+    },
+    "_syncId": "1c1c4f78-d181-4989-abdb-b8bd6669dc44"
+  },
+  {
+    "dashboard": "dd15527a-5318-4a25-8b70-53add5239eb5",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 5,
+    "position_y": 19,
+    "width": 19,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1503"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "1d0fab05-d741-4cb8-b28d-9b7b6977e5b1"
+  },
+  {
+    "dashboard": "7b24d4ad-0d1d-4b09-af94-883f6bc84578",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 23,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3066"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "1e28ec65-762f-4da3-b07b-cb4ce781d298"
+  },
+  {
+    "dashboard": "1a0e2f40-f943-45fd-baad-4e00bf2af7c2",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 2,
+    "position_y": 3,
+    "width": 54,
+    "height": 6,
+    "options": {
+      "text": "Bürgerstiftung Allgemein"
+    },
+    "_syncId": "24a6b791-fa43-405b-8780-41a801ff8dec"
+  },
+  {
+    "dashboard": "c9507aca-813f-4786-8a8d-41a873550213",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3004"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "278de761-1168-4af3-bd91-e5942d24102e"
+  },
+  {
+    "dashboard": "dd15527a-5318-4a25-8b70-53add5239eb5",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 5,
+    "position_y": 11,
+    "width": 19,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1503"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "3cb72561-3a24-4261-84a1-11d4f9205cd9"
+  },
+  {
+    "dashboard": "81025511-82ae-4a47-aebf-44fba32a4cbb",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3065"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "3d59051b-dce6-4125-9e6c-8e332acd1dbc"
+  },
+  {
+    "dashboard": "f2f6fde3-0567-4a71-b4ef-383465a97bf9",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 2,
+    "position_y": 11,
+    "width": 23,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3300"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "3d5d4791-9817-4d73-abd7-aa2a7caca0ef"
+  },
+  {
+    "dashboard": "f2f6fde3-0567-4a71-b4ef-383465a97bf9",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 29,
+    "position_y": 11,
+    "width": 27,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3300"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "40484696-098a-4393-9f6c-4ae956d4a5c8"
+  },
+  {
+    "dashboard": "158ed968-cb54-4e78-a070-f1b33edf082f",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 5,
+    "position_y": 11,
+    "width": 19,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "4124d40b-1853-4a18-ad02-3373dbd47040"
+  },
+  {
+    "dashboard": "dd15527a-5318-4a25-8b70-53add5239eb5",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 27,
+    "position_y": 11,
+    "width": 39,
+    "height": 15,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "1503"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "450132e3-8e88-4178-adec-e1b85ee94cac"
+  },
+  {
+    "dashboard": "a42dc4dc-d60b-446b-9aa2-224f39431960",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3062"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "456d2432-ec13-4ca6-ad46-7bfebd4db7cf"
+  },
+  {
+    "dashboard": "76e59fc5-bb0d-4711-9566-0a089ef6fa68",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Bürgermobil"
+    },
+    "_syncId": "4581360e-cb0c-45ba-9346-5a550d983678"
+  },
+  {
+    "dashboard": "b565b2b5-16a0-4305-9c08-8c8df282044c",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 1,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Potspresso - Mehrweg 2.0"
+    },
+    "_syncId": "514eed92-c369-4a2d-a376-c9e0cd65bf39"
+  },
+  {
+    "dashboard": "158ed968-cb54-4e78-a070-f1b33edf082f",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 5,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Potspresso"
+    },
+    "_syncId": "5dcd2103-aedc-4f53-a1c0-d1cfa32bfc95"
+  },
+  {
+    "dashboard": "a42dc4dc-d60b-446b-9aa2-224f39431960",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Inselbühne - Gastro"
+    },
+    "_syncId": "5e8012e8-b7ef-41bd-aea1-8fb7817a1ec0"
+  },
+  {
+    "dashboard": "7b24d4ad-0d1d-4b09-af94-883f6bc84578",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 30,
+    "position_y": 11,
+    "width": 30,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3066"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "68c418ba-aaa7-48cb-bb6d-17dd98aaee25"
+  },
+  {
+    "dashboard": "a42dc4dc-d60b-446b-9aa2-224f39431960",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3062"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "69ee572b-f6af-488a-8d53-669f3f2415a2"
+  },
+  {
+    "dashboard": "dd15527a-5318-4a25-8b70-53add5239eb5",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 5,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Fit für die Mehrwegpflicht",
+      "color": null
+    },
+    "_syncId": "6d0ddca5-4a57-46f8-a5ca-f097d6137061"
+  },
+  {
+    "dashboard": "073c7817-1830-4ca7-9ff5-3f221c85ade7",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 7,
+    "position_y": 5,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Buntes B"
+    },
+    "_syncId": "6ff6624a-6601-418e-a4ef-4948343f8a38"
+  },
+  {
+    "dashboard": "c9507aca-813f-4786-8a8d-41a873550213",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3004"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "70c63bbf-656b-4260-b08c-504425ef395c"
+  },
+  {
+    "dashboard": "76e59fc5-bb0d-4711-9566-0a089ef6fa68",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 23,
+    "position_y": 11,
+    "width": 41,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3001"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "71a7b9ff-479c-4317-b774-2a4a024b7b29"
+  },
+  {
+    "dashboard": "36b5b65c-ca34-4d9b-b27d-26f110f88f5b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 4,
+    "position_y": 1,
+    "width": 54,
+    "height": 6,
+    "options": {
+      "text": "Inselbühne Hauptförderung"
+    },
+    "_syncId": "785aad51-412c-45ba-805b-26e5304984e5"
+  },
+  {
+    "dashboard": "1a0e2f40-f943-45fd-baad-4e00bf2af7c2",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 2,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "5000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "7d50ac68-b40c-4b78-8393-cef9526e9ae0"
+  },
+  {
+    "dashboard": "b9e9e799-f664-4b86-a6d3-524a04b6b2d4",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 1,
+    "position_y": 21,
+    "width": 19,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1501"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "7fc2b4cc-8b59-44bb-90cb-d7dc659824db"
+  },
+  {
+    "dashboard": "f2f6fde3-0567-4a71-b4ef-383465a97bf9",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 2,
+    "position_y": 3,
+    "width": 54,
+    "height": 6,
+    "options": {
+      "text": "Neustart Kultur Programm FSK"
+    },
+    "_syncId": "8576cc38-7307-42a0-9797-4b9a181d49d1"
+  },
+  {
+    "dashboard": "81025511-82ae-4a47-aebf-44fba32a4cbb",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3065"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "86f64964-b9a5-41b0-8e9b-17f5f71f7cab"
+  },
+  {
+    "dashboard": "36b5b65c-ca34-4d9b-b27d-26f110f88f5b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 4,
+    "position_y": 16,
+    "width": 23,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3063"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "874c3a30-3f8a-4f33-9ef1-2301ec20b905"
+  },
+  {
+    "dashboard": "14dfc5b1-06af-412f-839d-ae454f49174b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 38,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3002"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "91bd54b5-c20b-4d64-bf6d-9b97f73292a6"
+  },
+  {
+    "dashboard": "073c7817-1830-4ca7-9ff5-3f221c85ade7",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 7,
+    "position_y": 21,
+    "width": 19,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "2000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "955124c5-c145-497f-9c63-9893a4b7c50f"
+  },
+  {
+    "dashboard": "1a0e2f40-f943-45fd-baad-4e00bf2af7c2",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 30,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "5000"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "99354719-67ad-4545-a0e4-c14ab4694a85"
+  },
+  {
+    "dashboard": "b565b2b5-16a0-4305-9c08-8c8df282044c",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 17,
+    "width": 19,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1502"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "9e9a4b2c-deff-4eac-820e-238c9842d8eb"
+  },
+  {
+    "dashboard": "7d1174a3-51db-47e3-bd14-bb0ef4dbe252",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 22,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3064"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "9fe1c93c-7303-413a-b520-3399153fb938"
+  },
+  {
+    "dashboard": "158ed968-cb54-4e78-a070-f1b33edf082f",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 5,
+    "position_y": 19,
+    "width": 19,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "aaf826c8-fd93-49af-aa92-415cbd4fb2cf"
+  },
+  {
+    "dashboard": "158ed968-cb54-4e78-a070-f1b33edf082f",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 39,
+    "height": 15,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "1000"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "aba30657-8da5-471c-90fa-281fc72268e6"
+  },
+  {
+    "dashboard": "c9507aca-813f-4786-8a8d-41a873550213",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Drachenboot"
+    },
+    "_syncId": "b277840d-457a-40b6-80ef-a529513b8d49"
+  },
+  {
+    "dashboard": "b9e9e799-f664-4b86-a6d3-524a04b6b2d4",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 23,
+    "position_y": 13,
+    "width": 39,
+    "height": 15,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "1501"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "b75744cf-36d4-480c-af75-739dccc01132"
+  },
+  {
+    "dashboard": "b565b2b5-16a0-4305-9c08-8c8df282044c",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 25,
+    "position_y": 9,
+    "width": 39,
+    "height": 15,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "1502"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "bd58452d-3765-4d2e-93cd-49916e8d5c48"
+  },
+  {
+    "dashboard": "14dfc5b1-06af-412f-839d-ae454f49174b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3002"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "c14dd754-a0f0-4688-82cf-bd11ab07d38a"
+  },
+  {
+    "dashboard": "b9e9e799-f664-4b86-a6d3-524a04b6b2d4",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 1,
+    "position_y": 5,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Potspresso (bis 02/2022)"
+    },
+    "_syncId": "c4f5bf6d-bc35-4760-8e89-dc72b507a92e"
+  },
+  {
+    "dashboard": "1a0e2f40-f943-45fd-baad-4e00bf2af7c2",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 2,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "5000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "c6b9b465-e290-4843-9b1e-e9c3c14ea1d3"
+  },
+  {
+    "dashboard": "073c7817-1830-4ca7-9ff5-3f221c85ade7",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 7,
+    "position_y": 13,
+    "width": 19,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "2000"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "c902dff1-cbfd-40aa-93e7-27890888fccb"
+  },
+  {
+    "dashboard": "b565b2b5-16a0-4305-9c08-8c8df282044c",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 9,
+    "width": 19,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1502"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "ce283e56-c6e4-415c-ac65-5cbb2a21d00a"
+  },
+  {
+    "dashboard": "a42dc4dc-d60b-446b-9aa2-224f39431960",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 38,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3062"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "d3cd419f-a3ef-4daa-94ac-68ba68c16ea5"
+  },
+  {
+    "dashboard": "36b5b65c-ca34-4d9b-b27d-26f110f88f5b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 4,
+    "position_y": 9,
+    "width": 23,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3063"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "dafa21fc-ef7e-4bf2-b949-42245ba32f6f"
+  },
+  {
+    "dashboard": "36b5b65c-ca34-4d9b-b27d-26f110f88f5b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 31,
+    "position_y": 9,
+    "width": 27,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3063"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "dd5acba3-c1fc-4bd6-8c8a-3f8689adff89"
+  },
+  {
+    "dashboard": "b9e9e799-f664-4b86-a6d3-524a04b6b2d4",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 1,
+    "position_y": 13,
+    "width": 19,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "1501"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "de4da905-adf5-49b1-9073-af8135098671"
+  },
+  {
+    "dashboard": "7d1174a3-51db-47e3-bd14-bb0ef4dbe252",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 18,
+    "width": 22,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3064"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "deddbae7-9134-46cf-a9f4-e89e5f11a77e"
+  },
+  {
+    "dashboard": "81025511-82ae-4a47-aebf-44fba32a4cbb",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 38,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3065"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "e45249b0-3700-4eef-b863-793e9211f2df"
+  },
+  {
+    "dashboard": "7d1174a3-51db-47e3-bd14-bb0ef4dbe252",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 38,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3064"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "ec453c29-810e-4d92-8bef-dd427be0098e"
+  },
+  {
+    "dashboard": "76e59fc5-bb0d-4711-9566-0a089ef6fa68",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 11,
+    "width": 18,
+    "height": 6,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3001"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "outgoing"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Einnahmen: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "ecae9c1a-888e-4233-afbb-bdcffec9e3fa"
+  },
+  {
+    "dashboard": "f2f6fde3-0567-4a71-b4ef-383465a97bf9",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "metric",
+    "position_x": 2,
+    "position_y": 18,
+    "width": 23,
+    "height": 7,
+    "options": {
+      "collection": "invoices",
+      "sortField": null,
+      "field": "amount",
+      "function": "sum",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_eq": "3300"
+                }
+              }
+            }
+          },
+          {
+            "date_issued": {
+              "_gt": "2022-01-01"
+            }
+          },
+          {
+            "date_issued": {
+              "_lt": "$NOW"
+            }
+          },
+          {
+            "type": {
+              "_eq": "incoming"
+            }
+          },
+          {
+            "_or": [
+              {
+                "status": {
+                  "_eq": "settled"
+                }
+              },
+              {
+                "status": {
+                  "_eq": "approved"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "prefix": "Ausgaben: ",
+      "suffix": "€",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "_syncId": "ef0b6e03-8f82-4ded-ae38-5d9ab81b77ba"
+  },
+  {
+    "dashboard": "14dfc5b1-06af-412f-839d-ae454f49174b",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "International Tuesday"
+    },
+    "_syncId": "f473f70c-7446-4581-8bef-4746c4504aa6"
+  },
+  {
+    "dashboard": "c9507aca-813f-4786-8a8d-41a873550213",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "time-series",
+    "position_x": 26,
+    "position_y": 11,
+    "width": 38,
+    "height": 14,
+    "options": {
+      "collection": "invoices",
+      "precision": "day",
+      "function": "sum",
+      "dateField": "date_issued",
+      "valueField": "amount",
+      "filter": {
+        "_and": [
+          {
+            "cost_centers": {
+              "cost_centers_id": {
+                "id": {
+                  "_contains": "3004"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "range": "3 months"
+    },
+    "_syncId": "f747bd88-a80d-45c2-b740-8e7be12dd69e"
+  },
+  {
+    "dashboard": "81025511-82ae-4a47-aebf-44fba32a4cbb",
+    "name": null,
+    "icon": null,
+    "color": null,
+    "show_header": false,
+    "note": null,
+    "type": "label",
+    "position_x": 3,
+    "position_y": 3,
+    "width": 61,
+    "height": 6,
+    "options": {
+      "text": "Inselbühne - Kultursommer LHP"
+    },
+    "_syncId": "f7c7b958-7c5b-4c31-a49f-2fe17a6780f3"
   }
 ]

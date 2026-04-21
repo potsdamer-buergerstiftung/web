@@ -1,0 +1,35 @@
+{
+  "collection": "products",
+  "field": "product_variants",
+  "type": "alias",
+  "meta": {
+    "collection": "products",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "product_variants",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "enableSelect": false
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 11,
+    "special": [
+      "o2m"
+    ],
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Varianten"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

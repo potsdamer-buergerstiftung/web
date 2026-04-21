@@ -8,23 +8,20 @@
     "display": null,
     "display_options": null,
     "field": "description",
-    "group": null,
+    "group": "details",
     "hidden": false,
-    "interface": "input-rich-text-md",
+    "interface": "input-rich-text-html",
     "note": null,
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 4,
+    "searchable": true,
+    "sort": 1,
     "special": null,
     "translations": [
       {
-        "language": "en-US",
-        "translation": "Description"
-      },
-      {
         "language": "de-DE",
-        "translation": "Beschreibung"
+        "translation": "Beschreibung (Ausführlich)"
       }
     ],
     "validation": null,

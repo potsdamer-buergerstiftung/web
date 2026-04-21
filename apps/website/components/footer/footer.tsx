@@ -6,10 +6,10 @@ import FooterDonateButton from "./donate-button";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-200">
+    <footer>
       <FooterBanner />
-      <section>
-        <div className="container mx-auto grid grid-cols-1 gap-16 px-4 pt-24 pb-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+      <section className="container py-10 lg:py-8">
+        <div className="mx-auto rounded-2xl bg-card shadow-2xl grid grid-cols-1 gap-16 px-4 md:px-8 py-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
           <div className="order-1">
             <FooterBrand />
             <div className="mt-6">
