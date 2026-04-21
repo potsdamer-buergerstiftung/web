@@ -7,9 +7,9 @@ import portalServer from "portal/server";
 import PostCard from "@/components/PostCard";
 
 export const metadata: Metadata = {
-  title: "Die 5. Saison steht vor der Tür! - Inselbühne Potsdam",
+  title: "Deine Insel — Deine Bühne - Inselbühne Potsdam",
   description:
-    "Am 8. Juni um 11 Uhr geht's los mit dem Landespolizeiorchester Brandenburg, das weitere Programm folgt hier bald.",
+    "Saisoneröffnung am 24. Mai mit dem Landespolizeiorchester Brandenburg",
 };
 
 export const revalidate = 60;
