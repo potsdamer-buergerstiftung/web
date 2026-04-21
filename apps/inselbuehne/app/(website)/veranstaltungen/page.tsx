@@ -10,7 +10,7 @@ import EventListLoading from "./EventListLoading";
 
 export const metadata: Metadata = {
   title: "Veranstaltungen - Inselbühne Potsdam",
-  description: "Die Veranstaltungen für die fünfte Saison Inselbühne",
+  description: "Die Veranstaltungen für die sechste Saison Inselbühne",
 };
 
 export const revalidate = 60;
@@ -44,7 +44,7 @@ export default function ProgramPage() {
 
   return (
     <>
-      <PageTitle title="Veranstaltungen" heading="5. Saison Inselbühne" />
+      <PageTitle title="Veranstaltungen" heading="6. Saison Inselbühne" />
 
       <section className="bg-gray-50">
         <div className="container mx-auto flex flex-col space-y-10 px-4 pb-32 text-center">
