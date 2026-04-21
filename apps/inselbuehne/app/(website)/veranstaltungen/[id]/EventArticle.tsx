@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Block from "@/components/block";
 import PageTitle from "@/components/page-title";
 
 interface Props {
@@ -64,7 +63,7 @@ export default async function EventArticle({ promise }: Props) {
         )}
         <div className="prose prose-lg max-w-none">
           {event.description ? (
-            <Block data={event.description} />
+            <div dangerouslySetInnerHTML={{ __html: event.description }} />
           ) : (
             event.summary
           )}
