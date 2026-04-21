@@ -21,6 +21,54 @@ const firstNameSchema = z.string().optional();
 const lastNameSchema = z.string().optional();
 const emailSchema = z.string().optional();
 const organisationSchema = z.string().optional();
+const directDebitIbanSchema = z.string().optional();
+const directDebitAccountHolderSchema = z.string().optional();
+const directDebitMandateAcceptedSchema = z.boolean().optional();
+
+const ibanPattern = /^[A-Z]{2}[0-9A-Z]{13,32}$/;
+
+function normalizeIban(value?: string) {
+  return (value ?? "").replace(/\s+/g, "").toUpperCase();
+}
+
+function validateDirectDebitFields(
+  values: {
+    paymentMethodId?: string;
+    directDebitIban?: string;
+    directDebitAccountHolder?: string;
+    directDebitMandateAccepted?: boolean;
+  },
+  ctx: z.RefinementCtx,
+) {
+  if (values.paymentMethodId !== "directdebit") {
+    return;
+  }
+
+  const ibanValue = normalizeIban(values.directDebitIban);
+  if (!ibanValue || !ibanPattern.test(ibanValue)) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["directDebitIban"],
+      message: "Bitte eine gueltige IBAN angeben.",
+    });
+  }
+
+  if (!values.directDebitAccountHolder?.trim()) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["directDebitAccountHolder"],
+      message: "Bitte den Kontoinhaber angeben.",
+    });
+  }
+
+  if (!values.directDebitMandateAccepted) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["directDebitMandateAccepted"],
+      message: "Bitte das SEPA-Lastschriftmandat bestätigen.",
+    });
+  }
+}
 
 export const purposeStepSchema = z.object({
   purposeId: purposeIdSchema,
@@ -50,7 +98,7 @@ export const amountStepSchema = z
       ctx.addIssue({
         code: "custom",
         path: ["amountPreset"],
-        message: "Bitte einen gueltigen Spendenbetrag wählen.",
+        message: "Bitte einen gültigen Spendenbetrag wählen.",
       });
     }
   });
@@ -92,7 +140,7 @@ export const personalDataStepSchema = z
       ctx.addIssue({
         code: "custom",
         path: ["email"],
-        message: "Bitte eine gueltige E-Mail angeben.",
+        message: "Bitte eine gültige E-Mail angeben.",
       });
       return;
     }
@@ -101,14 +149,21 @@ export const personalDataStepSchema = z
       ctx.addIssue({
         code: "custom",
         path: ["email"],
-        message: "Bitte eine gueltige E-Mail angeben.",
+        message: "Bitte eine gültige E-Mail angeben.",
       });
     }
   });
 
-export const paymentStepSchema = z.object({
-  paymentMethodId: paymentMethodIdSchema,
-});
+export const paymentStepSchema = z
+  .object({
+    paymentMethodId: paymentMethodIdSchema,
+    directDebitIban: directDebitIbanSchema,
+    directDebitAccountHolder: directDebitAccountHolderSchema,
+    directDebitMandateAccepted: directDebitMandateAcceptedSchema,
+  })
+  .superRefine((values, ctx) => {
+    validateDirectDebitFields(values, ctx);
+  });
 
 const donationFormSchema = z
   .object({
@@ -123,6 +178,9 @@ const donationFormSchema = z
     lastName: lastNameSchema,
     email: emailSchema,
     organisation: organisationSchema,
+    directDebitIban: directDebitIbanSchema,
+    directDebitAccountHolder: directDebitAccountHolderSchema,
+    directDebitMandateAccepted: directDebitMandateAcceptedSchema,
   })
   .superRefine((values, ctx) => {
     if (values.amountPreset === "custom") {
@@ -140,14 +198,25 @@ const donationFormSchema = z
         ctx.addIssue({
           code: "custom",
           path: ["amountPreset"],
-          message: "Bitte einen gueltigen Spendenbetrag wählen.",
+          message: "Bitte einen gültigen Spendenbetrag wählen.",
         });
       }
     }
 
     const canBeAnonymous = values.interval === "once" && !values.wantsReceipt;
-    if (values.isAnonymous && canBeAnonymous) {
+    const allowAnonymous =
+      canBeAnonymous && values.paymentMethodId !== "directdebit";
+
+    if (values.isAnonymous && allowAnonymous) {
       return;
+    }
+
+    if (values.isAnonymous && !allowAnonymous) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["isAnonymous"],
+        message: "Anonyme Spenden sind per SEPA-Lastschrift nicht moeglich.",
+      });
     }
 
     if (!values.firstName?.trim()) {
@@ -176,13 +245,15 @@ const donationFormSchema = z
       return;
     }
 
-    if (!z.string().email().safeParse(emailValue).success) {
+    if (!z.email().safeParse(emailValue).success) {
       ctx.addIssue({
         code: "custom",
         path: ["email"],
         message: "Bitte eine gueltige E-Mail angeben.",
       });
     }
+
+    validateDirectDebitFields(values, ctx);
   });
 
 export type DonationFormValues = z.infer<typeof donationFormSchema>;
@@ -242,6 +313,9 @@ export function DonationFormProvider({
       lastName: "",
       email: "",
       organisation: "",
+      directDebitIban: "",
+      directDebitAccountHolder: "",
+      directDebitMandateAccepted: false,
       ...defaultValues,
     },
   });

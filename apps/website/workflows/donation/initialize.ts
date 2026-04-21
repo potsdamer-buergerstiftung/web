@@ -1,4 +1,4 @@
-import { SequenceType } from "@mollie/api-client";
+import { MandateMethod, SequenceType } from "@mollie/api-client";
 import {
   createDonation,
   createRecurringDonation,
@@ -20,6 +20,9 @@ export type InitializeDonationInput = {
   lastName?: string;
   email?: string;
   organisation?: string;
+  directDebitIban?: string;
+  directDebitAccountHolder?: string;
+  directDebitMandateAccepted?: boolean;
   returnUrl: string;
   webhookUrl: string;
 };
@@ -28,7 +31,8 @@ export type InitializeDonationResult = {
   donationId: string;
   recurringDonationId?: string;
   paymentId: string;
-  checkoutUrl: string;
+  checkoutUrl?: string;
+  redirectUrl?: string;
 };
 
 type DonorStepResult = {
@@ -52,9 +56,11 @@ type CustomerStepResult = {
 type PaymentStepResult = {
   paymentId: string;
   paymentStatus: string;
-  checkoutUrl: string;
+  checkoutUrl?: string;
   paymentAmount: unknown;
   mandateId?: string;
+  mandateReference?: string;
+  ibanLast4?: string;
 };
 
 type MollieCustomerResult = {
@@ -69,8 +75,16 @@ type MolliePaymentResult = {
   getCheckoutUrl: () => string | undefined;
 };
 
+type MollieMandateResult = {
+  id: string;
+};
+
 function toDateOnlyIso(date: Date): string {
   return date.toISOString().slice(0, 10);
+}
+
+function normalizeIban(value?: string) {
+  return (value ?? "").replace(/\s+/g, "").toUpperCase();
 }
 
 async function upsertDonorStep(input: InitializeDonationInput): Promise<DonorStepResult> {
@@ -195,6 +209,52 @@ async function createCustomerStep(
   return { customerId: customer.id };
 }
 
+async function createDirectDebitMandateStep(
+  input: InitializeDonationInput,
+  donation: DonationStepResult,
+  customer: CustomerStepResult,
+): Promise<{ mandateId: string; mandateReference: string; ibanLast4?: string }> {
+  "use step";
+
+  if (!customer.customerId) {
+    throw new Error("Mollie customer is required for SEPA direct debit");
+  }
+
+  if (!input.directDebitMandateAccepted) {
+    throw new Error("SEPA direct debit mandate must be accepted");
+  }
+
+  const iban = normalizeIban(input.directDebitIban);
+  if (!iban) {
+    throw new Error("SEPA direct debit IBAN is required");
+  }
+
+  const accountHolder =
+    input.directDebitAccountHolder?.trim() ||
+    [input.firstName, input.lastName].filter(Boolean).join(" ").trim();
+
+  if (!accountHolder) {
+    throw new Error("SEPA direct debit account holder is required");
+  }
+
+  const mandateReference = `donation-${donation.donationId}`;
+
+  const mandate = (await mollieClient.customerMandates.create({
+    customerId: customer.customerId,
+    method: MandateMethod.directdebit,
+    consumerAccount: iban,
+    consumerName: accountHolder,
+    signatureDate: toDateOnlyIso(new Date()),
+    mandateReference,
+  })) as MollieMandateResult;
+
+  return {
+    mandateId: mandate.id,
+    mandateReference,
+    ibanLast4: iban.slice(-4),
+  };
+}
+
 async function createPaymentStep(
   input: InitializeDonationInput,
   donor: DonorStepResult,
@@ -204,7 +264,16 @@ async function createPaymentStep(
 ): Promise<PaymentStepResult> {
   "use step";
 
-  const payment = (await (mollieClient.payments as any).create({
+  const isDirectDebit = input.paymentMethodId === "directdebit";
+  const directDebitMandate = isDirectDebit
+    ? await createDirectDebitMandateStep(input, donation, customer)
+    : undefined;
+
+  if (isDirectDebit && !directDebitMandate?.mandateId) {
+    throw new Error("SEPA direct debit mandate could not be created");
+  }
+
+  const paymentPayload: Record<string, unknown> = {
     amount: {
       currency: "EUR",
       value: input.amountValue.toFixed(2),
@@ -213,19 +282,35 @@ async function createPaymentStep(
       ? "Regelmäßige Spende - Erster Beitrag"
       : "Spende",
     method: input.paymentMethodId,
-    sequenceType: donor.isRecurring ? SequenceType.first : SequenceType.oneoff,
+    sequenceType: isDirectDebit
+      ? SequenceType.recurring
+      : donor.isRecurring
+        ? SequenceType.first
+        : SequenceType.oneoff,
     customerId: customer.customerId,
-    redirectUrl: input.returnUrl,
     webhookUrl: input.webhookUrl,
     metadata: {
       donation_id: donation.donationId,
       recurring_donation_id: recurring.recurringDonationId,
       purpose_id: input.purposeId,
+      mandate_reference: directDebitMandate?.mandateReference,
     },
-  })) as MolliePaymentResult;
+  };
+
+  if (!isDirectDebit) {
+    paymentPayload.redirectUrl = input.returnUrl;
+  }
+
+  if (isDirectDebit) {
+    paymentPayload.mandateId = directDebitMandate?.mandateId;
+  }
+
+  const payment = (await (mollieClient.payments as any).create(
+    paymentPayload,
+  )) as MolliePaymentResult;
 
   const checkoutUrl = payment.getCheckoutUrl();
-  if (!checkoutUrl) {
+  if (!checkoutUrl && !isDirectDebit) {
     throw new Error("Mollie returned no checkout URL");
   }
 
@@ -234,7 +319,9 @@ async function createPaymentStep(
     paymentStatus: payment.status,
     checkoutUrl,
     paymentAmount: payment.amount,
-    mandateId: payment.mandateId,
+    mandateId: payment.mandateId ?? directDebitMandate?.mandateId,
+    mandateReference: directDebitMandate?.mandateReference,
+    ibanLast4: directDebitMandate?.ibanLast4,
   };
 }
 
@@ -255,6 +342,9 @@ async function persistDonationPaymentStep(
       customer_id: customer.customerId,
       amount: payment.paymentAmount,
       method: input.paymentMethodId,
+      mandate_id: payment.mandateId,
+      mandate_reference: payment.mandateReference,
+      iban_last4: payment.ibanLast4,
     },
   });
 }
@@ -276,6 +366,7 @@ async function persistRecurringPaymentStep(
       payment_id: payment.paymentId,
       customer_id: customer.customerId,
       mandate_id: payment.mandateId,
+      mandate_reference: payment.mandateReference,
     },
   });
 }
@@ -307,5 +398,6 @@ export async function initializeDonationWorkflow(
     recurringDonationId: recurring.recurringDonationId,
     paymentId: payment.paymentId,
     checkoutUrl: payment.checkoutUrl,
+    redirectUrl: payment.checkoutUrl ? undefined : input.returnUrl,
   };
 }

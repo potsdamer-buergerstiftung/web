@@ -3,6 +3,12 @@ import { z } from "zod";
 import { initializeDonationWorkflow } from "@/workflows/donation/initialize";
 import { NextResponse } from "next/server";
 
+const ibanPattern = /^[A-Z]{2}[0-9A-Z]{13,32}$/;
+
+function normalizeIban(value?: string) {
+  return (value ?? "").replace(/\s+/g, "").toUpperCase();
+}
+
 const schema = z
   .object({
     purposeId: z.string().min(1),
@@ -16,6 +22,9 @@ const schema = z
     lastName: z.string().optional(),
     email: z.string().optional(),
     organisation: z.string().optional(),
+    directDebitIban: z.string().optional(),
+    directDebitAccountHolder: z.string().optional(),
+    directDebitMandateAccepted: z.boolean().optional(),
   })
   .superRefine((values, ctx) => {
     const amountRaw =
@@ -31,8 +40,19 @@ const schema = z
     }
 
     const canBeAnonymous = values.interval === "once" && !values.wantsReceipt;
-    if (values.isAnonymous && canBeAnonymous) {
+    const allowAnonymous =
+      canBeAnonymous && values.paymentMethodId !== "directdebit";
+
+    if (values.isAnonymous && allowAnonymous) {
       return;
+    }
+
+    if (values.isAnonymous && !allowAnonymous) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["isAnonymous"],
+        message: "Anonyme Spenden sind per SEPA-Lastschrift nicht moeglich.",
+      });
     }
 
     if (!values.firstName?.trim()) {
@@ -58,6 +78,33 @@ const schema = z
         path: ["email"],
         message: "Bitte eine gueltige E-Mail angeben.",
       });
+    }
+
+    if (values.paymentMethodId === "directdebit") {
+      const ibanValue = normalizeIban(values.directDebitIban);
+      if (!ibanValue || !ibanPattern.test(ibanValue)) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["directDebitIban"],
+          message: "Bitte eine gueltige IBAN angeben.",
+        });
+      }
+
+      if (!values.directDebitAccountHolder?.trim()) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["directDebitAccountHolder"],
+          message: "Bitte den Kontoinhaber angeben.",
+        });
+      }
+
+      if (!values.directDebitMandateAccepted) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["directDebitMandateAccepted"],
+          message: "Bitte das SEPA-Lastschriftmandat bestaetigen.",
+        });
+      }
     }
   });
 
@@ -98,6 +145,9 @@ export async function POST(request: Request) {
         lastName: values.lastName,
         email: values.email,
         organisation: values.organisation,
+        directDebitIban: values.directDebitIban,
+        directDebitAccountHolder: values.directDebitAccountHolder,
+        directDebitMandateAccepted: values.directDebitMandateAccepted,
         returnUrl,
         webhookUrl,
       },

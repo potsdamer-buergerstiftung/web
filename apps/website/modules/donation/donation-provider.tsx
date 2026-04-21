@@ -248,12 +248,17 @@ export function DonationProvider({
       throw new Error("Donation initialization failed");
     }
 
-    const payload = (await response.json()) as { checkoutUrl?: string };
-    if (!payload.checkoutUrl) {
-      throw new Error("Missing Mollie checkout URL");
+    const payload = (await response.json()) as {
+      checkoutUrl?: string;
+      redirectUrl?: string;
+    };
+    const nextUrl = payload.checkoutUrl ?? payload.redirectUrl;
+
+    if (!nextUrl) {
+      throw new Error("Missing redirect URL");
     }
 
-    window.location.assign(payload.checkoutUrl);
+    window.location.assign(nextUrl);
   }, []);
 
   return (

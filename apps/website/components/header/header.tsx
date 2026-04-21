@@ -66,11 +66,11 @@ export default function Header({ nav, section, actions }: HeaderProps) {
         <Banner />
       </Suspense>
       <header className="absolute z-40 w-full text-slate-900 dark:text-slate-50">
-        <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:px-4 lg:py-6 xl:px-10">
+        <div className="z-50 flex w-full flex-row items-center justify-between gap-2 xl:gap-4 px-4 py-2 md:px-8 md:py-4 lg:py-6">
           <div className="flex flex-row items-center gap-4">
             <Link
               href="/"
-              className="gap-2 group xl:-ml-2 inline-flex rounded-md py-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              className="gap-2 group inline-flex rounded-md py-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
               <Logo />
               {/* <Image
