@@ -1,128 +1,8 @@
 [
   {
-    "name": "Gremienmitglieder",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "029d9e4b-bb67-4d39-ab34-7a99ac11ae21"
-  },
-  {
-    "name": "MitmachTreff",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "17a91f92-7723-4b1e-afc3-353063838aa5"
-  },
-  {
-    "name": "Veröffentlichungen PR-Team",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "18f6f191-b9a5-4de3-b606-529cfb82a325"
-  },
-  {
-    "name": "29.06.21 Zargenbruch",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "1d1104e1-cc13-4e88-875a-11e77568a73f"
-  },
-  {
-    "name": "10.08.21 Future to go",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "2a17db5d-aacc-4bff-85c3-0845084b7f6c"
-  },
-  {
-    "name": "Potspresso",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "2a87f09e-03b5-4480-afb1-df8fec6a67af"
-  },
-  {
-    "name": "Drachenboot 2023",
-    "parent": "ec9f6937-47a5-40c0-a054-d81abda26164",
-    "_syncId": "2d90cae8-8d6f-4c51-bef8-2d73a7de4e77"
-  },
-  {
-    "name": "Fotos andere Rennen Rainer Werner",
-    "parent": "e1314662-2c46-4da1-a62e-399c8af669a5",
-    "_syncId": "40c22c2a-2c93-4163-9f3d-4f213fbdd17b"
-  },
-  {
-    "name": "Regatta am 28.5.2022, Fotos Marie-Luise Glahr",
-    "parent": "e1314662-2c46-4da1-a62e-399c8af669a5",
-    "_syncId": "4e6f195d-ad1a-42d2-b15b-b3b8307738f2"
-  },
-  {
-    "name": "BH 2021",
-    "parent": "c7d32554-8a12-49d8-a380-1a10027a263b",
-    "_syncId": "4f5f5c5e-5d15-410a-8ce5-9043cdb1463d"
-  },
-  {
-    "name": "Inselbühne",
-    "parent": "7b772bb1-f280-435e-a053-1f806ac7bb5c",
-    "_syncId": "4ff0c9ea-d826-41a2-b912-26216b34f65c"
-  },
-  {
-    "name": "Buntes Essen 2019",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "5656c6ea-1b3e-414f-97fc-2ec6d879ef94"
-  },
-  {
-    "name": "2022 Musikschule",
-    "parent": "da5ebea8-8a05-47d4-be94-df16529b869d",
-    "_syncId": "5ac5523e-5f0f-4a9f-b20f-62a6e528aa75"
-  },
-  {
-    "name": "Vorstand  - Fotoshoot Manfred Wolf, Staudenbasar 2022",
-    "parent": "029d9e4b-bb67-4d39-ab34-7a99ac11ae21",
-    "_syncId": "5f592c90-0af6-4ca2-aa20-9d0041319adb"
-  },
-  {
-    "name": "08.06.21 Ernstgemeint",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "69508dfb-835d-44dd-85cf-0cd3718275c3"
-  },
-  {
-    "name": "27.07.21 Mellow Mark",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "7b27e0e6-5e94-4c63-9240-8eb8f5340ed6"
-  },
-  {
-    "name": "Jugendbeteiligung",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "7b772bb1-f280-435e-a053-1f806ac7bb5c"
-  },
-  {
-    "name": "15.06.21 Comedy Rohit Bathia",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "80241ade-5431-4fad-83b6-a254dfb46e19"
-  },
-  {
-    "name": "Potspresso-Broschüre",
-    "parent": "2a87f09e-03b5-4480-afb1-df8fec6a67af",
-    "_syncId": "813153f9-c5de-4970-9e50-7df323ba7c7d"
-  },
-  {
-    "name": "2023",
-    "parent": "d97c0159-cb3d-4703-848a-901cf3b8fecb",
-    "_syncId": "82adebee-745f-411c-aa7b-2649909465d4"
-  },
-  {
-    "name": "Stiftungsrat",
-    "parent": "029d9e4b-bb67-4d39-ab34-7a99ac11ae21",
-    "_syncId": "84499a62-c270-48c5-9935-c4629c353718"
-  },
-  {
     "name": "Stadtgrün",
     "parent": null,
     "_syncId": "8a4800bb-218e-4a72-8ef7-2bf81132fc99"
-  },
-  {
-    "name": "Kuratorium",
-    "parent": "029d9e4b-bb67-4d39-ab34-7a99ac11ae21",
-    "_syncId": "9a834eec-b5a1-438d-9e9f-d0764033a933"
-  },
-  {
-    "name": "Teamfotos",
-    "parent": "2d90cae8-8d6f-4c51-bef8-2d73a7de4e77",
-    "_syncId": "9d7a392a-f3ca-49c3-9fb1-11bbf6ed47f8"
-  },
-  {
-    "name": "Potsdam wichtelt",
-    "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
-    "_syncId": "9f631235-c42f-485d-a6fc-fca99e1213c2"
   },
   {
     "name": "Bilderpool",
@@ -135,24 +15,9 @@
     "_syncId": "aca0c2d3-0ace-4437-a7fe-47789e2105d4"
   },
   {
-    "name": "01.06.21 Markus Rex",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "ba93ee78-86c2-421e-af45-617fb39b1dbc"
-  },
-  {
-    "name": "Inselbühne Stefanie Schuster",
-    "parent": "d97c0159-cb3d-4703-848a-901cf3b8fecb",
-    "_syncId": "c353f480-f7d0-4bae-b611-c3551662075e"
-  },
-  {
     "name": "Rechnungen",
     "parent": null,
     "_syncId": "c7d32554-8a12-49d8-a380-1a10027a263b"
-  },
-  {
-    "name": "2021",
-    "parent": "d97c0159-cb3d-4703-848a-901cf3b8fecb",
-    "_syncId": "cc431ac2-dd1d-4afa-8219-edf976d8d3db"
   },
   {
     "name": "Bilder Manfred",
@@ -175,24 +40,9 @@
     "_syncId": "dcf55769-48d6-4d49-aa93-da81f8c4aa5b"
   },
   {
-    "name": "17.08.21 Robert Bernier",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "dffb62d9-48e3-4bbd-9b52-62ed0f7ba835"
-  },
-  {
-    "name": "Drachenboot 2022",
-    "parent": "ec9f6937-47a5-40c0-a054-d81abda26164",
-    "_syncId": "e1314662-2c46-4da1-a62e-399c8af669a5"
-  },
-  {
     "name": "2022 Office-Team Fotoshooting Stefan Paape",
     "parent": "a041bb8e-4832-48ee-9f90-8649fed2de7a",
     "_syncId": "e38eccaf-7f86-434a-8bb0-08252c120889"
-  },
-  {
-    "name": "03.08.21 Ute Kabel",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "e4bd503a-8f0f-4f1a-a116-a1ab992aec0b"
   },
   {
     "name": "Team-Bürgerstiftung",
@@ -208,15 +58,5 @@
     "name": "Öffentlich",
     "parent": null,
     "_syncId": "f375aa6d-3bc3-4d7a-8681-1b76cd43e91c"
-  },
-  {
-    "name": "20.07.21 big movie",
-    "parent": "cc431ac2-dd1d-4afa-8219-edf976d8d3db",
-    "_syncId": "f822586c-6954-45db-8176-80e2fd215648"
-  },
-  {
-    "name": "Allgmein",
-    "parent": "2d90cae8-8d6f-4c51-bef8-2d73a7de4e77",
-    "_syncId": "fe6cf999-39a8-4558-bc83-18cdca51f069"
   }
 ]

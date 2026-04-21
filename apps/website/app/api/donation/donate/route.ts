@@ -83,7 +83,7 @@ export async function POST(request: Request) {
     const amountValue = resolveAmount(values);
     const baseUrl = getBaseUrl(request);
 
-    const returnUrl = `${baseUrl}/mitstiften/privatpersonen/spenden?donation=processing`;
+    const returnUrl = `${baseUrl}/mitstiften/spenden/danke`;
     const webhookUrl = `${baseUrl}/api/donation/webhook`;
 
     const run = await start(initializeDonationWorkflow, [

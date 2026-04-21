@@ -65,7 +65,7 @@ export default async function TeamPage() {
         }
       />
       {categories.map((category) => (
-        <PageSection grid="vertical" key={category.id}>
+        <PageSection key={category.id}>
           <PageSectionSubTitle>Unser Team</PageSectionSubTitle>
           <PageSectionTitle>{category.title}</PageSectionTitle>
           <PageSectionDescription

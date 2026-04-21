@@ -5,7 +5,6 @@ import type { Donation, Donor, RecurringDonation } from "portal/types";
 
 type DonationStatus = NonNullable<Donation["status"]>;
 type RecurringDonationStatus = NonNullable<RecurringDonation["status"]>;
-type DonorStatus = Donor["status"];
 type DonationCreatedFrom = Exclude<Donation["created_from"], null | undefined>;
 
 type DonorInput = {
@@ -13,23 +12,22 @@ type DonorInput = {
   lastName?: string;
   organization?: string;
   email?: string;
-  isAnonymous?: boolean;
-  wantsReceipt?: boolean;
-  consents?: Record<string, boolean>;
+  providerCustomerId: string;
 };
 
 type DonationInput = {
   donorId?: string;
-  project?: string;
+  purpose: string;
   amountValue: Donation["amount_value"];
   currency: Donation["currency"];
-  intervalType: Donation["interval_type"];
   paymentMethod: Donation["payment_method"];
+  recurringDonationId?: string;
   kind: Donation["kind"];
   checkoutUrl?: string;
   returnUrl?: string;
   webhookUrl?: string;
   createdFrom: DonationCreatedFrom;
+  providerTransactionId?: string;
   metadata?: Record<string, unknown>;
 };
 
@@ -92,15 +90,28 @@ function normalizeEmail(email?: string) {
   return email?.trim().toLowerCase() ?? "";
 }
 
+export async function setProviderCustomerIdForDonor(
+  donorId: string,
+  providerCustomerId: string,
+): Promise<{ id: string }> {
+  const donor = await serverClient.request(
+    updateItem("donors", donorId, {
+      provider_customer_id: providerCustomerId,
+    }),
+  );
+
+  return donor;
+}
+
 export async function upsertDonor(input: DonorInput): Promise<{ id: string }> {
   const emailNormalized = normalizeEmail(input.email);
 
   if (emailNormalized) {
     const existing = await serverClient.request(
-      readItems("donor", {
+      readItems("donors", {
         fields: ["id"],
         filter: {
-          email_normalized: {
+          email: {
             _eq: emailNormalized,
           },
         },
@@ -112,15 +123,13 @@ export async function upsertDonor(input: DonorInput): Promise<{ id: string }> {
 
     if (donorId) {
       await serverClient.request(
-        updateItem("donor", donorId, {
+        updateItem("donors", donorId, {
           first_name: input.firstName?.trim() || null,
           last_name: input.lastName?.trim() || null,
           organization: input.organization?.trim() || null,
           email_raw: input.email?.trim() || null,
           email_normalized: emailNormalized,
-          is_anonymous: Boolean(input.isAnonymous),
-          wants_receipt: Boolean(input.wantsReceipt),
-          consents: input.consents ?? {},
+          provider_customer_id: input.providerCustomerId ?? null,
         }),
       );
 
@@ -129,17 +138,11 @@ export async function upsertDonor(input: DonorInput): Promise<{ id: string }> {
   }
 
   const created = await serverClient.request(
-    createItem("donor", {
-      status: "published" as DonorStatus,
+    createItem("donors", {
       first_name: input.firstName?.trim() || null,
       last_name: input.lastName?.trim() || null,
       organization: input.organization?.trim() || null,
-      email_raw: input.email?.trim() || null,
-      email_normalized: emailNormalized || null,
-      is_anonymous: Boolean(input.isAnonymous),
-      wants_receipt: Boolean(input.wantsReceipt),
-      consents: input.consents ?? {},
-      metadata: {},
+      email: input.email?.trim() || null,
     }),
   );
 
@@ -151,16 +154,17 @@ export async function createDonation(input: DonationInput): Promise<{ id: string
     createItem("donations", {
       status: "pending" as DonationStatus,
       donor: input.donorId ?? null,
-      project: input.project ?? null,
+      purpose: input.purpose ?? null,
       amount_value: input.amountValue,
       currency: input.currency,
-      interval_type: input.intervalType,
       payment_method: input.paymentMethod,
       kind: input.kind,
       checkout_url: input.checkoutUrl ?? null,
+      recurring_donation: input.recurringDonationId ?? null,
       return_url: input.returnUrl ?? null,
       webhook_url: input.webhookUrl ?? null,
       created_from: input.createdFrom,
+      provider_transaction_id: input.providerTransactionId ?? null,
       metadata: input.metadata ?? {},
     }),
   );
@@ -191,12 +195,11 @@ export async function findDonationByPaymentId(paymentId: string): Promise<{ id: 
   const result = await serverClient.request(
     readItems("donations", {
       fields: ["id"],
-      // Directus supports JSON _contains, but current SDK typings don't model this operator for JSON fields.
       filter: {
-        metadata: {
-          _contains: paymentId,
-        },
-      } as any,
+        "provider_transaction_id": {
+          _eq: paymentId,
+        }
+      },
       limit: 1,
     }),
   );
@@ -218,6 +221,7 @@ export async function updateDonationAfterPayment(
       failed_at: input.failedAt ?? null,
       canceled_at: input.canceledAt ?? null,
       expired_at: input.expiredAt ?? null,
+      provider_transaction_id: input.paymentId,
       metadata: input.metadata ?? {},
     }),
   );

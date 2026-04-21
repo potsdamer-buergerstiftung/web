@@ -17,73 +17,73 @@ type Query {
   permissions_me: permissions_me_type
   roles_me: [directus_roles]
   policies_me_globals: policy_me_globals_type
-  access(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access!]!
-  access_by_id(id: ID!, version: String): directus_access
-  access_aggregated(groupBy: [String], filter: directus_access_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_access_aggregated!]!
-  comments(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_comments!]!
-  comments_by_id(id: ID!, version: String): directus_comments
-  comments_aggregated(groupBy: [String], filter: directus_comments_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_comments_aggregated!]!
-  dashboards(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_dashboards!]!
-  dashboards_by_id(id: ID!, version: String): directus_dashboards
-  dashboards_aggregated(groupBy: [String], filter: directus_dashboards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_dashboards_aggregated!]!
-  deployment_projects(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployment_projects!]!
-  deployment_projects_by_id(id: ID!, version: String): directus_deployment_projects
-  deployment_projects_aggregated(groupBy: [String], filter: directus_deployment_projects_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployment_projects_aggregated!]!
-  deployment_runs(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployment_runs!]!
-  deployment_runs_by_id(id: ID!, version: String): directus_deployment_runs
-  deployment_runs_aggregated(groupBy: [String], filter: directus_deployment_runs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployment_runs_aggregated!]!
-  activity(filter: directus_activity_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_activity!]!
-  activity_by_id(id: ID!, version: String): directus_activity
-  activity_aggregated(groupBy: [String], filter: directus_activity_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_activity_aggregated!]!
-  folders(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_folders!]!
-  folders_by_id(id: ID!, version: String): directus_folders
-  folders_aggregated(groupBy: [String], filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_folders_aggregated!]!
-  flows(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_flows!]!
-  flows_by_id(id: ID!, version: String): directus_flows
-  flows_aggregated(groupBy: [String], filter: directus_flows_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_flows_aggregated!]!
-  notifications(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_notifications!]!
-  notifications_by_id(id: ID!, version: String): directus_notifications
-  notifications_aggregated(groupBy: [String], filter: directus_notifications_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_notifications_aggregated!]!
-  operations(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_operations!]!
-  operations_by_id(id: ID!, version: String): directus_operations
-  operations_aggregated(groupBy: [String], filter: directus_operations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_operations_aggregated!]!
-  panels(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_panels!]!
-  panels_by_id(id: ID!, version: String): directus_panels
-  panels_aggregated(groupBy: [String], filter: directus_panels_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_panels_aggregated!]!
-  permissions(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_permissions!]!
-  permissions_by_id(id: ID!, version: String): directus_permissions
-  permissions_aggregated(groupBy: [String], filter: directus_permissions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_permissions_aggregated!]!
-  presets(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_presets!]!
-  presets_by_id(id: ID!, version: String): directus_presets
-  presets_aggregated(groupBy: [String], filter: directus_presets_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_presets_aggregated!]!
-  deployments(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployments!]!
-  deployments_by_id(id: ID!, version: String): directus_deployments
-  deployments_aggregated(groupBy: [String], filter: directus_deployments_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployments_aggregated!]!
-  policies(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_policies!]!
-  policies_by_id(id: ID!, version: String): directus_policies
-  policies_aggregated(groupBy: [String], filter: directus_policies_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_policies_aggregated!]!
-  versions(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_versions!]!
-  versions_by_id(id: ID!, version: String): directus_versions
-  versions_aggregated(groupBy: [String], filter: directus_versions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_versions_aggregated!]!
-  revisions(filter: directus_revisions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_revisions!]!
-  revisions_by_id(id: ID!, version: String): directus_revisions
-  revisions_aggregated(groupBy: [String], filter: directus_revisions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_revisions_aggregated!]!
-  settings(version: String): directus_settings
-  translations(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_translations!]!
-  translations_by_id(id: ID!, version: String): directus_translations
-  translations_aggregated(groupBy: [String], filter: directus_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_translations_aggregated!]!
   roles(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_roles!]!
   roles_by_id(id: ID!, version: String): directus_roles
   roles_aggregated(groupBy: [String], filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_roles_aggregated!]!
-  shares(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_shares!]!
-  shares_by_id(id: ID!, version: String): directus_shares
-  shares_aggregated(groupBy: [String], filter: directus_shares_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_shares_aggregated!]!
-  users(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_users!]!
-  users_by_id(id: ID!, version: String): directus_users
-  users_aggregated(groupBy: [String], filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_users_aggregated!]!
+  folders(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_folders!]!
+  folders_by_id(id: ID!, version: String): directus_folders
+  folders_aggregated(groupBy: [String], filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_folders_aggregated!]!
+  revisions(filter: directus_revisions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_revisions!]!
+  revisions_by_id(id: ID!, version: String): directus_revisions
+  revisions_aggregated(groupBy: [String], filter: directus_revisions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_revisions_aggregated!]!
+  permissions(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_permissions!]!
+  permissions_by_id(id: ID!, version: String): directus_permissions
+  permissions_aggregated(groupBy: [String], filter: directus_permissions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_permissions_aggregated!]!
+  activity(filter: directus_activity_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_activity!]!
+  activity_by_id(id: ID!, version: String): directus_activity
+  activity_aggregated(groupBy: [String], filter: directus_activity_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_activity_aggregated!]!
   files(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_files!]!
   files_by_id(id: ID!, version: String): directus_files
   files_aggregated(groupBy: [String], filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_files_aggregated!]!
+  presets(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_presets!]!
+  presets_by_id(id: ID!, version: String): directus_presets
+  presets_aggregated(groupBy: [String], filter: directus_presets_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_presets_aggregated!]!
+  notifications(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_notifications!]!
+  notifications_by_id(id: ID!, version: String): directus_notifications
+  notifications_aggregated(groupBy: [String], filter: directus_notifications_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_notifications_aggregated!]!
+  panels(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_panels!]!
+  panels_by_id(id: ID!, version: String): directus_panels
+  panels_aggregated(groupBy: [String], filter: directus_panels_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_panels_aggregated!]!
+  shares(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_shares!]!
+  shares_by_id(id: ID!, version: String): directus_shares
+  shares_aggregated(groupBy: [String], filter: directus_shares_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_shares_aggregated!]!
+  flows(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_flows!]!
+  flows_by_id(id: ID!, version: String): directus_flows
+  flows_aggregated(groupBy: [String], filter: directus_flows_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_flows_aggregated!]!
+  operations(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_operations!]!
+  operations_by_id(id: ID!, version: String): directus_operations
+  operations_aggregated(groupBy: [String], filter: directus_operations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_operations_aggregated!]!
+  dashboards(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_dashboards!]!
+  dashboards_by_id(id: ID!, version: String): directus_dashboards
+  dashboards_aggregated(groupBy: [String], filter: directus_dashboards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_dashboards_aggregated!]!
+  translations(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_translations!]!
+  translations_by_id(id: ID!, version: String): directus_translations
+  translations_aggregated(groupBy: [String], filter: directus_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_translations_aggregated!]!
+  comments(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_comments!]!
+  comments_by_id(id: ID!, version: String): directus_comments
+  comments_aggregated(groupBy: [String], filter: directus_comments_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_comments_aggregated!]!
+  versions(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_versions!]!
+  versions_by_id(id: ID!, version: String): directus_versions
+  versions_aggregated(groupBy: [String], filter: directus_versions_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_versions_aggregated!]!
+  users(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_users!]!
+  users_by_id(id: ID!, version: String): directus_users
+  users_aggregated(groupBy: [String], filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_users_aggregated!]!
+  settings(version: String): directus_settings
+  policies(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_policies!]!
+  policies_by_id(id: ID!, version: String): directus_policies
+  policies_aggregated(groupBy: [String], filter: directus_policies_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_policies_aggregated!]!
+  access(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_access!]!
+  access_by_id(id: ID!, version: String): directus_access
+  access_aggregated(groupBy: [String], filter: directus_access_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_access_aggregated!]!
+  deployment_projects(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployment_projects!]!
+  deployment_projects_by_id(id: ID!, version: String): directus_deployment_projects
+  deployment_projects_aggregated(groupBy: [String], filter: directus_deployment_projects_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployment_projects_aggregated!]!
+  deployments(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployments!]!
+  deployments_by_id(id: ID!, version: String): directus_deployments
+  deployments_aggregated(groupBy: [String], filter: directus_deployments_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployments_aggregated!]!
+  deployment_runs(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [directus_deployment_runs!]!
+  deployment_runs_by_id(id: ID!, version: String): directus_deployment_runs
+  deployment_runs_aggregated(groupBy: [String], filter: directus_deployment_runs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_deployment_runs_aggregated!]!
 }
 
 type Mutation {
@@ -118,229 +118,230 @@ type Mutation {
   update_users_me(data: update_directus_users_input): directus_users
   import_file(url: String!, data: create_directus_files_input): directus_files
   users_invite(email: String!, role: String!, invite_url: String): Boolean
-  create_access_items(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_access_input!]): [directus_access!]!
-  create_access_item(data: create_directus_access_input!): directus_access
-  create_comments_items(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_comments_input!]): [directus_comments!]!
-  create_comments_item(data: create_directus_comments_input!): directus_comments
-  create_dashboards_items(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_dashboards_input!]): [directus_dashboards!]!
-  create_dashboards_item(data: create_directus_dashboards_input!): directus_dashboards
-  create_deployment_projects_items(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployment_projects_input!]): [directus_deployment_projects!]!
-  create_deployment_projects_item(data: create_directus_deployment_projects_input!): directus_deployment_projects
-  create_deployment_runs_items(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployment_runs_input!]): [directus_deployment_runs!]!
-  create_deployment_runs_item(data: create_directus_deployment_runs_input!): directus_deployment_runs
-  create_folders_items(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_folders_input!]): [directus_folders!]!
-  create_folders_item(data: create_directus_folders_input!): directus_folders
-  create_flows_items(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_flows_input!]): [directus_flows!]!
-  create_flows_item(data: create_directus_flows_input!): directus_flows
-  create_notifications_items(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_notifications_input!]): [directus_notifications!]!
-  create_notifications_item(data: create_directus_notifications_input!): directus_notifications
-  create_operations_items(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_operations_input!]): [directus_operations!]!
-  create_operations_item(data: create_directus_operations_input!): directus_operations
-  create_panels_items(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_panels_input!]): [directus_panels!]!
-  create_panels_item(data: create_directus_panels_input!): directus_panels
-  create_permissions_items(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_permissions_input!]): [directus_permissions!]!
-  create_permissions_item(data: create_directus_permissions_input!): directus_permissions
-  create_presets_items(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_presets_input!]): [directus_presets!]!
-  create_presets_item(data: create_directus_presets_input!): directus_presets
-  create_deployments_items(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployments_input!]): [directus_deployments!]!
-  create_deployments_item(data: create_directus_deployments_input!): directus_deployments
-  create_policies_items(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_policies_input!]): [directus_policies!]!
-  create_policies_item(data: create_directus_policies_input!): directus_policies
-  create_versions_items(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_versions_input!]): [directus_versions!]!
-  create_versions_item(data: create_directus_versions_input!): directus_versions
-  create_translations_items(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_translations_input!]): [directus_translations!]!
-  create_translations_item(data: create_directus_translations_input!): directus_translations
   create_roles_items(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_roles_input!]): [directus_roles!]!
   create_roles_item(data: create_directus_roles_input!): directus_roles
-  create_shares_items(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_shares_input!]): [directus_shares!]!
-  create_shares_item(data: create_directus_shares_input!): directus_shares
-  create_users_items(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_users_input!]): [directus_users!]!
-  create_users_item(data: create_directus_users_input!): directus_users
+  create_folders_items(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_folders_input!]): [directus_folders!]!
+  create_folders_item(data: create_directus_folders_input!): directus_folders
+  create_permissions_items(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_permissions_input!]): [directus_permissions!]!
+  create_permissions_item(data: create_directus_permissions_input!): directus_permissions
   create_files_items(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_files_input!]): [directus_files!]!
   create_files_item(data: create_directus_files_input!): directus_files
-  update_access_items(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_access_input!): [directus_access!]!
-  update_access_batch(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_access_input!]): [directus_access!]!
-  update_access_item(id: ID!, data: update_directus_access_input!): directus_access
-  update_comments_items(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_comments_input!): [directus_comments!]!
-  update_comments_batch(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_comments_input!]): [directus_comments!]!
-  update_comments_item(id: ID!, data: update_directus_comments_input!): directus_comments
-  update_dashboards_items(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_dashboards_input!): [directus_dashboards!]!
-  update_dashboards_batch(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_dashboards_input!]): [directus_dashboards!]!
-  update_dashboards_item(id: ID!, data: update_directus_dashboards_input!): directus_dashboards
-  update_deployment_projects_items(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployment_projects_input!): [directus_deployment_projects!]!
-  update_deployment_projects_batch(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployment_projects_input!]): [directus_deployment_projects!]!
-  update_deployment_projects_item(id: ID!, data: update_directus_deployment_projects_input!): directus_deployment_projects
-  update_deployment_runs_items(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployment_runs_input!): [directus_deployment_runs!]!
-  update_deployment_runs_batch(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployment_runs_input!]): [directus_deployment_runs!]!
-  update_deployment_runs_item(id: ID!, data: update_directus_deployment_runs_input!): directus_deployment_runs
-  update_folders_items(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_folders_input!): [directus_folders!]!
-  update_folders_batch(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_folders_input!]): [directus_folders!]!
-  update_folders_item(id: ID!, data: update_directus_folders_input!): directus_folders
-  update_flows_items(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_flows_input!): [directus_flows!]!
-  update_flows_batch(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_flows_input!]): [directus_flows!]!
-  update_flows_item(id: ID!, data: update_directus_flows_input!): directus_flows
-  update_notifications_items(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_notifications_input!): [directus_notifications!]!
-  update_notifications_batch(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_notifications_input!]): [directus_notifications!]!
-  update_notifications_item(id: ID!, data: update_directus_notifications_input!): directus_notifications
-  update_operations_items(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_operations_input!): [directus_operations!]!
-  update_operations_batch(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_operations_input!]): [directus_operations!]!
-  update_operations_item(id: ID!, data: update_directus_operations_input!): directus_operations
-  update_panels_items(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_panels_input!): [directus_panels!]!
-  update_panels_batch(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_panels_input!]): [directus_panels!]!
-  update_panels_item(id: ID!, data: update_directus_panels_input!): directus_panels
-  update_permissions_items(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_permissions_input!): [directus_permissions!]!
-  update_permissions_batch(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_permissions_input!]): [directus_permissions!]!
-  update_permissions_item(id: ID!, data: update_directus_permissions_input!): directus_permissions
-  update_presets_items(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_presets_input!): [directus_presets!]!
-  update_presets_batch(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_presets_input!]): [directus_presets!]!
-  update_presets_item(id: ID!, data: update_directus_presets_input!): directus_presets
-  update_deployments_items(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployments_input!): [directus_deployments!]!
-  update_deployments_batch(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployments_input!]): [directus_deployments!]!
-  update_deployments_item(id: ID!, data: update_directus_deployments_input!): directus_deployments
-  update_policies_items(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_policies_input!): [directus_policies!]!
-  update_policies_batch(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_policies_input!]): [directus_policies!]!
-  update_policies_item(id: ID!, data: update_directus_policies_input!): directus_policies
-  update_versions_items(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_versions_input!): [directus_versions!]!
-  update_versions_batch(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_versions_input!]): [directus_versions!]!
-  update_versions_item(id: ID!, data: update_directus_versions_input!): directus_versions
-  update_settings(data: update_directus_settings_input!): directus_settings
-  update_translations_items(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_translations_input!): [directus_translations!]!
-  update_translations_batch(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_translations_input!]): [directus_translations!]!
-  update_translations_item(id: ID!, data: update_directus_translations_input!): directus_translations
+  create_presets_items(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_presets_input!]): [directus_presets!]!
+  create_presets_item(data: create_directus_presets_input!): directus_presets
+  create_notifications_items(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_notifications_input!]): [directus_notifications!]!
+  create_notifications_item(data: create_directus_notifications_input!): directus_notifications
+  create_panels_items(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_panels_input!]): [directus_panels!]!
+  create_panels_item(data: create_directus_panels_input!): directus_panels
+  create_shares_items(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_shares_input!]): [directus_shares!]!
+  create_shares_item(data: create_directus_shares_input!): directus_shares
+  create_flows_items(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_flows_input!]): [directus_flows!]!
+  create_flows_item(data: create_directus_flows_input!): directus_flows
+  create_operations_items(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_operations_input!]): [directus_operations!]!
+  create_operations_item(data: create_directus_operations_input!): directus_operations
+  create_dashboards_items(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_dashboards_input!]): [directus_dashboards!]!
+  create_dashboards_item(data: create_directus_dashboards_input!): directus_dashboards
+  create_translations_items(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_translations_input!]): [directus_translations!]!
+  create_translations_item(data: create_directus_translations_input!): directus_translations
+  create_comments_items(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_comments_input!]): [directus_comments!]!
+  create_comments_item(data: create_directus_comments_input!): directus_comments
+  create_versions_items(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_versions_input!]): [directus_versions!]!
+  create_versions_item(data: create_directus_versions_input!): directus_versions
+  create_users_items(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_users_input!]): [directus_users!]!
+  create_users_item(data: create_directus_users_input!): directus_users
+  create_policies_items(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_policies_input!]): [directus_policies!]!
+  create_policies_item(data: create_directus_policies_input!): directus_policies
+  create_access_items(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_access_input!]): [directus_access!]!
+  create_access_item(data: create_directus_access_input!): directus_access
+  create_deployment_projects_items(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployment_projects_input!]): [directus_deployment_projects!]!
+  create_deployment_projects_item(data: create_directus_deployment_projects_input!): directus_deployment_projects
+  create_deployments_items(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployments_input!]): [directus_deployments!]!
+  create_deployments_item(data: create_directus_deployments_input!): directus_deployments
+  create_deployment_runs_items(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_deployment_runs_input!]): [directus_deployment_runs!]!
+  create_deployment_runs_item(data: create_directus_deployment_runs_input!): directus_deployment_runs
   update_roles_items(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_roles_input!): [directus_roles!]!
   update_roles_batch(filter: directus_roles_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_roles_input!]): [directus_roles!]!
   update_roles_item(id: ID!, data: update_directus_roles_input!): directus_roles
-  update_shares_items(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_shares_input!): [directus_shares!]!
-  update_shares_batch(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_shares_input!]): [directus_shares!]!
-  update_shares_item(id: ID!, data: update_directus_shares_input!): directus_shares
-  update_users_items(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_users_input!): [directus_users!]!
-  update_users_batch(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_users_input!]): [directus_users!]!
-  update_users_item(id: ID!, data: update_directus_users_input!): directus_users
+  update_folders_items(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_folders_input!): [directus_folders!]!
+  update_folders_batch(filter: directus_folders_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_folders_input!]): [directus_folders!]!
+  update_folders_item(id: ID!, data: update_directus_folders_input!): directus_folders
+  update_permissions_items(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_permissions_input!): [directus_permissions!]!
+  update_permissions_batch(filter: directus_permissions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_permissions_input!]): [directus_permissions!]!
+  update_permissions_item(id: ID!, data: update_directus_permissions_input!): directus_permissions
   update_files_items(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_files_input!): [directus_files!]!
   update_files_batch(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_files_input!]): [directus_files!]!
   update_files_item(id: ID!, data: update_directus_files_input!): directus_files
-  delete_access_items(ids: [ID]!): delete_many
-  delete_access_item(id: ID!): delete_one
-  delete_comments_items(ids: [ID]!): delete_many
-  delete_comments_item(id: ID!): delete_one
-  delete_dashboards_items(ids: [ID]!): delete_many
-  delete_dashboards_item(id: ID!): delete_one
-  delete_deployment_projects_items(ids: [ID]!): delete_many
-  delete_deployment_projects_item(id: ID!): delete_one
-  delete_deployment_runs_items(ids: [ID]!): delete_many
-  delete_deployment_runs_item(id: ID!): delete_one
-  delete_folders_items(ids: [ID]!): delete_many
-  delete_folders_item(id: ID!): delete_one
-  delete_flows_items(ids: [ID]!): delete_many
-  delete_flows_item(id: ID!): delete_one
-  delete_notifications_items(ids: [ID]!): delete_many
-  delete_notifications_item(id: ID!): delete_one
-  delete_operations_items(ids: [ID]!): delete_many
-  delete_operations_item(id: ID!): delete_one
-  delete_panels_items(ids: [ID]!): delete_many
-  delete_panels_item(id: ID!): delete_one
-  delete_permissions_items(ids: [ID]!): delete_many
-  delete_permissions_item(id: ID!): delete_one
-  delete_presets_items(ids: [ID]!): delete_many
-  delete_presets_item(id: ID!): delete_one
-  delete_deployments_items(ids: [ID]!): delete_many
-  delete_deployments_item(id: ID!): delete_one
-  delete_policies_items(ids: [ID]!): delete_many
-  delete_policies_item(id: ID!): delete_one
-  delete_versions_items(ids: [ID]!): delete_many
-  delete_versions_item(id: ID!): delete_one
-  delete_translations_items(ids: [ID]!): delete_many
-  delete_translations_item(id: ID!): delete_one
+  update_presets_items(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_presets_input!): [directus_presets!]!
+  update_presets_batch(filter: directus_presets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_presets_input!]): [directus_presets!]!
+  update_presets_item(id: ID!, data: update_directus_presets_input!): directus_presets
+  update_notifications_items(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_notifications_input!): [directus_notifications!]!
+  update_notifications_batch(filter: directus_notifications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_notifications_input!]): [directus_notifications!]!
+  update_notifications_item(id: ID!, data: update_directus_notifications_input!): directus_notifications
+  update_panels_items(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_panels_input!): [directus_panels!]!
+  update_panels_batch(filter: directus_panels_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_panels_input!]): [directus_panels!]!
+  update_panels_item(id: ID!, data: update_directus_panels_input!): directus_panels
+  update_shares_items(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_shares_input!): [directus_shares!]!
+  update_shares_batch(filter: directus_shares_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_shares_input!]): [directus_shares!]!
+  update_shares_item(id: ID!, data: update_directus_shares_input!): directus_shares
+  update_flows_items(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_flows_input!): [directus_flows!]!
+  update_flows_batch(filter: directus_flows_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_flows_input!]): [directus_flows!]!
+  update_flows_item(id: ID!, data: update_directus_flows_input!): directus_flows
+  update_operations_items(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_operations_input!): [directus_operations!]!
+  update_operations_batch(filter: directus_operations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_operations_input!]): [directus_operations!]!
+  update_operations_item(id: ID!, data: update_directus_operations_input!): directus_operations
+  update_dashboards_items(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_dashboards_input!): [directus_dashboards!]!
+  update_dashboards_batch(filter: directus_dashboards_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_dashboards_input!]): [directus_dashboards!]!
+  update_dashboards_item(id: ID!, data: update_directus_dashboards_input!): directus_dashboards
+  update_translations_items(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_translations_input!): [directus_translations!]!
+  update_translations_batch(filter: directus_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_translations_input!]): [directus_translations!]!
+  update_translations_item(id: ID!, data: update_directus_translations_input!): directus_translations
+  update_comments_items(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_comments_input!): [directus_comments!]!
+  update_comments_batch(filter: directus_comments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_comments_input!]): [directus_comments!]!
+  update_comments_item(id: ID!, data: update_directus_comments_input!): directus_comments
+  update_versions_items(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_versions_input!): [directus_versions!]!
+  update_versions_batch(filter: directus_versions_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_versions_input!]): [directus_versions!]!
+  update_versions_item(id: ID!, data: update_directus_versions_input!): directus_versions
+  update_users_items(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_users_input!): [directus_users!]!
+  update_users_batch(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_users_input!]): [directus_users!]!
+  update_users_item(id: ID!, data: update_directus_users_input!): directus_users
+  update_settings(data: update_directus_settings_input!): directus_settings
+  update_policies_items(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_policies_input!): [directus_policies!]!
+  update_policies_batch(filter: directus_policies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_policies_input!]): [directus_policies!]!
+  update_policies_item(id: ID!, data: update_directus_policies_input!): directus_policies
+  update_access_items(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_access_input!): [directus_access!]!
+  update_access_batch(filter: directus_access_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_access_input!]): [directus_access!]!
+  update_access_item(id: ID!, data: update_directus_access_input!): directus_access
+  update_deployment_projects_items(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployment_projects_input!): [directus_deployment_projects!]!
+  update_deployment_projects_batch(filter: directus_deployment_projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployment_projects_input!]): [directus_deployment_projects!]!
+  update_deployment_projects_item(id: ID!, data: update_directus_deployment_projects_input!): directus_deployment_projects
+  update_deployments_items(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployments_input!): [directus_deployments!]!
+  update_deployments_batch(filter: directus_deployments_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployments_input!]): [directus_deployments!]!
+  update_deployments_item(id: ID!, data: update_directus_deployments_input!): directus_deployments
+  update_deployment_runs_items(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_deployment_runs_input!): [directus_deployment_runs!]!
+  update_deployment_runs_batch(filter: directus_deployment_runs_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_deployment_runs_input!]): [directus_deployment_runs!]!
+  update_deployment_runs_item(id: ID!, data: update_directus_deployment_runs_input!): directus_deployment_runs
   delete_roles_items(ids: [ID]!): delete_many
   delete_roles_item(id: ID!): delete_one
-  delete_shares_items(ids: [ID]!): delete_many
-  delete_shares_item(id: ID!): delete_one
-  delete_users_items(ids: [ID]!): delete_many
-  delete_users_item(id: ID!): delete_one
+  delete_folders_items(ids: [ID]!): delete_many
+  delete_folders_item(id: ID!): delete_one
+  delete_permissions_items(ids: [ID]!): delete_many
+  delete_permissions_item(id: ID!): delete_one
   delete_files_items(ids: [ID]!): delete_many
   delete_files_item(id: ID!): delete_one
+  delete_presets_items(ids: [ID]!): delete_many
+  delete_presets_item(id: ID!): delete_one
+  delete_notifications_items(ids: [ID]!): delete_many
+  delete_notifications_item(id: ID!): delete_one
+  delete_panels_items(ids: [ID]!): delete_many
+  delete_panels_item(id: ID!): delete_one
+  delete_shares_items(ids: [ID]!): delete_many
+  delete_shares_item(id: ID!): delete_one
+  delete_flows_items(ids: [ID]!): delete_many
+  delete_flows_item(id: ID!): delete_one
+  delete_operations_items(ids: [ID]!): delete_many
+  delete_operations_item(id: ID!): delete_one
+  delete_dashboards_items(ids: [ID]!): delete_many
+  delete_dashboards_item(id: ID!): delete_one
+  delete_translations_items(ids: [ID]!): delete_many
+  delete_translations_item(id: ID!): delete_one
+  delete_comments_items(ids: [ID]!): delete_many
+  delete_comments_item(id: ID!): delete_one
+  delete_versions_items(ids: [ID]!): delete_many
+  delete_versions_item(id: ID!): delete_one
+  delete_users_items(ids: [ID]!): delete_many
+  delete_users_item(id: ID!): delete_one
+  delete_policies_items(ids: [ID]!): delete_many
+  delete_policies_item(id: ID!): delete_one
+  delete_access_items(ids: [ID]!): delete_many
+  delete_access_item(id: ID!): delete_one
+  delete_deployment_projects_items(ids: [ID]!): delete_many
+  delete_deployment_projects_item(id: ID!): delete_one
+  delete_deployments_items(ids: [ID]!): delete_many
+  delete_deployments_item(id: ID!): delete_one
+  delete_deployment_runs_items(ids: [ID]!): delete_many
+  delete_deployment_runs_item(id: ID!): delete_one
 }
 
 type Subscription {
-  campaigns_mutated(event: EventEnum): campaigns_mutated
+  directus_roles_mutated(event: EventEnum): directus_roles_mutated
+  directus_folders_mutated(event: EventEnum): directus_folders_mutated
+  directus_revisions_mutated(event: EventEnum): directus_revisions_mutated
+  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
+  directus_activity_mutated(event: EventEnum): directus_activity_mutated
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  directus_presets_mutated(event: EventEnum): directus_presets_mutated
+  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
+  directus_panels_mutated(event: EventEnum): directus_panels_mutated
+  directus_shares_mutated(event: EventEnum): directus_shares_mutated
+  directus_flows_mutated(event: EventEnum): directus_flows_mutated
+  directus_operations_mutated(event: EventEnum): directus_operations_mutated
+  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
+  directus_translations_mutated(event: EventEnum): directus_translations_mutated
+  directus_comments_mutated(event: EventEnum): directus_comments_mutated
+  directus_versions_mutated(event: EventEnum): directus_versions_mutated
+  directus_users_mutated(event: EventEnum): directus_users_mutated
+  directus_settings_mutated(event: EventEnum): directus_settings_mutated
+  directus_policies_mutated(event: EventEnum): directus_policies_mutated
+  directus_access_mutated(event: EventEnum): directus_access_mutated
+  directus_deployment_projects_mutated(event: EventEnum): directus_deployment_projects_mutated
+  directus_deployments_mutated(event: EventEnum): directus_deployments_mutated
+  directus_deployment_runs_mutated(event: EventEnum): directus_deployment_runs_mutated
+  directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
   block_hero_mutated(event: EventEnum): block_hero_mutated
-  charter_mutated(event: EventEnum): charter_mutated
+  imprint_mutated(event: EventEnum): imprint_mutated
+  privacy_policy_mutated(event: EventEnum): privacy_policy_mutated
+  website_banner_mutated(event: EventEnum): website_banner_mutated
+  donations_mutated(event: EventEnum): donations_mutated
   accounts_mutated(event: EventEnum): accounts_mutated
+  projects_mutated(event: EventEnum): projects_mutated
+  campaigns_mutated(event: EventEnum): campaigns_mutated
+  charter_mutated(event: EventEnum): charter_mutated
+  companies_mutated(event: EventEnum): companies_mutated
   contact_groups_mutated(event: EventEnum): contact_groups_mutated
   contact_requests_mutated(event: EventEnum): contact_requests_mutated
   contacts_mutated(event: EventEnum): contacts_mutated
   contacts_contact_groups_mutated(event: EventEnum): contacts_contact_groups_mutated
-  directus_access_mutated(event: EventEnum): directus_access_mutated
-  directus_comments_mutated(event: EventEnum): directus_comments_mutated
-  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
-  directus_deployment_projects_mutated(event: EventEnum): directus_deployment_projects_mutated
-  directus_deployment_runs_mutated(event: EventEnum): directus_deployment_runs_mutated
-  directus_activity_mutated(event: EventEnum): directus_activity_mutated
-  companies_mutated(event: EventEnum): companies_mutated
   contacts_contacts_mutated(event: EventEnum): contacts_contacts_mutated
   cost_centers_mutated(event: EventEnum): cost_centers_mutated
-  directus_folders_mutated(event: EventEnum): directus_folders_mutated
-  directus_flows_mutated(event: EventEnum): directus_flows_mutated
-  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
-  directus_operations_mutated(event: EventEnum): directus_operations_mutated
-  directus_panels_mutated(event: EventEnum): directus_panels_mutated
-  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
-  directus_presets_mutated(event: EventEnum): directus_presets_mutated
-  directus_deployments_mutated(event: EventEnum): directus_deployments_mutated
-  directus_policies_mutated(event: EventEnum): directus_policies_mutated
-  directus_versions_mutated(event: EventEnum): directus_versions_mutated
-  directus_revisions_mutated(event: EventEnum): directus_revisions_mutated
-  directus_settings_mutated(event: EventEnum): directus_settings_mutated
+  cost_centers_directus_users_mutated(event: EventEnum): cost_centers_directus_users_mutated
   documentation_articles_mutated(event: EventEnum): documentation_articles_mutated
   events_mutated(event: EventEnum): events_mutated
-  directus_translations_mutated(event: EventEnum): directus_translations_mutated
-  directus_roles_mutated(event: EventEnum): directus_roles_mutated
-  directus_shares_mutated(event: EventEnum): directus_shares_mutated
+  locations_mutated(event: EventEnum): locations_mutated
+  taxes_mutated(event: EventEnum): taxes_mutated
   invoice_document_items_mutated(event: EventEnum): invoice_document_items_mutated
-  imprint_mutated(event: EventEnum): imprint_mutated
-  directus_users_mutated(event: EventEnum): directus_users_mutated
+  invoice_documents_mutated(event: EventEnum): invoice_documents_mutated
+  invoice_documents_items_mutated(event: EventEnum): invoice_documents_items_mutated
   invoices_mutated(event: EventEnum): invoices_mutated
   invoices_cost_centers_mutated(event: EventEnum): invoices_cost_centers_mutated
-  invoice_documents_mutated(event: EventEnum): invoice_documents_mutated
-  media_reports_mutated(event: EventEnum): media_reports_mutated
-  orders_mutated(event: EventEnum): orders_mutated
-  posts_mutated(event: EventEnum): posts_mutated
-  product_categories_mutated(event: EventEnum): product_categories_mutated
-  privacy_policy_mutated(event: EventEnum): privacy_policy_mutated
-  invoice_documents_items_mutated(event: EventEnum): invoice_documents_items_mutated
   mailing_segments_mutated(event: EventEnum): mailing_segments_mutated
   mailings_mutated(event: EventEnum): mailings_mutated
+  media_reports_mutated(event: EventEnum): media_reports_mutated
+  orders_mutated(event: EventEnum): orders_mutated
   password_tiers_directus_users_mutated(event: EventEnum): password_tiers_directus_users_mutated
   password_tiers_mutated(event: EventEnum): password_tiers_mutated
   passwords_mutated(event: EventEnum): passwords_mutated
-  products_locations_mutated(event: EventEnum): products_locations_mutated
-  projects_directus_users_mutated(event: EventEnum): projects_directus_users_mutated
-  taxes_mutated(event: EventEnum): taxes_mutated
-  publication_categories_mutated(event: EventEnum): publication_categories_mutated
-  publications_mutated(event: EventEnum): publications_mutated
-  support_tickets_mutated(event: EventEnum): support_tickets_mutated
-  tickets_mutated(event: EventEnum): tickets_mutated
-  projects_mutated(event: EventEnum): projects_mutated
+  posts_mutated(event: EventEnum): posts_mutated
+  product_categories_mutated(event: EventEnum): product_categories_mutated
   products_mutated(event: EventEnum): products_mutated
+  product_variants_mutated(event: EventEnum): product_variants_mutated
+  products_locations_mutated(event: EventEnum): products_locations_mutated
   project_categories_mutated(event: EventEnum): project_categories_mutated
+  projects_directus_users_mutated(event: EventEnum): projects_directus_users_mutated
   projects_files_mutated(event: EventEnum): projects_files_mutated
   projects_project_categories_mutated(event: EventEnum): projects_project_categories_mutated
   public_links_mutated(event: EventEnum): public_links_mutated
+  publication_categories_mutated(event: EventEnum): publication_categories_mutated
+  publications_mutated(event: EventEnum): publications_mutated
   stadtbande_form_submissions_mutated(event: EventEnum): stadtbande_form_submissions_mutated
-  website_banner_mutated(event: EventEnum): website_banner_mutated
-  website_pages_mutated(event: EventEnum): website_pages_mutated
-  cost_centers_directus_users_mutated(event: EventEnum): cost_centers_directus_users_mutated
-  directus_files_mutated(event: EventEnum): directus_files_mutated
-  locations_mutated(event: EventEnum): locations_mutated
-  product_variants_mutated(event: EventEnum): product_variants_mutated
+  support_tickets_mutated(event: EventEnum): support_tickets_mutated
+  tickets_mutated(event: EventEnum): tickets_mutated
   transactions_mutated(event: EventEnum): transactions_mutated
+  website_pages_mutated(event: EventEnum): website_pages_mutated
   website_pages_blocks_mutated(event: EventEnum): website_pages_blocks_mutated
-  directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
-  website_team_members_mutated(event: EventEnum): website_team_members_mutated
   website_team_categories_mutated(event: EventEnum): website_team_categories_mutated
+  website_team_members_mutated(event: EventEnum): website_team_members_mutated
+  ai_prompts_mutated(event: EventEnum): ai_prompts_mutated
   recurring_donations_mutated(event: EventEnum): recurring_donations_mutated
-  donor_mutated(event: EventEnum): donor_mutated
-  donations_mutated(event: EventEnum): donations_mutated
+  donors_mutated(event: EventEnum): donors_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -422,22 +423,49 @@ union invoice_documents_items_item_union = products | invoice_document_items
 union website_pages_blocks_item_union = block_hero
 
 type accounts {
-  id: ID!
-  status: String
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
+  sort: Int
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type accounts_mutated {
   key: ID!
   event: EventEnum
   data: accounts
+}
+
+type ai_prompts {
+  id: ID!
+  sort: Int
+  date_created: Date
+  date_created_func: datetime_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  name: String
+  status: String
+  description: String
+
+  """$t:mcp_prompts_collection_schema.system_prompt_note"""
+  system_prompt: String
+
+  """$t:mcp_prompts_collection_schema.messages_note"""
+  messages: JSON
+  messages_func: count_functions
+}
+
+type ai_prompts_mutated {
+  key: ID!
+  event: EventEnum
+  data: ai_prompts
 }
 
 type auth_tokens {
@@ -447,11 +475,11 @@ type auth_tokens {
 }
 
 type block_hero {
-  id: ID!
-  headline: String
-  content: String
   actions: JSON
   actions_func: count_functions
+  content: String
+  headline: String
+  id: ID!
 }
 
 type block_hero_mutated {
@@ -461,17 +489,17 @@ type block_hero_mutated {
 }
 
 type campaigns {
-  id: ID!
-  status: String
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String!
   project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  sort: Int
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type campaigns_mutated {
@@ -481,12 +509,12 @@ type campaigns_mutated {
 }
 
 type charter {
-  id: ID!
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
   content: JSON
   content_func: count_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type charter_mutated {
@@ -496,16 +524,16 @@ type charter_mutated {
 }
 
 type companies {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
   phone: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type companies_mutated {
@@ -515,16 +543,16 @@ type companies_mutated {
 }
 
 type contact_groups {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  name: String!
   description: String
+  id: ID!
+  name: String!
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   contacts(filter: contacts_contact_groups_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [contacts_contact_groups]
   contacts_func: count_functions
 }
@@ -536,16 +564,16 @@ type contact_groups_mutated {
 }
 
 type contact_requests {
-  id: ID!
   date_created: Date
   date_created_func: datetime_functions
-  message: String
-  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  email: String
   first_name: String
+  id: ID!
   last_name: String
+  message: String
   organisation: String
   phone: String
-  email: String
+  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
   subject: String
 }
 
@@ -556,27 +584,27 @@ type contact_requests_mutated {
 }
 
 type contacts {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  company(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  first_name: String
-  last_name: String
-  company(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
   email: String
+  first_name: String
+  id: ID!
+  last_name: String
   phone: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   groups(filter: contacts_contact_groups_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [contacts_contact_groups]
   groups_func: count_functions
 }
 
 type contacts_contact_groups {
-  id: ID!
-  contacts_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
   contact_groups_id(filter: contact_groups_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contact_groups
+  contacts_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  id: ID!
 }
 
 type contacts_contact_groups_mutated {
@@ -586,8 +614,8 @@ type contacts_contact_groups_mutated {
 }
 
 type contacts_contacts {
-  id: ID!
   contacts_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
+  id: ID!
   related_contacts_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
 }
 
@@ -604,24 +632,24 @@ type contacts_mutated {
 }
 
 type cost_centers {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  name: String
   description: String
+  id: ID!
+  name: String
   project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   users_authorized(filter: cost_centers_directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [cost_centers_directus_users]
   users_authorized_func: count_functions
 }
 
 type cost_centers_directus_users {
-  id: ID!
   cost_centers_id(filter: cost_centers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): cost_centers
   directus_users_id(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  id: ID!
 }
 
 type cost_centers_directus_users_mutated {
@@ -1103,8 +1131,6 @@ type directus_files {
   tags_func: count_functions
   metadata: JSON
   metadata_func: count_functions
-  copyright: String
-  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
   focal_point_x: Int
   focal_point_y: Int
   tus_id: String
@@ -1112,6 +1138,8 @@ type directus_files {
   tus_data_func: count_functions
   uploaded_on: Date
   uploaded_on_func: datetime_functions
+  copyright: String
+  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
 }
 
 type directus_files_aggregated {
@@ -1149,13 +1177,13 @@ type directus_files_aggregated_count {
   location: Int
   tags: Int
   metadata: Int
-  copyright: Int
-  project: Int
   focal_point_x: Int
   focal_point_y: Int
   tus_id: Int
   tus_data: Int
   uploaded_on: Int
+  copyright: Int
+  project: Int
 }
 
 type directus_files_aggregated_fields {
@@ -2036,17 +2064,17 @@ type directus_versions_mutated {
 }
 
 type documentation_articles {
-  id: ID!
-  status: String
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  content: String
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
+  sort: Int
+  status: String
   title: String!
-  content: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type documentation_articles_mutated {
@@ -2056,35 +2084,36 @@ type documentation_articles_mutated {
 }
 
 type donations {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
-  project: String
   amount_value: Float
-  currency: String
-  interval_type: String
-  payment_method: String!
-  kind: String
-  checkout_url: String
-  return_url: String
-  webhook_url: String
-  paid_at: Date
-  paid_at_func: datetime_functions
-  failed_at: Date
-  failed_at_func: datetime_functions
   canceled_at: Date
   canceled_at_func: datetime_functions
+  checkout_url: String
+  created_from: String
+  currency: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
   expired_at: Date
   expired_at_func: datetime_functions
-  created_from: String
+  failed_at: Date
+  failed_at_func: datetime_functions
+  id: ID!
+  kind: String
   metadata: JSON
   metadata_func: count_functions
+  paid_at: Date
+  paid_at_func: datetime_functions
+  payment_method: String!
+  return_url: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  webhook_url: String
+  provider_transaction_id: String
+  purpose: String!
+  recurring_donation(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): recurring_donations
+  donor(filter: donors_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donors
 }
 
 type donations_mutated {
@@ -2093,7 +2122,7 @@ type donations_mutated {
   data: donations
 }
 
-type donor {
+type donors {
   id: ID!
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
@@ -2104,57 +2133,51 @@ type donor {
   first_name: String
   last_name: String
   organization: String
-  email_raw: String
-  email_normalized: String
-  phone: String
-  metadata: JSON
-  metadata_func: count_functions
-  status: String
-  is_anonymous: Boolean!
-  wants_receipt: Boolean!
-  locale: String
-  directus_contact_id(filter: contacts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): contacts
-  consents: JSON
-  consents_func: count_functions
+  email: String
+  provider_customer_id: String
+  recurring_donations(filter: recurring_donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [recurring_donations]
+  recurring_donations_func: count_functions
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations]
+  donations_func: count_functions
 }
 
-type donor_mutated {
+type donors_mutated {
   key: ID!
   event: EventEnum
-  data: donor
+  data: donors
 }
 
 type events {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  name: String
-  summary: String
   description: String
-  start: Date
-  start_func: datetime_functions
   end: Date
   end_func: datetime_functions
+  external_ticket_url: String
+  id: ID!
   image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  is_online_event: Boolean
+  location(filter: locations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): locations
+  name: String
+  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
 
   """
   Aktivieren, wenn für die Veranstaltung eine Registrierung (Tickets) notwendig ist.
   """
   registration_needed: Boolean
-  external_ticket_url: String
+  start: Date
+  start_func: datetime_functions
+  status: String
+  summary: String
 
   """
   Aktivieren, wenn für den Ticketvertrieb eine externe Plattform genutzt wird.
   """
   use_external_ticket_provider: Boolean
-  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
-  location(filter: locations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): locations
-  is_online_event: Boolean
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   tickets(filter: tickets_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [tickets]
   tickets_func: count_functions
 }
@@ -2166,9 +2189,9 @@ type events_mutated {
 }
 
 type imprint {
-  id: ID!
   content: JSON
   content_func: count_functions
+  id: ID!
 }
 
 type imprint_mutated {
@@ -2178,12 +2201,12 @@ type imprint_mutated {
 }
 
 type invoice_document_items {
-  id: ID!
-  sort: Int
-  name: String!
-  description: String
   amount: Float
+  description: String
+  id: ID!
   include_tax: Boolean
+  name: String!
+  sort: Int
   tax(filter: taxes_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): taxes
 }
 
@@ -2194,28 +2217,28 @@ type invoice_document_items_mutated {
 }
 
 type invoice_documents {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  conditions: String
+  customer(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  customer(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
   date_due: Date!
   date_due_func: date_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
   notes: String
-  conditions: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   items(filter: invoice_documents_items_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [invoice_documents_items]
   items_func: count_functions
 }
 
 type invoice_documents_items {
+  collection: String
   id: ID!
   invoice_documents_id(filter: invoice_documents_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): invoice_documents
   item: invoice_documents_items_item_union
-  collection: String
 }
 
 type invoice_documents_items_mutated {
@@ -2231,36 +2254,36 @@ type invoice_documents_mutated {
 }
 
 type invoices {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  amount: Float
+  attachment(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  booked: Boolean
+  contact(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  date_issued: Date
-  date_issued_func: date_functions
   date_due: Date
   date_due_func: date_functions
-  amount: Float
-  notes: String
-  type: String
-  attachment(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
-  invoice_number: String
-  contact(filter: companies_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): companies
+  date_issued: Date
+  date_issued_func: date_functions
   date_settled: Date
   date_settled_func: date_functions
-  booked: Boolean
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  invoice_number: String
   ksk_mandatory: Boolean
+  notes: String
+  status: String
+  type: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   cost_centers(filter: invoices_cost_centers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [invoices_cost_centers]
   cost_centers_func: count_functions
 }
 
 type invoices_cost_centers {
+  cost_centers_id(filter: cost_centers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): cost_centers
   id: ID!
   invoices_id(filter: invoices_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): invoices
-  cost_centers_id(filter: cost_centers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): cost_centers
 }
 
 type invoices_cost_centers_mutated {
@@ -2276,16 +2299,16 @@ type invoices_mutated {
 }
 
 type locations {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  coordinates: String
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
-  coordinates: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   products(filter: products_locations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [products_locations]
   products_func: count_functions
 }
@@ -2297,13 +2320,13 @@ type locations_mutated {
 }
 
 type mailing_segments {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type mailing_segments_mutated {
@@ -2313,17 +2336,17 @@ type mailing_segments_mutated {
 }
 
 type mailings {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
   content: JSON
   content_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
   subject: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type mailings_mutated {
@@ -2333,21 +2356,21 @@ type mailings_mutated {
 }
 
 type media_reports {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date: Date
+  date_func: date_functions
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  title: String
-  url: String
+  id: ID!
+  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
 
   """Die Plattform der Veröffentlichung"""
   publisher: String
-  date: Date
-  date_func: date_functions
-  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  title: String
+  url: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type media_reports_mutated {
@@ -2357,14 +2380,14 @@ type media_reports_mutated {
 }
 
 type orders {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
   id: ID!
   status: String
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
 }
 
 type orders_mutated {
@@ -2381,9 +2404,9 @@ type password_tiers {
 }
 
 type password_tiers_directus_users {
+  directus_users_id(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   id: ID!
   password_tiers_id(filter: password_tiers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): password_tiers
-  directus_users_id(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type password_tiers_directus_users_mutated {
@@ -2399,18 +2422,18 @@ type password_tiers_mutated {
 }
 
 type passwords {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
   email: String
+  id: ID!
   login: String
-  service: String
-  password: String
   name: String
+  password: String
+  service: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type passwords_mutated {
@@ -2426,25 +2449,25 @@ type policy_me_globals_type {
 }
 
 type posts {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  title: String
-  image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
-  date: Date
-  date_func: datetime_functions
-  excerpt: String
-  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
-  tags: JSON
-  tags_func: count_functions
-  slug: String
   content: JSON
   content_func: count_functions
+  date: Date
+  date_func: datetime_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  excerpt: String
+  id: ID!
+  image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  project(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  slug: String
+  status: String
+  tags: JSON
+  tags_func: count_functions
+  title: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type posts_mutated {
@@ -2454,9 +2477,9 @@ type posts_mutated {
 }
 
 type privacy_policy {
-  id: ID!
   content: JSON
   content_func: count_functions
+  id: ID!
 }
 
 type privacy_policy_mutated {
@@ -2466,15 +2489,15 @@ type privacy_policy_mutated {
 }
 
 type product_categories {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type product_categories_mutated {
@@ -2484,15 +2507,15 @@ type product_categories_mutated {
 }
 
 type product_variants {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
   product(filter: products_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): products
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type product_variants_mutated {
@@ -2502,17 +2525,17 @@ type product_variants_mutated {
 }
 
 type products {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  available_online: Boolean
+  category(filter: product_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): product_categories
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
-  category(filter: product_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): product_categories
-  available_online: Boolean
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   locations(filter: products_locations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [products_locations]
   locations_func: count_functions
   product_variants(filter: product_variants_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [product_variants]
@@ -2521,8 +2544,8 @@ type products {
 
 type products_locations {
   id: ID!
-  products_id(filter: products_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): products
   locations_id(filter: locations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): locations
+  products_id(filter: products_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): products
 }
 
 type products_locations_mutated {
@@ -2538,16 +2561,16 @@ type products_mutated {
 }
 
 type project_categories {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  name: String
   description: String
+  id: ID!
+  name: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   projects(filter: projects_project_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_project_categories]
   projects_func: count_functions
 }
@@ -2559,41 +2582,42 @@ type project_categories_mutated {
 }
 
 type projects {
+  allow_donations: Boolean
+  content: JSON
+  content_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+
   """
   Der Slug wird für Web-Services genutzt und sollte daher mit Bedacht gewählt werden.
   """
   id: ID!
-  status: String
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  title: String
-  sub_title: String
   image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
   launch_date: Date
   launch_date_func: date_functions
+  sort: Int
+  status: String
+  sub_title: String
   summary: String
-  content: JSON
-  content_func: count_functions
-  allow_donations: Boolean
-  categories(filter: projects_project_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_project_categories]
-  categories_func: count_functions
+  title: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   campaigns(filter: campaigns_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [campaigns]
   campaigns_func: count_functions
-  users_authorized(filter: projects_directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_directus_users]
-  users_authorized_func: count_functions
+  categories(filter: projects_project_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_project_categories]
+  categories_func: count_functions
   images(filter: projects_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_files]
   images_func: count_functions
+  users_authorized(filter: projects_directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [projects_directus_users]
+  users_authorized_func: count_functions
 }
 
 type projects_directus_users {
+  directus_users_id(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   id: ID!
   projects_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
-  directus_users_id(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type projects_directus_users_mutated {
@@ -2603,9 +2627,9 @@ type projects_directus_users_mutated {
 }
 
 type projects_files {
+  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
   id: ID!
   projects_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
-  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
 }
 
 type projects_files_mutated {
@@ -2622,8 +2646,8 @@ type projects_mutated {
 
 type projects_project_categories {
   id: ID!
-  projects_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
   project_categories_id(filter: project_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): project_categories
+  projects_id(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
 }
 
 type projects_project_categories_mutated {
@@ -2633,18 +2657,19 @@ type projects_project_categories_mutated {
 }
 
 type public_links {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  destination: String
+
   """
   Diese ID muss eindeutig sein und darf nicht mehr geändert werden. Nach der Vergabe einer ID kann der ein Link unter https://links.potsdamer-buergerstiftung.org/ID aufgerufen werden. Das Link-Ziel kann im Nachhinein immer noch geändert werden, sodass der ID-Link für die Erstellung von QR-Codes genutzt werden sollte.
   """
   id: ID!
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_created: Date
-  date_created_func: datetime_functions
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
-  date_updated: Date
-  date_updated_func: datetime_functions
-  description: String
-  destination: String
 }
 
 type public_links_mutated {
@@ -2654,16 +2679,16 @@ type public_links_mutated {
 }
 
 type publication_categories {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  title: String!
   description: String!
+  id: ID!
+  sort: Int
+  title: String!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   publications(filter: publications_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [publications]
   publications_func: count_functions
 }
@@ -2675,17 +2700,17 @@ type publication_categories_mutated {
 }
 
 type publications {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  category(filter: publication_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): publication_categories
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  title: String
   file(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
-  category(filter: publication_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): publication_categories
+  id: ID!
+  sort: Int
+  title: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type publications_mutated {
@@ -2695,35 +2720,37 @@ type publications_mutated {
 }
 
 type recurring_donations {
-  id: ID!
-  status: String
-  sort: Int
-  user_created: ID
-  date_created: Date
-  date_created_func: datetime_functions
-  user_updated: ID
-  date_updated: Date
-  date_updated_func: datetime_functions
-  donor(filter: donor_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donor
-  frequency: String!
   amount_value: Float!
-  currency: String
-  start_date: Date!
-  start_date_func: date_functions
-  next_payment_date: Date
-  next_payment_date_func: date_functions
-  end_date: Date
-  end_date_func: date_functions
-  payment_method: String!
-  mandate_status: String
-  last_payment_status: String
-  last_payment_at: Date
-  last_payment_at_func: datetime_functions
+  cancel_reason: String
   canceled_at: Date
   canceled_at_func: datetime_functions
-  cancel_reason: String
+  currency: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  end_date: Date
+  end_date_func: date_functions
+  frequency: String!
+  id: ID!
+  last_payment_at: Date
+  last_payment_at_func: datetime_functions
+  last_payment_status: String
+  mandate_status: String
   metadata: JSON
   metadata_func: count_functions
+  next_payment_date: Date
+  next_payment_date_func: date_functions
+  payment_method: String!
+  sort: Int
+  start_date: Date!
+  start_date_func: date_functions
+  status: String
+  user_created: ID
+  user_updated: ID
+  donor(filter: donors_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): donors
+  donations(filter: donations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [donations]
+  donations_func: count_functions
 }
 
 type recurring_donations_mutated {
@@ -2776,38 +2803,38 @@ type server_info_websocket_rest {
 }
 
 type stadtbande_form_submissions {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  city: String
+  current_professional_situation: String
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  surname: String
-  first_name: String
   email: String
-  phone: String
-  street: String
+  first_name: String
   house_number: String
-  zipcode: String
-  city: String
-  origin_of_awareness_mentorship_project: String
-  origin_of_awareness_foundation: String
-  professional_background: String
-  current_professional_situation: String
-  own_offspring: String
-  regular_contact_with_children: String
-  past_mentorship_experience: String
-  past_engagenement_experience: String
-  personal_interests: String
-  motivation_for_engagement: String
-  readiness_weekend_duties: String
-  readiness_training_participation: String
-  readiness_feedback_sessions: String
-  readiness_clearance_certificate: String
-  readiness_public_appearance: String
+  id: ID!
   important_personal_aspects: String
+  motivation_for_engagement: String
+  origin_of_awareness_foundation: String
+  origin_of_awareness_mentorship_project: String
+  own_offspring: String
+  past_engagenement_experience: String
+  past_mentorship_experience: String
+  personal_interests: String
+  phone: String
+  professional_background: String
+  readiness_clearance_certificate: String
+  readiness_feedback_sessions: String
+  readiness_public_appearance: String
+  readiness_training_participation: String
+  readiness_weekend_duties: String
+  regular_contact_with_children: String
+  sort: Int
+  street: String
+  surname: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  zipcode: String
 }
 
 type stadtbande_form_submissions_mutated {
@@ -2817,22 +2844,22 @@ type stadtbande_form_submissions_mutated {
 }
 
 type support_tickets {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  subject: String!
-  tags: JSON
-  tags_func: count_functions
 
   """
   Bitte beschreibe das Problem so ausführlich wie Möglich. Du kannst gerne auch Dateien anhängen.
   """
   description: String
+  id: ID!
+  status: String
+  subject: String!
+  tags: JSON
+  tags_func: count_functions
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type support_tickets_mutated {
@@ -2842,15 +2869,15 @@ type support_tickets_mutated {
 }
 
 type taxes {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+  id: ID!
   name: String
   rate: Float
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type taxes_mutated {
@@ -2860,21 +2887,21 @@ type taxes_mutated {
 }
 
 type tickets {
-  id: ID!
-  status: String
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  available_quantity: Int
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  name: String
   event(filter: events_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): events
-  pricing: String
-  available_quantity: Int
-  price: Float
-  minimum_quantity: Int
+  id: ID!
   maximum_quantity: Int
+  minimum_quantity: Int
+  name: String
+  price: Float
+  pricing: String
+  status: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type tickets_mutated {
@@ -2884,16 +2911,16 @@ type tickets_mutated {
 }
 
 type transactions {
-  id: ID!
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  category: String
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  type: String
-  category: String
+  id: ID!
   projects(filter: projects_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): projects
+  type: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type transactions_mutated {
@@ -2908,13 +2935,13 @@ type users_me_tfa_generate_data {
 }
 
 type website_banner {
-  id: ID!
-  status: String
-  title: String
-  link: String
   color: String
-  text: String
+  id: ID!
+  link: String
   link_label: String
+  status: String
+  text: String
+  title: String
 }
 
 type website_banner_mutated {
@@ -2924,18 +2951,18 @@ type website_banner_mutated {
 }
 
 type website_pages {
-  id: ID!
-  status: String
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  title: String
-  slug: String
+  id: ID!
   parent_page(filter: website_pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): website_pages
+  slug: String
+  sort: Int
+  status: String
+  title: String
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   blocks(filter: website_pages_blocks_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [website_pages_blocks]
   blocks_func: count_functions
   website_pages(filter: website_pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [website_pages]
@@ -2943,11 +2970,11 @@ type website_pages {
 }
 
 type website_pages_blocks {
+  collection: String
   id: ID!
-  website_pages_id(filter: website_pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): website_pages
   item: website_pages_blocks_item_union
   sort: Int
-  collection: String
+  website_pages_id(filter: website_pages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): website_pages
 }
 
 type website_pages_blocks_mutated {
@@ -2963,16 +2990,16 @@ type website_pages_mutated {
 }
 
 type website_team_categories {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  title: String!
   description: String
+  id: ID!
+  sort: Int
+  title: String!
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   website_team_members(filter: website_team_members_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [website_team_members]
   website_team_members_func: count_functions
 }
@@ -2984,18 +3011,18 @@ type website_team_categories_mutated {
 }
 
 type website_team_members {
-  id: ID!
-  sort: Int
-  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  category(filter: website_team_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): website_team_categories
   date_created: Date
   date_created_func: datetime_functions
-  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
-  category(filter: website_team_categories_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): website_team_categories
+  id: ID!
+  image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
   name: String!
   responsibilities: String
-  image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
 }
 
 type website_team_members_mutated {
@@ -3140,11 +3167,11 @@ input big_int_filter_operators {
 }
 
 input block_hero_filter {
-  id: id_filter_operators
-  headline: string_filter_operators
-  content: string_filter_operators
   actions: string_filter_operators
   actions_func: count_function_filter_operators
+  content: string_filter_operators
+  headline: string_filter_operators
+  id: id_filter_operators
   _and: [block_hero_filter]
   _or: [block_hero_filter]
 }
@@ -3157,34 +3184,34 @@ input boolean_filter_operators {
 }
 
 input campaigns_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
   project: projects_filter
+  sort: number_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [campaigns_filter]
   _or: [campaigns_filter]
 }
 
 """"""
 input campaigns_quantifier_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
   project: projects_filter
+  sort: number_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [campaigns_filter]
   _or: [campaigns_filter]
   _some: campaigns_filter
@@ -3192,31 +3219,31 @@ input campaigns_quantifier_filter {
 }
 
 input companies_filter {
-  id: id_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: id_filter_operators
   name: string_filter_operators
   phone: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [companies_filter]
   _or: [companies_filter]
 }
 
 input contact_groups_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
   description: string_filter_operators
+  id: number_filter_operators
+  name: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   contacts: contacts_contact_groups_quantifier_filter
   contacts_func: count_function_filter_operators
   _and: [contact_groups_filter]
@@ -3224,18 +3251,18 @@ input contact_groups_filter {
 }
 
 input contacts_contact_groups_filter {
-  id: number_filter_operators
-  contacts_id: contacts_filter
   contact_groups_id: contact_groups_filter
+  contacts_id: contacts_filter
+  id: number_filter_operators
   _and: [contacts_contact_groups_filter]
   _or: [contacts_contact_groups_filter]
 }
 
 """"""
 input contacts_contact_groups_quantifier_filter {
-  id: number_filter_operators
-  contacts_id: contacts_filter
   contact_groups_id: contact_groups_filter
+  contacts_id: contacts_filter
+  id: number_filter_operators
   _and: [contacts_contact_groups_filter]
   _or: [contacts_contact_groups_filter]
   _some: contacts_contact_groups_filter
@@ -3243,19 +3270,19 @@ input contacts_contact_groups_quantifier_filter {
 }
 
 input contacts_filter {
-  id: id_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  company: companies_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  first_name: string_filter_operators
-  last_name: string_filter_operators
-  company: companies_filter
   email: string_filter_operators
+  first_name: string_filter_operators
+  id: id_filter_operators
+  last_name: string_filter_operators
   phone: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   groups: contacts_contact_groups_quantifier_filter
   groups_func: count_function_filter_operators
   _and: [contacts_filter]
@@ -3263,18 +3290,18 @@ input contacts_filter {
 }
 
 input cost_centers_directus_users_filter {
-  id: number_filter_operators
   cost_centers_id: cost_centers_filter
   directus_users_id: directus_users_filter
+  id: number_filter_operators
   _and: [cost_centers_directus_users_filter]
   _or: [cost_centers_directus_users_filter]
 }
 
 """"""
 input cost_centers_directus_users_quantifier_filter {
-  id: number_filter_operators
   cost_centers_id: cost_centers_filter
   directus_users_id: directus_users_filter
+  id: number_filter_operators
   _and: [cost_centers_directus_users_filter]
   _or: [cost_centers_directus_users_filter]
   _some: cost_centers_directus_users_filter
@@ -3282,16 +3309,16 @@ input cost_centers_directus_users_quantifier_filter {
 }
 
 input cost_centers_filter {
-  id: string_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
   description: string_filter_operators
+  id: string_filter_operators
+  name: string_filter_operators
   project: projects_filter
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   users_authorized: cost_centers_directus_users_quantifier_filter
   users_authorized_func: count_function_filter_operators
   _and: [cost_centers_filter]
@@ -3303,15 +3330,15 @@ input count_function_filter_operators {
 }
 
 input create_campaigns_input {
-  id: ID
-  status: String
-  sort: Int
-  user_created: create_directus_users_input
   date_created: Date
-  user_updated: create_directus_users_input
   date_updated: Date
+  id: ID
   name: String!
   project: create_projects_input
+  sort: Int
+  status: String
+  user_created: create_directus_users_input
+  user_updated: create_directus_users_input
 }
 
 input create_directus_access_input {
@@ -3405,13 +3432,13 @@ input create_directus_files_input {
   location: String
   tags: JSON
   metadata: JSON
-  copyright: String
-  project: create_projects_input
   focal_point_x: Int
   focal_point_y: Int
   tus_id: String
   tus_data: JSON
   uploaded_on: Date
+  copyright: String
+  project: create_projects_input
 }
 
 input create_directus_flows_input {
@@ -3611,57 +3638,58 @@ input create_directus_versions_input {
 }
 
 input create_project_categories_input {
+  date_created: Date
+  date_updated: Date
+  description: String
   id: ID
+  name: String
   sort: Int
   user_created: create_directus_users_input
-  date_created: Date
   user_updated: create_directus_users_input
-  date_updated: Date
-  name: String
-  description: String
   projects: [create_projects_project_categories_input]
 }
 
 input create_projects_directus_users_input {
+  directus_users_id: create_directus_users_input
   id: ID
   projects_id: create_projects_input
-  directus_users_id: create_directus_users_input
 }
 
 input create_projects_files_input {
+  directus_files_id: create_directus_files_input
   id: ID
   projects_id: create_projects_input
-  directus_files_id: create_directus_files_input
 }
 
 input create_projects_input {
+  allow_donations: Boolean
+  content: JSON
+  date_created: Date
+  date_updated: Date
+
   """
   Der Slug wird für Web-Services genutzt und sollte daher mit Bedacht gewählt werden.
   """
   id: ID!
-  status: String
-  sort: Int
-  user_created: create_directus_users_input
-  date_created: Date
-  user_updated: create_directus_users_input
-  date_updated: Date
-  title: String
-  sub_title: String
   image: create_directus_files_input
   launch_date: Date
+  sort: Int
+  status: String
+  sub_title: String
   summary: String
-  content: JSON
-  allow_donations: Boolean
-  categories: [create_projects_project_categories_input]
+  title: String
+  user_created: create_directus_users_input
+  user_updated: create_directus_users_input
   campaigns: [create_campaigns_input]
-  users_authorized: [create_projects_directus_users_input]
+  categories: [create_projects_project_categories_input]
   images: [create_projects_files_input]
+  users_authorized: [create_projects_directus_users_input]
 }
 
 input create_projects_project_categories_input {
   id: ID
-  projects_id: create_projects_input
   project_categories_id: create_project_categories_input
+  projects_id: create_projects_input
 }
 
 input date_filter_operators {
@@ -3890,8 +3918,6 @@ input directus_files_filter {
   tags_func: count_function_filter_operators
   metadata: string_filter_operators
   metadata_func: count_function_filter_operators
-  copyright: string_filter_operators
-  project: projects_filter
   focal_point_x: number_filter_operators
   focal_point_y: number_filter_operators
   tus_id: string_filter_operators
@@ -3899,6 +3925,8 @@ input directus_files_filter {
   tus_data_func: count_function_filter_operators
   uploaded_on: date_filter_operators
   uploaded_on_func: datetime_function_filter_operators
+  copyright: string_filter_operators
+  project: projects_filter
   _and: [directus_files_filter]
   _or: [directus_files_filter]
 }
@@ -4307,7 +4335,80 @@ input directus_versions_filter {
   _or: [directus_versions_filter]
 }
 
-input donor_filter {
+input donations_filter {
+  amount_value: number_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  checkout_url: string_filter_operators
+  created_from: string_filter_operators
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  expired_at: date_filter_operators
+  expired_at_func: datetime_function_filter_operators
+  failed_at: date_filter_operators
+  failed_at_func: datetime_function_filter_operators
+  id: id_filter_operators
+  kind: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  paid_at: date_filter_operators
+  paid_at_func: datetime_function_filter_operators
+  payment_method: string_filter_operators
+  return_url: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  webhook_url: string_filter_operators
+  provider_transaction_id: string_filter_operators
+  purpose: string_filter_operators
+  recurring_donation: recurring_donations_filter
+  donor: donors_filter
+  _and: [donations_filter]
+  _or: [donations_filter]
+}
+
+""""""
+input donations_quantifier_filter {
+  amount_value: number_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  checkout_url: string_filter_operators
+  created_from: string_filter_operators
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  expired_at: date_filter_operators
+  expired_at_func: datetime_function_filter_operators
+  failed_at: date_filter_operators
+  failed_at_func: datetime_function_filter_operators
+  id: id_filter_operators
+  kind: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  paid_at: date_filter_operators
+  paid_at_func: datetime_function_filter_operators
+  payment_method: string_filter_operators
+  return_url: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
+  webhook_url: string_filter_operators
+  provider_transaction_id: string_filter_operators
+  purpose: string_filter_operators
+  recurring_donation: recurring_donations_filter
+  donor: donors_filter
+  _and: [donations_filter]
+  _or: [donations_filter]
+  _some: donations_filter
+  _none: donations_filter
+}
+
+input donors_filter {
   id: id_filter_operators
   user_created: directus_users_filter
   date_created: date_filter_operators
@@ -4318,45 +4419,39 @@ input donor_filter {
   first_name: string_filter_operators
   last_name: string_filter_operators
   organization: string_filter_operators
-  email_raw: string_filter_operators
-  email_normalized: string_filter_operators
-  phone: string_filter_operators
-  metadata: string_filter_operators
-  metadata_func: count_function_filter_operators
-  status: string_filter_operators
-  is_anonymous: boolean_filter_operators
-  wants_receipt: boolean_filter_operators
-  locale: string_filter_operators
-  directus_contact_id: contacts_filter
-  consents: string_filter_operators
-  consents_func: count_function_filter_operators
-  _and: [donor_filter]
-  _or: [donor_filter]
+  email: string_filter_operators
+  provider_customer_id: string_filter_operators
+  recurring_donations: recurring_donations_quantifier_filter
+  recurring_donations_func: count_function_filter_operators
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  _and: [donors_filter]
+  _or: [donors_filter]
 }
 
 input events_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
-  summary: string_filter_operators
   description: string_filter_operators
-  start: date_filter_operators
-  start_func: datetime_function_filter_operators
   end: date_filter_operators
   end_func: datetime_function_filter_operators
-  image: directus_files_filter
-  registration_needed: boolean_filter_operators
   external_ticket_url: string_filter_operators
-  use_external_ticket_provider: boolean_filter_operators
-  project: projects_filter
-  location: locations_filter
+  id: number_filter_operators
+  image: directus_files_filter
   is_online_event: boolean_filter_operators
+  location: locations_filter
+  name: string_filter_operators
+  project: projects_filter
+  registration_needed: boolean_filter_operators
+  start: date_filter_operators
+  start_func: datetime_function_filter_operators
+  status: string_filter_operators
+  summary: string_filter_operators
+  use_external_ticket_provider: boolean_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   tickets: tickets_quantifier_filter
   tickets_func: count_function_filter_operators
   _and: [events_filter]
@@ -4393,31 +4488,31 @@ input id_filter_operators {
 }
 
 input invoice_document_items_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  name: string_filter_operators
-  description: string_filter_operators
   amount: number_filter_operators
+  description: string_filter_operators
+  id: number_filter_operators
   include_tax: boolean_filter_operators
+  name: string_filter_operators
+  sort: number_filter_operators
   tax: taxes_filter
   _and: [invoice_document_items_filter]
   _or: [invoice_document_items_filter]
 }
 
 input invoice_documents_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  conditions: string_filter_operators
+  customer: companies_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
-  date_updated: date_filter_operators
-  date_updated_func: datetime_function_filter_operators
-  customer: companies_filter
   date_due: date_filter_operators
   date_due_func: date_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   notes: string_filter_operators
-  conditions: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   items: invoice_documents_items_quantifier_filter
   items_func: count_function_filter_operators
   _and: [invoice_documents_filter]
@@ -4425,9 +4520,9 @@ input invoice_documents_filter {
 }
 
 input invoice_documents_items_filter {
+  collection: string_filter_operators
   id: number_filter_operators
   invoice_documents_id: invoice_documents_filter
-  collection: string_filter_operators
   _and: [invoice_documents_items_filter]
   _or: [invoice_documents_items_filter]
   item__products: products_filter
@@ -4436,9 +4531,9 @@ input invoice_documents_items_filter {
 
 """"""
 input invoice_documents_items_quantifier_filter {
+  collection: string_filter_operators
   id: number_filter_operators
   invoice_documents_id: invoice_documents_filter
-  collection: string_filter_operators
   _and: [invoice_documents_items_filter]
   _or: [invoice_documents_items_filter]
   _some: invoice_documents_items_filter
@@ -4448,18 +4543,18 @@ input invoice_documents_items_quantifier_filter {
 }
 
 input invoices_cost_centers_filter {
+  cost_centers_id: cost_centers_filter
   id: number_filter_operators
   invoices_id: invoices_filter
-  cost_centers_id: cost_centers_filter
   _and: [invoices_cost_centers_filter]
   _or: [invoices_cost_centers_filter]
 }
 
 """"""
 input invoices_cost_centers_quantifier_filter {
+  cost_centers_id: cost_centers_filter
   id: number_filter_operators
   invoices_id: invoices_filter
-  cost_centers_id: cost_centers_filter
   _and: [invoices_cost_centers_filter]
   _or: [invoices_cost_centers_filter]
   _some: invoices_cost_centers_filter
@@ -4467,28 +4562,28 @@ input invoices_cost_centers_quantifier_filter {
 }
 
 input invoices_filter {
-  id: id_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  amount: number_filter_operators
+  attachment: directus_files_filter
+  booked: boolean_filter_operators
+  contact: companies_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
-  date_updated: date_filter_operators
-  date_updated_func: datetime_function_filter_operators
-  date_issued: date_filter_operators
-  date_issued_func: date_function_filter_operators
   date_due: date_filter_operators
   date_due_func: date_function_filter_operators
-  amount: number_filter_operators
-  notes: string_filter_operators
-  type: string_filter_operators
-  attachment: directus_files_filter
-  invoice_number: string_filter_operators
-  contact: companies_filter
+  date_issued: date_filter_operators
+  date_issued_func: date_function_filter_operators
   date_settled: date_filter_operators
   date_settled_func: date_function_filter_operators
-  booked: boolean_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: id_filter_operators
+  invoice_number: string_filter_operators
   ksk_mandatory: boolean_filter_operators
+  notes: string_filter_operators
+  status: string_filter_operators
+  type: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   cost_centers: invoices_cost_centers_quantifier_filter
   cost_centers_func: count_function_filter_operators
   _and: [invoices_filter]
@@ -4496,16 +4591,16 @@ input invoices_filter {
 }
 
 input locations_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  coordinates: string_filter_operators
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
-  coordinates: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   products: products_locations_quantifier_filter
   products_func: count_function_filter_operators
   _and: [locations_filter]
@@ -4528,18 +4623,18 @@ input number_filter_operators {
 }
 
 input password_tiers_directus_users_filter {
+  directus_users_id: directus_users_filter
   id: number_filter_operators
   password_tiers_id: password_tiers_filter
-  directus_users_id: directus_users_filter
   _and: [password_tiers_directus_users_filter]
   _or: [password_tiers_directus_users_filter]
 }
 
 """"""
 input password_tiers_directus_users_quantifier_filter {
+  directus_users_id: directus_users_filter
   id: number_filter_operators
   password_tiers_id: password_tiers_filter
-  directus_users_id: directus_users_filter
   _and: [password_tiers_directus_users_filter]
   _or: [password_tiers_directus_users_filter]
   _some: password_tiers_directus_users_filter
@@ -4556,44 +4651,44 @@ input password_tiers_filter {
 }
 
 input product_categories_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [product_categories_filter]
   _or: [product_categories_filter]
 }
 
 input product_variants_filter {
-  id: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
   product: products_filter
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [product_variants_filter]
   _or: [product_variants_filter]
 }
 
 """"""
 input product_variants_quantifier_filter {
-  id: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
   product: products_filter
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [product_variants_filter]
   _or: [product_variants_filter]
   _some: product_variants_filter
@@ -4601,17 +4696,17 @@ input product_variants_quantifier_filter {
 }
 
 input products_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  available_online: boolean_filter_operators
+  category: product_categories_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
-  category: product_categories_filter
-  available_online: boolean_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   locations: products_locations_quantifier_filter
   locations_func: count_function_filter_operators
   product_variants: product_variants_quantifier_filter
@@ -4622,8 +4717,8 @@ input products_filter {
 
 input products_locations_filter {
   id: number_filter_operators
-  products_id: products_filter
   locations_id: locations_filter
+  products_id: products_filter
   _and: [products_locations_filter]
   _or: [products_locations_filter]
 }
@@ -4631,8 +4726,8 @@ input products_locations_filter {
 """"""
 input products_locations_quantifier_filter {
   id: number_filter_operators
-  products_id: products_filter
   locations_id: locations_filter
+  products_id: products_filter
   _and: [products_locations_filter]
   _or: [products_locations_filter]
   _some: products_locations_filter
@@ -4640,16 +4735,16 @@ input products_locations_quantifier_filter {
 }
 
 input project_categories_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
   description: string_filter_operators
+  id: number_filter_operators
+  name: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   projects: projects_project_categories_quantifier_filter
   projects_func: count_function_filter_operators
   _and: [project_categories_filter]
@@ -4657,18 +4752,18 @@ input project_categories_filter {
 }
 
 input projects_directus_users_filter {
+  directus_users_id: directus_users_filter
   id: number_filter_operators
   projects_id: projects_filter
-  directus_users_id: directus_users_filter
   _and: [projects_directus_users_filter]
   _or: [projects_directus_users_filter]
 }
 
 """"""
 input projects_directus_users_quantifier_filter {
+  directus_users_id: directus_users_filter
   id: number_filter_operators
   projects_id: projects_filter
-  directus_users_id: directus_users_filter
   _and: [projects_directus_users_filter]
   _or: [projects_directus_users_filter]
   _some: projects_directus_users_filter
@@ -4676,18 +4771,18 @@ input projects_directus_users_quantifier_filter {
 }
 
 input projects_files_filter {
+  directus_files_id: directus_files_filter
   id: number_filter_operators
   projects_id: projects_filter
-  directus_files_id: directus_files_filter
   _and: [projects_files_filter]
   _or: [projects_files_filter]
 }
 
 """"""
 input projects_files_quantifier_filter {
+  directus_files_id: directus_files_filter
   id: number_filter_operators
   projects_id: projects_filter
-  directus_files_id: directus_files_filter
   _and: [projects_files_filter]
   _or: [projects_files_filter]
   _some: projects_files_filter
@@ -4695,40 +4790,40 @@ input projects_files_quantifier_filter {
 }
 
 input projects_filter {
-  id: string_filter_operators
-  status: string_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
+  allow_donations: boolean_filter_operators
+  content: string_filter_operators
+  content_func: count_function_filter_operators
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
-  sub_title: string_filter_operators
+  id: string_filter_operators
   image: directus_files_filter
   launch_date: date_filter_operators
   launch_date_func: date_function_filter_operators
+  sort: number_filter_operators
+  status: string_filter_operators
+  sub_title: string_filter_operators
   summary: string_filter_operators
-  content: string_filter_operators
-  content_func: count_function_filter_operators
-  allow_donations: boolean_filter_operators
-  categories: projects_project_categories_quantifier_filter
-  categories_func: count_function_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   campaigns: campaigns_quantifier_filter
   campaigns_func: count_function_filter_operators
-  users_authorized: projects_directus_users_quantifier_filter
-  users_authorized_func: count_function_filter_operators
+  categories: projects_project_categories_quantifier_filter
+  categories_func: count_function_filter_operators
   images: projects_files_quantifier_filter
   images_func: count_function_filter_operators
+  users_authorized: projects_directus_users_quantifier_filter
+  users_authorized_func: count_function_filter_operators
   _and: [projects_filter]
   _or: [projects_filter]
 }
 
 input projects_project_categories_filter {
   id: number_filter_operators
-  projects_id: projects_filter
   project_categories_id: project_categories_filter
+  projects_id: projects_filter
   _and: [projects_project_categories_filter]
   _or: [projects_project_categories_filter]
 }
@@ -4736,8 +4831,8 @@ input projects_project_categories_filter {
 """"""
 input projects_project_categories_quantifier_filter {
   id: number_filter_operators
-  projects_id: projects_filter
   project_categories_id: project_categories_filter
+  projects_id: projects_filter
   _and: [projects_project_categories_filter]
   _or: [projects_project_categories_filter]
   _some: projects_project_categories_filter
@@ -4745,16 +4840,16 @@ input projects_project_categories_quantifier_filter {
 }
 
 input publication_categories_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
   description: string_filter_operators
+  id: number_filter_operators
+  sort: number_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   publications: publications_quantifier_filter
   publications_func: count_function_filter_operators
   _and: [publication_categories_filter]
@@ -4762,38 +4857,113 @@ input publication_categories_filter {
 }
 
 input publications_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
+  category: publication_categories_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
   file: directus_files_filter
-  category: publication_categories_filter
+  id: number_filter_operators
+  sort: number_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [publications_filter]
   _or: [publications_filter]
 }
 
 """"""
 input publications_quantifier_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
+  category: publication_categories_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
   file: directus_files_filter
-  category: publication_categories_filter
+  id: number_filter_operators
+  sort: number_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [publications_filter]
   _or: [publications_filter]
   _some: publications_filter
   _none: publications_filter
+}
+
+input recurring_donations_filter {
+  amount_value: number_filter_operators
+  cancel_reason: string_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  frequency: string_filter_operators
+  id: id_filter_operators
+  last_payment_at: date_filter_operators
+  last_payment_at_func: datetime_function_filter_operators
+  last_payment_status: string_filter_operators
+  mandate_status: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  next_payment_date: date_filter_operators
+  next_payment_date_func: date_function_filter_operators
+  payment_method: string_filter_operators
+  sort: number_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  donor: donors_filter
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  _and: [recurring_donations_filter]
+  _or: [recurring_donations_filter]
+}
+
+""""""
+input recurring_donations_quantifier_filter {
+  amount_value: number_filter_operators
+  cancel_reason: string_filter_operators
+  canceled_at: date_filter_operators
+  canceled_at_func: datetime_function_filter_operators
+  currency: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  end_date: date_filter_operators
+  end_date_func: date_function_filter_operators
+  frequency: string_filter_operators
+  id: id_filter_operators
+  last_payment_at: date_filter_operators
+  last_payment_at_func: datetime_function_filter_operators
+  last_payment_status: string_filter_operators
+  mandate_status: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  next_payment_date: date_filter_operators
+  next_payment_date_func: date_function_filter_operators
+  payment_method: string_filter_operators
+  sort: number_filter_operators
+  start_date: date_filter_operators
+  start_date_func: date_function_filter_operators
+  status: string_filter_operators
+  user_created: id_filter_operators
+  user_updated: id_filter_operators
+  donor: donors_filter
+  donations: donations_quantifier_filter
+  donations_func: count_function_filter_operators
+  _and: [recurring_donations_filter]
+  _or: [recurring_donations_filter]
+  _some: recurring_donations_filter
+  _none: recurring_donations_filter
 }
 
 input string_filter_operators {
@@ -4819,56 +4989,56 @@ input string_filter_operators {
 }
 
 input taxes_filter {
-  id: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
   name: string_filter_operators
   rate: number_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [taxes_filter]
   _or: [taxes_filter]
 }
 
 input tickets_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  available_quantity: number_filter_operators
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
   event: events_filter
-  pricing: string_filter_operators
-  available_quantity: number_filter_operators
-  price: number_filter_operators
-  minimum_quantity: number_filter_operators
+  id: number_filter_operators
   maximum_quantity: number_filter_operators
+  minimum_quantity: number_filter_operators
+  name: string_filter_operators
+  price: number_filter_operators
+  pricing: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [tickets_filter]
   _or: [tickets_filter]
 }
 
 """"""
 input tickets_quantifier_filter {
-  id: number_filter_operators
-  status: string_filter_operators
-  user_created: directus_users_filter
+  available_quantity: number_filter_operators
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  name: string_filter_operators
   event: events_filter
-  pricing: string_filter_operators
-  available_quantity: number_filter_operators
-  price: number_filter_operators
-  minimum_quantity: number_filter_operators
+  id: number_filter_operators
   maximum_quantity: number_filter_operators
+  minimum_quantity: number_filter_operators
+  name: string_filter_operators
+  price: number_filter_operators
+  pricing: string_filter_operators
+  status: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [tickets_filter]
   _or: [tickets_filter]
   _some: tickets_filter
@@ -4876,15 +5046,15 @@ input tickets_quantifier_filter {
 }
 
 input update_campaigns_input {
-  id: ID
-  status: String
-  sort: Int
-  user_created: update_directus_users_input
   date_created: Date
-  user_updated: update_directus_users_input
   date_updated: Date
+  id: ID
   name: String
   project: update_projects_input
+  sort: Int
+  status: String
+  user_created: update_directus_users_input
+  user_updated: update_directus_users_input
 }
 
 input update_directus_access_input {
@@ -4986,13 +5156,13 @@ input update_directus_files_input {
   location: String
   tags: JSON
   metadata: JSON
-  copyright: String
-  project: update_projects_input
   focal_point_x: Int
   focal_point_y: Int
   tus_id: String
   tus_data: JSON
   uploaded_on: Date
+  copyright: String
+  project: update_projects_input
 }
 
 input update_directus_flows_input {
@@ -5275,64 +5445,65 @@ input update_directus_versions_input {
 }
 
 input update_project_categories_input {
+  date_created: Date
+  date_updated: Date
+  description: String
   id: ID
+  name: String
   sort: Int
   user_created: update_directus_users_input
-  date_created: Date
   user_updated: update_directus_users_input
-  date_updated: Date
-  name: String
-  description: String
   projects: [update_projects_project_categories_input]
 }
 
 input update_projects_directus_users_input {
+  directus_users_id: update_directus_users_input
   id: ID
   projects_id: update_projects_input
-  directus_users_id: update_directus_users_input
 }
 
 input update_projects_files_input {
+  directus_files_id: update_directus_files_input
   id: ID
   projects_id: update_projects_input
-  directus_files_id: update_directus_files_input
 }
 
 input update_projects_input {
+  allow_donations: Boolean
+  content: JSON
+  date_created: Date
+  date_updated: Date
+
   """
   Der Slug wird für Web-Services genutzt und sollte daher mit Bedacht gewählt werden.
   """
   id: ID
-  status: String
-  sort: Int
-  user_created: update_directus_users_input
-  date_created: Date
-  user_updated: update_directus_users_input
-  date_updated: Date
-  title: String
-  sub_title: String
   image: update_directus_files_input
   launch_date: Date
+  sort: Int
+  status: String
+  sub_title: String
   summary: String
-  content: JSON
-  allow_donations: Boolean
-  categories: [update_projects_project_categories_input]
+  title: String
+  user_created: update_directus_users_input
+  user_updated: update_directus_users_input
   campaigns: [update_campaigns_input]
-  users_authorized: [update_projects_directus_users_input]
+  categories: [update_projects_project_categories_input]
   images: [update_projects_files_input]
+  users_authorized: [update_projects_directus_users_input]
 }
 
 input update_projects_project_categories_input {
   id: ID
-  projects_id: update_projects_input
   project_categories_id: update_project_categories_input
+  projects_id: update_projects_input
 }
 
 input website_pages_blocks_filter {
-  id: number_filter_operators
-  website_pages_id: website_pages_filter
-  sort: number_filter_operators
   collection: string_filter_operators
+  id: number_filter_operators
+  sort: number_filter_operators
+  website_pages_id: website_pages_filter
   _and: [website_pages_blocks_filter]
   _or: [website_pages_blocks_filter]
   item__block_hero: block_hero_filter
@@ -5340,10 +5511,10 @@ input website_pages_blocks_filter {
 
 """"""
 input website_pages_blocks_quantifier_filter {
-  id: number_filter_operators
-  website_pages_id: website_pages_filter
-  sort: number_filter_operators
   collection: string_filter_operators
+  id: number_filter_operators
+  sort: number_filter_operators
+  website_pages_id: website_pages_filter
   _and: [website_pages_blocks_filter]
   _or: [website_pages_blocks_filter]
   _some: website_pages_blocks_filter
@@ -5352,18 +5523,18 @@ input website_pages_blocks_quantifier_filter {
 }
 
 input website_pages_filter {
-  id: id_filter_operators
-  status: string_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
-  slug: string_filter_operators
+  id: id_filter_operators
   parent_page: website_pages_filter
+  slug: string_filter_operators
+  sort: number_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   blocks: website_pages_blocks_quantifier_filter
   blocks_func: count_function_filter_operators
   website_pages: website_pages_quantifier_filter
@@ -5374,18 +5545,18 @@ input website_pages_filter {
 
 """"""
 input website_pages_quantifier_filter {
-  id: id_filter_operators
-  status: string_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
-  slug: string_filter_operators
+  id: id_filter_operators
   parent_page: website_pages_filter
+  slug: string_filter_operators
+  sort: number_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   blocks: website_pages_blocks_quantifier_filter
   blocks_func: count_function_filter_operators
   website_pages: website_pages_quantifier_filter
@@ -5397,16 +5568,16 @@ input website_pages_quantifier_filter {
 }
 
 input website_team_categories_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  title: string_filter_operators
   description: string_filter_operators
+  id: number_filter_operators
+  sort: number_filter_operators
+  title: string_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   website_team_members: website_team_members_quantifier_filter
   website_team_members_func: count_function_filter_operators
   _and: [website_team_categories_filter]
@@ -5414,36 +5585,36 @@ input website_team_categories_filter {
 }
 
 input website_team_members_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
+  category: website_team_categories_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  category: website_team_categories_filter
+  id: number_filter_operators
+  image: directus_files_filter
   name: string_filter_operators
   responsibilities: string_filter_operators
-  image: directus_files_filter
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [website_team_members_filter]
   _or: [website_team_members_filter]
 }
 
 """"""
 input website_team_members_quantifier_filter {
-  id: number_filter_operators
-  sort: number_filter_operators
-  user_created: directus_users_filter
+  category: website_team_categories_filter
   date_created: date_filter_operators
   date_created_func: datetime_function_filter_operators
-  user_updated: directus_users_filter
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
-  category: website_team_categories_filter
+  id: number_filter_operators
+  image: directus_files_filter
   name: string_filter_operators
   responsibilities: string_filter_operators
-  image: directus_files_filter
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  user_updated: directus_users_filter
   _and: [website_team_members_filter]
   _or: [website_team_members_filter]
   _some: website_team_members_filter

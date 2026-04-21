@@ -176,50 +176,42 @@ export interface Donation {
 	currency: 'EUR';
 	date_created?: string | null;
 	date_updated?: string | null;
-	donor?: Donor | string | null;
 	expired_at?: string | null;
 	failed_at?: string | null;
 	/** @primaryKey */
 	id: string;
-	/** @required */
-	interval_type: 'once' | 'monthly' | 'yearly';
 	/** @required */
 	kind: 'one_time' | 'recurring_bootstrap' | 'recurring_cycle';
 	metadata?: Record<string, any> | null;
 	paid_at?: string | null;
 	/** @required */
 	payment_method: 'creditcard' | 'paypal' | 'paybybank' | 'directdebit';
-	project?: string | null;
 	return_url?: string | null;
 	status?: 'pending' | 'paid' | 'failed' | 'canceled' | 'expired';
 	user_created?: DirectusUser | string | null;
 	user_updated?: DirectusUser | string | null;
 	webhook_url?: string | null;
+	provider_transaction_id?: string | null;
+	/** @required */
+	purpose: string;
+	recurring_donation?: RecurringDonation | string | null;
+	donor?: Donor | string | null;
 }
 
 export interface Donor {
-	consents?: Record<string, any> | null;
-	date_created?: string | null;
-	date_updated?: string | null;
-	directus_contact_id?: Contact | string | null;
-	email_normalized?: string | null;
-	email_raw?: string | null;
-	first_name?: string | null;
 	/** @primaryKey */
 	id: string;
-	/** @required */
-	is_anonymous: boolean;
-	last_name?: string | null;
-	locale?: string;
-	metadata?: Record<string, any> | null;
-	organization?: string | null;
-	phone?: string | null;
-	/** @required */
-	status: 'published' | 'draft' | 'archived';
 	user_created?: DirectusUser | string | null;
+	date_created?: string | null;
 	user_updated?: DirectusUser | string | null;
-	/** @required */
-	wants_receipt: boolean;
+	date_updated?: string | null;
+	first_name?: string | null;
+	last_name?: string | null;
+	organization?: string | null;
+	email?: string | null;
+	provider_customer_id?: string | null;
+	recurring_donations?: RecurringDonation[] | string[];
+	donations?: Donation[] | string[];
 }
 
 export interface Event {
@@ -606,8 +598,6 @@ export interface RecurringDonation {
 	currency: 'EUR';
 	date_created?: string | null;
 	date_updated?: string | null;
-	/** @required */
-	donor: Donor | string;
 	end_date?: string | null;
 	/** @required */
 	frequency: 'monthly' | 'yearly';
@@ -626,6 +616,9 @@ export interface RecurringDonation {
 	status?: 'pending' | 'active' | 'paused' | 'failed' | 'canceled' | 'ended';
 	user_created?: string | null;
 	user_updated?: string | null;
+	/** @required */
+	donor: Donor | string;
+	donations?: Donation[] | string[];
 }
 
 export interface StadtbandeFormSubmission {
@@ -1314,7 +1307,7 @@ export interface Schema {
 	cost_centers_directus_users: CostCentersDirectusUser[];
 	documentation_articles: DocumentationArticle[];
 	donations: Donation[];
-	donor: Donor[];
+	donors: Donor[];
 	events: Event[];
 	imprint: Imprint;
 	invoice_document_items: InvoiceDocumentItem[];
@@ -1403,7 +1396,7 @@ export enum CollectionNames {
 	cost_centers_directus_users = 'cost_centers_directus_users',
 	documentation_articles = 'documentation_articles',
 	donations = 'donations',
-	donor = 'donor',
+	donors = 'donors',
 	events = 'events',
 	imprint = 'imprint',
 	invoice_document_items = 'invoice_document_items',

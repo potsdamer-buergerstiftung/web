@@ -4,7 +4,7 @@
     "accountability": "all",
     "archive_app_filter": true,
     "archive_field": "status",
-    "archive_value": "archived",
+    "archive_value": "canceled",
     "collapse": "open",
     "collection": "donations",
     "color": "#3399FF",
@@ -26,7 +26,7 @@
         "translation": "Spenden"
       }
     ],
-    "unarchive_value": "draft",
+    "unarchive_value": "pending",
     "versioning": false
   },
   "schema": {

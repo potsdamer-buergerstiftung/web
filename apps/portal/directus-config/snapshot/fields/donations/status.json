@@ -9,25 +9,39 @@
     "display_options": {
       "choices": [
         {
-          "background": "var(--theme--primary-background)",
-          "color": "var(--theme--primary)",
-          "foreground": "var(--theme--primary)",
-          "text": "$t:published",
-          "value": "published"
-        },
-        {
           "background": "var(--theme--background-normal)",
           "color": "var(--theme--foreground)",
           "foreground": "var(--theme--foreground)",
-          "text": "$t:draft",
-          "value": "draft"
+          "text": "Pending",
+          "value": "pending"
+        },
+        {
+          "background": "var(--theme--primary-background)",
+          "color": "var(--theme--primary)",
+          "foreground": "var(--theme--primary)",
+          "text": "Paid",
+          "value": "paid"
+        },
+        {
+          "background": "var(--theme--danger-background)",
+          "color": "var(--theme--danger)",
+          "foreground": "var(--theme--danger)",
+          "text": "Failed",
+          "value": "failed"
         },
         {
           "background": "var(--theme--warning-background)",
           "color": "var(--theme--warning)",
           "foreground": "var(--theme--warning)",
-          "text": "$t:archived",
-          "value": "archived"
+          "text": "Canceled",
+          "value": "canceled"
+        },
+        {
+          "background": "var(--theme--warning-background)",
+          "color": "var(--theme--warning)",
+          "foreground": "var(--theme--warning)",
+          "text": "Expired",
+          "value": "expired"
         }
       ],
       "showAsDot": true
@@ -40,19 +54,29 @@
     "options": {
       "choices": [
         {
-          "color": "var(--theme--primary)",
-          "text": "$t:published",
-          "value": "published"
+          "color": "var(--theme--foreground)",
+          "text": "Pending",
+          "value": "pending"
         },
         {
-          "color": "var(--theme--foreground)",
-          "text": "$t:draft",
-          "value": "draft"
+          "color": "var(--theme--primary)",
+          "text": "Paid",
+          "value": "paid"
+        },
+        {
+          "color": "var(--theme--danger)",
+          "text": "Failed",
+          "value": "failed"
         },
         {
           "color": "var(--theme--warning)",
-          "text": "$t:archived",
-          "value": "archived"
+          "text": "Canceled",
+          "value": "canceled"
+        },
+        {
+          "color": "var(--theme--warning)",
+          "text": "Expired",
+          "value": "expired"
         }
       ]
     },
@@ -70,7 +94,7 @@
     "name": "status",
     "table": "donations",
     "data_type": "character varying",
-    "default_value": "draft",
+    "default_value": "pending",
     "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,

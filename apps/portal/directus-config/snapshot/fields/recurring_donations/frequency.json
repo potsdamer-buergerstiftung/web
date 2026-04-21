@@ -5,8 +5,19 @@
   "meta": {
     "collection": "recurring_donations",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "text": "$t:yearly",
+          "value": "yearly"
+        },
+        {
+          "text": "$t:monthly",
+          "value": "monthly"
+        }
+      ]
+    },
     "field": "frequency",
     "group": null,
     "hidden": false,
@@ -15,11 +26,11 @@
     "options": {
       "choices": [
         {
-          "text": "Monthly",
+          "text": "$t:monthly",
           "value": "monthly"
         },
         {
-          "text": "Yearly",
+          "text": "$t:yearly",
           "value": "yearly"
         }
       ]
@@ -29,7 +40,12 @@
     "searchable": true,
     "sort": 10,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Intervall"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

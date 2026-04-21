@@ -5,8 +5,10 @@
   "meta": {
     "collection": "donations",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{first_name}} {{last_name}}"
+    },
     "field": "donor",
     "group": null,
     "hidden": false,
@@ -19,11 +21,16 @@
     "readonly": false,
     "required": false,
     "searchable": true,
-    "sort": 7,
+    "sort": 25,
     "special": [
       "m2o"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Spener:in"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"
@@ -43,7 +50,7 @@
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": "donor",
+    "foreign_key_table": "donors",
     "foreign_key_column": "id"
   }
 }

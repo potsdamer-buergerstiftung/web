@@ -599,6 +599,24 @@
   {
     "bookmark": null,
     "role": null,
+    "collection": "recurring_donations",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1
+      }
+    },
+    "layout_options": null,
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "ae36de57-117b-4806-86df-6447bba6076e"
+  },
+  {
+    "bookmark": null,
+    "role": null,
     "collection": "passwords",
     "search": null,
     "layout": "tabular",
@@ -658,6 +676,39 @@
     "icon": "bookmark_border",
     "color": null,
     "_syncId": "b9019ffc-af86-45de-b2a2-18fa3bf05741"
+  },
+  {
+    "bookmark": null,
+    "role": null,
+    "collection": "donations",
+    "search": null,
+    "layout": null,
+    "layout_query": {
+      "tabular": {
+        "page": 1,
+        "fields": [
+          "amount_value",
+          "donor",
+          "project",
+          "status"
+        ]
+      }
+    },
+    "layout_options": {
+      "tabular": {
+        "widths": {
+          "amount_value": 141.234375,
+          "donor": 207.57421875,
+          "project": 144,
+          "status": 144
+        }
+      }
+    },
+    "refresh_interval": null,
+    "filter": null,
+    "icon": "bookmark",
+    "color": null,
+    "_syncId": "bc75aaa3-81e1-4833-b0d1-abcc75c43f12"
   },
   {
     "bookmark": "$t:outgoing",

@@ -7,6 +7,12 @@
   },
   {
     "language": "de-DE",
+    "key": "monthly",
+    "value": "Monatlich",
+    "_syncId": "27291b02-b23c-4114-98a8-3ad01b98fe01"
+  },
+  {
+    "language": "de-DE",
     "key": "closed",
     "value": "Geschlossen",
     "_syncId": "29d9aae1-70f3-4ad6-82bf-e43e6ef5c59b"
@@ -154,6 +160,12 @@
     "key": "completed",
     "value": "Abgeschlossen",
     "_syncId": "cd5ea279-9f69-47c4-9050-247c74e06e87"
+  },
+  {
+    "language": "de-DE",
+    "key": "yearly",
+    "value": "Jährlich",
+    "_syncId": "d3c7d7d1-d3d4-45c1-8a4a-17f9f66dd4dc"
   },
   {
     "language": "de-DE",

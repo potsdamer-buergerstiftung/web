@@ -16,7 +16,7 @@
         "stadtbande_form_submissions"
       ]
     },
-    "operation": "59ff5a2c-2139-4963-85ca-c44ac3a6e62a",
+    "operation": null,
     "_syncId": "20b0863b-9596-475b-ac02-9fce70277e0e"
   },
   {
@@ -36,7 +36,7 @@
         "contact_requests"
       ]
     },
-    "operation": "5c6ad34d-6e9d-429f-aff4-56717d8e0f0c",
+    "operation": null,
     "_syncId": "a0afecb0-ae5d-41f9-b8bb-b86bad1fe330"
   },
   {
@@ -56,7 +56,7 @@
         "contact_requests"
       ]
     },
-    "operation": "50e72adc-fbf1-4739-9c2b-820a0a5a87c7",
+    "operation": null,
     "_syncId": "b262647e-0d7d-49ac-91a8-8fe08c91cfea"
   }
 ]

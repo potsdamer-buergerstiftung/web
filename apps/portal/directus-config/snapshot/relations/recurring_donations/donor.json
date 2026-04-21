@@ -1,25 +1,25 @@
 {
   "collection": "recurring_donations",
   "field": "donor",
-  "related_collection": "donor",
+  "related_collection": "donors",
   "meta": {
     "junction_field": null,
     "many_collection": "recurring_donations",
     "many_field": "donor",
     "one_allowed_collections": null,
-    "one_collection": "donor",
+    "one_collection": "donors",
     "one_collection_field": null,
     "one_deselect_action": "nullify",
-    "one_field": null,
+    "one_field": "recurring_donations",
     "sort_field": null
   },
   "schema": {
     "table": "recurring_donations",
     "column": "donor",
-    "foreign_key_table": "donor",
+    "foreign_key_table": "donors",
     "foreign_key_column": "id",
     "constraint_name": "recurring_donations_donor_foreign",
     "on_update": "NO ACTION",
-    "on_delete": "SET NULL"
+    "on_delete": "NO ACTION"
   }
 }

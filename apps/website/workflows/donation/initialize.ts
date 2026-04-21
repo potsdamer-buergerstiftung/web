@@ -2,6 +2,7 @@ import { SequenceType } from "@mollie/api-client";
 import {
   createDonation,
   createRecurringDonation,
+  setProviderCustomerIdForDonor,
   updateDonationAfterPayment,
   updateRecurringDonationAfterPayment,
   upsertDonor,
@@ -91,11 +92,7 @@ async function upsertDonorStep(input: InitializeDonationInput): Promise<DonorSte
     lastName: input.lastName,
     organization: input.organisation,
     email: input.email,
-    isAnonymous: input.isAnonymous,
-    wantsReceipt: input.wantsReceipt,
-    consents: {
-      privacy: true,
-    },
+    providerCustomerId: undefined,
   });
 
   return {
@@ -103,6 +100,23 @@ async function upsertDonorStep(input: InitializeDonationInput): Promise<DonorSte
     shouldCreateDonor,
     isRecurring,
   };
+}
+
+async function upsertDonorAfterCustomerStep(
+  donor: DonorStepResult,
+  customer: CustomerStepResult,
+): Promise<{ donorId: string }> {
+  "use step";
+
+  if (!customer.customerId || !donor.donorId) {
+    return { donorId: donor.donorId ?? "" };
+  }
+
+  const patchedDonor = await setProviderCustomerIdForDonor(donor.donorId, customer.customerId);
+
+  return {
+    donorId: patchedDonor.id,
+  }
 }
 
 async function createRecurringDonationStep(
@@ -145,12 +159,13 @@ async function createDonationStep(
     donorId: donor.donorId,
     amountValue: input.amountValue,
     currency: "EUR",
-    intervalType: input.interval,
     paymentMethod: input.paymentMethodId,
     kind: donor.isRecurring ? "recurring_bootstrap" : "one_time",
+    recurringDonationId: recurring.recurringDonationId,
     returnUrl: input.returnUrl,
     webhookUrl: input.webhookUrl,
     createdFrom: "web_form",
+    purpose: input.purposeId,
     metadata: {
       source: "web_form",
       purpose_id: input.purposeId,
@@ -274,6 +289,8 @@ export async function initializeDonationWorkflow(
   const recurring = await createRecurringDonationStep(input, donor);
   const donation = await createDonationStep(input, donor, recurring);
   const customer = await createCustomerStep(input, donor);
+  const patchedDonor = await upsertDonorAfterCustomerStep(donor, customer);
+  
   const payment = await createPaymentStep(
     input,
     donor,

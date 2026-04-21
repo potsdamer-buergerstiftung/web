@@ -101,7 +101,7 @@
         "url": "http://localhost:3000"
       }
     ],
-    "mcp_enabled": false,
+    "mcp_enabled": true,
     "mcp_allow_deletes": true,
     "mcp_prompts_collection": "ai_prompts",
     "mcp_system_prompt_enabled": true,

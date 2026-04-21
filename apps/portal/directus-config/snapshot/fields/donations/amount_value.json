@@ -5,8 +5,10 @@
   "meta": {
     "collection": "donations",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "formatted-value",
+    "display_options": {
+      "suffix": "€"
+    },
     "field": "amount_value",
     "group": null,
     "hidden": false,
@@ -16,9 +18,14 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 9,
+    "sort": 8,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "de-DE",
+        "translation": "Betrag"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"
@@ -30,7 +37,7 @@
     "default_value": null,
     "max_length": null,
     "numeric_precision": 10,
-    "numeric_scale": 5,
+    "numeric_scale": 2,
     "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,

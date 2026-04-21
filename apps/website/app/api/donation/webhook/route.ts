@@ -24,6 +24,7 @@ function getMetadataValue(
 export async function POST(request: Request) {
   try {
     const body = await request.text();
+    console.log("Received donation webhook with body:", body);
     const params = new URLSearchParams(body);
     const paymentId = params.get("id");
 
