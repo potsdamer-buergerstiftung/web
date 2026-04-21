@@ -13,7 +13,7 @@ export default function FreundeskreisJoinPage() {
         title="Spenden"
         isCompact={true}
         isCentered={true}
-        className="bg-muted/50"
+        className="bg-muted"
         description={
           <p className="max-w-4xl">
             Wir legen bei unseren Projekten großen Wert darauf, dass sie

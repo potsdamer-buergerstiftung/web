@@ -13,7 +13,7 @@ export default function FreundeskreisJoinPage() {
         title="Freundeskreis"
         isCompact={true}
         isCentered={true}
-        className="bg-muted/50"
+        className="bg-muted"
         description={
           <p className="max-w-4xl">
             Der Freundeskreis besteht aus Menschen, die regelmäßig spenden und
