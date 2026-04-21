@@ -32,14 +32,8 @@ type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { id } = await props.params;
-
-  if (typeof id !== "number") {
-    return {
-      title: "Veranstaltung nicht gefunden - Inselbühne Potsdam",
-    };
-  }
   
-  const event = await getEvent(id);
+  const event = await getEvent(Number(id));
 
   return {
     title: `${event.name} - Inselbühne Potsdam`,
@@ -49,11 +43,17 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 export default async function EventPage(props: Props) {
   const { id } = await props.params;
 
-  if (typeof id !== "number") {
-    return <div>Veranstaltung nicht gefunden</div>;
+  const idNum = Number(id);
+  if (isNaN(idNum)) {
+    return (
+      <div className="container py-16">
+        <h1 className="text-2xl font-bold">Veranstaltung nicht gefunden</h1>
+        <p>Die angeforderte Veranstaltung konnte nicht gefunden werden.</p>
+      </div>
+    );
   }
   
-  const event = getEvent(id);
+  const event = getEvent(idNum);
 
   return (
     <Suspense fallback={<EventArticleLoading />}>
