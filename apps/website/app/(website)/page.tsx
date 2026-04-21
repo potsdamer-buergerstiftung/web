@@ -114,7 +114,7 @@ function HeroSection() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {/* <div className="mt-12 grid gap-4 sm:grid-cols-3">
             <div
               className="rounded-[1.6rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_50px_-34px_rgba(15,23,42,0.35)] backdrop-blur"
               data-home-hero-card
@@ -151,7 +151,7 @@ function HeroSection() {
                 Begegnung, Jugend und Teilhabe bilden den Rahmen unserer Arbeit.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="relative" data-home-hero-media>
@@ -173,12 +173,12 @@ function HeroSection() {
                   Brücken bauen. Menschen verbinden.
                 </p>
                 <p className="mt-3 max-w-md text-pretty font-header text-3xl font-semibold tracking-[-0.04em] md:text-[2.2rem]">
-                  30+ Projekte begleitet und getragen.
+                  15 Jahre Engagement für Potsdam
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div
                 className="flex min-h-[10rem] flex-col justify-between rounded-2xl bg-primary p-6 text-stone-50 shadow-2xl"
                 data-home-hero-panel
@@ -213,7 +213,7 @@ function HeroSection() {
                   <ArrowLongRightIcon className="size-4" />
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -468,9 +468,9 @@ export default function HomePage() {
       <HeroSection />
       <PrioritiesSection />
       <ProjectsSection />
-      <Suspense>
+      {/* <Suspense>
         <NewsSection />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }

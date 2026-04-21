@@ -9,7 +9,7 @@ const FooterBanner: React.FC = () => {
       <div className="bg-slate-950 shadow-2xl px-4 md:px-8 py-12 text-white rounded-2xl flex flex-col">
         <div className="flex flex-row flex-wrap items-center justify-between gap-8">
           <div>
-            <Heading size="subtitle" className="mb-4">
+            <Heading size="subtitle" className="mb-4 text-slate-200">
               Unterstützen & engagieren
             </Heading>
             <Heading size="md" className="text-slate-300">

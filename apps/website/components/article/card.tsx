@@ -99,7 +99,7 @@ const ArticleCard: React.FC<{
       <div
         className={clsx(
           "relative px-6 py-8 transition",
-          compact ? "h-full hover:bg-transparent" : "hover:bg-slate-200",
+          compact ? "h-full hover:bg-transparent" : "hover:bg-muted",
         )}
       >
         <ul className="flex flex-wrap">
