@@ -37,8 +37,6 @@ async function getPosts() {
 export default function BlogPage() {
   const posts = getPosts();
 
-  console.log("Posts:", posts);
-
   return (
     <>
       <PageTitle
