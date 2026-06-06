@@ -18,13 +18,26 @@ async function getPosts() {
     readItems("posts", {
       fields: ["title", "date", "id", "image", "excerpt", "slug"],
       sort: ["-date"],
-      filter: { project: { _eq: "inselbuehne" } },
+      filter: {
+        _and: [
+          {
+            project: { _eq: "inselbuehne" },
+          },
+          {
+            status: {
+              _eq: "published",
+            },
+          },
+        ],
+      },
     }),
   );
 }
 
 export default function BlogPage() {
   const posts = getPosts();
+
+  console.log("Posts:", posts);
 
   return (
     <>

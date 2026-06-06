@@ -7,7 +7,7 @@ import portalServer from "portal/server";
 import PostCard from "@/components/PostCard";
 
 export const metadata: Metadata = {
-  title: "Deine Insel — Deine Bühne - Inselbühne Potsdam",
+  title: "Dein Sommer, deine Bühne! - Inselbühne Potsdam",
   description:
     "Saisoneröffnung am 24. Mai mit dem Landespolizeiorchester Brandenburg",
 };
@@ -19,7 +19,18 @@ async function getPosts() {
     readItems("posts", {
       fields: ["title", "date", "id", "image", "excerpt", "slug"],
       sort: ["-date"],
-      filter: { project: { _eq: "inselbuehne" } },
+      filter: {
+        _and: [
+          {
+            project: { _eq: "inselbuehne" },
+          },
+          {
+            status: {
+              _eq: "published",
+            },
+          },
+        ],
+      },
       limit: 3,
     }),
   );
@@ -52,7 +63,7 @@ export default async function HomePage() {
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-40 pb-12 md:pb-20">
           <div className="col-span-6 max-w-xl md:col-span-3">
             <h1 className="font-serif text-5xl lg:text-6xl leading-tight">
-              Deine Insel &mdash;
+              Dein Sommer &mdash;
               <br />
               <span className="text-primary italic underline decoration-primary/30 underline-offset-8">
                 deine Bühne!
