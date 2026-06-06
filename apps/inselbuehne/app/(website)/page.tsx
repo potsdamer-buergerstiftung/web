@@ -62,17 +62,17 @@ export default async function HomePage() {
       <section className="bg-green-100 overflow-visible">
         <div className="container mx-auto grid grid-cols-6 items-center gap-16 px-4 pt-40 pb-12 md:pb-20">
           <div className="col-span-6 max-w-xl md:col-span-3">
-            <h1 className="font-serif text-5xl lg:text-6xl leading-tight">
+            <h1 className="font-serif text-5xl lg:text-6xl leading-tight mb-20">
               Dein Sommer &mdash;
               <br />
               <span className="text-primary italic underline decoration-primary/30 underline-offset-8">
                 deine Bühne!
               </span>
             </h1>
-            <p className="mt-8 mb-8 text-lg leading-relaxed">
-              Im Sommer sind wir wieder da! Ab Mai 2026 geht&apos;s mit einem
+           {/*  <p className="mt-8 mb-8 text-lg leading-relaxed">
+              Auf dich warten über 100 Veranstaltungen! Ab Mai 2026 geht&apos;s mit einem
               tollen Open-Air-Programm weiter. Schau bald wieder vorbei!
-            </p>
+            </p> */}
             <Link href="/veranstaltungen">Zu den Veranstaltungen</Link>
           </div>
           <div className="col-span-6 md:col-span-3">
