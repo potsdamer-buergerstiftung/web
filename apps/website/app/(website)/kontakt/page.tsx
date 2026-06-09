@@ -53,10 +53,10 @@ export default function ContactPage() {
         <PageSectionContent className="flex flex-col md:flex-row gap-8">
           <div>
             <h2 className="font-header text-xl font-bold">
-              Rechenzentrum Potsdam
+              Kreativquartier Raum 229
             </h2>
             <p className="mt-4 text-slate-700 dark:text-slate-300">
-              Dortustraße 46
+              Neue Plantage 6
             </p>
             <p className="text-slate-700 dark:text-slate-300">14467 Potsdam</p>
             <p className="mt-1 font-bold text-slate-900 dark:text-slate-100">

@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
               Komm uns besuchen
             </h4>
             <p className="mt-6 font-bold text-slate-900 dark:text-slate-50">
-              Rechenzentrum Potsdam
+              Kreativquartier Raum 229
             </p>
-            <p className="">Dortustraße 46</p>
+            <p className="">Neue Plantage 6</p>
             <p className="">14467, Potsdam</p>
             <p className="mt-4 font-bold text-slate-900 dark:text-slate-50">
               Inselbühne
