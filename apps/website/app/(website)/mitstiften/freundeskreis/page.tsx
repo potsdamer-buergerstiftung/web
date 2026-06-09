@@ -5,6 +5,14 @@ import {
   PageBreadcrumbItem,
   PageBreadcrumbSeparator,
 } from "@/components/page-breadcrumb";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+const benefits = [
+  "Du förderst Kultur, Bildung, Teilhabe und Klimaschutz in Potsdam",
+  "Du stärkst den Zusammenhalt und das Wir-Gefühl in deiner Stadt",
+  "Bei Events und Mitmach-Treffs kannst du nette Menschen kennenlernen",
+  "Ein Newsletter informiert dich über unsere Aktivitäten",
+];
 
 export default function FreundeskreisJoinPage() {
   return (
@@ -31,6 +39,24 @@ export default function FreundeskreisJoinPage() {
           </PageBreadcrumb>
         }
       />
+      <section className="container max-w-4xl mx-auto px-4 mt-10">
+        <div className="rounded-2xl border bg-muted/40 p-6 sm:p-8">
+          <h2 className="text-xl font-semibold sm:text-2xl">
+            Deine Vorteile im Freundeskreis
+          </h2>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-3">
+                <CheckCircleIcon
+                  className="mt-0.5 h-6 w-6 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                <span className="text-muted-foreground">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <section className="container max-w-4xl mx-auto px-4 pb-16 mt-10">
         <DonationForm
           config={{
