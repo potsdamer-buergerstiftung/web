@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "./image";
 import Paragraph from "./paragraph";
+import Attaches from "./attaches";
 import { ConfigProp, RenderersProp } from "./render";
 
 export interface Block {
@@ -29,6 +30,7 @@ const Blocks = ({
   const defaultRenderers = {
     paragraph: Paragraph,
     image: Image,
+    attaches: Attaches,
   };
 
   const availableRenderers = {
