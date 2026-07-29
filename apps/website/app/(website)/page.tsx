@@ -161,7 +161,7 @@ function HeroSection() {
               data-home-hero-panel
             >
               <Image
-                src="/img/b6431451-1fdc-45ac-ab79-c42c3a0b7627.jpeg"
+                src="/img/buergerstiftung-04.jpg"
                 alt="Engagement im öffentlichen Raum"
                 fill
                 className="object-cover transition duration-700 ease-out group-hover:scale-105"
